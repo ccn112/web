@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "sourceMap": true,
+    "jsx": "preserve",
+    "paths": {
+      "@x/shared-types": ["./packages/shared-types/src/index.ts"],
+      "@x/cms-client": ["./packages/cms-client/src/index.ts"],
+      "@x/ui": ["./packages/ui/src/index.ts"],
+      "@x/content-blocks": ["./packages/content-blocks/src/index.ts"],
+      "@x/chatbot-widget": ["./packages/chatbot-widget/src/index.ts"],
+      "@x/seo": ["./packages/seo/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "**/dist", "**/.next"]
+}

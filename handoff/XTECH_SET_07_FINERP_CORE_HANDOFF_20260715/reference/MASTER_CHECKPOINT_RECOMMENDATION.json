@@ -1,0 +1,19 @@
+{
+  "checkpointRecommended": true,
+  "checkpointName": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "includedSets": [
+    "SET 03",
+    "SET 04",
+    "SET 05",
+    "SET 06",
+    "SET 07"
+  ],
+  "includedAreas": [
+    "Corporate Website Core",
+    "X Real Estate Digital Suite",
+    "XBooking Marketing CRM Lead",
+    "XBooking Inventory Booking Customer Care",
+    "FinERP Core"
+  ],
+  "reason": "Đã hoàn thành 5 set và hai product families đầu tiên; đây là thời điểm phù hợp để khóa schema, block types, asset naming, seed pipeline và route conventions trước khi mở rộng sang XBuilding."
+}

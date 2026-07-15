@@ -1,0 +1,19 @@
+﻿Code,Asset,Site,Page,Production Type,Ratio,Priority,Notes
+COR-08,Business lifecycle flow,Corporate,Giải pháp,SVG/Figma,16:9,P1,Marketing→Operations
+COR-09,Digital Suite architecture,Corporate,Digital Suite,SVG/Figma,16:9,P1,5 products + data + AI
+COR-10,Integration & shared data,Corporate,Digital Suite,SVG/Figma,4:3,P1,API/data/SSO
+COR-11,Digital Blueprint workshop,Corporate,Dịch vụ,Photo+UI composite,4:3,P2,Consulting scene
+COR-12,Customer segments,Corporate,Giải pháp,UI/illustration,16:9,P2,Developer/agency/operator
+XBK-05,Lead 360,XBooking,CRM & Lead,UI mockup,4:3,P1,Customer profile and interactions
+XBK-06,Sales pipeline,XBooking,CRM & Lead,UI mockup,4:3,P1,Stages and SLA
+XBK-07,Inventory matrix,XBooking,Booking,UI mockup,4:3,P1,Real-time status
+XBK-08,Mobile sales app,XBooking,Mobile,UI mockup,9:16,P1,Lead and booking
+FERP-04,Budget vs actual,FinERP,Finance,UI mockup,4:3,P1,Variance and alerts
+FERP-05,Approval workflow,FinERP,Workflow,UI mockup,4:3,P1,Desktop + mobile
+XBL-04,Multi-property dashboard,XBuilding,Operations,UI mockup,4:3,P1,Portfolio overview
+XBL-05,Resident app,XBuilding,App cư dân,UI mockup,9:16,P1,"Fees, requests, amenities"
+XBL-06,Maintenance work order,XBuilding,Maintenance,UI mockup,4:3,P1,SLA and technician
+XAI-04,Document AI pipeline,X.AI,Document AI,UI+SVG,4:3,P1,Upload→extract→validate
+XAI-05,Report AI,X.AI,Report AI,UI mockup,4:3,P1,Ask data and narrative
+XSP-04,Approval bot,X.Space,Workflow,UI mockup,4:3,P1,Interactive approval
+XSP-05,AI summary,X.Space,AI Assistant,UI mockup,4:3,P1,Summary and next actions

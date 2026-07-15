@@ -1,0 +1,153 @@
+{
+  "site": "finerp",
+  "routes": [
+    {
+      "route": "/phan-he/nhan-su",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-09",
+          "title": "HRM và hồ sơ nhân sự",
+          "description": "Quản lý hồ sơ nhân sự, cơ cấu tổ chức, phòng ban, vị trí và trạng thái làm việc.",
+          "listItems": [
+            "Hồ sơ nhân sự",
+            "Tổ chức",
+            "Phòng ban",
+            "Vị trí",
+            "Trạng thái"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/cham-cong-tien-luong",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-10",
+          "title": "Chấm công và tiền lương",
+          "description": "Tập trung bảng công, ca làm, tăng ca, phụ cấp, khấu trừ và bảng lương.",
+          "listItems": [
+            "Ca làm",
+            "Bảng công",
+            "Đi muộn",
+            "Vắng mặt",
+            "Phụ cấp",
+            "Bảng lương"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/phe-duyet",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-11",
+          "title": "Approval Workflow",
+          "description": "Chuẩn hóa quy trình phê duyệt nhiều cấp cho đề xuất, thanh toán và mua sắm.",
+          "listItems": [
+            "Đề xuất",
+            "Trưởng bộ phận",
+            "Tài chính",
+            "Ban giám đốc",
+            "Ký số",
+            "Hoàn tất"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/hop-dong",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-12",
+          "title": "Quản lý hợp đồng",
+          "description": "Theo dõi vòng đời hợp đồng từ tạo mới đến phê duyệt, ký số, hiệu lực và gia hạn.",
+          "listItems": [
+            "Tạo hợp đồng",
+            "Phê duyệt",
+            "Ký số",
+            "Hiệu lực",
+            "Gia hạn"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/van-ban-tai-lieu",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-13",
+          "title": "Văn bản và tài liệu",
+          "description": "Tập trung tài liệu doanh nghiệp với phân quyền, tìm kiếm, lịch sử và quản lý phiên bản.",
+          "listItems": [
+            "Danh mục",
+            "Tìm kiếm",
+            "Phân quyền",
+            "Lịch sử",
+            "Phiên bản"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/bao-cao-ai",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-14",
+          "title": "Report AI",
+          "description": "AI hỗ trợ phân tích, tóm tắt và hỏi đáp dữ liệu điều hành nhanh chóng.",
+          "listItems": [
+            "Tóm tắt",
+            "Phân tích",
+            "Xu hướng",
+            "Khuyến nghị",
+            "Hỏi đáp dữ liệu"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/canh-bao-dieu-hanh",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-15",
+          "title": "Cảnh báo ngân sách và công nợ",
+          "description": "Theo dõi vượt ngân sách, công nợ đến hạn, quá hạn và rủi ro tài chính theo thời gian thực.",
+          "listItems": [
+            "Vượt ngân sách",
+            "Đến hạn",
+            "Quá hạn",
+            "Rủi ro",
+            "Hành động đề xuất"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/trien-khai-tich-hop",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-16",
+          "title": "On-premise và tích hợp",
+          "description": "Triển khai linh hoạt và kết nối hệ sinh thái ngân hàng, CRM, API, BI và chữ ký số.",
+          "listItems": [
+            "On-premise",
+            "Private Cloud",
+            "API",
+            "Ngân hàng",
+            "CRM",
+            "BI",
+            "Chữ ký số"
+          ]
+        }
+      ]
+    }
+  ]
+}

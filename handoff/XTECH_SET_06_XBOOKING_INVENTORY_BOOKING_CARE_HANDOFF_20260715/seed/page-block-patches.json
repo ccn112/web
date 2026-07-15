@@ -1,0 +1,106 @@
+{
+  "site": "xbooking",
+  "routes": [
+    {
+      "route": "/giai-phap/bang-hang",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-09",
+          "title": "Ma trận bảng hàng thời gian thực",
+          "description": "Theo dõi trạng thái sản phẩm theo dự án, tháp, tầng và căn trên một ma trận trực quan.",
+          "listItems": [
+            "Trống",
+            "Giữ chỗ",
+            "Booking",
+            "Đã bán",
+            "Không khả dụng"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-10",
+          "title": "Chi tiết sản phẩm đầy đủ",
+          "description": "Tra cứu thông tin căn, hình ảnh, mặt bằng, giá, chính sách và pháp lý trước khi giao dịch.",
+          "listItems": [
+            "Mã căn",
+            "Diện tích",
+            "Hướng",
+            "Giá bán",
+            "Tiện ích",
+            "Chính sách",
+            "Pháp lý"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/booking-bat-dong-san",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-11",
+          "title": "Giữ chỗ và Booking",
+          "description": "Kiểm soát thời gian giữ chỗ, xác nhận cọc và trạng thái booking theo thời gian thực.",
+          "listItems": [
+            "Giữ chỗ",
+            "Đếm ngược",
+            "Xác nhận cọc",
+            "Booking",
+            "Hết hạn"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-12",
+          "title": "Phê duyệt Booking",
+          "description": "Chuẩn hóa quy trình duyệt booking giữa sale, quản lý sàn và chủ đầu tư.",
+          "listItems": [
+            "Sale",
+            "Quản lý sàn",
+            "Chủ đầu tư",
+            "Hồ sơ booking",
+            "SLA",
+            "Phê duyệt"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/hop-dong-thanh-toan",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-15",
+          "title": "Hợp đồng và tiến độ thanh toán",
+          "description": "Theo dõi hợp đồng, các đợt thanh toán, công nợ và mốc đến hạn.",
+          "listItems": [
+            "Hợp đồng",
+            "Đợt thanh toán",
+            "Đã thanh toán",
+            "Sắp đến hạn",
+            "Công nợ"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/cham-soc-khach-hang",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-16",
+          "title": "Chăm sóc khách hàng sau bán",
+          "description": "Quản lý yêu cầu hỗ trợ, lịch sử tương tác, nhắc việc và mức độ hài lòng của khách hàng.",
+          "listItems": [
+            "Yêu cầu hỗ trợ",
+            "Lịch sử tương tác",
+            "Nhắc việc",
+            "Chat",
+            "Đánh giá hài lòng"
+          ]
+        }
+      ]
+    }
+  ]
+}

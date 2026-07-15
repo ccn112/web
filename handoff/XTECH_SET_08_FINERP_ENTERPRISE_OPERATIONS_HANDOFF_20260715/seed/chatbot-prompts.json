@@ -1,0 +1,69 @@
+{
+  "site": "finerp",
+  "sections": [
+    {
+      "key": "hrm-employee-profile",
+      "assetCode": "FERP-09",
+      "prompts": [
+        "FinERP quản lý hồ sơ nhân sự như thế nào?",
+        "Có thể theo dõi cơ cấu tổ chức và vị trí nhân sự không?"
+      ]
+    },
+    {
+      "key": "attendance-payroll",
+      "assetCode": "FERP-10",
+      "prompts": [
+        "FinERP hỗ trợ chấm công và tiền lương ra sao?",
+        "Có thể theo dõi phụ cấp, khấu trừ và tăng ca không?"
+      ]
+    },
+    {
+      "key": "approval-workflow",
+      "assetCode": "FERP-11",
+      "prompts": [
+        "Approval Workflow trong FinERP gồm những bước nào?",
+        "Có hỗ trợ phê duyệt nhiều cấp và ký số không?"
+      ]
+    },
+    {
+      "key": "contract-management",
+      "assetCode": "FERP-12",
+      "prompts": [
+        "FinERP quản lý vòng đời hợp đồng như thế nào?",
+        "Hợp đồng có thể theo dõi hiệu lực và gia hạn không?"
+      ]
+    },
+    {
+      "key": "documents-management",
+      "assetCode": "FERP-13",
+      "prompts": [
+        "Tài liệu và văn bản được quản lý tập trung ra sao?",
+        "Có hỗ trợ phân quyền và lịch sử phiên bản không?"
+      ]
+    },
+    {
+      "key": "report-ai",
+      "assetCode": "FERP-14",
+      "prompts": [
+        "Report AI hỗ trợ lãnh đạo như thế nào?",
+        "Có thể hỏi đáp trực tiếp trên dữ liệu báo cáo không?"
+      ]
+    },
+    {
+      "key": "budget-receivables-alerts",
+      "assetCode": "FERP-15",
+      "prompts": [
+        "Hệ thống cảnh báo vượt ngân sách và công nợ thế nào?",
+        "Có gợi ý hành động xử lý rủi ro không?"
+      ]
+    },
+    {
+      "key": "deployment-integration",
+      "assetCode": "FERP-16",
+      "prompts": [
+        "FinERP có thể triển khai On-premise hay Cloud không?",
+        "Có thể tích hợp với ngân hàng, CRM và chữ ký số không?"
+      ]
+    }
+  ]
+}

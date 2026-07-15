@@ -1,0 +1,42 @@
+[
+  {
+    "code": "contact",
+    "name": "Liên hệ tư vấn",
+    "siteScope": [
+      "corporate"
+    ],
+    "successMessage": "Cảm ơn bạn. Đội ngũ X sẽ liên hệ trong thời gian sớm nhất.",
+    "fields": [
+      "fullName",
+      "company",
+      "jobTitle",
+      "email",
+      "phone",
+      "productInterest",
+      "message"
+    ]
+  },
+  {
+    "code": "demo-request",
+    "name": "Yêu cầu demo",
+    "siteScope": [
+      "corporate",
+      "xbooking",
+      "finerp",
+      "xbuilding",
+      "xai",
+      "xspace"
+    ],
+    "successMessage": "Yêu cầu demo đã được ghi nhận.",
+    "fields": [
+      "fullName",
+      "company",
+      "jobTitle",
+      "email",
+      "phone",
+      "productInterest",
+      "deploymentModel",
+      "message"
+    ]
+  }
+]

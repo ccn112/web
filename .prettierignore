@@ -1,0 +1,8 @@
+node_modules
+.next
+dist
+build
+pnpm-lock.yaml
+X_WEB_PLATFORM_HANDOFF_20260715
+**/payload-types.ts
+**/importMap.js

@@ -1,0 +1,22 @@
+{
+  "name": "@x/shared-types",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./blocks": "./src/blocks.ts",
+    "./chat": "./src/chat.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"(no lint configured for shared-types)\"",
+    "test": "echo \"(no tests)\""
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

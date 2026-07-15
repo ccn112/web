@@ -1,0 +1,110 @@
+{
+  "site": "corporate",
+  "route": "/",
+  "blocks": [
+    {
+      "blockType": "heroSplit",
+      "assetCode": "COR-01",
+      "title": "Công nghệ cho toàn bộ vòng đời bất động sản",
+      "description": "Kết nối bán hàng, quản trị doanh nghiệp, vận hành tài sản, cộng tác nội bộ và AI trên một hệ sinh thái dữ liệu thống nhất.",
+      "primaryCTA": {
+        "label": "Khám phá giải pháp",
+        "href": "/giai-phap"
+      },
+      "secondaryCTA": {
+        "label": "Đặt lịch demo",
+        "href": "/demo"
+      }
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-02",
+      "title": "Hệ sinh thái 5 sản phẩm XTECH",
+      "description": "Năm sản phẩm có thể triển khai độc lập hoặc kết nối thành một bộ giải pháp khép kín.",
+      "listItems": [
+        "XBooking",
+        "FinERP",
+        "XBuilding",
+        "X.AI",
+        "X.Space"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-03",
+      "title": "Một dữ liệu, nhiều ứng dụng, một nền tảng AI",
+      "description": "Ứng dụng nghiệp vụ, dữ liệu dùng chung, AI và tích hợp được kiến trúc đồng bộ.",
+      "listItems": [
+        "Ứng dụng",
+        "Dữ liệu dùng chung",
+        "AI",
+        "Tích hợp"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-04",
+      "title": "Giải pháp theo từng vai trò",
+      "description": "Phục vụ chủ đầu tư, sàn và đại lý, ban quản lý và lãnh đạo doanh nghiệp.",
+      "listItems": [
+        "Chủ đầu tư",
+        "Sàn & Đại lý",
+        "Ban quản lý",
+        "Lãnh đạo"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-05",
+      "title": "Giá trị mang lại cho doanh nghiệp",
+      "description": "Không chỉ là phần mềm, mà là năng lực vận hành và điều hành tốt hơn.",
+      "listItems": [
+        "Doanh thu",
+        "Hiệu quả",
+        "Dữ liệu",
+        "Trải nghiệm",
+        "Quyết định",
+        "Tự động hóa"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-06",
+      "title": "Tư vấn và Digital Blueprint",
+      "description": "Khảo sát, thiết kế lộ trình, triển khai MVP và mở rộng theo từng giai đoạn.",
+      "listItems": [
+        "Business",
+        "Process",
+        "Data",
+        "Technology",
+        "AI"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "COR-07",
+      "title": "Mô hình triển khai linh hoạt",
+      "description": "Có thể triển khai theo SaaS, Private Cloud, On-premise hoặc Hybrid.",
+      "listItems": [
+        "SaaS",
+        "Private Cloud",
+        "On-premise",
+        "Hybrid"
+      ]
+    },
+    {
+      "blockType": "ctaVisual",
+      "assetCode": "COR-08",
+      "title": "Đồng hành cùng XTECH",
+      "description": "Trao đổi với chuyên gia để chọn lộ trình phù hợp cho doanh nghiệp của bạn.",
+      "primaryCTA": {
+        "label": "Đặt lịch tư vấn",
+        "href": "/lien-he"
+      },
+      "secondaryCTA": {
+        "label": "Xem X Real Estate Digital Suite",
+        "href": "/x-real-estate-digital-suite"
+      }
+    }
+  ]
+}

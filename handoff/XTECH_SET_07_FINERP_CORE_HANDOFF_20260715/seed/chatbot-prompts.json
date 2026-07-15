@@ -1,0 +1,69 @@
+{
+  "site": "finerp",
+  "sections": [
+    {
+      "key": "hero",
+      "assetCode": "FERP-01",
+      "prompts": [
+        "FinERP bao gồm những phân hệ nào?",
+        "FinERP phù hợp với doanh nghiệp bất động sản như thế nào?"
+      ]
+    },
+    {
+      "key": "executive-finance-dashboard",
+      "assetCode": "FERP-02",
+      "prompts": [
+        "Lãnh đạo có thể theo dõi những chỉ số tài chính nào?",
+        "Dashboard có cập nhật theo thời gian thực không?"
+      ]
+    },
+    {
+      "key": "cashflow-receivables",
+      "assetCode": "FERP-03",
+      "prompts": [
+        "FinERP quản lý dòng tiền và công nợ ra sao?",
+        "Hệ thống có cảnh báo khoản quá hạn không?"
+      ]
+    },
+    {
+      "key": "budget-vs-actual",
+      "assetCode": "FERP-04",
+      "prompts": [
+        "Budget vs Actual được theo dõi theo những chiều nào?",
+        "Có thể cảnh báo vượt ngân sách không?"
+      ]
+    },
+    {
+      "key": "accounting-documents",
+      "assetCode": "FERP-05",
+      "prompts": [
+        "Quy trình chứng từ và hạch toán được số hóa thế nào?",
+        "Có hỗ trợ phê duyệt nhiều cấp không?"
+      ]
+    },
+    {
+      "key": "procurement-vendors",
+      "assetCode": "FERP-06",
+      "prompts": [
+        "Quy trình mua hàng trong FinERP gồm những bước nào?",
+        "Có thể đánh giá và quản lý nhà cung cấp không?"
+      ]
+    },
+    {
+      "key": "warehouse-assets",
+      "assetCode": "FERP-07",
+      "prompts": [
+        "FinERP quản lý kho và tài sản như thế nào?",
+        "Có thể theo dõi nhiều kho và nhiều nhóm tài sản không?"
+      ]
+    },
+    {
+      "key": "project-cost",
+      "assetCode": "FERP-08",
+      "prompts": [
+        "Project Cost theo dõi ngân sách và chi phí dự án ra sao?",
+        "Cam kết chi khác gì với chi phí thực tế?"
+      ]
+    }
+  ]
+}

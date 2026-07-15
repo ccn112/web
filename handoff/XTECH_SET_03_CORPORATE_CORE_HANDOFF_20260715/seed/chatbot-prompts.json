@@ -1,0 +1,69 @@
+{
+  "site": "corporate",
+  "sections": [
+    {
+      "key": "hero",
+      "assetCode": "COR-01",
+      "prompts": [
+        "XTECH khác gì so với các giải pháp rời rạc?",
+        "Doanh nghiệp nên bắt đầu số hóa từ đâu?"
+      ]
+    },
+    {
+      "key": "ecosystem",
+      "assetCode": "COR-02",
+      "prompts": [
+        "Năm sản phẩm của XTECH liên thông với nhau như thế nào?",
+        "Có thể triển khai từng sản phẩm riêng lẻ không?"
+      ]
+    },
+    {
+      "key": "shared-data-ai",
+      "assetCode": "COR-03",
+      "prompts": [
+        "Một dữ liệu, nhiều ứng dụng nghĩa là gì?",
+        "AI hỗ trợ xuyên suốt hệ sinh thái ra sao?"
+      ]
+    },
+    {
+      "key": "solutions-by-role",
+      "assetCode": "COR-04",
+      "prompts": [
+        "XTECH phù hợp với chủ đầu tư hay ban quản lý?",
+        "Lãnh đạo doanh nghiệp sẽ thấy những gì trên hệ thống?"
+      ]
+    },
+    {
+      "key": "business-value",
+      "assetCode": "COR-05",
+      "prompts": [
+        "XTECH mang lại giá trị gì cho doanh nghiệp?",
+        "Tôi có thể đo hiệu quả triển khai theo cách nào?"
+      ]
+    },
+    {
+      "key": "digital-blueprint",
+      "assetCode": "COR-06",
+      "prompts": [
+        "Quy trình tư vấn và blueprint của XTECH gồm những bước nào?",
+        "Có thể bắt đầu bằng MVP trước không?"
+      ]
+    },
+    {
+      "key": "deployment-models",
+      "assetCode": "COR-07",
+      "prompts": [
+        "SaaS, Private Cloud và On-premise khác nhau thế nào?",
+        "Doanh nghiệp tôi phù hợp với mô hình triển khai nào?"
+      ]
+    },
+    {
+      "key": "cta-demo",
+      "assetCode": "COR-08",
+      "prompts": [
+        "Tôi muốn đặt lịch demo.",
+        "Tôi muốn được tư vấn giải pháp phù hợp."
+      ]
+    }
+  ]
+}

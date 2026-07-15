@@ -1,0 +1,3701 @@
+[
+  {
+    "site": "corporate",
+    "slug": "/",
+    "title": "Hệ sinh thái chuyển đổi số và AI cho bất động sản",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "X kết nối marketing, bán hàng, quản trị doanh nghiệp, vận hành tài sản, cộng tác nội bộ và AI trên một hệ sinh thái thống nhất.",
+    "seo": {
+      "metaTitle": "Hệ sinh thái chuyển đổi số và AI cho bất động sản | X",
+      "metaDescription": "X kết nối marketing, bán hàng, quản trị doanh nghiệp, vận hành tài sản, cộng tác nội bộ và AI trên một hệ sinh thái thống nhất.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Hệ sinh thái chuyển đổi số và AI toàn diện cho ngành bất động sản",
+        "description": "Từ marketing, bán hàng, quản trị nội bộ đến vận hành bất động sản, dữ liệu và AI — linh hoạt triển khai SaaS hoặc On-premise.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "productCards",
+        "title": "5 sản phẩm cốt lõi",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales và Customer Care.",
+            "href": "/san-pham/xbooking"
+          },
+          {
+            "title": "FinERP",
+            "description": "Tài chính, kế toán, nhân sự và quản trị doanh nghiệp.",
+            "href": "/san-pham/finerp"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành chung cư, văn phòng và khu đô thị.",
+            "href": "/san-pham/xbuilding"
+          },
+          {
+            "title": "X.AI",
+            "description": "Nhập liệu, báo cáo, tư vấn và AI Agent.",
+            "href": "/san-pham/xai"
+          },
+          {
+            "title": "X.Space",
+            "description": "Workspace thông minh cho cộng tác nội bộ.",
+            "href": "/san-pham/xspace"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Một chuỗi nghiệp vụ khép kín",
+        "steps": [
+          "Marketing",
+          "Lead & CRM",
+          "Bảng hàng & Booking",
+          "Hợp đồng & Thanh toán",
+          "Bàn giao",
+          "Vận hành",
+          "Chăm sóc",
+          "Tái giao dịch"
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giá trị của hệ sinh thái",
+        "intro": "",
+        "items": [
+          {
+            "title": "Dữ liệu thống nhất",
+            "description": "Một nguồn dữ liệu xuyên suốt vòng đời dự án và khách hàng.",
+            "icon": "database"
+          },
+          {
+            "title": "Quy trình liên thông",
+            "description": "Giảm nhập liệu lặp lại giữa bán hàng, tài chính và vận hành.",
+            "icon": "workflow"
+          },
+          {
+            "title": "AI xuyên suốt",
+            "description": "AI hỗ trợ nhập liệu, báo cáo, tư vấn và khám phá tri thức.",
+            "icon": "sparkles"
+          },
+          {
+            "title": "Triển khai linh hoạt",
+            "description": "Dùng từng sản phẩm, trọn bộ SaaS hoặc On-premise.",
+            "icon": "cloud"
+          }
+        ]
+      },
+      {
+        "blockType": "deploymentCards",
+        "title": "Một hệ sinh thái, nhiều cách triển khai",
+        "items": [
+          {
+            "title": "SaaS Cloud",
+            "description": "Khởi động nhanh, thuê bao linh hoạt, luôn cập nhật."
+          },
+          {
+            "title": "Private Cloud",
+            "description": "Môi trường riêng biệt, kiểm soát dữ liệu và tài nguyên."
+          },
+          {
+            "title": "On-premise",
+            "description": "Toàn quyền hạ tầng, bảo mật và tích hợp chuyên sâu."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Hệ sinh thái X gồm những gì?",
+      "Tôi nên bắt đầu từ sản phẩm nào?",
+      "SaaS và On-premise khác nhau thế nào?",
+      "X.AI kết nối với các sản phẩm ra sao?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/giai-phap",
+    "title": "Giải pháp chuyển đổi số bất động sản",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Giải pháp theo chuỗi nghiệp vụ, đối tượng và mục tiêu kinh doanh.",
+    "seo": {
+      "metaTitle": "Giải pháp chuyển đổi số bất động sản | X",
+      "metaDescription": "Giải pháp theo chuỗi nghiệp vụ, đối tượng và mục tiêu kinh doanh.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Giải pháp chuyển đổi số bất động sản",
+        "description": "Giải pháp theo chuỗi nghiệp vụ, đối tượng và mục tiêu kinh doanh.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Marketing đến bán hàng",
+            "description": "Số hóa hành trình từ chiến dịch, lead đến booking.",
+            "icon": "megaphone"
+          },
+          {
+            "title": "Quản trị doanh nghiệp",
+            "description": "Chuẩn hóa tài chính, nhân sự, mua hàng và dự án.",
+            "icon": "building-2"
+          },
+          {
+            "title": "Vận hành tài sản",
+            "description": "Quản lý cư dân, khách thuê, dịch vụ và bảo trì.",
+            "icon": "wrench"
+          },
+          {
+            "title": "AI & dữ liệu",
+            "description": "Khai thác dữ liệu và tự động hóa quyết định.",
+            "icon": "brain"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Giải pháp chuyển đổi số bất động sản gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham",
+    "title": "Hệ sinh thái sản phẩm X",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Năm sản phẩm độc lập nhưng liên thông thành một bộ giải pháp.",
+    "seo": {
+      "metaTitle": "Hệ sinh thái sản phẩm X | X",
+      "metaDescription": "Năm sản phẩm độc lập nhưng liên thông thành một bộ giải pháp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Hệ sinh thái sản phẩm X",
+        "description": "Năm sản phẩm độc lập nhưng liên thông thành một bộ giải pháp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales, Customer Care.",
+            "icon": "calendar-check"
+          },
+          {
+            "title": "FinERP",
+            "description": "Quản trị doanh nghiệp trên nền ERPNext.",
+            "icon": "landmark"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành bất động sản.",
+            "icon": "building"
+          },
+          {
+            "title": "X.AI",
+            "description": "AI cho nhập liệu, báo cáo và tư vấn.",
+            "icon": "bot"
+          },
+          {
+            "title": "X.Space",
+            "description": "Workspace thông minh trên Mattermost.",
+            "icon": "messages-square"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Hệ sinh thái sản phẩm X gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/dich-vu",
+    "title": "Dịch vụ tư vấn và triển khai",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "X đồng hành từ chiến lược, blueprint đến triển khai và vận hành.",
+    "seo": {
+      "metaTitle": "Dịch vụ tư vấn và triển khai | X",
+      "metaDescription": "X đồng hành từ chiến lược, blueprint đến triển khai và vận hành.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Dịch vụ tư vấn và triển khai",
+        "description": "X đồng hành từ chiến lược, blueprint đến triển khai và vận hành.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Tư vấn chiến lược",
+            "description": "Đánh giá hiện trạng, lộ trình và business case.",
+            "icon": "map"
+          },
+          {
+            "title": "Triển khai sản phẩm",
+            "description": "Khảo sát, cấu hình, chuyển đổi dữ liệu và go-live.",
+            "icon": "rocket"
+          },
+          {
+            "title": "Phát triển & tích hợp",
+            "description": "Tùy biến, API, mobile app, BI và AI Agent.",
+            "icon": "code-2"
+          },
+          {
+            "title": "Vận hành",
+            "description": "Managed service, hỗ trợ ứng dụng và hạ tầng.",
+            "icon": "life-buoy"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Dịch vụ tư vấn và triển khai gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/mo-hinh-trien-khai",
+    "title": "Mô hình triển khai",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "SaaS, Private Cloud, On-premise và Hybrid.",
+    "seo": {
+      "metaTitle": "Mô hình triển khai | X",
+      "metaDescription": "SaaS, Private Cloud, On-premise và Hybrid.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Mô hình triển khai",
+        "description": "SaaS, Private Cloud, On-premise và Hybrid.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "SaaS Cloud",
+            "description": "Nhanh, linh hoạt và tối ưu đầu tư ban đầu.",
+            "icon": "cloud"
+          },
+          {
+            "title": "Private Cloud",
+            "description": "Hạ tầng riêng, tách biệt tài nguyên.",
+            "icon": "shield"
+          },
+          {
+            "title": "On-premise",
+            "description": "Kiểm soát toàn bộ dữ liệu và vận hành.",
+            "icon": "server"
+          },
+          {
+            "title": "Hybrid",
+            "description": "Kết hợp cloud và hạ tầng doanh nghiệp.",
+            "icon": "network"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Mô hình triển khai gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/khach-hang-du-an",
+    "title": "Khách hàng và dự án",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Case study thể hiện bài toán, giải pháp và kết quả định lượng.",
+    "seo": {
+      "metaTitle": "Khách hàng và dự án | X",
+      "metaDescription": "Case study thể hiện bài toán, giải pháp và kết quả định lượng.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Khách hàng và dự án",
+        "description": "Case study thể hiện bài toán, giải pháp và kết quả định lượng.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Chuyển đổi số bán hàng",
+            "description": "Tập trung bảng hàng, lead, booking và hợp đồng.",
+            "icon": "trending-up"
+          },
+          {
+            "title": "Chuẩn hóa quản trị",
+            "description": "Tài chính, nhân sự, mua hàng và báo cáo.",
+            "icon": "bar-chart-3"
+          },
+          {
+            "title": "Vận hành thông minh",
+            "description": "Cư dân, phí, bảo trì và tiện ích.",
+            "icon": "settings"
+          },
+          {
+            "title": "AI doanh nghiệp",
+            "description": "Trợ lý tri thức và báo cáo điều hành.",
+            "icon": "sparkles"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Khách hàng và dự án gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/insights",
+    "title": "Insights về PropTech và AI",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kho tri thức về chuyển đổi số, AI và quản trị bất động sản.",
+    "seo": {
+      "metaTitle": "Insights về PropTech và AI | X",
+      "metaDescription": "Kho tri thức về chuyển đổi số, AI và quản trị bất động sản.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Insights về PropTech và AI",
+        "description": "Kho tri thức về chuyển đổi số, AI và quản trị bất động sản.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "PropTech",
+            "description": "Xu hướng và mô hình nền tảng số.",
+            "icon": "layers"
+          },
+          {
+            "title": "AI trong BĐS",
+            "description": "Use case AI theo chuỗi giá trị.",
+            "icon": "brain-circuit"
+          },
+          {
+            "title": "Quản trị doanh nghiệp",
+            "description": "ERP, dữ liệu và điều hành.",
+            "icon": "briefcase"
+          },
+          {
+            "title": "Smart Building",
+            "description": "IoT, vận hành và trải nghiệm cư dân.",
+            "icon": "radio"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Insights về PropTech và AI gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x",
+    "title": "Về X",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Công ty công nghệ chuyên sâu về chuyển đổi số và AI cho bất động sản.",
+    "seo": {
+      "metaTitle": "Về X | X",
+      "metaDescription": "Công ty công nghệ chuyên sâu về chuyển đổi số và AI cho bất động sản.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Về X",
+        "description": "Công ty công nghệ chuyên sâu về chuyển đổi số và AI cho bất động sản.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Hiểu nghiệp vụ BĐS",
+            "description": "Tư duy end-to-end theo vòng đời dự án và tài sản.",
+            "icon": "home"
+          },
+          {
+            "title": "Năng lực nền tảng",
+            "description": "Sản phẩm liên thông và triển khai đa mô hình.",
+            "icon": "blocks"
+          },
+          {
+            "title": "Đồng hành dài hạn",
+            "description": "Từ tư vấn đến vận hành và cải tiến liên tục.",
+            "icon": "handshake"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Về X gồm những gì?",
+      "Phù hợp với loại doanh nghiệp nào?",
+      "Có triển khai On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/x-real-estate-digital-suite",
+    "title": "X Real Estate Digital Suite",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Trọn bộ năm sản phẩm liên thông trên nền dữ liệu, định danh, tích hợp và AI dùng chung.",
+    "seo": {
+      "metaTitle": "X Real Estate Digital Suite | X",
+      "metaDescription": "Trọn bộ năm sản phẩm liên thông trên nền dữ liệu, định danh, tích hợp và AI dùng chung.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X REAL ESTATE DIGITAL SUITE",
+        "title": "Một hệ sinh thái — Một dữ liệu — Một trải nghiệm — Một nền tảng AI",
+        "description": "Kết nối XBooking, FinERP, XBuilding, X.AI và X.Space để hình thành chuỗi vận hành số khép kín.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "architecture",
+        "title": "Kiến trúc hệ sinh thái",
+        "layers": [
+          {
+            "name": "Experience",
+            "items": [
+              "Website",
+              "Mobile App",
+              "Portal",
+              "Chatbot"
+            ]
+          },
+          {
+            "name": "Business Applications",
+            "items": [
+              "XBooking",
+              "FinERP",
+              "XBuilding",
+              "X.Space"
+            ]
+          },
+          {
+            "name": "AI & Intelligence",
+            "items": [
+              "X.AI",
+              "AI Agent",
+              "BI",
+              "Knowledge"
+            ]
+          },
+          {
+            "name": "Data & Integration",
+            "items": [
+              "Master Data",
+              "API Hub",
+              "SSO",
+              "Event Bus"
+            ]
+          },
+          {
+            "name": "Infrastructure",
+            "items": [
+              "SaaS",
+              "Private Cloud",
+              "On-premise"
+            ]
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình dữ liệu liên thông",
+        "steps": [
+          "Lead từ Marketing",
+          "Phân bổ & tư vấn",
+          "Booking & hợp đồng",
+          "Doanh thu & công nợ",
+          "Bàn giao",
+          "Vận hành",
+          "Chăm sóc & tái bán"
+        ]
+      },
+      {
+        "blockType": "comparisonTable",
+        "title": "Các gói đề xuất",
+        "columns": [
+          "Gói",
+          "Thành phần",
+          "Phù hợp"
+        ],
+        "rows": [
+          [
+            "X Sales Suite",
+            "XBooking + X.AI",
+            "Chủ đầu tư và sàn phân phối"
+          ],
+          [
+            "X Enterprise Suite",
+            "FinERP + X.Space + X.AI",
+            "Doanh nghiệp chuẩn hóa quản trị"
+          ],
+          [
+            "X Property Suite",
+            "XBuilding + FinERP + X.AI",
+            "Công ty quản lý vận hành"
+          ],
+          [
+            "X Real Estate Digital Suite",
+            "Cả 5 sản phẩm",
+            "Tập đoàn và chủ đầu tư quy mô lớn"
+          ]
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá kiến trúc phù hợp với doanh nghiệp",
+        "description": "Nhận đề xuất lộ trình theo hiện trạng và mục tiêu của bạn.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Năm sản phẩm liên thông dữ liệu thế nào?",
+      "Gói nào phù hợp với chủ đầu tư?",
+      "Có thể triển khai từng giai đoạn không?",
+      "Kiến trúc On-premise gồm gì?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham/xbooking",
+    "title": "XBooking",
+    "pageType": "product",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Nền tảng marketing, CRM, bảng hàng, booking, bán hàng và chăm sóc khách hàng cho bất động sản.",
+    "seo": {
+      "metaTitle": "XBooking | X",
+      "metaDescription": "Nền tảng marketing, CRM, bảng hàng, booking, bán hàng và chăm sóc khách hàng cho bất động sản.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SẢN PHẨM X",
+        "title": "XBooking",
+        "description": "Nền tảng marketing, CRM, bảng hàng, booking, bán hàng và chăm sóc khách hàng cho bất động sản.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo XBooking",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Marketing Automation",
+            "description": "Quản lý chiến dịch, nguồn lead và hiệu quả marketing.",
+            "icon": "megaphone"
+          },
+          {
+            "title": "CRM & Lead",
+            "description": "Thu thập, phân bổ, chấm điểm và chăm sóc lead.",
+            "icon": "users"
+          },
+          {
+            "title": "Bảng hàng & Booking",
+            "description": "Quản lý sản phẩm, giỏ hàng, lock và đặt chỗ.",
+            "icon": "grid-3x3"
+          },
+          {
+            "title": "Hợp đồng & Công nợ",
+            "description": "Theo dõi hợp đồng, tiến độ thanh toán và hoa hồng.",
+            "icon": "file-signature"
+          }
+        ]
+      },
+      {
+        "blockType": "integration",
+        "title": "Hoạt động tốt hơn khi kết hợp",
+        "items": [
+          {
+            "title": "FinERP",
+            "description": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành chung cư, văn phòng và khu đô thị"
+          },
+          {
+            "title": "X.AI",
+            "description": "AI cho nhập liệu, báo cáo và tư vấn thông minh"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá XBooking",
+        "description": "Nhận demo và đề xuất triển khai XBooking theo quy mô doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "XBooking giải quyết bài toán gì?",
+      "XBooking tích hợp với các sản phẩm khác thế nào?",
+      "Có SaaS và On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham/finerp",
+    "title": "FinERP",
+    "pageType": "product",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext.",
+    "seo": {
+      "metaTitle": "FinERP | X",
+      "metaDescription": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SẢN PHẨM X",
+        "title": "FinERP",
+        "description": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo FinERP",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Tài chính kế toán",
+            "description": "Sổ sách, ngân sách, dòng tiền và báo cáo.",
+            "icon": "landmark"
+          },
+          {
+            "title": "Nhân sự",
+            "description": "Hồ sơ, chấm công, lương và đánh giá.",
+            "icon": "badge-check"
+          },
+          {
+            "title": "Mua hàng & Kho",
+            "description": "Nhà cung cấp, đơn mua, vật tư và tồn kho.",
+            "icon": "package"
+          },
+          {
+            "title": "Dự án & Chi phí",
+            "description": "Theo dõi tiến độ, ngân sách và hiệu quả.",
+            "icon": "folder-kanban"
+          }
+        ]
+      },
+      {
+        "blockType": "integration",
+        "title": "Hoạt động tốt hơn khi kết hợp",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales và Customer Care cho bất động sản"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành chung cư, văn phòng và khu đô thị"
+          },
+          {
+            "title": "X.AI",
+            "description": "AI cho nhập liệu, báo cáo và tư vấn thông minh"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá FinERP",
+        "description": "Nhận demo và đề xuất triển khai FinERP theo quy mô doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "FinERP giải quyết bài toán gì?",
+      "FinERP tích hợp với các sản phẩm khác thế nào?",
+      "Có SaaS và On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham/xbuilding",
+    "title": "XBuilding",
+    "pageType": "product",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Nền tảng quản lý vận hành chung cư, văn phòng và khu đô thị.",
+    "seo": {
+      "metaTitle": "XBuilding | X",
+      "metaDescription": "Nền tảng quản lý vận hành chung cư, văn phòng và khu đô thị.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SẢN PHẨM X",
+        "title": "XBuilding",
+        "description": "Nền tảng quản lý vận hành chung cư, văn phòng và khu đô thị.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo XBuilding",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Cư dân & Khách thuê",
+            "description": "Hồ sơ, căn hộ, hợp đồng và tương tác.",
+            "icon": "contact"
+          },
+          {
+            "title": "Phí & Công nợ",
+            "description": "Biểu phí, hóa đơn, thanh toán và nhắc nợ.",
+            "icon": "receipt"
+          },
+          {
+            "title": "Bảo trì & Tài sản",
+            "description": "Lịch bảo trì, work order và nhà thầu.",
+            "icon": "wrench"
+          },
+          {
+            "title": "App vận hành",
+            "description": "App cho BQL và cư dân.",
+            "icon": "smartphone"
+          }
+        ]
+      },
+      {
+        "blockType": "integration",
+        "title": "Hoạt động tốt hơn khi kết hợp",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales và Customer Care cho bất động sản"
+          },
+          {
+            "title": "FinERP",
+            "description": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext"
+          },
+          {
+            "title": "X.AI",
+            "description": "AI cho nhập liệu, báo cáo và tư vấn thông minh"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá XBuilding",
+        "description": "Nhận demo và đề xuất triển khai XBuilding theo quy mô doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "XBuilding giải quyết bài toán gì?",
+      "XBuilding tích hợp với các sản phẩm khác thế nào?",
+      "Có SaaS và On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham/xai",
+    "title": "X.AI",
+    "pageType": "product",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Nền tảng AI cho nhập liệu thông minh, báo cáo và tư vấn.",
+    "seo": {
+      "metaTitle": "X.AI | X",
+      "metaDescription": "Nền tảng AI cho nhập liệu thông minh, báo cáo và tư vấn.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SẢN PHẨM X",
+        "title": "X.AI",
+        "description": "Nền tảng AI cho nhập liệu thông minh, báo cáo và tư vấn.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo X.AI",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Document AI",
+            "description": "Đọc, trích xuất và chuẩn hóa dữ liệu tài liệu.",
+            "icon": "scan-text"
+          },
+          {
+            "title": "Report AI",
+            "description": "Tạo báo cáo và phân tích bằng hội thoại.",
+            "icon": "chart-no-axes-combined"
+          },
+          {
+            "title": "Advisory AI",
+            "description": "Tư vấn sản phẩm, quy trình và nghiệp vụ.",
+            "icon": "message-circle"
+          },
+          {
+            "title": "Knowledge AI",
+            "description": "Tìm kiếm và khai thác tri thức nội bộ.",
+            "icon": "book-open"
+          }
+        ]
+      },
+      {
+        "blockType": "integration",
+        "title": "Hoạt động tốt hơn khi kết hợp",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales và Customer Care cho bất động sản"
+          },
+          {
+            "title": "FinERP",
+            "description": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành chung cư, văn phòng và khu đô thị"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá X.AI",
+        "description": "Nhận demo và đề xuất triển khai X.AI theo quy mô doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "X.AI giải quyết bài toán gì?",
+      "X.AI tích hợp với các sản phẩm khác thế nào?",
+      "Có SaaS và On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/san-pham/xspace",
+    "title": "X.Space",
+    "pageType": "product",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Workspace thông minh trên nền Mattermost cho cộng tác nội bộ.",
+    "seo": {
+      "metaTitle": "X.Space | X",
+      "metaDescription": "Workspace thông minh trên nền Mattermost cho cộng tác nội bộ.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SẢN PHẨM X",
+        "title": "X.Space",
+        "description": "Workspace thông minh trên nền Mattermost cho cộng tác nội bộ.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo X.Space",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Chat & Kênh",
+            "description": "Trao đổi theo phòng ban, dự án và chủ đề.",
+            "icon": "messages-square"
+          },
+          {
+            "title": "Workflow & Bot",
+            "description": "Tự động hóa tác vụ ngay trong hội thoại.",
+            "icon": "workflow"
+          },
+          {
+            "title": "Knowledge",
+            "description": "Tìm kiếm tri thức và nội dung đã chia sẻ.",
+            "icon": "search"
+          },
+          {
+            "title": "AI Assistant",
+            "description": "Trợ lý AI tích hợp vào luồng làm việc.",
+            "icon": "bot"
+          }
+        ]
+      },
+      {
+        "blockType": "integration",
+        "title": "Hoạt động tốt hơn khi kết hợp",
+        "items": [
+          {
+            "title": "XBooking",
+            "description": "Marketing, CRM, Booking, Sales và Customer Care cho bất động sản"
+          },
+          {
+            "title": "FinERP",
+            "description": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext"
+          },
+          {
+            "title": "XBuilding",
+            "description": "Quản lý vận hành chung cư, văn phòng và khu đô thị"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Khám phá X.Space",
+        "description": "Nhận demo và đề xuất triển khai X.Space theo quy mô doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "X.Space giải quyết bài toán gì?",
+      "X.Space tích hợp với các sản phẩm khác thế nào?",
+      "Có SaaS và On-premise không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/",
+    "title": "Tăng tốc bán hàng bất động sản trên một nền tảng thống nhất",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý từ marketing, lead, bảng hàng, booking, hợp đồng đến chăm sóc sau bán.",
+    "seo": {
+      "metaTitle": "Tăng tốc bán hàng bất động sản trên một nền tảng thống nhất | XBooking",
+      "metaDescription": "Quản lý từ marketing, lead, bảng hàng, booking, hợp đồng đến chăm sóc sau bán.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "Tăng tốc bán hàng bất động sản trên một nền tảng thống nhất",
+        "description": "Quản lý từ marketing, lead, bảng hàng, booking, hợp đồng đến chăm sóc sau bán.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Marketing & Lead",
+            "description": "Theo dõi nguồn lead, chiến dịch và phân bổ tự động.",
+            "icon": "megaphone"
+          },
+          {
+            "title": "Bảng hàng thời gian thực",
+            "description": "Một nguồn bảng hàng, trạng thái lock và booking nhất quán.",
+            "icon": "layout-grid"
+          },
+          {
+            "title": "Đại lý & Sale",
+            "description": "Quản lý sàn, nhân viên sale, chính sách và hoa hồng.",
+            "icon": "users-round"
+          },
+          {
+            "title": "Customer Care",
+            "description": "Theo dõi hợp đồng, thanh toán và chăm sóc sau bán.",
+            "icon": "heart-handshake"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình giá trị",
+        "steps": [
+          "Marketing & Lead",
+          "Bảng hàng thời gian thực",
+          "Đại lý & Sale",
+          "Customer Care"
+        ]
+      },
+      {
+        "blockType": "relatedInsights",
+        "title": "Tri thức nên khám phá",
+        "items": [
+          {
+            "title": "Hướng dẫn lựa chọn giải pháp",
+            "href": "/insights/huong-dan-lua-chon"
+          },
+          {
+            "title": "Checklist triển khai",
+            "href": "/insights/checklist-trien-khai"
+          },
+          {
+            "title": "Case study điển hình",
+            "href": "/case-study"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xem hệ thống hoạt động trong thực tế",
+        "description": "Đặt lịch demo theo đúng vai trò và nghiệp vụ của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "XBooking khác CRM thông thường thế nào?",
+      "Quy trình Lead đến Booking",
+      "AI hỗ trợ sale ra sao?",
+      "Đặt lịch demo XBooking"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/",
+    "title": "Quản trị doanh nghiệp hợp nhất, minh bạch và theo thời gian thực",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tài chính, kế toán, nhân sự, mua hàng, kho, tài sản và dự án trên nền ERPNext.",
+    "seo": {
+      "metaTitle": "Quản trị doanh nghiệp hợp nhất, minh bạch và theo thời gian thực | FinERP",
+      "metaDescription": "Tài chính, kế toán, nhân sự, mua hàng, kho, tài sản và dự án trên nền ERPNext.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "FinERP",
+        "title": "Quản trị doanh nghiệp hợp nhất, minh bạch và theo thời gian thực",
+        "description": "Tài chính, kế toán, nhân sự, mua hàng, kho, tài sản và dự án trên nền ERPNext.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Tài chính minh bạch",
+            "description": "Theo dõi dòng tiền, ngân sách và báo cáo quản trị.",
+            "icon": "wallet-cards"
+          },
+          {
+            "title": "Quy trình chuẩn hóa",
+            "description": "Phê duyệt và kiểm soát xuyên phòng ban.",
+            "icon": "git-branch"
+          },
+          {
+            "title": "Dữ liệu tập trung",
+            "description": "Giảm bảng tính rời rạc và nhập liệu trùng lặp.",
+            "icon": "database"
+          },
+          {
+            "title": "Triển khai linh hoạt",
+            "description": "SaaS, private cloud hoặc on-premise.",
+            "icon": "server-cog"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình giá trị",
+        "steps": [
+          "Tài chính minh bạch",
+          "Quy trình chuẩn hóa",
+          "Dữ liệu tập trung",
+          "Triển khai linh hoạt"
+        ]
+      },
+      {
+        "blockType": "relatedInsights",
+        "title": "Tri thức nên khám phá",
+        "items": [
+          {
+            "title": "Hướng dẫn lựa chọn giải pháp",
+            "href": "/insights/huong-dan-lua-chon"
+          },
+          {
+            "title": "Checklist triển khai",
+            "href": "/insights/checklist-trien-khai"
+          },
+          {
+            "title": "Case study điển hình",
+            "href": "/case-study"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xem hệ thống hoạt động trong thực tế",
+        "description": "Đặt lịch demo theo đúng vai trò và nghiệp vụ của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "FinERP gồm những phân hệ nào?",
+      "Có triển khai on-premise không?",
+      "FinERP tích hợp XBooking thế nào?",
+      "Đặt lịch demo FinERP"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/",
+    "title": "Vận hành bất động sản thông minh và lấy khách hàng làm trung tâm",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý chung cư, văn phòng và khu đô thị từ một nền tảng web và mobile.",
+    "seo": {
+      "metaTitle": "Vận hành bất động sản thông minh và lấy khách hàng làm trung tâm | XBuilding",
+      "metaDescription": "Quản lý chung cư, văn phòng và khu đô thị từ một nền tảng web và mobile.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBuilding",
+        "title": "Vận hành bất động sản thông minh và lấy khách hàng làm trung tâm",
+        "description": "Quản lý chung cư, văn phòng và khu đô thị từ một nền tảng web và mobile.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Quản lý cư dân",
+            "description": "Hồ sơ, căn hộ, phương tiện và tương tác.",
+            "icon": "contact-round"
+          },
+          {
+            "title": "Thu phí thông minh",
+            "description": "Biểu phí, hóa đơn, công nợ và thanh toán.",
+            "icon": "badge-dollar-sign"
+          },
+          {
+            "title": "Bảo trì chủ động",
+            "description": "Tài sản, lịch bảo trì và xử lý sự cố.",
+            "icon": "clipboard-check"
+          },
+          {
+            "title": "Trải nghiệm số",
+            "description": "App cư dân, app BQL và tiện ích trực tuyến.",
+            "icon": "smartphone"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình giá trị",
+        "steps": [
+          "Quản lý cư dân",
+          "Thu phí thông minh",
+          "Bảo trì chủ động",
+          "Trải nghiệm số"
+        ]
+      },
+      {
+        "blockType": "relatedInsights",
+        "title": "Tri thức nên khám phá",
+        "items": [
+          {
+            "title": "Hướng dẫn lựa chọn giải pháp",
+            "href": "/insights/huong-dan-lua-chon"
+          },
+          {
+            "title": "Checklist triển khai",
+            "href": "/insights/checklist-trien-khai"
+          },
+          {
+            "title": "Case study điển hình",
+            "href": "/case-study"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xem hệ thống hoạt động trong thực tế",
+        "description": "Đặt lịch demo theo đúng vai trò và nghiệp vụ của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "XBuilding phù hợp loại hình nào?",
+      "Quản lý phí và công nợ ra sao?",
+      "App cư dân có gì?",
+      "Đặt lịch demo XBuilding"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/",
+    "title": "Đưa AI vào quy trình thực tế của doanh nghiệp",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Nhập liệu thông minh, báo cáo tự động, tư vấn và khai thác tri thức bằng hội thoại.",
+    "seo": {
+      "metaTitle": "Đưa AI vào quy trình thực tế của doanh nghiệp | X.AI",
+      "metaDescription": "Nhập liệu thông minh, báo cáo tự động, tư vấn và khai thác tri thức bằng hội thoại.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.AI",
+        "title": "Đưa AI vào quy trình thực tế của doanh nghiệp",
+        "description": "Nhập liệu thông minh, báo cáo tự động, tư vấn và khai thác tri thức bằng hội thoại.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Document AI",
+            "description": "Trích xuất dữ liệu từ hợp đồng, biểu mẫu và chứng từ.",
+            "icon": "scan-line"
+          },
+          {
+            "title": "Report AI",
+            "description": "Sinh báo cáo và giải thích chỉ số bằng ngôn ngữ tự nhiên.",
+            "icon": "chart-spline"
+          },
+          {
+            "title": "Advisory AI",
+            "description": "Tư vấn theo dữ liệu sản phẩm và quy trình đã duyệt.",
+            "icon": "messages-square"
+          },
+          {
+            "title": "Knowledge AI",
+            "description": "Hỏi đáp trên kho tri thức doanh nghiệp.",
+            "icon": "library-big"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình giá trị",
+        "steps": [
+          "Document AI",
+          "Report AI",
+          "Advisory AI",
+          "Knowledge AI"
+        ]
+      },
+      {
+        "blockType": "relatedInsights",
+        "title": "Tri thức nên khám phá",
+        "items": [
+          {
+            "title": "Hướng dẫn lựa chọn giải pháp",
+            "href": "/insights/huong-dan-lua-chon"
+          },
+          {
+            "title": "Checklist triển khai",
+            "href": "/insights/checklist-trien-khai"
+          },
+          {
+            "title": "Case study điển hình",
+            "href": "/case-study"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xem hệ thống hoạt động trong thực tế",
+        "description": "Đặt lịch demo theo đúng vai trò và nghiệp vụ của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "X.AI có những nhóm giải pháp nào?",
+      "AI nhập liệu hoạt động ra sao?",
+      "AI báo cáo cho lãnh đạo",
+      "Đặt lịch demo X.AI"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xspace",
+    "slug": "/",
+    "title": "Không gian làm việc thông minh cho doanh nghiệp hiện đại",
+    "pageType": "home",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kết nối con người, hội thoại, workflow và AI trên nền Mattermost.",
+    "seo": {
+      "metaTitle": "Không gian làm việc thông minh cho doanh nghiệp hiện đại | X.Space",
+      "metaDescription": "Kết nối con người, hội thoại, workflow và AI trên nền Mattermost.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.Space",
+        "title": "Không gian làm việc thông minh cho doanh nghiệp hiện đại",
+        "description": "Kết nối con người, hội thoại, workflow và AI trên nền Mattermost.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Cộng tác tập trung",
+            "description": "Kênh phòng ban, dự án và nhóm chuyên môn.",
+            "icon": "users"
+          },
+          {
+            "title": "Workflow trong chat",
+            "description": "Phê duyệt, bot và tự động hóa ngay trong hội thoại.",
+            "icon": "workflow"
+          },
+          {
+            "title": "Tri thức dễ tìm",
+            "description": "Tìm kiếm nội dung, file và quyết định đã trao đổi.",
+            "icon": "search-check"
+          },
+          {
+            "title": "AI đồng hành",
+            "description": "Tóm tắt, hỏi đáp và gợi ý hành động tiếp theo.",
+            "icon": "sparkles"
+          }
+        ]
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Hành trình giá trị",
+        "steps": [
+          "Cộng tác tập trung",
+          "Workflow trong chat",
+          "Tri thức dễ tìm",
+          "AI đồng hành"
+        ]
+      },
+      {
+        "blockType": "relatedInsights",
+        "title": "Tri thức nên khám phá",
+        "items": [
+          {
+            "title": "Hướng dẫn lựa chọn giải pháp",
+            "href": "/insights/huong-dan-lua-chon"
+          },
+          {
+            "title": "Checklist triển khai",
+            "href": "/insights/checklist-trien-khai"
+          },
+          {
+            "title": "Case study điển hình",
+            "href": "/case-study"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xem hệ thống hoạt động trong thực tế",
+        "description": "Đặt lịch demo theo đúng vai trò và nghiệp vụ của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "X.Space khác chat nội bộ thế nào?",
+      "Mattermost được tùy biến ra sao?",
+      "X.Space tích hợp hệ sinh thái X",
+      "Đặt lịch demo X.Space"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/marketing-automation",
+    "title": "Marketing Automation cho bất động sản",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tập trung chiến dịch, nguồn lead, ngân sách và hiệu quả chuyển đổi.",
+    "seo": {
+      "metaTitle": "Marketing Automation cho bất động sản | XBooking",
+      "metaDescription": "Tập trung chiến dịch, nguồn lead, ngân sách và hiệu quả chuyển đổi.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "Marketing Automation cho bất động sản",
+        "description": "Tập trung chiến dịch, nguồn lead, ngân sách và hiệu quả chuyển đổi.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Quản lý chiến dịch",
+            "description": "Theo dõi kênh, ngân sách, nội dung và KPI.",
+            "icon": "megaphone"
+          },
+          {
+            "title": "Thu lead đa nguồn",
+            "description": "Website, landing page, sự kiện, đại lý và tích hợp API.",
+            "icon": "inbox"
+          },
+          {
+            "title": "Phân bổ tự động",
+            "description": "Theo dự án, khu vực, nhóm sale và SLA.",
+            "icon": "shuffle"
+          },
+          {
+            "title": "Đo hiệu quả",
+            "description": "Chi phí/lead, tỷ lệ chuyển đổi và doanh thu theo nguồn.",
+            "icon": "chart-column"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Marketing Automation cho bất động sản giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/crm-lead",
+    "title": "CRM và quản lý Lead bất động sản",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Chuẩn hóa từ tiếp nhận, phân bổ, tư vấn đến chuyển đổi.",
+    "seo": {
+      "metaTitle": "CRM và quản lý Lead bất động sản | XBooking",
+      "metaDescription": "Chuẩn hóa từ tiếp nhận, phân bổ, tư vấn đến chuyển đổi.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "CRM và quản lý Lead bất động sản",
+        "description": "Chuẩn hóa từ tiếp nhận, phân bổ, tư vấn đến chuyển đổi.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Lead 360",
+            "description": "Lịch sử tương tác, nhu cầu và mức độ quan tâm.",
+            "icon": "user-round-search"
+          },
+          {
+            "title": "Lead Scoring",
+            "description": "Chấm điểm theo hành vi và dữ liệu nghiệp vụ.",
+            "icon": "gauge"
+          },
+          {
+            "title": "Sales Pipeline",
+            "description": "Kiểm soát từng giai đoạn chăm sóc.",
+            "icon": "funnel"
+          },
+          {
+            "title": "SLA chăm sóc",
+            "description": "Cảnh báo lead chưa xử lý hoặc sắp quá hạn.",
+            "icon": "alarm-clock"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "CRM và quản lý Lead bất động sản giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/bang-hang-booking",
+    "title": "Bảng hàng và Booking thời gian thực",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Một nguồn dữ liệu sản phẩm, giá, trạng thái và chính sách bán hàng.",
+    "seo": {
+      "metaTitle": "Bảng hàng và Booking thời gian thực | XBooking",
+      "metaDescription": "Một nguồn dữ liệu sản phẩm, giá, trạng thái và chính sách bán hàng.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "Bảng hàng và Booking thời gian thực",
+        "description": "Một nguồn dữ liệu sản phẩm, giá, trạng thái và chính sách bán hàng.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Inventory tập trung",
+            "description": "Quản lý dự án, căn, giá và trạng thái.",
+            "icon": "layout-grid"
+          },
+          {
+            "title": "Lock & Booking",
+            "description": "Giữ chỗ, đặt chỗ và kiểm soát xung đột.",
+            "icon": "lock-keyhole"
+          },
+          {
+            "title": "Chính sách bán",
+            "description": "Phiên bản chính sách, ưu đãi và điều kiện áp dụng.",
+            "icon": "badge-percent"
+          },
+          {
+            "title": "Dashboard mở bán",
+            "description": "Theo dõi hấp thụ, tồn kho và hiệu suất sale.",
+            "icon": "chart-candlestick"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Bảng hàng và Booking thời gian thực giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/customer-care",
+    "title": "Customer Care sau bán",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kết nối hợp đồng, thanh toán, thông báo và chăm sóc khách hàng.",
+    "seo": {
+      "metaTitle": "Customer Care sau bán | XBooking",
+      "metaDescription": "Kết nối hợp đồng, thanh toán, thông báo và chăm sóc khách hàng.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "Customer Care sau bán",
+        "description": "Kết nối hợp đồng, thanh toán, thông báo và chăm sóc khách hàng.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Hồ sơ khách hàng",
+            "description": "Thông tin mua, hợp đồng và lịch sử giao dịch.",
+            "icon": "contact"
+          },
+          {
+            "title": "Tiến độ thanh toán",
+            "description": "Lịch thu, trạng thái và nhắc thanh toán.",
+            "icon": "calendar-clock"
+          },
+          {
+            "title": "Yêu cầu hỗ trợ",
+            "description": "Ticket, phản hồi và SLA xử lý.",
+            "icon": "ticket-check"
+          },
+          {
+            "title": "Thông báo dự án",
+            "description": "Tiến độ, sự kiện và tài liệu liên quan.",
+            "icon": "bell"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Customer Care sau bán giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/phan-he/tai-chinh-ke-toan",
+    "title": "Tài chính và kế toán",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản trị sổ sách, dòng tiền, ngân sách, công nợ và báo cáo.",
+    "seo": {
+      "metaTitle": "Tài chính và kế toán | FinERP",
+      "metaDescription": "Quản trị sổ sách, dòng tiền, ngân sách, công nợ và báo cáo.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "FinERP",
+        "title": "Tài chính và kế toán",
+        "description": "Quản trị sổ sách, dòng tiền, ngân sách, công nợ và báo cáo.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Sổ cái & chứng từ",
+            "description": "Chuẩn hóa hạch toán và kiểm soát chứng từ.",
+            "icon": "book-copy"
+          },
+          {
+            "title": "Ngân sách",
+            "description": "Lập, phân bổ và cảnh báo vượt ngân sách.",
+            "icon": "circle-dollar-sign"
+          },
+          {
+            "title": "Công nợ",
+            "description": "Theo dõi phải thu, phải trả và tuổi nợ.",
+            "icon": "receipt-text"
+          },
+          {
+            "title": "Báo cáo quản trị",
+            "description": "Dashboard tài chính và phân tích theo chiều dữ liệu.",
+            "icon": "chart-pie"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Tài chính và kế toán giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/phan-he/nhan-su",
+    "title": "Quản trị nhân sự",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Hồ sơ, chấm công, lương, đánh giá và phát triển nhân sự.",
+    "seo": {
+      "metaTitle": "Quản trị nhân sự | FinERP",
+      "metaDescription": "Hồ sơ, chấm công, lương, đánh giá và phát triển nhân sự.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "FinERP",
+        "title": "Quản trị nhân sự",
+        "description": "Hồ sơ, chấm công, lương, đánh giá và phát triển nhân sự.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Hồ sơ nhân sự",
+            "description": "Cơ cấu, vị trí và lịch sử làm việc.",
+            "icon": "contact-round"
+          },
+          {
+            "title": "Chấm công & nghỉ phép",
+            "description": "Ca làm, đơn từ và phê duyệt.",
+            "icon": "calendar-days"
+          },
+          {
+            "title": "Lương & phúc lợi",
+            "description": "Công thức lương và kỳ trả lương.",
+            "icon": "badge-dollar-sign"
+          },
+          {
+            "title": "Đánh giá",
+            "description": "Mục tiêu, năng lực và hiệu suất.",
+            "icon": "target"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Quản trị nhân sự giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/trien-khai",
+    "title": "Triển khai FinERP",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Lộ trình khảo sát, chuẩn hóa, cấu hình, chuyển đổi dữ liệu và go-live.",
+    "seo": {
+      "metaTitle": "Triển khai FinERP | FinERP",
+      "metaDescription": "Lộ trình khảo sát, chuẩn hóa, cấu hình, chuyển đổi dữ liệu và go-live.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "FinERP",
+        "title": "Triển khai FinERP",
+        "description": "Lộ trình khảo sát, chuẩn hóa, cấu hình, chuyển đổi dữ liệu và go-live.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Blueprint",
+            "description": "Thiết kế quy trình và dữ liệu mục tiêu.",
+            "icon": "map"
+          },
+          {
+            "title": "Configuration",
+            "description": "Cấu hình phân hệ và phân quyền.",
+            "icon": "settings-2"
+          },
+          {
+            "title": "Migration",
+            "description": "Làm sạch và chuyển đổi dữ liệu.",
+            "icon": "database-backup"
+          },
+          {
+            "title": "Go-live & Hypercare",
+            "description": "Đào tạo, vận hành thử và hỗ trợ sau go-live.",
+            "icon": "rocket"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Triển khai FinERP giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/loai-hinh/chung-cu",
+    "title": "Quản lý vận hành chung cư",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Số hóa hoạt động Ban quản lý và trải nghiệm cư dân.",
+    "seo": {
+      "metaTitle": "Quản lý vận hành chung cư | XBuilding",
+      "metaDescription": "Số hóa hoạt động Ban quản lý và trải nghiệm cư dân.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBuilding",
+        "title": "Quản lý vận hành chung cư",
+        "description": "Số hóa hoạt động Ban quản lý và trải nghiệm cư dân.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Cư dân & căn hộ",
+            "description": "Hồ sơ, thành viên, phương tiện và thẻ.",
+            "icon": "contact"
+          },
+          {
+            "title": "Phí dịch vụ",
+            "description": "Phát sinh, hóa đơn, công nợ và thanh toán.",
+            "icon": "receipt"
+          },
+          {
+            "title": "Phản ánh",
+            "description": "Tiếp nhận, phân công và đánh giá xử lý.",
+            "icon": "message-square-warning"
+          },
+          {
+            "title": "Tiện ích",
+            "description": "Đặt lịch, đăng ký và quản lý dịch vụ.",
+            "icon": "calendar-check-2"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Quản lý vận hành chung cư giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/loai-hinh/van-phong",
+    "title": "Quản lý tòa nhà văn phòng",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý khách thuê, hợp đồng, diện tích, dịch vụ và vận hành kỹ thuật.",
+    "seo": {
+      "metaTitle": "Quản lý tòa nhà văn phòng | XBuilding",
+      "metaDescription": "Quản lý khách thuê, hợp đồng, diện tích, dịch vụ và vận hành kỹ thuật.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBuilding",
+        "title": "Quản lý tòa nhà văn phòng",
+        "description": "Quản lý khách thuê, hợp đồng, diện tích, dịch vụ và vận hành kỹ thuật.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Khách thuê",
+            "description": "Doanh nghiệp, người dùng và quyền ra vào.",
+            "icon": "building-2"
+          },
+          {
+            "title": "Hợp đồng thuê",
+            "description": "Diện tích, đơn giá, kỳ hạn và điều chỉnh.",
+            "icon": "file-signature"
+          },
+          {
+            "title": "Dịch vụ",
+            "description": "Điện nước, điều hòa, ngoài giờ và tiện ích.",
+            "icon": "concierge-bell"
+          },
+          {
+            "title": "Kỹ thuật",
+            "description": "Tài sản, bảo trì và work order.",
+            "icon": "wrench"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Quản lý tòa nhà văn phòng giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/loai-hinh/khu-do-thi",
+    "title": "Quản lý khu đô thị",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Điều hành đa dự án, phân khu, hạ tầng và dịch vụ cộng đồng.",
+    "seo": {
+      "metaTitle": "Quản lý khu đô thị | XBuilding",
+      "metaDescription": "Điều hành đa dự án, phân khu, hạ tầng và dịch vụ cộng đồng.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBuilding",
+        "title": "Quản lý khu đô thị",
+        "description": "Điều hành đa dự án, phân khu, hạ tầng và dịch vụ cộng đồng.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Đa phân khu",
+            "description": "Quản lý dự án, tòa, khu thấp tầng và tiện ích.",
+            "icon": "map-pinned"
+          },
+          {
+            "title": "Hạ tầng kỹ thuật",
+            "description": "Thiết bị, cảnh quan, vệ sinh và an ninh.",
+            "icon": "hard-hat"
+          },
+          {
+            "title": "Cộng đồng",
+            "description": "Tin tức, sự kiện và phản ánh cư dân.",
+            "icon": "users"
+          },
+          {
+            "title": "Điều hành tập trung",
+            "description": "Dashboard theo khu vực và đơn vị vận hành.",
+            "icon": "monitor-cog"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Quản lý khu đô thị giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giai-phap/document-ai",
+    "title": "Document AI",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tự động đọc, trích xuất, kiểm tra và nhập dữ liệu từ tài liệu.",
+    "seo": {
+      "metaTitle": "Document AI | X.AI",
+      "metaDescription": "Tự động đọc, trích xuất, kiểm tra và nhập dữ liệu từ tài liệu.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.AI",
+        "title": "Document AI",
+        "description": "Tự động đọc, trích xuất, kiểm tra và nhập dữ liệu từ tài liệu.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "OCR & Extraction",
+            "description": "Nhận diện trường dữ liệu trong biểu mẫu và chứng từ.",
+            "icon": "scan-text"
+          },
+          {
+            "title": "Validation",
+            "description": "Đối chiếu quy tắc, dữ liệu master và ngoại lệ.",
+            "icon": "shield-check"
+          },
+          {
+            "title": "Human Review",
+            "description": "Giao diện duyệt trước khi ghi nhận.",
+            "icon": "user-check"
+          },
+          {
+            "title": "Integration",
+            "description": "Đẩy dữ liệu sang XBooking, FinERP hoặc hệ thống khác.",
+            "icon": "plug"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Document AI giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giai-phap/report-ai",
+    "title": "Report AI",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tạo, giải thích và phân phối báo cáo bằng hội thoại.",
+    "seo": {
+      "metaTitle": "Report AI | X.AI",
+      "metaDescription": "Tạo, giải thích và phân phối báo cáo bằng hội thoại.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.AI",
+        "title": "Report AI",
+        "description": "Tạo, giải thích và phân phối báo cáo bằng hội thoại.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Ask Your Data",
+            "description": "Đặt câu hỏi bằng ngôn ngữ tự nhiên.",
+            "icon": "message-circle-question"
+          },
+          {
+            "title": "Narrative Report",
+            "description": "Tự động viết nhận định và điểm bất thường.",
+            "icon": "file-chart-column"
+          },
+          {
+            "title": "Scheduled Brief",
+            "description": "Gửi bản tin điều hành theo lịch.",
+            "icon": "send"
+          },
+          {
+            "title": "Guardrails",
+            "description": "Kiểm soát nguồn, quyền và phạm vi dữ liệu.",
+            "icon": "shield"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Report AI giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giai-phap/knowledge-ai",
+    "title": "Knowledge AI",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Xây dựng trợ lý hỏi đáp trên kho tri thức đã được phê duyệt.",
+    "seo": {
+      "metaTitle": "Knowledge AI | X.AI",
+      "metaDescription": "Xây dựng trợ lý hỏi đáp trên kho tri thức đã được phê duyệt.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.AI",
+        "title": "Knowledge AI",
+        "description": "Xây dựng trợ lý hỏi đáp trên kho tri thức đã được phê duyệt.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "RAG",
+            "description": "Tìm kiếm ngữ nghĩa và sinh câu trả lời có nguồn.",
+            "icon": "search-code"
+          },
+          {
+            "title": "Knowledge Governance",
+            "description": "Phân loại, chủ sở hữu và thời hạn hiệu lực.",
+            "icon": "library"
+          },
+          {
+            "title": "Prompt Library",
+            "description": "Gợi ý câu hỏi theo vai trò và ngữ cảnh.",
+            "icon": "list-checks"
+          },
+          {
+            "title": "Analytics",
+            "description": "Theo dõi câu hỏi và khoảng trống tri thức.",
+            "icon": "chart-no-axes-column-increasing"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Knowledge AI giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xspace",
+    "slug": "/workspace",
+    "title": "Workspace thông minh",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Không gian làm việc số theo tổ chức, phòng ban và dự án.",
+    "seo": {
+      "metaTitle": "Workspace thông minh | X.Space",
+      "metaDescription": "Không gian làm việc số theo tổ chức, phòng ban và dự án.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.Space",
+        "title": "Workspace thông minh",
+        "description": "Không gian làm việc số theo tổ chức, phòng ban và dự án.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Kênh làm việc",
+            "description": "Kênh công khai, riêng tư và nhóm dự án.",
+            "icon": "messages-square"
+          },
+          {
+            "title": "File & Search",
+            "description": "Chia sẻ và tìm kiếm nội dung tập trung.",
+            "icon": "folder-search"
+          },
+          {
+            "title": "Thông báo",
+            "description": "Tùy chỉnh thông báo theo mức độ ưu tiên.",
+            "icon": "bell-ring"
+          },
+          {
+            "title": "Mobile & Web",
+            "description": "Làm việc xuyên thiết bị.",
+            "icon": "monitor-smartphone"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Workspace thông minh giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xspace",
+    "slug": "/workflow-bot",
+    "title": "Workflow và Bot",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đưa biểu mẫu, phê duyệt và tự động hóa vào hội thoại.",
+    "seo": {
+      "metaTitle": "Workflow và Bot | X.Space",
+      "metaDescription": "Đưa biểu mẫu, phê duyệt và tự động hóa vào hội thoại.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.Space",
+        "title": "Workflow và Bot",
+        "description": "Đưa biểu mẫu, phê duyệt và tự động hóa vào hội thoại.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Interactive Message",
+            "description": "Nút, biểu mẫu và hành động trong chat.",
+            "icon": "mouse-pointer-click"
+          },
+          {
+            "title": "Approval Bot",
+            "description": "Trình duyệt và phản hồi ngay trong kênh.",
+            "icon": "badge-check"
+          },
+          {
+            "title": "System Bot",
+            "description": "Thông báo từ XBooking, FinERP và XBuilding.",
+            "icon": "bot-message-square"
+          },
+          {
+            "title": "Webhook & API",
+            "description": "Kết nối quy trình và hệ thống bên ngoài.",
+            "icon": "webhook"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "Workflow và Bot giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xspace",
+    "slug": "/ai-assistant",
+    "title": "AI Assistant trong X.Space",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tóm tắt, hỏi đáp, soạn thảo và gợi ý hành động ngay trong không gian cộng tác.",
+    "seo": {
+      "metaTitle": "AI Assistant trong X.Space | X.Space",
+      "metaDescription": "Tóm tắt, hỏi đáp, soạn thảo và gợi ý hành động ngay trong không gian cộng tác.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.Space",
+        "title": "AI Assistant trong X.Space",
+        "description": "Tóm tắt, hỏi đáp, soạn thảo và gợi ý hành động ngay trong không gian cộng tác.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem tính năng",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Tóm tắt hội thoại",
+            "description": "Nắm nhanh quyết định và việc cần làm.",
+            "icon": "list-collapse"
+          },
+          {
+            "title": "Hỏi đáp tri thức",
+            "description": "Tìm câu trả lời trong nội dung được phép.",
+            "icon": "circle-help"
+          },
+          {
+            "title": "Soạn thảo",
+            "description": "Viết thông báo, biên bản và nội dung công việc.",
+            "icon": "pen-line"
+          },
+          {
+            "title": "Next Best Action",
+            "description": "Gợi ý bước tiếp theo theo ngữ cảnh.",
+            "icon": "route"
+          }
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "Giải pháp có thể triển khai SaaS không?",
+            "answer": "Có. X hỗ trợ SaaS, Private Cloud và On-premise tùy yêu cầu."
+          },
+          {
+            "question": "Có thể tích hợp hệ thống hiện hữu không?",
+            "answer": "Có thể tích hợp qua API, file trao đổi hoặc middleware theo phạm vi dự án."
+          },
+          {
+            "question": "Thời gian triển khai phụ thuộc yếu tố nào?",
+            "answer": "Phụ thuộc phạm vi, dữ liệu, mức tùy biến, tích hợp và khả năng tham gia của đội dự án."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
+        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Yêu cầu demo",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [
+      "AI Assistant trong X.Space giải quyết pain point nào?",
+      "Quy trình sử dụng ra sao?",
+      "Có thể tích hợp hệ thống hiện tại không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | X",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X Technology",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | XBooking",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBooking",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | FinERP",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "FinERP",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | XBuilding",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "XBuilding",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | X.AI",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.AI",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "xspace",
+    "slug": "/demo",
+    "title": "Đặt lịch Demo",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Đặt lịch Demo | X.Space",
+      "metaDescription": "Đăng ký demo theo sản phẩm, vai trò và bài toán doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X.Space",
+        "title": "Xem giải pháp hoạt động trong thực tế",
+        "description": "Hãy cho chúng tôi biết nhu cầu để buổi demo tập trung đúng nghiệp vụ của bạn.",
+        "primaryCTA": {
+          "label": "Đăng ký ngay",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Xem sản phẩm",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "demo-request",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "deploymentModel",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi cần chuẩn bị gì cho buổi demo?",
+      "Demo có thể theo quy trình riêng không?"
+    ],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/lien-he",
+    "title": "Liên hệ X",
+    "pageType": "form",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kết nối với đội ngũ tư vấn của X.",
+    "seo": {
+      "metaTitle": "Liên hệ X | X",
+      "metaDescription": "Kết nối với đội ngũ tư vấn của X.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "X TECHNOLOGY",
+        "title": "Trao đổi với chuyên gia chuyển đổi số bất động sản",
+        "description": "Nhận tư vấn sơ bộ về sản phẩm, lộ trình và mô hình triển khai.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá giải pháp",
+          "href": "#overview"
+        }
+      },
+      {
+        "blockType": "leadForm",
+        "formCode": "contact",
+        "fields": [
+          "fullName",
+          "company",
+          "jobTitle",
+          "email",
+          "phone",
+          "productInterest",
+          "message"
+        ]
+      }
+    ],
+    "suggestedPrompts": [
+      "Tôi nên chọn sản phẩm nào?",
+      "Có tư vấn hiện trạng không?"
+    ],
+    "relatedPages": []
+  }
+]

@@ -1,0 +1,7 @@
+﻿Code,Title,File,Route,Section,Ratio
+XBK-09,Ma trận bảng hàng,xbk-09-inventory-matrix.png,/giai-phap/bang-hang,inventory-matrix,4:3
+XBK-10,Chi tiết sản phẩm,xbk-10-property-detail.png,/giai-phap/bang-hang,property-detail,4:3
+XBK-11,Giữ chỗ và Booking,xbk-11-lock-and-booking.png,/giai-phap/booking-bat-dong-san,lock-and-booking,4:3
+XBK-12,Phê duyệt Booking,xbk-12-booking-approval.png,/giai-phap/booking-bat-dong-san,booking-approval,4:3
+XBK-15,Hợp đồng và tiến độ thanh toán,xbk-15-contract-payment-progress.png,/giai-phap/hop-dong-thanh-toan,contract-payment-progress,4:3
+XBK-16,Chăm sóc khách hàng sau bán,xbk-16-customer-care.png,/giai-phap/cham-soc-khach-hang,customer-care,4:3

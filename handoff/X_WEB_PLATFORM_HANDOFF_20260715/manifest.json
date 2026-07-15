@@ -1,0 +1,32 @@
+{
+  "name": "X Web Platform Handoff",
+  "version": "2026.07.15",
+  "sites": 6,
+  "pages": 42,
+  "posts": 3,
+  "files": [
+    "README.md",
+    "docs/01_PRODUCT_SCOPE.md",
+    "docs/02_ARCHITECTURE.md",
+    "docs/03_CONTENT_MODEL.md",
+    "docs/04_PAGE_BLOCKS.md",
+    "docs/05_AI_CHATBOT.md",
+    "docs/06_IMPLEMENTATION_PLAN.md",
+    "docs/07_SITEMAP.md",
+    "docs/08_THEME_REPO_RECOMMENDATIONS.md",
+    "seed/sites.json",
+    "seed/menus.json",
+    "seed/pages.json",
+    "seed/posts.json",
+    "seed/forms.json",
+    "seed/prompt-sets.json",
+    "db/schema.sql",
+    "claude/CLAUDE.md",
+    "claude/MASTER_PROMPT.md",
+    "claude/ACCEPTANCE_CRITERIA.md",
+    "image_plan/IMAGE_PRODUCTION_PLAN.md",
+    "image_plan/IMAGE_PROMPTS.md",
+    "src_examples/site-resolution.ts",
+    "src_examples/chat-route-contract.ts"
+  ]
+}

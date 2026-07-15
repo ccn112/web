@@ -1,0 +1,31 @@
+{
+  "name": "x-web-platform",
+  "version": "2026.7.15",
+  "private": true,
+  "description": "X Web Platform — multi-site CMS (Payload + PostgreSQL) for the X real-estate PropTech ecosystem",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @x/cms dev",
+    "dev:web": "pnpm --filter @x/web dev",
+    "dev:all": "pnpm --parallel --filter @x/cms --filter @x/web dev",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter @x/cms start",
+    "db:migrate": "pnpm --filter @x/cms db:migrate",
+    "db:migrate:create": "pnpm --filter @x/cms db:migrate:create",
+    "db:seed": "pnpm --filter @x/cms db:seed",
+    "generate:types": "pnpm --filter @x/cms generate:types",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "5.9.3"
+  }
+}

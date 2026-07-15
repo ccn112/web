@@ -1,0 +1,98 @@
+[
+  {
+    "code": "FERP-09",
+    "title": "HRM và hồ sơ nhân sự",
+    "src": "/mnt/data/giao_diện_phần_mềm_nhân_sự_hiện_đại.png",
+    "filename": "ferp-09-hrm-employee-profile.png",
+    "ratio": "4:3",
+    "type": "hrmIllustration",
+    "page": "/phan-he/nhan-su",
+    "section": "hrm-employee-profile",
+    "summary": "Minh họa hồ sơ nhân sự, cơ cấu tổ chức, phòng ban và vị trí.",
+    "alt": "Minh họa phân hệ nhân sự FinERP với hồ sơ nhân viên, phòng ban, vị trí, cơ cấu tổ chức và trạng thái làm việc."
+  },
+  {
+    "code": "FERP-10",
+    "title": "Chấm công và tiền lương",
+    "src": "/mnt/data/dashboard_quản_lý_nhân_sự_tháng_06_2024.png",
+    "filename": "ferp-10-attendance-payroll.png",
+    "ratio": "4:3",
+    "type": "attendancePayrollIllustration",
+    "page": "/phan-he/cham-cong-tien-luong",
+    "section": "attendance-payroll",
+    "summary": "Minh họa bảng công, ca làm, đi muộn, vắng mặt và bảng lương.",
+    "alt": "Minh họa chấm công và tiền lương trong FinERP với bảng công, ca làm, đi muộn, vắng mặt, phụ cấp, khấu trừ và bảng lương tháng."
+  },
+  {
+    "code": "FERP-11",
+    "title": "Approval Workflow",
+    "src": "/mnt/data/duyệt_đề_xuất_workflow_dashboard.png",
+    "filename": "ferp-11-approval-workflow.png",
+    "ratio": "4:3",
+    "type": "approvalWorkflowIllustration",
+    "page": "/phan-he/phe-duyet",
+    "section": "approval-workflow",
+    "summary": "Minh họa quy trình phê duyệt nhiều cấp cho đề xuất, thanh toán và mua sắm.",
+    "alt": "Minh họa quy trình phê duyệt nhiều cấp trong FinERP từ đề xuất, trưởng bộ phận, tài chính, ban giám đốc, ký số đến hoàn tất."
+  },
+  {
+    "code": "FERP-12",
+    "title": "Quản lý hợp đồng",
+    "src": "/mnt/data/quản_lý_hợp_đồng_trực_tuyến.png",
+    "filename": "ferp-12-contract-management.png",
+    "ratio": "4:3",
+    "type": "contractIllustration",
+    "page": "/phan-he/hop-dong",
+    "section": "contract-management",
+    "summary": "Minh họa tạo hợp đồng, phê duyệt, ký số, hiệu lực và gia hạn.",
+    "alt": "Minh họa quản lý hợp đồng trong FinERP với danh sách hợp đồng, tạo mới, phê duyệt, ký số, hiệu lực và gia hạn."
+  },
+  {
+    "code": "FERP-13",
+    "title": "Văn bản và tài liệu",
+    "src": "/mnt/data/tech_document_management_interface_with_panels.png",
+    "filename": "ferp-13-documents-management.png",
+    "ratio": "4:3",
+    "type": "documentIllustration",
+    "page": "/phan-he/van-ban-tai-lieu",
+    "section": "documents-management",
+    "summary": "Minh họa thư mục tài liệu, phân quyền, tìm kiếm, lịch sử và phiên bản.",
+    "alt": "Minh họa quản lý văn bản và tài liệu trong FinERP với danh mục, tìm kiếm, quyền truy cập, lịch sử chỉnh sửa và phiên bản tài liệu."
+  },
+  {
+    "code": "FERP-14",
+    "title": "Report AI",
+    "src": "/mnt/data/ai_powered_business_dashboard_interface.png",
+    "filename": "ferp-14-report-ai.png",
+    "ratio": "4:3",
+    "type": "reportAIIllustration",
+    "page": "/phan-he/bao-cao-ai",
+    "section": "report-ai",
+    "summary": "Minh họa AI hỗ trợ tóm tắt, phân tích và hỏi đáp dữ liệu báo cáo.",
+    "alt": "Minh họa Report AI trong FinERP với bảng điều khiển phân tích, trợ lý AI, báo cáo tổng quan, tóm tắt và hỏi đáp dữ liệu."
+  },
+  {
+    "code": "FERP-15",
+    "title": "Cảnh báo ngân sách và công nợ",
+    "src": "/mnt/data/tổng_quan_cảnh_báo_tài_chính.png",
+    "filename": "ferp-15-budget-and-receivables-alerts.png",
+    "ratio": "4:3",
+    "type": "alertIllustration",
+    "page": "/phan-he/canh-bao-dieu-hanh",
+    "section": "budget-receivables-alerts",
+    "summary": "Minh họa cảnh báo vượt ngân sách, công nợ đến hạn, quá hạn và rủi ro tài chính.",
+    "alt": "Minh họa giám sát cảnh báo trong FinERP với vượt ngân sách, công nợ đến hạn, quá hạn, xu hướng rủi ro và hành động đề xuất."
+  },
+  {
+    "code": "FERP-16",
+    "title": "On-premise và tích hợp",
+    "src": "/mnt/data/mô_hình_tích_hợp_finerp_hiện_đại.png",
+    "filename": "ferp-16-deployment-and-integration.png",
+    "ratio": "4:3",
+    "type": "integrationIllustration",
+    "page": "/phan-he/trien-khai-tich-hop",
+    "section": "deployment-integration",
+    "summary": "Minh họa triển khai On-premise, Private Cloud và tích hợp ngân hàng, CRM, API, chữ ký số, BI.",
+    "alt": "Minh họa mô hình triển khai và tích hợp FinERP với On-premise, Private Cloud, API, ngân hàng, CRM, báo cáo BI và chữ ký số."
+  }
+]

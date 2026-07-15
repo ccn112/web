@@ -1,0 +1,31 @@
+{
+  "name": "XTECH SET 07 FinERP Core Handoff",
+  "version": "2026.07.15",
+  "assetCount": 8,
+  "recommendedDefaultRatio": "4:3",
+  "masterCheckpointRecommendedAfterMerge": true,
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "docs/06_MASTER_CHECKPOINT.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/MASTER_CHECKPOINT_RECOMMENDATION.json",
+    "reference/SET07_ASSET_MAP.csv",
+    "assets/set-07-finerp-core/ferp-01-hero-finerp.png",
+    "assets/set-07-finerp-core/ferp-02-executive-finance-dashboard.png",
+    "assets/set-07-finerp-core/ferp-03-cashflow-and-receivables.png",
+    "assets/set-07-finerp-core/ferp-04-budget-vs-actual.png",
+    "assets/set-07-finerp-core/ferp-05-accounting-and-documents.png",
+    "assets/set-07-finerp-core/ferp-06-procurement-and-vendors.png",
+    "assets/set-07-finerp-core/ferp-07-warehouse-and-assets.png",
+    "assets/set-07-finerp-core/ferp-08-project-cost.png"
+  ]
+}

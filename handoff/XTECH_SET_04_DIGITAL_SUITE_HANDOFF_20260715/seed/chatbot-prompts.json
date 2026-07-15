@@ -1,0 +1,70 @@
+{
+  "site": "corporate",
+  "route": "/x-real-estate-digital-suite",
+  "sections": [
+    {
+      "key": "overall-architecture",
+      "assetCode": "SUITE-01",
+      "prompts": [
+        "X Real Estate Digital Suite gồm những lớp nào?",
+        "Năm sản phẩm của XTECH liên thông ra sao?"
+      ]
+    },
+    {
+      "key": "business-application-layer",
+      "assetCode": "SUITE-02",
+      "prompts": [
+        "XBooking, FinERP, XBuilding, X.AI và X.Space phục vụ những nghiệp vụ gì?",
+        "Có thể triển khai từng sản phẩm riêng không?"
+      ]
+    },
+    {
+      "key": "shared-data-foundation",
+      "assetCode": "SUITE-03",
+      "prompts": [
+        "Dữ liệu dùng chung là gì?",
+        "Làm sao tránh nhập liệu lặp lại giữa các hệ thống?"
+      ]
+    },
+    {
+      "key": "ai-knowledge-layer",
+      "assetCode": "SUITE-04",
+      "prompts": [
+        "AI trong hệ sinh thái này hỗ trợ những việc gì?",
+        "AI Agent và kho tri thức hoạt động như thế nào?"
+      ]
+    },
+    {
+      "key": "integration-layer",
+      "assetCode": "SUITE-05",
+      "prompts": [
+        "Hệ thống có thể tích hợp với ERP hoặc CRM hiện tại không?",
+        "Ngân hàng và IoT được kết nối bằng cách nào?"
+      ]
+    },
+    {
+      "key": "security-identity-infrastructure",
+      "assetCode": "SUITE-06",
+      "prompts": [
+        "Lớp bảo mật và phân quyền được tổ chức ra sao?",
+        "Có hỗ trợ SSO và cloud không?"
+      ]
+    },
+    {
+      "key": "data-journey",
+      "assetCode": "SUITE-07",
+      "prompts": [
+        "Dữ liệu đi từ Marketing đến Vận hành như thế nào?",
+        "Bàn giao và vận hành có nhận dữ liệu từ bán hàng không?"
+      ]
+    },
+    {
+      "key": "solution-packages",
+      "assetCode": "SUITE-08",
+      "prompts": [
+        "Doanh nghiệp tôi nên bắt đầu với gói nào?",
+        "Sales Suite và Full Suite khác nhau thế nào?"
+      ]
+    }
+  ]
+}

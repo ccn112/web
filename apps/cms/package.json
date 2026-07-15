@@ -1,0 +1,40 @@
+{
+  "name": "@x/cms",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "db:migrate": "payload migrate",
+    "db:migrate:create": "payload migrate:create",
+    "db:seed": "payload run ./src/seed/index.ts",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint",
+    "test": "echo \"(access-control + seed tests land in Phase 6)\""
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.86.0",
+    "@payloadcms/next": "3.86.0",
+    "@payloadcms/richtext-lexical": "3.86.0",
+    "@payloadcms/storage-s3": "3.86.0",
+    "@payloadcms/ui": "3.86.0",
+    "@x/shared-types": "workspace:*",
+    "dotenv": "16.4.7",
+    "graphql": "16.14.2",
+    "next": "16.2.10",
+    "payload": "3.86.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "5.9.3"
+  }
+}

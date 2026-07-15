@@ -1,0 +1,48 @@
+{
+  "corporateMenuPatch": {
+    "parentLabel": "Giải pháp",
+    "insert": {
+      "label": "Chuỗi giá trị số bất động sản",
+      "href": "/giai-phap/chuoi-gia-tri-bat-dong-san",
+      "description": "Marketing → Lead → Booking → Tài chính → Bàn giao → Vận hành"
+    }
+  },
+  "routeMappings": [
+    {
+      "stage": "marketing",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#marketing",
+      "productSite": "xbooking",
+      "productRoute": "/giai-phap/marketing-automation"
+    },
+    {
+      "stage": "lead",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#lead",
+      "productSite": "xbooking",
+      "productRoute": "/giai-phap/crm-lead"
+    },
+    {
+      "stage": "booking",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#booking",
+      "productSite": "xbooking",
+      "productRoute": "/giai-phap/bang-hang-booking"
+    },
+    {
+      "stage": "finance",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#finance",
+      "productSite": "finerp",
+      "productRoute": "/phan-he/tai-chinh-ke-toan"
+    },
+    {
+      "stage": "handover",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#handover",
+      "productSite": "corporate",
+      "productRoute": "/giai-phap/ban-giao-bat-dong-san"
+    },
+    {
+      "stage": "operations",
+      "corporate": "/giai-phap/chuoi-gia-tri-bat-dong-san#operations",
+      "productSite": "xbuilding",
+      "productRoute": "/nghiep-vu"
+    }
+  ]
+}

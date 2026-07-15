@@ -1,0 +1,6 @@
+﻿Set,Domain,AssetCount,RoutesCount,Package,Status,CheckpointIncluded
+SET 03,Corporate,8,6,XTECH_SET_03_CORPORATE_CORE_HANDOFF_20260715.zip,ready-for-merge,yes
+SET 04,Corporate,8,1,XTECH_SET_04_DIGITAL_SUITE_HANDOFF_20260715.zip,ready-for-merge,yes
+SET 05,XBooking,8,4,XTECH_SET_05_XBOOKING_MARKETING_CRM_LEAD_HANDOFF_20260715.zip,ready-for-merge,yes
+SET 06,XBooking,6,5,XTECH_SET_06_XBOOKING_INVENTORY_BOOKING_CARE_HANDOFF_20260715.zip,ready-for-merge,yes
+SET 07,FinERP,8,6,XTECH_SET_07_FINERP_CORE_HANDOFF_20260715.zip,ready-for-merge,yes

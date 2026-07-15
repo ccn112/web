@@ -1,0 +1,27 @@
+{
+  "name": "@x/content-blocks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"(lint via app)\"",
+    "test": "echo \"(no tests)\""
+  },
+  "dependencies": {
+    "@x/shared-types": "workspace:*",
+    "clsx": "2.1.1",
+    "lucide-react": "0.469.0"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}

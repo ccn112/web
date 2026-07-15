@@ -1,0 +1,104 @@
+[
+  {
+    "site": "corporate",
+    "slug": "ai-trong-bat-dong-san-tu-thu-nghiem-den-gia-tri-thuc",
+    "title": "AI trong bất động sản: từ thử nghiệm đến giá trị thực",
+    "excerpt": "Năm nguyên tắc giúp doanh nghiệp đưa AI vào dữ liệu, quy trình và vai trò thực tế.",
+    "category": "AI trong bất động sản",
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "AI chỉ tạo giá trị bền vững khi được kết nối với dữ liệu đáng tin cậy, quy trình rõ ràng và trách nhiệm của con người."
+      },
+      {
+        "type": "heading",
+        "text": "Bắt đầu từ bài toán có dữ liệu và KPI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ưu tiên các use case như nhập liệu tài liệu, tổng hợp báo cáo, tra cứu chính sách và hỗ trợ chăm sóc khách hàng."
+      },
+      {
+        "type": "heading",
+        "text": "Thiết kế cơ chế kiểm soát"
+      },
+      {
+        "type": "paragraph",
+        "text": "Mỗi câu trả lời cần có phạm vi dữ liệu, nguồn tham chiếu, phân quyền và cơ chế chuyển cho người phụ trách khi thiếu thông tin."
+      }
+    ],
+    "seo": {
+      "metaTitle": "AI trong bất động sản: từ thử nghiệm đến giá trị thực",
+      "metaDescription": "Nguyên tắc triển khai AI gắn với dữ liệu, quy trình và KPI trong doanh nghiệp bất động sản."
+    }
+  },
+  {
+    "site": "xbooking",
+    "slug": "checklist-chon-crm-booking-cho-chu-dau-tu",
+    "title": "Checklist lựa chọn CRM và Booking cho chủ đầu tư",
+    "excerpt": "12 câu hỏi cần làm rõ trước khi lựa chọn nền tảng bán hàng bất động sản.",
+    "category": "CRM & Sales",
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Một hệ thống phù hợp cần quản lý đồng thời lead, bảng hàng, chính sách bán, booking, hợp đồng và dữ liệu đại lý."
+      },
+      {
+        "type": "heading",
+        "text": "Dữ liệu bảng hàng có phải nguồn duy nhất?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Hệ thống cần kiểm soát trạng thái sản phẩm theo thời gian thực và tránh xung đột giữa các kênh bán."
+      },
+      {
+        "type": "heading",
+        "text": "Có theo dõi xuyên suốt sau booking?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nên nối tiếp đến hợp đồng, lịch thanh toán, công nợ và chăm sóc sau bán."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Checklist lựa chọn CRM và Booking cho chủ đầu tư",
+      "metaDescription": "Checklist đánh giá nền tảng CRM, bảng hàng và booking cho doanh nghiệp bất động sản."
+    }
+  },
+  {
+    "site": "xbuilding",
+    "slug": "5-lop-du-lieu-cho-van-hanh-toa-nha",
+    "title": "5 lớp dữ liệu cần có cho vận hành tòa nhà",
+    "excerpt": "Từ cư dân, tài sản đến phí dịch vụ và lịch sử xử lý.",
+    "category": "Smart Building",
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Vận hành hiệu quả cần dữ liệu master thống nhất và lịch sử giao dịch đầy đủ."
+      },
+      {
+        "type": "heading",
+        "text": "Dữ liệu đối tượng và không gian"
+      },
+      {
+        "type": "paragraph",
+        "text": "Bao gồm dự án, tòa, tầng, căn, diện tích, cư dân, khách thuê và mối quan hệ sử dụng."
+      },
+      {
+        "type": "heading",
+        "text": "Dữ liệu vận hành"
+      },
+      {
+        "type": "paragraph",
+        "text": "Bao gồm phí, hóa đơn, công nợ, phản ánh, tài sản, lịch bảo trì và nhà thầu."
+      }
+    ],
+    "seo": {
+      "metaTitle": "5 lớp dữ liệu cho vận hành tòa nhà",
+      "metaDescription": "Khung dữ liệu nền tảng cho quản lý vận hành chung cư, văn phòng và khu đô thị."
+    }
+  }
+]

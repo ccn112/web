@@ -1,0 +1,29 @@
+{
+  "name": "XTECH SET 06 XBooking Inventory Booking Customer Care Handoff",
+  "version": "2026.07.15",
+  "assetCount": 6,
+  "defaultRatio": "4:3",
+  "deferredAssets": [
+    "XBK-13 Đại lý & Sale Network",
+    "XBK-14 Chính sách bán hàng & Hoa hồng"
+  ],
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_CLAUDE_TASK.md",
+    "docs/04_ACCEPTANCE_CRITERIA.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET06_ASSET_MAP.csv",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-09-inventory-matrix.png",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-10-property-detail.png",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-11-lock-and-booking.png",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-12-booking-approval.png",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-15-contract-payment-progress.png",
+    "assets/set-06-xbooking-inventory-booking-care/xbk-16-customer-care.png"
+  ]
+}

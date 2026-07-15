@@ -1,0 +1,74 @@
+[
+  {
+    "code": "XBK-09",
+    "title": "Ma trận bảng hàng",
+    "src": "/mnt/data/ma_trận_tồn_kho_bất_động_sản.png",
+    "filename": "xbk-09-inventory-matrix.png",
+    "ratio": "4:3",
+    "type": "inventoryMatrixIllustration",
+    "page": "/giai-phap/bang-hang",
+    "section": "inventory-matrix",
+    "summary": "Minh họa ma trận bảng hàng theo dự án, tháp, tầng, căn và trạng thái sản phẩm.",
+    "alt": "Minh họa ma trận bảng hàng XBooking với trạng thái Trống, Giữ chỗ, Booking, Đã bán và Không khả dụng."
+  },
+  {
+    "code": "XBK-10",
+    "title": "Chi tiết sản phẩm",
+    "src": "/mnt/data/real_estate_listing_dashboard_mockup.png",
+    "filename": "xbk-10-property-detail.png",
+    "ratio": "4:3",
+    "type": "propertyDetailIllustration",
+    "page": "/giai-phap/bang-hang",
+    "section": "property-detail",
+    "summary": "Minh họa trang chi tiết căn hộ với hình ảnh, mặt bằng, diện tích, hướng, giá, chính sách và pháp lý.",
+    "alt": "Minh họa chi tiết sản phẩm bất động sản trong XBooking với mã căn, diện tích, hướng, giá bán, tiện ích, chính sách và pháp lý."
+  },
+  {
+    "code": "XBK-11",
+    "title": "Giữ chỗ và Booking",
+    "src": "/mnt/data/giao_diện_đặt_chỗ_trực_tuyến_hiện_đại.png",
+    "filename": "xbk-11-lock-and-booking.png",
+    "ratio": "4:3",
+    "type": "bookingFlowIllustration",
+    "page": "/giai-phap/booking-bat-dong-san",
+    "section": "lock-and-booking",
+    "summary": "Minh họa luồng giữ chỗ, xác nhận cọc và booking cùng bộ đếm thời gian.",
+    "alt": "Minh họa quy trình Giữ chỗ, Xác nhận và Booking trong XBooking với thời gian giữ chỗ, thông tin khách hàng, căn đã chọn và trạng thái booking."
+  },
+  {
+    "code": "XBK-12",
+    "title": "Phê duyệt Booking",
+    "src": "/mnt/data/quy_trình_phê_duyệt_đặt_cọc.png",
+    "filename": "xbk-12-booking-approval.png",
+    "ratio": "4:3",
+    "type": "approvalFlowIllustration",
+    "page": "/giai-phap/booking-bat-dong-san",
+    "section": "booking-approval",
+    "summary": "Minh họa quy trình phê duyệt booking giữa Sale, Quản lý sàn và Chủ đầu tư, có hồ sơ và SLA.",
+    "alt": "Minh họa quy trình phê duyệt booking trong XBooking từ Sale qua Quản lý sàn tới Chủ đầu tư với hồ sơ, trạng thái và SLA."
+  },
+  {
+    "code": "XBK-15",
+    "title": "Hợp đồng và tiến độ thanh toán",
+    "src": "/mnt/data/dashboard_hợp_đồng_và_tiến_độ_thanh_toán.png",
+    "filename": "xbk-15-contract-payment-progress.png",
+    "ratio": "4:3",
+    "type": "contractPaymentIllustration",
+    "page": "/giai-phap/hop-dong-thanh-toan",
+    "section": "contract-payment-progress",
+    "summary": "Minh họa hợp đồng mua bán, các đợt thanh toán, công nợ và tiến độ hoàn thành.",
+    "alt": "Minh họa hợp đồng và tiến độ thanh toán trong XBooking với các đợt đóng tiền, số tiền đã thanh toán, sắp đến hạn và công nợ."
+  },
+  {
+    "code": "XBK-16",
+    "title": "Chăm sóc khách hàng sau bán",
+    "src": "/mnt/data/giao_diện_hỗ_trợ_khách_hàng_hiện_đại.png",
+    "filename": "xbk-16-customer-care.png",
+    "ratio": "4:3",
+    "type": "customerCareIllustration",
+    "page": "/giai-phap/cham-soc-khach-hang",
+    "section": "customer-care",
+    "summary": "Minh họa hồ sơ khách hàng sau bán, yêu cầu hỗ trợ, lịch sử tương tác, nhắc việc và đánh giá hài lòng.",
+    "alt": "Minh họa chăm sóc khách hàng sau bán trong XBooking với yêu cầu hỗ trợ, lịch sử tương tác, nhắc việc, chat và đánh giá hài lòng."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "name": "XTECH SET 08 FinERP Enterprise Operations Handoff",
+  "version": "2026.07.15",
+  "assetCount": 8,
+  "recommendedDefaultRatio": "4:3",
+  "usesMasterCheckpoint": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET08_ASSET_MAP.csv",
+    "assets/set-08-finerp-enterprise-operations/ferp-09-hrm-employee-profile.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-10-attendance-payroll.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-11-approval-workflow.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-12-contract-management.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-13-documents-management.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-14-report-ai.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-15-budget-and-receivables-alerts.png",
+    "assets/set-08-finerp-enterprise-operations/ferp-16-deployment-and-integration.png"
+  ]
+}

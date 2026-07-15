@@ -1,0 +1,9 @@
+﻿Code,Title,File,Page,Section,Type,TextMode
+SUITE-01,Kiến trúc tổng thể X Real Estate Digital Suite,suite-01-overall-architecture.png,/x-real-estate-digital-suite,overall-architecture,suiteArchitecture,short-labels
+SUITE-02,Lớp Ứng dụng Nghiệp vụ,suite-02-business-application-layer.png,/x-real-estate-digital-suite,business-application-layer,layerIllustration,short-labels
+SUITE-03,Nền tảng dữ liệu dùng chung,suite-03-shared-data-foundation.png,/x-real-estate-digital-suite,shared-data-foundation,dataIllustration,short-labels
+SUITE-04,Lớp AI và Tri thức,suite-04-ai-knowledge-layer.png,/x-real-estate-digital-suite,ai-knowledge-layer,aiIllustration,short-labels
+SUITE-05,Lớp tích hợp,suite-05-integration-layer.png,/x-real-estate-digital-suite,integration-layer,integrationIllustration,short-labels
+SUITE-06,"Bảo mật, định danh và hạ tầng",suite-06-security-identity-infrastructure.png,/x-real-estate-digital-suite,security-identity-infrastructure,securityIllustration,short-labels
+SUITE-07,Hành trình dữ liệu xuyên hệ sinh thái,suite-07-data-journey.png,/x-real-estate-digital-suite,data-journey,journeyIllustration,short-labels
+SUITE-08,Các gói giải pháp,suite-08-solution-packages.png,/x-real-estate-digital-suite,solution-packages,packageIllustration,short-labels

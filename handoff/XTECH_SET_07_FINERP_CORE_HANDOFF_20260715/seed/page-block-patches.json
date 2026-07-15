@@ -1,0 +1,142 @@
+{
+  "site": "finerp",
+  "routes": [
+    {
+      "route": "/san-pham/finerp",
+      "blocks": [
+        {
+          "blockType": "heroSplit",
+          "assetCode": "FERP-01",
+          "title": "FinERP",
+          "eyebrow": "QUẢN TRỊ DOANH NGHIỆP HỢP NHẤT",
+          "description": "Nền tảng quản trị doanh nghiệp cho tài chính, kế toán, mua hàng, kho, tài sản và chi phí dự án.",
+          "primaryCTA": {
+            "label": "Đặt lịch demo",
+            "href": "/demo"
+          },
+          "secondaryCTA": {
+            "label": "Khám phá phân hệ",
+            "href": "#modules"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/tai-chinh-ke-toan",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-02",
+          "title": "Dashboard điều hành tài chính",
+          "description": "Theo dõi doanh thu, chi phí, lợi nhuận, dòng tiền và công nợ theo thời gian thực.",
+          "listItems": [
+            "Doanh thu",
+            "Chi phí",
+            "Lợi nhuận",
+            "Dòng tiền",
+            "Công nợ"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-03",
+          "title": "Dòng tiền và công nợ",
+          "description": "Kiểm soát dòng tiền vào, dòng tiền ra, phải thu và các khoản quá hạn.",
+          "listItems": [
+            "Dòng tiền vào",
+            "Dòng tiền ra",
+            "Phải thu",
+            "Quá hạn"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-05",
+          "title": "Kế toán và chứng từ",
+          "description": "Số hóa chứng từ, hạch toán, phê duyệt và đối soát trên một quy trình thống nhất.",
+          "listItems": [
+            "Hóa đơn",
+            "Phiếu thu",
+            "Phiếu chi",
+            "Bút toán",
+            "Phê duyệt",
+            "Đối soát"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/ngan-sach",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-04",
+          "title": "Ngân sách và thực tế",
+          "description": "So sánh kế hoạch với thực tế theo phòng ban, dự án và kỳ ngân sách.",
+          "listItems": [
+            "Ngân sách",
+            "Thực tế",
+            "Chênh lệch",
+            "Phòng ban",
+            "Dự án"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/mua-hang",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-06",
+          "title": "Mua hàng và nhà cung cấp",
+          "description": "Quản lý yêu cầu mua, báo giá, đơn mua, giao hàng và nhà cung cấp.",
+          "listItems": [
+            "Yêu cầu mua",
+            "Báo giá",
+            "Đơn mua",
+            "Nhà cung cấp",
+            "Giao hàng"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/kho-tai-san",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-07",
+          "title": "Kho và tài sản",
+          "description": "Quản lý nhập, xuất, tồn kho và toàn bộ vòng đời tài sản doanh nghiệp.",
+          "listItems": [
+            "Nhập kho",
+            "Tồn kho",
+            "Xuất kho",
+            "Máy móc",
+            "Phương tiện",
+            "Thiết bị"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/phan-he/chi-phi-du-an",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "FERP-08",
+          "title": "Chi phí dự án",
+          "description": "Kiểm soát ngân sách, chi phí thực tế, cam kết chi và hiệu quả theo từng dự án.",
+          "listItems": [
+            "Ngân sách",
+            "Chi phí thực tế",
+            "Cam kết chi",
+            "Hiệu quả",
+            "Tiến độ"
+          ]
+        }
+      ]
+    }
+  ]
+}

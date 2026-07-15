@@ -1,0 +1,113 @@
+{
+  "site": "corporate",
+  "route": "/x-real-estate-digital-suite",
+  "blocks": [
+    {
+      "blockType": "heroSplit",
+      "assetCode": "SUITE-01",
+      "title": "X Real Estate Digital Suite",
+      "eyebrow": "KIẾN TRÚC HỆ SINH THÁI",
+      "description": "Một kiến trúc số thống nhất cho doanh nghiệp bất động sản, kết nối ứng dụng nghiệp vụ, dữ liệu, AI, tích hợp và hạ tầng.",
+      "primaryCTA": {
+        "label": "Khám phá sản phẩm",
+        "href": "/san-pham"
+      },
+      "secondaryCTA": {
+        "label": "Đặt lịch tư vấn",
+        "href": "/lien-he"
+      }
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-02",
+      "title": "Lớp Ứng dụng Nghiệp vụ",
+      "description": "Năm sản phẩm chủ lực phục vụ bán hàng, quản trị doanh nghiệp, vận hành bất động sản, AI và cộng tác nội bộ.",
+      "listItems": [
+        "XBooking",
+        "FinERP",
+        "XBuilding",
+        "X.AI",
+        "X.Space"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-03",
+      "title": "Nền tảng Dữ liệu Dùng Chung",
+      "description": "Một nguồn dữ liệu thống nhất giúp các bộ phận và sản phẩm cùng khai thác và đồng bộ.",
+      "listItems": [
+        "Khách hàng",
+        "Sản phẩm",
+        "Tài liệu",
+        "Tài chính",
+        "Vận hành"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-04",
+      "title": "Lớp AI và Tri thức",
+      "description": "AI không chỉ là chatbot, mà là lớp tri thức và tự động hóa phục vụ toàn hệ sinh thái.",
+      "listItems": [
+        "AI Agent",
+        "Tri thức",
+        "Phân tích",
+        "Tư vấn",
+        "Tự động hóa"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-05",
+      "title": "Lớp Tích hợp",
+      "description": "Kết nối linh hoạt với hệ thống hiện có và đối tác bên ngoài thông qua API và dịch vụ tích hợp.",
+      "listItems": [
+        "API",
+        "ERP",
+        "CRM",
+        "App",
+        "Bank",
+        "IoT"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-06",
+      "title": "Bảo mật, Định danh và Hạ tầng",
+      "description": "Bảo mật và quản trị truy cập được thiết kế ngay từ lớp nền.",
+      "listItems": [
+        "SSO",
+        "Phân quyền",
+        "Bảo mật",
+        "Cloud",
+        "Hạ tầng"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-07",
+      "title": "Hành trình dữ liệu xuyên hệ sinh thái",
+      "description": "Dữ liệu được nối liền xuyên suốt vòng đời khách hàng và tài sản.",
+      "listItems": [
+        "Marketing",
+        "Lead",
+        "Booking",
+        "Tài chính",
+        "Bàn giao",
+        "Vận hành"
+      ]
+    },
+    {
+      "blockType": "illustrationFeature",
+      "assetCode": "SUITE-08",
+      "title": "Các gói giải pháp",
+      "description": "Triển khai theo nhu cầu hiện tại và mở rộng dần tới bộ giải pháp đầy đủ.",
+      "listItems": [
+        "Sales Suite",
+        "Enterprise Suite",
+        "Property Suite",
+        "Full Suite"
+      ]
+    }
+  ]
+}

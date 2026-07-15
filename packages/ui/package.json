@@ -1,0 +1,13 @@
+{
+  "name": "@x/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"(placeholder — Phase 2)\"",
+    "test": "echo \"(no tests)\""
+  },
+  "devDependencies": { "typescript": "5.9.3" }
+}

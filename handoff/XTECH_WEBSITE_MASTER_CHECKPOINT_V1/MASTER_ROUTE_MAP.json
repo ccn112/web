@@ -1,0 +1,310 @@
+{
+  "/": {
+    "sets": [
+      "SET 03"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08"
+    ]
+  },
+  "/giai-phap": {
+    "sets": [
+      "SET 03"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08"
+    ]
+  },
+  "/dich-vu": {
+    "sets": [
+      "SET 03"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08"
+    ]
+  },
+  "/mo-hinh-trien-khai": {
+    "sets": [
+      "SET 03"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08"
+    ]
+  },
+  "/lien-he": {
+    "sets": [
+      "SET 03"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08"
+    ]
+  },
+  "/x-real-estate-digital-suite": {
+    "sets": [
+      "SET 03",
+      "SET 04"
+    ],
+    "assets": [
+      "COR-01",
+      "COR-02",
+      "COR-03",
+      "COR-04",
+      "COR-05",
+      "COR-06",
+      "COR-07",
+      "COR-08",
+      "SUITE-01",
+      "SUITE-02",
+      "SUITE-03",
+      "SUITE-04",
+      "SUITE-05",
+      "SUITE-06",
+      "SUITE-07",
+      "SUITE-08"
+    ]
+  },
+  "/san-pham/xbooking": {
+    "sets": [
+      "SET 05",
+      "SET 06"
+    ],
+    "assets": [
+      "XBK-01",
+      "XBK-02",
+      "XBK-03",
+      "XBK-04",
+      "XBK-05",
+      "XBK-06",
+      "XBK-07",
+      "XBK-08",
+      "XBK-09",
+      "XBK-10",
+      "XBK-11",
+      "XBK-12",
+      "XBK-15",
+      "XBK-16"
+    ]
+  },
+  "/giai-phap/marketing-automation": {
+    "sets": [
+      "SET 05"
+    ],
+    "assets": [
+      "XBK-01",
+      "XBK-02",
+      "XBK-03",
+      "XBK-04",
+      "XBK-05",
+      "XBK-06",
+      "XBK-07",
+      "XBK-08"
+    ]
+  },
+  "/giai-phap/crm-lead": {
+    "sets": [
+      "SET 05"
+    ],
+    "assets": [
+      "XBK-01",
+      "XBK-02",
+      "XBK-03",
+      "XBK-04",
+      "XBK-05",
+      "XBK-06",
+      "XBK-07",
+      "XBK-08"
+    ]
+  },
+  "/giai-phap/ban-hang-bat-dong-san": {
+    "sets": [
+      "SET 05"
+    ],
+    "assets": [
+      "XBK-01",
+      "XBK-02",
+      "XBK-03",
+      "XBK-04",
+      "XBK-05",
+      "XBK-06",
+      "XBK-07",
+      "XBK-08"
+    ]
+  },
+  "/giai-phap/booking-bat-dong-san": {
+    "sets": [
+      "SET 06"
+    ],
+    "assets": [
+      "XBK-09",
+      "XBK-10",
+      "XBK-11",
+      "XBK-12",
+      "XBK-15",
+      "XBK-16"
+    ]
+  },
+  "/giai-phap/bang-hang": {
+    "sets": [
+      "SET 06"
+    ],
+    "assets": [
+      "XBK-09",
+      "XBK-10",
+      "XBK-11",
+      "XBK-12",
+      "XBK-15",
+      "XBK-16"
+    ]
+  },
+  "/giai-phap/cham-soc-khach-hang": {
+    "sets": [
+      "SET 06"
+    ],
+    "assets": [
+      "XBK-09",
+      "XBK-10",
+      "XBK-11",
+      "XBK-12",
+      "XBK-15",
+      "XBK-16"
+    ]
+  },
+  "/giai-phap/chinh-sach-ban-hang": {
+    "sets": [
+      "SET 06"
+    ],
+    "assets": [
+      "XBK-09",
+      "XBK-10",
+      "XBK-11",
+      "XBK-12",
+      "XBK-15",
+      "XBK-16"
+    ]
+  },
+  "/san-pham/finerp": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  },
+  "/phan-he/tai-chinh-ke-toan": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  },
+  "/phan-he/ngan-sach": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  },
+  "/phan-he/mua-hang": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  },
+  "/phan-he/kho-tai-san": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  },
+  "/phan-he/chi-phi-du-an": {
+    "sets": [
+      "SET 07"
+    ],
+    "assets": [
+      "FERP-01",
+      "FERP-02",
+      "FERP-03",
+      "FERP-04",
+      "FERP-05",
+      "FERP-06",
+      "FERP-07",
+      "FERP-08"
+    ]
+  }
+}

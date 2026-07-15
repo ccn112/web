@@ -1,0 +1,69 @@
+{
+  "site": "xbooking",
+  "sections": [
+    {
+      "key": "hero",
+      "assetCode": "XBK-01",
+      "prompts": [
+        "XBooking giúp doanh nghiệp bất động sản giải quyết bài toán gì?",
+        "XBooking khác gì so với một CRM thông thường?"
+      ]
+    },
+    {
+      "key": "marketing-automation",
+      "assetCode": "XBK-02",
+      "prompts": [
+        "XBooking hỗ trợ tự động hóa marketing như thế nào?",
+        "Có thể quản lý nhiều chiến dịch và nguồn quảng cáo trong một nơi không?"
+      ]
+    },
+    {
+      "key": "multi-source-lead-capture",
+      "assetCode": "XBK-03",
+      "prompts": [
+        "Lead có thể đi vào hệ thống từ những nguồn nào?",
+        "Làm sao tránh bỏ sót lead từ các kênh khác nhau?"
+      ]
+    },
+    {
+      "key": "lead-360",
+      "assetCode": "XBK-04",
+      "prompts": [
+        "Lead 360 gồm những thông tin gì?",
+        "Sale nhìn thấy lịch sử tương tác của khách hàng như thế nào?"
+      ]
+    },
+    {
+      "key": "lead-scoring",
+      "assetCode": "XBK-05",
+      "prompts": [
+        "Lead Scoring hoạt động ra sao?",
+        "Có thể ưu tiên chăm sóc lead nóng trước không?"
+      ]
+    },
+    {
+      "key": "lead-distribution",
+      "assetCode": "XBK-06",
+      "prompts": [
+        "Lead được phân bổ cho sale và đại lý theo nguyên tắc nào?",
+        "Có thể cấu hình SLA và quy tắc phân bổ không?"
+      ]
+    },
+    {
+      "key": "sales-pipeline",
+      "assetCode": "XBK-07",
+      "prompts": [
+        "Sales Pipeline được theo dõi như thế nào?",
+        "Có thể xem tỷ lệ chuyển đổi từng giai đoạn không?"
+      ]
+    },
+    {
+      "key": "mobile-crm",
+      "assetCode": "XBK-08",
+      "prompts": [
+        "Mobile CRM hỗ trợ sale ngoài hiện trường ra sao?",
+        "Sale có thể gọi điện, xem lịch hẹn và tạo booking trên điện thoại không?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@x/seo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"(placeholder — Phase 2)\"",
+    "test": "echo \"(no tests)\""
+  },
+  "dependencies": { "@x/shared-types": "workspace:*" },
+  "devDependencies": { "typescript": "5.9.3" }
+}

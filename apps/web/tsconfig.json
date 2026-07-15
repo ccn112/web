@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@x/shared-types": ["../../packages/shared-types/src/index.ts"],
+      "@x/cms-client": ["../../packages/cms-client/src/index.ts"],
+      "@x/ui": ["../../packages/ui/src/index.ts"],
+      "@x/content-blocks": ["../../packages/content-blocks/src/index.ts"],
+      "@x/seo": ["../../packages/seo/src/index.ts"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

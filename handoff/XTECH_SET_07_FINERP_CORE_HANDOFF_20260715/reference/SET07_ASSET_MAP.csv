@@ -1,0 +1,9 @@
+﻿Code,Title,File,Page,Section,Type,Ratio
+FERP-01,Hero FinERP,ferp-01-hero-finerp.png,/san-pham/finerp,hero,heroIllustration,4:3
+FERP-02,Executive Finance Dashboard,ferp-02-executive-finance-dashboard.png,/phan-he/tai-chinh-ke-toan,executive-finance-dashboard,financeDashboardIllustration,4:3
+FERP-03,Dòng tiền và công nợ,ferp-03-cashflow-and-receivables.png,/phan-he/tai-chinh-ke-toan,cashflow-receivables,cashflowIllustration,4:3
+FERP-04,Budget vs Actual,ferp-04-budget-vs-actual.png,/phan-he/ngan-sach,budget-vs-actual,budgetIllustration,4:3
+FERP-05,Kế toán và chứng từ,ferp-05-accounting-and-documents.png,/phan-he/tai-chinh-ke-toan,accounting-documents,accountingIllustration,4:3
+FERP-06,Mua hàng và nhà cung cấp,ferp-06-procurement-and-vendors.png,/phan-he/mua-hang,procurement-vendors,procurementIllustration,4:3
+FERP-07,Kho và tài sản,ferp-07-warehouse-and-assets.png,/phan-he/kho-tai-san,warehouse-assets,warehouseIllustration,4:3
+FERP-08,Project Cost,ferp-08-project-cost.png,/phan-he/chi-phi-du-an,project-cost,projectCostIllustration,4:3

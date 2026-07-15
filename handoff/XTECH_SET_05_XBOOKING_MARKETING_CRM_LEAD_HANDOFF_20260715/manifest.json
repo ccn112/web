@@ -1,0 +1,34 @@
+{
+  "name": "XTECH SET 05 XBooking Marketing CRM Lead Handoff",
+  "version": "2026.07.15",
+  "assetCount": 8,
+  "recommendedDefaultRatio": "4:3",
+  "futureRatioRules": {
+    "defaultContent": "4:3",
+    "heroBanner": "16:9",
+    "smallCardsSocial": "4:4"
+  },
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "docs/06_IMAGE_SIZE_STANDARD.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET05_ASSET_MAP.csv",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-01-hero-xbooking.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-02-marketing-automation.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-03-multi-source-lead-capture.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-04-lead-360.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-05-lead-scoring.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-06-lead-distribution.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-07-sales-pipeline.png",
+    "assets/set-05-xbooking-marketing-crm-lead/xbk-08-mobile-crm-for-sales.png"
+  ]
+}

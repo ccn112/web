@@ -1,0 +1,206 @@
+[
+  {
+    "code": "corporate-default",
+    "site": "corporate",
+    "prompts": [
+      {
+        "label": "Khám phá hệ sinh thái X",
+        "prompt": "Khám phá hệ sinh thái X",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "Giải pháp nào phù hợp với doanh nghiệp tôi?",
+        "prompt": "Giải pháp nào phù hợp với doanh nghiệp tôi?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "So sánh SaaS và On-premise",
+        "prompt": "So sánh SaaS và On-premise",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch tư vấn",
+        "prompt": "Đặt lịch tư vấn",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  },
+  {
+    "code": "xbooking-default",
+    "site": "xbooking",
+    "prompts": [
+      {
+        "label": "XBooking khác CRM thông thường thế nào?",
+        "prompt": "XBooking khác CRM thông thường thế nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "Quy trình Lead đến Booking",
+        "prompt": "Quy trình Lead đến Booking",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "AI hỗ trợ sale ra sao?",
+        "prompt": "AI hỗ trợ sale ra sao?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch demo XBooking",
+        "prompt": "Đặt lịch demo XBooking",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  },
+  {
+    "code": "finerp-default",
+    "site": "finerp",
+    "prompts": [
+      {
+        "label": "FinERP gồm những phân hệ nào?",
+        "prompt": "FinERP gồm những phân hệ nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "Có triển khai on-premise không?",
+        "prompt": "Có triển khai on-premise không?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "FinERP tích hợp XBooking thế nào?",
+        "prompt": "FinERP tích hợp XBooking thế nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch demo FinERP",
+        "prompt": "Đặt lịch demo FinERP",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  },
+  {
+    "code": "xbuilding-default",
+    "site": "xbuilding",
+    "prompts": [
+      {
+        "label": "XBuilding phù hợp loại hình nào?",
+        "prompt": "XBuilding phù hợp loại hình nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "Quản lý phí và công nợ ra sao?",
+        "prompt": "Quản lý phí và công nợ ra sao?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "App cư dân có gì?",
+        "prompt": "App cư dân có gì?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch demo XBuilding",
+        "prompt": "Đặt lịch demo XBuilding",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  },
+  {
+    "code": "xai-default",
+    "site": "xai",
+    "prompts": [
+      {
+        "label": "X.AI có những nhóm giải pháp nào?",
+        "prompt": "X.AI có những nhóm giải pháp nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "AI nhập liệu hoạt động ra sao?",
+        "prompt": "AI nhập liệu hoạt động ra sao?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "AI báo cáo cho lãnh đạo",
+        "prompt": "AI báo cáo cho lãnh đạo",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch demo X.AI",
+        "prompt": "Đặt lịch demo X.AI",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  },
+  {
+    "code": "xspace-default",
+    "site": "xspace",
+    "prompts": [
+      {
+        "label": "X.Space khác chat nội bộ thế nào?",
+        "prompt": "X.Space khác chat nội bộ thế nào?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "label": "Mattermost được tùy biến ra sao?",
+        "prompt": "Mattermost được tùy biến ra sao?",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "label": "X.Space tích hợp hệ sinh thái X",
+        "prompt": "X.Space tích hợp hệ sinh thái X",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "label": "Đặt lịch demo X.Space",
+        "prompt": "Đặt lịch demo X.Space",
+        "actionType": "ask",
+        "enabled": true,
+        "order": 4
+      }
+    ]
+  }
+]

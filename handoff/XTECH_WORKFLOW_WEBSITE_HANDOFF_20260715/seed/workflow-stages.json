@@ -1,0 +1,155 @@
+[
+  {
+    "code": "marketing",
+    "order": 1,
+    "title": "Marketing",
+    "shortTitle": "Marketing",
+    "summary": "Tạo chiến dịch, thu hút khách hàng và đo lường hiệu quả theo từng nguồn.",
+    "capabilities": [
+      "Quản lý chiến dịch đa kênh",
+      "Thu lead từ website, landing page, sự kiện và đại lý",
+      "Theo dõi ngân sách, chi phí/lead và tỷ lệ chuyển đổi",
+      "Tự động hóa chăm sóc và phân loại ban đầu"
+    ],
+    "products": [
+      "XBooking",
+      "X.AI"
+    ],
+    "imageCode": "FLOW-01",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#marketing",
+    "productHref": "/giai-phap/marketing-automation",
+    "prompts": [
+      "Marketing bất động sản được quản lý tập trung như thế nào?",
+      "Hệ thống đo hiệu quả từng nguồn lead ra sao?",
+      "AI hỗ trợ phân loại và chăm sóc lead thế nào?"
+    ]
+  },
+  {
+    "code": "lead",
+    "order": 2,
+    "title": "Quản lý Lead",
+    "shortTitle": "Lead",
+    "summary": "Tiếp nhận, phân bổ, chấm điểm và chăm sóc khách hàng tiềm năng theo SLA.",
+    "capabilities": [
+      "Lead 360 và lịch sử tương tác",
+      "Phân bổ theo dự án, nhóm sale và quy tắc",
+      "Pipeline chăm sóc và lịch hẹn tư vấn",
+      "Lead scoring, nhắc việc và cảnh báo SLA"
+    ],
+    "products": [
+      "XBooking",
+      "X.AI"
+    ],
+    "imageCode": "FLOW-02",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#lead",
+    "productHref": "/giai-phap/crm-lead",
+    "prompts": [
+      "Lead 360 bao gồm những dữ liệu gì?",
+      "Lead được phân bổ cho sale theo nguyên tắc nào?",
+      "Làm sao kiểm soát lead quá hạn chăm sóc?"
+    ]
+  },
+  {
+    "code": "booking",
+    "order": 3,
+    "title": "Bảng hàng và Booking",
+    "shortTitle": "Booking",
+    "summary": "Quản lý bảng hàng, giá, trạng thái sản phẩm, giữ chỗ và booking theo thời gian thực.",
+    "capabilities": [
+      "Bảng hàng tập trung theo dự án, phân khu, tầng và căn",
+      "Trạng thái trống, giữ chỗ, booking và khóa giao dịch",
+      "Chính sách bán hàng và giá theo phiên bản",
+      "Phê duyệt giữ chỗ, chống trùng và theo dõi thời hạn"
+    ],
+    "products": [
+      "XBooking"
+    ],
+    "imageCode": "FLOW-03",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#booking",
+    "productHref": "/giai-phap/bang-hang-booking",
+    "prompts": [
+      "Bảng hàng thời gian thực hoạt động thế nào?",
+      "Làm sao tránh trùng booking giữa các kênh bán?",
+      "Quy trình giữ chỗ và phê duyệt gồm những bước nào?"
+    ]
+  },
+  {
+    "code": "finance",
+    "order": 4,
+    "title": "Hợp đồng và Tài chính",
+    "shortTitle": "Tài chính",
+    "summary": "Theo dõi hợp đồng, lịch thanh toán, công nợ, doanh thu và dòng tiền.",
+    "capabilities": [
+      "Quản lý hợp đồng và phụ lục",
+      "Lịch thanh toán theo chính sách bán",
+      "Theo dõi công nợ, quá hạn và tỷ lệ thu tiền",
+      "Đồng bộ doanh thu, chứng từ và dòng tiền với FinERP"
+    ],
+    "products": [
+      "XBooking",
+      "FinERP",
+      "X.AI"
+    ],
+    "imageCode": "FLOW-04",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#finance",
+    "productHref": "/san-pham/finerp",
+    "prompts": [
+      "XBooking và FinERP liên thông hợp đồng thế nào?",
+      "Hệ thống cảnh báo công nợ quá hạn ra sao?",
+      "AI có thể hỗ trợ báo cáo tài chính như thế nào?"
+    ]
+  },
+  {
+    "code": "handover",
+    "order": 5,
+    "title": "Nghiệm thu và Bàn giao",
+    "shortTitle": "Bàn giao",
+    "summary": "Lập kế hoạch bàn giao, chuẩn hóa hồ sơ và số hóa checklist nghiệm thu.",
+    "capabilities": [
+      "Lịch bàn giao theo dự án, tòa và căn",
+      "Checklist hồ sơ, tài chính và kỹ thuật",
+      "Nghiệm thu trên thiết bị di động",
+      "Biên bản, chữ ký và trạng thái bàn giao"
+    ],
+    "products": [
+      "XBooking",
+      "XBuilding",
+      "X.AI"
+    ],
+    "imageCode": "FLOW-05",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#handover",
+    "productHref": "/giai-phap/ban-giao-bat-dong-san",
+    "prompts": [
+      "Quy trình bàn giao được số hóa như thế nào?",
+      "Checklist nghiệm thu gồm những nhóm hồ sơ nào?",
+      "Dữ liệu khách hàng được chuyển sang vận hành ra sao?"
+    ]
+  },
+  {
+    "code": "operations",
+    "order": 6,
+    "title": "Quản lý Vận hành",
+    "shortTitle": "Vận hành",
+    "summary": "Quản lý cư dân, phí, yêu cầu dịch vụ, tài sản và bảo trì sau bàn giao.",
+    "capabilities": [
+      "Hồ sơ cư dân, khách thuê và bất động sản",
+      "Phí dịch vụ, điện nước, công nợ và thanh toán",
+      "Yêu cầu dịch vụ, phản ánh và SLA xử lý",
+      "Tài sản, bảo trì, tiện ích và thông báo cộng đồng"
+    ],
+    "products": [
+      "XBuilding",
+      "FinERP",
+      "X.AI",
+      "X.Space"
+    ],
+    "imageCode": "FLOW-06",
+    "corporateHref": "/giai-phap/chuoi-gia-tri-bat-dong-san#operations",
+    "productHref": "/nghiep-vu",
+    "prompts": [
+      "XBuilding quản lý phí và công nợ thế nào?",
+      "Cư dân gửi yêu cầu dịch vụ qua kênh nào?",
+      "Vận hành liên thông với dữ liệu bàn giao ra sao?"
+    ]
+  }
+]

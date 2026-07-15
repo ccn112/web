@@ -1,0 +1,140 @@
+{
+  "site": "xbooking",
+  "routes": [
+    {
+      "route": "/san-pham/xbooking",
+      "blocks": [
+        {
+          "blockType": "heroSplit",
+          "assetCode": "XBK-01",
+          "title": "XBooking",
+          "eyebrow": "SALES & MARKETING BẤT ĐỘNG SẢN",
+          "description": "Nền tảng giúp doanh nghiệp bất động sản quản lý marketing, CRM, lead, booking và chăm sóc khách hàng trên một luồng dữ liệu thống nhất.",
+          "primaryCTA": {
+            "label": "Đặt lịch demo",
+            "href": "/demo"
+          },
+          "secondaryCTA": {
+            "label": "Xem giải pháp CRM & Lead",
+            "href": "/giai-phap/crm-lead"
+          }
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-08",
+          "title": "Mobile CRM cho đội ngũ sale",
+          "description": "Theo dõi lead, lịch hẹn, công việc và cơ hội bán hàng mọi lúc mọi nơi.",
+          "listItems": [
+            "Lead mới",
+            "Lịch hẹn",
+            "Công việc",
+            "Dự án",
+            "Booking",
+            "Gọi ngay"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/marketing-automation",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-02",
+          "title": "Marketing Automation",
+          "description": "Quản lý chiến dịch và tự động hóa chăm sóc trước bán.",
+          "listItems": [
+            "Chiến dịch",
+            "Landing page",
+            "Email",
+            "SMS",
+            "Sự kiện",
+            "Quảng cáo"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/crm-lead",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-03",
+          "title": "Thu lead đa nguồn",
+          "description": "Tập trung và đồng bộ lead từ nhiều nguồn vào cùng một hệ thống.",
+          "listItems": [
+            "Website",
+            "Landing page",
+            "Facebook Ads",
+            "Zalo",
+            "Sự kiện",
+            "Telesales",
+            "Giới thiệu"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-04",
+          "title": "Lead 360",
+          "description": "Một hồ sơ khách hàng đầy đủ để sale và quản lý cùng theo dõi.",
+          "listItems": [
+            "Thông tin",
+            "Nhu cầu",
+            "Dự án quan tâm",
+            "Lịch sử tương tác",
+            "Nguồn lead",
+            "Trạng thái",
+            "Ghi chú"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-05",
+          "title": "Lead Scoring",
+          "description": "Ưu tiên chăm sóc khách hàng theo điểm lead và khả năng chuyển đổi.",
+          "listItems": [
+            "Điểm lead",
+            "Mức quan tâm",
+            "Khả năng chuyển đổi",
+            "Nóng",
+            "Ấm",
+            "Lạnh"
+          ]
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-06",
+          "title": "Phân bổ Lead",
+          "description": "Tự động phân lead theo khu vực, dự án, quy tắc và SLA.",
+          "listItems": [
+            "Nguồn lead",
+            "Bộ quy tắc",
+            "Lead Pool",
+            "Tự động",
+            "Sale",
+            "Đại lý"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ban-hang-bat-dong-san",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBK-07",
+          "title": "Sales Pipeline",
+          "description": "Quản lý hành trình khách hàng từ lead tới booking và đo hiệu quả bán hàng.",
+          "listItems": [
+            "Lead",
+            "Tư vấn",
+            "Quan tâm",
+            "Hẹn gặp",
+            "Booking",
+            "Tỷ lệ chuyển đổi"
+          ]
+        }
+      ]
+    }
+  ]
+}

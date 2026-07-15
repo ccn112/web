@@ -1,0 +1,30 @@
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# payload
+apps/cms/src/app/(payload)/admin/importMap.js.bak
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+*.tsbuildinfo
+
+# docker volumes (if bind-mounted locally)
+.docker-data/
+
+# test
+coverage/

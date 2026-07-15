@@ -1,0 +1,9 @@
+﻿Code,Title,File,Page,Section,Type,TextMode
+COR-01,Công nghệ cho toàn bộ vòng đời bất động sản,cor-01-corporate-hero-illustration.png,/,hero,heroIllustration,pure-illustration
+COR-02,Hệ sinh thái 5 sản phẩm XTECH,cor-02-ecosystem-5-products.png,/,ecosystem,ecosystemIllustration,short-labels
+COR-03,"Một dữ liệu, nhiều ứng dụng, một nền tảng AI",cor-03-shared-data-ai-platform.png,/x-real-estate-digital-suite,shared-data-ai,architectureIllustration,short-labels
+COR-04,Giải pháp theo từng vai trò,cor-04-solutions-by-role.png,/giai-phap,solutions-by-role,roleIllustration,short-labels
+COR-05,Giá trị mang lại cho doanh nghiệp,cor-05-business-value.png,/,business-value,valueIllustration,short-labels
+COR-06,Tư vấn và Digital Blueprint,cor-06-digital-blueprint.png,/dich-vu,digital-blueprint,blueprintIllustration,short-labels
+COR-07,Mô hình triển khai linh hoạt,cor-07-deployment-models.png,/mo-hinh-trien-khai,deployment-models,deploymentIllustration,short-labels
+COR-08,Đồng hành cùng XTECH,cor-08-cta-demo.png,/lien-he,cta-demo,ctaIllustration,pure-illustration

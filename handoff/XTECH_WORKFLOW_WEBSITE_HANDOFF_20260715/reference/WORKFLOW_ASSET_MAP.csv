@@ -1,0 +1,7 @@
+﻿Code,Stage,Title,File,Corporate Route,Product Route,Recommended Usage
+FLOW-01,marketing,Marketing,flow-01-marketing-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#marketing,/giai-phap/marketing-automation,Corporate /giai-phap/chuoi-gia-tri-bat-dong-san và XBooking /giai-phap/marketing-automation
+FLOW-02,lead,Quản lý Lead,flow-02-lead-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#lead,/giai-phap/crm-lead,Corporate workflow và XBooking /giai-phap/crm-lead
+FLOW-03,booking,Bảng hàng và Booking,flow-03-booking-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#booking,/giai-phap/bang-hang-booking,Corporate workflow và XBooking /giai-phap/bang-hang-booking
+FLOW-04,finance,Hợp đồng và Tài chính,flow-04-finance-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#finance,/san-pham/finerp,"Corporate workflow, FinERP và trang hợp đồng/thanh toán"
+FLOW-05,handover,Nghiệm thu và Bàn giao,flow-05-handover-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#handover,/giai-phap/ban-giao-bat-dong-san,Corporate workflow và trang giải pháp bàn giao
+FLOW-06,operations,Quản lý Vận hành,flow-06-operations-vi-16x9.png,/giai-phap/chuoi-gia-tri-bat-dong-san#operations,/nghiep-vu,Corporate workflow và XBuilding

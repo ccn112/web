@@ -1,0 +1,154 @@
+{
+  "checkpoint": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "date": "2026-07-15",
+  "included_sets": [
+    {
+      "set_code": "SET 03",
+      "domain": "Corporate",
+      "title": "Corporate Website Core",
+      "package": "XTECH_SET_03_CORPORATE_CORE_HANDOFF_20260715.zip",
+      "routes": [
+        "/",
+        "/giai-phap",
+        "/dich-vu",
+        "/mo-hinh-trien-khai",
+        "/lien-he",
+        "/x-real-estate-digital-suite"
+      ],
+      "assets": [
+        "COR-01",
+        "COR-02",
+        "COR-03",
+        "COR-04",
+        "COR-05",
+        "COR-06",
+        "COR-07",
+        "COR-08"
+      ],
+      "blocks": [
+        "heroSplit",
+        "illustrationFeature",
+        "ctaVisual"
+      ],
+      "status": "ready-for-merge"
+    },
+    {
+      "set_code": "SET 04",
+      "domain": "Corporate",
+      "title": "X Real Estate Digital Suite",
+      "package": "XTECH_SET_04_DIGITAL_SUITE_HANDOFF_20260715.zip",
+      "routes": [
+        "/x-real-estate-digital-suite"
+      ],
+      "assets": [
+        "SUITE-01",
+        "SUITE-02",
+        "SUITE-03",
+        "SUITE-04",
+        "SUITE-05",
+        "SUITE-06",
+        "SUITE-07",
+        "SUITE-08"
+      ],
+      "blocks": [
+        "heroSplit",
+        "illustrationFeature"
+      ],
+      "status": "ready-for-merge"
+    },
+    {
+      "set_code": "SET 05",
+      "domain": "XBooking",
+      "title": "Marketing, CRM & Lead",
+      "package": "XTECH_SET_05_XBOOKING_MARKETING_CRM_LEAD_HANDOFF_20260715.zip",
+      "routes": [
+        "/san-pham/xbooking",
+        "/giai-phap/marketing-automation",
+        "/giai-phap/crm-lead",
+        "/giai-phap/ban-hang-bat-dong-san"
+      ],
+      "assets": [
+        "XBK-01",
+        "XBK-02",
+        "XBK-03",
+        "XBK-04",
+        "XBK-05",
+        "XBK-06",
+        "XBK-07",
+        "XBK-08"
+      ],
+      "blocks": [
+        "heroSplit",
+        "illustrationFeature"
+      ],
+      "status": "ready-for-merge"
+    },
+    {
+      "set_code": "SET 06",
+      "domain": "XBooking",
+      "title": "Inventory, Booking & Customer Care",
+      "package": "XTECH_SET_06_XBOOKING_INVENTORY_BOOKING_CARE_HANDOFF_20260715.zip",
+      "routes": [
+        "/san-pham/xbooking",
+        "/giai-phap/booking-bat-dong-san",
+        "/giai-phap/bang-hang",
+        "/giai-phap/cham-soc-khach-hang",
+        "/giai-phap/chinh-sach-ban-hang"
+      ],
+      "assets": [
+        "XBK-09",
+        "XBK-10",
+        "XBK-11",
+        "XBK-12",
+        "XBK-15",
+        "XBK-16"
+      ],
+      "blocks": [
+        "illustrationFeature"
+      ],
+      "status": "ready-for-merge"
+    },
+    {
+      "set_code": "SET 07",
+      "domain": "FinERP",
+      "title": "FinERP Core",
+      "package": "XTECH_SET_07_FINERP_CORE_HANDOFF_20260715.zip",
+      "routes": [
+        "/san-pham/finerp",
+        "/phan-he/tai-chinh-ke-toan",
+        "/phan-he/ngan-sach",
+        "/phan-he/mua-hang",
+        "/phan-he/kho-tai-san",
+        "/phan-he/chi-phi-du-an"
+      ],
+      "assets": [
+        "FERP-01",
+        "FERP-02",
+        "FERP-03",
+        "FERP-04",
+        "FERP-05",
+        "FERP-06",
+        "FERP-07",
+        "FERP-08"
+      ],
+      "blocks": [
+        "heroSplit",
+        "illustrationFeature"
+      ],
+      "status": "ready-for-merge"
+    }
+  ],
+  "optional_reference_packages": [
+    "XTECH_UI_STYLE_HANDOFF_20260715.zip",
+    "XTECH_WORKFLOW_WEBSITE_HANDOFF_20260715.zip"
+  ],
+  "global_rules": {
+    "default_ratio": "4:3",
+    "hero_banner_ratio": "16:9",
+    "small_cards_social_ratio": "4:4",
+    "embedded_internal_batch_labels_allowed": false,
+    "headline_font": "Plus Jakarta Sans",
+    "content_text_rendering": "HTML/CMS, not inside images",
+    "brand_logo_rule": "Use original XTECH logo assets only; do not redraw."
+  }
+}

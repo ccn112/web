@@ -1,0 +1,53 @@
+{
+  "site": "xbooking",
+  "sections": [
+    {
+      "key": "inventory-matrix",
+      "assetCode": "XBK-09",
+      "prompts": [
+        "Ma trận bảng hàng hiển thị những trạng thái nào?",
+        "Có thể lọc bảng hàng theo dự án, tháp và tầng không?"
+      ]
+    },
+    {
+      "key": "property-detail",
+      "assetCode": "XBK-10",
+      "prompts": [
+        "Trang chi tiết sản phẩm gồm những thông tin gì?",
+        "Có thể xem mặt bằng, chính sách và pháp lý ngay trên hệ thống không?"
+      ]
+    },
+    {
+      "key": "lock-and-booking",
+      "assetCode": "XBK-11",
+      "prompts": [
+        "Quy trình giữ chỗ và booking diễn ra thế nào?",
+        "Hệ thống xử lý booking hết hạn ra sao?"
+      ]
+    },
+    {
+      "key": "booking-approval",
+      "assetCode": "XBK-12",
+      "prompts": [
+        "Booking cần những cấp nào phê duyệt?",
+        "Có thể theo dõi SLA và hồ sơ booking không?"
+      ]
+    },
+    {
+      "key": "contract-payment-progress",
+      "assetCode": "XBK-15",
+      "prompts": [
+        "Lịch thanh toán và công nợ được theo dõi thế nào?",
+        "Hệ thống có cảnh báo các đợt sắp đến hạn không?"
+      ]
+    },
+    {
+      "key": "customer-care",
+      "assetCode": "XBK-16",
+      "prompts": [
+        "XBooking hỗ trợ chăm sóc khách hàng sau bán như thế nào?",
+        "Có thể quản lý yêu cầu hỗ trợ và đánh giá hài lòng không?"
+      ]
+    }
+  ]
+}

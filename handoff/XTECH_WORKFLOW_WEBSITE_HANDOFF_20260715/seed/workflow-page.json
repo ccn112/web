@@ -1,0 +1,267 @@
+{
+  "site": "corporate",
+  "slug": "/giai-phap/chuoi-gia-tri-bat-dong-san",
+  "title": "Chuỗi giá trị số toàn diện cho bất động sản",
+  "pageType": "solution",
+  "locale": "vi",
+  "status": "published",
+  "pageSummary": "Kết nối xuyên suốt Marketing, Lead, Booking, Tài chính, Bàn giao và Vận hành trên một hệ sinh thái dữ liệu thống nhất.",
+  "seo": {
+    "metaTitle": "Chuỗi giá trị số bất động sản | XTECH",
+    "metaDescription": "Khám phá chuỗi Marketing, Lead, Booking, Tài chính, Bàn giao và Vận hành được kết nối trên hệ sinh thái XTECH.",
+    "canonicalPath": "/giai-phap/chuoi-gia-tri-bat-dong-san",
+    "index": true,
+    "follow": true,
+    "schemaType": "WebPage"
+  },
+  "blocks": [
+    {
+      "blockType": "hero",
+      "eyebrow": "CHUỖI GIÁ TRỊ SỐ BẤT ĐỘNG SẢN",
+      "title": "Kết nối từ Marketing đến Vận hành trên một nền tảng dữ liệu thống nhất",
+      "description": "XTECH giúp doanh nghiệp quản lý toàn bộ hành trình khách hàng và tài sản, từ thu hút khách hàng, bán hàng, tài chính, bàn giao đến vận hành và chăm sóc sau bán.",
+      "primaryCTA": {
+        "label": "Đặt lịch tư vấn",
+        "href": "/lien-he"
+      },
+      "secondaryCTA": {
+        "label": "Khám phá từng giai đoạn",
+        "href": "#workflow"
+      },
+      "mediaAssetCode": "FLOW-00"
+    },
+    {
+      "blockType": "workflowNavigation",
+      "anchorId": "workflow",
+      "title": "6 giai đoạn liên thông",
+      "stageCodes": [
+        "marketing",
+        "lead",
+        "booking",
+        "finance",
+        "handover",
+        "operations"
+      ],
+      "stickyOnDesktop": true,
+      "showProgress": true
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "marketing",
+      "stageCode": "marketing",
+      "eyebrow": "01",
+      "title": "Marketing",
+      "description": "Tạo chiến dịch, thu hút khách hàng và đo lường hiệu quả theo từng nguồn.",
+      "capabilities": [
+        "Quản lý chiến dịch đa kênh",
+        "Thu lead từ website, landing page, sự kiện và đại lý",
+        "Theo dõi ngân sách, chi phí/lead và tỷ lệ chuyển đổi",
+        "Tự động hóa chăm sóc và phân loại ban đầu"
+      ],
+      "products": [
+        "XBooking",
+        "X.AI"
+      ],
+      "mediaAssetCode": "FLOW-01",
+      "imagePosition": "right",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/giai-phap/marketing-automation"
+      },
+      "chatbotPrompts": [
+        "Marketing bất động sản được quản lý tập trung như thế nào?",
+        "Hệ thống đo hiệu quả từng nguồn lead ra sao?",
+        "AI hỗ trợ phân loại và chăm sóc lead thế nào?"
+      ]
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "lead",
+      "stageCode": "lead",
+      "eyebrow": "02",
+      "title": "Quản lý Lead",
+      "description": "Tiếp nhận, phân bổ, chấm điểm và chăm sóc khách hàng tiềm năng theo SLA.",
+      "capabilities": [
+        "Lead 360 và lịch sử tương tác",
+        "Phân bổ theo dự án, nhóm sale và quy tắc",
+        "Pipeline chăm sóc và lịch hẹn tư vấn",
+        "Lead scoring, nhắc việc và cảnh báo SLA"
+      ],
+      "products": [
+        "XBooking",
+        "X.AI"
+      ],
+      "mediaAssetCode": "FLOW-02",
+      "imagePosition": "left",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/giai-phap/crm-lead"
+      },
+      "chatbotPrompts": [
+        "Lead 360 bao gồm những dữ liệu gì?",
+        "Lead được phân bổ cho sale theo nguyên tắc nào?",
+        "Làm sao kiểm soát lead quá hạn chăm sóc?"
+      ]
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "booking",
+      "stageCode": "booking",
+      "eyebrow": "03",
+      "title": "Bảng hàng và Booking",
+      "description": "Quản lý bảng hàng, giá, trạng thái sản phẩm, giữ chỗ và booking theo thời gian thực.",
+      "capabilities": [
+        "Bảng hàng tập trung theo dự án, phân khu, tầng và căn",
+        "Trạng thái trống, giữ chỗ, booking và khóa giao dịch",
+        "Chính sách bán hàng và giá theo phiên bản",
+        "Phê duyệt giữ chỗ, chống trùng và theo dõi thời hạn"
+      ],
+      "products": [
+        "XBooking"
+      ],
+      "mediaAssetCode": "FLOW-03",
+      "imagePosition": "right",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/giai-phap/bang-hang-booking"
+      },
+      "chatbotPrompts": [
+        "Bảng hàng thời gian thực hoạt động thế nào?",
+        "Làm sao tránh trùng booking giữa các kênh bán?",
+        "Quy trình giữ chỗ và phê duyệt gồm những bước nào?"
+      ]
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "finance",
+      "stageCode": "finance",
+      "eyebrow": "04",
+      "title": "Hợp đồng và Tài chính",
+      "description": "Theo dõi hợp đồng, lịch thanh toán, công nợ, doanh thu và dòng tiền.",
+      "capabilities": [
+        "Quản lý hợp đồng và phụ lục",
+        "Lịch thanh toán theo chính sách bán",
+        "Theo dõi công nợ, quá hạn và tỷ lệ thu tiền",
+        "Đồng bộ doanh thu, chứng từ và dòng tiền với FinERP"
+      ],
+      "products": [
+        "XBooking",
+        "FinERP",
+        "X.AI"
+      ],
+      "mediaAssetCode": "FLOW-04",
+      "imagePosition": "left",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/san-pham/finerp"
+      },
+      "chatbotPrompts": [
+        "XBooking và FinERP liên thông hợp đồng thế nào?",
+        "Hệ thống cảnh báo công nợ quá hạn ra sao?",
+        "AI có thể hỗ trợ báo cáo tài chính như thế nào?"
+      ]
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "handover",
+      "stageCode": "handover",
+      "eyebrow": "05",
+      "title": "Nghiệm thu và Bàn giao",
+      "description": "Lập kế hoạch bàn giao, chuẩn hóa hồ sơ và số hóa checklist nghiệm thu.",
+      "capabilities": [
+        "Lịch bàn giao theo dự án, tòa và căn",
+        "Checklist hồ sơ, tài chính và kỹ thuật",
+        "Nghiệm thu trên thiết bị di động",
+        "Biên bản, chữ ký và trạng thái bàn giao"
+      ],
+      "products": [
+        "XBooking",
+        "XBuilding",
+        "X.AI"
+      ],
+      "mediaAssetCode": "FLOW-05",
+      "imagePosition": "right",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/giai-phap/ban-giao-bat-dong-san"
+      },
+      "chatbotPrompts": [
+        "Quy trình bàn giao được số hóa như thế nào?",
+        "Checklist nghiệm thu gồm những nhóm hồ sơ nào?",
+        "Dữ liệu khách hàng được chuyển sang vận hành ra sao?"
+      ]
+    },
+    {
+      "blockType": "workflowStage",
+      "anchorId": "operations",
+      "stageCode": "operations",
+      "eyebrow": "06",
+      "title": "Quản lý Vận hành",
+      "description": "Quản lý cư dân, phí, yêu cầu dịch vụ, tài sản và bảo trì sau bàn giao.",
+      "capabilities": [
+        "Hồ sơ cư dân, khách thuê và bất động sản",
+        "Phí dịch vụ, điện nước, công nợ và thanh toán",
+        "Yêu cầu dịch vụ, phản ánh và SLA xử lý",
+        "Tài sản, bảo trì, tiện ích và thông báo cộng đồng"
+      ],
+      "products": [
+        "XBuilding",
+        "FinERP",
+        "X.AI",
+        "X.Space"
+      ],
+      "mediaAssetCode": "FLOW-06",
+      "imagePosition": "left",
+      "primaryCTA": {
+        "label": "Xem giải pháp chi tiết",
+        "href": "/nghiep-vu"
+      },
+      "chatbotPrompts": [
+        "XBuilding quản lý phí và công nợ thế nào?",
+        "Cư dân gửi yêu cầu dịch vụ qua kênh nào?",
+        "Vận hành liên thông với dữ liệu bàn giao ra sao?"
+      ]
+    },
+    {
+      "blockType": "valueGrid",
+      "title": "Giá trị mang lại",
+      "items": [
+        {
+          "title": "Dữ liệu tập trung",
+          "description": "Một nguồn dữ liệu duy nhất xuyên suốt toàn bộ hành trình."
+        },
+        {
+          "title": "Quy trình liên thông",
+          "description": "Giảm nhập liệu lặp lại và tránh đứt gãy giữa các bộ phận."
+        },
+        {
+          "title": "Báo cáo tức thời",
+          "description": "Theo dõi hiệu suất, doanh thu, công nợ và vận hành theo thời gian thực."
+        },
+        {
+          "title": "Trải nghiệm nhất quán",
+          "description": "Khách hàng được phục vụ liên tục từ quan tâm đến cư trú."
+        }
+      ]
+    },
+    {
+      "blockType": "cta",
+      "title": "Xây dựng lộ trình số hóa phù hợp với doanh nghiệp của bạn",
+      "description": "Có thể triển khai từng giai đoạn hoặc kết nối toàn bộ hệ sinh thái XTECH theo mô hình SaaS, Private Cloud hoặc On-premise.",
+      "primaryCTA": {
+        "label": "Đặt lịch Demo",
+        "href": "/demo"
+      },
+      "secondaryCTA": {
+        "label": "Khám phá X Real Estate Digital Suite",
+        "href": "/x-real-estate-digital-suite"
+      }
+    }
+  ],
+  "suggestedPrompts": [
+    "Tôi nên bắt đầu số hóa từ giai đoạn nào?",
+    "XBooking, FinERP và XBuilding liên thông dữ liệu ra sao?",
+    "Có thể triển khai từng giai đoạn không?",
+    "Mô hình SaaS và On-premise khác nhau thế nào?"
+  ]
+}

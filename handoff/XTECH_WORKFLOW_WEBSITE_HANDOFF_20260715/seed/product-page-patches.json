@@ -1,0 +1,140 @@
+[
+  {
+    "site": "xbooking",
+    "route": "/giai-phap/marketing-automation",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "marketing"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "marketing",
+      "title": "Marketing",
+      "description": "Tạo chiến dịch, thu hút khách hàng và đo lường hiệu quả theo từng nguồn.",
+      "mediaAssetCode": "FLOW-01",
+      "capabilities": [
+        "Quản lý chiến dịch đa kênh",
+        "Thu lead từ website, landing page, sự kiện và đại lý",
+        "Theo dõi ngân sách, chi phí/lead và tỷ lệ chuyển đổi",
+        "Tự động hóa chăm sóc và phân loại ban đầu"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#marketing"
+    }
+  },
+  {
+    "site": "xbooking",
+    "route": "/giai-phap/crm-lead",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "lead"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "lead",
+      "title": "Quản lý Lead",
+      "description": "Tiếp nhận, phân bổ, chấm điểm và chăm sóc khách hàng tiềm năng theo SLA.",
+      "mediaAssetCode": "FLOW-02",
+      "capabilities": [
+        "Lead 360 và lịch sử tương tác",
+        "Phân bổ theo dự án, nhóm sale và quy tắc",
+        "Pipeline chăm sóc và lịch hẹn tư vấn",
+        "Lead scoring, nhắc việc và cảnh báo SLA"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#lead"
+    }
+  },
+  {
+    "site": "xbooking",
+    "route": "/giai-phap/bang-hang-booking",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "booking"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "booking",
+      "title": "Bảng hàng và Booking",
+      "description": "Quản lý bảng hàng, giá, trạng thái sản phẩm, giữ chỗ và booking theo thời gian thực.",
+      "mediaAssetCode": "FLOW-03",
+      "capabilities": [
+        "Bảng hàng tập trung theo dự án, phân khu, tầng và căn",
+        "Trạng thái trống, giữ chỗ, booking và khóa giao dịch",
+        "Chính sách bán hàng và giá theo phiên bản",
+        "Phê duyệt giữ chỗ, chống trùng và theo dõi thời hạn"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#booking"
+    }
+  },
+  {
+    "site": "finerp",
+    "route": "/san-pham/finerp",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "finance"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "finance",
+      "title": "Hợp đồng và Tài chính",
+      "description": "Theo dõi hợp đồng, lịch thanh toán, công nợ, doanh thu và dòng tiền.",
+      "mediaAssetCode": "FLOW-04",
+      "capabilities": [
+        "Quản lý hợp đồng và phụ lục",
+        "Lịch thanh toán theo chính sách bán",
+        "Theo dõi công nợ, quá hạn và tỷ lệ thu tiền",
+        "Đồng bộ doanh thu, chứng từ và dòng tiền với FinERP"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#finance"
+    }
+  },
+  {
+    "site": "corporate",
+    "route": "/giai-phap/ban-giao-bat-dong-san",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "handover"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "handover",
+      "title": "Nghiệm thu và Bàn giao",
+      "description": "Lập kế hoạch bàn giao, chuẩn hóa hồ sơ và số hóa checklist nghiệm thu.",
+      "mediaAssetCode": "FLOW-05",
+      "capabilities": [
+        "Lịch bàn giao theo dự án, tòa và căn",
+        "Checklist hồ sơ, tài chính và kỹ thuật",
+        "Nghiệm thu trên thiết bị di động",
+        "Biên bản, chữ ký và trạng thái bàn giao"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#handover"
+    }
+  },
+  {
+    "site": "xbuilding",
+    "route": "/nghiep-vu",
+    "operation": "append_or_update_block",
+    "match": {
+      "blockType": "productShowcase",
+      "workflowStage": "operations"
+    },
+    "block": {
+      "blockType": "productShowcase",
+      "workflowStage": "operations",
+      "title": "Quản lý Vận hành",
+      "description": "Quản lý cư dân, phí, yêu cầu dịch vụ, tài sản và bảo trì sau bàn giao.",
+      "mediaAssetCode": "FLOW-06",
+      "capabilities": [
+        "Hồ sơ cư dân, khách thuê và bất động sản",
+        "Phí dịch vụ, điện nước, công nợ và thanh toán",
+        "Yêu cầu dịch vụ, phản ánh và SLA xử lý",
+        "Tài sản, bảo trì, tiện ích và thông báo cộng đồng"
+      ],
+      "relatedCorporatePage": "/giai-phap/chuoi-gia-tri-bat-dong-san#operations"
+    }
+  }
+]

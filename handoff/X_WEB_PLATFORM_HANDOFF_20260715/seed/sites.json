@@ -1,0 +1,140 @@
+[
+  {
+    "code": "corporate",
+    "name": "X Technology",
+    "domain": "x.vn",
+    "product": null,
+    "tagline": "Hệ sinh thái chuyển đổi số và AI toàn diện cho ngành bất động sản",
+    "theme": {
+      "primary": "#0B3B8F",
+      "accent": "#00A6FF",
+      "surface": "#F5F8FC",
+      "style": "enterprise-proptech"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Xin chào, tôi là trợ lý X. Tôi có thể giải thích nội dung trang và gợi ý giải pháp phù hợp.",
+      "defaultPrompts": [
+        "Khám phá hệ sinh thái X",
+        "Giải pháp nào phù hợp với doanh nghiệp tôi?",
+        "So sánh SaaS và On-premise",
+        "Đặt lịch tư vấn"
+      ]
+    }
+  },
+  {
+    "code": "xbooking",
+    "name": "XBooking",
+    "domain": "xbooking.vn",
+    "product": "XBooking",
+    "tagline": "Marketing, CRM, Booking, Sales và Customer Care cho bất động sản",
+    "theme": {
+      "primary": "#1457D9",
+      "accent": "#22C1FF",
+      "surface": "#F6F9FF",
+      "style": "sales-proptech"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Tôi có thể giúp bạn khám phá hành trình từ marketing, lead, booking đến chăm sóc khách hàng.",
+      "defaultPrompts": [
+        "XBooking khác CRM thông thường thế nào?",
+        "Quy trình Lead đến Booking",
+        "AI hỗ trợ sale ra sao?",
+        "Đặt lịch demo XBooking"
+      ]
+    }
+  },
+  {
+    "code": "finerp",
+    "name": "FinERP",
+    "domain": "finerp.vn",
+    "product": "FinERP",
+    "tagline": "Nền tảng quản trị doanh nghiệp hợp nhất trên ERPNext",
+    "theme": {
+      "primary": "#143D59",
+      "accent": "#F4B41A",
+      "surface": "#F8FAFC",
+      "style": "enterprise-finance"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Tôi có thể giải thích các phân hệ tài chính, kế toán, nhân sự, mua hàng và quản trị doanh nghiệp.",
+      "defaultPrompts": [
+        "FinERP gồm những phân hệ nào?",
+        "Có triển khai on-premise không?",
+        "FinERP tích hợp XBooking thế nào?",
+        "Đặt lịch demo FinERP"
+      ]
+    }
+  },
+  {
+    "code": "xbuilding",
+    "name": "XBuilding",
+    "domain": "xbuilding.vn",
+    "product": "XBuilding",
+    "tagline": "Quản lý vận hành chung cư, văn phòng và khu đô thị",
+    "theme": {
+      "primary": "#00695C",
+      "accent": "#00BFA6",
+      "surface": "#F3FBF9",
+      "style": "smart-building"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Tôi có thể giúp bạn tìm hiểu quản lý cư dân, phí dịch vụ, bảo trì và vận hành tài sản.",
+      "defaultPrompts": [
+        "XBuilding phù hợp loại hình nào?",
+        "Quản lý phí và công nợ ra sao?",
+        "App cư dân có gì?",
+        "Đặt lịch demo XBuilding"
+      ]
+    }
+  },
+  {
+    "code": "xai",
+    "name": "X.AI",
+    "domain": "xai.vn",
+    "product": "X.AI",
+    "tagline": "AI cho nhập liệu, báo cáo và tư vấn thông minh",
+    "theme": {
+      "primary": "#4A22A8",
+      "accent": "#8A5CFF",
+      "surface": "#F8F6FF",
+      "style": "ai-native"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Tôi có thể giới thiệu các AI Agent, Document AI, Report AI và Knowledge AI.",
+      "defaultPrompts": [
+        "X.AI có những nhóm giải pháp nào?",
+        "AI nhập liệu hoạt động ra sao?",
+        "AI báo cáo cho lãnh đạo",
+        "Đặt lịch demo X.AI"
+      ]
+    }
+  },
+  {
+    "code": "xspace",
+    "name": "X.Space",
+    "domain": "xspace.vn",
+    "product": "X.Space",
+    "tagline": "Workspace thông minh cho cộng tác và tri thức nội bộ",
+    "theme": {
+      "primary": "#263238",
+      "accent": "#00BCD4",
+      "surface": "#F5F7F8",
+      "style": "collaboration"
+    },
+    "chatbot": {
+      "enabled": true,
+      "welcome": "Tôi có thể giải thích không gian làm việc số, cộng tác, workflow và AI Assistant trong X.Space.",
+      "defaultPrompts": [
+        "X.Space khác chat nội bộ thế nào?",
+        "Mattermost được tùy biến ra sao?",
+        "X.Space tích hợp hệ sinh thái X",
+        "Đặt lịch demo X.Space"
+      ]
+    }
+  }
+]

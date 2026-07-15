@@ -1,0 +1,27 @@
+{
+  "name": "XTECH SET 03 Corporate Website Core Handoff",
+  "version": "2026.07.15",
+  "assetCount": 8,
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET03_ASSET_MAP.csv",
+    "assets/set-03-corporate-core/cor-01-corporate-hero-illustration.png",
+    "assets/set-03-corporate-core/cor-02-ecosystem-5-products.png",
+    "assets/set-03-corporate-core/cor-03-shared-data-ai-platform.png",
+    "assets/set-03-corporate-core/cor-04-solutions-by-role.png",
+    "assets/set-03-corporate-core/cor-05-business-value.png",
+    "assets/set-03-corporate-core/cor-06-digital-blueprint.png",
+    "assets/set-03-corporate-core/cor-07-deployment-models.png",
+    "assets/set-03-corporate-core/cor-08-cta-demo.png"
+  ]
+}
