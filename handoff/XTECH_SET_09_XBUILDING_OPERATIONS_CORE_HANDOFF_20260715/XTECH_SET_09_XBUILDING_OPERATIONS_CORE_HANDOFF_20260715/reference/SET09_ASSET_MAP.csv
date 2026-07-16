@@ -1,0 +1,10 @@
+﻿Code,Title,File,Page,Section,Type,Ratio
+XBL-01,Nền tảng quản lý vận hành XBuilding,xbl-01-xbuilding-operations-platform.png,/san-pham/xbuilding,hero,heroIllustration,4:3
+XBL-02,Dashboard đa dự án,xbl-02-multi-project-dashboard.png,/giai-phap/quan-ly-van-hanh-da-du-an,multi-project-dashboard,dashboardIllustration,4:3
+XBL-03,"Căn hộ, mặt bằng và tài sản",xbl-03-units-spaces-assets.png,/giai-phap/can-ho-mat-bang-tai-san,units-spaces-assets,propertyStructureIllustration,4:3
+XBL-04,Resident 360,xbl-04-resident-360.png,/giai-phap/resident-360,resident-360,resident360Illustration,4:3
+XBL-05,Phí dịch vụ và công nợ,xbl-05-service-fees-receivables.png,/giai-phap/phi-dich-vu-cong-no,service-fees-receivables,billingIllustration,4:3
+XBL-06,Ticket và SLA,xbl-06-ticket-sla.png,/giai-phap/ticket-sla,ticket-sla,ticketIllustration,4:3
+XBL-07,Công việc Ban quản lý,xbl-07-management-board-tasks.png,/giai-phap/cong-viec-ban-quan-ly,management-board-tasks,operationsTaskIllustration,4:3
+XBL-08,Thông báo và truyền thông nội khu,xbl-08-resident-communications.png,/giai-phap/truyen-thong-noi-khu,resident-communications,communicationsIllustration,4:3
+XBL-09,Ứng dụng cư dân và Ban quản lý,xbl-09-resident-management-mobile-apps.png,/san-pham/xbuilding,mobile-apps,mobileAppsIllustration,4:3

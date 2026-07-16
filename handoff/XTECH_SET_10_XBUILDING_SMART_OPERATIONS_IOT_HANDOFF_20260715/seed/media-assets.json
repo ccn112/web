@@ -1,0 +1,98 @@
+[
+  {
+    "code": "XBL-10",
+    "title": "Trung tâm điều hành tòa nhà thông minh",
+    "src": "/mnt/data/smart_building_operations_dashboard_illustration.png",
+    "filename": "xbl-10-smart-building-command-center.png",
+    "ratio": "4:3",
+    "type": "smartOperationsHeroIllustration",
+    "page": "/giai-phap/xbuilding-smart-operations",
+    "section": "smart-building-command-center",
+    "summary": "Dashboard điều hành tòa nhà thông minh với thiết bị, cảnh báo, năng lượng và hiệu suất hệ thống.",
+    "alt": "Minh họa trung tâm điều hành tòa nhà thông minh XBuilding với KPI thiết bị online, cảnh báo, sự cố, hiệu suất và mô hình tòa nhà."
+  },
+  {
+    "code": "XBL-11",
+    "title": "Giám sát thiết bị IoT",
+    "src": "/mnt/data/xbuilding_iot_dashboard_interface_mockup.png",
+    "filename": "xbl-11-iot-device-monitoring.png",
+    "ratio": "4:3",
+    "type": "iotMonitoringIllustration",
+    "page": "/giai-phap/giam-sat-thiet-bi-iot",
+    "section": "iot-device-monitoring",
+    "summary": "Theo dõi trạng thái thiết bị IoT theo thời gian thực, gồm camera, đồng hồ, cảm biến, HVAC và PCCC.",
+    "alt": "Minh họa giám sát thiết bị IoT XBuilding với tổng số thiết bị, trực tuyến, cảnh báo, ngoại tuyến, danh mục thiết bị và trạng thái kết nối."
+  },
+  {
+    "code": "XBL-12",
+    "title": "Giám sát năng lượng và tiện ích",
+    "src": "/mnt/data/bảng_điều_khiển_năng_lượng_hiện_đại.png",
+    "filename": "xbl-12-energy-utility-monitoring.png",
+    "ratio": "4:3",
+    "type": "energyMonitoringIllustration",
+    "page": "/giai-phap/nang-luong-va-tien-ich",
+    "section": "energy-utility-monitoring",
+    "summary": "Theo dõi điện, nước, gas, chi phí và cảnh báo bất thường theo tòa nhà, tầng và khu vực.",
+    "alt": "Minh họa giám sát năng lượng và tiện ích XBuilding với điện, nước, gas, chi phí, phân tích tiêu thụ và cảnh báo bất thường."
+  },
+  {
+    "code": "XBL-13",
+    "title": "Bảo trì phòng ngừa",
+    "src": "/mnt/data/giao_diện_quản_lý_bảo_trì_hiện_đại.png",
+    "filename": "xbl-13-preventive-maintenance.png",
+    "ratio": "4:3",
+    "type": "preventiveMaintenanceIllustration",
+    "page": "/giai-phap/bao-tri-phong-ngua",
+    "section": "preventive-maintenance",
+    "summary": "Lập kế hoạch bảo trì định kỳ, theo dõi đến hạn, quá hạn, checklist và lịch sử bảo trì.",
+    "alt": "Minh họa bảo trì phòng ngừa XBuilding với lịch bảo trì, trạng thái đến hạn, quá hạn, đang thực hiện, hoàn thành và danh sách thiết bị."
+  },
+  {
+    "code": "XBL-14",
+    "title": "Vòng đời tài sản và lệnh công việc",
+    "src": "/mnt/data/bảng_điều_khiển_tài_sản_công_nghiệp.png",
+    "filename": "xbl-14-asset-lifecycle-work-orders.png",
+    "ratio": "4:3",
+    "type": "assetLifecycleIllustration",
+    "page": "/giai-phap/vong-doi-tai-san-va-lenh-cong-viec",
+    "section": "asset-lifecycle-work-orders",
+    "summary": "Quản lý hồ sơ tài sản, tình trạng vận hành, bảo trì, sửa chữa, thay thế và lệnh công việc.",
+    "alt": "Minh họa vòng đời tài sản và lệnh công việc XBuilding với thông tin tài sản, trạng thái vận hành, timeline vòng đời và danh sách lệnh công việc."
+  },
+  {
+    "code": "XBL-15",
+    "title": "Kiểm soát ra vào và bãi xe thông minh",
+    "src": "/mnt/data/dashboard_interface_with_parking_management_ui.png",
+    "filename": "xbl-15-access-control-smart-parking.png",
+    "ratio": "4:3",
+    "type": "parkingAccessIllustration",
+    "page": "/giai-phap/ra-vao-va-bai-xe-thong-minh",
+    "section": "access-control-smart-parking",
+    "summary": "Quản lý lượt ra vào, thẻ cư dân, QR, biển số, trạng thái bãi xe và các sự kiện gần đây.",
+    "alt": "Minh họa kiểm soát ra vào và bãi xe thông minh XBuilding với lượt vào ra, thẻ cư dân, QR, biển số, bản đồ chỗ đỗ và barrier bãi xe."
+  },
+  {
+    "code": "XBL-16",
+    "title": "Quản lý sự cố và tình huống khẩn cấp",
+    "src": "/mnt/data/bảng_điều_khiển_quản_lý_sự_cố.png",
+    "filename": "xbl-16-incident-emergency-management.png",
+    "ratio": "4:3",
+    "type": "incidentManagementIllustration",
+    "page": "/giai-phap/quan-ly-su-co-khan-cap",
+    "section": "incident-emergency-management",
+    "summary": "Tiếp nhận, phân loại, điều phối và xử lý sự cố với bản đồ vị trí và đội phản ứng.",
+    "alt": "Minh họa quản lý sự cố và tình huống khẩn cấp XBuilding với KPI sự cố, quy trình xử lý, danh sách sự cố, bản đồ vị trí và đội phản ứng."
+  },
+  {
+    "code": "XBL-17",
+    "title": "Building AI Copilot",
+    "src": "/mnt/data/giao_diện_ai_hiện_đại_cho_tòa_nhà.png",
+    "filename": "xbl-17-building-ai-copilot.png",
+    "ratio": "4:3",
+    "type": "buildingAIIllustration",
+    "page": "/giai-phap/building-ai-copilot",
+    "section": "building-ai-copilot",
+    "summary": "AI hỗ trợ tóm tắt vận hành, phát hiện rủi ro, gợi ý hành động và ưu tiên xử lý.",
+    "alt": "Minh họa Building AI Copilot của XBuilding với khung chat AI, tóm tắt vận hành, rủi ro nổi bật, đề xuất hành động và mức ưu tiên xử lý."
+  }
+]

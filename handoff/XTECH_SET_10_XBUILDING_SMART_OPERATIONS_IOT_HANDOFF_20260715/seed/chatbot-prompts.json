@@ -1,0 +1,69 @@
+{
+  "site": "xbuilding",
+  "sections": [
+    {
+      "key": "smart-building-command-center",
+      "assetCode": "XBL-10",
+      "prompts": [
+        "Trung tâm điều hành tòa nhà thông minh theo dõi những gì?",
+        "XBuilding Smart Operations khác gì so với vận hành cơ bản?"
+      ]
+    },
+    {
+      "key": "iot-device-monitoring",
+      "assetCode": "XBL-11",
+      "prompts": [
+        "XBuilding giám sát thiết bị IoT như thế nào?",
+        "Có thể theo dõi HVAC, máy bơm, đồng hồ và camera không?"
+      ]
+    },
+    {
+      "key": "energy-utility-monitoring",
+      "assetCode": "XBL-12",
+      "prompts": [
+        "Hệ thống theo dõi điện, nước, gas như thế nào?",
+        "Có phát hiện bất thường về năng lượng không?"
+      ]
+    },
+    {
+      "key": "preventive-maintenance",
+      "assetCode": "XBL-13",
+      "prompts": [
+        "Bảo trì phòng ngừa được lập kế hoạch như thế nào?",
+        "Có hỗ trợ lịch bảo trì và checklist không?"
+      ]
+    },
+    {
+      "key": "asset-lifecycle-work-orders",
+      "assetCode": "XBL-14",
+      "prompts": [
+        "XBuilding quản lý vòng đời tài sản ra sao?",
+        "Lệnh công việc có liên kết trực tiếp với tài sản không?"
+      ]
+    },
+    {
+      "key": "access-control-smart-parking",
+      "assetCode": "XBL-15",
+      "prompts": [
+        "Kiểm soát ra vào và bãi xe thông minh hoạt động như thế nào?",
+        "Có hỗ trợ QR, thẻ cư dân và biển số xe không?"
+      ]
+    },
+    {
+      "key": "incident-emergency-management",
+      "assetCode": "XBL-16",
+      "prompts": [
+        "Quy trình quản lý sự cố khẩn cấp gồm những bước nào?",
+        "Có theo dõi vị trí sự cố và đội phản ứng không?"
+      ]
+    },
+    {
+      "key": "building-ai-copilot",
+      "assetCode": "XBL-17",
+      "prompts": [
+        "Building AI Copilot hỗ trợ Ban quản lý như thế nào?",
+        "AI có thể đề xuất hành động ưu tiên cho sự cố không?"
+      ]
+    }
+  ]
+}

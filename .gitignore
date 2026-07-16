@@ -11,6 +11,8 @@ out/
 
 # payload
 apps/cms/src/app/(payload)/admin/importMap.js.bak
+# Payload local upload dir — runtime state, regenerated from seed media on `pnpm db:seed`
+apps/cms/media/
 
 # logs
 *.log

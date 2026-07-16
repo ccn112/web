@@ -1,0 +1,98 @@
+[
+  {
+    "code": "XAI-01",
+    "title": "Hero X.AI Core",
+    "src": "/mnt/data/ai_powered_productivity_dashboard_interface.png",
+    "filename": "xai-01-hero-xai-core.png",
+    "ratio": "4:3",
+    "type": "heroIllustration",
+    "page": "/san-pham/x-ai",
+    "section": "hero",
+    "summary": "Tổng quan nền tảng X.AI cho dữ liệu, tự động hóa, báo cáo và tri thức doanh nghiệp.",
+    "alt": "Minh họa nền tảng X.AI Core với dashboard dữ liệu, tự động hóa, báo cáo, kho tri thức và trợ lý AI."
+  },
+  {
+    "code": "XAI-02",
+    "title": "Nhập liệu thông minh",
+    "src": "/mnt/data/giao_diện_nhập_liệu_thông_minh_3d.png",
+    "filename": "xai-02-intelligent-data-capture.png",
+    "ratio": "4:3",
+    "type": "dataCaptureIllustration",
+    "page": "/giai-phap/nhap-lieu-thong-minh",
+    "section": "intelligent-data-capture",
+    "summary": "AI tự động nhận diện, trích xuất và kiểm tra dữ liệu từ hóa đơn, hợp đồng, email, biểu mẫu và bảng tính.",
+    "alt": "Minh họa nhập liệu thông minh X.AI với OCR, trích xuất dữ liệu từ hóa đơn, hợp đồng, email, biểu mẫu, PDF và bảng tính."
+  },
+  {
+    "code": "XAI-03",
+    "title": "AI Document Processing",
+    "src": "/mnt/data/giao_diện_ai_quản_lý_tài_liệu.png",
+    "filename": "xai-03-ai-document-processing.png",
+    "ratio": "4:3",
+    "type": "documentAIIllustration",
+    "page": "/giai-phap/ai-document-processing",
+    "section": "ai-document-processing",
+    "summary": "Phân loại, tóm tắt, gắn thẻ, trích xuất thông tin và quản lý phiên bản tài liệu bằng AI.",
+    "alt": "Minh họa AI Document Processing với phân loại hợp đồng, biên bản, hóa đơn, hồ sơ, trích xuất nội dung, tóm tắt, gắn thẻ và phê duyệt."
+  },
+  {
+    "code": "XAI-04",
+    "title": "Executive Reporting AI",
+    "src": "/mnt/data/giao_diện_phần_mềm_công_ty_hiện_đại.png",
+    "filename": "xai-04-executive-reporting-ai.png",
+    "ratio": "4:3",
+    "type": "executiveReportingIllustration",
+    "page": "/giai-phap/bao-cao-ai",
+    "section": "executive-reporting-ai",
+    "summary": "AI tổng hợp KPI, phát hiện xu hướng, phân tích rủi ro và đề xuất hành động cho lãnh đạo.",
+    "alt": "Minh họa Executive Reporting AI với doanh thu, chi phí, lợi nhuận, rủi ro, cảnh báo, tóm tắt báo cáo, xu hướng và khuyến nghị."
+  },
+  {
+    "code": "XAI-05",
+    "title": "Knowledge Search & Q&A",
+    "src": "/mnt/data/giao_diện_tìm_kiếm_tri_thức_hiện_đại.png",
+    "filename": "xai-05-knowledge-search-qa.png",
+    "ratio": "4:3",
+    "type": "knowledgeIllustration",
+    "page": "/giai-phap/tri-thuc-va-hoi-dap",
+    "section": "knowledge-search-qa",
+    "summary": "Tìm kiếm tri thức nội bộ và hỏi đáp có dẫn nguồn trên chính sách, quy trình, hợp đồng, tài liệu và FAQ.",
+    "alt": "Minh họa tìm kiếm tri thức và hỏi đáp X.AI với chính sách, quy trình, hợp đồng mẫu, tài liệu nội bộ, FAQ, câu trả lời và nguồn tham chiếu."
+  },
+  {
+    "code": "XAI-06",
+    "title": "AI Workflow Assistant",
+    "src": "/mnt/data/workflow_automation_with_ai_assistant.png",
+    "filename": "xai-06-ai-workflow-assistant.png",
+    "ratio": "4:3",
+    "type": "workflowAIIllustration",
+    "page": "/giai-phap/ai-workflow-assistant",
+    "section": "ai-workflow-assistant",
+    "summary": "AI hỗ trợ thiết kế quy trình, đề xuất điều kiện, tự động hóa bước xử lý và kết nối hệ thống.",
+    "alt": "Minh họa AI Workflow Assistant với quy trình phê duyệt, tự động hóa, điều kiện, thông báo, tích hợp và gợi ý tối ưu."
+  },
+  {
+    "code": "XAI-07",
+    "title": "AI Risk & Insight Engine",
+    "src": "/mnt/data/giao_diện_dashboard_công_nghệ_hiện_đại.png",
+    "filename": "xai-07-ai-risk-insight-engine.png",
+    "ratio": "4:3",
+    "type": "riskInsightIllustration",
+    "page": "/giai-phap/ai-risk-insight",
+    "section": "ai-risk-insight-engine",
+    "summary": "AI phát hiện bất thường, đánh giá rủi ro, phân tích xu hướng và đưa ra khuyến nghị kiểm soát.",
+    "alt": "Minh họa AI Risk and Insight Engine với chỉ số rủi ro, bất thường, xu hướng, ma trận rủi ro, phân tích theo lĩnh vực và khuyến nghị."
+  },
+  {
+    "code": "XAI-08",
+    "title": "Multi-Agent Enterprise Layer",
+    "src": "/mnt/data/futuristic_ai_dashboard_and_integration_hub.png",
+    "filename": "xai-08-multi-agent-enterprise-layer.png",
+    "ratio": "4:3",
+    "type": "multiAgentIllustration",
+    "page": "/giai-phap/multi-agent-enterprise",
+    "section": "multi-agent-enterprise-layer",
+    "summary": "Lớp điều phối nhiều AI Agent cho dữ liệu, quy trình, báo cáo, tri thức và rủi ro, tích hợp với hệ thống doanh nghiệp.",
+    "alt": "Minh họa Multi-Agent Enterprise Layer với Agent Dữ liệu, Agent Quy trình, Agent Báo cáo, Agent Tri thức, Agent Rủi ro và tích hợp ERP, CRM, DWH, Office 365, Google Drive, Slack, Email, API."
+  }
+]

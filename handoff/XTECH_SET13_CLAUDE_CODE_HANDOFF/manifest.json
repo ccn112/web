@@ -1,0 +1,62 @@
+{
+  "project": "XTECH Website",
+  "set": "SET 13 — X.AI Agent Builder, Knowledge & Automation",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "source_style_dependency": "Must stay visually consistent with SET 12.",
+  "production_note": "Use original XTECH logo asset separately if needed. Do not rely on AI-rendered logos or small embedded UI text as primary website content.",
+  "sitemap_targets": [
+    "/products/x-ai/agent-builder",
+    "/products/x-ai/knowledge-rag",
+    "/products/x-ai/workflow-automation",
+    "/products/x-ai/connectors"
+  ],
+  "images": [
+    {
+      "id": "XAI-17",
+      "file": "assets/set13/XAI-17-visual-agent-builder.png",
+      "title": "Visual Agent Builder"
+    },
+    {
+      "id": "XAI-18",
+      "file": "assets/set13/XAI-18-knowledge-hub-rag-studio.png",
+      "title": "Knowledge Hub & RAG Studio"
+    },
+    {
+      "id": "XAI-19",
+      "file": "assets/set13/XAI-19-workflow-automation-studio.png",
+      "title": "Workflow Automation Studio"
+    },
+    {
+      "id": "XAI-20",
+      "file": "assets/set13/XAI-20-tool-api-connector-center.png",
+      "title": "Tool & API Connector Center"
+    },
+    {
+      "id": "XAI-21",
+      "file": "assets/set13/XAI-21-multi-agent-orchestration.png",
+      "title": "Multi-Agent Orchestration"
+    },
+    {
+      "id": "XAI-22",
+      "file": "assets/set13/XAI-22-human-approval-exception-handling.png",
+      "title": "Human Approval & Exception Handling"
+    },
+    {
+      "id": "XAI-23",
+      "file": "assets/set13/XAI-23-agent-testing-simulation-lab.png",
+      "title": "Agent Testing & Simulation Lab"
+    },
+    {
+      "id": "XAI-24",
+      "file": "assets/set13/XAI-24-agent-marketplace-templates.png",
+      "title": "Agent Marketplace & Templates"
+    }
+  ],
+  "next_sets": [
+    "SET 14 — X.AI Security, Observability & AI Operations",
+    "SET 15 — X.AI Industry Solutions",
+    "SET 16 — X.AI Enterprise Use Cases / Department Journeys"
+  ],
+  "missing_sources": []
+}

@@ -1,0 +1,69 @@
+{
+  "site": "x-ai",
+  "sections": [
+    {
+      "key": "hero",
+      "assetCode": "XAI-01",
+      "prompts": [
+        "X.AI hỗ trợ doanh nghiệp trong những nghiệp vụ nào?",
+        "X.AI có thể kết nối với các sản phẩm XBooking, FinERP và XBuilding không?"
+      ]
+    },
+    {
+      "key": "intelligent-data-capture",
+      "assetCode": "XAI-02",
+      "prompts": [
+        "Nhập liệu thông minh xử lý được những loại tài liệu nào?",
+        "AI kiểm tra độ chính xác dữ liệu như thế nào?"
+      ]
+    },
+    {
+      "key": "ai-document-processing",
+      "assetCode": "XAI-03",
+      "prompts": [
+        "AI Document Processing khác gì OCR thông thường?",
+        "Có thể tự động phân loại và tóm tắt hợp đồng không?"
+      ]
+    },
+    {
+      "key": "executive-reporting-ai",
+      "assetCode": "XAI-04",
+      "prompts": [
+        "Executive Reporting AI hỗ trợ lãnh đạo ra quyết định ra sao?",
+        "Có thể hỏi trực tiếp trên dữ liệu kinh doanh không?"
+      ]
+    },
+    {
+      "key": "knowledge-search-qa",
+      "assetCode": "XAI-05",
+      "prompts": [
+        "Hệ thống hỏi đáp tri thức có dẫn nguồn không?",
+        "Có thể phân quyền tài liệu theo phòng ban không?"
+      ]
+    },
+    {
+      "key": "ai-workflow-assistant",
+      "assetCode": "XAI-06",
+      "prompts": [
+        "AI Workflow Assistant giúp thiết kế quy trình như thế nào?",
+        "Có thể tích hợp email, CRM và hệ thống phê duyệt không?"
+      ]
+    },
+    {
+      "key": "ai-risk-insight-engine",
+      "assetCode": "XAI-07",
+      "prompts": [
+        "AI phát hiện bất thường và rủi ro như thế nào?",
+        "Khuyến nghị của AI có thể chuyển thành hành động không?"
+      ]
+    },
+    {
+      "key": "multi-agent-enterprise-layer",
+      "assetCode": "XAI-08",
+      "prompts": [
+        "Multi-Agent Enterprise Layer hoạt động như thế nào?",
+        "Các AI Agent có thể phối hợp xử lý một nhiệm vụ xuyên hệ thống không?"
+      ]
+    }
+  ]
+}

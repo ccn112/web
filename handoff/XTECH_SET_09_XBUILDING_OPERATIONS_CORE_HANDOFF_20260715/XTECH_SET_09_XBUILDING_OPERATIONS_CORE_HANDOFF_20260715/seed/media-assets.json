@@ -1,0 +1,110 @@
+[
+  {
+    "code": "XBL-01",
+    "title": "Nền tảng quản lý vận hành XBuilding",
+    "src": "/mnt/data/xbuilding_nền_tảng_quản_lý_vận_hành.png",
+    "filename": "xbl-01-xbuilding-operations-platform.png",
+    "ratio": "4:3",
+    "type": "heroIllustration",
+    "page": "/san-pham/xbuilding",
+    "section": "hero",
+    "summary": "Hero giới thiệu XBuilding cho quản lý vận hành bất động sản, dữ liệu tập trung và trải nghiệm cư dân.",
+    "alt": "Minh họa nền tảng XBuilding với dashboard quản lý vận hành trên laptop, ứng dụng cư dân trên điện thoại và mô hình tòa nhà."
+  },
+  {
+    "code": "XBL-02",
+    "title": "Dashboard đa dự án",
+    "src": "/mnt/data/modern_saas_dashboard_with_3d_city.png",
+    "filename": "xbl-02-multi-project-dashboard.png",
+    "ratio": "4:3",
+    "type": "dashboardIllustration",
+    "page": "/giai-phap/quan-ly-van-hanh-da-du-an",
+    "section": "multi-project-dashboard",
+    "summary": "Dashboard tập trung theo dõi cư dân, thu phí, ticket, công việc và SLA theo dự án.",
+    "alt": "Minh họa dashboard đa dự án XBuilding với KPI căn hộ, cư dân, tỷ lệ thu phí, ticket, công việc quá hạn, doanh thu và SLA."
+  },
+  {
+    "code": "XBL-03",
+    "title": "Căn hộ, mặt bằng và tài sản",
+    "src": "/mnt/data/quản_lý_tòa_nhà_thông_minh.png",
+    "filename": "xbl-03-units-spaces-assets.png",
+    "ratio": "4:3",
+    "type": "propertyStructureIllustration",
+    "page": "/giai-phap/can-ho-mat-bang-tai-san",
+    "section": "units-spaces-assets",
+    "summary": "Minh họa cấu trúc dự án, tòa nhà, tầng, căn hộ, mặt bằng và tài sản thiết bị.",
+    "alt": "Minh họa quản lý căn hộ, mặt bằng và tài sản XBuilding với sơ đồ tầng, trạng thái căn hộ, chỗ đỗ xe và tài sản thiết bị."
+  },
+  {
+    "code": "XBL-04",
+    "title": "Resident 360",
+    "src": "/mnt/data/giao_diện_quản_lý_cư_dân_xbuilding.png",
+    "filename": "xbl-04-resident-360.png",
+    "ratio": "4:3",
+    "type": "resident360Illustration",
+    "page": "/giai-phap/resident-360",
+    "section": "resident-360",
+    "summary": "Hồ sơ cư dân tập trung gồm căn hộ, thành viên hộ, phương tiện, hợp đồng, công nợ và lịch sử tương tác.",
+    "alt": "Minh họa Resident 360 trong XBuilding với hồ sơ cư dân, căn hộ, thành viên hộ, phương tiện, hợp đồng, thẻ cư dân, công nợ và lịch sử tương tác."
+  },
+  {
+    "code": "XBL-05",
+    "title": "Phí dịch vụ và công nợ",
+    "src": "/mnt/data/phần_mềm_quản_lý_công_nợ_xbuilding.png",
+    "filename": "xbl-05-service-fees-receivables.png",
+    "ratio": "4:3",
+    "type": "billingIllustration",
+    "page": "/giai-phap/phi-dich-vu-cong-no",
+    "section": "service-fees-receivables",
+    "summary": "Quản lý phí dịch vụ, hóa đơn, thanh toán và công nợ theo thời gian thực.",
+    "alt": "Minh họa quản lý phí dịch vụ và công nợ XBuilding với tổng phải thu, đã thu, chưa thu, quá hạn, danh sách hóa đơn và cơ cấu phí."
+  },
+  {
+    "code": "XBL-06",
+    "title": "Ticket và SLA",
+    "src": "/mnt/data/saas_ticketing_and_sla_management_dashboard.png",
+    "filename": "xbl-06-ticket-sla.png",
+    "ratio": "4:3",
+    "type": "ticketIllustration",
+    "page": "/giai-phap/ticket-sla",
+    "section": "ticket-sla",
+    "summary": "Tiếp nhận, phân loại, xử lý và theo dõi phản ánh theo SLA.",
+    "alt": "Minh họa Ticket và SLA trong XBuilding với ticket mới, đang xử lý, đã hoàn tất, quá hạn, mức độ ưu tiên, người phụ trách và hiệu suất SLA."
+  },
+  {
+    "code": "XBL-07",
+    "title": "Công việc Ban quản lý",
+    "src": "/mnt/data/saas_product_management_dashboard_mockup.png",
+    "filename": "xbl-07-management-board-tasks.png",
+    "ratio": "4:3",
+    "type": "operationsTaskIllustration",
+    "page": "/giai-phap/cong-viec-ban-quan-ly",
+    "section": "management-board-tasks",
+    "summary": "Lập kế hoạch, phân công, checklist, lịch biểu và nghiệm thu công việc vận hành.",
+    "alt": "Minh họa công việc Ban quản lý XBuilding với KPI công việc, checklist, lịch biểu, QR check-in và phân công theo nhóm kỹ thuật, bảo vệ, lễ tân, vệ sinh, cảnh quan."
+  },
+  {
+    "code": "XBL-08",
+    "title": "Thông báo và truyền thông nội khu",
+    "src": "/mnt/data/thông_báo_và_truyền_thông_nội_khu.png",
+    "filename": "xbl-08-resident-communications.png",
+    "ratio": "4:3",
+    "type": "communicationsIllustration",
+    "page": "/giai-phap/truyen-thong-noi-khu",
+    "section": "resident-communications",
+    "summary": "Quản lý thông báo, sự kiện, bảo trì, truyền thông đa kênh và tỷ lệ tiếp cận cư dân.",
+    "alt": "Minh họa truyền thông nội khu XBuilding với thông báo khẩn, lịch cắt điện nước, lịch bảo trì, sự kiện cộng đồng và các kênh App Push, Email, SMS, màn hình sảnh, Zalo OA."
+  },
+  {
+    "code": "XBL-09",
+    "title": "Ứng dụng cư dân và Ban quản lý",
+    "src": "/mnt/data/ứng_dụng_quản_lý_và_cư_dân.png",
+    "filename": "xbl-09-resident-management-mobile-apps.png",
+    "ratio": "4:3",
+    "type": "mobileAppsIllustration",
+    "page": "/san-pham/xbuilding",
+    "section": "mobile-apps",
+    "summary": "Minh họa trải nghiệm mobile cho cư dân và đội ngũ Ban quản lý.",
+    "alt": "Minh họa hai ứng dụng XBuilding cho cư dân và Ban quản lý với gửi yêu cầu, thanh toán, thông báo, công việc, ticket, check-in và báo cáo."
+  }
+]

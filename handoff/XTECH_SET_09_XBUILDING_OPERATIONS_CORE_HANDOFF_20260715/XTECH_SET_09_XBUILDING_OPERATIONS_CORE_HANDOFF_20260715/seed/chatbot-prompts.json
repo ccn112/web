@@ -1,0 +1,77 @@
+{
+  "site": "xbuilding",
+  "sections": [
+    {
+      "key": "hero",
+      "assetCode": "XBL-01",
+      "prompts": [
+        "XBuilding phù hợp với loại hình bất động sản nào?",
+        "XBuilding giúp Ban quản lý vận hành hiệu quả hơn ra sao?"
+      ]
+    },
+    {
+      "key": "multi-project-dashboard",
+      "assetCode": "XBL-02",
+      "prompts": [
+        "Dashboard đa dự án theo dõi những KPI nào?",
+        "Có thể xem dữ liệu theo công ty, dự án và tòa nhà không?"
+      ]
+    },
+    {
+      "key": "units-spaces-assets",
+      "assetCode": "XBL-03",
+      "prompts": [
+        "XBuilding quản lý căn hộ và mặt bằng như thế nào?",
+        "Có thể theo dõi trạng thái căn hộ và tài sản thiết bị không?"
+      ]
+    },
+    {
+      "key": "resident-360",
+      "assetCode": "XBL-04",
+      "prompts": [
+        "Resident 360 gồm những thông tin gì?",
+        "Ban quản lý có thể xem lịch sử tương tác và công nợ của cư dân không?"
+      ]
+    },
+    {
+      "key": "service-fees-receivables",
+      "assetCode": "XBL-05",
+      "prompts": [
+        "XBuilding quản lý phí dịch vụ và công nợ ra sao?",
+        "Có hỗ trợ nhắc nợ và đối soát tự động không?"
+      ]
+    },
+    {
+      "key": "ticket-sla",
+      "assetCode": "XBL-06",
+      "prompts": [
+        "Ticket và SLA được quản lý như thế nào?",
+        "Cư dân có thể gửi phản ánh qua những kênh nào?"
+      ]
+    },
+    {
+      "key": "management-board-tasks",
+      "assetCode": "XBL-07",
+      "prompts": [
+        "Ban quản lý phân công và nghiệm thu công việc như thế nào?",
+        "Có hỗ trợ checklist và QR check-in không?"
+      ]
+    },
+    {
+      "key": "resident-communications",
+      "assetCode": "XBL-08",
+      "prompts": [
+        "XBuilding gửi thông báo tới cư dân qua những kênh nào?",
+        "Có thể theo dõi tỷ lệ đọc và tương tác không?"
+      ]
+    },
+    {
+      "key": "mobile-apps",
+      "assetCode": "XBL-09",
+      "prompts": [
+        "Ứng dụng cư dân hỗ trợ những chức năng gì?",
+        "Ứng dụng Ban quản lý khác gì với ứng dụng cư dân?"
+      ]
+    }
+  ]
+}

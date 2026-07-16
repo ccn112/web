@@ -1,0 +1,181 @@
+{
+  "site": "xbuilding",
+  "routes": [
+    {
+      "route": "/san-pham/xbuilding",
+      "blocks": [
+        {
+          "blockType": "heroSplit",
+          "assetCode": "XBL-01",
+          "title": "XBuilding",
+          "eyebrow": "QUẢN LÝ VẬN HÀNH BẤT ĐỘNG SẢN",
+          "description": "Nền tảng giúp doanh nghiệp quản lý chung cư, văn phòng và khu đô thị trên một hệ thống dữ liệu thống nhất.",
+          "primaryCTA": {
+            "label": "Đặt lịch demo",
+            "href": "/demo"
+          },
+          "secondaryCTA": {
+            "label": "Khám phá giải pháp",
+            "href": "#solutions"
+          }
+        },
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-09",
+          "title": "Ứng dụng cư dân và Ban quản lý",
+          "description": "Trải nghiệm mobile xuyên suốt cho cư dân và đội ngũ vận hành.",
+          "listItems": [
+            "Gửi yêu cầu",
+            "Thanh toán",
+            "Thông báo",
+            "Công việc",
+            "Ticket",
+            "Check-in",
+            "Báo cáo"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/quan-ly-van-hanh-da-du-an",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-02",
+          "title": "Dashboard đa dự án",
+          "description": "Theo dõi hiệu suất vận hành tập trung theo công ty, dự án và tòa nhà.",
+          "listItems": [
+            "Căn hộ",
+            "Cư dân",
+            "Thu phí",
+            "Ticket",
+            "Công việc",
+            "SLA"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/can-ho-mat-bang-tai-san",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-03",
+          "title": "Căn hộ, mặt bằng và tài sản",
+          "description": "Quản lý cấu trúc dự án, sơ đồ tầng, trạng thái không gian và tài sản thiết bị.",
+          "listItems": [
+            "Dự án",
+            "Tòa nhà",
+            "Tầng",
+            "Căn hộ",
+            "Mặt bằng",
+            "Chỗ đỗ xe",
+            "Tài sản"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/resident-360",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-04",
+          "title": "Resident 360",
+          "description": "Một hồ sơ cư dân thống nhất cho Ban quản lý và các bộ phận dịch vụ.",
+          "listItems": [
+            "Hồ sơ",
+            "Căn hộ",
+            "Thành viên hộ",
+            "Phương tiện",
+            "Hợp đồng",
+            "Công nợ",
+            "Lịch sử tương tác"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/phi-dich-vu-cong-no",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-05",
+          "title": "Phí dịch vụ và công nợ",
+          "description": "Tính phí, phát hành hóa đơn, nhắc nợ và đối soát minh bạch.",
+          "listItems": [
+            "Phải thu",
+            "Đã thu",
+            "Chưa thu",
+            "Quá hạn",
+            "Hóa đơn",
+            "Nhắc nợ",
+            "Đối soát"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ticket-sla",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-06",
+          "title": "Ticket và SLA",
+          "description": "Tiếp nhận phản ánh đa kênh, phân công và giám sát xử lý theo cam kết.",
+          "listItems": [
+            "App",
+            "Hotline",
+            "Quầy lễ tân",
+            "Chatbot",
+            "Ưu tiên",
+            "Người phụ trách",
+            "SLA"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/cong-viec-ban-quan-ly",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-07",
+          "title": "Công việc Ban quản lý",
+          "description": "Lập kế hoạch, phân công và theo dõi công việc vận hành hằng ngày.",
+          "listItems": [
+            "Checklist",
+            "Lịch biểu",
+            "QR Check-in",
+            "Kỹ thuật",
+            "Bảo vệ",
+            "Lễ tân",
+            "Vệ sinh",
+            "Cảnh quan"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/truyen-thong-noi-khu",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-08",
+          "title": "Thông báo và truyền thông nội khu",
+          "description": "Kết nối cư dân và cập nhật thông tin kịp thời trên nhiều kênh.",
+          "listItems": [
+            "Thông báo khẩn",
+            "Điện nước",
+            "Bảo trì",
+            "Sự kiện",
+            "App Push",
+            "Email",
+            "SMS",
+            "Màn hình sảnh"
+          ]
+        }
+      ]
+    }
+  ]
+}

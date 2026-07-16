@@ -1,0 +1,49 @@
+{
+  "project": "XTECH Website",
+  "set": "SET 14 — X.AI Security, Observability & AI Operations",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "visual_style": "Marketing infographic, bright background, center-and-satellite composition, glassmorphism, light 3D UI illustration",
+  "sitemap_targets": [
+    "/products/x-ai/security",
+    "/products/x-ai/observability",
+    "/products/x-ai/ai-operations",
+    "/products/x-ai/governance"
+  ],
+  "images": [
+    {
+      "id": "XAI-25",
+      "file": "assets/set14/XAI-25-ai-security-operations-center.png"
+    },
+    {
+      "id": "XAI-26",
+      "file": "assets/set14/XAI-26-prompt-injection-threat-detection.png"
+    },
+    {
+      "id": "XAI-27",
+      "file": "assets/set14/XAI-27-data-privacy-pii-protection.png"
+    },
+    {
+      "id": "XAI-28",
+      "file": "assets/set14/XAI-28-observability-trace-explorer.png"
+    },
+    {
+      "id": "XAI-29",
+      "file": "assets/set14/XAI-29-quality-latency-cost-monitor.png"
+    },
+    {
+      "id": "XAI-30",
+      "file": "assets/set14/XAI-30-grounding-hallucination-monitor.png"
+    },
+    {
+      "id": "XAI-31",
+      "file": "assets/set14/XAI-31-incident-management-rollback-center.png"
+    },
+    {
+      "id": "XAI-32",
+      "file": "assets/set14/XAI-32-compliance-reporting-audit-evidence.png"
+    }
+  ],
+  "next_set": "SET 15 — X.AI Industry Solutions",
+  "missing_sources": []
+}

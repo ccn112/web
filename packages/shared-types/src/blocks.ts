@@ -25,6 +25,21 @@ export interface CTALink {
   href: string
 }
 
+/**
+ * A populated Media upload. When a block references media and the page is fetched with depth >= 1,
+ * Payload returns the full object (with a relative `url`); with depth 0 it is just the id string.
+ */
+export interface MediaResource {
+  id: string
+  url?: string
+  alt?: string
+  width?: number
+  height?: number
+}
+
+/** A media field as it may appear in REST output: populated object or bare id (or null). */
+export type MediaRef = MediaResource | string | null
+
 /** 1. hero — exactly one H1 on the page. */
 export interface HeroBlock extends BaseBlock {
   blockType: 'hero'
@@ -33,6 +48,7 @@ export interface HeroBlock extends BaseBlock {
   description?: string
   primaryCTA?: CTALink
   secondaryCTA?: CTALink
+  illustration?: MediaRef
 }
 
 /** 2. richText — sanitized rich text (lexical JSON on the CMS side). */
@@ -48,6 +64,7 @@ export interface FeatureGridBlock extends BaseBlock {
   title?: string
   intro?: string
   items: Array<{ title: string; description?: string; icon?: string }>
+  illustration?: MediaRef
 }
 
 /** 4. productCards */
@@ -55,6 +72,7 @@ export interface ProductCardsBlock extends BaseBlock {
   blockType: 'productCards'
   title?: string
   items: Array<{ title: string; description?: string; href?: string }>
+  illustration?: MediaRef
 }
 
 /** 5. solutionCards */
@@ -97,6 +115,7 @@ export interface ArchitectureBlock extends BaseBlock {
   blockType: 'architecture'
   title?: string
   layers: Array<{ name: string; items: string[] }>
+  illustration?: MediaRef
 }
 
 /** 11. comparisonTable */
@@ -140,6 +159,7 @@ export interface DeploymentCardsBlock extends BaseBlock {
   blockType: 'deploymentCards'
   title?: string
   items: Array<{ title: string; description?: string }>
+  illustration?: MediaRef
 }
 
 /** 17. leadForm — references a Forms.code. */
@@ -148,6 +168,7 @@ export interface LeadFormBlock extends BaseBlock {
   title?: string
   formCode: string
   fields?: string[]
+  illustration?: MediaRef
 }
 
 /** 18. cta */
@@ -157,6 +178,7 @@ export interface CTABlock extends BaseBlock {
   description?: string
   primaryCTA?: CTALink
   secondaryCTA?: CTALink
+  illustration?: MediaRef
 }
 
 export type Block =

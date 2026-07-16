@@ -1,0 +1,32 @@
+{
+  "name": "XTECH SET 09 XBuilding Operations Core Handoff",
+  "version": "2026.07.15",
+  "assetCount": 9,
+  "recommendedDefaultRatio": "4:3",
+  "usesMasterCheckpoint": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "nextRecommendedSet": "SET 10 — XBuilding Smart Operations & IoT",
+  "files": [
+    "README.md",
+    "brand/xtech-logo-color-original.png",
+    "brand/xtech-logo-white-original.png",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "docs/06_SET10_PLAN.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET09_ASSET_MAP.csv",
+    "assets/set-09-xbuilding-operations-core/xbl-01-xbuilding-operations-platform.png",
+    "assets/set-09-xbuilding-operations-core/xbl-02-multi-project-dashboard.png",
+    "assets/set-09-xbuilding-operations-core/xbl-03-units-spaces-assets.png",
+    "assets/set-09-xbuilding-operations-core/xbl-04-resident-360.png",
+    "assets/set-09-xbuilding-operations-core/xbl-05-service-fees-receivables.png",
+    "assets/set-09-xbuilding-operations-core/xbl-06-ticket-sla.png",
+    "assets/set-09-xbuilding-operations-core/xbl-07-management-board-tasks.png",
+    "assets/set-09-xbuilding-operations-core/xbl-08-resident-communications.png",
+    "assets/set-09-xbuilding-operations-core/xbl-09-resident-management-mobile-apps.png"
+  ]
+}

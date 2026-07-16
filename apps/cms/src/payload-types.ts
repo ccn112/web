@@ -322,6 +322,7 @@ export interface HeroBlock {
     label: string;
     href: string;
   };
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -378,6 +379,7 @@ export interface FeatureGridBlock {
         id?: string | null;
       }[]
     | null;
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -402,6 +404,7 @@ export interface ProductCardsBlock {
         id?: string | null;
       }[]
     | null;
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -536,6 +539,7 @@ export interface ArchitectureBlock {
         id?: string | null;
       }[]
     | null;
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -678,6 +682,7 @@ export interface DeploymentCardsBlock {
         id?: string | null;
       }[]
     | null;
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -699,6 +704,7 @@ export interface LeadFormBlock {
    */
   formCode: string;
   fields?: string[] | null;
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -724,6 +730,7 @@ export interface CTABlock {
     label: string;
     href: string;
   };
+  illustration?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -1262,6 +1269,7 @@ export interface HeroBlockSelect<T extends boolean = true> {
         label?: T;
         href?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1296,6 +1304,7 @@ export interface FeatureGridBlockSelect<T extends boolean = true> {
         icon?: T;
         id?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1316,6 +1325,7 @@ export interface ProductCardsBlockSelect<T extends boolean = true> {
         href?: T;
         id?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1426,6 +1436,7 @@ export interface ArchitectureBlockSelect<T extends boolean = true> {
         items?: T;
         id?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1541,6 +1552,7 @@ export interface DeploymentCardsBlockSelect<T extends boolean = true> {
         description?: T;
         id?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1555,6 +1567,7 @@ export interface LeadFormBlockSelect<T extends boolean = true> {
   title?: T;
   formCode?: T;
   fields?: T;
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1580,6 +1593,7 @@ export interface CTABlockSelect<T extends boolean = true> {
         label?: T;
         href?: T;
       };
+  illustration?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;

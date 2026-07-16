@@ -73,6 +73,47 @@ async function seedAdminUser(payload: Payload): Promise<void> {
   console.log(`  user: ${email} (created)`)
 }
 
+type MediaJson = { code: string; site?: string; file: string; alt: string }
+/**
+ * Upsert Media uploads from local files (idempotent by filename). Returns a map of
+ * symbolic asset code -> Media doc id, so page blocks can reference `illustrationAsset: "COR-02"`
+ * without hard-coding generated uuids.
+ */
+async function seedMedia(
+  payload: Payload,
+  media: MediaJson[],
+  siteIdByCode: Map<string, string>,
+): Promise<Map<string, string>> {
+  const idByCode = new Map<string, string>()
+  for (const m of media) {
+    const filename = path.basename(m.file)
+    const existing = await payload.find({
+      collection: 'media',
+      where: { filename: { equals: filename } },
+      limit: 1,
+      depth: 0,
+      overrideAccess: true,
+    })
+    const found = existing.docs[0] as { id: string } | undefined
+    const siteId = m.site ? siteIdByCode.get(m.site) : undefined
+    const data: Record<string, unknown> = { alt: m.alt }
+    if (siteId) data.site = siteId
+    if (found) {
+      await payload.update({ collection: 'media', id: found.id, data, overrideAccess: true })
+      idByCode.set(m.code, found.id)
+    } else {
+      const doc = (await payload.create({
+        collection: 'media',
+        data,
+        filePath: path.join(SEED_DIR, m.file),
+        overrideAccess: true,
+      } as Parameters<Payload['create']>[0])) as { id: string }
+      idByCode.set(m.code, doc.id)
+    }
+  }
+  return idByCode
+}
+
 type MenusJson = Record<string, unknown[]>
 type FormJson = { code: string; name: string; siteScope: string[]; successMessage?: string; fields: string[] }
 type PromptSetJson = { code: string; site: string; prompts: unknown[] }
@@ -129,6 +170,17 @@ async function run(): Promise<void> {
     if (!id) throw new Error(`Seed references unknown site code: ${code}`)
     return id
   }
+
+  // 2.5 Media uploads -> map asset code -> id (media.json is optional).
+  console.log('• Media')
+  let mediaJson: MediaJson[] = []
+  try {
+    mediaJson = await readJson<MediaJson[]>('media.json')
+  } catch {
+    mediaJson = []
+  }
+  const mediaIdByCode = await seedMedia(payload, mediaJson, siteIdByCode)
+  console.log(`  ${mediaJson.length} media`)
 
   // 3. Menus (object keyed by site code)
   console.log('• Menus')
@@ -195,7 +247,7 @@ async function run(): Promise<void> {
         locale,
         summary: p.pageSummary,
         seo: p.seo ?? {},
-        blocks: normalizeBlocks(p.blocks),
+        blocks: normalizeBlocks(p.blocks, mediaIdByCode),
         suggestedPrompts: p.suggestedPrompts ?? [],
         status: p.status ?? 'published',
       },

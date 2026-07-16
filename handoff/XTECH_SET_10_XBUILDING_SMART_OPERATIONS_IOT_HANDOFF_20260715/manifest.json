@@ -1,0 +1,29 @@
+{
+  "name": "XTECH SET 10 XBuilding Smart Operations & IoT Handoff",
+  "version": "2026.07.15",
+  "assetCount": 8,
+  "recommendedDefaultRatio": "4:3",
+  "usesMasterCheckpoint": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "nextRecommendedSet": "SET 11 — X.AI Core",
+  "files": [
+    "README.md",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "docs/06_SET11_PLAN.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET10_ASSET_MAP.csv",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-10-smart-building-command-center.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-11-iot-device-monitoring.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-12-energy-utility-monitoring.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-13-preventive-maintenance.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-14-asset-lifecycle-work-orders.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-15-access-control-smart-parking.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-16-incident-emergency-management.png",
+    "assets/set-10-xbuilding-smart-operations-iot/xbl-17-building-ai-copilot.png"
+  ]
+}

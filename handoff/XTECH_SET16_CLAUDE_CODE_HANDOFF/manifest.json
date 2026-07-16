@@ -1,0 +1,54 @@
+{
+  "project": "XTECH Website",
+  "set": "SET 16 — X.AI Enterprise Use Cases / Department Journeys",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "visual_style": "Marketing infographic with journey flow, bright background, cyan connectors, UI illustration, light 3D depth",
+  "sitemap_targets": [
+    "/products/x-ai/use-cases",
+    "/products/x-ai/departments/sales",
+    "/products/x-ai/departments/finance",
+    "/products/x-ai/departments/hr",
+    "/products/x-ai/departments/operations",
+    "/products/x-ai/departments/customer-service",
+    "/products/x-ai/departments/executive",
+    "/products/x-ai/departments/knowledge",
+    "/products/x-ai/cross-functional"
+  ],
+  "images": [
+    {
+      "id": "XAI-41",
+      "file": "assets/set16/XAI-41-sales-department-journey.png"
+    },
+    {
+      "id": "XAI-42",
+      "file": "assets/set16/XAI-42-finance-department-journey.png"
+    },
+    {
+      "id": "XAI-43",
+      "file": "assets/set16/XAI-43-hr-department-journey.png"
+    },
+    {
+      "id": "XAI-44",
+      "file": "assets/set16/XAI-44-operations-bql-journey.png"
+    },
+    {
+      "id": "XAI-45",
+      "file": "assets/set16/XAI-45-customer-service-journey.png"
+    },
+    {
+      "id": "XAI-46",
+      "file": "assets/set16/XAI-46-executive-journey.png"
+    },
+    {
+      "id": "XAI-47",
+      "file": "assets/set16/XAI-47-knowledge-journey.png"
+    },
+    {
+      "id": "XAI-48",
+      "file": "assets/set16/XAI-48-cross-functional-journey.png"
+    }
+  ],
+  "next_set": "SET 17 — X.AI Outcomes, ROI & Transformation Value",
+  "missing_sources": []
+}

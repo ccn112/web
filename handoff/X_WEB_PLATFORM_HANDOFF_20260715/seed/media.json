@@ -1,0 +1,668 @@
+[
+  {
+    "code": "XAI-09",
+    "site": "xai",
+    "file": "media/XAI-09-sales-agent.png",
+    "alt": "Giao diện Sales Agent với lead pipeline, cơ hội bán hàng và AI gợi ý hành động"
+  },
+  {
+    "code": "XAI-10",
+    "site": "xai",
+    "file": "media/XAI-10-finance-agent.png",
+    "alt": "Giao diện Finance Agent phân tích dòng tiền, công nợ, ngân sách và cảnh báo bất thường"
+  },
+  {
+    "code": "XAI-11",
+    "site": "xai",
+    "file": "media/XAI-11-building-operations-agent.png",
+    "alt": "Giao diện Building Operations Agent theo dõi sự cố, thiết bị, bảo trì và năng lượng"
+  },
+  {
+    "code": "XAI-12",
+    "site": "xai",
+    "file": "media/XAI-12-customer-service-agent.png",
+    "alt": "Giao diện Customer Service Agent với omnichannel inbox, ticket và AI hỗ trợ xử lý"
+  },
+  {
+    "code": "XAI-13",
+    "site": "xai",
+    "file": "media/XAI-13-executive-copilot.png",
+    "alt": "Giao diện Executive Copilot với KPI, dự báo, rủi ro và các ưu tiên điều hành"
+  },
+  {
+    "code": "XAI-14",
+    "site": "xai",
+    "file": "media/XAI-14-ai-governance-guardrails.png",
+    "alt": "Trung tâm quản trị AI với RBAC, chính sách, kiểm soát dữ liệu, phê duyệt và audit log"
+  },
+  {
+    "code": "XAI-15",
+    "site": "xai",
+    "file": "media/XAI-15-model-prompt-evaluation-center.png",
+    "alt": "Giao diện quản lý model, prompt, phiên bản, test suite, đánh giá chất lượng và chi phí AI"
+  },
+  {
+    "code": "XAI-16",
+    "site": "xai",
+    "file": "media/XAI-16-enterprise-ai-deployment-integration.png",
+    "alt": "Kiến trúc triển khai X.AI theo mô hình SaaS, private cloud, on-premise và tích hợp hệ thống doanh nghiệp"
+  },
+  {
+    "code": "XAI-17",
+    "site": "xai",
+    "file": "media/XAI-17-visual-agent-builder.png",
+    "alt": "Giao diện Visual Agent Builder với canvas kéo thả, block logic và phần cấu hình agent"
+  },
+  {
+    "code": "XAI-18",
+    "site": "xai",
+    "file": "media/XAI-18-knowledge-hub-rag-studio.png",
+    "alt": "Giao diện Knowledge Hub và RAG Studio với data sources, library và pipeline retrieval"
+  },
+  {
+    "code": "XAI-19",
+    "site": "xai",
+    "file": "media/XAI-19-workflow-automation-studio.png",
+    "alt": "Giao diện Workflow Automation Studio với sơ đồ bước, điều kiện, approval và monitoring"
+  },
+  {
+    "code": "XAI-20",
+    "site": "xai",
+    "file": "media/XAI-20-tool-api-connector-center.png",
+    "alt": "Giao diện Tool and API Connector Center với connector library và màn cấu hình API"
+  },
+  {
+    "code": "XAI-21",
+    "site": "xai",
+    "file": "media/XAI-21-multi-agent-orchestration.png",
+    "alt": "Giao diện Multi-Agent Orchestration với supervisor agent, execution monitor và collaboration canvas"
+  },
+  {
+    "code": "XAI-22",
+    "site": "xai",
+    "file": "media/XAI-22-human-approval-exception-handling.png",
+    "alt": "Giao diện phê duyệt và xử lý ngoại lệ với queue, request detail, escalation route và SLA"
+  },
+  {
+    "code": "XAI-23",
+    "site": "xai",
+    "file": "media/XAI-23-agent-testing-simulation-lab.png",
+    "alt": "Giao diện Agent Testing and Simulation Lab với test suites, replay, evaluation metrics và performance analysis"
+  },
+  {
+    "code": "XAI-24",
+    "site": "xai",
+    "file": "media/XAI-24-agent-marketplace-templates.png",
+    "alt": "Giao diện Agent Marketplace and Templates với thư viện agent, bộ lọc và màn chi tiết template"
+  },
+  {
+    "code": "XAI-25",
+    "site": "xai",
+    "file": "media/XAI-25-ai-security-operations-center.png",
+    "alt": "Trung tâm điều hành an ninh AI với khối điều khiển trung tâm và các card vệ tinh giám sát mối đe dọa"
+  },
+  {
+    "code": "XAI-26",
+    "site": "xai",
+    "file": "media/XAI-26-prompt-injection-threat-detection.png",
+    "alt": "Minh họa phát hiện mối đe dọa AI theo thời gian thực với bộ lọc trung tâm và các lớp kiểm tra vệ tinh"
+  },
+  {
+    "code": "XAI-27",
+    "site": "xai",
+    "file": "media/XAI-27-data-privacy-pii-protection.png",
+    "alt": "Minh họa bảo vệ dữ liệu nhạy cảm với nhận diện PII, masking và kiểm soát quyền truy cập"
+  },
+  {
+    "code": "XAI-28",
+    "site": "xai",
+    "file": "media/XAI-28-observability-trace-explorer.png",
+    "alt": "Minh họa quan sát toàn trình hoạt động AI với luồng xử lý trung tâm và các panel truy vết"
+  },
+  {
+    "code": "XAI-29",
+    "site": "xai",
+    "file": "media/XAI-29-quality-latency-cost-monitor.png",
+    "alt": "Minh họa tối ưu hiệu năng và chi phí AI với các chỉ số chất lượng, độ trễ và chi phí"
+  },
+  {
+    "code": "XAI-30",
+    "site": "xai",
+    "file": "media/XAI-30-grounding-hallucination-monitor.png",
+    "alt": "Minh họa kiểm soát độ chính xác của câu trả lời AI với citation, grounding và human review"
+  },
+  {
+    "code": "XAI-31",
+    "site": "xai",
+    "file": "media/XAI-31-incident-management-rollback-center.png",
+    "alt": "Minh họa quản lý sự cố và khôi phục AI với dòng xử lý trung tâm và các card rollback, notify, postmortem"
+  },
+  {
+    "code": "XAI-32",
+    "site": "xai",
+    "file": "media/XAI-32-compliance-reporting-audit-evidence.png",
+    "alt": "Minh họa tuân thủ và kiểm toán AI doanh nghiệp với hồ sơ trung tâm và các card policy, evidence, audit"
+  },
+  {
+    "code": "XAI-33",
+    "site": "xai",
+    "file": "media/XAI-33-real-estate-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho bất động sản với real estate hub trung tâm và các card lead, bảng hàng, booking, hợp đồng"
+  },
+  {
+    "code": "XAI-34",
+    "site": "xai",
+    "file": "media/XAI-34-manufacturing-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho sản xuất với manufacturing hub trung tâm và các card giám sát sản xuất, bảo trì, chất lượng, an toàn"
+  },
+  {
+    "code": "XAI-35",
+    "site": "xai",
+    "file": "media/XAI-35-retail-distribution-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho bán lẻ và phân phối với retail hub, tồn kho, đơn hàng, đại lý, chăm sóc khách hàng"
+  },
+  {
+    "code": "XAI-36",
+    "site": "xai",
+    "file": "media/XAI-36-construction-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho xây dựng với construction hub, tiến độ, hồ sơ, vật tư, an toàn và báo cáo điều hành"
+  },
+  {
+    "code": "XAI-37",
+    "site": "xai",
+    "file": "media/XAI-37-finance-accounting-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho tài chính kế toán với finance hub và các card dòng tiền, công nợ, chứng từ, cảnh báo bất thường"
+  },
+  {
+    "code": "XAI-38",
+    "site": "xai",
+    "file": "media/XAI-38-smart-building-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho tòa nhà thông minh với smart building hub, ticket, SLA, bảo trì, năng lượng và cư dân"
+  },
+  {
+    "code": "XAI-39",
+    "site": "xai",
+    "file": "media/XAI-39-customer-service-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho chăm sóc khách hàng với service hub, kênh tiếp nhận, ticket, SLA và đánh giá chất lượng"
+  },
+  {
+    "code": "XAI-40",
+    "site": "xai",
+    "file": "media/XAI-40-enterprise-operations-ai-solutions.png",
+    "alt": "Minh họa giải pháp AI cho điều hành doanh nghiệp với enterprise hub và các card trợ lý điều hành, phê duyệt, tri thức, KPI"
+  },
+  {
+    "code": "XAI-41",
+    "site": "xai",
+    "file": "media/XAI-41-sales-department-journey.png",
+    "alt": "Hành trình AI cho kinh doanh từ lead đến chốt sale và chăm sóc sau bán"
+  },
+  {
+    "code": "XAI-42",
+    "site": "xai",
+    "file": "media/XAI-42-finance-department-journey.png",
+    "alt": "Hành trình AI cho tài chính từ hỏi đáp số liệu đến báo cáo điều hành"
+  },
+  {
+    "code": "XAI-43",
+    "site": "xai",
+    "file": "media/XAI-43-hr-department-journey.png",
+    "alt": "Hành trình AI cho nhân sự từ tuyển dụng đến hỗ trợ nhân viên"
+  },
+  {
+    "code": "XAI-44",
+    "site": "xai",
+    "file": "media/XAI-44-operations-bql-journey.png",
+    "alt": "Hành trình AI cho vận hành và ban quản lý từ tiếp nhận sự cố đến báo cáo"
+  },
+  {
+    "code": "XAI-45",
+    "site": "xai",
+    "file": "media/XAI-45-customer-service-journey.png",
+    "alt": "Hành trình AI cho chăm sóc khách hàng từ tiếp nhận đa kênh đến đo CSAT"
+  },
+  {
+    "code": "XAI-46",
+    "site": "xai",
+    "file": "media/XAI-46-executive-journey.png",
+    "alt": "Hành trình AI cho điều hành từ dữ liệu đa nguồn đến quyết định chiến lược"
+  },
+  {
+    "code": "XAI-47",
+    "site": "xai",
+    "file": "media/XAI-47-knowledge-journey.png",
+    "alt": "Hành trình AI cho tri thức nội bộ từ nạp tài liệu đến chia sẻ kiến thức"
+  },
+  {
+    "code": "XAI-48",
+    "site": "xai",
+    "file": "media/XAI-48-cross-functional-journey.png",
+    "alt": "Hành trình AI liên phòng ban với kinh doanh, tài chính, pháp chế, vận hành và chăm sóc khách hàng"
+  },
+  {
+    "code": "COR-01",
+    "site": "corporate",
+    "file": "media/cor-01-corporate-hero-illustration.png",
+    "alt": "Minh họa hệ sinh thái đô thị số kết nối marketing, bán hàng, dữ liệu và vận hành bất động sản"
+  },
+  {
+    "code": "COR-02",
+    "site": "corporate",
+    "file": "media/cor-02-ecosystem-5-products.png",
+    "alt": "Hệ sinh thái 5 sản phẩm XTECH: XBooking, FinERP, XBuilding, X.AI và X.Space quanh một nền tảng chung"
+  },
+  {
+    "code": "COR-03",
+    "site": "corporate",
+    "file": "media/cor-03-shared-data-ai-platform.png",
+    "alt": "Kiến trúc một dữ liệu dùng chung, nhiều ứng dụng nghiệp vụ và nền tảng AI"
+  },
+  {
+    "code": "COR-04",
+    "site": "corporate",
+    "file": "media/cor-04-solutions-by-role.png",
+    "alt": "Giải pháp theo từng vai trò: chủ đầu tư, sàn và đại lý, ban quản lý và lãnh đạo"
+  },
+  {
+    "code": "COR-05",
+    "site": "corporate",
+    "file": "media/cor-05-business-value.png",
+    "alt": "Giá trị mang lại cho doanh nghiệp: doanh thu, hiệu quả, dữ liệu, trải nghiệm và tự động hóa"
+  },
+  {
+    "code": "COR-06",
+    "site": "corporate",
+    "file": "media/cor-06-digital-blueprint.png",
+    "alt": "Tư vấn và Digital Blueprint: business, process, data, technology và AI"
+  },
+  {
+    "code": "COR-07",
+    "site": "corporate",
+    "file": "media/cor-07-deployment-models.png",
+    "alt": "Các mô hình triển khai: SaaS, Private Cloud, On-premise và Hybrid"
+  },
+  {
+    "code": "COR-08",
+    "site": "corporate",
+    "file": "media/cor-08-cta-demo.png",
+    "alt": "Trợ lý AI của XTECH kết nối lịch hẹn, tài liệu và tư vấn"
+  },
+  {
+    "code": "FERP-01",
+    "site": "finerp",
+    "file": "media/ferp-01-hero-finerp.png",
+    "alt": "Giao diện FinERP cho quản trị tài chính doanh nghiệp"
+  },
+  {
+    "code": "FERP-02",
+    "site": "finerp",
+    "file": "media/ferp-02-executive-finance-dashboard.png",
+    "alt": "Bảng điều khiển tài chính điều hành trên FinERP"
+  },
+  {
+    "code": "FERP-03",
+    "site": "finerp",
+    "file": "media/ferp-03-cashflow-and-receivables.png",
+    "alt": "Dòng tiền và công nợ phải thu trên FinERP"
+  },
+  {
+    "code": "FERP-04",
+    "site": "finerp",
+    "file": "media/ferp-04-budget-vs-actual.png",
+    "alt": "Budget vs actual"
+  },
+  {
+    "code": "FERP-05",
+    "site": "finerp",
+    "file": "media/ferp-05-accounting-and-documents.png",
+    "alt": "Accounting and documents"
+  },
+  {
+    "code": "FERP-06",
+    "site": "finerp",
+    "file": "media/ferp-06-procurement-and-vendors.png",
+    "alt": "Procurement and vendors"
+  },
+  {
+    "code": "FERP-07",
+    "site": "finerp",
+    "file": "media/ferp-07-warehouse-and-assets.png",
+    "alt": "Warehouse and assets"
+  },
+  {
+    "code": "FERP-08",
+    "site": "finerp",
+    "file": "media/ferp-08-project-cost.png",
+    "alt": "Project cost"
+  },
+  {
+    "code": "FERP-09",
+    "site": "finerp",
+    "file": "media/ferp-09-hrm-employee-profile.png",
+    "alt": "Hồ sơ nhân sự trong phân hệ HRM của FinERP"
+  },
+  {
+    "code": "FERP-10",
+    "site": "finerp",
+    "file": "media/ferp-10-attendance-payroll.png",
+    "alt": "Attendance payroll"
+  },
+  {
+    "code": "FERP-11",
+    "site": "finerp",
+    "file": "media/ferp-11-approval-workflow.png",
+    "alt": "Approval workflow"
+  },
+  {
+    "code": "FERP-12",
+    "site": "finerp",
+    "file": "media/ferp-12-contract-management.png",
+    "alt": "Contract management"
+  },
+  {
+    "code": "FERP-13",
+    "site": "finerp",
+    "file": "media/ferp-13-documents-management.png",
+    "alt": "Documents management"
+  },
+  {
+    "code": "FERP-14",
+    "site": "finerp",
+    "file": "media/ferp-14-report-ai.png",
+    "alt": "Report ai"
+  },
+  {
+    "code": "FERP-15",
+    "site": "finerp",
+    "file": "media/ferp-15-budget-and-receivables-alerts.png",
+    "alt": "Budget and receivables alerts"
+  },
+  {
+    "code": "FERP-16",
+    "site": "finerp",
+    "file": "media/ferp-16-deployment-and-integration.png",
+    "alt": "Triển khai và tích hợp hệ thống FinERP"
+  },
+  {
+    "code": "SUITE-01",
+    "site": "corporate",
+    "file": "media/suite-01-overall-architecture.png",
+    "alt": "Kiến trúc tổng thể X Real Estate Digital Suite"
+  },
+  {
+    "code": "SUITE-02",
+    "site": "corporate",
+    "file": "media/suite-02-business-application-layer.png",
+    "alt": "Business application layer"
+  },
+  {
+    "code": "SUITE-03",
+    "site": "corporate",
+    "file": "media/suite-03-shared-data-foundation.png",
+    "alt": "Shared data foundation"
+  },
+  {
+    "code": "SUITE-04",
+    "site": "corporate",
+    "file": "media/suite-04-ai-knowledge-layer.png",
+    "alt": "Tầng AI và tri thức của X Real Estate Digital Suite"
+  },
+  {
+    "code": "SUITE-05",
+    "site": "corporate",
+    "file": "media/suite-05-integration-layer.png",
+    "alt": "Integration layer"
+  },
+  {
+    "code": "SUITE-06",
+    "site": "corporate",
+    "file": "media/suite-06-security-identity-infrastructure.png",
+    "alt": "Security identity infrastructure"
+  },
+  {
+    "code": "SUITE-07",
+    "site": "corporate",
+    "file": "media/suite-07-data-journey.png",
+    "alt": "Data journey"
+  },
+  {
+    "code": "SUITE-08",
+    "site": "corporate",
+    "file": "media/suite-08-solution-packages.png",
+    "alt": "Solution packages"
+  },
+  {
+    "code": "XAI-01",
+    "site": "xai",
+    "file": "media/xai-01-hero-xai-core.png",
+    "alt": "Giao diện X.AI Core cho doanh nghiệp"
+  },
+  {
+    "code": "XAI-02",
+    "site": "xai",
+    "file": "media/xai-02-intelligent-data-capture.png",
+    "alt": "Intelligent data capture"
+  },
+  {
+    "code": "XAI-03",
+    "site": "xai",
+    "file": "media/xai-03-ai-document-processing.png",
+    "alt": "Xử lý và bóc tách tài liệu tự động bằng X.AI"
+  },
+  {
+    "code": "XAI-04",
+    "site": "xai",
+    "file": "media/xai-04-executive-reporting-ai.png",
+    "alt": "Báo cáo điều hành thông minh do X.AI tổng hợp"
+  },
+  {
+    "code": "XAI-05",
+    "site": "xai",
+    "file": "media/xai-05-knowledge-search-qa.png",
+    "alt": "Tìm kiếm tri thức và hỏi đáp nội bộ bằng X.AI"
+  },
+  {
+    "code": "XAI-06",
+    "site": "xai",
+    "file": "media/xai-06-ai-workflow-assistant.png",
+    "alt": "Ai workflow assistant"
+  },
+  {
+    "code": "XAI-07",
+    "site": "xai",
+    "file": "media/xai-07-ai-risk-insight-engine.png",
+    "alt": "Ai risk insight engine"
+  },
+  {
+    "code": "XAI-08",
+    "site": "xai",
+    "file": "media/xai-08-multi-agent-enterprise-layer.png",
+    "alt": "Multi agent enterprise layer"
+  },
+  {
+    "code": "XBK-01",
+    "site": "xbooking",
+    "file": "media/xbk-01-hero-xbooking.png",
+    "alt": "Giao diện XBooking cho marketing, CRM và bán hàng bất động sản"
+  },
+  {
+    "code": "XBK-02",
+    "site": "xbooking",
+    "file": "media/xbk-02-marketing-automation.png",
+    "alt": "Marketing automation đa kênh trên XBooking"
+  },
+  {
+    "code": "XBK-03",
+    "site": "xbooking",
+    "file": "media/xbk-03-multi-source-lead-capture.png",
+    "alt": "Multi source lead capture"
+  },
+  {
+    "code": "XBK-04",
+    "site": "xbooking",
+    "file": "media/xbk-04-lead-360.png",
+    "alt": "Hồ sơ khách hàng 360 độ trên XBooking CRM"
+  },
+  {
+    "code": "XBK-05",
+    "site": "xbooking",
+    "file": "media/xbk-05-lead-scoring.png",
+    "alt": "Lead scoring"
+  },
+  {
+    "code": "XBK-06",
+    "site": "xbooking",
+    "file": "media/xbk-06-lead-distribution.png",
+    "alt": "Lead distribution"
+  },
+  {
+    "code": "XBK-07",
+    "site": "xbooking",
+    "file": "media/xbk-07-sales-pipeline.png",
+    "alt": "Pipeline bán hàng trực quan trên XBooking"
+  },
+  {
+    "code": "XBK-08",
+    "site": "xbooking",
+    "file": "media/xbk-08-mobile-crm-for-sales.png",
+    "alt": "CRM di động cho đội sale XBooking"
+  },
+  {
+    "code": "XBK-09",
+    "site": "xbooking",
+    "file": "media/xbk-09-inventory-matrix.png",
+    "alt": "Ma trận bảng hàng và tồn kho bất động sản trên XBooking"
+  },
+  {
+    "code": "XBK-10",
+    "site": "xbooking",
+    "file": "media/xbk-10-property-detail.png",
+    "alt": "Property detail"
+  },
+  {
+    "code": "XBK-11",
+    "site": "xbooking",
+    "file": "media/xbk-11-lock-and-booking.png",
+    "alt": "Lock and booking"
+  },
+  {
+    "code": "XBK-12",
+    "site": "xbooking",
+    "file": "media/xbk-12-booking-approval.png",
+    "alt": "Booking approval"
+  },
+  {
+    "code": "XBK-15",
+    "site": "xbooking",
+    "file": "media/xbk-15-contract-payment-progress.png",
+    "alt": "Contract payment progress"
+  },
+  {
+    "code": "XBK-16",
+    "site": "xbooking",
+    "file": "media/xbk-16-customer-care.png",
+    "alt": "Chăm sóc khách hàng sau bán trên XBooking"
+  },
+  {
+    "code": "XBL-01",
+    "site": "xbuilding",
+    "file": "media/xbl-01-xbuilding-operations-platform.png",
+    "alt": "Nền tảng vận hành tòa nhà và bất động sản XBuilding"
+  },
+  {
+    "code": "XBL-02",
+    "site": "xbuilding",
+    "file": "media/xbl-02-multi-project-dashboard.png",
+    "alt": "Bảng điều khiển đa dự án trên XBuilding"
+  },
+  {
+    "code": "XBL-03",
+    "site": "xbuilding",
+    "file": "media/xbl-03-units-spaces-assets.png",
+    "alt": "Quản lý căn hộ, không gian và tài sản trên XBuilding"
+  },
+  {
+    "code": "XBL-04",
+    "site": "xbuilding",
+    "file": "media/xbl-04-resident-360.png",
+    "alt": "Hồ sơ cư dân 360 độ trên XBuilding"
+  },
+  {
+    "code": "XBL-05",
+    "site": "xbuilding",
+    "file": "media/xbl-05-service-fees-receivables.png",
+    "alt": "Service fees receivables"
+  },
+  {
+    "code": "XBL-06",
+    "site": "xbuilding",
+    "file": "media/xbl-06-ticket-sla.png",
+    "alt": "Ticket sla"
+  },
+  {
+    "code": "XBL-07",
+    "site": "xbuilding",
+    "file": "media/xbl-07-management-board-tasks.png",
+    "alt": "Management board tasks"
+  },
+  {
+    "code": "XBL-08",
+    "site": "xbuilding",
+    "file": "media/xbl-08-resident-communications.png",
+    "alt": "Resident communications"
+  },
+  {
+    "code": "XBL-09",
+    "site": "xbuilding",
+    "file": "media/xbl-09-resident-management-mobile-apps.png",
+    "alt": "Resident management mobile apps"
+  },
+  {
+    "code": "XBL-10",
+    "site": "xbuilding",
+    "file": "media/xbl-10-smart-building-command-center.png",
+    "alt": "Trung tâm điều hành tòa nhà thông minh XBuilding"
+  },
+  {
+    "code": "XBL-11",
+    "site": "xbuilding",
+    "file": "media/xbl-11-iot-device-monitoring.png",
+    "alt": "Iot device monitoring"
+  },
+  {
+    "code": "XBL-12",
+    "site": "xbuilding",
+    "file": "media/xbl-12-energy-utility-monitoring.png",
+    "alt": "Energy utility monitoring"
+  },
+  {
+    "code": "XBL-13",
+    "site": "xbuilding",
+    "file": "media/xbl-13-preventive-maintenance.png",
+    "alt": "Preventive maintenance"
+  },
+  {
+    "code": "XBL-14",
+    "site": "xbuilding",
+    "file": "media/xbl-14-asset-lifecycle-work-orders.png",
+    "alt": "Asset lifecycle work orders"
+  },
+  {
+    "code": "XBL-15",
+    "site": "xbuilding",
+    "file": "media/xbl-15-access-control-smart-parking.png",
+    "alt": "Access control smart parking"
+  },
+  {
+    "code": "XBL-16",
+    "site": "xbuilding",
+    "file": "media/xbl-16-incident-emergency-management.png",
+    "alt": "Incident emergency management"
+  },
+  {
+    "code": "XBL-17",
+    "site": "xbuilding",
+    "file": "media/xbl-17-building-ai-copilot.png",
+    "alt": "Building ai copilot"
+  }
+]

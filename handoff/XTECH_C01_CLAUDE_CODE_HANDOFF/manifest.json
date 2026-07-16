@@ -1,0 +1,56 @@
+{
+  "project": "XTECH Corporate Website",
+  "set": "SET C01 — XTECH Corporate Overview",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "framework_recommendation": "Next.js App Router + TypeScript + Payload CMS + PostgreSQL",
+  "animation_recommendation": "Framer Motion + GSAP ScrollTrigger for maximum two sticky storytelling sections",
+  "images": [
+    {
+      "id": "C01-01",
+      "file": "assets/c01/C01-01-corporate-hero.png"
+    },
+    {
+      "id": "C01-02",
+      "file": "assets/c01/C01-02-who-we-are.png"
+    },
+    {
+      "id": "C01-03",
+      "file": "assets/c01/C01-03-product-ecosystem.png"
+    },
+    {
+      "id": "C01-04",
+      "file": "assets/c01/C01-04-digital-transformation-capability.png"
+    },
+    {
+      "id": "C01-05",
+      "file": "assets/c01/C01-05-connected-enterprise-platform.png"
+    },
+    {
+      "id": "C01-06",
+      "file": "assets/c01/C01-06-business-value.png"
+    },
+    {
+      "id": "C01-07",
+      "file": "assets/c01/C01-07-flexible-deployment.png"
+    },
+    {
+      "id": "C01-08",
+      "file": "assets/c01/C01-08-partnership-future-vision.png"
+    }
+  ],
+  "homepage_sections": [
+    "Hero",
+    "Trusted by",
+    "Who we are",
+    "Product ecosystem",
+    "Digital transformation capability",
+    "Connected enterprise platform",
+    "Business value",
+    "Industries / departments",
+    "Case studies",
+    "Insights",
+    "CTA"
+  ],
+  "missing_sources": []
+}

@@ -1,0 +1,162 @@
+{
+  "site": "x-ai",
+  "routes": [
+    {
+      "route": "/san-pham/x-ai",
+      "blocks": [
+        {
+          "blockType": "heroSplit",
+          "assetCode": "XAI-01",
+          "title": "X.AI",
+          "eyebrow": "NỀN TẢNG AI CHO DOANH NGHIỆP",
+          "description": "Khai thác dữ liệu, tự động hóa quy trình, tạo báo cáo và biến tri thức doanh nghiệp thành trợ lý AI có thể hành động.",
+          "primaryCTA": {
+            "label": "Đặt lịch demo",
+            "href": "/demo"
+          },
+          "secondaryCTA": {
+            "label": "Khám phá năng lực AI",
+            "href": "#capabilities"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/nhap-lieu-thong-minh",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-02",
+          "title": "Nhập liệu thông minh",
+          "description": "Tự động trích xuất, kiểm tra và chuẩn hóa dữ liệu từ nhiều loại tài liệu và nguồn đầu vào.",
+          "listItems": [
+            "Hóa đơn",
+            "Hợp đồng",
+            "Email",
+            "Biểu mẫu",
+            "PDF",
+            "Bảng tính",
+            "OCR",
+            "Đối chiếu"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ai-document-processing",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-03",
+          "title": "AI Document Processing",
+          "description": "Phân loại, tóm tắt, trích xuất và tổ chức tài liệu doanh nghiệp bằng AI.",
+          "listItems": [
+            "Phân loại",
+            "Trích xuất",
+            "Tóm tắt",
+            "Gắn thẻ",
+            "Phiên bản",
+            "Phê duyệt"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/bao-cao-ai",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-04",
+          "title": "Executive Reporting AI",
+          "description": "Tổng hợp KPI, phân tích xu hướng, rủi ro và khuyến nghị điều hành bằng ngôn ngữ tự nhiên.",
+          "listItems": [
+            "KPI",
+            "Tóm tắt",
+            "Xu hướng",
+            "Rủi ro",
+            "Khuyến nghị",
+            "Hỏi đáp dữ liệu"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/tri-thuc-va-hoi-dap",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-05",
+          "title": "Knowledge Search & Q&A",
+          "description": "Tìm kiếm và hỏi đáp có dẫn nguồn trên kho tri thức nội bộ.",
+          "listItems": [
+            "Chính sách",
+            "Quy trình",
+            "Hợp đồng",
+            "Tài liệu nội bộ",
+            "FAQ",
+            "Nguồn tham chiếu"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ai-workflow-assistant",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-06",
+          "title": "AI Workflow Assistant",
+          "description": "Thiết kế và tối ưu quy trình với gợi ý AI, điều kiện, phê duyệt và tích hợp.",
+          "listItems": [
+            "Phê duyệt",
+            "Tự động hóa",
+            "Điều kiện",
+            "Thông báo",
+            "Tích hợp",
+            "Kết quả"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ai-risk-insight",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-07",
+          "title": "AI Risk & Insight Engine",
+          "description": "Phát hiện bất thường, đánh giá rủi ro và ưu tiên hành động dựa trên dữ liệu.",
+          "listItems": [
+            "Bất thường",
+            "Rủi ro",
+            "Xu hướng",
+            "Ma trận",
+            "Khuyến nghị",
+            "Ưu tiên"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/multi-agent-enterprise",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XAI-08",
+          "title": "Multi-Agent Enterprise Layer",
+          "description": "Điều phối nhiều AI Agent chuyên biệt và kết nối với hệ thống dữ liệu, ứng dụng doanh nghiệp.",
+          "listItems": [
+            "Agent Dữ liệu",
+            "Agent Quy trình",
+            "Agent Báo cáo",
+            "Agent Tri thức",
+            "Agent Rủi ro",
+            "ERP",
+            "CRM",
+            "API"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -242,11 +242,39 @@
     },
     {
       "label": "AI Agent",
-      "href": "/ai-agent"
+      "href": "/ai-agent",
+      "children": [
+        {
+          "label": "Tổng quan Agent",
+          "href": "/ai-agent"
+        },
+        {
+          "label": "Agent Builder",
+          "href": "/agent-builder"
+        }
+      ]
     },
     {
       "label": "An toàn AI",
-      "href": "/ai-governance"
+      "href": "/ai-governance",
+      "children": [
+        {
+          "label": "Quản trị AI",
+          "href": "/ai-governance"
+        },
+        {
+          "label": "Giám sát & Vận hành",
+          "href": "/giam-sat-ai"
+        }
+      ]
+    },
+    {
+      "label": "Giải pháp ngành",
+      "href": "/giai-phap-nganh"
+    },
+    {
+      "label": "Theo phòng ban",
+      "href": "/hanh-trinh-ai"
     },
     {
       "label": "Insights",

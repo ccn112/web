@@ -1,0 +1,29 @@
+{
+  "name": "XTECH SET 11 X.AI Core Handoff",
+  "version": "2026.07.16",
+  "assetCount": 8,
+  "recommendedDefaultRatio": "4:3",
+  "usesMasterCheckpoint": "XTECH_WEBSITE_MASTER_CHECKPOINT_V1",
+  "nextRecommendedSet": "SET 12 — X.AI Enterprise Agents, Governance & Deployment",
+  "files": [
+    "README.md",
+    "docs/01_SCOPE.md",
+    "docs/02_ASSET_MAPPING.md",
+    "docs/03_SEED_AND_BLOCKS.md",
+    "docs/04_CLAUDE_TASK.md",
+    "docs/05_ACCEPTANCE_CRITERIA.md",
+    "docs/06_SET12_PLAN.md",
+    "seed/media-assets.json",
+    "seed/page-block-patches.json",
+    "seed/chatbot-prompts.json",
+    "reference/SET11_ASSET_MAP.csv",
+    "assets/set-11-xai-core/xai-01-hero-xai-core.png",
+    "assets/set-11-xai-core/xai-02-intelligent-data-capture.png",
+    "assets/set-11-xai-core/xai-03-ai-document-processing.png",
+    "assets/set-11-xai-core/xai-04-executive-reporting-ai.png",
+    "assets/set-11-xai-core/xai-05-knowledge-search-qa.png",
+    "assets/set-11-xai-core/xai-06-ai-workflow-assistant.png",
+    "assets/set-11-xai-core/xai-07-ai-risk-insight-engine.png",
+    "assets/set-11-xai-core/xai-08-multi-agent-enterprise-layer.png"
+  ]
+}

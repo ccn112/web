@@ -9,6 +9,13 @@ import { blockBaseFields, ctaLinkFields } from '../fields/common'
 
 const titleField: Block['fields'][number] = { name: 'title', type: 'text' }
 
+/** Optional section illustration (isometric artwork rendered beside the section content). */
+const illustrationField: Block['fields'][number] = {
+  name: 'illustration',
+  type: 'upload',
+  relationTo: 'media',
+}
+
 export const hero: Block = {
   slug: 'hero',
   interfaceName: 'HeroBlock',
@@ -18,6 +25,7 @@ export const hero: Block = {
     { name: 'description', type: 'textarea' },
     { name: 'primaryCTA', type: 'group', fields: ctaLinkFields() },
     { name: 'secondaryCTA', type: 'group', fields: ctaLinkFields() },
+    illustrationField,
     ...blockBaseFields(),
   ],
 }
@@ -44,6 +52,7 @@ export const featureGrid: Block = {
         { name: 'icon', type: 'text' },
       ],
     },
+    illustrationField,
     ...blockBaseFields(),
   ],
 }
@@ -74,7 +83,7 @@ const simpleCardItems = (): Block['fields'][number] => ({
 export const productCards: Block = {
   slug: 'productCards',
   interfaceName: 'ProductCardsBlock',
-  fields: [titleField, linkCardItems(), ...blockBaseFields()],
+  fields: [titleField, linkCardItems(), illustrationField, ...blockBaseFields()],
 }
 
 export const solutionCards: Block = {
@@ -150,6 +159,7 @@ export const architecture: Block = {
         { name: 'items', type: 'text', hasMany: true, required: true },
       ],
     },
+    illustrationField,
     ...blockBaseFields(),
   ],
 }
@@ -222,7 +232,7 @@ export const relatedInsights: Block = {
 export const deploymentCards: Block = {
   slug: 'deploymentCards',
   interfaceName: 'DeploymentCardsBlock',
-  fields: [titleField, simpleCardItems(), ...blockBaseFields()],
+  fields: [titleField, simpleCardItems(), illustrationField, ...blockBaseFields()],
 }
 
 export const leadForm: Block = {
@@ -237,6 +247,7 @@ export const leadForm: Block = {
       admin: { description: 'References Forms.code (e.g. demo-request, contact).' },
     },
     { name: 'fields', type: 'text', hasMany: true },
+    illustrationField,
     ...blockBaseFields(),
   ],
 }
@@ -249,6 +260,7 @@ export const cta: Block = {
     { name: 'description', type: 'textarea' },
     { name: 'primaryCTA', type: 'group', fields: ctaLinkFields() },
     { name: 'secondaryCTA', type: 'group', fields: ctaLinkFields() },
+    illustrationField,
     ...blockBaseFields(),
   ],
 }

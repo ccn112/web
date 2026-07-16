@@ -1,0 +1,166 @@
+{
+  "site": "xbuilding",
+  "routes": [
+    {
+      "route": "/giai-phap/xbuilding-smart-operations",
+      "blocks": [
+        {
+          "blockType": "heroSplit",
+          "assetCode": "XBL-10",
+          "title": "XBuilding Smart Operations & IoT",
+          "eyebrow": "VẬN HÀNH THÔNG MINH",
+          "description": "Kết nối thiết bị, giám sát năng lượng, cảnh báo sự cố và ứng dụng AI trong vận hành tòa nhà.",
+          "primaryCTA": {
+            "label": "Đặt lịch demo",
+            "href": "/demo"
+          },
+          "secondaryCTA": {
+            "label": "Xem chi tiết giải pháp",
+            "href": "#smart-sections"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/giam-sat-thiet-bi-iot",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-11",
+          "title": "Giám sát thiết bị IoT",
+          "description": "Theo dõi trạng thái thiết bị theo thời gian thực để giảm gián đoạn và tăng độ ổn định vận hành.",
+          "listItems": [
+            "Thang máy",
+            "Máy bơm",
+            "HVAC",
+            "PCCC",
+            "Đồng hồ điện",
+            "Đồng hồ nước",
+            "Cảm biến",
+            "Camera"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/nang-luong-va-tien-ich",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-12",
+          "title": "Giám sát năng lượng và tiện ích",
+          "description": "Theo dõi điện, nước, gas và chi phí; phát hiện bất thường theo thời gian thực.",
+          "listItems": [
+            "Điện",
+            "Nước",
+            "Gas",
+            "Chi phí tháng",
+            "Đỉnh tải",
+            "Bất thường",
+            "Theo tòa",
+            "Theo tầng"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/bao-tri-phong-ngua",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-13",
+          "title": "Bảo trì phòng ngừa",
+          "description": "Lập kế hoạch bảo trì định kỳ, theo dõi đến hạn, quá hạn và lịch sử xử lý.",
+          "listItems": [
+            "Lịch bảo trì",
+            "Sắp đến hạn",
+            "Quá hạn",
+            "Đang thực hiện",
+            "Hoàn thành",
+            "Checklist",
+            "Lịch sử"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/vong-doi-tai-san-va-lenh-cong-viec",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-14",
+          "title": "Vòng đời tài sản và lệnh công việc",
+          "description": "Quản lý vòng đời tài sản xuyên suốt từ mua sắm đến vận hành, bảo trì, sửa chữa và thay thế.",
+          "listItems": [
+            "Mua sắm",
+            "Đưa vào sử dụng",
+            "Vận hành",
+            "Bảo trì",
+            "Sửa chữa",
+            "Thay thế",
+            "Lệnh công việc"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/ra-vao-va-bai-xe-thong-minh",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-15",
+          "title": "Kiểm soát ra vào và bãi xe thông minh",
+          "description": "Kiểm soát phương tiện và khách ra vào bằng thẻ cư dân, QR, biển số và bản đồ bãi xe.",
+          "listItems": [
+            "Ra vào",
+            "Thẻ cư dân",
+            "QR",
+            "Biển số",
+            "Khách",
+            "Bãi xe",
+            "Tỷ lệ sử dụng"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/quan-ly-su-co-khan-cap",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-16",
+          "title": "Quản lý sự cố và tình huống khẩn cấp",
+          "description": "Chuẩn hóa quy trình xử lý sự cố từ tiếp nhận, phân loại đến điều phối, xử lý và đóng sự cố.",
+          "listItems": [
+            "Tiếp nhận",
+            "Phân loại",
+            "Điều phối",
+            "Xử lý",
+            "Đóng sự cố",
+            "Bản đồ vị trí",
+            "Đội phản ứng"
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/giai-phap/building-ai-copilot",
+      "blocks": [
+        {
+          "blockType": "illustrationFeature",
+          "assetCode": "XBL-17",
+          "title": "Building AI Copilot",
+          "description": "AI hỗ trợ tóm tắt vận hành, phân tích bất thường và đề xuất hành động ưu tiên cho Ban quản lý.",
+          "listItems": [
+            "Tóm tắt",
+            "Cảnh báo",
+            "Rủi ro",
+            "Đề xuất hành động",
+            "Ưu tiên xử lý",
+            "Liên kết nhanh"
+          ]
+        }
+      ]
+    }
+  ]
+}

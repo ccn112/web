@@ -1,0 +1,53 @@
+{
+  "project": "XTECH Website",
+  "set": "SET 15 — X.AI Industry Solutions",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "visual_style": "Marketing infographic, bright background, center-and-satellite composition, UI illustration with light 3D depth",
+  "sitemap_targets": [
+    "/industries/real-estate",
+    "/industries/manufacturing",
+    "/industries/retail-distribution",
+    "/industries/construction",
+    "/industries/finance-accounting",
+    "/industries/smart-building",
+    "/industries/customer-service",
+    "/industries/enterprise"
+  ],
+  "images": [
+    {
+      "id": "XAI-33",
+      "file": "assets/set15/XAI-33-real-estate-ai-solutions.png"
+    },
+    {
+      "id": "XAI-34",
+      "file": "assets/set15/XAI-34-manufacturing-ai-solutions.png"
+    },
+    {
+      "id": "XAI-35",
+      "file": "assets/set15/XAI-35-retail-distribution-ai-solutions.png"
+    },
+    {
+      "id": "XAI-36",
+      "file": "assets/set15/XAI-36-construction-ai-solutions.png"
+    },
+    {
+      "id": "XAI-37",
+      "file": "assets/set15/XAI-37-finance-accounting-ai-solutions.png"
+    },
+    {
+      "id": "XAI-38",
+      "file": "assets/set15/XAI-38-smart-building-ai-solutions.png"
+    },
+    {
+      "id": "XAI-39",
+      "file": "assets/set15/XAI-39-customer-service-ai-solutions.png"
+    },
+    {
+      "id": "XAI-40",
+      "file": "assets/set15/XAI-40-enterprise-operations-ai-solutions.png"
+    }
+  ],
+  "next_set": "SET 16 — X.AI Enterprise Use Cases / Department Journeys",
+  "missing_sources": []
+}

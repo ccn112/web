@@ -1,0 +1,46 @@
+{
+  "project": "XTECH Website",
+  "set": "SET 12 — X.AI Enterprise Agents, Governance & Deployment",
+  "aspect_ratio": "4:3",
+  "image_count": 8,
+  "production_note": "AI-generated XTECH logos inside images must be removed or masked. Use the original XTECH logo asset in HTML/CSS or post-production.",
+  "images": [
+    {
+      "id": "XAI-09",
+      "file": "assets/set12/XAI-09-sales-agent.png"
+    },
+    {
+      "id": "XAI-10",
+      "file": "assets/set12/XAI-10-finance-agent.png"
+    },
+    {
+      "id": "XAI-11",
+      "file": "assets/set12/XAI-11-building-operations-agent.png"
+    },
+    {
+      "id": "XAI-12",
+      "file": "assets/set12/XAI-12-customer-service-agent.png"
+    },
+    {
+      "id": "XAI-13",
+      "file": "assets/set12/XAI-13-executive-copilot.png"
+    },
+    {
+      "id": "XAI-14",
+      "file": "assets/set12/XAI-14-ai-governance-guardrails.png"
+    },
+    {
+      "id": "XAI-15",
+      "file": "assets/set12/XAI-15-model-prompt-evaluation-center.png"
+    },
+    {
+      "id": "XAI-16",
+      "file": "assets/set12/XAI-16-enterprise-ai-deployment-integration.png"
+    }
+  ],
+  "next_sets": [
+    "SET 13 — X.AI Agent Builder, Knowledge & Automation",
+    "SET 14 — X.AI Security, Observability & AI Operations",
+    "SET 15 — X.AI Industry Solutions"
+  ]
+}

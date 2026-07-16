@@ -31,6 +31,7 @@
       {
         "blockType": "productCards",
         "title": "5 sản phẩm cốt lõi",
+        "illustrationAsset": "COR-02",
         "items": [
           {
             "title": "XBooking",
@@ -76,6 +77,7 @@
       {
         "blockType": "featureGrid",
         "title": "Giá trị của hệ sinh thái",
+        "illustrationAsset": "COR-05",
         "intro": "",
         "items": [
           {
@@ -103,6 +105,7 @@
       {
         "blockType": "deploymentCards",
         "title": "Một hệ sinh thái, nhiều cách triển khai",
+        "illustrationAsset": "COR-07",
         "items": [
           {
             "title": "SaaS Cloud",
@@ -194,7 +197,8 @@
             "description": "Khai thác dữ liệu và tự động hóa quyết định.",
             "icon": "brain"
           }
-        ]
+        ],
+        "illustrationAsset": "COR-04"
       },
       {
         "blockType": "cta",
@@ -353,7 +357,8 @@
             "description": "Managed service, hỗ trợ ứng dụng và hạ tầng.",
             "icon": "life-buoy"
           }
-        ]
+        ],
+        "illustrationAsset": "COR-06"
       },
       {
         "blockType": "cta",
@@ -430,7 +435,8 @@
             "description": "Kết hợp cloud và hạ tầng doanh nghiệp.",
             "icon": "network"
           }
-        ]
+        ],
+        "illustrationAsset": "COR-07"
       },
       {
         "blockType": "cta",
@@ -656,7 +662,8 @@
             "description": "Từ tư vấn đến vận hành và cải tiến liên tục.",
             "icon": "handshake"
           }
-        ]
+        ],
+        "illustrationAsset": "COR-01"
       },
       {
         "blockType": "cta",
@@ -756,7 +763,8 @@
               "On-premise"
             ]
           }
-        ]
+        ],
+        "illustrationAsset": "SUITE-01"
       },
       {
         "blockType": "processTimeline",
@@ -800,6 +808,190 @@
             "Cả 5 sản phẩm",
             "Tập đoàn và chủ đầu tư quy mô lớn"
           ]
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lớp Ứng dụng Nghiệp vụ",
+        "intro": "Năm sản phẩm chủ lực phục vụ bán hàng, quản trị doanh nghiệp, vận hành bất động sản, AI và cộng tác nội bộ.",
+        "illustrationAsset": "SUITE-02",
+        "items": [
+          {
+            "title": "XBooking"
+          },
+          {
+            "title": "FinERP"
+          },
+          {
+            "title": "XBuilding"
+          },
+          {
+            "title": "X.AI"
+          },
+          {
+            "title": "X.Space"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Nền tảng Dữ liệu Dùng Chung",
+        "intro": "Một nguồn dữ liệu thống nhất giúp các bộ phận và sản phẩm cùng khai thác và đồng bộ.",
+        "illustrationAsset": "SUITE-03",
+        "items": [
+          {
+            "title": "Khách hàng"
+          },
+          {
+            "title": "Sản phẩm"
+          },
+          {
+            "title": "Tài liệu"
+          },
+          {
+            "title": "Tài chính"
+          },
+          {
+            "title": "Vận hành"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lớp AI và Tri thức",
+        "intro": "AI không chỉ là chatbot, mà là lớp tri thức và tự động hóa phục vụ toàn hệ sinh thái.",
+        "illustrationAsset": "SUITE-04",
+        "items": [
+          {
+            "title": "AI Agent"
+          },
+          {
+            "title": "Tri thức"
+          },
+          {
+            "title": "Phân tích"
+          },
+          {
+            "title": "Tư vấn"
+          },
+          {
+            "title": "Tự động hóa"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lớp Tích hợp",
+        "intro": "Kết nối linh hoạt với hệ thống hiện có và đối tác bên ngoài thông qua API và dịch vụ tích hợp.",
+        "illustrationAsset": "SUITE-05",
+        "items": [
+          {
+            "title": "API"
+          },
+          {
+            "title": "ERP"
+          },
+          {
+            "title": "CRM"
+          },
+          {
+            "title": "App"
+          },
+          {
+            "title": "Bank"
+          },
+          {
+            "title": "IoT"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Bảo mật, Định danh và Hạ tầng",
+        "intro": "Bảo mật và quản trị truy cập được thiết kế ngay từ lớp nền.",
+        "illustrationAsset": "SUITE-06",
+        "items": [
+          {
+            "title": "SSO"
+          },
+          {
+            "title": "Phân quyền"
+          },
+          {
+            "title": "Bảo mật"
+          },
+          {
+            "title": "Cloud"
+          },
+          {
+            "title": "Hạ tầng"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình dữ liệu xuyên hệ sinh thái",
+        "intro": "Dữ liệu được nối liền xuyên suốt vòng đời khách hàng và tài sản.",
+        "illustrationAsset": "SUITE-07",
+        "items": [
+          {
+            "title": "Marketing"
+          },
+          {
+            "title": "Lead"
+          },
+          {
+            "title": "Booking"
+          },
+          {
+            "title": "Tài chính"
+          },
+          {
+            "title": "Bàn giao"
+          },
+          {
+            "title": "Vận hành"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Các gói giải pháp",
+        "intro": "Triển khai theo nhu cầu hiện tại và mở rộng dần tới bộ giải pháp đầy đủ.",
+        "illustrationAsset": "SUITE-08",
+        "items": [
+          {
+            "title": "Sales Suite"
+          },
+          {
+            "title": "Enterprise Suite"
+          },
+          {
+            "title": "Property Suite"
+          },
+          {
+            "title": "Full Suite"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Một dữ liệu, nhiều ứng dụng, một nền tảng AI",
+        "intro": "Ứng dụng nghiệp vụ, dữ liệu dùng chung, AI và tích hợp được kiến trúc đồng bộ.",
+        "illustrationAsset": "COR-03",
+        "items": [
+          {
+            "title": "Ứng dụng"
+          },
+          {
+            "title": "Dữ liệu dùng chung"
+          },
+          {
+            "title": "AI"
+          },
+          {
+            "title": "Tích hợp"
+          }
         ]
       },
       {
@@ -878,7 +1070,8 @@
             "description": "Theo dõi hợp đồng, tiến độ thanh toán và hoa hồng.",
             "icon": "file-signature"
           }
-        ]
+        ],
+        "illustrationAsset": "XBK-01"
       },
       {
         "blockType": "integration",
@@ -973,7 +1166,8 @@
             "description": "Theo dõi tiến độ, ngân sách và hiệu quả.",
             "icon": "folder-kanban"
           }
-        ]
+        ],
+        "illustrationAsset": "FERP-01"
       },
       {
         "blockType": "integration",
@@ -1163,7 +1357,8 @@
             "description": "Tìm kiếm và khai thác tri thức nội bộ.",
             "icon": "book-open"
           }
-        ]
+        ],
+        "illustrationAsset": "SUITE-04"
       },
       {
         "blockType": "integration",
@@ -1353,7 +1548,8 @@
             "description": "Theo dõi hợp đồng, thanh toán và chăm sóc sau bán.",
             "icon": "heart-handshake"
           }
-        ]
+        ],
+        "illustrationAsset": "XBK-07"
       },
       {
         "blockType": "processTimeline",
@@ -1459,7 +1655,8 @@
             "description": "SaaS, private cloud hoặc on-premise.",
             "icon": "server-cog"
           }
-        ]
+        ],
+        "illustrationAsset": "FERP-02"
       },
       {
         "blockType": "processTimeline",
@@ -1565,7 +1762,8 @@
             "description": "App cư dân, app BQL và tiện ích trực tuyến.",
             "icon": "smartphone"
           }
-        ]
+        ],
+        "illustrationAsset": "XBL-01"
       },
       {
         "blockType": "processTimeline",
@@ -1671,7 +1869,8 @@
             "description": "Hỏi đáp trên kho tri thức doanh nghiệp.",
             "icon": "library-big"
           }
-        ]
+        ],
+        "illustrationAsset": "XAI-01"
       },
       {
         "blockType": "processTimeline",
@@ -1883,7 +2082,8 @@
             "description": "Chi phí/lead, tỷ lệ chuyển đổi và doanh thu theo nguồn.",
             "icon": "chart-column"
           }
-        ]
+        ],
+        "illustrationAsset": "XBK-02"
       },
       {
         "blockType": "faq",
@@ -1977,6 +2177,36 @@
             "title": "SLA chăm sóc",
             "description": "Cảnh báo lead chưa xử lý hoặc sắp quá hạn.",
             "icon": "alarm-clock"
+          }
+        ],
+        "illustrationAsset": "XBK-04"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Thu lead đa nguồn",
+        "intro": "Tập trung và đồng bộ lead từ nhiều nguồn vào cùng một hệ thống.",
+        "illustrationAsset": "XBK-03",
+        "items": [
+          {
+            "title": "Website"
+          },
+          {
+            "title": "Landing page"
+          },
+          {
+            "title": "Facebook Ads"
+          },
+          {
+            "title": "Zalo"
+          },
+          {
+            "title": "Sự kiện"
+          },
+          {
+            "title": "Telesales"
+          },
+          {
+            "title": "Giới thiệu"
           }
         ]
       },
@@ -2073,6 +2303,85 @@
             "description": "Theo dõi hấp thụ, tồn kho và hiệu suất sale.",
             "icon": "chart-candlestick"
           }
+        ],
+        "illustrationAsset": "XBK-09"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Chi tiết sản phẩm đầy đủ",
+        "intro": "Tra cứu thông tin căn, hình ảnh, mặt bằng, giá, chính sách và pháp lý trước khi giao dịch.",
+        "illustrationAsset": "XBK-10",
+        "items": [
+          {
+            "title": "Mã căn"
+          },
+          {
+            "title": "Diện tích"
+          },
+          {
+            "title": "Hướng"
+          },
+          {
+            "title": "Giá bán"
+          },
+          {
+            "title": "Tiện ích"
+          },
+          {
+            "title": "Chính sách"
+          },
+          {
+            "title": "Pháp lý"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giữ chỗ và Booking",
+        "intro": "Kiểm soát thời gian giữ chỗ, xác nhận cọc và trạng thái booking theo thời gian thực.",
+        "illustrationAsset": "XBK-11",
+        "items": [
+          {
+            "title": "Giữ chỗ"
+          },
+          {
+            "title": "Đếm ngược"
+          },
+          {
+            "title": "Xác nhận cọc"
+          },
+          {
+            "title": "Booking"
+          },
+          {
+            "title": "Hết hạn"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phê duyệt Booking",
+        "intro": "Chuẩn hóa quy trình duyệt booking giữa sale, quản lý sàn và chủ đầu tư.",
+        "illustrationAsset": "XBK-12",
+        "items": [
+          {
+            "title": "Sale"
+          },
+          {
+            "title": "Quản lý sàn"
+          },
+          {
+            "title": "Chủ đầu tư"
+          },
+          {
+            "title": "Hồ sơ booking"
+          },
+          {
+            "title": "SLA"
+          },
+          {
+            "title": "Phê duyệt"
+          }
         ]
       },
       {
@@ -2168,7 +2477,8 @@
             "description": "Tiến độ, sự kiện và tài liệu liên quan.",
             "icon": "bell"
           }
-        ]
+        ],
+        "illustrationAsset": "XBK-16"
       },
       {
         "blockType": "faq",
@@ -2262,6 +2572,56 @@
             "title": "Báo cáo quản trị",
             "description": "Dashboard tài chính và phân tích theo chiều dữ liệu.",
             "icon": "chart-pie"
+          }
+        ],
+        "illustrationAsset": "FERP-03"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Ngân sách và thực tế",
+        "intro": "So sánh kế hoạch với thực tế theo phòng ban, dự án và kỳ ngân sách.",
+        "illustrationAsset": "FERP-04",
+        "items": [
+          {
+            "title": "Ngân sách"
+          },
+          {
+            "title": "Thực tế"
+          },
+          {
+            "title": "Chênh lệch"
+          },
+          {
+            "title": "Phòng ban"
+          },
+          {
+            "title": "Dự án"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Kế toán và chứng từ",
+        "intro": "Số hóa chứng từ, hạch toán, phê duyệt và đối soát trên một quy trình thống nhất.",
+        "illustrationAsset": "FERP-05",
+        "items": [
+          {
+            "title": "Hóa đơn"
+          },
+          {
+            "title": "Phiếu thu"
+          },
+          {
+            "title": "Phiếu chi"
+          },
+          {
+            "title": "Bút toán"
+          },
+          {
+            "title": "Phê duyệt"
+          },
+          {
+            "title": "Đối soát"
           }
         ]
       },
@@ -2358,6 +2718,105 @@
             "description": "Mục tiêu, năng lực và hiệu suất.",
             "icon": "target"
           }
+        ],
+        "illustrationAsset": "FERP-09"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Chấm công và tiền lương",
+        "intro": "Tập trung bảng công, ca làm, tăng ca, phụ cấp, khấu trừ và bảng lương.",
+        "illustrationAsset": "FERP-10",
+        "items": [
+          {
+            "title": "Ca làm"
+          },
+          {
+            "title": "Bảng công"
+          },
+          {
+            "title": "Đi muộn"
+          },
+          {
+            "title": "Vắng mặt"
+          },
+          {
+            "title": "Phụ cấp"
+          },
+          {
+            "title": "Bảng lương"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Approval Workflow",
+        "intro": "Chuẩn hóa quy trình phê duyệt nhiều cấp cho đề xuất, thanh toán và mua sắm.",
+        "illustrationAsset": "FERP-11",
+        "items": [
+          {
+            "title": "Đề xuất"
+          },
+          {
+            "title": "Trưởng bộ phận"
+          },
+          {
+            "title": "Tài chính"
+          },
+          {
+            "title": "Ban giám đốc"
+          },
+          {
+            "title": "Ký số"
+          },
+          {
+            "title": "Hoàn tất"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Quản lý hợp đồng",
+        "intro": "Theo dõi vòng đời hợp đồng từ tạo mới đến phê duyệt, ký số, hiệu lực và gia hạn.",
+        "illustrationAsset": "FERP-12",
+        "items": [
+          {
+            "title": "Tạo hợp đồng"
+          },
+          {
+            "title": "Phê duyệt"
+          },
+          {
+            "title": "Ký số"
+          },
+          {
+            "title": "Hiệu lực"
+          },
+          {
+            "title": "Gia hạn"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Văn bản và tài liệu",
+        "intro": "Tập trung tài liệu doanh nghiệp với phân quyền, tìm kiếm, lịch sử và quản lý phiên bản.",
+        "illustrationAsset": "FERP-13",
+        "items": [
+          {
+            "title": "Danh mục"
+          },
+          {
+            "title": "Tìm kiếm"
+          },
+          {
+            "title": "Phân quyền"
+          },
+          {
+            "title": "Lịch sử"
+          },
+          {
+            "title": "Phiên bản"
+          }
         ]
       },
       {
@@ -2453,7 +2912,8 @@
             "description": "Đào tạo, vận hành thử và hỗ trợ sau go-live.",
             "icon": "rocket"
           }
-        ]
+        ],
+        "illustrationAsset": "FERP-16"
       },
       {
         "blockType": "faq",
@@ -2548,7 +3008,8 @@
             "description": "Đặt lịch, đăng ký và quản lý dịch vụ.",
             "icon": "calendar-check-2"
           }
-        ]
+        ],
+        "illustrationAsset": "XBL-04"
       },
       {
         "blockType": "faq",
@@ -2643,7 +3104,8 @@
             "description": "Tài sản, bảo trì và work order.",
             "icon": "wrench"
           }
-        ]
+        ],
+        "illustrationAsset": "XBL-03"
       },
       {
         "blockType": "faq",
@@ -2738,7 +3200,8 @@
             "description": "Dashboard theo khu vực và đơn vị vận hành.",
             "icon": "monitor-cog"
           }
-        ]
+        ],
+        "illustrationAsset": "XBL-02"
       },
       {
         "blockType": "faq",
@@ -2833,7 +3296,8 @@
             "description": "Đẩy dữ liệu sang XBooking, FinERP hoặc hệ thống khác.",
             "icon": "plug"
           }
-        ]
+        ],
+        "illustrationAsset": "XAI-03"
       },
       {
         "blockType": "faq",
@@ -2928,7 +3392,8 @@
             "description": "Kiểm soát nguồn, quyền và phạm vi dữ liệu.",
             "icon": "shield"
           }
-        ]
+        ],
+        "illustrationAsset": "XAI-04"
       },
       {
         "blockType": "faq",
@@ -3023,7 +3488,8 @@
             "description": "Theo dõi câu hỏi và khoảng trống tri thức.",
             "icon": "chart-no-axes-column-increasing"
           }
-        ]
+        ],
+        "illustrationAsset": "XAI-05"
       },
       {
         "blockType": "faq",
@@ -3390,7 +3856,8 @@
           "productInterest",
           "deploymentModel",
           "message"
-        ]
+        ],
+        "illustrationAsset": "COR-08"
       }
     ],
     "suggestedPrompts": [
@@ -3440,7 +3907,8 @@
           "productInterest",
           "deploymentModel",
           "message"
-        ]
+        ],
+        "illustrationAsset": "XBK-08"
       }
     ],
     "suggestedPrompts": [
@@ -3490,7 +3958,8 @@
           "productInterest",
           "deploymentModel",
           "message"
-        ]
+        ],
+        "illustrationAsset": "FERP-01"
       }
     ],
     "suggestedPrompts": [
@@ -3540,7 +4009,8 @@
           "productInterest",
           "deploymentModel",
           "message"
-        ]
+        ],
+        "illustrationAsset": "XBL-10"
       }
     ],
     "suggestedPrompts": [
@@ -3590,7 +4060,8 @@
           "productInterest",
           "deploymentModel",
           "message"
-        ]
+        ],
+        "illustrationAsset": "XAI-13"
       }
     ],
     "suggestedPrompts": [
@@ -3689,13 +4160,2051 @@
           "phone",
           "productInterest",
           "message"
-        ]
+        ],
+        "illustrationAsset": "COR-08"
       }
     ],
     "suggestedPrompts": [
       "Tôi nên chọn sản phẩm nào?",
       "Có tư vấn hiện trạng không?"
     ],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/ai-agent",
+    "title": "AI Agent theo vai trò nghiệp vụ",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Các AI Agent chuyên biệt theo vai trò: bán hàng, tài chính, vận hành, chăm sóc khách hàng và điều hành.",
+    "seo": {
+      "metaTitle": "AI Agent theo vai trò nghiệp vụ | XTECH",
+      "metaDescription": "Các AI Agent chuyên biệt theo vai trò: bán hàng, tài chính, vận hành, chăm sóc khách hàng và điều hành.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "ENTERPRISE AI AGENTS",
+        "title": "AI Agent cho từng vai trò nghiệp vụ",
+        "description": "Từ Sales, Finance, Vận hành đến Chăm sóc khách hàng và Điều hành — mỗi Agent hiểu ngữ cảnh và hành động trên dữ liệu doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp AI",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Multi-Agent Enterprise Layer",
+        "intro": "Điều phối nhiều AI Agent chuyên biệt và kết nối với hệ thống dữ liệu, ứng dụng doanh nghiệp.",
+        "illustrationAsset": "XAI-08",
+        "items": [
+          {
+            "title": "Agent Dữ liệu"
+          },
+          {
+            "title": "Agent Quy trình"
+          },
+          {
+            "title": "Agent Báo cáo"
+          },
+          {
+            "title": "Agent Tri thức"
+          },
+          {
+            "title": "Agent Rủi ro"
+          },
+          {
+            "title": "ERP"
+          },
+          {
+            "title": "CRM"
+          },
+          {
+            "title": "API"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Sales Agent",
+        "intro": "Hỗ trợ xử lý lead, tư vấn sản phẩm, tóm tắt khách hàng, nhận diện cơ hội và đề xuất hành động tiếp theo.",
+        "illustrationAsset": "XAI-09",
+        "items": [
+          {
+            "title": "Lead intelligence"
+          },
+          {
+            "title": "Customer summary"
+          },
+          {
+            "title": "Next-best action"
+          },
+          {
+            "title": "Opportunity insights"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Finance Agent",
+        "intro": "Hỏi đáp tài chính bằng ngôn ngữ tự nhiên, phân tích dòng tiền, công nợ, ngân sách và cảnh báo bất thường.",
+        "illustrationAsset": "XAI-10",
+        "items": [
+          {
+            "title": "Cash-flow analysis"
+          },
+          {
+            "title": "AP/AR monitoring"
+          },
+          {
+            "title": "Budget variance"
+          },
+          {
+            "title": "Anomaly detection"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Building Operations Agent",
+        "intro": "Tóm tắt sự cố, thiết bị, bảo trì và năng lượng; đề xuất phương án xử lý cho đội ngũ vận hành tòa nhà.",
+        "illustrationAsset": "XAI-11",
+        "items": [
+          {
+            "title": "Incident summary"
+          },
+          {
+            "title": "Predictive maintenance"
+          },
+          {
+            "title": "Energy optimization"
+          },
+          {
+            "title": "Suggested actions"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Customer Service Agent",
+        "intro": "Tiếp nhận yêu cầu đa kênh, tra cứu chính sách, phân loại ticket, tóm tắt hội thoại và gợi ý phản hồi.",
+        "illustrationAsset": "XAI-12",
+        "items": [
+          {
+            "title": "Omnichannel intake"
+          },
+          {
+            "title": "Ticket classification"
+          },
+          {
+            "title": "Policy lookup"
+          },
+          {
+            "title": "Suggested reply"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Executive Copilot",
+        "intro": "Tổng hợp KPI, tóm tắt điều hành, cảnh báo rủi ro và đề xuất các ưu tiên quan trọng cho lãnh đạo.",
+        "illustrationAsset": "XAI-13",
+        "items": [
+          {
+            "title": "Executive brief"
+          },
+          {
+            "title": "KPI synthesis"
+          },
+          {
+            "title": "Risk alerts"
+          },
+          {
+            "title": "Priority recommendations"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xây dựng đội ngũ AI Agent cho doanh nghiệp",
+        "description": "Đặt lịch demo để thiết kế các Agent phù hợp với quy trình của bạn.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/ai-governance",
+    "title": "An toàn & Quản trị AI",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kiểm soát, quản trị và triển khai AI doanh nghiệp an toàn: phân quyền, đánh giá model và mô hình triển khai linh hoạt.",
+    "seo": {
+      "metaTitle": "An toàn & Quản trị AI | XTECH",
+      "metaDescription": "Kiểm soát, quản trị và triển khai AI doanh nghiệp an toàn: phân quyền, đánh giá model và mô hình triển khai linh hoạt.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "TRUST & CONTROL",
+        "title": "An toàn, quản trị và triển khai AI",
+        "description": "Đưa AI vào doanh nghiệp một cách kiểm soát được: guardrails, đánh giá chất lượng và triển khai theo mọi mô hình hạ tầng.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp AI",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "AI Governance & Guardrails",
+        "intro": "Quản lý phân quyền, bảo mật, chính sách sử dụng AI, dữ liệu nhạy cảm, phê duyệt và nhật ký hoạt động.",
+        "illustrationAsset": "XAI-14",
+        "items": [
+          {
+            "title": "RBAC"
+          },
+          {
+            "title": "Policy enforcement"
+          },
+          {
+            "title": "Data protection"
+          },
+          {
+            "title": "Audit & approval"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Model, Prompt & Evaluation Center",
+        "intro": "Quản lý model, prompt, phiên bản, bộ test, đánh giá chất lượng, độ trễ, độ an toàn và chi phí.",
+        "illustrationAsset": "XAI-15",
+        "items": [
+          {
+            "title": "Model registry"
+          },
+          {
+            "title": "Prompt versioning"
+          },
+          {
+            "title": "Evaluation suites"
+          },
+          {
+            "title": "Quality & cost control"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Enterprise AI Deployment & Integration",
+        "intro": "Triển khai SaaS, private cloud, on-premise hoặc hybrid; kết nối ERP, CRM, DWH, API, email và workspace.",
+        "illustrationAsset": "XAI-16",
+        "items": [
+          {
+            "title": "Deploy anywhere"
+          },
+          {
+            "title": "Enterprise integration"
+          },
+          {
+            "title": "Secure by design"
+          },
+          {
+            "title": "Hybrid-ready"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Triển khai AI an toàn cho doanh nghiệp",
+        "description": "Trao đổi với chuyên gia về quản trị và triển khai AI.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giai-phap/advisory-ai",
+    "title": "Advisory AI",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Trợ lý AI tư vấn dựa trên dữ liệu: nhập liệu thông minh, trợ lý quy trình và phát hiện rủi ro.",
+    "seo": {
+      "metaTitle": "Advisory AI | XTECH",
+      "metaDescription": "Trợ lý AI tư vấn dựa trên dữ liệu: nhập liệu thông minh, trợ lý quy trình và phát hiện rủi ro.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "ADVISORY AI",
+        "title": "Trợ lý AI tư vấn theo dữ liệu doanh nghiệp",
+        "description": "Tư vấn dựa trên dữ liệu thực: tự động hóa nhập liệu, tối ưu quy trình và cảnh báo rủi ro sớm.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp AI",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Nhập liệu thông minh",
+        "intro": "Tự động trích xuất, kiểm tra và chuẩn hóa dữ liệu từ nhiều loại tài liệu và nguồn đầu vào.",
+        "illustrationAsset": "XAI-02",
+        "items": [
+          {
+            "title": "Hóa đơn"
+          },
+          {
+            "title": "Hợp đồng"
+          },
+          {
+            "title": "Email"
+          },
+          {
+            "title": "Biểu mẫu"
+          },
+          {
+            "title": "PDF"
+          },
+          {
+            "title": "Bảng tính"
+          },
+          {
+            "title": "OCR"
+          },
+          {
+            "title": "Đối chiếu"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "AI Workflow Assistant",
+        "intro": "Thiết kế và tối ưu quy trình với gợi ý AI, điều kiện, phê duyệt và tích hợp.",
+        "illustrationAsset": "XAI-06",
+        "items": [
+          {
+            "title": "Phê duyệt"
+          },
+          {
+            "title": "Tự động hóa"
+          },
+          {
+            "title": "Điều kiện"
+          },
+          {
+            "title": "Thông báo"
+          },
+          {
+            "title": "Tích hợp"
+          },
+          {
+            "title": "Kết quả"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "AI Risk & Insight Engine",
+        "intro": "Phát hiện bất thường, đánh giá rủi ro và ưu tiên hành động dựa trên dữ liệu.",
+        "illustrationAsset": "XAI-07",
+        "items": [
+          {
+            "title": "Bất thường"
+          },
+          {
+            "title": "Rủi ro"
+          },
+          {
+            "title": "Xu hướng"
+          },
+          {
+            "title": "Ma trận"
+          },
+          {
+            "title": "Khuyến nghị"
+          },
+          {
+            "title": "Ưu tiên"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Đưa Advisory AI vào quy trình của bạn",
+        "description": "Đặt lịch demo để trải nghiệm trợ lý AI tư vấn.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/dai-ly-sale",
+    "title": "Đại lý & Sale",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý mạng lưới đại lý và đội sale: chấm điểm và phân phối lead theo hiệu suất.",
+    "seo": {
+      "metaTitle": "Đại lý & Sale | XTECH",
+      "metaDescription": "Quản lý mạng lưới đại lý và đội sale: chấm điểm và phân phối lead theo hiệu suất.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "ĐẠI LÝ & SALE",
+        "title": "Quản lý đại lý và đội ngũ bán hàng",
+        "description": "Chấm điểm, phân phối lead và theo dõi hiệu suất đại lý, sale trên một nền tảng.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp XBooking",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lead Scoring",
+        "intro": "Ưu tiên chăm sóc khách hàng theo điểm lead và khả năng chuyển đổi.",
+        "illustrationAsset": "XBK-05",
+        "items": [
+          {
+            "title": "Điểm lead"
+          },
+          {
+            "title": "Mức quan tâm"
+          },
+          {
+            "title": "Khả năng chuyển đổi"
+          },
+          {
+            "title": "Nóng"
+          },
+          {
+            "title": "Ấm"
+          },
+          {
+            "title": "Lạnh"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phân bổ Lead",
+        "intro": "Tự động phân lead theo khu vực, dự án, quy tắc và SLA.",
+        "illustrationAsset": "XBK-06",
+        "items": [
+          {
+            "title": "Nguồn lead"
+          },
+          {
+            "title": "Bộ quy tắc"
+          },
+          {
+            "title": "Lead Pool"
+          },
+          {
+            "title": "Tự động"
+          },
+          {
+            "title": "Sale"
+          },
+          {
+            "title": "Đại lý"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Tối ưu mạng lưới bán hàng",
+        "description": "Đặt lịch demo XBooking cho đội sale và đại lý.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xbooking",
+    "slug": "/giai-phap/hop-dong-cong-no",
+    "title": "Hợp đồng & Công nợ",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Theo dõi hợp đồng, tiến độ thanh toán và công nợ khách hàng xuyên suốt.",
+    "seo": {
+      "metaTitle": "Hợp đồng & Công nợ | XTECH",
+      "metaDescription": "Theo dõi hợp đồng, tiến độ thanh toán và công nợ khách hàng xuyên suốt.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "HỢP ĐỒNG & CÔNG NỢ",
+        "title": "Quản lý hợp đồng và công nợ",
+        "description": "Theo dõi hợp đồng, lịch thanh toán, tiến độ thu và công nợ trên một dòng chảy dữ liệu.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp XBooking",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hợp đồng và tiến độ thanh toán",
+        "intro": "Theo dõi hợp đồng, các đợt thanh toán, công nợ và mốc đến hạn.",
+        "illustrationAsset": "XBK-15",
+        "items": [
+          {
+            "title": "Hợp đồng"
+          },
+          {
+            "title": "Đợt thanh toán"
+          },
+          {
+            "title": "Đã thanh toán"
+          },
+          {
+            "title": "Sắp đến hạn"
+          },
+          {
+            "title": "Công nợ"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Kiểm soát hợp đồng và dòng tiền",
+        "description": "Đặt lịch demo để xem quy trình hợp đồng - thanh toán.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/phan-he/mua-hang",
+    "title": "Mua hàng & Nhà cung cấp",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý đề nghị mua hàng, nhà cung cấp và quy trình phê duyệt mua sắm.",
+    "seo": {
+      "metaTitle": "Mua hàng & Nhà cung cấp | XTECH",
+      "metaDescription": "Quản lý đề nghị mua hàng, nhà cung cấp và quy trình phê duyệt mua sắm.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "PHÂN HỆ MUA HÀNG",
+        "title": "Mua hàng & quản lý nhà cung cấp",
+        "description": "Chuẩn hóa quy trình mua sắm: đề nghị, báo giá, phê duyệt và đánh giá nhà cung cấp.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Tất cả phân hệ",
+          "href": "/phan-he"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Mua hàng và nhà cung cấp",
+        "intro": "Quản lý yêu cầu mua, báo giá, đơn mua, giao hàng và nhà cung cấp.",
+        "illustrationAsset": "FERP-06",
+        "items": [
+          {
+            "title": "Yêu cầu mua"
+          },
+          {
+            "title": "Báo giá"
+          },
+          {
+            "title": "Đơn mua"
+          },
+          {
+            "title": "Nhà cung cấp"
+          },
+          {
+            "title": "Giao hàng"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Số hóa quy trình mua sắm",
+        "description": "Đặt lịch demo phân hệ mua hàng của FinERP.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/phan-he/kho-tai-san",
+    "title": "Kho & Tài sản",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Quản lý kho, xuất nhập tồn và vòng đời tài sản doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Kho & Tài sản | XTECH",
+      "metaDescription": "Quản lý kho, xuất nhập tồn và vòng đời tài sản doanh nghiệp.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "PHÂN HỆ KHO & TÀI SẢN",
+        "title": "Quản lý kho và tài sản",
+        "description": "Kiểm soát xuất nhập tồn, định giá và vòng đời tài sản trên một hệ thống thống nhất.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Tất cả phân hệ",
+          "href": "/phan-he"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Kho và tài sản",
+        "intro": "Quản lý nhập, xuất, tồn kho và toàn bộ vòng đời tài sản doanh nghiệp.",
+        "illustrationAsset": "FERP-07",
+        "items": [
+          {
+            "title": "Nhập kho"
+          },
+          {
+            "title": "Tồn kho"
+          },
+          {
+            "title": "Xuất kho"
+          },
+          {
+            "title": "Máy móc"
+          },
+          {
+            "title": "Phương tiện"
+          },
+          {
+            "title": "Thiết bị"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Quản trị kho và tài sản hiệu quả",
+        "description": "Đặt lịch demo phân hệ kho & tài sản.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "finerp",
+    "slug": "/phan-he/du-an-chi-phi",
+    "title": "Dự án & Chi phí",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Theo dõi chi phí dự án, báo cáo AI và cảnh báo điều hành theo thời gian thực.",
+    "seo": {
+      "metaTitle": "Dự án & Chi phí | XTECH",
+      "metaDescription": "Theo dõi chi phí dự án, báo cáo AI và cảnh báo điều hành theo thời gian thực.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "PHÂN HỆ DỰ ÁN",
+        "title": "Chi phí dự án, báo cáo AI và cảnh báo",
+        "description": "Kiểm soát chi phí theo dự án, sinh báo cáo bằng AI và cảnh báo sớm các rủi ro điều hành.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Tất cả phân hệ",
+          "href": "/phan-he"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Chi phí dự án",
+        "intro": "Kiểm soát ngân sách, chi phí thực tế, cam kết chi và hiệu quả theo từng dự án.",
+        "illustrationAsset": "FERP-08",
+        "items": [
+          {
+            "title": "Ngân sách"
+          },
+          {
+            "title": "Chi phí thực tế"
+          },
+          {
+            "title": "Cam kết chi"
+          },
+          {
+            "title": "Hiệu quả"
+          },
+          {
+            "title": "Tiến độ"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Report AI",
+        "intro": "AI hỗ trợ phân tích, tóm tắt và hỏi đáp dữ liệu điều hành nhanh chóng.",
+        "illustrationAsset": "FERP-14",
+        "items": [
+          {
+            "title": "Tóm tắt"
+          },
+          {
+            "title": "Phân tích"
+          },
+          {
+            "title": "Xu hướng"
+          },
+          {
+            "title": "Khuyến nghị"
+          },
+          {
+            "title": "Hỏi đáp dữ liệu"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Cảnh báo ngân sách và công nợ",
+        "intro": "Theo dõi vượt ngân sách, công nợ đến hạn, quá hạn và rủi ro tài chính theo thời gian thực.",
+        "illustrationAsset": "FERP-15",
+        "items": [
+          {
+            "title": "Vượt ngân sách"
+          },
+          {
+            "title": "Đến hạn"
+          },
+          {
+            "title": "Quá hạn"
+          },
+          {
+            "title": "Rủi ro"
+          },
+          {
+            "title": "Hành động đề xuất"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Kiểm soát chi phí và điều hành bằng dữ liệu",
+        "description": "Đặt lịch demo phân hệ dự án & chi phí.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/nghiep-vu",
+    "title": "Nghiệp vụ vận hành",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Các nghiệp vụ vận hành tòa nhà: thu phí dịch vụ, ticket & SLA, công việc ban quản lý và truyền thông cư dân.",
+    "seo": {
+      "metaTitle": "Nghiệp vụ vận hành | XTECH",
+      "metaDescription": "Các nghiệp vụ vận hành tòa nhà: thu phí dịch vụ, ticket & SLA, công việc ban quản lý và truyền thông cư dân.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "NGHIỆP VỤ VẬN HÀNH",
+        "title": "Vận hành tòa nhà lấy cư dân làm trung tâm",
+        "description": "Số hóa toàn bộ nghiệp vụ vận hành: thu phí, xử lý sự cố, công việc và truyền thông cư dân.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Loại hình bất động sản",
+          "href": "/loai-hinh"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phí dịch vụ và công nợ",
+        "intro": "Tính phí, phát hành hóa đơn, nhắc nợ và đối soát minh bạch.",
+        "illustrationAsset": "XBL-05",
+        "items": [
+          {
+            "title": "Phải thu"
+          },
+          {
+            "title": "Đã thu"
+          },
+          {
+            "title": "Chưa thu"
+          },
+          {
+            "title": "Quá hạn"
+          },
+          {
+            "title": "Hóa đơn"
+          },
+          {
+            "title": "Nhắc nợ"
+          },
+          {
+            "title": "Đối soát"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Ticket và SLA",
+        "intro": "Tiếp nhận phản ánh đa kênh, phân công và giám sát xử lý theo cam kết.",
+        "illustrationAsset": "XBL-06",
+        "items": [
+          {
+            "title": "App"
+          },
+          {
+            "title": "Hotline"
+          },
+          {
+            "title": "Quầy lễ tân"
+          },
+          {
+            "title": "Chatbot"
+          },
+          {
+            "title": "Ưu tiên"
+          },
+          {
+            "title": "Người phụ trách"
+          },
+          {
+            "title": "SLA"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Công việc Ban quản lý",
+        "intro": "Lập kế hoạch, phân công và theo dõi công việc vận hành hằng ngày.",
+        "illustrationAsset": "XBL-07",
+        "items": [
+          {
+            "title": "Checklist"
+          },
+          {
+            "title": "Lịch biểu"
+          },
+          {
+            "title": "QR Check-in"
+          },
+          {
+            "title": "Kỹ thuật"
+          },
+          {
+            "title": "Bảo vệ"
+          },
+          {
+            "title": "Lễ tân"
+          },
+          {
+            "title": "Vệ sinh"
+          },
+          {
+            "title": "Cảnh quan"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Thông báo và truyền thông nội khu",
+        "intro": "Kết nối cư dân và cập nhật thông tin kịp thời trên nhiều kênh.",
+        "illustrationAsset": "XBL-08",
+        "items": [
+          {
+            "title": "Thông báo khẩn"
+          },
+          {
+            "title": "Điện nước"
+          },
+          {
+            "title": "Bảo trì"
+          },
+          {
+            "title": "Sự kiện"
+          },
+          {
+            "title": "App Push"
+          },
+          {
+            "title": "Email"
+          },
+          {
+            "title": "SMS"
+          },
+          {
+            "title": "Màn hình sảnh"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Chuẩn hóa nghiệp vụ vận hành",
+        "description": "Đặt lịch demo XBuilding cho ban quản lý của bạn.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/app-cu-dan",
+    "title": "App cư dân & Ban quản lý",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Ứng dụng di động xuyên suốt cho cư dân và đội ngũ vận hành tòa nhà.",
+    "seo": {
+      "metaTitle": "App cư dân & Ban quản lý | XTECH",
+      "metaDescription": "Ứng dụng di động xuyên suốt cho cư dân và đội ngũ vận hành tòa nhà.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "APP CƯ DÂN",
+        "title": "Trải nghiệm số cho cư dân và ban quản lý",
+        "description": "Gửi yêu cầu, thanh toán, thông báo và công việc — tất cả trên ứng dụng di động cho cư dân và BQL.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Loại hình bất động sản",
+          "href": "/loai-hinh"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Ứng dụng cư dân và Ban quản lý",
+        "intro": "Trải nghiệm mobile xuyên suốt cho cư dân và đội ngũ vận hành.",
+        "illustrationAsset": "XBL-09",
+        "items": [
+          {
+            "title": "Gửi yêu cầu"
+          },
+          {
+            "title": "Thanh toán"
+          },
+          {
+            "title": "Thông báo"
+          },
+          {
+            "title": "Công việc"
+          },
+          {
+            "title": "Ticket"
+          },
+          {
+            "title": "Check-in"
+          },
+          {
+            "title": "Báo cáo"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Nâng trải nghiệm cư dân lên chuẩn số",
+        "description": "Đặt lịch demo app cư dân và ban quản lý.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xbuilding",
+    "slug": "/smart-building",
+    "title": "Smart Building & IoT",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Vận hành tòa nhà thông minh với IoT, năng lượng, bảo trì dự đoán, an ninh và AI copilot.",
+    "seo": {
+      "metaTitle": "Smart Building & IoT | XTECH",
+      "metaDescription": "Vận hành tòa nhà thông minh với IoT, năng lượng, bảo trì dự đoán, an ninh và AI copilot.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "SMART BUILDING",
+        "title": "Tòa nhà thông minh vận hành bằng dữ liệu và AI",
+        "description": "Kết nối IoT, giám sát năng lượng, bảo trì dự đoán, an ninh và trợ lý AI cho vận hành tòa nhà.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Loại hình bất động sản",
+          "href": "/loai-hinh"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giám sát thiết bị IoT",
+        "intro": "Theo dõi trạng thái thiết bị theo thời gian thực để giảm gián đoạn và tăng độ ổn định vận hành.",
+        "illustrationAsset": "XBL-11",
+        "items": [
+          {
+            "title": "Thang máy"
+          },
+          {
+            "title": "Máy bơm"
+          },
+          {
+            "title": "HVAC"
+          },
+          {
+            "title": "PCCC"
+          },
+          {
+            "title": "Đồng hồ điện"
+          },
+          {
+            "title": "Đồng hồ nước"
+          },
+          {
+            "title": "Cảm biến"
+          },
+          {
+            "title": "Camera"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giám sát năng lượng và tiện ích",
+        "intro": "Theo dõi điện, nước, gas và chi phí; phát hiện bất thường theo thời gian thực.",
+        "illustrationAsset": "XBL-12",
+        "items": [
+          {
+            "title": "Điện"
+          },
+          {
+            "title": "Nước"
+          },
+          {
+            "title": "Gas"
+          },
+          {
+            "title": "Chi phí tháng"
+          },
+          {
+            "title": "Đỉnh tải"
+          },
+          {
+            "title": "Bất thường"
+          },
+          {
+            "title": "Theo tòa"
+          },
+          {
+            "title": "Theo tầng"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Bảo trì phòng ngừa",
+        "intro": "Lập kế hoạch bảo trì định kỳ, theo dõi đến hạn, quá hạn và lịch sử xử lý.",
+        "illustrationAsset": "XBL-13",
+        "items": [
+          {
+            "title": "Lịch bảo trì"
+          },
+          {
+            "title": "Sắp đến hạn"
+          },
+          {
+            "title": "Quá hạn"
+          },
+          {
+            "title": "Đang thực hiện"
+          },
+          {
+            "title": "Hoàn thành"
+          },
+          {
+            "title": "Checklist"
+          },
+          {
+            "title": "Lịch sử"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Vòng đời tài sản và lệnh công việc",
+        "intro": "Quản lý vòng đời tài sản xuyên suốt từ mua sắm đến vận hành, bảo trì, sửa chữa và thay thế.",
+        "illustrationAsset": "XBL-14",
+        "items": [
+          {
+            "title": "Mua sắm"
+          },
+          {
+            "title": "Đưa vào sử dụng"
+          },
+          {
+            "title": "Vận hành"
+          },
+          {
+            "title": "Bảo trì"
+          },
+          {
+            "title": "Sửa chữa"
+          },
+          {
+            "title": "Thay thế"
+          },
+          {
+            "title": "Lệnh công việc"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Kiểm soát ra vào và bãi xe thông minh",
+        "intro": "Kiểm soát phương tiện và khách ra vào bằng thẻ cư dân, QR, biển số và bản đồ bãi xe.",
+        "illustrationAsset": "XBL-15",
+        "items": [
+          {
+            "title": "Ra vào"
+          },
+          {
+            "title": "Thẻ cư dân"
+          },
+          {
+            "title": "QR"
+          },
+          {
+            "title": "Biển số"
+          },
+          {
+            "title": "Khách"
+          },
+          {
+            "title": "Bãi xe"
+          },
+          {
+            "title": "Tỷ lệ sử dụng"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Quản lý sự cố và tình huống khẩn cấp",
+        "intro": "Chuẩn hóa quy trình xử lý sự cố từ tiếp nhận, phân loại đến điều phối, xử lý và đóng sự cố.",
+        "illustrationAsset": "XBL-16",
+        "items": [
+          {
+            "title": "Tiếp nhận"
+          },
+          {
+            "title": "Phân loại"
+          },
+          {
+            "title": "Điều phối"
+          },
+          {
+            "title": "Xử lý"
+          },
+          {
+            "title": "Đóng sự cố"
+          },
+          {
+            "title": "Bản đồ vị trí"
+          },
+          {
+            "title": "Đội phản ứng"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Building AI Copilot",
+        "intro": "AI hỗ trợ tóm tắt vận hành, phân tích bất thường và đề xuất hành động ưu tiên cho Ban quản lý.",
+        "illustrationAsset": "XBL-17",
+        "items": [
+          {
+            "title": "Tóm tắt"
+          },
+          {
+            "title": "Cảnh báo"
+          },
+          {
+            "title": "Rủi ro"
+          },
+          {
+            "title": "Đề xuất hành động"
+          },
+          {
+            "title": "Ưu tiên xử lý"
+          },
+          {
+            "title": "Liên kết nhanh"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Xây dựng tòa nhà thông minh",
+        "description": "Đặt lịch demo giải pháp Smart Building & IoT.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/agent-builder",
+    "title": "Agent Builder & Tự động hóa",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tự xây dựng AI Agent bằng giao diện trực quan: RAG, workflow, connector, orchestration, testing và marketplace.",
+    "seo": {
+      "metaTitle": "Agent Builder & Tự động hóa | XTECH",
+      "metaDescription": "Tự xây dựng AI Agent bằng giao diện trực quan: RAG, workflow, connector, orchestration, testing và marketplace.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "BUILD YOUR AGENT",
+        "title": "Doanh nghiệp tự xây AI Agent và tự động hóa công việc",
+        "description": "Từ canvas kéo-thả, kho tri thức RAG, workflow, connector đến điều phối multi-agent, kiểm thử và template — tất cả trong một studio.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "AI Agent",
+          "href": "/ai-agent"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Visual Agent Builder",
+        "intro": "Thiết kế, cấu hình, kiểm thử và triển khai AI Agent bằng giao diện trực quan kéo-thả.",
+        "illustrationAsset": "XAI-17",
+        "items": [
+          {
+            "title": "Drag & drop builder"
+          },
+          {
+            "title": "Reusable blocks"
+          },
+          {
+            "title": "Tool logic"
+          },
+          {
+            "title": "Version control"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Knowledge Hub & RAG Studio",
+        "intro": "Kết nối nguồn tri thức doanh nghiệp, lập chỉ mục, tối ưu retrieval và kiểm thử câu trả lời có grounding.",
+        "illustrationAsset": "XAI-18",
+        "items": [
+          {
+            "title": "Multi-source connectors"
+          },
+          {
+            "title": "Smart chunking"
+          },
+          {
+            "title": "Vector search"
+          },
+          {
+            "title": "Relevance tuning"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Workflow Automation Studio",
+        "intro": "Xây dựng workflow có AI, điều kiện, phê duyệt, tích hợp hệ thống và khả năng giám sát vận hành.",
+        "illustrationAsset": "XAI-19",
+        "items": [
+          {
+            "title": "AI rules"
+          },
+          {
+            "title": "Human approval"
+          },
+          {
+            "title": "Templates"
+          },
+          {
+            "title": "Audit logs"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Tool & API Connector Center",
+        "intro": "Kết nối AI Agent với CRM, ERP, email, database, API và hệ sinh thái công cụ của doanh nghiệp.",
+        "illustrationAsset": "XAI-20",
+        "items": [
+          {
+            "title": "Prebuilt connectors"
+          },
+          {
+            "title": "OAuth / API key"
+          },
+          {
+            "title": "Webhooks"
+          },
+          {
+            "title": "Enterprise security"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Multi-Agent Orchestration",
+        "intro": "Điều phối nhiều agent chuyên biệt cùng hợp tác theo mục tiêu, chia sẻ ngữ cảnh và tổng hợp kết quả.",
+        "illustrationAsset": "XAI-21",
+        "items": [
+          {
+            "title": "Shared memory"
+          },
+          {
+            "title": "Goal-driven execution"
+          },
+          {
+            "title": "Result aggregation"
+          },
+          {
+            "title": "Trace & monitor"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Human Approval & Exception Handling",
+        "intro": "Giữ con người trong vòng kiểm soát với hàng chờ phê duyệt, ngưỡng rủi ro, escalation và xử lý ngoại lệ.",
+        "illustrationAsset": "XAI-22",
+        "items": [
+          {
+            "title": "Approval workflows"
+          },
+          {
+            "title": "Threshold rules"
+          },
+          {
+            "title": "SLA escalation"
+          },
+          {
+            "title": "Configurable policies"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Agent Testing & Simulation Lab",
+        "intro": "Đánh giá chất lượng AI Agent bằng test suite, scenario simulation, replay, metrics và cost tracking.",
+        "illustrationAsset": "XAI-23",
+        "items": [
+          {
+            "title": "Automated evaluation"
+          },
+          {
+            "title": "Regression testing"
+          },
+          {
+            "title": "Cost tracking"
+          },
+          {
+            "title": "Continuous improvement"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Agent Marketplace & Templates",
+        "intro": "Khởi động nhanh bằng thư viện template theo phòng ban, tùy biến theo nhu cầu và triển khai chỉ với vài bước.",
+        "illustrationAsset": "XAI-24",
+        "items": [
+          {
+            "title": "Prebuilt templates"
+          },
+          {
+            "title": "One-click deploy"
+          },
+          {
+            "title": "Best practices"
+          },
+          {
+            "title": "Share & publish"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu xây dựng AI Agent của bạn",
+        "description": "Đặt lịch demo Agent Builder & Automation Studio.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giam-sat-ai",
+    "title": "Bảo mật, giám sát & vận hành AI",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Vận hành AI an toàn: security center, phát hiện tấn công, bảo vệ dữ liệu, observability, chất lượng-chi phí, grounding, sự cố và tuân thủ.",
+    "seo": {
+      "metaTitle": "Bảo mật, giám sát & vận hành AI | XTECH",
+      "metaDescription": "Vận hành AI an toàn: security center, phát hiện tấn công, bảo vệ dữ liệu, observability, chất lượng-chi phí, grounding, sự cố và tuân thủ.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "AI OPERATIONS",
+        "title": "Vận hành AI an toàn, minh bạch và tuân thủ",
+        "description": "Giám sát toàn bộ vòng đời AI: bảo mật, phát hiện mối đe dọa, bảo vệ dữ liệu, trace, chất lượng, chi phí, grounding, sự cố và bằng chứng tuân thủ.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "An toàn AI",
+          "href": "/ai-governance"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "AI Security Operations Center",
+        "intro": "Giám sát mối đe dọa, phát hiện bất thường, thực thi chính sách và bảo vệ tài sản AI theo thời gian thực.",
+        "illustrationAsset": "XAI-25",
+        "items": [
+          {
+            "title": "Threat monitoring"
+          },
+          {
+            "title": "Policy enforcement"
+          },
+          {
+            "title": "Access control"
+          },
+          {
+            "title": "Anomaly detection"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Prompt Injection & Threat Detection",
+        "intro": "Phát hiện prompt injection, nội dung độc hại, thao túng công cụ và các rủi ro tấn công vào luồng AI.",
+        "illustrationAsset": "XAI-26",
+        "items": [
+          {
+            "title": "Prompt inspection"
+          },
+          {
+            "title": "Content sanitization"
+          },
+          {
+            "title": "Risk scoring"
+          },
+          {
+            "title": "Escalation workflow"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Data Privacy & PII Protection",
+        "intro": "Nhận diện dữ liệu cá nhân, che giấu thông tin nhạy cảm và áp dụng chính sách bảo vệ dữ liệu trên toàn hệ thống.",
+        "illustrationAsset": "XAI-27",
+        "items": [
+          {
+            "title": "PII detection"
+          },
+          {
+            "title": "Masking & redaction"
+          },
+          {
+            "title": "Retention policies"
+          },
+          {
+            "title": "Access governance"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Observability & Trace Explorer",
+        "intro": "Quan sát toàn trình hoạt động AI, theo dõi từng bước xử lý, truy vết token và phân tích nguyên nhân sự cố.",
+        "illustrationAsset": "XAI-28",
+        "items": [
+          {
+            "title": "Step-by-step traces"
+          },
+          {
+            "title": "Token visibility"
+          },
+          {
+            "title": "Latency tracking"
+          },
+          {
+            "title": "Root cause analysis"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Quality, Latency & Cost Monitor",
+        "intro": "Giám sát chất lượng, độ trễ, mức sử dụng token và chi phí vận hành AI để tối ưu hiệu năng và ngân sách.",
+        "illustrationAsset": "XAI-29",
+        "items": [
+          {
+            "title": "Quality metrics"
+          },
+          {
+            "title": "Latency monitoring"
+          },
+          {
+            "title": "Cost tracking"
+          },
+          {
+            "title": "Optimization suggestions"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Grounding & Hallucination Monitor",
+        "intro": "Kiểm soát độ chính xác câu trả lời AI bằng nguồn dẫn, kiểm chứng tự động, đối chiếu sự thật và phê duyệt chuyên gia.",
+        "illustrationAsset": "XAI-30",
+        "items": [
+          {
+            "title": "Citation checking"
+          },
+          {
+            "title": "Grounded answers"
+          },
+          {
+            "title": "Fact validation"
+          },
+          {
+            "title": "Human oversight"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Incident Management & Rollback Center",
+        "intro": "Phát hiện, khoanh vùng, khôi phục agent, prompt hoặc model và phối hợp xử lý sự cố AI theo chuẩn vận hành doanh nghiệp.",
+        "illustrationAsset": "XAI-31",
+        "items": [
+          {
+            "title": "Incident triage"
+          },
+          {
+            "title": "Rollback workflows"
+          },
+          {
+            "title": "Stakeholder notification"
+          },
+          {
+            "title": "Post-incident review"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Compliance Reporting & Audit Evidence",
+        "intro": "Chuẩn hóa hồ sơ tuân thủ, lịch sử phê duyệt, bằng chứng kiểm soát và đối chiếu tiêu chuẩn để sẵn sàng kiểm toán.",
+        "illustrationAsset": "XAI-32",
+        "items": [
+          {
+            "title": "Policy management"
+          },
+          {
+            "title": "Audit trail"
+          },
+          {
+            "title": "Evidence packs"
+          },
+          {
+            "title": "Standards mapping"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Vận hành AI với niềm tin",
+        "description": "Đặt lịch demo về bảo mật và giám sát AI.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/giai-phap-nganh",
+    "title": "Giải pháp AI theo ngành",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Ứng dụng X.AI theo từng ngành: bất động sản, sản xuất, bán lẻ, xây dựng, tài chính, tòa nhà thông minh, chăm sóc khách hàng và vận hành doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Giải pháp AI theo ngành | XTECH",
+      "metaDescription": "Ứng dụng X.AI theo từng ngành: bất động sản, sản xuất, bán lẻ, xây dựng, tài chính, tòa nhà thông minh, chăm sóc khách hàng và vận hành doanh nghiệp.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "INDUSTRY SOLUTIONS",
+        "title": "Giải pháp AI thiết kế riêng cho từng ngành",
+        "description": "X.AI mang lại giá trị cụ thể cho mỗi ngành — từ bất động sản, sản xuất, bán lẻ đến tài chính, xây dựng và vận hành doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp AI",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Bất động sản",
+        "intro": "Tối ưu bán hàng dự án, lead, bảng hàng, booking, hợp đồng và chăm sóc khách hàng trong hệ sinh thái bất động sản.",
+        "illustrationAsset": "XAI-33",
+        "items": [
+          {
+            "title": "Lead đa nguồn"
+          },
+          {
+            "title": "Tư vấn sản phẩm"
+          },
+          {
+            "title": "Quản lý bảng hàng"
+          },
+          {
+            "title": "Booking & hậu mãi"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Sản xuất",
+        "intro": "Hỗ trợ giám sát dây chuyền, bảo trì dự đoán, kiểm soát chất lượng, an toàn lao động và tối ưu năng suất nhà máy.",
+        "illustrationAsset": "XAI-34",
+        "items": [
+          {
+            "title": "Giám sát sản xuất"
+          },
+          {
+            "title": "Bảo trì dự đoán"
+          },
+          {
+            "title": "Kiểm soát chất lượng"
+          },
+          {
+            "title": "Tối ưu năng suất"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Bán lẻ & Phân phối",
+        "intro": "Tăng trưởng doanh thu, tối ưu tồn kho, điều hành chuỗi cửa hàng và nâng cao trải nghiệm khách hàng trên đa kênh.",
+        "illustrationAsset": "XAI-35",
+        "items": [
+          {
+            "title": "Dự báo nhu cầu"
+          },
+          {
+            "title": "Quản lý đơn hàng"
+          },
+          {
+            "title": "Tối ưu tồn kho"
+          },
+          {
+            "title": "Hiệu quả đại lý"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Xây dựng",
+        "intro": "Theo dõi tiến độ, hồ sơ công trường, vật tư, an toàn và các cảnh báo rủi ro để điều hành dự án xây dựng hiệu quả hơn.",
+        "illustrationAsset": "XAI-36",
+        "items": [
+          {
+            "title": "Theo dõi tiến độ"
+          },
+          {
+            "title": "Quản lý hồ sơ"
+          },
+          {
+            "title": "Vật tư & hiện trường"
+          },
+          {
+            "title": "Giám sát an toàn"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Tài chính – Kế toán",
+        "intro": "Tăng tốc phân tích tài chính, kiểm soát dòng tiền, công nợ, ngân sách và hỗ trợ báo cáo điều hành.",
+        "illustrationAsset": "XAI-37",
+        "items": [
+          {
+            "title": "Hỏi đáp tài chính"
+          },
+          {
+            "title": "Phân tích dòng tiền"
+          },
+          {
+            "title": "Kiểm soát công nợ"
+          },
+          {
+            "title": "Báo cáo điều hành"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Tòa nhà Thông minh",
+        "intro": "Hỗ trợ BQL vận hành thiết bị, xử lý sự cố, tối ưu năng lượng, dịch vụ cư dân và báo cáo vận hành.",
+        "illustrationAsset": "XAI-38",
+        "items": [
+          {
+            "title": "Tiếp nhận sự cố"
+          },
+          {
+            "title": "Bảo trì thiết bị"
+          },
+          {
+            "title": "Tối ưu năng lượng"
+          },
+          {
+            "title": "Dịch vụ cư dân"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Chăm sóc khách hàng",
+        "intro": "Hỗ trợ đa kênh, phân loại ticket, tra cứu tri thức, gợi ý phản hồi và theo dõi chất lượng dịch vụ.",
+        "illustrationAsset": "XAI-39",
+        "items": [
+          {
+            "title": "Omnichannel"
+          },
+          {
+            "title": "Phân loại ticket"
+          },
+          {
+            "title": "Tra cứu tri thức"
+          },
+          {
+            "title": "Theo dõi SLA"
+          }
+        ]
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giải pháp AI cho Điều hành Doanh nghiệp",
+        "intro": "Tăng tốc ra quyết định, tự động hóa công việc, kết nối tri thức nội bộ và tổng hợp KPI, rủi ro, hỗ trợ điều hành.",
+        "illustrationAsset": "XAI-40",
+        "items": [
+          {
+            "title": "Trợ lý điều hành"
+          },
+          {
+            "title": "Phê duyệt & văn bản"
+          },
+          {
+            "title": "Tri thức nội bộ"
+          },
+          {
+            "title": "KPI & rủi ro"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Tìm giải pháp AI cho ngành của bạn",
+        "description": "Đặt lịch demo giải pháp AI theo ngành.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "xai",
+    "slug": "/hanh-trinh-ai",
+    "title": "Hành trình AI theo phòng ban",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "AI đồng hành cùng từng phòng ban: kinh doanh, tài chính, nhân sự, vận hành, chăm sóc khách hàng, điều hành, tri thức và liên phòng ban.",
+    "seo": {
+      "metaTitle": "Hành trình AI theo phòng ban | XTECH",
+      "metaDescription": "AI đồng hành cùng từng phòng ban: kinh doanh, tài chính, nhân sự, vận hành, chăm sóc khách hàng, điều hành, tri thức và liên phòng ban.",
+      "index": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "DEPARTMENT JOURNEYS",
+        "title": "Hành trình ứng dụng AI cho từng phòng ban",
+        "description": "Mỗi phòng ban có một hành trình AI riêng — từ Kinh doanh, Tài chính, Nhân sự đến Vận hành, CSKH, Điều hành và cộng tác liên phòng ban.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Giải pháp AI",
+          "href": "/giai-phap"
+        }
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Kinh doanh",
+        "intro": "Từ thu lead, phân loại khách hàng, tư vấn sản phẩm đến theo dõi cơ hội, chốt sale và chăm sóc sau bán.",
+        "illustrationAsset": "XAI-41",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Tài chính",
+        "intro": "Từ hỏi đáp số liệu, phân tích dòng tiền, kiểm soát công nợ và ngân sách đến phê duyệt chứng từ và báo cáo điều hành.",
+        "illustrationAsset": "XAI-42",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Nhân sự",
+        "intro": "Từ tuyển dụng, onboarding, hỏi đáp chính sách đến đào tạo, đánh giá hiệu suất và hỗ trợ nhân viên.",
+        "illustrationAsset": "XAI-43",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Vận hành & BQL",
+        "intro": "Từ tiếp nhận sự cố, phân loại ticket, điều phối xử lý đến theo dõi SLA, cập nhật trạng thái và báo cáo vận hành.",
+        "illustrationAsset": "XAI-44",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Chăm sóc khách hàng",
+        "intro": "Từ tiếp nhận đa kênh, hiểu yêu cầu, tra cứu tri thức đến gợi ý phản hồi, escalation, đóng ticket và đo CSAT.",
+        "illustrationAsset": "XAI-45",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Điều hành",
+        "intro": "Từ tổng hợp dữ liệu đa nguồn đến AI brief, cảnh báo rủi ro, xác định ưu tiên, đề xuất hành động và theo dõi kết quả.",
+        "illustrationAsset": "XAI-46",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI cho Tri thức nội bộ",
+        "intro": "Từ nạp tài liệu, lập chỉ mục, phân loại tri thức đến hỏi đáp, trích dẫn nguồn, kiểm chứng và chia sẻ.",
+        "illustrationAsset": "XAI-47",
+        "items": []
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Hành trình AI liên phòng ban",
+        "intro": "Kết nối kinh doanh, tài chính, pháp chế, vận hành, chăm sóc khách hàng và điều hành trong một luồng xử lý xuyên suốt.",
+        "illustrationAsset": "XAI-48",
+        "items": []
+      },
+      {
+        "blockType": "cta",
+        "title": "Bắt đầu hành trình AI cho phòng ban của bạn",
+        "description": "Đặt lịch demo theo nhu cầu từng phòng ban.",
+        "primaryCTA": {
+          "label": "Đặt lịch demo",
+          "href": "/demo"
+        },
+        "secondaryCTA": {
+          "label": "Trao đổi với chuyên gia",
+          "href": "/demo"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
     "relatedPages": []
   }
 ]
