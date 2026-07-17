@@ -1,0 +1,19 @@
+{
+  "customerPageSettings": {
+    "eyebrow": "KHÁCH HÀNG XTECH",
+    "title": "Đồng hành để tạo ra kết quả thực tế",
+    "description": "Các câu chuyện khách hàng, use-case và hành trình chuyển đổi được quản trị có kiểm chứng.",
+    "defaultCta": {
+      "label": "Trao đổi về bài toán tương tự",
+      "href": "/lien-he"
+    },
+    "categoryFilters": [
+      "Bất động sản",
+      "Doanh nghiệp số",
+      "Tòa nhà thông minh",
+      "Tài chính",
+      "AI"
+    ]
+  },
+  "goLiveMode": "anonymized_and_use_case_supported"
+}

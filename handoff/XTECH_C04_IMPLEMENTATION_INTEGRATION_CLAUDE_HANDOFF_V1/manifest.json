@@ -1,0 +1,44 @@
+{
+  "package": "XTECH_C04_IMPLEMENTATION_INTEGRATION_CLAUDE_HANDOFF_V1",
+  "version": "1.0.0",
+  "language": "vi",
+  "mode": "go_live_fast_track",
+  "routes": [
+    "/trien-khai",
+    "/trien-khai/quy-trinh",
+    "/trien-khai/tich-hop-he-thong",
+    "/trien-khai/chuyen-doi-du-lieu",
+    "/trien-khai/cloud-va-on-premise",
+    "/trien-khai/devsecops",
+    "/trien-khai/sla-va-ho-tro"
+  ],
+  "references": [
+    {
+      "file": "references/REF-implementation-process.png",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-deployment-model.png",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-platform-architecture.png",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-data-ai-platform.png",
+      "usage": "reference_only"
+    }
+  ],
+  "cms": {
+    "collections": [
+      "implementation-pages",
+      "implementation-capabilities"
+    ],
+    "globals": [
+      "implementation-settings"
+    ]
+  },
+  "title_rule": "maximum_two_lines_on_desktop",
+  "theme": "inherit_current_xtech_theme"
+}

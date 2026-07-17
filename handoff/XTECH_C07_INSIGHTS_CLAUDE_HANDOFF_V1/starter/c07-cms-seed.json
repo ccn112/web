@@ -1,0 +1,15 @@
+{
+  "insightsSettings": {
+    "eyebrow": "INSIGHTS XTECH",
+    "title": "Góc nhìn công nghệ cho doanh nghiệp",
+    "description": "Nội dung chuyên sâu về chuyển đổi số, AI, dữ liệu và PropTech.",
+    "categoryOrder": [
+      "chuyen-doi-so",
+      "ai-doanh-nghiep",
+      "du-lieu",
+      "proptech"
+    ],
+    "newsletterEnabled": true
+  },
+  "seedArticleCount": 8
+}

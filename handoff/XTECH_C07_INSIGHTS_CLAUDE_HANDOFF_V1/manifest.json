@@ -1,0 +1,43 @@
+{
+  "package": "XTECH_C07_INSIGHTS_CLAUDE_HANDOFF_V1",
+  "version": "1.0.0",
+  "language": "vi",
+  "routes": [
+    "/insights",
+    "/insights/chuyen-doi-so",
+    "/insights/ai-doanh-nghiep",
+    "/insights/du-lieu",
+    "/insights/proptech",
+    "/insights/[slug]"
+  ],
+  "references": [
+    {
+      "file": "references/REF-insights-hero.png",
+      "sha256": "a7446c533195971568dcb6271e5562f52663b4693ad3cda80943493c81424149",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-ai-insight.png",
+      "sha256": "c78d1bc02a60ccc6a571c0e3207043ae7e45115d56f87e52d6d2652c4c66f83f",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-digital-transformation.png",
+      "sha256": "386cc0a7aaaae6530905e6b74d03abbebb0452754d4e64acb9274dcd527be279",
+      "usage": "reference_only"
+    }
+  ],
+  "cms": {
+    "collections": [
+      "insight-categories",
+      "authors",
+      "insight-articles",
+      "newsletter-subscriptions"
+    ],
+    "globals": [
+      "insights-settings"
+    ]
+  },
+  "goLiveMode": "seo_first_fast_track",
+  "theme": "inherit_current_xtech_theme"
+}

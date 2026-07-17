@@ -1,0 +1,28 @@
+{
+  "implementationSettings": {
+    "defaultCta": {
+      "label": "Trao đổi với chuyên gia",
+      "href": "/lien-he"
+    },
+    "sectionOrder": [
+      "c04-01",
+      "c04-02",
+      "c04-03",
+      "c04-04",
+      "c04-05",
+      "c04-06",
+      "c04-07",
+      "c04-08"
+    ],
+    "enableCaseStudies": false
+  },
+  "routes": [
+    "/trien-khai",
+    "/trien-khai/quy-trinh",
+    "/trien-khai/tich-hop-he-thong",
+    "/trien-khai/chuyen-doi-du-lieu",
+    "/trien-khai/cloud-va-on-premise",
+    "/trien-khai/devsecops",
+    "/trien-khai/sla-va-ho-tro"
+  ]
+}

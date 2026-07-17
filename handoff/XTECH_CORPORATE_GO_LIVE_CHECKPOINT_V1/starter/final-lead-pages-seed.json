@@ -1,0 +1,47 @@
+{
+  "leadPages": [
+    {
+      "slug": "lien-he",
+      "title": "Trao đổi cùng XTECH",
+      "formType": "contact",
+      "fields": [
+        "fullName",
+        "email",
+        "phone",
+        "company",
+        "message",
+        "consent"
+      ]
+    },
+    {
+      "slug": "dat-lich-demo",
+      "title": "Đặt lịch demo giải pháp",
+      "formType": "demo",
+      "fields": [
+        "fullName",
+        "email",
+        "phone",
+        "company",
+        "products",
+        "preferredTime",
+        "consent"
+      ]
+    },
+    {
+      "slug": "yeu-cau-tu-van",
+      "title": "Nhận tư vấn giải pháp",
+      "formType": "consultation",
+      "fields": [
+        "fullName",
+        "email",
+        "phone",
+        "company",
+        "companyModel",
+        "priorityProblems",
+        "userScale",
+        "currentSystems",
+        "consent"
+      ]
+    }
+  ]
+}

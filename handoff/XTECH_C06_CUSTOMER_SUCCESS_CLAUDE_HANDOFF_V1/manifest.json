@@ -1,0 +1,44 @@
+{
+  "package": "XTECH_C06_CUSTOMER_SUCCESS_CLAUDE_HANDOFF_V1",
+  "version": "1.0.0",
+  "language": "vi",
+  "routes": [
+    "/khach-hang",
+    "/khach-hang/cau-chuyen-khach-hang",
+    "/khach-hang/[slug]"
+  ],
+  "references": [
+    {
+      "file": "references/REF-customer-network.png",
+      "sha256": "09f1b7178aeb5c52f13daf1c5b39c5e0760094da8b033e901865f87a63ea04ee",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-solution-blueprint.png",
+      "sha256": "0b4fa16402804a7407abfd721765441580281196383112dc9887488907c18cab",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-roadmap.png",
+      "sha256": "a3a4a4aedb5a17bec51289c14a04f4400a525d9d2e4ce3c59ac8562945c5081b",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/REF-business-value.png",
+      "sha256": "386cc0a7aaaae6530905e6b74d03abbebb0452754d4e64acb9274dcd527be279",
+      "usage": "reference_only"
+    }
+  ],
+  "cms": {
+    "collections": [
+      "customers",
+      "customer-stories"
+    ],
+    "globals": [
+      "customer-page-settings"
+    ]
+  },
+  "goLivePolicy": "support_public_anonymized_and_use_case_content",
+  "theme": "inherit_current_xtech_theme",
+  "titleRule": "maximum_two_lines_on_desktop"
+}

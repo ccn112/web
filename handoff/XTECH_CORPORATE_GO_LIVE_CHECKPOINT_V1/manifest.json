@@ -1,0 +1,24 @@
+{
+  "package": "XTECH_CORPORATE_GO_LIVE_CHECKPOINT_V1",
+  "status": "finalization_required",
+  "coveredSets": [
+    "C01",
+    "C02",
+    "C03",
+    "G01",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "Homepage"
+  ],
+  "remaining": [
+    "lead-pages",
+    "about-real-data",
+    "legal",
+    "search-404-500",
+    "seo-analytics-consent",
+    "performance-security-accessibility",
+    "production-deployment"
+  ]
+}
