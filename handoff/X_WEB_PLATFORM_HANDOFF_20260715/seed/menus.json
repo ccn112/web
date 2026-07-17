@@ -57,10 +57,6 @@
       "href": "/trien-khai"
     },
     {
-      "label": "Khách hàng",
-      "href": "/khach-hang"
-    },
-    {
       "label": "Trung tâm tri thức",
       "href": "/insights",
       "children": [
