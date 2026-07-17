@@ -1,0 +1,11 @@
+{
+  "package": "XTECH_HOMEPAGE_DIAGRAMS_LABELED_HANDOFF_V2",
+  "target_directory": "apps/clay/public/images/home/diagrams/",
+  "assets": [
+    {"file": "hero.png", "section": "hero", "aspect_ratio": "4:5", "transparent": true, "labels": true},
+    {"file": "solutions.png", "section": "solutions", "aspect_ratio": "1:1", "transparent": true, "labels": true},
+    {"file": "products.png", "section": "products", "aspect_ratio": "4:3", "transparent": true, "labels": true},
+    {"file": "platform.png", "section": "platform", "aspect_ratio": "4:5", "transparent": true, "labels": true},
+    {"file": "solution-bundles.png", "section": "solution-bundles", "aspect_ratio": "1:1", "transparent": true, "labels": true}
+  ]
+}
