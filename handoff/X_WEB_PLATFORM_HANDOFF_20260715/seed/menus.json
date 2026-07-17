@@ -15,6 +15,10 @@
         {
           "label": "Theo mục tiêu",
           "href": "/giai-phap/muc-tieu"
+        },
+        {
+          "label": "Bộ giải pháp X",
+          "href": "/bo-giai-phap-x"
         }
       ]
     },
@@ -45,10 +49,6 @@
       ]
     },
     {
-      "label": "Bộ giải pháp X",
-      "href": "/bo-giai-phap-x"
-    },
-    {
       "label": "Dịch vụ",
       "href": "/dich-vu"
     },
@@ -61,12 +61,22 @@
       "href": "/khach-hang"
     },
     {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Tin tức",
-      "href": "/tin-tuc"
+      "label": "Trung tâm tri thức",
+      "href": "/insights",
+      "children": [
+        {
+          "label": "Tin tức",
+          "href": "/tin-tuc"
+        },
+        {
+          "label": "Insights",
+          "href": "/insights"
+        },
+        {
+          "label": "Kinh nghiệm",
+          "href": "/khach-hang"
+        }
+      ]
     },
     {
       "label": "Về X",
