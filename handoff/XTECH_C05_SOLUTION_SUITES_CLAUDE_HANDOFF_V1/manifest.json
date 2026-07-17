@@ -1,0 +1,67 @@
+{
+  "package": "XTECH_C05_SOLUTION_SUITES_CLAUDE_HANDOFF_V1",
+  "version": "1.0.0",
+  "language": "vi",
+  "references": [
+    {
+      "file": "references/c05/C05-REF-01-overview-current.png",
+      "sha256": "a0eab99e2e0f4183eb1e5ccc56f7cfdf33e70e9c954411602cf4f0144d368d0b",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-02-real-estate-current.png",
+      "sha256": "cf8a23d40e345e80f6cebe153edf095daa54f612d50bb9f81a37a4beb2db7e91",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-03-digital-enterprise-current.png",
+      "sha256": "d69b95daa6e4f9eac5f00d1d9ebad4836451cb72ef30d17dceed68d32f043b8f",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-04-smart-building-current.png",
+      "sha256": "5cfd50e410df88132c42505fdda9c1f843064b37a1b95b859ac9c4d89b506e03",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-05-finance-operations-current.png",
+      "sha256": "12240ea5cacebd572412c66e695053d0d73e2c92708042551e7d654f39d60677",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-06-enterprise-ai-current.png",
+      "sha256": "c78d1bc02a60ccc6a571c0e3207043ae7e45115d56f87e52d6d2652c4c66f83f",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-07-config-matrix-current.png",
+      "sha256": "d43399ef65886f61a2a393868ad046ea009e616bff1b418eecb418d3e9056724",
+      "usage": "reference_only"
+    },
+    {
+      "file": "references/c05/C05-REF-08-roadmap-current.png",
+      "sha256": "a3a4a4aedb5a17bec51289c14a04f4400a525d9d2e4ce3c59ac8562945c5081b",
+      "usage": "reference_only"
+    }
+  ],
+  "routes": [
+    "/bo-giai-phap-x",
+    "/bo-giai-phap-x/chu-dau-tu-bat-dong-san",
+    "/bo-giai-phap-x/doanh-nghiep-so",
+    "/bo-giai-phap-x/toa-nha-thong-minh",
+    "/bo-giai-phap-x/tai-chinh-va-van-hanh",
+    "/bo-giai-phap-x/ai-doanh-nghiep"
+  ],
+  "cms": {
+    "collections": [
+      "solution-suites",
+      "solution-builder-submissions"
+    ],
+    "globals": [
+      "solution-suite-page"
+    ]
+  },
+  "theme": "inherit_current_xtech_theme",
+  "title_rule": "maximum_two_lines_on_desktop",
+  "production_policy": "References are visual blueprints only; production uses HTML/CMS + extracted visual assets."
+}

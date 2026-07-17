@@ -1,0 +1,25 @@
+{
+  "page": {
+    "eyebrow": "BỘ GIẢI PHÁP XTECH",
+    "title": "Một hệ sinh thái, cấu hình theo doanh nghiệp",
+    "description": "Chọn mô hình phù hợp để xem tổ hợp sản phẩm, phạm vi nghiệp vụ và lộ trình triển khai đề xuất.",
+    "defaultSuiteSlug": "chu-dau-tu-bat-dong-san",
+    "sectionOrder": [
+      "selector",
+      "blueprint",
+      "starter",
+      "expansion",
+      "enterprise",
+      "configurator",
+      "roadmap",
+      "builder"
+    ]
+  },
+  "suiteSlugs": [
+    "chu-dau-tu-bat-dong-san",
+    "doanh-nghiep-so",
+    "toa-nha-thong-minh",
+    "tai-chinh-va-van-hanh",
+    "ai-doanh-nghiep"
+  ]
+}
