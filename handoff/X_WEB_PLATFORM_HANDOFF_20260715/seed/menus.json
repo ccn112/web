@@ -65,6 +65,10 @@
       "href": "/insights"
     },
     {
+      "label": "Tin tức",
+      "href": "/tin-tuc"
+    },
+    {
       "label": "Về X",
       "href": "/ve-x"
     }
