@@ -5,6 +5,7 @@
     "title": "AI trong bất động sản: từ thử nghiệm đến giá trị thực",
     "excerpt": "Năm nguyên tắc giúp doanh nghiệp đưa AI vào dữ liệu, quy trình và vai trò thực tế.",
     "category": "AI trong bất động sản",
+    "tags": ["AI", "Dữ liệu", "Chuyển đổi số", "PropTech"],
     "status": "published",
     "body": [
       {
@@ -39,6 +40,7 @@
     "title": "Checklist lựa chọn CRM và Booking cho chủ đầu tư",
     "excerpt": "12 câu hỏi cần làm rõ trước khi lựa chọn nền tảng bán hàng bất động sản.",
     "category": "CRM & Sales",
+    "tags": ["CRM", "Bán hàng", "Booking", "PropTech"],
     "status": "published",
     "body": [
       {
@@ -73,6 +75,7 @@
     "title": "5 lớp dữ liệu cần có cho vận hành tòa nhà",
     "excerpt": "Từ cư dân, tài sản đến phí dịch vụ và lịch sử xử lý.",
     "category": "Smart Building",
+    "tags": ["Smart Building", "Dữ liệu", "Vận hành", "PropTech"],
     "status": "published",
     "body": [
       {
@@ -99,6 +102,146 @@
     "seo": {
       "metaTitle": "5 lớp dữ liệu cho vận hành tòa nhà",
       "metaDescription": "Khung dữ liệu nền tảng cho quản lý vận hành chung cư, văn phòng và khu đô thị."
+    }
+  },
+  {
+    "site": "corporate",
+    "slug": "nen-tang-du-lieu-va-phan-tich-cho-bat-dong-san",
+    "title": "Nền tảng dữ liệu và phân tích cho doanh nghiệp bất động sản",
+    "excerpt": "Hợp nhất dữ liệu rời rạc thành một nguồn tin cậy để phân tích và ra quyết định.",
+    "category": "Nền tảng công nghệ",
+    "tags": ["Data", "Analytics", "PropTech"],
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Phần lớn doanh nghiệp bất động sản đang giữ dữ liệu phân mảnh giữa bảng hàng, CRM, kế toán và vận hành. Một nền tảng dữ liệu thống nhất giúp gom các nguồn này về một mô hình chung, chuẩn hóa và sẵn sàng cho phân tích."
+      },
+      {
+        "type": "heading",
+        "text": "Một nguồn dữ liệu duy nhất"
+      },
+      {
+        "type": "paragraph",
+        "text": "Data hub hợp nhất khách hàng, sản phẩm, giao dịch và vận hành, loại bỏ số liệu mâu thuẫn giữa các phòng ban và tạo nền tảng cho báo cáo nhất quán."
+      },
+      {
+        "type": "heading",
+        "text": "Phân tích tạo ra hành động"
+      },
+      {
+        "type": "paragraph",
+        "text": "Từ dữ liệu sạch, doanh nghiệp xây dashboard realtime, dự báo dòng tiền và đo lường hiệu quả bán hàng theo thời gian thực thay vì báo cáo thủ công cuối kỳ."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Nền tảng dữ liệu và phân tích cho doanh nghiệp bất động sản",
+      "metaDescription": "Hợp nhất dữ liệu và phân tích realtime cho doanh nghiệp bất động sản với nền tảng XTECH."
+    }
+  },
+  {
+    "site": "corporate",
+    "slug": "tich-hop-api-va-tu-dong-hoa-quy-trinh",
+    "title": "Tích hợp API và tự động hóa quy trình vận hành",
+    "excerpt": "Kết nối các hệ thống rời rạc qua API và để workflow tự động thay cho thao tác thủ công.",
+    "category": "Nền tảng công nghệ",
+    "tags": ["API", "Workflow", "PropTech"],
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Khi mỗi hệ thống là một ốc đảo, nhân sự phải nhập liệu chéo và dữ liệu dễ lệch. Lớp tích hợp API biến các hệ thống rời rạc thành một luồng vận hành liền mạch."
+      },
+      {
+        "type": "heading",
+        "text": "API mở, kết nối linh hoạt"
+      },
+      {
+        "type": "paragraph",
+        "text": "API gateway chuẩn hóa cách các ứng dụng trao đổi dữ liệu, cho phép thêm hệ thống mới mà không phá vỡ những gì đang chạy."
+      },
+      {
+        "type": "heading",
+        "text": "Tự động hóa quy trình"
+      },
+      {
+        "type": "paragraph",
+        "text": "Workflow tự động chuyển tiếp phê duyệt, tạo hợp đồng, gửi thông báo và cập nhật trạng thái, giúp giảm thao tác thủ công và rút ngắn thời gian xử lý."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Tích hợp API và tự động hóa quy trình vận hành",
+      "metaDescription": "Kết nối hệ thống qua API và tự động hóa workflow cho doanh nghiệp bất động sản."
+    }
+  },
+  {
+    "site": "corporate",
+    "slug": "dinh-danh-va-bao-mat-cho-he-thong-doanh-nghiep",
+    "title": "Định danh và bảo mật cho hệ thống doanh nghiệp",
+    "excerpt": "Quản lý danh tính tập trung, phân quyền theo vai trò và truy vết đầy đủ.",
+    "category": "Bảo mật",
+    "tags": ["Identity", "Security", "PropTech"],
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Khi nhiều hệ thống dùng chung dữ liệu khách hàng và tài chính, kiểm soát ai được xem gì trở thành yêu cầu sống còn. Quản lý định danh tập trung là nền móng cho bảo mật doanh nghiệp."
+      },
+      {
+        "type": "heading",
+        "text": "Đăng nhập một lần, phân quyền theo vai trò"
+      },
+      {
+        "type": "paragraph",
+        "text": "IAM cho phép người dùng đăng nhập một lần và truy cập đúng phạm vi theo vai trò, giảm rủi ro lộ quyền và đơn giản hóa việc quản trị."
+      },
+      {
+        "type": "heading",
+        "text": "Truy vết và tuân thủ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Mọi truy cập và thay đổi đều được ghi nhật ký, tạo audit trail phục vụ điều tra sự cố và đáp ứng yêu cầu tuân thủ."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Định danh và bảo mật cho hệ thống doanh nghiệp",
+      "metaDescription": "Quản lý định danh tập trung, phân quyền theo vai trò và audit trail cho doanh nghiệp."
+    }
+  },
+  {
+    "site": "corporate",
+    "slug": "ha-tang-cloud-cho-nen-tang-proptech",
+    "title": "Hạ tầng Cloud linh hoạt cho nền tảng PropTech",
+    "excerpt": "Mở rộng theo nhu cầu, sẵn sàng cao và chọn được mô hình triển khai phù hợp.",
+    "category": "Hạ tầng",
+    "tags": ["Cloud", "PropTech"],
+    "status": "published",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Nhu cầu hệ thống bất động sản thay đổi theo mùa mở bán và quy mô dự án. Hạ tầng cloud cho phép mở rộng hoặc thu hẹp tài nguyên theo thực tế thay vì đầu tư cố định."
+      },
+      {
+        "type": "heading",
+        "text": "Co giãn theo nhu cầu"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tài nguyên tự động mở rộng vào cao điểm và thu lại khi nhàn rỗi, giúp tối ưu chi phí mà vẫn giữ trải nghiệm ổn định."
+      },
+      {
+        "type": "heading",
+        "text": "Linh hoạt mô hình triển khai"
+      },
+      {
+        "type": "paragraph",
+        "text": "Doanh nghiệp chọn SaaS, private cloud, on-premise hay hybrid tùy yêu cầu về kiểm soát dữ liệu và tích hợp, không bị khóa vào một mô hình duy nhất."
+      }
+    ],
+    "seo": {
+      "metaTitle": "Hạ tầng Cloud linh hoạt cho nền tảng PropTech",
+      "metaDescription": "Hạ tầng cloud co giãn và đa mô hình triển khai cho nền tảng PropTech của XTECH."
     }
   }
 ]

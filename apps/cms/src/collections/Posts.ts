@@ -13,7 +13,7 @@ export const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'siteCode', 'category', 'status'],
+    defaultColumns: ['title', 'siteCode', 'category', 'tags', 'status'],
     group: 'Content',
   },
   access: {
@@ -29,6 +29,17 @@ export const Posts: CollectionConfig = {
     { name: 'title', type: 'text', required: true },
     { name: 'excerpt', type: 'textarea' },
     { name: 'category', type: 'text' },
+    {
+      name: 'tags',
+      label: 'Chủ đề (Tags)',
+      type: 'text',
+      hasMany: true,
+      index: true,
+      admin: {
+        description:
+          'Chủ đề để lọc/liệt kê bài viết. Mỗi tag là một mục; click tag trên site sẽ mở /insights/tag/<tag>. Vd: AI, Dữ liệu, Cloud, Security, PropTech.',
+      },
+    },
     { name: 'locale', type: 'text', required: true, defaultValue: 'vi', index: true },
     {
       name: 'body',

@@ -1,0 +1,748 @@
+[
+  {
+    "site": "corporate",
+    "sectionId": "c02-01",
+    "visualType": "hub-spoke",
+    "eyebrow": "Dịch vụ chuyển đổi số",
+    "title": "Dịch vụ chuyển đổi số toàn diện",
+    "subtitle": "Từ đánh giá hiện trạng đến vận hành và tối ưu liên tục",
+    "routes": [
+      "/dich-vu",
+      "/dich-vu/chuyen-doi-so"
+    ],
+    "order": 10,
+    "items": [
+      {
+        "itemId": "assess",
+        "title": "Khảo sát hiện trạng",
+        "description": "Đánh giá toàn diện hiện trạng doanh nghiệp về quy trình, công nghệ và dữ liệu.",
+        "order": 1,
+        "side": "left",
+        "icon": "search"
+      },
+      {
+        "itemId": "strategy",
+        "title": "Chiến lược & kiến trúc",
+        "description": "Xây dựng chiến lược chuyển đổi số và kiến trúc tổng thể phù hợp với mục tiêu kinh doanh.",
+        "order": 2,
+        "side": "right",
+        "icon": "compass"
+      },
+      {
+        "itemId": "design",
+        "title": "Thiết kế giải pháp",
+        "description": "Thiết kế giải pháp toàn diện, tập trung vào trải nghiệm, dữ liệu và hiệu quả vận hành.",
+        "order": 3,
+        "side": "left",
+        "icon": "pen-tool"
+      },
+      {
+        "itemId": "build",
+        "title": "Phát triển & tích hợp",
+        "description": "Phát triển hệ thống linh hoạt, tích hợp liền mạch với hệ thống hiện hữu và bên thứ ba.",
+        "order": 4,
+        "side": "right",
+        "icon": "git-branch"
+      },
+      {
+        "itemId": "deploy",
+        "title": "Triển khai & đào tạo",
+        "description": "Triển khai hiệu quả, bảo đảm chuyển giao kiến thức và nâng cao năng lực đội ngũ.",
+        "order": 5,
+        "side": "left",
+        "icon": "rocket"
+      },
+      {
+        "itemId": "operate",
+        "title": "Vận hành & tối ưu",
+        "description": "Vận hành ổn định, giám sát liên tục và tối ưu hiệu suất để tạo giá trị bền vững.",
+        "order": 6,
+        "side": "right",
+        "icon": "gauge"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "strategy-value",
+        "title": "Tư vấn chiến lược",
+        "description": "Hiểu đúng, định hướng rõ và tạo lợi thế cạnh tranh.",
+        "icon": "lightbulb"
+      },
+      {
+        "itemId": "delivery-value",
+        "title": "Triển khai thực tế",
+        "description": "Giải pháp khả thi, công nghệ phù hợp và kết quả đo lường được.",
+        "icon": "circle-check"
+      },
+      {
+        "itemId": "longterm-value",
+        "title": "Đồng hành dài hạn",
+        "description": "Hỗ trợ liên tục, tối ưu bền vững và kiến tạo giá trị lâu dài.",
+        "icon": "trending-up"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-02",
+    "visualType": "maturity-radar",
+    "eyebrow": "Đánh giá hiện trạng",
+    "title": "Đánh giá mức độ trưởng thành số",
+    "subtitle": "Đo lường hiện trạng, xác định khoảng cách và ưu tiên lộ trình",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "order": 20,
+    "items": [
+      {
+        "itemId": "strategy",
+        "title": "Chiến lược",
+        "description": "Đánh giá định hướng, mục tiêu và năng lực thực thi chiến lược số.",
+        "icon": "compass"
+      },
+      {
+        "itemId": "customer",
+        "title": "Khách hàng",
+        "description": "Đánh giá trải nghiệm khách hàng và năng lực thấu hiểu khách hàng.",
+        "icon": "users"
+      },
+      {
+        "itemId": "operations",
+        "title": "Vận hành",
+        "description": "Đánh giá hiệu quả quy trình, chuỗi giá trị và khả năng vận hành linh hoạt.",
+        "icon": "settings-2"
+      },
+      {
+        "itemId": "technology",
+        "title": "Công nghệ",
+        "description": "Đánh giá hạ tầng, nền tảng và khả năng ứng dụng công nghệ mới.",
+        "icon": "cpu"
+      },
+      {
+        "itemId": "data",
+        "title": "Dữ liệu",
+        "description": "Đánh giá năng lực quản trị dữ liệu và khả năng khai thác để tạo giá trị.",
+        "icon": "database"
+      },
+      {
+        "itemId": "people",
+        "title": "Con người & văn hóa",
+        "description": "Đánh giá năng lực nhân sự, tư duy số và văn hóa đổi mới.",
+        "icon": "heart-handshake"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "survey",
+        "title": "Khảo sát",
+        "description": "Thu thập dữ liệu ban đầu.",
+        "order": 1,
+        "icon": "clipboard-list"
+      },
+      {
+        "itemId": "interview",
+        "title": "Phỏng vấn",
+        "description": "Làm rõ bối cảnh và nhu cầu.",
+        "order": 2,
+        "icon": "messages-square"
+      },
+      {
+        "itemId": "measure",
+        "title": "Đo lường",
+        "description": "Chấm điểm theo khung đánh giá.",
+        "order": 3,
+        "icon": "gauge"
+      },
+      {
+        "itemId": "benchmark",
+        "title": "Benchmark",
+        "description": "Đối sánh với chuẩn phù hợp.",
+        "order": 4,
+        "icon": "chart-column"
+      },
+      {
+        "itemId": "gap",
+        "title": "Khoảng cách",
+        "description": "Xác định chênh lệch cần xử lý.",
+        "order": 5,
+        "icon": "git-compare"
+      },
+      {
+        "itemId": "priority",
+        "title": "Ưu tiên",
+        "description": "Chốt các sáng kiến trọng tâm.",
+        "order": 6,
+        "icon": "list-checks"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-03",
+    "visualType": "architecture-stack",
+    "eyebrow": "Chiến lược & kiến trúc",
+    "title": "Chiến lược, lộ trình và kiến trúc doanh nghiệp",
+    "subtitle": "Từ tầm nhìn mục tiêu đến bản đồ triển khai rõ ràng",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/ve-x/nang-luc"
+    ],
+    "order": 30,
+    "items": [
+      {
+        "itemId": "business",
+        "title": "Kiến trúc kinh doanh",
+        "description": "Mô hình kinh doanh, năng lực cốt lõi và định hướng tăng trưởng.",
+        "icon": "briefcase"
+      },
+      {
+        "itemId": "data-app",
+        "title": "Kiến trúc dữ liệu & ứng dụng",
+        "description": "Quản trị dữ liệu, danh mục ứng dụng và luồng tích hợp.",
+        "icon": "layers"
+      },
+      {
+        "itemId": "technology-security",
+        "title": "Kiến trúc công nghệ & an toàn",
+        "description": "Hạ tầng linh hoạt, bảo mật, tuân thủ và nền tảng công nghệ.",
+        "icon": "shield"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "orient",
+        "title": "Định hướng",
+        "description": "Phân tích hiện trạng, xác định mục tiêu và ưu tiên.",
+        "order": 1,
+        "icon": "compass"
+      },
+      {
+        "itemId": "design",
+        "title": "Thiết kế",
+        "description": "Thiết kế mô hình kiến trúc tổng thể và kế hoạch chi tiết.",
+        "order": 2,
+        "icon": "pen-tool"
+      },
+      {
+        "itemId": "implement",
+        "title": "Triển khai",
+        "description": "Thực hiện theo lộ trình và quản trị thay đổi.",
+        "order": 3,
+        "icon": "rocket"
+      },
+      {
+        "itemId": "scale",
+        "title": "Mở rộng",
+        "description": "Đo lường, tối ưu và mở rộng liên tục.",
+        "order": 4,
+        "icon": "trending-up"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-04",
+    "visualType": "process-evolution",
+    "eyebrow": "Quy trình & tự động hóa",
+    "title": "Tái thiết kế quy trình và tự động hóa",
+    "subtitle": "Từ quy trình thủ công đến vận hành số thông minh",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "manual",
+        "title": "Quy trình thủ công",
+        "description": "Thao tác thủ công, tài liệu rời rạc, dễ sai sót và khó theo dõi.",
+        "order": 1,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "digital",
+        "title": "Quy trình số",
+        "description": "Số hóa quy trình, dữ liệu tập trung, minh bạch và dễ truy xuất.",
+        "order": 2,
+        "icon": "monitor"
+      },
+      {
+        "itemId": "workflow",
+        "title": "Workflow tự động",
+        "description": "Tự động hóa luồng công việc, đúng quy trình và giảm chờ đợi.",
+        "order": 3,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "ai",
+        "title": "AI hỗ trợ",
+        "description": "AI phân tích, gợi ý và hỗ trợ ra quyết định thông minh.",
+        "order": 4,
+        "icon": "brain"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "discover",
+        "title": "Khám phá quy trình",
+        "description": "Phân tích hiện trạng và xác định điểm nghẽn.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "bpmn",
+        "title": "Thiết kế BPMN",
+        "description": "Chuẩn hóa quy trình để dễ hiểu và tối ưu.",
+        "order": 2,
+        "icon": "git-branch"
+      },
+      {
+        "itemId": "workflow-engine",
+        "title": "Workflow",
+        "description": "Xây dựng và quản lý luồng công việc linh hoạt.",
+        "order": 3,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "rpa",
+        "title": "RPA",
+        "description": "Tự động hóa tác vụ lặp lại trên hệ thống.",
+        "order": 4,
+        "icon": "bot"
+      },
+      {
+        "itemId": "ai-agent",
+        "title": "AI Agent",
+        "description": "AI hiểu ngữ cảnh, gợi ý và tự động xử lý.",
+        "order": 5,
+        "icon": "sparkles"
+      },
+      {
+        "itemId": "human-approval",
+        "title": "Phê duyệt con người",
+        "description": "Kiểm soát tại các điểm quyết định quan trọng.",
+        "order": 6,
+        "icon": "user-check"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-05",
+    "visualType": "data-platform",
+    "eyebrow": "Dữ liệu & phân tích",
+    "title": "Nền tảng dữ liệu và phân tích doanh nghiệp",
+    "subtitle": "Kết nối nguồn dữ liệu, chuẩn hóa, phân tích và kích hoạt giá trị",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "erp",
+        "title": "ERP",
+        "description": "Dữ liệu tài chính và vận hành.",
+        "icon": "boxes"
+      },
+      {
+        "itemId": "crm",
+        "title": "CRM",
+        "description": "Dữ liệu khách hàng và bán hàng.",
+        "icon": "users"
+      },
+      {
+        "itemId": "hrm",
+        "title": "HRM",
+        "description": "Dữ liệu nhân sự.",
+        "icon": "user-round"
+      },
+      {
+        "itemId": "iot",
+        "title": "IoT",
+        "description": "Dữ liệu thiết bị và cảm biến.",
+        "icon": "radio"
+      },
+      {
+        "itemId": "documents",
+        "title": "Tài liệu",
+        "description": "Dữ liệu phi cấu trúc nội bộ.",
+        "icon": "file-text"
+      },
+      {
+        "itemId": "external",
+        "title": "Dữ liệu bên ngoài",
+        "description": "Dữ liệu thị trường và đối tác.",
+        "icon": "globe"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "ingestion",
+        "title": "Tích hợp & thu thập",
+        "description": "Kết nối đa nguồn, ETL/ELT, chuẩn hóa và luồng thời gian thực.",
+        "icon": "plug"
+      },
+      {
+        "itemId": "lakehouse",
+        "title": "Lakehouse / DWH",
+        "description": "Kho dữ liệu tập trung, sẵn sàng cho báo cáo và AI.",
+        "icon": "database"
+      },
+      {
+        "itemId": "governance",
+        "title": "Quản trị & chất lượng",
+        "description": "Quản trị, chất lượng, bảo mật, phân quyền và tuân thủ.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "consumption",
+        "title": "BI / Phân tích / Báo cáo / AI",
+        "description": "Khai thác dữ liệu để hỗ trợ quyết định và tự động hóa.",
+        "icon": "chart-column"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-06",
+    "visualType": "integration-hub",
+    "eyebrow": "Ứng dụng & tích hợp",
+    "title": "Hiện đại hóa ứng dụng và tích hợp hệ thống",
+    "subtitle": "Kết nối hệ thống hiện hữu với nền tảng số linh hoạt",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/trien-khai"
+    ],
+    "order": 60,
+    "items": [
+      {
+        "itemId": "legacy-erp",
+        "title": "ERP cũ",
+        "description": "Hệ thống nghiệp vụ hiện hữu.",
+        "icon": "server"
+      },
+      {
+        "itemId": "legacy-crm",
+        "title": "CRM cũ",
+        "description": "Hệ thống khách hàng hiện hữu.",
+        "icon": "users"
+      },
+      {
+        "itemId": "internal",
+        "title": "Phần mềm nội bộ",
+        "description": "Ứng dụng đặc thù doanh nghiệp.",
+        "icon": "app-window"
+      },
+      {
+        "itemId": "files",
+        "title": "Excel / File",
+        "description": "Dữ liệu rời rạc cần tích hợp.",
+        "icon": "file-spreadsheet"
+      },
+      {
+        "itemId": "web",
+        "title": "Web",
+        "description": "Ứng dụng web hiện đại.",
+        "icon": "globe"
+      },
+      {
+        "itemId": "mobile",
+        "title": "Mobile",
+        "description": "Ứng dụng di động.",
+        "icon": "smartphone"
+      },
+      {
+        "itemId": "cloud",
+        "title": "Cloud",
+        "description": "Nền tảng đám mây.",
+        "icon": "cloud"
+      },
+      {
+        "itemId": "new-apps",
+        "title": "Ứng dụng mới",
+        "description": "Ứng dụng số linh hoạt.",
+        "icon": "sparkles"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "api",
+        "title": "API Gateway",
+        "description": "Quản lý, bảo mật và kiểm soát truy cập API.",
+        "icon": "webhook"
+      },
+      {
+        "itemId": "microservices",
+        "title": "Microservices",
+        "description": "Kiến trúc linh hoạt, dễ phát triển và bảo trì.",
+        "icon": "boxes"
+      },
+      {
+        "itemId": "event-bus",
+        "title": "Event Bus",
+        "description": "Kết nối và xử lý sự kiện thời gian thực.",
+        "icon": "radio-tower"
+      },
+      {
+        "itemId": "cloud-native",
+        "title": "Cloud Native",
+        "description": "Tối ưu hiệu năng, tự động mở rộng.",
+        "icon": "cloud"
+      },
+      {
+        "itemId": "devsecops",
+        "title": "DevSecOps",
+        "description": "Phát triển nhanh, an toàn và vận hành tin cậy.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "migration",
+        "title": "Migration",
+        "description": "Đánh giá, chuyển đổi an toàn và hiệu quả.",
+        "icon": "arrow-right-left"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-07",
+    "visualType": "adoption-journey",
+    "eyebrow": "Quản trị thay đổi",
+    "title": "Quản trị thay đổi và thúc đẩy sử dụng",
+    "subtitle": "Đồng thuận tổ chức, nâng cao năng lực và gia tăng mức độ áp dụng",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/ve-x/nang-luc"
+    ],
+    "order": 70,
+    "items": [
+      {
+        "itemId": "leaders",
+        "title": "Lãnh đạo",
+        "description": "Định hướng chiến lược, truyền cảm hứng và loại bỏ rào cản.",
+        "icon": "crown"
+      },
+      {
+        "itemId": "managers",
+        "title": "Quản lý",
+        "description": "Triển khai nhất quán, theo dõi tiến độ và hỗ trợ đội ngũ.",
+        "icon": "user-cog"
+      },
+      {
+        "itemId": "employees",
+        "title": "Nhân viên",
+        "description": "Thấu hiểu lợi ích, sẵn sàng thay đổi và chủ động áp dụng.",
+        "icon": "users"
+      },
+      {
+        "itemId": "key-users",
+        "title": "Key Users",
+        "description": "Đại sứ thay đổi, hỗ trợ đồng nghiệp và lan tỏa thực hành tốt.",
+        "icon": "star"
+      },
+      {
+        "itemId": "digital-team",
+        "title": "IT / Digital Team",
+        "description": "Bảo đảm nền tảng ổn định, tích hợp hiệu quả và hỗ trợ kịp thời.",
+        "icon": "cpu"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "awareness",
+        "title": "Nhận thức",
+        "description": "Truyền thông rõ ràng về lý do và lợi ích thay đổi.",
+        "order": 1,
+        "icon": "megaphone"
+      },
+      {
+        "itemId": "alignment",
+        "title": "Đồng thuận",
+        "description": "Thống nhất mục tiêu, vai trò và cam kết.",
+        "order": 2,
+        "icon": "handshake"
+      },
+      {
+        "itemId": "training",
+        "title": "Đào tạo",
+        "description": "Trang bị kiến thức và kỹ năng để tự tin áp dụng.",
+        "order": 3,
+        "icon": "graduation-cap"
+      },
+      {
+        "itemId": "pilot",
+        "title": "Thử nghiệm",
+        "description": "Thử nghiệm có kiểm soát, học nhanh và điều chỉnh.",
+        "order": 4,
+        "icon": "flask-conical"
+      },
+      {
+        "itemId": "adoption",
+        "title": "Áp dụng",
+        "description": "Triển khai rộng rãi và đưa vào quy trình làm việc.",
+        "order": 5,
+        "icon": "rocket"
+      },
+      {
+        "itemId": "measure",
+        "title": "Đo lường",
+        "description": "Theo dõi chỉ số sử dụng và tác động.",
+        "order": 6,
+        "icon": "chart-line"
+      },
+      {
+        "itemId": "improve",
+        "title": "Cải tiến",
+        "description": "Tối ưu liên tục dựa trên phản hồi và dữ liệu.",
+        "order": 7,
+        "icon": "refresh-cw"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-08",
+    "visualType": "control-tower",
+    "eyebrow": "Vận hành chuyển đổi số",
+    "title": "Vận hành chuyển đổi số và cải tiến liên tục",
+    "subtitle": "Theo dõi tiến độ, đo lường giá trị và tối ưu bền vững",
+    "routes": [
+      "/dich-vu",
+      "/dich-vu/chuyen-doi-so"
+    ],
+    "order": 80,
+    "items": [
+      {
+        "itemId": "portfolio",
+        "title": "Danh mục dự án",
+        "description": "Quản lý danh mục, ưu tiên và theo dõi tiến độ các dự án chuyển đổi số.",
+        "order": 1,
+        "side": "left",
+        "icon": "folder-kanban"
+      },
+      {
+        "itemId": "kpi",
+        "title": "KPI",
+        "description": "Theo dõi KPI then chốt, hiệu suất và mức độ hoàn thành mục tiêu.",
+        "order": 2,
+        "side": "left",
+        "icon": "gauge"
+      },
+      {
+        "itemId": "budget",
+        "title": "Ngân sách",
+        "description": "Quản lý ngân sách, chi phí và tối ưu hiệu quả đầu tư.",
+        "order": 3,
+        "side": "left",
+        "icon": "wallet"
+      },
+      {
+        "itemId": "risk",
+        "title": "Rủi ro",
+        "description": "Nhận diện, đánh giá và giám sát rủi ro để chủ động ứng phó.",
+        "order": 4,
+        "side": "left",
+        "icon": "shield-alert"
+      },
+      {
+        "itemId": "adoption",
+        "title": "Mức độ áp dụng",
+        "description": "Đo lường mức độ áp dụng giải pháp, mức độ sử dụng và thay đổi hành vi.",
+        "order": 5,
+        "side": "right",
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "benefits",
+        "title": "Lợi ích đạt được",
+        "description": "Đo lường lợi ích định lượng và định tính từ chương trình chuyển đổi số.",
+        "order": 6,
+        "side": "right",
+        "icon": "award"
+      },
+      {
+        "itemId": "support",
+        "title": "Hỗ trợ",
+        "description": "Tiếp nhận yêu cầu, xử lý sự cố và hỗ trợ người dùng kịp thời.",
+        "order": 7,
+        "side": "right",
+        "icon": "life-buoy"
+      },
+      {
+        "itemId": "continuous",
+        "title": "Cải tiến liên tục",
+        "description": "Thu thập phản hồi, phân tích và cải tiến không ngừng.",
+        "order": 8,
+        "side": "right",
+        "icon": "refresh-cw"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "plan",
+        "title": "Lập kế hoạch",
+        "description": "Xác định mục tiêu, phạm vi, lộ trình và nguồn lực.",
+        "order": 1,
+        "icon": "clipboard-list"
+      },
+      {
+        "itemId": "deliver",
+        "title": "Triển khai",
+        "description": "Thực thi kế hoạch, phối hợp và quản lý tiến độ.",
+        "order": 2,
+        "icon": "send"
+      },
+      {
+        "itemId": "measure",
+        "title": "Đo lường",
+        "description": "Theo dõi dữ liệu, đánh giá hiệu suất và kết quả.",
+        "order": 3,
+        "icon": "chart-line"
+      },
+      {
+        "itemId": "learn",
+        "title": "Rút kinh nghiệm",
+        "description": "Phân tích bài học, điểm mạnh và điểm cần cải thiện.",
+        "order": 4,
+        "icon": "lightbulb"
+      },
+      {
+        "itemId": "optimize",
+        "title": "Tối ưu",
+        "description": "Điều chỉnh, chuẩn hóa và tối ưu để tạo giá trị cao hơn.",
+        "order": 5,
+        "icon": "settings-2"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "control",
+        "title": "Kiểm soát toàn diện",
+        "description": "Minh bạch dữ liệu, quản trị chặt chẽ và giảm thiểu rủi ro.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "decision",
+        "title": "Ra quyết định kịp thời",
+        "description": "Dữ liệu chính xác, thông tin tức thời và hành động nhanh chóng.",
+        "icon": "zap"
+      },
+      {
+        "itemId": "longterm",
+        "title": "Tạo giá trị dài hạn",
+        "description": "Tối ưu liên tục, nâng cao năng lực và đồng hành cùng tăng trưởng.",
+        "icon": "trending-up"
+      }
+    ],
+    "status": "published"
+  }
+]

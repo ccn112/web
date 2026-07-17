@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     pages: Page;
     posts: Post;
+    'service-sections': ServiceSection;
     products: Product;
     solutions: Solution;
     'case-studies': CaseStudy;
@@ -93,6 +94,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    'service-sections': ServiceSectionsSelect<false> | ServiceSectionsSelect<true>;
     products: ProductsSelect<false> | ProductsSelect<true>;
     solutions: SolutionsSelect<false> | SolutionsSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
@@ -323,6 +325,10 @@ export interface HeroBlock {
     href: string;
   };
   illustration?: (string | null) | Media;
+  /**
+   * Ảnh nền phủ kín khu vực hero/first-fold. Nội dung hero vẫn giữ nguyên phía trên; có lớp overlay để đảm bảo tương phản chữ.
+   */
+  background?: (string | null) | Media;
   /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
@@ -756,6 +762,10 @@ export interface Post {
   title: string;
   excerpt?: string | null;
   category?: string | null;
+  /**
+   * Chủ đề để lọc/liệt kê bài viết. Mỗi tag là một mục; click tag trên site sẽ mở /insights/tag/<tag>. Vd: AI, Dữ liệu, Cloud, Security, PropTech.
+   */
+  tags?: string[] | null;
   locale: string;
   /**
    * Structured body nodes: [{ type: paragraph|heading, text }].
@@ -782,6 +792,90 @@ export interface Post {
   };
   author?: (string | null) | User;
   reviewer?: (string | null) | User;
+  /**
+   * draft → review → approved → published → archived
+   */
+  status: 'draft' | 'review' | 'approved' | 'published' | 'archived';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "service-sections".
+ */
+export interface ServiceSection {
+  id: string;
+  site: string | Site;
+  /**
+   * Auto-filled from the selected site.
+   */
+  siteCode?: string | null;
+  sectionId: string;
+  /**
+   * Kiểu bố cục hiển thị (component tương ứng dựng layout).
+   */
+  visualType:
+    | 'hub-spoke'
+    | 'maturity-radar'
+    | 'architecture-stack'
+    | 'process-evolution'
+    | 'data-platform'
+    | 'integration-hub'
+    | 'adoption-journey'
+    | 'control-tower';
+  eyebrow?: string | null;
+  title: string;
+  subtitle?: string | null;
+  /**
+   * Các path hiển thị section này, vd: /dich-vu/chuyen-doi-so
+   */
+  routes: string[];
+  /**
+   * Thứ tự trong một route (tăng dần).
+   */
+  order?: number | null;
+  items?:
+    | {
+        itemId: string;
+        order?: number | null;
+        title: string;
+        description: string;
+        side?: ('left' | 'right' | 'top' | 'bottom') | null;
+        /**
+         * Tên icon lucide (kebab-case), tùy chọn.
+         */
+        icon?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  process?:
+    | {
+        itemId: string;
+        order?: number | null;
+        title: string;
+        description: string;
+        side?: ('left' | 'right' | 'top' | 'bottom') | null;
+        /**
+         * Tên icon lucide (kebab-case), tùy chọn.
+         */
+        icon?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  outcomes?:
+    | {
+        itemId: string;
+        title: string;
+        description: string;
+        icon?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  cta?: {
+    label?: string | null;
+    href?: string | null;
+  };
+  locale: string;
   /**
    * draft → review → approved → published → archived
    */
@@ -1046,6 +1140,10 @@ export interface PayloadLockedDocument {
         value: string | Post;
       } | null)
     | ({
+        relationTo: 'service-sections';
+        value: string | ServiceSection;
+      } | null)
+    | ({
         relationTo: 'products';
         value: string | Product;
       } | null)
@@ -1270,6 +1368,7 @@ export interface HeroBlockSelect<T extends boolean = true> {
         href?: T;
       };
   illustration?: T;
+  background?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1611,6 +1710,7 @@ export interface PostsSelect<T extends boolean = true> {
   title?: T;
   excerpt?: T;
   category?: T;
+  tags?: T;
   locale?: T;
   body?: T;
   seo?:
@@ -1625,6 +1725,62 @@ export interface PostsSelect<T extends boolean = true> {
       };
   author?: T;
   reviewer?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "service-sections_select".
+ */
+export interface ServiceSectionsSelect<T extends boolean = true> {
+  site?: T;
+  siteCode?: T;
+  sectionId?: T;
+  visualType?: T;
+  eyebrow?: T;
+  title?: T;
+  subtitle?: T;
+  routes?: T;
+  order?: T;
+  items?:
+    | T
+    | {
+        itemId?: T;
+        order?: T;
+        title?: T;
+        description?: T;
+        side?: T;
+        icon?: T;
+        id?: T;
+      };
+  process?:
+    | T
+    | {
+        itemId?: T;
+        order?: T;
+        title?: T;
+        description?: T;
+        side?: T;
+        icon?: T;
+        id?: T;
+      };
+  outcomes?:
+    | T
+    | {
+        itemId?: T;
+        title?: T;
+        description?: T;
+        icon?: T;
+        id?: T;
+      };
+  cta?:
+    | T
+    | {
+        label?: T;
+        href?: T;
+      };
+  locale?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;

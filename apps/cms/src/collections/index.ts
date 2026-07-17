@@ -9,6 +9,7 @@ import { Posts } from './Posts'
 import { Products } from './Products'
 import { PromptSets } from './PromptSets'
 import { Redirects } from './Redirects'
+import { ServiceSections } from './ServiceSections'
 import { Sites } from './Sites'
 import { Solutions } from './Solutions'
 import { Users } from './Users'
@@ -19,6 +20,7 @@ export const collections = [
   Media,
   Pages,
   Posts,
+  ServiceSections,
   Products,
   Solutions,
   CaseStudies,

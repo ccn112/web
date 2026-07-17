@@ -1,0 +1,34 @@
+{
+  "total_routes": 43,
+  "status_counts": {
+    "in_progress": 2,
+    "planned": 30,
+    "handoff_ready": 4,
+    "next_set": 1,
+    "visual_ready": 5,
+    "next_after_c03": 1
+  },
+  "p0_routes": [
+    "/",
+    "/giai-phap/chuyen-doi-so",
+    "/san-pham",
+    "/dich-vu",
+    "/dich-vu/chuyen-doi-so"
+  ],
+  "p1_routes": [
+    "/giai-phap",
+    "/san-pham/x-ai",
+    "/san-pham/xbooking",
+    "/san-pham/finerp",
+    "/san-pham/xbuilding",
+    "/san-pham/x-space",
+    "/san-pham/nen-tang-dung-chung",
+    "/bo-giai-phap-x",
+    "/bo-giai-phap-x/chu-dau-tu-bat-dong-san",
+    "/trien-khai",
+    "/ve-x",
+    "/ve-x/nang-luc",
+    "/lien-he",
+    "/dat-lich-demo"
+  ]
+}

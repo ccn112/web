@@ -1,0 +1,44 @@
+﻿route,menu,page_type,status,priority,hero_background,design_sets,required_sections
+/,Trang chủ,landing,in_progress,P0,bg-trang-chu-he-sinh-thai.webp,C01; Semantic Backgrounds,Hero; Đối tác; Về XTECH; Hệ sinh thái sản phẩm; Năng lực CĐS; Enterprise Platform; Business Value; Ngành/Phòng ban; Case Studies; Insights; CTA
+/giai-phap,Giải pháp,landing,planned,P1,bg-giai-phap-hoi-tu.webp,C01; C02,Hero; Chuyển đổi số; Doanh nghiệp kết nối; Dữ liệu & AI; Tự động hóa; Tích hợp hệ thống; CTA
+/giai-phap/chuyen-doi-so,Giải pháp,detail,handoff_ready,P0,,C02,Đánh giá trưởng thành số; Chiến lược & kiến trúc; Quy trình & tự động hóa; Data platform; Hiện đại hóa ứng dụng; Quản trị thay đổi; Vận hành cải tiến
+/giai-phap/doanh-nghiep-ket-noi,Giải pháp,detail,planned,P2,,C01-05; C03-07 future,Kênh trải nghiệm; Ứng dụng doanh nghiệp; AI & tự động hóa; Dữ liệu & tích hợp; Hạ tầng & bảo mật
+/giai-phap/du-lieu-va-ai,Giải pháp,detail,planned,P2,,C02-05; X.AI SET 12–16,Data Strategy; Data Platform; BI; Knowledge & RAG; Enterprise Agents; Governance; Deployment
+/giai-phap/tu-dong-hoa,Giải pháp,detail,planned,P2,,C02-04,Process discovery; BPMN; Workflow; RPA; AI Agent; Human approval
+/giai-phap/tich-hop-he-thong,Giải pháp,detail,planned,P2,,C02-06; C04 future,Legacy; Integration Hub; API Gateway; Event Bus; Modern apps; Cloud Native
+/san-pham,Sản phẩm,landing,next_set,P0,bg-san-pham-nen-tang-mo-dun.webp,C03 future,Tổng quan hệ sinh thái; X.AI; XBooking; FinERP; XBuilding; X.Space; Nền tảng dùng chung; Hành trình liên thông
+/san-pham/x-ai,Sản phẩm,product,visual_ready,P1,,SET 11–16,AI Platform; Enterprise Agents; Knowledge & RAG; Governance; Model & Prompt Center; Deployment
+/san-pham/xbooking,Sản phẩm,product,visual_ready,P1,,SET 05–07,Marketing & Lead; CRM; Bảng hàng; Booking; Đại lý; Hợp đồng; CSKH
+/san-pham/finerp,Sản phẩm,product,visual_ready,P1,,SET 08,Tài chính; Công nợ; Dòng tiền; Ngân sách; Hợp đồng; Báo cáo điều hành
+/san-pham/xbuilding,Sản phẩm,product,visual_ready,P1,,SET 09–10,Cư dân; Căn hộ; Dịch vụ; Phí; Ticket; Thiết bị; Bảo trì; IoT; Năng lượng
+/san-pham/x-space,Sản phẩm,product,visual_ready,P1,,Existing X.Space sets,Cộng tác; Công việc; Dự án; Phê duyệt; Tài liệu; Chat; Tri thức
+/san-pham/nen-tang-dung-chung,Sản phẩm,platform,planned,P1,,C03-07 future,Data; API; Identity; Workflow; Cloud; Security; Analytics; AI Services
+/bo-giai-phap-x,Bộ giải pháp X,landing,planned,P1,bg-bo-giai-phap-x-lap-ghep.webp,C05 future,Tổng quan; Chủ đầu tư BĐS; Doanh nghiệp số; Tòa nhà thông minh; Tài chính & vận hành; AI doanh nghiệp
+/bo-giai-phap-x/chu-dau-tu-bat-dong-san,Bộ giải pháp X,suite,planned,P1,,C05 future; SET 04–12,Marketing/Lead; Sales/Booking; Tài chính; Bàn giao; Vận hành; Khách hàng; Data & AI
+/bo-giai-phap-x/doanh-nghiep-so,Bộ giải pháp X,suite,planned,P2,,C05 future,ERP; Workspace; Data; AI; Automation; Security
+/bo-giai-phap-x/toa-nha-thong-minh,Bộ giải pháp X,suite,planned,P2,,C05 future; SET 09–10,BQL; Cư dân; Thiết bị; Bảo trì; IoT; Năng lượng; AI Operations
+/bo-giai-phap-x/tai-chinh-va-van-hanh,Bộ giải pháp X,suite,planned,P2,,C05 future; SET 08,Kế toán; Công nợ; Ngân sách; Dòng tiền; Báo cáo; AI Finance
+/bo-giai-phap-x/ai-doanh-nghiep,Bộ giải pháp X,suite,planned,P2,,SET 12–16,Sales Agent; Finance Agent; Building Ops Agent; Customer Service Agent; Executive Copilot; Governance
+/dich-vu,Dịch vụ,landing,handoff_ready,P0,bg-dich-vu-hanh-trinh.webp,C02,Tổng quan dịch vụ; Tư vấn; Phát triển; Data & AI; Triển khai/Đào tạo; Vận hành/Tối ưu; Digital PMO
+/dich-vu/chuyen-doi-so,Dịch vụ,detail,handoff_ready,P0,,C02,C02-01 đến C02-08
+/dich-vu/tu-van-chien-luoc,Dịch vụ,detail,planned,P2,,C02-02; C02-03,Maturity Assessment; North Star; Enterprise Architecture; Roadmap
+/dich-vu/phat-trien-phan-mem,Dịch vụ,detail,planned,P2,,C02-04; C02-06; C04 future,Discovery; UX/UI; Development; Integration; Testing; DevSecOps
+/dich-vu/du-lieu-va-ai,Dịch vụ,detail,planned,P2,,C02-05; SET 12–16,Data Strategy; Data Platform; BI; AI Agents; Governance
+/dich-vu/van-hanh-va-ho-tro,Dịch vụ,detail,planned,P2,,C02-08; C04 future,Managed Services; Support; SLA; Monitoring; Continuous Improvement
+/trien-khai,Triển khai,landing,next_after_c03,P1,bg-trien-khai-kien-truc.webp,C04 future,End-to-end delivery; Kiến trúc; Integration Hub; Migration; SaaS/Private Cloud/On-premise/Hybrid; DevSecOps; SLA/Hypercare
+/khach-hang,Khách hàng,landing,planned,P2,bg-khach-hang-mang-luoi.webp,C06 future,Logo wall; Featured case; Case theo ngành; Testimonial; Hợp tác dài hạn
+/khach-hang/cau-chuyen-khach-hang,Khách hàng,listing,planned,P2,,C06 future,Filter ngành; Filter sản phẩm; Case cards
+/khach-hang/[slug],Khách hàng,detail,planned,P2,,C06 future,Bài toán; Giải pháp; Kiến trúc; Triển khai; Kết quả; Testimonial
+/insights,Insights,landing,planned,P2,bg-insights-tin-hieu.webp,C07 future,Featured; Categories; Latest; Newsletter CTA
+/insights/[slug],Insights,article,planned,P2,,C07 future,Cover; Metadata; Article; Author; Related
+/ve-x,Về X,landing,in_progress,P1,bg-ve-x-con-nguoi-doi-tac.webp,C01; Semantic Backgrounds,Hero; XTECH là ai; Năng lực; Tầm nhìn & sứ mệnh; Đội ngũ; Đối tác; Future Vision; CTA
+/ve-x/gioi-thieu,Về X,detail,planned,P2,,C01-02,Giới thiệu; Lịch sử; Năng lực; Số liệu xác thực
+/ve-x/nang-luc,Về X,detail,handoff_ready,P1,,C01; C02,Tư vấn; Phát triển; Tích hợp; Vận hành; Data & AI; Quản trị thay đổi
+/ve-x/tam-nhin-su-menh,Về X,detail,planned,P2,,C01-08,Tầm nhìn; Sứ mệnh; Giá trị cốt lõi; Hành trình tương lai
+/ve-x/doi-ngu,Về X,listing,planned,P3,,,Leadership; Experts; Team culture
+/ve-x/doi-tac,Về X,listing,planned,P3,,,Technology partners; Implementation partners; Partnership model
+/ve-x/tuyen-dung,Về X,listing,planned,P3,,,Culture; Open positions; Benefits; Apply
+/lien-he,CTA,form,planned,P1,,,Thông tin liên hệ; Form; Văn phòng; Consent
+/dat-lich-demo,CTA,form,planned,P1,,,Sản phẩm quan tâm; Giải pháp quan tâm; Công ty; Lịch; Consent
+/chinh-sach-bao-mat,Legal,legal,planned,P2,,,Privacy policy
+/dieu-khoan-su-dung,Legal,legal,planned,P2,,,Terms of use

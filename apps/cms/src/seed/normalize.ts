@@ -30,6 +30,13 @@ export function normalizeBlock(block: RawBlock, mediaByCode?: Map<string, string
     out = id ? { ...rest, blockType: out.blockType, illustration: id } : { ...rest, blockType: out.blockType }
   }
 
+  // backgroundAsset (a symbolic media code like "BG-HOME") -> background (a Media doc id).
+  if (typeof out.backgroundAsset === 'string') {
+    const { backgroundAsset, ...rest } = out
+    const id = mediaByCode?.get(backgroundAsset as string)
+    out = id ? { ...rest, blockType: out.blockType, background: id } : { ...rest, blockType: out.blockType }
+  }
+
   return out
 }
 

@@ -136,9 +136,25 @@ type PostJson = {
   title: string
   excerpt?: string
   category?: string
+  tags?: string[]
   status?: string
   body?: unknown[]
   seo?: Record<string, unknown>
+}
+type ServiceSectionJson = {
+  site: string
+  sectionId: string
+  visualType: string
+  eyebrow?: string
+  title: string
+  subtitle?: string
+  routes: string[]
+  order?: number
+  items?: unknown[]
+  process?: unknown[]
+  outcomes?: unknown[]
+  cta?: Record<string, unknown>
+  status?: string
 }
 
 async function run(): Promise<void> {
@@ -272,6 +288,7 @@ async function run(): Promise<void> {
         title: post.title,
         excerpt: post.excerpt,
         category: post.category,
+        tags: post.tags ?? [],
         locale: 'vi',
         body: post.body ?? [],
         seo: post.seo ?? {},
@@ -281,6 +298,78 @@ async function run(): Promise<void> {
     tally(r)
   }
   console.log(`  ${posts.length} posts`)
+
+  // 8. Service sections (SET C02) — optional file.
+  console.log('• Service sections')
+  let serviceSections: ServiceSectionJson[] = []
+  try {
+    serviceSections = await readJson<ServiceSectionJson[]>('service-sections.json')
+  } catch {
+    serviceSections = []
+  }
+  for (const s of serviceSections) {
+    const r = await upsert(
+      payload,
+      'service-sections',
+      {
+        and: [{ siteCode: { equals: s.site } }, { locale: { equals: 'vi' } }, { sectionId: { equals: s.sectionId } }],
+      },
+      {
+        site: requireSite(s.site),
+        sectionId: s.sectionId,
+        visualType: s.visualType,
+        eyebrow: s.eyebrow,
+        title: s.title,
+        subtitle: s.subtitle,
+        routes: s.routes,
+        order: s.order,
+        items: s.items ?? [],
+        process: s.process ?? [],
+        outcomes: s.outcomes ?? [],
+        cta: s.cta ?? {},
+        locale: 'vi',
+        status: s.status ?? 'published',
+      },
+    )
+    tally(r)
+  }
+  console.log(`  ${serviceSections.length} service sections`)
+
+  // 9. Redirects (route reconciliation) — optional file.
+  console.log('• Redirects')
+  let redirects: Array<{
+    site: string
+    sourcePath: string
+    destinationPath: string
+    permanent?: boolean
+  }> = []
+  try {
+    redirects = await readJson('redirects.json')
+  } catch {
+    redirects = []
+  }
+  for (const rd of redirects) {
+    const r = await upsert(
+      payload,
+      'redirects',
+      { and: [{ siteCode: { equals: rd.site } }, { sourcePath: { equals: rd.sourcePath } }] },
+      {
+        site: requireSite(rd.site),
+        sourcePath: rd.sourcePath,
+        destinationPath: rd.destinationPath,
+        permanent: rd.permanent ?? true,
+      },
+    )
+    tally(r)
+    // Remove any retired page still sitting at the old slug so the redirect
+    // (checked only on 404) actually fires instead of serving stale content.
+    await payload.delete({
+      collection: 'pages',
+      where: { and: [{ siteCode: { equals: rd.site } }, { slug: { equals: rd.sourcePath } }] },
+      overrideAccess: true,
+    })
+  }
+  console.log(`  ${redirects.length} redirects`)
 
   console.log(`\nDone. Created ${counts.created}, updated ${counts.updated}.`)
 }

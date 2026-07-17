@@ -26,7 +26,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-HOME"
       },
       {
         "blockType": "productCards",
@@ -51,12 +52,12 @@
           {
             "title": "X.AI",
             "description": "Nhập liệu, báo cáo, tư vấn và AI Agent.",
-            "href": "/san-pham/xai"
+            "href": "/san-pham/x-ai"
           },
           {
             "title": "X.Space",
             "description": "Workspace thông minh cho cộng tác nội bộ.",
-            "href": "/san-pham/xspace"
+            "href": "/san-pham/x-space"
           }
         ]
       },
@@ -131,7 +132,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -170,7 +171,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-SOLUTIONS"
       },
       {
         "blockType": "featureGrid",
@@ -210,7 +212,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -248,7 +250,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-PRODUCTS"
       },
       {
         "blockType": "featureGrid",
@@ -292,7 +295,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -330,7 +333,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-SERVICES"
       },
       {
         "blockType": "featureGrid",
@@ -370,7 +374,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -383,7 +387,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/mo-hinh-trien-khai",
+    "slug": "/trien-khai",
     "title": "Mô hình triển khai",
     "pageType": "landing",
     "locale": "vi",
@@ -408,7 +412,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-IMPLEMENTATION"
       },
       {
         "blockType": "featureGrid",
@@ -448,7 +453,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -461,7 +466,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/khach-hang-du-an",
+    "slug": "/khach-hang",
     "title": "Khách hàng và dự án",
     "pageType": "landing",
     "locale": "vi",
@@ -486,7 +491,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-CUSTOMERS"
       },
       {
         "blockType": "featureGrid",
@@ -525,7 +531,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -563,7 +569,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-INSIGHTS"
       },
       {
         "blockType": "featureGrid",
@@ -602,7 +609,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -640,7 +647,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-ABOUT"
       },
       {
         "blockType": "featureGrid",
@@ -675,7 +683,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -688,7 +696,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/x-real-estate-digital-suite",
+    "slug": "/bo-giai-phap-x",
     "title": "X Real Estate Digital Suite",
     "pageType": "solution",
     "locale": "vi",
@@ -713,7 +721,8 @@
         "secondaryCTA": {
           "label": "Khám phá giải pháp",
           "href": "#overview"
-        }
+        },
+        "backgroundAsset": "BG-XSUITES"
       },
       {
         "blockType": "architecture",
@@ -1004,7 +1013,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -1101,7 +1110,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -1197,7 +1206,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -1292,7 +1301,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -1305,7 +1314,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/san-pham/xai",
+    "slug": "/san-pham/x-ai",
     "title": "X.AI",
     "pageType": "product",
     "locale": "vi",
@@ -1388,7 +1397,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -1401,7 +1410,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/san-pham/xspace",
+    "slug": "/san-pham/x-space",
     "title": "X.Space",
     "pageType": "product",
     "locale": "vi",
@@ -1483,7 +1492,7 @@
         },
         "secondaryCTA": {
           "label": "Yêu cầu demo",
-          "href": "/demo"
+          "href": "/dat-lich-demo"
         }
       }
     ],
@@ -3817,7 +3826,7 @@
   },
   {
     "site": "corporate",
-    "slug": "/demo",
+    "slug": "/dat-lich-demo",
     "title": "Đặt lịch Demo",
     "pageType": "form",
     "locale": "vi",

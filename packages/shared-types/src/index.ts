@@ -103,9 +103,61 @@ export interface PostDoc {
   title: string
   excerpt?: string
   category?: string
+  tags?: string[]
   locale: string
   body: PostBodyNode[]
   seo: Seo
+  status: ContentStatus
+}
+
+/**
+ * Bespoke "service section" content (SET C02 Digital Transformation Services).
+ * The visual composition is a coded React component chosen by `visualType`; all
+ * text/data lives here so it stays CMS-managed (never hardcoded in the frontend).
+ */
+export type ServiceVisualType =
+  | 'hub-spoke'
+  | 'maturity-radar'
+  | 'architecture-stack'
+  | 'process-evolution'
+  | 'data-platform'
+  | 'integration-hub'
+  | 'adoption-journey'
+  | 'control-tower'
+
+export interface ServiceSectionItem {
+  itemId: string
+  order?: number
+  title: string
+  description: string
+  side?: 'left' | 'right' | 'top' | 'bottom'
+  icon?: string
+}
+
+export interface ServiceSectionOutcome {
+  itemId: string
+  title: string
+  description: string
+  icon?: string
+}
+
+export interface ServiceSectionDoc {
+  id: string
+  siteCode: string
+  sectionId: string
+  eyebrow?: string
+  title: string
+  subtitle?: string
+  visualType: ServiceVisualType
+  /** Paths this section renders on (a section may be reused across routes). */
+  routes: string[]
+  /** Sort order within a route (ascending). */
+  order?: number
+  items: ServiceSectionItem[]
+  process?: ServiceSectionItem[]
+  outcomes?: ServiceSectionOutcome[]
+  cta?: { label: string; href: string }
+  locale: string
   status: ContentStatus
 }
 

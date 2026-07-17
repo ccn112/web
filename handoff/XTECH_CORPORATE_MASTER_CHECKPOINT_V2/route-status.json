@@ -1,0 +1,819 @@
+{
+  "name": "XTECH Corporate Master Checkpoint V2",
+  "date": "2026-07-17",
+  "language": "vi",
+  "routes": [
+    {
+      "route": "/",
+      "menu": "Trang chủ",
+      "page_type": "landing",
+      "status": "in_progress",
+      "priority": "P0",
+      "hero_background": "bg-trang-chu-he-sinh-thai.webp",
+      "design_sets": [
+        "C01",
+        "Semantic Backgrounds"
+      ],
+      "required_sections": [
+        "Hero",
+        "Đối tác",
+        "Về XTECH",
+        "Hệ sinh thái sản phẩm",
+        "Năng lực CĐS",
+        "Enterprise Platform",
+        "Business Value",
+        "Ngành/Phòng ban",
+        "Case Studies",
+        "Insights",
+        "CTA"
+      ]
+    },
+    {
+      "route": "/giai-phap",
+      "menu": "Giải pháp",
+      "page_type": "landing",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": "bg-giai-phap-hoi-tu.webp",
+      "design_sets": [
+        "C01",
+        "C02"
+      ],
+      "required_sections": [
+        "Hero",
+        "Chuyển đổi số",
+        "Doanh nghiệp kết nối",
+        "Dữ liệu & AI",
+        "Tự động hóa",
+        "Tích hợp hệ thống",
+        "CTA"
+      ]
+    },
+    {
+      "route": "/giai-phap/chuyen-doi-so",
+      "menu": "Giải pháp",
+      "page_type": "detail",
+      "status": "handoff_ready",
+      "priority": "P0",
+      "hero_background": null,
+      "design_sets": [
+        "C02"
+      ],
+      "required_sections": [
+        "Đánh giá trưởng thành số",
+        "Chiến lược & kiến trúc",
+        "Quy trình & tự động hóa",
+        "Data platform",
+        "Hiện đại hóa ứng dụng",
+        "Quản trị thay đổi",
+        "Vận hành cải tiến"
+      ]
+    },
+    {
+      "route": "/giai-phap/doanh-nghiep-ket-noi",
+      "menu": "Giải pháp",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C01-05",
+        "C03-07 future"
+      ],
+      "required_sections": [
+        "Kênh trải nghiệm",
+        "Ứng dụng doanh nghiệp",
+        "AI & tự động hóa",
+        "Dữ liệu & tích hợp",
+        "Hạ tầng & bảo mật"
+      ]
+    },
+    {
+      "route": "/giai-phap/du-lieu-va-ai",
+      "menu": "Giải pháp",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-05",
+        "X.AI SET 12–16"
+      ],
+      "required_sections": [
+        "Data Strategy",
+        "Data Platform",
+        "BI",
+        "Knowledge & RAG",
+        "Enterprise Agents",
+        "Governance",
+        "Deployment"
+      ]
+    },
+    {
+      "route": "/giai-phap/tu-dong-hoa",
+      "menu": "Giải pháp",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-04"
+      ],
+      "required_sections": [
+        "Process discovery",
+        "BPMN",
+        "Workflow",
+        "RPA",
+        "AI Agent",
+        "Human approval"
+      ]
+    },
+    {
+      "route": "/giai-phap/tich-hop-he-thong",
+      "menu": "Giải pháp",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-06",
+        "C04 future"
+      ],
+      "required_sections": [
+        "Legacy",
+        "Integration Hub",
+        "API Gateway",
+        "Event Bus",
+        "Modern apps",
+        "Cloud Native"
+      ]
+    },
+    {
+      "route": "/san-pham",
+      "menu": "Sản phẩm",
+      "page_type": "landing",
+      "status": "next_set",
+      "priority": "P0",
+      "hero_background": "bg-san-pham-nen-tang-mo-dun.webp",
+      "design_sets": [
+        "C03 future"
+      ],
+      "required_sections": [
+        "Tổng quan hệ sinh thái",
+        "X.AI",
+        "XBooking",
+        "FinERP",
+        "XBuilding",
+        "X.Space",
+        "Nền tảng dùng chung",
+        "Hành trình liên thông"
+      ]
+    },
+    {
+      "route": "/san-pham/x-ai",
+      "menu": "Sản phẩm",
+      "page_type": "product",
+      "status": "visual_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "SET 11–16"
+      ],
+      "required_sections": [
+        "AI Platform",
+        "Enterprise Agents",
+        "Knowledge & RAG",
+        "Governance",
+        "Model & Prompt Center",
+        "Deployment"
+      ]
+    },
+    {
+      "route": "/san-pham/xbooking",
+      "menu": "Sản phẩm",
+      "page_type": "product",
+      "status": "visual_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "SET 05–07"
+      ],
+      "required_sections": [
+        "Marketing & Lead",
+        "CRM",
+        "Bảng hàng",
+        "Booking",
+        "Đại lý",
+        "Hợp đồng",
+        "CSKH"
+      ]
+    },
+    {
+      "route": "/san-pham/finerp",
+      "menu": "Sản phẩm",
+      "page_type": "product",
+      "status": "visual_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "SET 08"
+      ],
+      "required_sections": [
+        "Tài chính",
+        "Công nợ",
+        "Dòng tiền",
+        "Ngân sách",
+        "Hợp đồng",
+        "Báo cáo điều hành"
+      ]
+    },
+    {
+      "route": "/san-pham/xbuilding",
+      "menu": "Sản phẩm",
+      "page_type": "product",
+      "status": "visual_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "SET 09–10"
+      ],
+      "required_sections": [
+        "Cư dân",
+        "Căn hộ",
+        "Dịch vụ",
+        "Phí",
+        "Ticket",
+        "Thiết bị",
+        "Bảo trì",
+        "IoT",
+        "Năng lượng"
+      ]
+    },
+    {
+      "route": "/san-pham/x-space",
+      "menu": "Sản phẩm",
+      "page_type": "product",
+      "status": "visual_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "Existing X.Space sets"
+      ],
+      "required_sections": [
+        "Cộng tác",
+        "Công việc",
+        "Dự án",
+        "Phê duyệt",
+        "Tài liệu",
+        "Chat",
+        "Tri thức"
+      ]
+    },
+    {
+      "route": "/san-pham/nen-tang-dung-chung",
+      "menu": "Sản phẩm",
+      "page_type": "platform",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "C03-07 future"
+      ],
+      "required_sections": [
+        "Data",
+        "API",
+        "Identity",
+        "Workflow",
+        "Cloud",
+        "Security",
+        "Analytics",
+        "AI Services"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x",
+      "menu": "Bộ giải pháp X",
+      "page_type": "landing",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": "bg-bo-giai-phap-x-lap-ghep.webp",
+      "design_sets": [
+        "C05 future"
+      ],
+      "required_sections": [
+        "Tổng quan",
+        "Chủ đầu tư BĐS",
+        "Doanh nghiệp số",
+        "Tòa nhà thông minh",
+        "Tài chính & vận hành",
+        "AI doanh nghiệp"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x/chu-dau-tu-bat-dong-san",
+      "menu": "Bộ giải pháp X",
+      "page_type": "suite",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "C05 future",
+        "SET 04–12"
+      ],
+      "required_sections": [
+        "Marketing/Lead",
+        "Sales/Booking",
+        "Tài chính",
+        "Bàn giao",
+        "Vận hành",
+        "Khách hàng",
+        "Data & AI"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x/doanh-nghiep-so",
+      "menu": "Bộ giải pháp X",
+      "page_type": "suite",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C05 future"
+      ],
+      "required_sections": [
+        "ERP",
+        "Workspace",
+        "Data",
+        "AI",
+        "Automation",
+        "Security"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x/toa-nha-thong-minh",
+      "menu": "Bộ giải pháp X",
+      "page_type": "suite",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C05 future",
+        "SET 09–10"
+      ],
+      "required_sections": [
+        "BQL",
+        "Cư dân",
+        "Thiết bị",
+        "Bảo trì",
+        "IoT",
+        "Năng lượng",
+        "AI Operations"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x/tai-chinh-va-van-hanh",
+      "menu": "Bộ giải pháp X",
+      "page_type": "suite",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C05 future",
+        "SET 08"
+      ],
+      "required_sections": [
+        "Kế toán",
+        "Công nợ",
+        "Ngân sách",
+        "Dòng tiền",
+        "Báo cáo",
+        "AI Finance"
+      ]
+    },
+    {
+      "route": "/bo-giai-phap-x/ai-doanh-nghiep",
+      "menu": "Bộ giải pháp X",
+      "page_type": "suite",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "SET 12–16"
+      ],
+      "required_sections": [
+        "Sales Agent",
+        "Finance Agent",
+        "Building Ops Agent",
+        "Customer Service Agent",
+        "Executive Copilot",
+        "Governance"
+      ]
+    },
+    {
+      "route": "/dich-vu",
+      "menu": "Dịch vụ",
+      "page_type": "landing",
+      "status": "handoff_ready",
+      "priority": "P0",
+      "hero_background": "bg-dich-vu-hanh-trinh.webp",
+      "design_sets": [
+        "C02"
+      ],
+      "required_sections": [
+        "Tổng quan dịch vụ",
+        "Tư vấn",
+        "Phát triển",
+        "Data & AI",
+        "Triển khai/Đào tạo",
+        "Vận hành/Tối ưu",
+        "Digital PMO"
+      ]
+    },
+    {
+      "route": "/dich-vu/chuyen-doi-so",
+      "menu": "Dịch vụ",
+      "page_type": "detail",
+      "status": "handoff_ready",
+      "priority": "P0",
+      "hero_background": null,
+      "design_sets": [
+        "C02"
+      ],
+      "required_sections": [
+        "C02-01 đến C02-08"
+      ]
+    },
+    {
+      "route": "/dich-vu/tu-van-chien-luoc",
+      "menu": "Dịch vụ",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-02",
+        "C02-03"
+      ],
+      "required_sections": [
+        "Maturity Assessment",
+        "North Star",
+        "Enterprise Architecture",
+        "Roadmap"
+      ]
+    },
+    {
+      "route": "/dich-vu/phat-trien-phan-mem",
+      "menu": "Dịch vụ",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-04",
+        "C02-06",
+        "C04 future"
+      ],
+      "required_sections": [
+        "Discovery",
+        "UX/UI",
+        "Development",
+        "Integration",
+        "Testing",
+        "DevSecOps"
+      ]
+    },
+    {
+      "route": "/dich-vu/du-lieu-va-ai",
+      "menu": "Dịch vụ",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-05",
+        "SET 12–16"
+      ],
+      "required_sections": [
+        "Data Strategy",
+        "Data Platform",
+        "BI",
+        "AI Agents",
+        "Governance"
+      ]
+    },
+    {
+      "route": "/dich-vu/van-hanh-va-ho-tro",
+      "menu": "Dịch vụ",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C02-08",
+        "C04 future"
+      ],
+      "required_sections": [
+        "Managed Services",
+        "Support",
+        "SLA",
+        "Monitoring",
+        "Continuous Improvement"
+      ]
+    },
+    {
+      "route": "/trien-khai",
+      "menu": "Triển khai",
+      "page_type": "landing",
+      "status": "next_after_c03",
+      "priority": "P1",
+      "hero_background": "bg-trien-khai-kien-truc.webp",
+      "design_sets": [
+        "C04 future"
+      ],
+      "required_sections": [
+        "End-to-end delivery",
+        "Kiến trúc",
+        "Integration Hub",
+        "Migration",
+        "SaaS/Private Cloud/On-premise/Hybrid",
+        "DevSecOps",
+        "SLA/Hypercare"
+      ]
+    },
+    {
+      "route": "/khach-hang",
+      "menu": "Khách hàng",
+      "page_type": "landing",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": "bg-khach-hang-mang-luoi.webp",
+      "design_sets": [
+        "C06 future"
+      ],
+      "required_sections": [
+        "Logo wall",
+        "Featured case",
+        "Case theo ngành",
+        "Testimonial",
+        "Hợp tác dài hạn"
+      ]
+    },
+    {
+      "route": "/khach-hang/cau-chuyen-khach-hang",
+      "menu": "Khách hàng",
+      "page_type": "listing",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C06 future"
+      ],
+      "required_sections": [
+        "Filter ngành",
+        "Filter sản phẩm",
+        "Case cards"
+      ]
+    },
+    {
+      "route": "/khach-hang/[slug]",
+      "menu": "Khách hàng",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C06 future"
+      ],
+      "required_sections": [
+        "Bài toán",
+        "Giải pháp",
+        "Kiến trúc",
+        "Triển khai",
+        "Kết quả",
+        "Testimonial"
+      ]
+    },
+    {
+      "route": "/insights",
+      "menu": "Insights",
+      "page_type": "landing",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": "bg-insights-tin-hieu.webp",
+      "design_sets": [
+        "C07 future"
+      ],
+      "required_sections": [
+        "Featured",
+        "Categories",
+        "Latest",
+        "Newsletter CTA"
+      ]
+    },
+    {
+      "route": "/insights/[slug]",
+      "menu": "Insights",
+      "page_type": "article",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C07 future"
+      ],
+      "required_sections": [
+        "Cover",
+        "Metadata",
+        "Article",
+        "Author",
+        "Related"
+      ]
+    },
+    {
+      "route": "/ve-x",
+      "menu": "Về X",
+      "page_type": "landing",
+      "status": "in_progress",
+      "priority": "P1",
+      "hero_background": "bg-ve-x-con-nguoi-doi-tac.webp",
+      "design_sets": [
+        "C01",
+        "Semantic Backgrounds"
+      ],
+      "required_sections": [
+        "Hero",
+        "XTECH là ai",
+        "Năng lực",
+        "Tầm nhìn & sứ mệnh",
+        "Đội ngũ",
+        "Đối tác",
+        "Future Vision",
+        "CTA"
+      ]
+    },
+    {
+      "route": "/ve-x/gioi-thieu",
+      "menu": "Về X",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C01-02"
+      ],
+      "required_sections": [
+        "Giới thiệu",
+        "Lịch sử",
+        "Năng lực",
+        "Số liệu xác thực"
+      ]
+    },
+    {
+      "route": "/ve-x/nang-luc",
+      "menu": "Về X",
+      "page_type": "detail",
+      "status": "handoff_ready",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [
+        "C01",
+        "C02"
+      ],
+      "required_sections": [
+        "Tư vấn",
+        "Phát triển",
+        "Tích hợp",
+        "Vận hành",
+        "Data & AI",
+        "Quản trị thay đổi"
+      ]
+    },
+    {
+      "route": "/ve-x/tam-nhin-su-menh",
+      "menu": "Về X",
+      "page_type": "detail",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [
+        "C01-08"
+      ],
+      "required_sections": [
+        "Tầm nhìn",
+        "Sứ mệnh",
+        "Giá trị cốt lõi",
+        "Hành trình tương lai"
+      ]
+    },
+    {
+      "route": "/ve-x/doi-ngu",
+      "menu": "Về X",
+      "page_type": "listing",
+      "status": "planned",
+      "priority": "P3",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Leadership",
+        "Experts",
+        "Team culture"
+      ]
+    },
+    {
+      "route": "/ve-x/doi-tac",
+      "menu": "Về X",
+      "page_type": "listing",
+      "status": "planned",
+      "priority": "P3",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Technology partners",
+        "Implementation partners",
+        "Partnership model"
+      ]
+    },
+    {
+      "route": "/ve-x/tuyen-dung",
+      "menu": "Về X",
+      "page_type": "listing",
+      "status": "planned",
+      "priority": "P3",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Culture",
+        "Open positions",
+        "Benefits",
+        "Apply"
+      ]
+    },
+    {
+      "route": "/lien-he",
+      "menu": "CTA",
+      "page_type": "form",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Thông tin liên hệ",
+        "Form",
+        "Văn phòng",
+        "Consent"
+      ]
+    },
+    {
+      "route": "/dat-lich-demo",
+      "menu": "CTA",
+      "page_type": "form",
+      "status": "planned",
+      "priority": "P1",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Sản phẩm quan tâm",
+        "Giải pháp quan tâm",
+        "Công ty",
+        "Lịch",
+        "Consent"
+      ]
+    },
+    {
+      "route": "/chinh-sach-bao-mat",
+      "menu": "Legal",
+      "page_type": "legal",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Privacy policy"
+      ]
+    },
+    {
+      "route": "/dieu-khoan-su-dung",
+      "menu": "Legal",
+      "page_type": "legal",
+      "status": "planned",
+      "priority": "P2",
+      "hero_background": null,
+      "design_sets": [],
+      "required_sections": [
+        "Terms of use"
+      ]
+    }
+  ],
+  "next_sets": [
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07"
+  ],
+  "dependencies": [
+    "XTECH_C01_CLAUDE_CODE_HANDOFF.zip",
+    "XTECH_C01_REFACTOR_C02_PLAN.zip",
+    "XTECH_C02_CLAUDE_CODE_HANDOFF_V2.zip",
+    "XTECH_SEMANTIC_BACKGROUND_CLAUDE_HANDOFF.zip"
+  ]
+}

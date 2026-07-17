@@ -664,5 +664,59 @@
     "site": "xbuilding",
     "file": "media/xbl-17-building-ai-copilot.png",
     "alt": "Building ai copilot"
+  },
+  {
+    "code": "BG-HOME",
+    "site": "corporate",
+    "file": "media/bg-trang-chu-he-sinh-thai.webp",
+    "alt": "Nền hero trang chủ — hệ sinh thái chuyển đổi số & AI"
+  },
+  {
+    "code": "BG-SOLUTIONS",
+    "site": "corporate",
+    "file": "media/bg-giai-phap-hoi-tu.webp",
+    "alt": "Nền hero giải pháp — sự hội tụ của các giải pháp số"
+  },
+  {
+    "code": "BG-PRODUCTS",
+    "site": "corporate",
+    "file": "media/bg-san-pham-nen-tang-mo-dun.webp",
+    "alt": "Nền hero sản phẩm — nền tảng mô-đun"
+  },
+  {
+    "code": "BG-XSUITES",
+    "site": "corporate",
+    "file": "media/bg-bo-giai-phap-x-lap-ghep.webp",
+    "alt": "Nền hero bộ giải pháp X — khối lắp ghép"
+  },
+  {
+    "code": "BG-SERVICES",
+    "site": "corporate",
+    "file": "media/bg-dich-vu-hanh-trinh.webp",
+    "alt": "Nền hero dịch vụ — hành trình chuyển đổi"
+  },
+  {
+    "code": "BG-IMPLEMENTATION",
+    "site": "corporate",
+    "file": "media/bg-trien-khai-kien-truc.webp",
+    "alt": "Nền hero triển khai — kiến trúc & pipeline"
+  },
+  {
+    "code": "BG-CUSTOMERS",
+    "site": "corporate",
+    "file": "media/bg-khach-hang-mang-luoi.webp",
+    "alt": "Nền hero khách hàng — mạng lưới tin cậy"
+  },
+  {
+    "code": "BG-INSIGHTS",
+    "site": "corporate",
+    "file": "media/bg-insights-tin-hieu.webp",
+    "alt": "Nền hero insights — tín hiệu tri thức"
+  },
+  {
+    "code": "BG-ABOUT",
+    "site": "corporate",
+    "file": "media/bg-ve-x-con-nguoi-doi-tac.webp",
+    "alt": "Nền hero giới thiệu — con người & đối tác"
   }
 ]

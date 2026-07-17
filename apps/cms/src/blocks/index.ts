@@ -16,6 +16,15 @@ const illustrationField: Block['fields'][number] = {
   relationTo: 'media',
 }
 
+/** Optional full-bleed hero background image (rendered behind the hero content with an overlay). */
+const backgroundField: Block['fields'][number] = {
+  name: 'background',
+  label: 'Ảnh nền hero (full-bleed)',
+  type: 'upload',
+  relationTo: 'media',
+  admin: { description: 'Ảnh nền phủ kín khu vực hero/first-fold. Nội dung hero vẫn giữ nguyên phía trên; có lớp overlay để đảm bảo tương phản chữ.' },
+}
+
 export const hero: Block = {
   slug: 'hero',
   interfaceName: 'HeroBlock',
@@ -26,6 +35,7 @@ export const hero: Block = {
     { name: 'primaryCTA', type: 'group', fields: ctaLinkFields() },
     { name: 'secondaryCTA', type: 'group', fields: ctaLinkFields() },
     illustrationField,
+    backgroundField,
     ...blockBaseFields(),
   ],
 }

@@ -44,6 +44,8 @@ export type MediaRef = MediaResource | string | null
 export interface HeroBlock extends BaseBlock {
   blockType: 'hero'
   eyebrow?: string
+  /** Optional full-bleed hero background image (rendered behind content with an overlay). */
+  background?: MediaRef
   title: string
   description?: string
   primaryCTA?: CTALink

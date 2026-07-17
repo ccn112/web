@@ -1,0 +1,40 @@
+{
+  "header": [
+    {
+      "label": "Giải pháp",
+      "href": "/giai-phap"
+    },
+    {
+      "label": "Sản phẩm",
+      "href": "/san-pham"
+    },
+    {
+      "label": "Bộ giải pháp X",
+      "href": "/bo-giai-phap-x"
+    },
+    {
+      "label": "Dịch vụ",
+      "href": "/dich-vu"
+    },
+    {
+      "label": "Triển khai",
+      "href": "/trien-khai"
+    },
+    {
+      "label": "Khách hàng",
+      "href": "/khach-hang"
+    },
+    {
+      "label": "Insights",
+      "href": "/insights"
+    },
+    {
+      "label": "Về X",
+      "href": "/ve-x"
+    }
+  ],
+  "primary_cta": {
+    "label": "Đặt lịch Demo",
+    "href": "/dat-lich-demo"
+  }
+}

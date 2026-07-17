@@ -1,0 +1,62 @@
+{
+  "package": "XTECH C02 Claude Code Handoff V2",
+  "language": "vi",
+  "routes": [
+    "/dich-vu",
+    "/dich-vu/chuyen-doi-so",
+    "/giai-phap/chuyen-doi-so",
+    "/ve-x/nang-luc"
+  ],
+  "images": [
+    {
+      "id": "C02-01",
+      "file": "references/c02/C02-01-dich-vu-chuyen-doi-so-toan-dien.png",
+      "sha256": "1f7b864d290b1bc2f17d136faa191c0985e87711785d41f80dba138fb0599c25",
+      "bytes": 1813868
+    },
+    {
+      "id": "C02-02",
+      "file": "references/c02/C02-02-danh-gia-muc-do-truong-thanh-so.png",
+      "sha256": "67338042b3ed2b4b93ade72fc44ebec31e310671aaab4d943b19c39dd0afa973",
+      "bytes": 1918636
+    },
+    {
+      "id": "C02-03",
+      "file": "references/c02/C02-03-chien-luoc-lo-trinh-kien-truc-doanh-nghiep.png",
+      "sha256": "8c6cea55a520078fabdef751097d4eb45e4091052a747c7328d5859aae2968ca",
+      "bytes": 1837100
+    },
+    {
+      "id": "C02-04",
+      "file": "references/c02/C02-04-tai-thiet-ke-quy-trinh-va-tu-dong-hoa.png",
+      "sha256": "ff6e75ae97f9c1a2e1d057b1b7b11d930fd742b5a2edc0ed7afba83c28a66ea8",
+      "bytes": 1896190
+    },
+    {
+      "id": "C02-05",
+      "file": "references/c02/C02-05-nen-tang-du-lieu-va-phan-tich-doanh-nghiep.png",
+      "sha256": "f90dc75d5339fcd33acc25c093aa72ffac8e1bebec2d81e4e0dfa23ad025e1b5",
+      "bytes": 1764356
+    },
+    {
+      "id": "C02-06",
+      "file": "references/c02/C02-06-hien-dai-hoa-ung-dung-va-tich-hop-he-thong.png",
+      "sha256": "bfadc1f9e26957ff653785709474cb2a66b1a463b713d2951edeaa1d04ba340a",
+      "bytes": 1730835
+    },
+    {
+      "id": "C02-07",
+      "file": "references/c02/C02-07-quan-tri-thay-doi-va-thuc-day-su-dung.png",
+      "sha256": "e06af2a14198a378a2cca999990e9b5a12a21f4a585564d917b51eeccab6275d",
+      "bytes": 1844663
+    },
+    {
+      "id": "C02-08",
+      "file": "references/c02/C02-08-van-hanh-chuyen-doi-so-va-cai-tien-lien-tuc.png",
+      "sha256": "f6df45c005fccf7912c623fef1f7c7b225a43fbdf1310b6a22e0bcc5ddf315ae",
+      "bytes": 1867788
+    }
+  ],
+  "missing": [],
+  "production_policy": "Reference images are design blueprints only; do not render them directly in production."
+}

@@ -1,0 +1,14 @@
+{
+  "package": "xtech-homepage-diagrams-handoff",
+  "version": "1.0.0",
+  "target_directory": "apps/clay/public/images/home/diagrams/",
+  "assets": [
+    {"source": "assets/hero.png", "target": "hero.png", "section": "Hero", "position": "right", "theme": "dark"},
+    {"source": "assets/solutions.png", "target": "solutions.png", "section": "Solutions", "position": "left", "theme": "light"},
+    {"source": "assets/products.png", "target": "products.png", "section": "Products", "position": "right", "theme": "light"},
+    {"source": "assets/platform.png", "target": "platform.png", "section": "Platform", "position": "left", "theme": "light"}
+  ],
+  "optional_assets": [
+    {"source": "optional/solution-bundles.png", "target": "solution-bundles.png", "section": "Solution bundles", "theme": "light"}
+  ]
+}

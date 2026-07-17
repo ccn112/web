@@ -1,0 +1,188 @@
+.hero {
+  position: relative;
+  min-height: min(88vh, 880px);
+  overflow: hidden;
+  isolation: isolate;
+  background: #020b1d;
+  color: #fff;
+}
+
+.background,
+.overlay,
+.centerSafeZone,
+.platformGlow,
+.nodesLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.background {
+  z-index: -4;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: var(--hero-position);
+  transform: scale(1.035);
+  animation: heroBackgroundSettle 1.2s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.overlay {
+  z-index: -3;
+  pointer-events: none;
+}
+
+.overlaymedium {
+  background:
+    linear-gradient(180deg, rgba(2,10,26,.16) 0%, rgba(2,10,26,.24) 52%, rgba(2,10,26,.52) 100%),
+    linear-gradient(90deg, rgba(2,10,26,.16), transparent 24%, transparent 76%, rgba(2,10,26,.18));
+}
+
+.overlaystrong {
+  background:
+    linear-gradient(180deg, rgba(2,10,26,.26) 0%, rgba(2,10,26,.36) 52%, rgba(2,10,26,.64) 100%),
+    linear-gradient(90deg, rgba(2,10,26,.24), transparent 24%, transparent 76%, rgba(2,10,26,.28));
+}
+
+.centerSafeZone {
+  z-index: -2;
+  inset: 9% 20% 18%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(2,10,26,.56) 0%,
+    rgba(2,10,26,.28) 52%,
+    transparent 76%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.platformGlow {
+  z-index: -1;
+  inset: auto 50% 2%;
+  width: min(620px, 70vw);
+  height: 210px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at center, rgba(28,188,255,.26), rgba(18,94,255,.09) 42%, transparent 70%);
+  filter: blur(8px);
+  animation: platformPulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 0 82px;
+  text-align: center;
+}
+
+.nodesLayer {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.semanticNode {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border: 1px solid rgba(74,186,255,.30);
+  border-radius: 50%;
+  color: rgba(162,220,255,.72);
+  background: radial-gradient(circle, rgba(24,93,175,.34), rgba(4,20,48,.20));
+  box-shadow:
+    0 0 0 1px rgba(74,186,255,.08),
+    0 0 35px rgba(32,161,255,.12);
+  opacity: 0;
+  transform: translateY(10px);
+  animation:
+    nodeReveal .6s cubic-bezier(.22,1,.36,1) var(--node-delay) forwards,
+    nodePulse 5s ease-in-out calc(1s + var(--node-delay)) infinite;
+}
+
+.nodeLeftTop { left: 13%; top: 35%; }
+.nodeLeftMiddle { left: 18%; top: 55%; }
+.nodeLeftBottom { left: 24%; top: 73%; }
+.nodeRightTop { right: 13%; top: 35%; }
+.nodeRightMiddle { right: 18%; top: 55%; }
+.nodeRightBottom { right: 24%; top: 73%; }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(247,250,255,.08));
+  pointer-events: none;
+}
+
+@keyframes heroBackgroundSettle {
+  to { transform: scale(1); }
+}
+
+@keyframes nodeReveal {
+  to { opacity: .58; transform: translateY(0); }
+}
+
+@keyframes nodePulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(32,161,255,.10); }
+  50% { box-shadow: 0 0 44px rgba(32,161,255,.18); }
+}
+
+@keyframes platformPulse {
+  0%, 100% { opacity: .72; transform: translateX(-50%) scale(1); }
+  50% { opacity: .92; transform: translateX(-50%) scale(1.03); }
+}
+
+@media (max-width: 1023px) {
+  .hero { min-height: 760px; }
+  .content { padding-top: 120px; }
+  .nodeLeftTop, .nodeRightTop { top: 42%; }
+  .nodeLeftMiddle, .nodeRightMiddle { top: 65%; }
+  .nodeLeftBottom, .nodeRightBottom { display: none; }
+  .semanticNode { width: 68px; height: 68px; }
+}
+
+@media (max-width: 767px) {
+  .hero { min-height: 680px; }
+  .backgroundImage {
+    object-position: var(--hero-mobile-position);
+  }
+  .content {
+    width: min(100% - 24px, 1160px);
+    padding: 112px 0 64px;
+  }
+  .centerSafeZone {
+    inset: 10% 2% 12%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(2,10,26,.78) 0%,
+      rgba(2,10,26,.48) 58%,
+      transparent 82%
+    );
+  }
+  .nodesLayer { display: none; }
+  .platformGlow { width: 92vw; bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backgroundImage,
+  .semanticNode,
+  .platformGlow {
+    animation: none !important;
+    transform: none;
+  }
+  .semanticNode { opacity: .5; }
+}

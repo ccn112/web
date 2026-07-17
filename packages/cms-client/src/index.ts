@@ -2,7 +2,13 @@
  * @x/cms-client — typed, read-only client over the Payload REST API.
  * Public reads only ever return published content (enforced by CMS access control).
  */
-import type { MenuDoc, PageDoc, PostDoc, SiteConfig } from '@x/shared-types'
+import type {
+  MenuDoc,
+  PageDoc,
+  PostDoc,
+  ServiceSectionDoc,
+  SiteConfig,
+} from '@x/shared-types'
 
 export * from './site-resolution'
 
@@ -76,6 +82,20 @@ export class CmsClient {
     return data.docs[0] ?? null
   }
 
+  /** All published pages for a site (slug + updatedAt), for sitemap generation. */
+  async listPages(
+    siteCode: string,
+    locale = 'vi',
+  ): Promise<Array<{ slug: string; updatedAt?: string }>> {
+    const data = await this.get<PayloadListResponse<PageDoc & { updatedAt?: string }>>('pages', {
+      'where[siteCode][equals]': siteCode,
+      'where[locale][equals]': locale,
+      limit: 500,
+      depth: 0,
+    })
+    return data.docs.map((d) => ({ slug: d.slug, updatedAt: d.updatedAt }))
+  }
+
   async getMenu(siteCode: string, code = 'main', locale = 'vi'): Promise<MenuDoc | null> {
     const data = await this.get<PayloadListResponse<MenuDoc>>('menus', {
       'where[siteCode][equals]': siteCode,
@@ -87,6 +107,23 @@ export class CmsClient {
     return data.docs[0] ?? null
   }
 
+  /** Look up a redirect for a path on a site (route reconciliation). */
+  async getRedirect(
+    siteCode: string,
+    sourcePath: string,
+  ): Promise<{ destinationPath: string; permanent: boolean } | null> {
+    const data = await this.get<
+      PayloadListResponse<{ destinationPath: string; permanent?: boolean }>
+    >('redirects', {
+      'where[siteCode][equals]': siteCode,
+      'where[sourcePath][equals]': sourcePath,
+      limit: 1,
+      depth: 0,
+    })
+    const d = data.docs[0]
+    return d ? { destinationPath: d.destinationPath, permanent: d.permanent ?? true } : null
+  }
+
   async getPost(siteCode: string, slug: string, locale = 'vi'): Promise<PostDoc | null> {
     const data = await this.get<PayloadListResponse<PostDoc>>('posts', {
       'where[siteCode][equals]': siteCode,
@@ -96,5 +133,45 @@ export class CmsClient {
       depth: 0,
     })
     return data.docs[0] ?? null
+  }
+
+  /**
+   * List published posts for a site, optionally filtered by a single `tag`
+   * or exact `category`. Returns [] when nothing matches.
+   */
+  async getPosts(
+    siteCode: string,
+    opts: { tag?: string; category?: string; locale?: string; limit?: number } = {},
+  ): Promise<PostDoc[]> {
+    const params: Record<string, string | number> = {
+      'where[siteCode][equals]': siteCode,
+      'where[locale][equals]': opts.locale ?? 'vi',
+      limit: opts.limit ?? 50,
+      depth: 0,
+    }
+    if (opts.tag) params['where[tags][in]'] = opts.tag
+    if (opts.category) params['where[category][equals]'] = opts.category
+    const data = await this.get<PayloadListResponse<PostDoc>>('posts', params)
+    return data.docs
+  }
+
+  /**
+   * Bespoke service sections (SET C02) that render on `route`, ordered by `order`.
+   * Returns [] when the route has none — the caller falls through to normal pages.
+   */
+  async getServiceSections(
+    siteCode: string,
+    route: string,
+    locale = 'vi',
+  ): Promise<ServiceSectionDoc[]> {
+    const data = await this.get<PayloadListResponse<ServiceSectionDoc>>('service-sections', {
+      'where[siteCode][equals]': siteCode,
+      'where[locale][equals]': locale,
+      'where[routes][in]': route,
+      sort: 'order',
+      limit: 50,
+      depth: 0,
+    })
+    return data.docs
   }
 }

@@ -1,0 +1,364 @@
+{
+  "package": "XTECH Homepage Claude Handoff V1",
+  "language": "vi",
+  "references": [
+    {
+      "file": "references/H01-hero-he-sinh-thai-cong-nghe-ai.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "13623c44b53e35d55cfef0dc4de36250a1ddd5e3b28f18cf15c14c23e41ee756"
+    },
+    {
+      "file": "references/H02-he-sinh-thai-san-pham.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "9c90c669cbee07b2de7ab1c39644fd25195a29ea6cb5f4e65aa79414cfb98ea3"
+    },
+    {
+      "file": "references/H03-gia-tri-kinh-doanh.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "386cc0a7aaaae6530905e6b74d03abbebb0452754d4e64acb9274dcd527be279"
+    },
+    {
+      "file": "references/H04-giai-phap-theo-bai-toan.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "a1d7637833dfb26fb2d1ba5bd00312cba37607da2dd8845ef1038ecfb862492f"
+    },
+    {
+      "file": "references/H05-bo-giai-phap-x.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "9468d505f0a01610164c740de1f44642ff857b7e7ff130514f9f3dc5064be7b9"
+    },
+    {
+      "file": "references/H06-trien-khai-va-van-hanh.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "bec2595d5c907b44d280fd37a256d2685b6e2014e3449c50da90d8941b189e98"
+    },
+    {
+      "file": "references/H07-nen-tang-dung-chung.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "0b7cc06e1d9dccce47990535f8a72e789ec795209402ba5905155c084dfff5df"
+    },
+    {
+      "file": "references/H08-dich-vu-chuyen-doi-so.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "5fcaab1881d784144baab3759021f4e9ee2fabaafc0df206d7dd2b81b2f6761b"
+    }
+  ],
+  "icons": [
+    {
+      "id": "data",
+      "file": "/icons/home/data.svg",
+      "symbol": "database",
+      "color": "#087AF5"
+    },
+    {
+      "id": "workflow",
+      "file": "/icons/home/workflow.svg",
+      "symbol": "network",
+      "color": "#087AF5"
+    },
+    {
+      "id": "ai",
+      "file": "/icons/home/ai.svg",
+      "symbol": "brain",
+      "color": "#7857F5"
+    },
+    {
+      "id": "cloud",
+      "file": "/icons/home/cloud.svg",
+      "symbol": "cloud",
+      "color": "#087AF5"
+    },
+    {
+      "id": "security",
+      "file": "/icons/home/security.svg",
+      "symbol": "shield",
+      "color": "#087AF5"
+    },
+    {
+      "id": "analytics",
+      "file": "/icons/home/analytics.svg",
+      "symbol": "chart",
+      "color": "#087AF5"
+    },
+    {
+      "id": "identity",
+      "file": "/icons/home/identity.svg",
+      "symbol": "user",
+      "color": "#087AF5"
+    },
+    {
+      "id": "api",
+      "file": "/icons/home/api.svg",
+      "symbol": "code",
+      "color": "#087AF5"
+    },
+    {
+      "id": "xbooking",
+      "file": "/icons/home/xbooking.svg",
+      "symbol": "calendar",
+      "color": "#087AF5"
+    },
+    {
+      "id": "finerp",
+      "file": "/icons/home/finerp.svg",
+      "symbol": "pie",
+      "color": "#17B99B"
+    },
+    {
+      "id": "xbuilding",
+      "file": "/icons/home/xbuilding.svg",
+      "symbol": "building",
+      "color": "#7557F5"
+    },
+    {
+      "id": "xspace",
+      "file": "/icons/home/xspace.svg",
+      "symbol": "users",
+      "color": "#FF8C32"
+    },
+    {
+      "id": "marketing",
+      "file": "/icons/home/marketing.svg",
+      "symbol": "megaphone",
+      "color": "#087AF5"
+    },
+    {
+      "id": "crm",
+      "file": "/icons/home/crm.svg",
+      "symbol": "user-plus",
+      "color": "#087AF5"
+    },
+    {
+      "id": "booking",
+      "file": "/icons/home/booking.svg",
+      "symbol": "calendar-check",
+      "color": "#087AF5"
+    },
+    {
+      "id": "contract",
+      "file": "/icons/home/contract.svg",
+      "symbol": "document",
+      "color": "#087AF5"
+    },
+    {
+      "id": "payment",
+      "file": "/icons/home/payment.svg",
+      "symbol": "card",
+      "color": "#087AF5"
+    },
+    {
+      "id": "handover",
+      "file": "/icons/home/handover.svg",
+      "symbol": "key",
+      "color": "#087AF5"
+    },
+    {
+      "id": "operations",
+      "file": "/icons/home/operations.svg",
+      "symbol": "gear",
+      "color": "#087AF5"
+    },
+    {
+      "id": "care",
+      "file": "/icons/home/care.svg",
+      "symbol": "headset",
+      "color": "#087AF5"
+    },
+    {
+      "id": "retransaction",
+      "file": "/icons/home/retransaction.svg",
+      "symbol": "refresh",
+      "color": "#087AF5"
+    },
+    {
+      "id": "transformation",
+      "file": "/icons/home/transformation.svg",
+      "symbol": "target",
+      "color": "#087AF5"
+    },
+    {
+      "id": "automation",
+      "file": "/icons/home/automation.svg",
+      "symbol": "robot",
+      "color": "#087AF5"
+    },
+    {
+      "id": "integration",
+      "file": "/icons/home/integration.svg",
+      "symbol": "blocks",
+      "color": "#087AF5"
+    },
+    {
+      "id": "connected-enterprise",
+      "file": "/icons/home/connected-enterprise.svg",
+      "symbol": "connected-users",
+      "color": "#17B9C1"
+    },
+    {
+      "id": "saas",
+      "file": "/icons/home/saas.svg",
+      "symbol": "cloud",
+      "color": "#087AF5"
+    },
+    {
+      "id": "private-cloud",
+      "file": "/icons/home/private-cloud.svg",
+      "symbol": "cloud-lock",
+      "color": "#087AF5"
+    },
+    {
+      "id": "on-premise",
+      "file": "/icons/home/on-premise.svg",
+      "symbol": "server",
+      "color": "#087AF5"
+    },
+    {
+      "id": "hybrid",
+      "file": "/icons/home/hybrid.svg",
+      "symbol": "hybrid",
+      "color": "#087AF5"
+    },
+    {
+      "id": "assessment",
+      "file": "/icons/home/assessment.svg",
+      "symbol": "search-doc",
+      "color": "#087AF5"
+    },
+    {
+      "id": "architecture",
+      "file": "/icons/home/architecture.svg",
+      "symbol": "blueprint",
+      "color": "#087AF5"
+    },
+    {
+      "id": "solution-design",
+      "file": "/icons/home/solution-design.svg",
+      "symbol": "lightbulb",
+      "color": "#087AF5"
+    },
+    {
+      "id": "development",
+      "file": "/icons/home/development.svg",
+      "symbol": "code-screen",
+      "color": "#087AF5"
+    },
+    {
+      "id": "training",
+      "file": "/icons/home/training.svg",
+      "symbol": "cap",
+      "color": "#087AF5"
+    },
+    {
+      "id": "support",
+      "file": "/icons/home/support.svg",
+      "symbol": "headset",
+      "color": "#087AF5"
+    },
+    {
+      "id": "growth",
+      "file": "/icons/home/growth.svg",
+      "symbol": "chart-up",
+      "color": "#087AF5"
+    },
+    {
+      "id": "cost",
+      "file": "/icons/home/cost.svg",
+      "symbol": "coins",
+      "color": "#17B99B"
+    },
+    {
+      "id": "productivity",
+      "file": "/icons/home/productivity.svg",
+      "symbol": "rocket",
+      "color": "#7557F5"
+    },
+    {
+      "id": "experience",
+      "file": "/icons/home/experience.svg",
+      "symbol": "user-star",
+      "color": "#FF8C32"
+    },
+    {
+      "id": "risk",
+      "file": "/icons/home/risk.svg",
+      "symbol": "shield",
+      "color": "#087AF5"
+    },
+    {
+      "id": "consulting",
+      "file": "/icons/home/consulting.svg",
+      "symbol": "people",
+      "color": "#087AF5"
+    },
+    {
+      "id": "delivery",
+      "file": "/icons/home/delivery.svg",
+      "symbol": "rocket",
+      "color": "#087AF5"
+    },
+    {
+      "id": "longterm",
+      "file": "/icons/home/longterm.svg",
+      "symbol": "infinity",
+      "color": "#087AF5"
+    },
+    {
+      "id": "customer",
+      "file": "/icons/home/customer.svg",
+      "symbol": "users",
+      "color": "#17B9C1"
+    }
+  ],
+  "backgrounds": [
+    "/images/backgrounds/home/hero-ecosystem.webp",
+    "/images/backgrounds/home/light-mesh-grid.svg",
+    "/images/backgrounds/home/light-city-horizon.svg",
+    "/images/backgrounds/home/section-glow-blue.svg",
+    "/images/backgrounds/home/section-glow-purple.svg",
+    "/images/backgrounds/home/dark-data-grid.svg"
+  ],
+  "visuals": [
+    "/images/visuals/home/orbit-rings.svg",
+    "/images/visuals/home/connector-dots.svg",
+    "/images/visuals/home/platform-glow.svg"
+  ],
+  "components": [
+    "HomeIcon.tsx",
+    "motion.ts",
+    "HomeHero.tsx",
+    "SolutionsSection.tsx",
+    "ProductsSection.tsx",
+    "PlatformSection.tsx",
+    "SolutionSuitesSection.tsx",
+    "ServicesSection.tsx",
+    "DeploymentSection.tsx",
+    "BusinessValueSection.tsx",
+    "TrustSection.tsx",
+    "CustomersInsightsSection.tsx",
+    "FinalCTA.tsx",
+    "HomePage.tsx",
+    "home.module.css"
+  ],
+  "routes": [
+    "/",
+    "/giai-phap",
+    "/san-pham",
+    "/bo-giai-phap-x",
+    "/dich-vu",
+    "/trien-khai",
+    "/khach-hang",
+    "/insights",
+    "/ve-x",
+    "/lien-he",
+    "/dat-lich-demo"
+  ],
+  "production_policy": "Reference images are visual blueprints only and must not be rendered directly in production."
+}

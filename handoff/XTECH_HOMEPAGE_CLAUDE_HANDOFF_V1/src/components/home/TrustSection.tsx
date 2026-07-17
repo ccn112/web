@@ -1,0 +1,2 @@
+import styles from "./home.module.css";
+export function TrustSection(){return <section className={styles.trustSection} aria-labelledby="trust-title"><div className={styles.container}><h2 id="trust-title">Đồng hành cùng doanh nghiệp trong hành trình chuyển đổi số</h2><p>Chỉ hiển thị logo và số liệu đã được xác thực, có quyền công bố.</p><div className={styles.logoPlaceholders}>{Array.from({length:6}).map((_,i)=><span key={i}>LOGO KHÁCH HÀNG {i+1}</span>)}</div></div></section>}

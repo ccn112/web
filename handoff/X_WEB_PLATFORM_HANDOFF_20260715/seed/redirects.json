@@ -1,0 +1,8 @@
+[
+  { "site": "corporate", "sourcePath": "/san-pham/xai", "destinationPath": "/san-pham/x-ai", "permanent": true },
+  { "site": "corporate", "sourcePath": "/san-pham/xspace", "destinationPath": "/san-pham/x-space", "permanent": true },
+  { "site": "corporate", "sourcePath": "/x-real-estate-digital-suite", "destinationPath": "/bo-giai-phap-x", "permanent": true },
+  { "site": "corporate", "sourcePath": "/mo-hinh-trien-khai", "destinationPath": "/trien-khai", "permanent": true },
+  { "site": "corporate", "sourcePath": "/khach-hang-du-an", "destinationPath": "/khach-hang", "permanent": true },
+  { "site": "corporate", "sourcePath": "/demo", "destinationPath": "/dat-lich-demo", "permanent": true }
+]

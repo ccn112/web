@@ -1,0 +1,66 @@
+{
+  "c02-01": {
+    "component": "C02ServicesOverview",
+    "routes": [
+      "/dich-vu",
+      "/dich-vu/chuyen-doi-so"
+    ],
+    "visualType": "hub-spoke"
+  },
+  "c02-02": {
+    "component": "C02MaturityAssessment",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "visualType": "maturity-radar"
+  },
+  "c02-03": {
+    "component": "C02StrategyArchitecture",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/ve-x/nang-luc"
+    ],
+    "visualType": "architecture-stack"
+  },
+  "c02-04": {
+    "component": "C02ProcessAutomation",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "visualType": "process-evolution"
+  },
+  "c02-05": {
+    "component": "C02DataPlatform",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/giai-phap/chuyen-doi-so"
+    ],
+    "visualType": "data-platform"
+  },
+  "c02-06": {
+    "component": "C02ApplicationModernization",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/trien-khai"
+    ],
+    "visualType": "integration-hub"
+  },
+  "c02-07": {
+    "component": "C02ChangeManagement",
+    "routes": [
+      "/dich-vu/chuyen-doi-so",
+      "/ve-x/nang-luc"
+    ],
+    "visualType": "adoption-journey"
+  },
+  "c02-08": {
+    "component": "C02OperationsControlTower",
+    "routes": [
+      "/dich-vu",
+      "/dich-vu/chuyen-doi-so"
+    ],
+    "visualType": "control-tower"
+  }
+}

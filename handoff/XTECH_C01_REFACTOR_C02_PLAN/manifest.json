@@ -1,0 +1,16 @@
+{
+  "project": "XTECH Corporate Website",
+  "current_set": "C01 — Corporate Overview",
+  "next_set": "C02 — Digital Transformation Services",
+  "handoff_principle": "asset extraction first, HTML/CSS composition second, motion third",
+  "c02_items": [
+    "C02-01 Digital Transformation Services Overview",
+    "C02-02 Digital Maturity Assessment",
+    "C02-03 Strategy, Roadmap & Enterprise Architecture",
+    "C02-04 Business Process Redesign & Automation",
+    "C02-05 Data Platform & Analytics",
+    "C02-06 Application Modernization & Integration",
+    "C02-07 Change Management & Digital Adoption",
+    "C02-08 Managed Transformation & Continuous Improvement"
+  ]
+}

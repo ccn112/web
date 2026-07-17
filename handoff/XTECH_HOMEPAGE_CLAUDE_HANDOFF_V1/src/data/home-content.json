@@ -1,0 +1,301 @@
+{
+  "hero": {
+    "eyebrow": "XTECH • Enterprise Technology & AI",
+    "title": "Hệ sinh thái công nghệ và AI cho doanh nghiệp số",
+    "description": "Kết nối dữ liệu, số hóa quy trình, vận hành sản phẩm và kích hoạt trí tuệ nhân tạo trên một nền tảng linh hoạt.",
+    "primaryCta": {
+      "label": "Khám phá hệ sinh thái",
+      "href": "/san-pham"
+    },
+    "secondaryCta": {
+      "label": "Trao đổi với chuyên gia",
+      "href": "/lien-he"
+    },
+    "capabilities": [
+      "Sản phẩm",
+      "Giải pháp",
+      "Dịch vụ",
+      "Triển khai",
+      "Vận hành dài hạn"
+    ]
+  },
+  "solutions": [
+    {
+      "id": "transformation",
+      "title": "Chuyển đổi số",
+      "description": "Chiến lược, lộ trình và kiến trúc số.",
+      "href": "/giai-phap/chuyen-doi-so",
+      "icon": "transformation"
+    },
+    {
+      "id": "data-ai",
+      "title": "Dữ liệu & AI",
+      "description": "Kết nối dữ liệu, BI, tri thức và AI Agent.",
+      "href": "/giai-phap/du-lieu-va-ai",
+      "icon": "ai"
+    },
+    {
+      "id": "automation",
+      "title": "Tự động hóa",
+      "description": "Workflow, quy trình và AI hỗ trợ quyết định.",
+      "href": "/giai-phap/tu-dong-hoa",
+      "icon": "automation"
+    },
+    {
+      "id": "integration",
+      "title": "Tích hợp hệ thống",
+      "description": "ERP, CRM, HRM, API và dữ liệu xuyên suốt.",
+      "href": "/giai-phap/tich-hop-he-thong",
+      "icon": "integration"
+    },
+    {
+      "id": "connected",
+      "title": "Doanh nghiệp kết nối",
+      "description": "Kết nối trải nghiệm, ứng dụng, dữ liệu và vận hành.",
+      "href": "/giai-phap/doanh-nghiep-ket-noi",
+      "icon": "connected-enterprise"
+    }
+  ],
+  "products": [
+    {
+      "id": "x-ai",
+      "title": "X.AI",
+      "description": "Nhập liệu thông minh, báo cáo, tri thức doanh nghiệp và AI Agent.",
+      "href": "/san-pham/x-ai",
+      "icon": "ai"
+    },
+    {
+      "id": "xbooking",
+      "title": "XBooking",
+      "description": "Marketing, CRM, bảng hàng, booking và chăm sóc khách hàng bất động sản.",
+      "href": "/san-pham/xbooking",
+      "icon": "xbooking"
+    },
+    {
+      "id": "finerp",
+      "title": "FinERP",
+      "description": "Tài chính, kế toán, công nợ, ngân sách và vận hành doanh nghiệp.",
+      "href": "/san-pham/finerp",
+      "icon": "finerp"
+    },
+    {
+      "id": "xbuilding",
+      "title": "XBuilding",
+      "description": "Quản lý cư dân, vận hành tòa nhà, dịch vụ, thiết bị và bảo trì.",
+      "href": "/san-pham/xbuilding",
+      "icon": "xbuilding"
+    },
+    {
+      "id": "x-space",
+      "title": "X.Space",
+      "description": "Cộng tác, công việc, tài liệu và tri thức nội bộ.",
+      "href": "/san-pham/x-space",
+      "icon": "xspace"
+    }
+  ],
+  "platformLayers": [
+    {
+      "id": "products",
+      "label": "Sản phẩm",
+      "items": [
+        "XBooking",
+        "FinERP",
+        "XBuilding",
+        "X.Space",
+        "X.AI"
+      ]
+    },
+    {
+      "id": "ai-analytics",
+      "label": "AI & Analytics",
+      "items": [
+        "AI Services",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "Workflow • Identity • API",
+      "items": [
+        "Workflow",
+        "Identity",
+        "API"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data Platform",
+      "items": [
+        "Data"
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud & Security",
+      "items": [
+        "Cloud",
+        "Security"
+      ]
+    }
+  ],
+  "solutionSuites": [
+    {
+      "id": "real-estate",
+      "title": "Chủ đầu tư bất động sản",
+      "description": "Marketing → Lead → Booking → Hợp đồng → Thanh toán → Bàn giao → Vận hành → Chăm sóc.",
+      "href": "/bo-giai-phap-x/chu-dau-tu-bat-dong-san",
+      "icon": "xbuilding"
+    },
+    {
+      "id": "digital-enterprise",
+      "title": "Doanh nghiệp số",
+      "description": "ERP + Workspace + Data + Automation + AI.",
+      "href": "/bo-giai-phap-x/doanh-nghiep-so",
+      "icon": "finerp"
+    },
+    {
+      "id": "smart-building",
+      "title": "Tòa nhà thông minh",
+      "description": "Vận hành + Cư dân + Thiết bị + IoT + AI Operations.",
+      "href": "/bo-giai-phap-x/toa-nha-thong-minh",
+      "icon": "xbuilding"
+    },
+    {
+      "id": "finance-operations",
+      "title": "Tài chính & vận hành",
+      "description": "Kế toán + Công nợ + Dòng tiền + Ngân sách + Báo cáo + AI.",
+      "href": "/bo-giai-phap-x/tai-chinh-va-van-hanh",
+      "icon": "security"
+    },
+    {
+      "id": "enterprise-ai",
+      "title": "AI doanh nghiệp",
+      "description": "AI Agent + Knowledge & RAG + Governance + Integration.",
+      "href": "/bo-giai-phap-x/ai-doanh-nghiep",
+      "icon": "ai"
+    }
+  ],
+  "services": [
+    {
+      "order": 1,
+      "title": "Khảo sát & đánh giá",
+      "description": "Hiểu rõ hiện trạng, xác định khoảng cách và cơ hội.",
+      "icon": "assessment"
+    },
+    {
+      "order": 2,
+      "title": "Chiến lược & kiến trúc",
+      "description": "Xây dựng chiến lược số và kiến trúc tổng thể.",
+      "icon": "architecture"
+    },
+    {
+      "order": 3,
+      "title": "Thiết kế giải pháp",
+      "description": "Thiết kế giải pháp tối ưu theo mục tiêu kinh doanh.",
+      "icon": "solution-design"
+    },
+    {
+      "order": 4,
+      "title": "Phát triển & tích hợp",
+      "description": "Phát triển, tích hợp hệ thống và kết nối dữ liệu.",
+      "icon": "development"
+    },
+    {
+      "order": 5,
+      "title": "Triển khai & đào tạo",
+      "description": "Triển khai thực tế, chuyển giao và đào tạo người dùng.",
+      "icon": "training"
+    },
+    {
+      "order": 6,
+      "title": "Vận hành & tối ưu",
+      "description": "Vận hành ổn định và tối ưu hiệu quả liên tục.",
+      "icon": "growth"
+    }
+  ],
+  "deployment": [
+    {
+      "id": "saas",
+      "title": "SaaS",
+      "description": "Triển khai nhanh chóng, linh hoạt và sẵn sàng mở rộng.",
+      "icon": "saas"
+    },
+    {
+      "id": "private",
+      "title": "Private Cloud",
+      "description": "Vận hành an toàn trên hạ tầng riêng, tối ưu hiệu suất và chi phí.",
+      "icon": "private-cloud"
+    },
+    {
+      "id": "on-premise",
+      "title": "On-premise",
+      "description": "Kiểm soát toàn diện hệ thống và dữ liệu tại doanh nghiệp.",
+      "icon": "on-premise"
+    },
+    {
+      "id": "hybrid",
+      "title": "Hybrid",
+      "description": "Kết hợp linh hoạt nhiều môi trường theo yêu cầu nghiệp vụ.",
+      "icon": "hybrid"
+    }
+  ],
+  "businessValues": [
+    {
+      "title": "Tăng trưởng doanh thu",
+      "description": "Khai thác dữ liệu và tự động hóa để mở rộng thị trường và tăng tỷ lệ chuyển đổi.",
+      "icon": "growth"
+    },
+    {
+      "title": "Tối ưu chi phí",
+      "description": "Chuẩn hóa quy trình và ứng dụng AI để giảm chi phí vận hành.",
+      "icon": "cost"
+    },
+    {
+      "title": "Tăng năng suất",
+      "description": "Tự động hóa tác vụ lặp lại và hỗ trợ ra quyết định nhanh hơn.",
+      "icon": "productivity"
+    },
+    {
+      "title": "Nâng cao trải nghiệm",
+      "description": "Cá nhân hóa hành trình khách hàng, nhân viên và đối tác.",
+      "icon": "experience"
+    },
+    {
+      "title": "Giảm rủi ro",
+      "description": "Quản trị dữ liệu, phân quyền, truy vết và tuân thủ.",
+      "icon": "risk"
+    }
+  ],
+  "whyXtech": [
+    {
+      "title": "Hiểu bài toán thực tế",
+      "description": "Đặt mục tiêu kinh doanh làm trọng tâm.",
+      "icon": "target"
+    },
+    {
+      "title": "Hệ sinh thái liên thông",
+      "description": "Tích hợp dữ liệu, quy trình và hệ thống trên một nền tảng.",
+      "icon": "integration"
+    },
+    {
+      "title": "Đồng hành end-to-end",
+      "description": "Tư vấn, triển khai, đào tạo và tối ưu liên tục.",
+      "icon": "consulting"
+    },
+    {
+      "title": "Linh hoạt và dài hạn",
+      "description": "SaaS, Private Cloud, On-premise và Hybrid.",
+      "icon": "longterm"
+    }
+  ],
+  "workflow": [
+    "Marketing",
+    "Lead & CRM",
+    "Bảng hàng & Booking",
+    "Hợp đồng & Thanh toán",
+    "Bàn giao",
+    "Vận hành",
+    "Chăm sóc",
+    "Tái giao dịch"
+  ]
+}

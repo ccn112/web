@@ -1,0 +1,25 @@
+{
+  "package": "XTECH_C03_CLAUDE_CODE_HANDOFF",
+  "version": "1.0.0",
+  "title": "XTECH — SET C03 Product Ecosystem",
+  "routes": [
+    "/san-pham",
+    "/san-pham/x-ai",
+    "/san-pham/xbooking",
+    "/san-pham/finerp",
+    "/san-pham/xbuilding",
+    "/san-pham/x-space",
+    "/san-pham/nen-tang-dung-chung",
+    "/bo-giai-phap-x"
+  ],
+  "references": [
+    "references/c03/c03-01-he-sinh-thai-san-pham-xtech.png",
+    "references/c03/c03-02-x-ai-tri-tue-doanh-nghiep.png",
+    "references/c03/c03-03-xbooking-ban-hang-bat-dong-san.png",
+    "references/c03/c03-04-finerp-tai-chinh-va-van-hanh.png",
+    "references/c03/c03-05-xbuilding-van-hanh-toa-nha-va-cu-dan.png",
+    "references/c03/c03-06-x-space-cong-tac-cong-viec-va-tri-thuc.png",
+    "references/c03/c03-07-nen-tang-dung-chung-xtech.png",
+    "references/c03/c03-08-lien-thong-san-pham-xtech.png"
+  ]
+}

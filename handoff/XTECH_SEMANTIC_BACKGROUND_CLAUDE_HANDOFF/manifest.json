@@ -1,0 +1,144 @@
+{
+  "package": "XTECH Semantic Background Claude Handoff",
+  "assets": [
+    {
+      "id": "bg-00",
+      "route": "/",
+      "file": "/images/backgrounds/semantic/bg-trang-chu-he-sinh-thai.webp",
+      "source": "cybernetic_data_hub_in_deep_space.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 98054,
+      "sha256": "ac15e473dd4c148c424f46ac2bd66240fcb1b79ffd2c7d2e0b76829c5dc8a5dc",
+      "objectPosition": "center 66%",
+      "mobilePosition": "center 70%",
+      "overlay": "medium",
+      "metaphor": "ecosystem-core"
+    },
+    {
+      "id": "bg-01",
+      "route": "/giai-phap",
+      "file": "/images/backgrounds/semantic/bg-giai-phap-hoi-tu.webp",
+      "source": "futuristic_data_flow_visualization.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 96794,
+      "sha256": "48733c52e60266a20353ea4a9056f47c28b59a1753f872de6db1fcaba23b8387",
+      "objectPosition": "center 72%",
+      "mobilePosition": "center 75%",
+      "overlay": "medium",
+      "metaphor": "convergence"
+    },
+    {
+      "id": "bg-02",
+      "route": "/san-pham",
+      "file": "/images/backgrounds/semantic/bg-san-pham-nen-tang-mo-dun.webp",
+      "source": "futuristic_cybernetic_data_hub_design.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 104202,
+      "sha256": "1ec7e0dfeb38a5af1f76d1929e232b3b3f6ee25794380498d8a7eea599761517",
+      "objectPosition": "center 68%",
+      "mobilePosition": "center 73%",
+      "overlay": "medium",
+      "metaphor": "modular-platform"
+    },
+    {
+      "id": "bg-03",
+      "route": "/bo-giai-phap-x",
+      "file": "/images/backgrounds/semantic/bg-bo-giai-phap-x-lap-ghep.webp",
+      "source": "futuristic_digital_cube_network_structure.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 88962,
+      "sha256": "0a4e103d99cd27102aa70b8680e263acc37f8a9878b6a30ba5b7eaba5508926f",
+      "objectPosition": "center 70%",
+      "mobilePosition": "center 75%",
+      "overlay": "medium",
+      "metaphor": "composable-blocks"
+    },
+    {
+      "id": "bg-04",
+      "route": "/dich-vu",
+      "file": "/images/backgrounds/semantic/bg-dich-vu-hanh-trinh.webp",
+      "source": "futuristic_cyberpath_to_a_glowing_city.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 128586,
+      "sha256": "d0408a5c6678f4591d23e71e81738d2ae096bc8059443d901406b5f2744f9917",
+      "objectPosition": "center 76%",
+      "mobilePosition": "66% 78%",
+      "overlay": "medium",
+      "metaphor": "transformation-journey"
+    },
+    {
+      "id": "bg-05",
+      "route": "/trien-khai",
+      "file": "/images/backgrounds/semantic/bg-trien-khai-kien-truc.webp",
+      "source": "futuristic_digital_network_architecture_design.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 76092,
+      "sha256": "3ea248620cf1cae0792e8f682213daa0a9c85746f3148db63705acc33b92ee69",
+      "objectPosition": "center 63%",
+      "mobilePosition": "center 70%",
+      "overlay": "strong",
+      "metaphor": "delivery-pipeline"
+    },
+    {
+      "id": "bg-06",
+      "route": "/khach-hang",
+      "file": "/images/backgrounds/semantic/bg-khach-hang-mang-luoi.webp",
+      "source": "futuristic_network_cityscape_visualization.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 91116,
+      "sha256": "77d2de346f33aefb844f60c46aeadf54ecbba270d82b6b5b0aca7e0a80fac3e0",
+      "objectPosition": "center 73%",
+      "mobilePosition": "center 78%",
+      "overlay": "medium",
+      "metaphor": "trust-network"
+    },
+    {
+      "id": "bg-07",
+      "route": "/insights",
+      "file": "/images/backgrounds/semantic/bg-insights-tin-hieu.webp",
+      "source": "futuristic_data_visualization_landscape.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 70072,
+      "sha256": "f82e86484ec937b428cbf1f4c50542329fdcb4616e29d00e63128a4d63d3f273",
+      "objectPosition": "center 76%",
+      "mobilePosition": "center 80%",
+      "overlay": "strong",
+      "metaphor": "knowledge-signals"
+    },
+    {
+      "id": "bg-08",
+      "route": "/ve-x",
+      "file": "/images/backgrounds/semantic/bg-ve-x-con-nguoi-doi-tac.webp",
+      "source": "futuristic_digital_network_cityscape_at_night.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 90438,
+      "sha256": "60629c4545d8528b5068a777b8fb1d09df7aa05de47b0286953b43869292d239",
+      "objectPosition": "center 74%",
+      "mobilePosition": "center 80%",
+      "overlay": "medium",
+      "metaphor": "people-partnership"
+    }
+  ],
+  "references": [
+    {
+      "file": "references/current-hero-before.png",
+      "exists": true
+    },
+    {
+      "file": "references/target-hero-composite.png",
+      "exists": true
+    }
+  ],
+  "missing": [],
+  "productionFormat": "WebP",
+  "language": "vi"
+}
