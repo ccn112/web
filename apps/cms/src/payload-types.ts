@@ -84,6 +84,7 @@ export interface Config {
     redirects: Redirect;
     'chat-sessions': ChatSession;
     'chat-users': ChatUser;
+    'chat-usage': ChatUsage;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -108,6 +109,7 @@ export interface Config {
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     'chat-sessions': ChatSessionsSelect<false> | ChatSessionsSelect<true>;
     'chat-users': ChatUsersSelect<false> | ChatUsersSelect<true>;
+    'chat-usage': ChatUsageSelect<false> | ChatUsageSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1120,6 +1122,14 @@ export interface ChatSession {
     | boolean
     | null;
   messageCount?: number | null;
+  provider?: string | null;
+  model?: string | null;
+  tokensIn?: number | null;
+  tokensOut?: number | null;
+  /**
+   * Chi phí tạm tính (USD) của phiên.
+   */
+  estCostUsd?: number | null;
   hiddenByUser?: boolean | null;
   /**
    * Đánh dấu hội thoại chất lượng để khai thác làm nội dung bài viết.
@@ -1139,6 +1149,26 @@ export interface ChatUser {
   phone: string;
   name?: string | null;
   siteCode?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-usage".
+ */
+export interface ChatUsage {
+  id: string;
+  key: string;
+  day?: string | null;
+  provider?: string | null;
+  model?: string | null;
+  requests?: number | null;
+  tokensIn?: number | null;
+  tokensOut?: number | null;
+  /**
+   * Chi phí tạm tính (USD).
+   */
+  estCostUsd?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1233,6 +1263,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'chat-users';
         value: string | ChatUser;
+      } | null)
+    | ({
+        relationTo: 'chat-usage';
+        value: string | ChatUsage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1995,6 +2029,11 @@ export interface ChatSessionsSelect<T extends boolean = true> {
   lastRoute?: T;
   messages?: T;
   messageCount?: T;
+  provider?: T;
+  model?: T;
+  tokensIn?: T;
+  tokensOut?: T;
+  estCostUsd?: T;
   hiddenByUser?: T;
   flaggedQuality?: T;
   updatedAt?: T;
@@ -2010,6 +2049,22 @@ export interface ChatUsersSelect<T extends boolean = true> {
   phone?: T;
   name?: T;
   siteCode?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-usage_select".
+ */
+export interface ChatUsageSelect<T extends boolean = true> {
+  key?: T;
+  day?: T;
+  provider?: T;
+  model?: T;
+  requests?: T;
+  tokensIn?: T;
+  tokensOut?: T;
+  estCostUsd?: T;
   updatedAt?: T;
   createdAt?: T;
 }

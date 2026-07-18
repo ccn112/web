@@ -31,6 +31,12 @@ export const ChatSessions: CollectionConfig = {
     // messages: Array<{ role: 'user'|'assistant', content: string, images?: number, ts: string }>
     { name: 'messages', type: 'json', required: true, defaultValue: [] },
     { name: 'messageCount', type: 'number', defaultValue: 0 },
+    // Usage & estimated cost (cumulative for the session).
+    { name: 'provider', type: 'text' },
+    { name: 'model', type: 'text' },
+    { name: 'tokensIn', type: 'number', defaultValue: 0 },
+    { name: 'tokensOut', type: 'number', defaultValue: 0 },
+    { name: 'estCostUsd', type: 'number', defaultValue: 0, admin: { description: 'Chi phí tạm tính (USD) của phiên.' } },
     // User removed it from their own history view (soft-hide; staff still see it).
     { name: 'hiddenByUser', type: 'checkbox', defaultValue: false },
     // Staff-facing: mark conversations worth turning into article content.

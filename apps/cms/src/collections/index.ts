@@ -15,6 +15,7 @@ import { Solutions } from './Solutions'
 import { Users } from './Users'
 import { ChatSessions } from './ChatSessions'
 import { ChatUsers } from './ChatUsers'
+import { ChatUsage } from './ChatUsage'
 
 export const collections = [
   Users,
@@ -34,4 +35,5 @@ export const collections = [
   Redirects,
   ChatSessions,
   ChatUsers,
+  ChatUsage,
 ]
