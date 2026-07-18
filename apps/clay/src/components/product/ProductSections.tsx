@@ -1,0 +1,235 @@
+"use client";
+
+/**
+ * SET C03 — Product Ecosystem section renderer. Dispatches each product section
+ * by `layout` (orbit / hub-spoke / stack / journey / showcase), reusing the
+ * home + about visual kit. Content is a typed module for now (CMS-driven later).
+ * Zig-zag SplitLayout + mobile image-first, compact sections, gold accents.
+ */
+
+import { ArrowRight } from "lucide-react";
+import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
+import { SectionHead, HomeIcon, IconTile, SplitLayout } from "@/components/home/kit";
+import { OrbitDiagram, type OrbitNode } from "@/components/home/visuals";
+import type { SectionTitle } from "@/data/home-content";
+import {
+  productSectionsForRoute,
+  type ProductSection,
+  type ProductItem,
+} from "@/data/product-content";
+
+function head(s: ProductSection): SectionTitle {
+  return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
+}
+
+function GoldCTA({ cta }: { cta?: { label: string; href: string } }) {
+  if (!cta) return null;
+  return (
+    <div className="mt-8 flex justify-center">
+      <a
+        href={cta.href}
+        className="btn-gold group inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold shadow-[0_12px_30px_-12px_var(--accent-gold)] transition hover:brightness-105"
+      >
+        {cta.label}
+        <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+      </a>
+    </div>
+  );
+}
+
+function ChipRow({ chips, label }: { chips?: string[]; label?: string }) {
+  if (!chips?.length) return null;
+  return (
+    <Reveal delay={0.05}>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+        {label ? <span className="mr-1 text-xs font-bold uppercase tracking-[0.16em] text-blue/60">{label}</span> : null}
+        {chips.map((c) => (
+          <span key={c} className="rounded-full border border-blue/15 bg-card/70 px-3 py-1.5 text-xs font-semibold text-blue backdrop-blur">
+            {c}
+          </span>
+        ))}
+      </div>
+    </Reveal>
+  );
+}
+
+function ItemCard({ item, index, number }: { item: ProductItem; index: number; number?: number }) {
+  const inner = (
+    <>
+      <IconTile name={item.icon} />
+      <div className="min-w-0">
+        <div className="flex items-center gap-2">
+          {number ? <span className="text-xs font-bold text-cyan">{String(number).padStart(2, "0")}</span> : null}
+          <h3 className="text-base font-semibold tracking-tight text-blue">{item.title}</h3>
+        </div>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+        {item.badges?.length ? (
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {item.badges.map((b) => (
+              <span key={b} className="rounded-full border border-blue/12 bg-blue/5 px-2 py-0.5 text-[11px] font-semibold text-blue">{b}</span>
+            ))}
+          </div>
+        ) : null}
+      </div>
+      {item.href ? <ArrowRight className="ml-auto size-4 shrink-0 self-center text-blue/40 transition group-hover:translate-x-0.5 group-hover:text-gold" /> : null}
+    </>
+  );
+  const cls = "group flex items-start gap-4 rounded-2xl border border-blue/12 bg-card/70 p-4 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-gold/45";
+  return (
+    <Reveal delay={(index % 6) * 0.06}>
+      {item.href ? <a href={item.href} className={cls}>{inner}</a> : <div className={cls}>{inner}</div>}
+    </Reveal>
+  );
+}
+
+/* ---- orbit / hub-spoke / visual-left|right: list + orbit diagram ---- */
+function OrbitLayout({ s, i, numbered, side }: { s: ProductSection; i: number; numbered?: boolean; side?: "left" | "right" }) {
+  // Cap the orbit at 6 nodes so labels don't collide; the list still shows all.
+  const nodes: OrbitNode[] = s.items.slice(0, 6).map((it, k) => ({ icon: it.icon, label: it.title, number: numbered ? k + 1 : undefined }));
+  return (
+    <>
+      <SplitLayout
+        imageSide={side ?? (i % 2 === 0 ? "right" : "left")}
+        visual={<Reveal><OrbitDiagram nodes={nodes} hubLabel={s.eyebrow} floor={false} /></Reveal>}
+      >
+        <div className="grid gap-3">
+          {s.items.map((it, k) => (
+            <ItemCard key={it.id} item={it} index={k} number={numbered ? k + 1 : undefined} />
+          ))}
+        </div>
+      </SplitLayout>
+      <ChipRow chips={s.platformChips} label="Nền tảng dùng chung" />
+      <GoldCTA cta={s.cta} />
+    </>
+  );
+}
+
+/* ---- showcase: capability card grid ---- */
+function ShowcaseLayout({ s }: { s: ProductSection }) {
+  return (
+    <>
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {s.items.map((it, k) => (
+          <Reveal key={it.id} delay={(k % 3) * 0.07}>
+            <GlassCard className="h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/45">
+              <IconTile name={it.icon} />
+              <h3 className="mt-4 text-lg font-semibold tracking-tight text-blue">{it.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.description}</p>
+            </GlassCard>
+          </Reveal>
+        ))}
+      </div>
+      <GoldCTA cta={s.cta} />
+    </>
+  );
+}
+
+/* ---- stack: numbered perspective layers ---- */
+function StackLayout({ s }: { s: ProductSection }) {
+  return (
+    <>
+      <div className="mx-auto mt-8 max-w-3xl space-y-3 [perspective:1500px]">
+        {s.items.map((it, k) => (
+          <Reveal key={it.id} delay={k * 0.06}>
+            <div
+              className="relative flex items-center gap-4 overflow-hidden rounded-2xl border border-blue/15 bg-card/80 p-4 backdrop-blur shadow-[0_18px_44px_-32px_var(--accent-blue)]"
+              style={{ transform: "rotateX(5deg)", transformOrigin: "center top" }}
+            >
+              <span aria-hidden className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-blue to-cyan" />
+              <span className="ml-1 text-xs font-bold text-cyan">{String(k + 1).padStart(2, "0")}</span>
+              <IconTile name={it.icon} className="size-11" />
+              <div>
+                <h3 className="text-base font-semibold tracking-tight text-blue">{it.title}</h3>
+                <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">{it.description}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <ChipRow chips={s.platformChips} />
+      <GoldCTA cta={s.cta} />
+    </>
+  );
+}
+
+/* ---- journey: horizontal numbered flow + outcomes ---- */
+function JourneyLayout({ s }: { s: ProductSection }) {
+  return (
+    <>
+      {/* Desktop chevron flow */}
+      <div className="mt-8 hidden items-stretch gap-2 md:flex">
+        {s.items.map((it, k) => (
+          <div key={it.id} className="flex flex-1 items-center">
+            <Reveal delay={k * 0.08} className="flex-1">
+              <div className="h-full rounded-2xl border border-blue/12 bg-card/80 p-4 text-center backdrop-blur">
+                <span className="mx-auto flex size-11 items-center justify-center"><HomeIcon name={it.icon} size={30} /></span>
+                <span className="mt-1 block text-xs font-bold text-cyan">{String(k + 1).padStart(2, "0")}</span>
+                <h3 className="mt-1 text-sm font-semibold tracking-tight text-blue">{it.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{it.description}</p>
+              </div>
+            </Reveal>
+            {k < s.items.length - 1 ? <ArrowRight aria-hidden className="mx-1 size-5 shrink-0 text-cyan" /> : null}
+          </div>
+        ))}
+      </div>
+      {/* Mobile vertical */}
+      <div className="mt-8 space-y-3 md:hidden">
+        {s.items.map((it, k) => (
+          <Reveal key={it.id} delay={k * 0.05}>
+            <div className="flex items-start gap-3 rounded-2xl border border-blue/12 bg-card/80 p-4">
+              <HomeIcon name={it.icon} size={28} />
+              <div>
+                <h3 className="text-sm font-semibold text-blue">{String(k + 1).padStart(2, "0")} · {it.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{it.description}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      {/* Outcomes */}
+      {s.outcomes?.length ? (
+        <div className="mx-auto mt-8 grid max-w-5xl gap-4 sm:grid-cols-3">
+          {s.outcomes.map((o, k) => (
+            <Reveal key={o.title} delay={k * 0.07}>
+              <div className="flex items-start gap-3 rounded-2xl border border-blue/12 bg-card/60 p-4">
+                <span className="icon-gold inline-flex size-11 items-center justify-center rounded-xl"><HomeIcon name={o.icon} size={24} /></span>
+                <div>
+                  <h4 className="text-sm font-semibold text-blue">{o.title}</h4>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{o.description}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      ) : null}
+      <GoldCTA cta={s.cta} />
+    </>
+  );
+}
+
+function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
+  return (
+    <AmbientSection id={s.sectionId} soft={i % 2 === 1} city={s.layout === "stack"} compact>
+      <SectionHead title={head(s)} />
+      {s.layout === "orbit" ? <OrbitLayout s={s} i={i} /> : null}
+      {s.layout === "hub-spoke" ? <OrbitLayout s={s} i={i} numbered /> : null}
+      {s.layout === "visual-right" ? <OrbitLayout s={s} i={i} side="right" /> : null}
+      {s.layout === "visual-left" ? <OrbitLayout s={s} i={i} side="left" numbered /> : null}
+      {s.layout === "showcase" ? <ShowcaseLayout s={s} /> : null}
+      {s.layout === "stack" ? <StackLayout s={s} /> : null}
+      {s.layout === "journey" ? <JourneyLayout s={s} /> : null}
+    </AmbientSection>
+  );
+}
+
+export function ProductSections({ route }: { route: string }) {
+  const sections = productSectionsForRoute(route);
+  if (!sections.length) return null;
+  return (
+    <>
+      {sections.map((s, i) => (
+        <SectionRenderer key={s.sectionId} s={s} i={i} />
+      ))}
+    </>
+  );
+}

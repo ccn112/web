@@ -1,0 +1,413 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.theme-dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* brand tokens (startup / tech remix) */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-violet: var(--accent-violet);
+  --color-blue: var(--accent-blue);
+  --color-cyan: var(--accent-cyan);
+  --color-gold: var(--accent-gold);
+  --color-ink: var(--ink);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-aurora: aurora 14s ease-in-out infinite alternate;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 60s linear infinite;
+  --animate-spin-slow-rev: spin-slow 80s linear infinite reverse;
+  --animate-dash: dash 18s linear infinite;
+  --animate-glow: glow-pulse 3.2s ease-in-out infinite;
+  --animate-sweep: sweep 3.4s ease-in-out infinite;
+  --animate-riseflow: riseflow 3s linear infinite;
+  --animate-node-pulse: node-pulse 2.8s ease-in-out infinite;
+  --animate-floor: floor 24s linear infinite;
+  --animate-flow-x: flow-x 2.2s linear infinite;
+  --animate-flow-y: flow-y 2.2s linear infinite;
+  --animate-node-in: node-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes node-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes flow-x {
+    to { background-position: -200% 0; }
+  }
+  @keyframes flow-y {
+    to { background-position: 0 200%; }
+  }
+  @keyframes node-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--accent-cyan) 55%, transparent); }
+    50% { box-shadow: 0 0 0 7px color-mix(in oklch, var(--accent-cyan) 0%, transparent); }
+  }
+  @keyframes floor {
+    to { background-position: 0 60px; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes aurora {
+    0% { transform: translate3d(-4%, -2%, 0) scale(1); opacity: 0.75; }
+    50% { transform: translate3d(3%, 2%, 0) scale(1.08); opacity: 1; }
+    100% { transform: translate3d(-2%, 4%, 0) scale(1.03); opacity: 0.8; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -240; }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+  @keyframes sweep {
+    0% { transform: translateX(-130%); }
+    60%, 100% { transform: translateX(430%); }
+  }
+  @keyframes riseflow {
+    0% { transform: translateY(100%); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateY(-100%); opacity: 0; }
+  }
+}
+
+/* XTECH theme — Obsidian + Indigo-Violet + Champagne Gold.
+   Premium PropTech: warm-ivory light base, obsidian dark heroes,
+   indigo→violet tech gradient, gold used sparingly for luxury accents. */
+:root {
+  --radius: 0.9rem;
+
+  --background: oklch(0.976 0.005 88);
+  --foreground: oklch(0.17 0.012 260);
+  --ink: oklch(0.145 0.014 260);
+
+  --card: oklch(0.995 0.004 88);
+  --card-foreground: oklch(0.17 0.008 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.008 265);
+
+  --primary: oklch(0.18 0.008 265);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.968 0.002 90);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.968 0.002 90);
+  --muted-foreground: oklch(0.505 0.008 265);
+  --accent: oklch(0.968 0.002 90);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.912 0.004 265);
+  --input: oklch(0.912 0.004 265);
+  --ring: oklch(0.52 0.18 262);
+
+  /* brand — sapphire→sky gradient anchors (accent-blue = deep sapphire, accent-cyan = sky),
+     tuned to harmonize with the existing blue 3D illustrations; champagne gold = luxury signature
+     (navy + gold), which keeps it premium/distinctive rather than "common SaaS blue". */
+  --brand: oklch(0.52 0.19 262);
+  --brand-foreground: oklch(0.985 0 0);
+  --accent-violet: oklch(0.58 0.22 296);
+  --accent-blue: oklch(0.5 0.17 256);
+  --accent-cyan: oklch(0.66 0.14 240);
+  --accent-gold: oklch(0.77 0.082 79);
+
+  --chart-1: oklch(0.55 0.22 280);
+  --chart-2: oklch(0.6 0.19 255);
+  --chart-3: oklch(0.75 0.13 210);
+  --chart-4: oklch(0.7 0.17 330);
+  --chart-5: oklch(0.72 0.16 150);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.55 0.22 280);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.55 0.22 280);
+}
+
+/* Optional dark surface (used by dark hero + any theme-dark subtree). */
+.theme-dark {
+  color-scheme: dark;
+
+  --background: oklch(0.18 0.025 262);
+  --foreground: oklch(0.985 0 0);
+  --ink: oklch(0.985 0 0);
+
+  --card: oklch(0.23 0.025 262);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.2 0.012 265);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.18 0.008 265);
+  --secondary: oklch(0.26 0.012 265);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.26 0.012 265);
+  --muted-foreground: oklch(0.71 0.01 265);
+  --accent: oklch(0.26 0.012 265);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.62 0.2 280);
+
+  --brand: oklch(0.6 0.18 262);
+  --brand-foreground: oklch(0.18 0.025 262);
+  --accent-violet: oklch(0.66 0.21 296);
+  --accent-blue: oklch(0.6 0.16 256);
+  --accent-cyan: oklch(0.72 0.14 240);
+  --accent-gold: oklch(0.82 0.09 79);
+
+  --sidebar: oklch(0.2 0.012 265);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.64 0.2 280);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.26 0.012 265);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.62 0.2 280);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-6 md:px-8;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .brand-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--accent-blue) 0%,
+      var(--brand) 45%,
+      var(--accent-violet) 100%
+    );
+  }
+  .brand-gradient-text {
+    background-image: linear-gradient(
+      100deg,
+      var(--accent-blue) 0%,
+      var(--brand) 45%,
+      var(--accent-violet) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--foreground) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 6%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+  .mask-fade-t {
+    -webkit-mask-image: linear-gradient(to top, black 20%, transparent 92%);
+    mask-image: linear-gradient(to top, black 20%, transparent 92%);
+  }
+  /* Faint blue technology grid for corporate light sections (~0.05-0.07). */
+  .bg-grid-tech {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--accent-blue) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--accent-blue) 7%, transparent) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+  /* Ambient radial wash (blue + cyan) for section backdrops. */
+  .bg-ambient {
+    background-image:
+      radial-gradient(60% 55% at 18% 12%, color-mix(in oklch, var(--accent-blue) 12%, transparent), transparent 70%),
+      radial-gradient(55% 55% at 85% 20%, color-mix(in oklch, var(--accent-cyan) 12%, transparent), transparent 70%);
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse 78% 62% at 50% 42%, black 42%, transparent 100%);
+    mask-image: radial-gradient(ellipse 78% 62% at 50% 42%, black 42%, transparent 100%);
+  }
+  .node-glow {
+    box-shadow:
+      0 0 0 1px color-mix(in oklch, var(--accent-cyan) 35%, transparent),
+      0 0 26px -6px color-mix(in oklch, var(--accent-cyan) 70%, transparent);
+  }
+  .glass-card {
+    background: color-mix(in oklch, var(--card) 82%, transparent);
+    border: 1px solid color-mix(in oklch, var(--accent-blue) 14%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 18px 45px -30px color-mix(in oklch, var(--accent-blue) 55%, transparent);
+  }
+  /* Perspective "floor" grid receding to a horizon — apply to a bottom-anchored div. */
+  .floor-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--accent-blue) 24%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--accent-cyan) 24%, transparent) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(300px) rotateX(66deg);
+    transform-origin: bottom center;
+  }
+  /* Glow band sitting on the horizon line. */
+  .bg-horizon-glow {
+    background-image: radial-gradient(
+      70% 90% at 50% 100%,
+      color-mix(in oklch, var(--accent-cyan) 26%, transparent),
+      transparent 72%
+    );
+  }
+  /* Animated data "stream" line (moving cyan pulse) — pair with animate-flow-x/y. */
+  .stream-line {
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in oklch, var(--accent-cyan) 70%, transparent) 45%,
+      color-mix(in oklch, var(--accent-blue) 70%, transparent) 55%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+  .stream-line-v {
+    background-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in oklch, var(--accent-cyan) 70%, transparent) 45%,
+      color-mix(in oklch, var(--accent-blue) 70%, transparent) 55%,
+      transparent 100%
+    );
+    background-size: 100% 200%;
+  }
+  /* Champagne-gold button/icon fills — dark navy text for contrast on both themes.
+     Gold is the luxury signature (navy + gold); use for primary CTAs + outcome/accent icons. */
+  .btn-gold {
+    background-image: linear-gradient(135deg, oklch(0.84 0.09 83), oklch(0.72 0.085 73));
+    color: oklch(0.21 0.03 262);
+  }
+  .icon-gold {
+    background-image: linear-gradient(135deg, oklch(0.84 0.09 83), oklch(0.72 0.085 73));
+    color: oklch(0.21 0.03 262);
+  }
+  .text-on-gold {
+    color: oklch(0.21 0.03 262);
+  }
+  /* Concentric radar rings backdrop (for maturity-radar). */
+  .bg-radar-rings {
+    background-image:
+      radial-gradient(circle, transparent 0, transparent calc(20% - 1px), color-mix(in oklch, var(--accent-blue) 16%, transparent) 20%, transparent calc(20% + 1px)),
+      radial-gradient(circle, transparent 0, transparent calc(40% - 1px), color-mix(in oklch, var(--accent-blue) 14%, transparent) 40%, transparent calc(40% + 1px)),
+      radial-gradient(circle, transparent 0, transparent calc(60% - 1px), color-mix(in oklch, var(--accent-blue) 12%, transparent) 60%, transparent calc(60% + 1px)),
+      radial-gradient(circle, transparent 0, transparent calc(80% - 1px), color-mix(in oklch, var(--accent-blue) 10%, transparent) 80%, transparent calc(80% + 1px));
+  }
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-spin-slow,
+  .animate-spin-slow-rev,
+  .animate-dash,
+  .animate-glow,
+  .animate-sweep,
+  .animate-riseflow,
+  .animate-float,
+  .animate-aurora,
+  .animate-node-pulse,
+  .animate-floor,
+  .animate-flow-x,
+  .animate-flow-y,
+  .animate-node-in {
+    animation: none !important;
+  }
+}

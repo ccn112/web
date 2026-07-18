@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+
+<defs>
+  <linearGradient id="sky" x1="800" y1="0" x2="800" y2="900">
+    <stop stop-color="#FFFFFF"/>
+    <stop offset=".7" stop-color="#F2F7FF"/>
+    <stop offset="1" stop-color="#E9F2FF"/>
+  </linearGradient>
+  <linearGradient id="city" x1="800" y1="480" x2="800" y2="860">
+    <stop stop-color="#5DAFFF" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#3B78DA" stop-opacity=".03"/>
+  </linearGradient>
+  <pattern id="floor" width="70" height="70" patternUnits="userSpaceOnUse">
+    <path d="M0 70L35 0L70 70" stroke="#2F91FF" stroke-opacity=".045"/>
+  </pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<path d="M0 720H65V600H110V680H170V520H230V650H300V580H350V710H430V560H500V690H565V485H630V640H700V545H760V710H850V500H920V660H1000V560H1075V700H1150V530H1210V650H1290V590H1370V690H1430V510H1495V650H1600V900H0Z" fill="url(#city)"/>
+<rect y="600" width="1600" height="300" fill="url(#floor)"/>
+
+</svg>
