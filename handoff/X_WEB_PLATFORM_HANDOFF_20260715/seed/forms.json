@@ -56,5 +56,16 @@
       "priorityProblems",
       "currentSystems"
     ]
+  },
+  {
+    "code": "newsletter",
+    "name": "Đăng ký bản tin",
+    "siteScope": [
+      "corporate"
+    ],
+    "successMessage": "Cảm ơn bạn đã đăng ký nhận bản tin XTECH.",
+    "fields": [
+      "email"
+    ]
   }
 ]
