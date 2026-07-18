@@ -13,6 +13,8 @@ import { ServiceSections } from './ServiceSections'
 import { Sites } from './Sites'
 import { Solutions } from './Solutions'
 import { Users } from './Users'
+import { ChatSessions } from './ChatSessions'
+import { ChatUsers } from './ChatUsers'
 
 export const collections = [
   Users,
@@ -30,4 +32,6 @@ export const collections = [
   FormSubmissions,
   PromptSets,
   Redirects,
+  ChatSessions,
+  ChatUsers,
 ]

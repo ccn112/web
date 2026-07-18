@@ -82,6 +82,8 @@ export interface Config {
     'form-submissions': FormSubmission;
     'prompt-sets': PromptSet;
     redirects: Redirect;
+    'chat-sessions': ChatSession;
+    'chat-users': ChatUser;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -104,6 +106,8 @@ export interface Config {
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
     'prompt-sets': PromptSetsSelect<false> | PromptSetsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
+    'chat-sessions': ChatSessionsSelect<false> | ChatSessionsSelect<true>;
+    'chat-users': ChatUsersSelect<false> | ChatUsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1097,6 +1101,49 @@ export interface Redirect {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-sessions".
+ */
+export interface ChatSession {
+  id: string;
+  deviceId: string;
+  sessionId: string;
+  title?: string | null;
+  siteCode?: string | null;
+  lastRoute?: string | null;
+  messages:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  messageCount?: number | null;
+  hiddenByUser?: boolean | null;
+  /**
+   * Đánh dấu hội thoại chất lượng để khai thác làm nội dung bài viết.
+   */
+  flaggedQuality?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-users".
+ */
+export interface ChatUser {
+  id: string;
+  deviceId: string;
+  email: string;
+  phone: string;
+  name?: string | null;
+  siteCode?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -1178,6 +1225,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'redirects';
         value: string | Redirect;
+      } | null)
+    | ({
+        relationTo: 'chat-sessions';
+        value: string | ChatSession;
+      } | null)
+    | ({
+        relationTo: 'chat-users';
+        value: string | ChatUser;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1925,6 +1980,36 @@ export interface RedirectsSelect<T extends boolean = true> {
   sourcePath?: T;
   destinationPath?: T;
   permanent?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-sessions_select".
+ */
+export interface ChatSessionsSelect<T extends boolean = true> {
+  deviceId?: T;
+  sessionId?: T;
+  title?: T;
+  siteCode?: T;
+  lastRoute?: T;
+  messages?: T;
+  messageCount?: T;
+  hiddenByUser?: T;
+  flaggedQuality?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chat-users_select".
+ */
+export interface ChatUsersSelect<T extends boolean = true> {
+  deviceId?: T;
+  email?: T;
+  phone?: T;
+  name?: T;
+  siteCode?: T;
   updatedAt?: T;
   createdAt?: T;
 }
