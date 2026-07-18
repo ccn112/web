@@ -1,8 +1,8 @@
 # Session Handoff — tiếp tục ở máy khác
 
-Cập nhật: 2026-07-18. Commit mới nhất trên GitHub: `main` = `feat/cms-illustration-pipeline` = **5d25d9d**. Repo: `github.com/ccn112/web`.
+Cập nhật: 2026-07-19. Branch `main` trên GitHub `github.com/ccn112/web`.
 
-Tài liệu này để bạn (hoặc Claude ở máy khác) tiếp tục nhanh. Bối cảnh chi tiết nằm ở: `docs/CHAT_MODULE_HANDOFF.md`, `docs/CHAT_PROVIDERS.md`, `docs/DEPLOY.md`.
+Tài liệu này để bạn (hoặc Claude ở máy khác) tiếp tục nhanh. Bối cảnh chi tiết nằm ở: `docs/CHAT_MODULE_HANDOFF.md`, `docs/CHAT_PROVIDERS.md`, `docs/DEPLOY.md` (Railway/Render/Fly), `docs/DEPLOY_COOLIFY.md` (Coolify — server tự quản).
 
 ---
 
@@ -51,6 +51,17 @@ Lần đầu vào `http://localhost:3000/admin` để tạo user admin, hoặc `
 3. **Gộp apps/clay vào monorepo** (bỏ submodule — trước đây là gitlink không remote, clone bị rỗng). Giờ clone 1 lần đủ build.
 4. **Đẩy toàn bộ lên GitHub** (`main` @ 5d25d9d). CI tự chạy trên `main`.
 
+## 3b. Session 2026-07-19 — kế hoạch deploy Coolify
+
+- Chọn hạ tầng **Coolify** trên server tự quản. Chốt kiến trúc: **1 PostgreSQL + 1 MinIO dùng chung**
+  cho cả nền tảng, không mỗi app một container DB (D-011).
+- Làm rõ: chỉ `apps/cms` cần Postgres; `apps/clay`/`apps/web` là frontend đọc CMS qua REST → không DB riêng.
+- Viết `docs/DEPLOY_COOLIFY.md`: tạo Postgres + MinIO resource, env vars từng app (đúng biến code đọc:
+  `DATABASE_URL`, `PAYLOAD_SECRET`, `USE_S3`+`S3_*`, `CHAT_PROVIDER`+key, `CMS_URL`/`NEXT_PUBLIC_CMS_URL`),
+  thứ tự deploy, cách thêm app cần DB sau này (`CREATE DATABASE`, không tạo container mới).
+- **Chưa làm:** `apps/web` chưa có Dockerfile — muốn deploy web phải tạo (copy từ `apps/clay/Dockerfile`,
+  đổi filter `@x/clay`→`@x/web`). Hiện chỉ cms+clay deploy được.
+
 ## 4. Gotchas cần nhớ
 
 - **Chat model** lấy từ **root `.env` `ANTHROPIC_MODEL`** (CMS đọc). Giữ `claude-haiku-4-5` (rẻ nhất). Chỉ chat đọc biến này.
@@ -64,7 +75,8 @@ Lần đầu vào `http://localhost:3000/admin` để tạo user admin, hoặc `
 ## 5. Việc tiếp theo (TODO)
 
 - [ ] Xem **Actions** trên GitHub — CI phải xanh (nếu đỏ, lấy log sửa).
-- [ ] **Deploy Railway** theo `docs/DEPLOY.md`: rotate secrets (key Anthropic mới, PAYLOAD_SECRET mạnh, mật khẩu admin mạnh) → Postgres service → 2 service Dockerfile → lần đầu `PAYLOAD_DB_PUSH=true` → tạo admin → tắt push.
+- [ ] **Deploy Coolify** theo `docs/DEPLOY_COOLIFY.md`: rotate secrets → tạo Postgres + MinIO dùng chung → app cms + clay (Dockerfile) → lần đầu `PAYLOAD_DB_PUSH=true` → tạo admin → tắt push. (Bản Railway: `docs/DEPLOY.md`.)
+- [ ] (Nếu deploy web) tạo `apps/web/Dockerfile`.
 - [ ] Sau bootstrap: **tạo migrations** (`pnpm db:migrate:create`), commit, prod chạy `pnpm --filter @x/cms db:migrate` (release command).
 - [ ] Media: bật S3/R2.
 - [ ] (Tùy chọn, đã bàn) **Chat Settings global** trong CMS để đổi provider/model/cap không cần deploy.

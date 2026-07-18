@@ -98,6 +98,18 @@ the stack install Docker Desktop, or point `DATABASE_URL` at a local PostgreSQL 
   matching the multi-app monorepo (D-002/D-003). Run both: `pnpm dev` (CMS) + `pnpm dev:web` (web),
   browse `http://localhost:3001/?site=<code>`.
 
+## D-011 — Deploy Coolify: một PostgreSQL + một MinIO dùng chung cho cả nền tảng
+
+Trên server tự quản chạy Coolify, chỉ `apps/cms` (Payload) cần Postgres; `apps/clay` và
+`apps/web` là frontend đọc CMS qua REST (`CMS_URL`), không có DB riêng.
+
+**Quyết định:** tạo **một** PostgreSQL resource và **một** MinIO resource dùng chung (không
+mỗi app một container DB). CMS trỏ `DATABASE_URL` vào Postgres chung, `USE_S3=true` vào MinIO
+chung (bucket `x-media`). App phát sinh sau nếu cần DB thì `CREATE DATABASE` trong instance
+sẵn có, không tạo container mới → tối ưu RAM/CPU. Database/App là **resource tách biệt** trong
+Coolify (không nhét Postgres vào compose của app). `docker-compose.yml` gốc chỉ dùng cho dev.
+Chi tiết: `docs/DEPLOY_COOLIFY.md`. (Railway/Render/Fly: `docs/DEPLOY.md`.)
+
 ## Open items (later phases)
 
 - D-008 (Phase 5): chat rate limiting store — start in-memory per instance; move to Redis if scaled.
