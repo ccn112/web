@@ -38,5 +38,23 @@
       "deploymentModel",
       "message"
     ]
+  },
+  {
+    "code": "consultation",
+    "name": "Yêu cầu tư vấn",
+    "siteScope": [
+      "corporate"
+    ],
+    "successMessage": "Cảm ơn bạn. Chúng tôi sẽ gửi đề xuất tư vấn sơ bộ trong thời gian sớm nhất.",
+    "fields": [
+      "fullName",
+      "email",
+      "phone",
+      "company",
+      "companyModel",
+      "userScale",
+      "priorityProblems",
+      "currentSystems"
+    ]
   }
 ]
