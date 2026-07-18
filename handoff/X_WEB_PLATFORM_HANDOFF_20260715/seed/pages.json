@@ -335,47 +335,6 @@
           "href": "#overview"
         },
         "backgroundAsset": "BG-SERVICES"
-      },
-      {
-        "blockType": "featureGrid",
-        "title": "Năng lực nổi bật",
-        "intro": "",
-        "items": [
-          {
-            "title": "Tư vấn chiến lược",
-            "description": "Đánh giá hiện trạng, lộ trình và business case.",
-            "icon": "map"
-          },
-          {
-            "title": "Triển khai sản phẩm",
-            "description": "Khảo sát, cấu hình, chuyển đổi dữ liệu và go-live.",
-            "icon": "rocket"
-          },
-          {
-            "title": "Phát triển & tích hợp",
-            "description": "Tùy biến, API, mobile app, BI và AI Agent.",
-            "icon": "code-2"
-          },
-          {
-            "title": "Vận hành",
-            "description": "Managed service, hỗ trợ ứng dụng và hạ tầng.",
-            "icon": "life-buoy"
-          }
-        ],
-        "illustrationAsset": "COR-06"
-      },
-      {
-        "blockType": "cta",
-        "title": "Bắt đầu hành trình chuyển đổi số cùng X",
-        "description": "Đăng ký buổi tư vấn để nhận đề xuất sơ bộ theo hiện trạng doanh nghiệp.",
-        "primaryCTA": {
-          "label": "Đặt lịch tư vấn",
-          "href": "/lien-he"
-        },
-        "secondaryCTA": {
-          "label": "Yêu cầu demo",
-          "href": "/dat-lich-demo"
-        }
       }
     ],
     "suggestedPrompts": [
