@@ -60,6 +60,10 @@ export default buildConfig({
   db: postgresAdapter({
     // UUID primary keys to match db/schema.sql and the chat contract (pageId: uuid). See D-001.
     idType: 'uuid',
+    // Schema management: dev auto-pushes; prod uses migrations. Set
+    // PAYLOAD_DB_PUSH=true for a first prod deploy to bootstrap tables without a
+    // migration, then switch it off and run `payload migrate`. Unset = default.
+    ...(process.env.PAYLOAD_DB_PUSH ? { push: process.env.PAYLOAD_DB_PUSH === 'true' } : {}),
     pool: {
       connectionString: process.env.DATABASE_URL,
     },

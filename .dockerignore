@@ -1,0 +1,17 @@
+# Keep the build context small and secret-free.
+**/node_modules
+**/.next
+**/.turbo
+**/dist
+**/coverage
+.git
+.github
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+**/npm-debug.log*
+**/.DS_Store
+**/.claude
+scratchpad
+*.bundle

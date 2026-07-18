@@ -1,5 +1,9 @@
+import { fileURLToPath } from "node:url";
 import type { NextConfig } from "next";
 import type { RemotePattern } from "next/dist/shared/lib/image-config";
+
+// Monorepo root — lets Next trace workspace deps into the standalone output.
+const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
 
 /**
  * Allow next/image to optimize media served by the CMS (Payload uploads).
@@ -33,6 +37,9 @@ if (envCmsUrl) {
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Self-contained server bundle for Docker/PaaS (small runtime image).
+  output: "standalone",
+  outputFileTracingRoot: repoRoot,
   // Workspace packages are source-only; transpile them in the app build.
   transpilePackages: ["@x/shared-types", "@x/cms-client"],
   images: {
