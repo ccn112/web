@@ -9,12 +9,15 @@ WORKDIR /app
 
 # ---- deps: install the whole workspace (cached on manifest changes) ----
 FROM base AS deps
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# .npmrc before install → node_modules matches the builder's hoist pattern
+# (avoids ERR_PNPM_PUBLIC_HOIST_PATTERN_DIFF).
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 COPY apps/cms/package.json ./apps/cms/
 COPY apps/clay/package.json ./apps/clay/
 COPY apps/web/package.json ./apps/web/
 COPY packages ./packages
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+# --prod=false: keep devDeps even if NODE_ENV=production is injected at build time.
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --prod=false
 
 # ---- builder: build only clay (standalone output) ----
 FROM base AS builder

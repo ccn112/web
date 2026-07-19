@@ -16,7 +16,9 @@ WORKDIR /app
 # ---- deps: install the whole workspace ----
 FROM base AS deps
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# .npmrc MUST be present before install so node_modules is built with the same
+# public-hoist-pattern the builder stage sees (else ERR_PNPM_PUBLIC_HOIST_PATTERN_DIFF).
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 
 COPY apps/cms/package.json ./apps/cms/
 COPY apps/clay/package.json ./apps/clay/
@@ -24,8 +26,10 @@ COPY apps/web/package.json ./apps/web/
 
 COPY packages ./packages
 
+# --prod=false: always install devDeps (typescript/@types) even if the platform
+# injects NODE_ENV=production into the build — next build needs them.
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile
+    pnpm install --frozen-lockfile --prod=false
 
 
 # ---- builder: build only CMS ----
