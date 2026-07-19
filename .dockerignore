@@ -1,17 +1,36 @@
 # Keep the build context small and secret-free.
+# Only apps/cms + apps/clay are built. apps/web is NOT built — but its
+# package.json manifest is still needed so `pnpm install --frozen-lockfile`
+# matches the workspace lockfile, so we exclude web's SOURCE and keep the manifest.
+
+# --- deps / build artifacts (regenerated in-image) ---
 **/node_modules
 **/.next
 **/.turbo
 **/dist
 **/coverage
+
+# --- vcs / ci / editor ---
 .git
 .github
+**/.claude
+**/.DS_Store
+**/*.log
+**/npm-debug.log*
+*.bundle
+
+# --- secrets (never ship into an image) ---
 **/.env
 **/.env.*
 !**/.env.example
-**/*.log
-**/npm-debug.log*
-**/.DS_Store
-**/.claude
+
+# --- heavy, build-irrelevant content ---
+# 600MB+ of source handoff material — not needed to build cms/clay.
+handoff
+docs
 scratchpad
-*.bundle
+*.md
+
+# --- apps/web: not built. Drop its source, keep only the manifest. ---
+apps/web/**
+!apps/web/package.json

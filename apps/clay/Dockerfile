@@ -19,6 +19,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 # ---- builder: build only clay (standalone output) ----
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/apps/clay/node_modules ./apps/clay/node_modules
 COPY --from=deps /app/packages ./packages
 COPY . .
 RUN pnpm --filter @x/clay build
