@@ -87,18 +87,24 @@ Railway hợp với monorepo 2 app + Postgres service + auto-deploy từ GitHub.
 
 ---
 
-## 3. Migrations (sau lần bootstrap đầu)
+## 3. Migrations (schema + seed — nguồn sự thật cho prod)
 
-Dev auto-`push` schema; **prod nên dùng migrations** để đổi schema an toàn.
+> ⚠️ **QUY ƯỚC:** ở prod (`NODE_ENV=production`) code ép `dbPush=false`. **Mọi thứ tạo DB — cả schema lẫn seed content — phải đi qua migration.** Không chạy `pnpm db:seed` thủ công trên prod; seed đã được đóng gói thành migration `apps/cms/src/migrations/*_seed_content.ts` (gọi `runSeed`), chạy sau migration schema.
 
+**Tạo migration schema (một lần, với DB dev đang bật):**
 ```bash
-# tạo migration từ thay đổi schema (chạy với DB dev đang bật)
-pnpm db:migrate:create <ten_migration>
-git add apps/cms/src/migrations && git commit -m "db: <ten_migration>"
+# sinh migration từ schema hiện tại → apps/cms/src/migrations/<timestamp>_*.ts + cập nhật index.ts
+pnpm --filter @x/cms exec payload migrate:create initial_schema
+# Đảm bảo apps/cms/src/migrations/index.ts liệt kê: schema TRƯỚC, *_seed_content SAU.
+git add apps/cms/src/migrations && git commit -m "db: initial schema + seed migration"
 ```
-Trên prod, chạy migrate **trước khi** app khởi động (Railway: đặt **Pre-deploy / Release Command** cho service CMS):
+> File `99999999_999999_seed_content.ts` có tiền tố lớn để luôn xếp CUỐI (seed sau khi bảng đã tạo). Khi `migrate:create` sinh lại `index.ts`, kiểm tra nó vẫn import cả migration seed này (thêm dòng import + entry nếu bị thiếu).
+
+**Đổi schema về sau:** `pnpm --filter @x/cms exec payload migrate:create <ten>` → commit. `runSeed` idempotent nên chạy lại an toàn.
+
+**Trên prod, chạy migrate TRƯỚC khi app khởi động** (Railway: Pre-deploy/Release Command; CloudPanel/PM2: chạy trước `pm2 start`):
 ```bash
-pnpm --filter @x/cms db:migrate
+pnpm --filter @x/cms db:migrate      # chạy schema → rồi seed content
 ```
 
 ---

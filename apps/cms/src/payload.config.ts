@@ -17,6 +17,13 @@ const dirname = path.dirname(filename)
 loadEnv({ path: path.resolve(dirname, '../../../.env') })
 
 const useS3 = process.env.USE_S3 === 'true'
+const isProd = process.env.NODE_ENV === 'production'
+// Schema management policy:
+//   - dev: auto-push for fast iteration (disable with PAYLOAD_DB_PUSH=false).
+//   - production: NEVER push — schema changes go through `payload migrate` only.
+// Production forces push=false even if PAYLOAD_DB_PUSH=true is set in the
+// environment; that flag is a dev-only escape hatch and must never touch prod.
+const dbPush = isProd ? false : process.env.PAYLOAD_DB_PUSH !== 'false'
 
 /** S3/MinIO media storage — only enabled when USE_S3=true, otherwise media lives on local disk. */
 const storagePlugins = useS3
@@ -60,10 +67,14 @@ export default buildConfig({
   db: postgresAdapter({
     // UUID primary keys to match db/schema.sql and the chat contract (pageId: uuid). See D-001.
     idType: 'uuid',
-    // Schema management: dev auto-pushes; prod uses migrations. Set
-    // PAYLOAD_DB_PUSH=true for a first prod deploy to bootstrap tables without a
-    // migration, then switch it off and run `payload migrate`. Unset = default.
-    ...(process.env.PAYLOAD_DB_PUSH ? { push: process.env.PAYLOAD_DB_PUSH === 'true' } : {}),
+    push: dbPush,
+    // Defaults to the `public` schema. PAYLOAD_DB_SCHEMA lets CI/local point a run
+    // at an isolated, empty schema to generate/validate migrations without a fresh
+    // database. Leave unset in production.
+    ...(process.env.PAYLOAD_DB_SCHEMA ? { schemaName: process.env.PAYLOAD_DB_SCHEMA } : {}),
+    // Explicit so the Payload CLI and the Docker migrator target resolve the same
+    // location regardless of cwd. Migrations are committed TS files.
+    migrationDir: path.resolve(dirname, 'migrations'),
     pool: {
       connectionString: process.env.DATABASE_URL,
     },
