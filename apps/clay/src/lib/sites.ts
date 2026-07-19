@@ -2,6 +2,7 @@ import type { SiteCode } from "@x/shared-types";
 
 /** Static host -> siteCode map (mirrors seed/sites.json primaryDomain). */
 export const SITE_DOMAINS: Array<{ code: SiteCode; primaryDomain: string }> = [
+  { code: "corporate", primaryDomain: "x-tech.com.vn" },
   { code: "corporate", primaryDomain: "x.vn" },
   { code: "xbooking", primaryDomain: "xbooking.vn" },
   { code: "finerp", primaryDomain: "finerp.vn" },

@@ -13,6 +13,9 @@ export const Media: CollectionConfig = {
   },
   upload: {
     mimeTypes: ['image/*', 'application/pdf'],
+    // Prod (USE_S3=false): point at a persistent volume via MEDIA_DIR so uploads
+    // survive redeploys (container FS is ephemeral). Unset in dev → Payload default.
+    ...(process.env.MEDIA_DIR ? { staticDir: process.env.MEDIA_DIR } : {}),
   },
   fields: [
     {
