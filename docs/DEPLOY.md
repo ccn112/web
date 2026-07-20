@@ -62,7 +62,7 @@ Railway hợp với monorepo 2 app + Postgres service + auto-deploy từ GitHub.
 | `ANTHROPIC_MODEL` | `claude-haiku-4-5` |
 | `CHAT_RATE_LIMIT_PER_MINUTE` / `CHAT_ANON_DAILY_MAX` / `CHAT_REG_DAILY_MAX` | `20` / `12` / `60` |
 | `USE_S3` + `S3_*` | lưu media (xem mục 4) |
-| `PAYLOAD_DB_PUSH` | `true` **chỉ cho lần deploy đầu** (bootstrap bảng), sau đó xóa/để `false` |
+| `PAYLOAD_DB_PUSH` | để trống — đã có migration khởi tạo, dùng `db:migrate` thay thế (mục 2.5). Chỉ set `true` nếu cần dự phòng. |
 
 ### 2.3. Service **clay**
 - **Dockerfile Path** = `apps/clay/Dockerfile`, Root = `/`. Health = `/api/health`.
@@ -81,25 +81,44 @@ Railway hợp với monorepo 2 app + Postgres service + auto-deploy từ GitHub.
 - Sau khi có domain CMS → cập nhật `PAYLOAD_PUBLIC_SERVER_URL` và `NEXT_PUBLIC_CMS_URL`, redeploy.
 
 ### 2.5. Khởi tạo dữ liệu (lần đầu)
-1. Deploy CMS với `PAYLOAD_DB_PUSH=true` → bảng được tạo.
-2. Mở `https://<cms-domain>/admin` → Payload hiện màn **tạo user admin đầu tiên** (hoặc chạy `pnpm db:seed` để tạo admin + nội dung mẫu).
-3. **Tắt `PAYLOAD_DB_PUSH`** (đặt `false` hoặc xóa) và chuyển sang migrations (mục 3).
+
+Đã có sẵn **migration khởi tạo** (`apps/cms/src/migrations/*_initial.ts`) nên **KHÔNG cần** `PAYLOAD_DB_PUSH` nữa — dùng migrate cho sạch:
+
+1. DB rỗng → chạy `pnpm --filter @x/cms db:migrate` (Release Command của Railway) → migration tạo toàn bộ bảng.
+2. Nạp dữ liệu — chọn **1 trong 2**:
+   - **A. Bê nguyên hiện trạng (khuyến nghị go-live):** restore bản dump từ DB dev — giữ đúng 57 pages / 7 posts / 8 service-sections / menus / media metadata / user như đang chạy local:
+     ```bash
+     pg_restore --clean --if-exists --no-owner --no-privileges -d "$DATABASE_URL" xweb_<ts>.dump
+     ```
+   - **B. Seed nội dung nền từ handoff:** `pnpm --filter @x/cms db:seed` → tạo admin + nội dung baseline. ⚠️ Seed **upsert theo natural key** nên sẽ **ghi đè** page/post trùng slug bằng bản handoff — **đừng chạy trên DB đã có nội dung sống** (chỉ dùng cho DB trắng). Media 185MB ở `apps/cms/media` phải đưa lên S3/volume (mục 4) để ảnh không vỡ.
+3. Media: bật `USE_S3=true` + bucket (mục 4), rồi upload thư mục `apps/cms/media` lên bucket (hoặc gắn volume bền).
+
+> `PAYLOAD_DB_PUSH=true` giờ chỉ là phương án dự phòng nếu vì lý do nào đó không chạy được migrate.
 
 ---
 
-## 3. Migrations (sau lần bootstrap đầu)
+## 3. Migrations
 
-Dev auto-`push` schema; **prod nên dùng migrations** để đổi schema an toàn.
+Dev auto-`push` schema; **prod dùng migrations** để đổi schema an toàn. Migration khởi tạo đã có trong repo.
 
 ```bash
-# tạo migration từ thay đổi schema (chạy với DB dev đang bật)
-pnpm db:migrate:create <ten_migration>
+# tạo migration mới khi đổi schema (chạy với DB dev đang bật)
+pnpm --filter @x/cms db:migrate:create <ten_migration> --forceAcceptWarning
 git add apps/cms/src/migrations && git commit -m "db: <ten_migration>"
 ```
 Trên prod, chạy migrate **trước khi** app khởi động (Railway: đặt **Pre-deploy / Release Command** cho service CMS):
 ```bash
 pnpm --filter @x/cms db:migrate
 ```
+
+### 3.1. Backup / bê dữ liệu hiện trạng (pg_dump)
+
+Nguồn "dữ liệu hiện trạng" là **DB Postgres**, không phải file seed. Tạo bản dump:
+```bash
+# custom format (nén, dùng cho pg_restore) — pg_dump có trong C:\Program Files\PostgreSQL\18\bin
+pg_dump "$DATABASE_URL" --format=custom --no-owner --no-privileges -f backups/xweb_<ts>.dump
+```
+Dump ôm cả bảng `users` (hash mật khẩu) và `chat_*`. Muốn bản "sạch" thì thêm `--exclude-table-data='chat_*'` và đổi mật khẩu admin sau khi restore. Thư mục `backups/` đã được gitignore.
 
 ---
 
@@ -131,7 +150,7 @@ Dockerfile portable nên dùng được:
 - [ ] Đẩy `main` lên GitHub, CI xanh.
 - [ ] Rotate `ANTHROPIC_API_KEY`; `PAYLOAD_SECRET` mạnh; mật khẩu admin mạnh.
 - [ ] Postgres service chạy; `DATABASE_URL` đã nối vào CMS.
-- [ ] Lần đầu: `PAYLOAD_DB_PUSH=true` → tạo bảng → tạo admin → tắt push.
+- [ ] Lần đầu: `db:migrate` (Release Command) tạo bảng → restore dump **hoặc** `db:seed` → tạo/đổi mật khẩu admin.
 - [ ] `PAYLOAD_PUBLIC_SERVER_URL` & `NEXT_PUBLIC_CMS_URL` = domain public CMS.
 - [ ] `CMS_URL` (clay) trỏ CMS; test chat trên site → stream + lưu `chat-sessions`/`chat-usage`.
 - [ ] Media: `USE_S3=true` + bucket, thử upload trong admin.

@@ -21,12 +21,23 @@ import { normalizeBlocks, normalizeSite, type RawSite } from './normalize'
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 // apps/cms/src/seed -> repo root is four levels up.
 const REPO_ROOT = path.resolve(dirname, '../../../..')
+// The base-content handoff was moved under handoff/. Override with SEED_DIR if it moves again.
 const SEED_DIR =
-  process.env.SEED_DIR ?? path.join(REPO_ROOT, 'X_WEB_PLATFORM_HANDOFF_20260715', 'seed')
+  process.env.SEED_DIR ??
+  path.join(REPO_ROOT, 'handoff', 'X_WEB_PLATFORM_HANDOFF_20260715', 'seed')
 
 async function readJson<T>(file: string): Promise<T> {
   const raw = await readFile(path.join(SEED_DIR, file), 'utf8')
   return JSON.parse(raw) as T
+}
+
+/** Like readJson but returns `fallback` when the file is absent (optional seed inputs). */
+async function readJsonOptional<T>(file: string, fallback: T): Promise<T> {
+  try {
+    return await readJson<T>(file)
+  } catch {
+    return fallback
+  }
 }
 
 /** Find-one-or-create-or-update by a natural-key where clause. */
@@ -156,6 +167,41 @@ type ServiceSectionJson = {
   cta?: Record<string, unknown>
   status?: string
 }
+type ProductJson = {
+  code: string
+  name: string
+  tagline?: string
+  description?: string
+  logo?: string // media asset code
+  href?: string
+  status?: string
+}
+type SolutionJson = {
+  site: string
+  slug: string
+  title: string
+  category?: string
+  summary?: string
+  status?: string
+}
+type CaseStudyJson = {
+  site: string
+  slug: string
+  title: string
+  client?: string
+  challenge?: string
+  solution?: string
+  architecture?: string
+  results?: Array<{ label: string; value: string }>
+  cover?: string // media asset code
+  status?: string
+}
+type FaqJson = {
+  site: string
+  question: string
+  answer: string
+  tags?: string[]
+}
 
 async function run(): Promise<void> {
   const payload = await getPayload({ config })
@@ -189,12 +235,7 @@ async function run(): Promise<void> {
 
   // 2.5 Media uploads -> map asset code -> id (media.json is optional).
   console.log('• Media')
-  let mediaJson: MediaJson[] = []
-  try {
-    mediaJson = await readJson<MediaJson[]>('media.json')
-  } catch {
-    mediaJson = []
-  }
+  const mediaJson = await readJsonOptional<MediaJson[]>('media.json', [])
   const mediaIdByCode = await seedMedia(payload, mediaJson, siteIdByCode)
   console.log(`  ${mediaJson.length} media`)
 
@@ -299,14 +340,98 @@ async function run(): Promise<void> {
   }
   console.log(`  ${posts.length} posts`)
 
+  // 7.1 Products (optional file) — natural key: code.
+  console.log('• Products')
+  const products = await readJsonOptional<ProductJson[]>('products.json', [])
+  for (const p of products) {
+    const logoId = p.logo ? mediaIdByCode.get(p.logo) : undefined
+    const r = await upsert(
+      payload,
+      'products',
+      { code: { equals: p.code } },
+      {
+        code: p.code,
+        name: p.name,
+        tagline: p.tagline,
+        description: p.description,
+        ...(logoId ? { logo: logoId } : {}),
+        href: p.href,
+        status: p.status ?? 'published',
+      },
+    )
+    tally(r)
+  }
+  console.log(`  ${products.length} products`)
+
+  // 7.2 Solutions (optional file) — natural key: (siteCode, slug).
+  console.log('• Solutions')
+  const solutions = await readJsonOptional<SolutionJson[]>('solutions.json', [])
+  for (const s of solutions) {
+    const r = await upsert(
+      payload,
+      'solutions',
+      { and: [{ siteCode: { equals: s.site } }, { slug: { equals: s.slug } }] },
+      {
+        site: requireSite(s.site),
+        slug: s.slug,
+        title: s.title,
+        category: s.category,
+        summary: s.summary,
+        status: s.status ?? 'published',
+      },
+    )
+    tally(r)
+  }
+  console.log(`  ${solutions.length} solutions`)
+
+  // 7.3 Case studies (optional file) — natural key: (siteCode, slug).
+  console.log('• Case studies')
+  const caseStudies = await readJsonOptional<CaseStudyJson[]>('case-studies.json', [])
+  for (const c of caseStudies) {
+    const coverId = c.cover ? mediaIdByCode.get(c.cover) : undefined
+    const r = await upsert(
+      payload,
+      'case-studies',
+      { and: [{ siteCode: { equals: c.site } }, { slug: { equals: c.slug } }] },
+      {
+        site: requireSite(c.site),
+        slug: c.slug,
+        title: c.title,
+        client: c.client,
+        challenge: c.challenge,
+        solution: c.solution,
+        architecture: c.architecture,
+        results: c.results ?? [],
+        ...(coverId ? { cover: coverId } : {}),
+        status: c.status ?? 'published',
+      },
+    )
+    tally(r)
+  }
+  console.log(`  ${caseStudies.length} case studies`)
+
+  // 7.4 FAQs (optional file) — natural key: (siteCode, question).
+  console.log('• FAQs')
+  const faqs = await readJsonOptional<FaqJson[]>('faqs.json', [])
+  for (const f of faqs) {
+    const r = await upsert(
+      payload,
+      'faqs',
+      { and: [{ siteCode: { equals: f.site } }, { question: { equals: f.question } }] },
+      {
+        site: requireSite(f.site),
+        question: f.question,
+        answer: f.answer,
+        tags: f.tags ?? [],
+      },
+    )
+    tally(r)
+  }
+  console.log(`  ${faqs.length} faqs`)
+
   // 8. Service sections (SET C02) — optional file.
   console.log('• Service sections')
-  let serviceSections: ServiceSectionJson[] = []
-  try {
-    serviceSections = await readJson<ServiceSectionJson[]>('service-sections.json')
-  } catch {
-    serviceSections = []
-  }
+  const serviceSections = await readJsonOptional<ServiceSectionJson[]>('service-sections.json', [])
   for (const s of serviceSections) {
     const r = await upsert(
       payload,
@@ -337,17 +462,9 @@ async function run(): Promise<void> {
 
   // 9. Redirects (route reconciliation) — optional file.
   console.log('• Redirects')
-  let redirects: Array<{
-    site: string
-    sourcePath: string
-    destinationPath: string
-    permanent?: boolean
-  }> = []
-  try {
-    redirects = await readJson('redirects.json')
-  } catch {
-    redirects = []
-  }
+  const redirects = await readJsonOptional<
+    Array<{ site: string; sourcePath: string; destinationPath: string; permanent?: boolean }>
+  >('redirects.json', [])
   for (const rd of redirects) {
     const r = await upsert(
       payload,
