@@ -1,18 +1,21 @@
-name: CI
+name: CI/CD
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_dispatch: # cho phép bấm "Run workflow" để deploy tay khi cần
 
 jobs:
+  # ---------------------------------------------------------------------------
+  # 1) CI — cổng chặn: chạy cho MỌI push & PR vào main. Build lỗi -> không deploy.
+  # ---------------------------------------------------------------------------
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
 
@@ -47,3 +50,45 @@ jobs:
         run: pnpm --filter @x/clay build
         env:
           NEXT_TELEMETRY_DISABLED: '1'
+
+  # ---------------------------------------------------------------------------
+  # 2) CD — deploy tự động lên VPS. CHỈ chạy khi:
+  #      • CI (job build) đã xanh   (needs: build)
+  #      • là push vào main HOẶC bấm Run workflow   (bỏ qua PR)
+  #    Cơ chế: SSH vào VPS rồi chạy đúng ./deploy.sh
+  #      -> reset origin/main → install → payload migrate (DL) → build (giao diện)
+  #         → pm2 reload → health check.  Không lặp lại logic deploy ở đây.
+  # ---------------------------------------------------------------------------
+  deploy:
+    needs: build
+    if: >-
+      github.event_name != 'pull_request' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Gắn với GitHub Environment "production": có thể bật "Required reviewers"
+    # trong Settings → Environments để BUỘC duyệt tay trước khi migrate DB prod.
+    environment: production
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false # KHÔNG hủy giữa chừng — migration/build đang chạy dở rất nguy hiểm
+    steps:
+      - name: Deploy over SSH (chạy deploy.sh trên VPS)
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }} # để trống -> mặc định 22
+          command_timeout: 30m # migrate + build 2 app có thể lâu
+          script_stop: true # gặp lệnh lỗi là dừng & báo fail
+          script: |
+            set -euo pipefail
+            # SSH không tương tác thường thiếu PATH của nvm/pnpm/pm2 -> nạp lại.
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            [ -s "$HOME/.profile" ] && . "$HOME/.profile" || true
+            export PATH="$HOME/.local/share/pnpm:$PATH"
+
+            cd "${{ secrets.VPS_PATH }}"
+            echo "==> Deploy commit ${{ github.sha }} trên $(hostname)"
+            BRANCH=main ./deploy.sh
