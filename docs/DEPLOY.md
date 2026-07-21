@@ -97,18 +97,26 @@ Railway hợp với monorepo 2 app + Postgres service + auto-deploy từ GitHub.
 
 ---
 
-## 3. Migrations
+## 3. Migrations (schema) + seed content
 
-Dev auto-`push` schema; **prod dùng migrations** để đổi schema an toàn. Migration khởi tạo đã có trong repo.
+Dev auto-`push` schema; **prod ép `dbPush=false`** (code trong `payload.config.ts` khi `NODE_ENV=production`) nên đổi schema phải qua **migration**. Migration khởi tạo schema đã có sẵn trong repo: `apps/cms/src/migrations/20260720_011627_initial.ts`, đăng ký trong `index.ts`.
 
+> Seed content cũng được đóng gói sẵn thành migration `apps/cms/src/migrations/99999999_999999_seed_content.ts` (gọi `runSeed`, tiền tố lớn để chạy SAU schema). **Mặc định nó KHÔNG được đăng ký trong `index.ts`** — vì bản deploy CloudPanel này nạp dữ liệu bằng **pg_dump** (mục 3.1 + `deploy.sh --import-db`, khuyến nghị go-live) để giữ đúng hiện trạng local. Nếu muốn dùng seed-qua-migration thay cho pg_dump, thêm dòng `import` + entry cho `99999999_999999_seed_content` vào `index.ts` (đặt SAU schema) rồi `db:migrate`.
+
+**Tạo migration schema (một lần, với DB dev đang bật):**
 ```bash
 # tạo migration mới khi đổi schema (chạy với DB dev đang bật)
 pnpm --filter @x/cms db:migrate:create <ten_migration> --forceAcceptWarning
+# Kiểm tra apps/cms/src/migrations/index.ts: schema TRƯỚC, (tùy chọn) *_seed_content SAU.
 git add apps/cms/src/migrations && git commit -m "db: <ten_migration>"
 ```
-Trên prod, chạy migrate **trước khi** app khởi động (Railway: đặt **Pre-deploy / Release Command** cho service CMS):
+> File `99999999_999999_seed_content.ts` có tiền tố lớn để luôn xếp CUỐI (seed sau khi bảng đã tạo). Khi `migrate:create` sinh lại `index.ts`, kiểm tra nó vẫn import cả migration seed này (thêm dòng import + entry nếu bị thiếu).
+
+**Đổi schema về sau:** `pnpm --filter @x/cms exec payload migrate:create <ten>` → commit. `runSeed` idempotent nên chạy lại an toàn.
+
+**Trên prod, chạy migrate TRƯỚC khi app khởi động** (Railway: Pre-deploy/Release Command; CloudPanel/PM2: chạy trước `pm2 start`):
 ```bash
-pnpm --filter @x/cms db:migrate
+pnpm --filter @x/cms db:migrate      # chạy schema → rồi seed content
 ```
 
 ### 3.1. Backup / bê dữ liệu hiện trạng (pg_dump)

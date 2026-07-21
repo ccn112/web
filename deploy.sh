@@ -125,11 +125,12 @@ if [[ "$IMPORT_DB" -eq 1 ]]; then
   # Đánh dấu MỌI migration hiện có là "đã áp dụng" để lần sau `migrate`
   # chỉ chạy migration MỚI (không tạo lại bảng đã tồn tại).
   log "Ghi baseline migration (đánh dấu đã áp dụng)"
+  # Chỉ baseline các migration ĐÃ ĐĂNG KÝ trong index.ts (đúng cái `payload migrate`
+  # sẽ xét). Bỏ qua các file dormant như 99999999_*_seed_content.ts (không nằm trong index).
   MIG_VALUES=""
-  while IFS= read -r f; do
-    name="$(basename "$f" .ts)"
-    MIG_VALUES+="('${name}', 1),"
-  done < <(find "$ROOT/apps/cms/src/migrations" -maxdepth 1 -name '*.ts' ! -name 'index.ts' | sort)
+  while IFS= read -r name; do
+    [[ -n "$name" ]] && MIG_VALUES+="('${name}', 1),"
+  done < <(grep -oE "name: *'[^']+'" "$ROOT/apps/cms/src/migrations/index.ts" | sed -E "s/name: *'//; s/'//")
   MIG_VALUES="${MIG_VALUES%,}"   # bỏ dấu phẩy cuối
 
   if [[ -n "$MIG_VALUES" ]]; then
@@ -149,8 +150,12 @@ else
 fi
 
 # ---- 5. Thư mục media (khi USE_S3=false phải tồn tại & ghi được) ------------
-mkdir -p "$ROOT/apps/cms/media"
-ok "Thư mục media sẵn sàng: apps/cms/media ($(find "$ROOT/apps/cms/media" -type f | wc -l) file)"
+# CMS đọc MEDIA_DIR từ .env (collections/Media.ts) để lưu upload vào thư mục bền vững.
+# Nếu không đặt MEDIA_DIR, Payload dùng apps/cms/media mặc định.
+MEDIA_DIR="$(grep -E '^MEDIA_DIR=' "$ROOT/.env" | head -n1 | sed -E 's/^MEDIA_DIR=//; s/^["'\'']//; s/["'\'']$//')"
+MEDIA_DIR="${MEDIA_DIR:-$ROOT/apps/cms/media}"
+mkdir -p "$MEDIA_DIR"
+ok "Thư mục media: $MEDIA_DIR ($(find "$MEDIA_DIR" -type f 2>/dev/null | wc -l) file). Nhớ copy media từ local vào đây."
 
 # ---- 6. Build cả 2 app ------------------------------------------------------
 log "Build @x/cms"
@@ -223,16 +228,20 @@ cat <<EON
 
 Bước tiếp theo (làm 1 lần trên CloudPanel / VPS):
   • Nginx (CloudPanel) reverse proxy:
-      - Domain CMS  (vd cms.example.com) -> http://127.0.0.1:3000
-      - Domain site (vd www.example.com) -> http://127.0.0.1:3001
-    (Nếu chạy nhiều site trên clay, đảm bảo Nginx truyền đúng Host header.)
+      - cms.x-tech.com.vn -> http://127.0.0.1:3000   (CMS admin + API)
+      - x-tech.com.vn     -> http://127.0.0.1:3001   (site clay)
+    (Site clay đa domain theo Host header — đảm bảo Nginx truyền đúng Host xuống app.
+     Map domain->site nằm ở apps/clay/src/lib/sites.ts.)
   • Cho PM2 tự chạy khi VPS reboot (chạy 1 lần, cần sudo):
       pm2 startup      # copy & chạy lệnh nó in ra
       pm2 save
-  • Đảm bảo .env đã đặt:
-      PAYLOAD_PUBLIC_SERVER_URL = https://<domain CMS>
-      NEXT_PUBLIC_CMS_URL       = https://<domain CMS>   (trong apps/clay/.env.production)
-      CMS_URL                   = http://127.0.0.1:3000  (server->server, nội bộ)
+  • Đảm bảo biến môi trường đã đặt:
+      .env (gốc, cho CMS):
+        PAYLOAD_PUBLIC_SERVER_URL = https://cms.x-tech.com.vn
+        MEDIA_DIR                 = <thư mục bền, vd /home/<site>/media>   (nếu USE_S3=false)
+      apps/clay/.env.production (cho clay):
+        NEXT_PUBLIC_CMS_URL       = https://cms.x-tech.com.vn   (nướng vào lúc build)
+        CMS_URL                   = http://127.0.0.1:3000       (server->server, nội bộ)
 
 Lần deploy sau chỉ cần:  ./deploy.sh
 EON

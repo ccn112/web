@@ -1,7 +1,12 @@
 /**
  * Idempotent seed runner. Imports every handoff seed JSON into Payload.
  *
- * Run: `pnpm db:seed`  (which calls `payload run ./src/seed/index.ts`)
+ * QUY ƯỚC: mọi seed DB phải đi qua MIGRATION (không chạy `db:seed` thủ công ở prod).
+ * `runSeed(payload)` được export để migration `migrations/*_seed_content.ts` gọi lại.
+ * `pnpm db:seed` chỉ là tiện ích chạy nhanh ở dev.
+ *
+ * Run (dev): `pnpm db:seed`  (which calls `payload run ./src/seed/index.ts`)
+ * Prod:      `payload migrate` (schema trước → seed sau, xem migrations/).
  *
  * Idempotency: each record is upserted by its natural key
  *   - sites/forms/prompt-sets : code
@@ -203,8 +208,7 @@ type FaqJson = {
   tags?: string[]
 }
 
-async function run(): Promise<void> {
-  const payload = await getPayload({ config })
+export async function runSeed(payload: Payload): Promise<void> {
   const counts = { created: 0, updated: 0 }
   const tally = (r: { created: boolean }) => (r.created ? counts.created++ : counts.updated++)
 
@@ -494,7 +498,8 @@ async function run(): Promise<void> {
 // Top-level await: `payload run` awaits the module's evaluation, so the process stays alive
 // until seeding completes (a floating promise would let it exit before any work happens).
 try {
-  await run()
+  const payload = await getPayload({ config })
+  await runSeed(payload)
   process.exit(0)
 } catch (err) {
   console.error('Seed failed:', err)
