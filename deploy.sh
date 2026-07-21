@@ -1,0 +1,238 @@
+#!/usr/bin/env bash
+# =============================================================================
+# X Web Platform — VPS deploy script (CloudPanel, KHÔNG dùng Docker)
+# =============================================================================
+# Chạy script này TRÊN VPS, tại thư mục gốc repo (nơi có file này).
+#
+# Cách dùng:
+#   ./deploy.sh                         # Deploy thường: pull + install + MIGRATE + build + restart
+#   ./deploy.sh --import-db             # Lần ĐẦU: import full DB từ dump mới nhất trong ./backups
+#   ./deploy.sh --import-db --dump backups/xweb_local_20260721.sql   # chỉ định file dump
+#   ./deploy.sh --import-db --yes       # bỏ qua xác nhận (dùng trong CI/tự động)
+#   ./deploy.sh --no-restart            # làm mọi thứ trừ khởi động lại PM2
+#
+# Biến môi trường có thể override:
+#   BRANCH=feat/xxx ./deploy.sh         # deploy nhánh khác (mặc định: main)
+#
+# YÊU CẦU CÓ SẴN TRÊN VPS:
+#   - node >= 20.9 (khuyến nghị 22), pnpm (script tự bật corepack nếu thiếu)
+#   - pm2  (npm i -g pm2)
+#   - psql client (để import/baseline DB)
+#   - File .env ở gốc repo            -> cấu hình CMS (DATABASE_URL, PAYLOAD_SECRET, ...)
+#   - File apps/clay/.env.production  -> cấu hình clay (CMS_URL, NEXT_PUBLIC_CMS_URL, ...)
+#     (LƯU Ý: NEXT_PUBLIC_* được "nướng" vào lúc BUILD, nên phải có TRƯỚC khi build)
+# =============================================================================
+set -euo pipefail
+
+# ---- Vị trí repo = thư mục chứa script này ----------------------------------
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT"
+
+BRANCH="${BRANCH:-main}"
+IMPORT_DB=0
+SKIP_RESTART=0
+ASSUME_YES=0
+DUMP_FILE=""
+
+# ---- Parse tham số ----------------------------------------------------------
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --import-db)  IMPORT_DB=1 ;;
+    --dump)       DUMP_FILE="${2:-}"; shift ;;
+    --dump=*)     DUMP_FILE="${1#*=}" ;;
+    --no-restart) SKIP_RESTART=1 ;;
+    --yes|-y)     ASSUME_YES=1 ;;
+    -h|--help)    grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    *) echo "Tham số không hợp lệ: $1" >&2; exit 1 ;;
+  esac
+  shift
+done
+
+# ---- Helpers ----------------------------------------------------------------
+log()  { printf '\n\033[1;36m==>\033[0m %s\n' "$*"; }
+ok()   { printf '\033[1;32m  ✓\033[0m %s\n' "$*"; }
+warn() { printf '\033[1;33m  ! \033[0m%s\n' "$*"; }
+die()  { printf '\033[1;31m  ✗ %s\033[0m\n' "$*" >&2; exit 1; }
+have() { command -v "$1" >/dev/null 2>&1; }
+
+# ---- 0. Kiểm tra công cụ ----------------------------------------------------
+log "Kiểm tra môi trường"
+have node || die "Chưa có node. Cài Node 20.9+ (khuyến nghị 22) cho site trên CloudPanel."
+NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
+[[ "$NODE_MAJOR" -ge 20 ]] || die "Node quá cũ ($(node -v)); cần >= 20.9."
+ok "node $(node -v)"
+
+if ! have pnpm; then
+  warn "Chưa có pnpm — thử bật qua corepack..."
+  corepack enable >/dev/null 2>&1 || die "Không bật được corepack. Cài thủ công: 'npm i -g pnpm@9.15.0'"
+  corepack prepare pnpm@9.15.0 --activate >/dev/null 2>&1 || true
+  have pnpm || die "Vẫn không thấy pnpm sau corepack."
+fi
+ok "pnpm $(pnpm -v)"
+
+have psql || die "Chưa có psql client (cần để import/baseline DB). Cài: 'apt-get install -y postgresql-client'"
+[[ "$SKIP_RESTART" -eq 1 ]] || have pm2 || die "Chưa có pm2. Cài: 'npm i -g pm2'"
+
+# ---- 1. Kiểm tra file .env --------------------------------------------------
+log "Kiểm tra file cấu hình môi trường"
+[[ -f "$ROOT/.env" ]] || die "Thiếu $ROOT/.env (cấu hình CMS). Tạo file này trước khi deploy."
+ok "Tìm thấy .env (gốc, cho CMS)"
+
+CLAY_ENV=""
+for f in "$ROOT/apps/clay/.env.production" "$ROOT/apps/clay/.env.local"; do
+  [[ -f "$f" ]] && { CLAY_ENV="$f"; break; }
+done
+[[ -n "$CLAY_ENV" ]] || die "Thiếu apps/clay/.env.production (hoặc .env.local) — cần CMS_URL & NEXT_PUBLIC_CMS_URL trước khi build clay."
+ok "Tìm thấy cấu hình clay: ${CLAY_ENV#$ROOT/}"
+
+# Lấy DATABASE_URL từ .env (dùng cho import/baseline)
+DATABASE_URL="$(grep -E '^DATABASE_URL=' "$ROOT/.env" | head -n1 | sed -E 's/^DATABASE_URL=//; s/^["'\'']//; s/["'\'']$//')"
+[[ -n "$DATABASE_URL" ]] || die "Không đọc được DATABASE_URL trong .env"
+
+# ---- 2. Đồng bộ code = đúng như local (origin/$BRANCH) ----------------------
+log "Đồng bộ code: origin/$BRANCH"
+git fetch origin --prune
+git checkout "$BRANCH" 2>/dev/null || git checkout -b "$BRANCH" "origin/$BRANCH"
+git reset --hard "origin/$BRANCH"
+ok "HEAD -> $(git log -1 --oneline)"
+
+# ---- 3. Cài dependencies ----------------------------------------------------
+log "Cài dependencies (frozen lockfile)"
+pnpm install --frozen-lockfile
+ok "Dependencies xong"
+
+# ---- 4. Database ------------------------------------------------------------
+if [[ "$IMPORT_DB" -eq 1 ]]; then
+  # -- 4a. IMPORT LẦN ĐẦU: khôi phục toàn bộ DB từ dump (thay bản cũ) ----------
+  if [[ -z "$DUMP_FILE" ]]; then
+    DUMP_FILE="$(ls -1t "$ROOT"/backups/*.sql 2>/dev/null | head -n1 || true)"
+  fi
+  [[ -n "$DUMP_FILE" && -f "$DUMP_FILE" ]] || die "Không tìm thấy file dump. Copy file .sql vào ./backups hoặc dùng --dump <path>."
+
+  warn "SẮP GHI ĐÈ TOÀN BỘ dữ liệu trong DB đích bằng dump: ${DUMP_FILE#$ROOT/}"
+  if [[ "$ASSUME_YES" -ne 1 ]]; then
+    read -r -p "  Tiếp tục và XÓA dữ liệu cũ? [y/N] " ans
+    [[ "$ans" =~ ^[Yy]$ ]] || die "Đã hủy."
+  fi
+
+  log "Import DB từ dump"
+  # Dump được tạo với --clean --if-exists nên tự drop object cũ trước khi tạo lại.
+  psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f "$DUMP_FILE"
+  ok "Đã import dữ liệu"
+
+  # -- 4b. Ghi BASELINE migration ---------------------------------------------
+  # Local dùng push mode nên bảng payload_migrations chỉ có dòng 'dev'.
+  # Đánh dấu MỌI migration hiện có là "đã áp dụng" để lần sau `migrate`
+  # chỉ chạy migration MỚI (không tạo lại bảng đã tồn tại).
+  log "Ghi baseline migration (đánh dấu đã áp dụng)"
+  MIG_VALUES=""
+  while IFS= read -r f; do
+    name="$(basename "$f" .ts)"
+    MIG_VALUES+="('${name}', 1),"
+  done < <(find "$ROOT/apps/cms/src/migrations" -maxdepth 1 -name '*.ts' ! -name 'index.ts' | sort)
+  MIG_VALUES="${MIG_VALUES%,}"   # bỏ dấu phẩy cuối
+
+  if [[ -n "$MIG_VALUES" ]]; then
+    psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q <<SQL
+DELETE FROM payload_migrations;
+INSERT INTO payload_migrations (name, batch) VALUES ${MIG_VALUES};
+SQL
+    ok "Baseline: $(echo "$MIG_VALUES" | tr ',' '\n' | wc -l) migration đánh dấu đã chạy"
+  else
+    warn "Không thấy file migration nào để baseline (bỏ qua)."
+  fi
+else
+  # -- 4c. Deploy thường: chỉ chạy migration mới -----------------------------
+  log "Chạy migration (chỉ áp dụng thay đổi mới)"
+  pnpm --filter @x/cms db:migrate
+  ok "Migration xong"
+fi
+
+# ---- 5. Thư mục media (khi USE_S3=false phải tồn tại & ghi được) ------------
+mkdir -p "$ROOT/apps/cms/media"
+ok "Thư mục media sẵn sàng: apps/cms/media ($(find "$ROOT/apps/cms/media" -type f | wc -l) file)"
+
+# ---- 6. Build cả 2 app ------------------------------------------------------
+log "Build @x/cms"
+pnpm --filter @x/cms build
+log "Build @x/clay"
+pnpm --filter @x/clay build
+ok "Build xong (Next standalone + .next)"
+
+# ---- 7. Tạo ecosystem PM2 nếu chưa có --------------------------------------
+ECO="$ROOT/ecosystem.config.cjs"
+if [[ ! -f "$ECO" ]]; then
+  log "Tạo ecosystem.config.cjs (PM2)"
+  cat > "$ECO" <<'EOF'
+// PM2 process file — X Web Platform (2 app trên 1 VPS)
+// CMS đọc .env gốc qua Payload loadEnv; clay đọc apps/clay/.env.* .
+// Nginx của CloudPanel reverse-proxy: domain CMS -> :3000, domain site -> :3001
+const ROOT = __dirname;
+module.exports = {
+  apps: [
+    {
+      name: 'xweb-cms',
+      cwd: ROOT,
+      script: 'pnpm',
+      args: '--filter @x/cms start',   // next start --port 3000
+      interpreter: 'none',
+      env: { NODE_ENV: 'production', PORT: '3000' },
+      autorestart: true,
+      max_restarts: 10,
+      max_memory_restart: '1G',
+    },
+    {
+      name: 'xweb-clay',
+      cwd: ROOT,
+      script: 'pnpm',
+      args: '--filter @x/clay start',  // next start (PORT=3001 ép cổng)
+      interpreter: 'none',
+      env: { NODE_ENV: 'production', PORT: '3001' },
+      autorestart: true,
+      max_restarts: 10,
+      max_memory_restart: '1G',
+    },
+  ],
+};
+EOF
+  ok "Đã tạo ecosystem.config.cjs"
+fi
+
+# ---- 8. Khởi động / reload PM2 ----------------------------------------------
+if [[ "$SKIP_RESTART" -eq 1 ]]; then
+  warn "Bỏ qua khởi động lại (--no-restart)."
+else
+  log "Khởi động / reload PM2"
+  pm2 startOrReload "$ECO" --update-env
+  pm2 save
+  ok "PM2 đang chạy:"
+  pm2 status
+
+  # ---- 9. Health check ------------------------------------------------------
+  log "Kiểm tra health"
+  sleep 3
+  for pair in "CMS|http://127.0.0.1:3000/api/health" "clay|http://127.0.0.1:3001/api/health"; do
+    svc="${pair%%|*}"; url="${pair#*|}"
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$url" || echo 000)"
+    if [[ "$code" == "200" ]]; then ok "$svc OK ($url -> 200)"; else warn "$svc chưa OK ($url -> $code). Xem log: pm2 logs"; fi
+  done
+fi
+
+log "HOÀN TẤT."
+cat <<EON
+
+Bước tiếp theo (làm 1 lần trên CloudPanel / VPS):
+  • Nginx (CloudPanel) reverse proxy:
+      - Domain CMS  (vd cms.example.com) -> http://127.0.0.1:3000
+      - Domain site (vd www.example.com) -> http://127.0.0.1:3001
+    (Nếu chạy nhiều site trên clay, đảm bảo Nginx truyền đúng Host header.)
+  • Cho PM2 tự chạy khi VPS reboot (chạy 1 lần, cần sudo):
+      pm2 startup      # copy & chạy lệnh nó in ra
+      pm2 save
+  • Đảm bảo .env đã đặt:
+      PAYLOAD_PUBLIC_SERVER_URL = https://<domain CMS>
+      NEXT_PUBLIC_CMS_URL       = https://<domain CMS>   (trong apps/clay/.env.production)
+      CMS_URL                   = http://127.0.0.1:3000  (server->server, nội bộ)
+
+Lần deploy sau chỉ cần:  ./deploy.sh
+EON
