@@ -9,6 +9,7 @@ import {
   useReducedMotion,
 } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import {
@@ -669,12 +670,12 @@ export function FutureVision() {
           <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">Sẵn sàng bắt đầu hành trình chuyển đổi số?</h3>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-white/85 sm:text-base">Đội ngũ XTECH sẵn sàng đồng hành cùng doanh nghiệp của bạn từ chiến lược đến vận hành.</p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="/lien-he" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-blue transition hover:bg-white/90">
+            <Link href="/lien-he" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-blue transition hover:bg-white/90">
               Trao đổi với chuyên gia <ArrowRight className="size-4" />
-            </a>
-            <a href="/dat-lich-demo" className="inline-flex h-12 items-center justify-center rounded-full border border-white/40 px-6 text-sm font-semibold text-white transition hover:bg-white/10">
+            </Link>
+            <Link href="/dat-lich-demo" className="inline-flex h-12 items-center justify-center rounded-full border border-white/40 px-6 text-sm font-semibold text-white transition hover:bg-white/10">
               Yêu cầu tư vấn
-            </a>
+            </Link>
           </div>
         </div>
       </Reveal>

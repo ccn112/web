@@ -9,6 +9,7 @@
  */
 
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import Link from "next/link";
 import {
   MessageCircle, X, Send, Paperclip, History, Maximize2, Minimize2, Plus, Trash2, ArrowLeft, Sparkles,
 } from "lucide-react";
@@ -135,6 +136,7 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
       id = uuid();
       localStorage.setItem(DEVICE_KEY, id);
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDeviceId(id);
     setRegistered(localStorage.getItem(REG_KEY) === "1");
     setSessionId(uuid());
@@ -437,8 +439,8 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
                       ))}
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      <a href="/lien-he" className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-blue">Liên hệ tư vấn</a>
-                      <a href="/dat-lich-demo" className="rounded-full border border-blue/15 px-3 py-1.5 text-xs font-semibold text-blue">Đặt lịch demo</a>
+                      <Link href="/lien-he" className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-blue">Liên hệ tư vấn</Link>
+                      <Link href="/dat-lich-demo" className="rounded-full border border-blue/15 px-3 py-1.5 text-xs font-semibold text-blue">Đặt lịch demo</Link>
                     </div>
                   </div>
                 ) : (

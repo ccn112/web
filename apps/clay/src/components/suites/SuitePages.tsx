@@ -8,6 +8,7 @@
  */
 
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { SectionHead, HomeIcon, IconTile } from "@/components/home/kit";
 import { C02Timeline } from "@/components/services/c02/kit";
@@ -184,7 +185,7 @@ function SuiteDetail({ suite }: { suite: SolutionSuite }) {
 
       <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
         <GoldCTA href="/dat-lich-demo" label="Đặt lịch demo" />
-        <a href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-blue/20 px-6 text-sm font-semibold text-blue transition hover:bg-blue/5">Trao đổi với chuyên gia</a>
+        <Link href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-blue/20 px-6 text-sm font-semibold text-blue transition hover:bg-blue/5">Trao đổi với chuyên gia</Link>
       </div>
     </AmbientSection>
   );

@@ -7,6 +7,7 @@
  */
 
 import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/primitives";
 import { Reveal, AmbientSection } from "@/components/corporate/about-kit";
 import { legalDocForRoute } from "@/data/legal-content";
@@ -78,13 +79,13 @@ export function LegalPages({ route }: { route: string }) {
                 <p className="text-sm font-semibold text-blue">Cần hỗ trợ thêm?</p>
                 <p className="mt-1 text-sm text-muted-foreground">Liên hệ với đội ngũ XTECH để được giải đáp.</p>
               </div>
-              <a
+              <Link
                 href="/lien-he"
                 className="btn-gold group inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition hover:brightness-105"
               >
                 Liên hệ
                 <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>

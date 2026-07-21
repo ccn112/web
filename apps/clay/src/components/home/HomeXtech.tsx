@@ -12,6 +12,7 @@
  */
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import type { PostDoc } from "@x/shared-types";
 import { Container } from "@/components/primitives";
@@ -424,7 +425,7 @@ function Services() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {homeServiceCapabilities.map((c, i) => (
           <Reveal key={c.title} delay={(i % 3) * 0.07}>
-            <a
+            <Link
               href="/dich-vu"
               className="group flex items-start gap-4 rounded-2xl border border-blue/12 bg-card/70 p-5 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-gold/45"
             >
@@ -434,7 +435,7 @@ function Services() {
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
               </div>
               <ArrowRight className="ml-auto size-4 shrink-0 self-center text-blue/40 transition group-hover:translate-x-0.5 group-hover:text-gold" />
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>

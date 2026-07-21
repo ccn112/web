@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import type { MenuItem } from "@x/shared-types";
 import { Logo } from "./Logo";
@@ -58,9 +59,9 @@ export function Header({
             "mt-2 h-14 rounded-full border border-border bg-background/90 px-4 shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl md:mx-auto md:max-w-[1120px]",
         )}
       >
-        <a href="/" className="shrink-0" aria-label="XTECH home">
+        <Link href="/" className="shrink-0" aria-label="XTECH home">
           <Logo mode={onDark ? "dark" : "light"} />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
           {items.map((item) =>

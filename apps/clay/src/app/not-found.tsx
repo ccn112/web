@@ -1,4 +1,5 @@
 import { ArrowRight, Home, Search } from "lucide-react";
+import Link from "next/link";
 import { cms, currentSiteCode } from "@/lib/cms";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Container } from "@/components/primitives";
@@ -29,27 +30,27 @@ export default async function NotFound() {
           Trang bạn tìm có thể đã được di chuyển hoặc không còn tồn tại. Hãy thử quay lại trang chủ hoặc tìm kiếm nội dung.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
+          <Link
             href="/"
             className="btn-gold group inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105"
           >
             <Home className="size-4" />
             Về trang chủ
-          </a>
-          <a
+          </Link>
+          <Link
             href="/search"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 text-sm font-semibold text-white/90 backdrop-blur transition hover:border-gold/50"
           >
             <Search className="size-4" />
             Tìm kiếm
-          </a>
-          <a
+          </Link>
+          <Link
             href="/lien-he"
             className="group inline-flex h-12 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold text-white/80 transition hover:text-white"
           >
             Liên hệ
             <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
       </Container>
     </section>

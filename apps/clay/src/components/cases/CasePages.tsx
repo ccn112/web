@@ -9,6 +9,7 @@
  */
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, Check, X as XIcon } from "lucide-react";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { IconTile } from "@/components/home/kit";
@@ -125,7 +126,7 @@ function CasesListing() {
       <EditorialHeroShell bg={EDITORIAL_BG.kinhNghiem}>
         <div className="pt-28 pb-12 md:pt-36 md:pb-16">
           <nav className="text-xs text-white/60">
-            <a href="/khach-hang" className="hover:text-white">Khách hàng</a> <span className="text-white/35">/</span> Câu chuyện khách hàng
+            <Link href="/khach-hang" className="hover:text-white">Khách hàng</Link> <span className="text-white/35">/</span> Câu chuyện khách hàng
           </nav>
           <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
             Câu chuyện <span className="brand-gradient-text">khách hàng</span>
@@ -181,7 +182,7 @@ function CaseDetail({ story }: { story: CaseStory }) {
       <EditorialHeroShell bg={EDITORIAL_BG.kinhNghiem}>
         <div className="pt-28 pb-12 md:pt-36 md:pb-16">
           <nav className="text-xs text-white/60">
-            <a href="/khach-hang" className="hover:text-white">Khách hàng</a> <span className="text-white/35">/</span> {story.anonymousLabel}
+            <Link href="/khach-hang" className="hover:text-white">Khách hàng</Link> <span className="text-white/35">/</span> {story.anonymousLabel}
           </nav>
           <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-4xl">{story.title}</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">{story.summary}</p>

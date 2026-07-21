@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/primitives";
 import { Reveal } from "@/components/reveal";
@@ -69,13 +70,13 @@ export function AboutXtech({ heroBackground }: { heroBackground?: string } = {})
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
-                <a href="/san-pham" className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:opacity-90">
+                <Link href="/san-pham" className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:opacity-90">
                   Khám phá hệ sinh thái
                   <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
-                </a>
-                <a href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold transition hover:bg-accent">
+                </Link>
+                <Link href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold transition hover:bg-accent">
                   Trao đổi với chuyên gia
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
