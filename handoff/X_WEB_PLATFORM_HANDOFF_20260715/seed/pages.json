@@ -6915,19 +6915,6 @@
           }
         ],
         "illustrationAsset": "COR-01"
-      },
-      {
-        "blockType": "cta",
-        "title": "Tìm hiểu cách X đồng hành cùng bạn",
-        "description": "Liên hệ để trao đổi về nhu cầu chuyển đổi số của doanh nghiệp.",
-        "primaryCTA": {
-          "label": "Liên hệ với chúng tôi",
-          "href": "/lien-he"
-        },
-        "secondaryCTA": {
-          "label": "Khám phá sản phẩm",
-          "href": "/san-pham"
-        }
       }
     ],
     "suggestedPrompts": [],
@@ -7157,19 +7144,6 @@
           }
         ],
         "illustrationAsset": "COR-01"
-      },
-      {
-        "blockType": "cta",
-        "title": "Trở thành đối tác của X",
-        "description": "Liên hệ để trao đổi về cơ hội hợp tác cùng phát triển.",
-        "primaryCTA": {
-          "label": "Liên hệ với chúng tôi",
-          "href": "/lien-he"
-        },
-        "secondaryCTA": {
-          "label": "Khám phá sản phẩm",
-          "href": "/san-pham"
-        }
       }
     ],
     "suggestedPrompts": [],
@@ -7232,19 +7206,6 @@
           }
         ],
         "illustrationAsset": "COR-02"
-      },
-      {
-        "blockType": "cta",
-        "title": "Ứng tuyển cùng X",
-        "description": "Gửi hồ sơ hoặc liên hệ để tìm hiểu vị trí phù hợp với bạn.",
-        "primaryCTA": {
-          "label": "Liên hệ với chúng tôi",
-          "href": "/lien-he"
-        },
-        "secondaryCTA": {
-          "label": "Khám phá sản phẩm",
-          "href": "/san-pham"
-        }
       }
     ],
     "suggestedPrompts": [],

@@ -12,7 +12,8 @@ export type ProductLayout =
   | "journey"
   | "showcase"
   | "visual-left"
-  | "visual-right";
+  | "visual-right"
+  | "illustration";
 
 export type ProductItem = {
   id: string;
@@ -37,6 +38,10 @@ export type ProductSection = {
   outcomes?: ProductOutcome[];
   platformChips?: string[];
   cta?: { label: string; href: string };
+  /** For layout "illustration": a real screenshot/dashboard image (public path). */
+  image?: string;
+  /** For layout "illustration": bullet highlights shown beside the image. */
+  bullets?: string[];
 };
 
 const c03Sections: ProductSection[] = [
@@ -116,19 +121,117 @@ const c03Sections: ProductSection[] = [
     cta: { label: "Đặt lịch demo XBooking", href: "/dat-lich-demo" },
   },
   {
-    sectionId: "c03-04",
+    sectionId: "c03-finerp-hero",
     routes: ["/san-pham/finerp"],
-    eyebrow: "FinERP",
-    title: "Tài chính và vận hành trong một nền tảng thống nhất",
-    highlight: ["nền tảng thống nhất"],
-    subtitle: "Từ kế toán, công nợ, dòng tiền, ngân sách đến báo cáo điều hành.",
+    eyebrow: "QUẢN TRỊ DOANH NGHIỆP HỢP NHẤT",
+    title: "FinERP — Tài chính và vận hành trong một nền tảng",
+    highlight: ["một nền tảng"],
+    subtitle: "Hợp nhất tài chính, kế toán, mua hàng, kho, tài sản và chi phí dự án — dữ liệu liên thông, kiểm soát chặt và báo cáo điều hành theo thời gian thực.",
     layout: "showcase",
     items: [
-      { id: "accounting", title: "Kế toán", description: "Quản lý nghiệp vụ tài chính theo chuẩn doanh nghiệp.", icon: "finerp" },
-      { id: "cashflow", title: "Dòng tiền", description: "Theo dõi luồng tiền vào ra và dự báo thanh khoản.", icon: "payment" },
-      { id: "budget", title: "Ngân sách", description: "Kiểm soát ngân sách và phân bổ nguồn lực.", icon: "cost" },
-      { id: "debt", title: "Công nợ", description: "Quản lý phải thu, phải trả và cảnh báo quá hạn.", icon: "risk" },
-      { id: "reporting", title: "Báo cáo điều hành", description: "Dashboard KPI tài chính cho lãnh đạo.", icon: "analytics" },
+      { id: "tai-chinh", title: "Tài chính – Kế toán", description: "Doanh thu, chi phí, lợi nhuận, dòng tiền, công nợ và chứng từ.", icon: "finerp" },
+      { id: "ngan-sach", title: "Ngân sách", description: "Lập, phân bổ và kiểm soát ngân sách theo phòng ban, dự án.", icon: "cost" },
+      { id: "mua-hang", title: "Mua hàng", description: "Yêu cầu mua, báo giá, đơn mua và quản lý nhà cung cấp.", icon: "payment" },
+      { id: "kho-tai-san", title: "Kho & Tài sản", description: "Nhập – xuất – tồn kho, máy móc, phương tiện và thiết bị.", icon: "operations" },
+      { id: "chi-phi-du-an", title: "Chi phí dự án", description: "Ngân sách, chi phí thực tế, cam kết chi và hiệu quả dự án.", icon: "analytics" },
+      { id: "mo-rong", title: "Nhân sự & mở rộng", description: "HRM, chấm công – lương, phê duyệt, hợp đồng và Report AI.", icon: "ai" },
+    ],
+    cta: { label: "Đặt lịch demo FinERP", href: "/dat-lich-demo" },
+  },
+  {
+    sectionId: "c03-finerp-f1",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Tài chính – Kế toán",
+    title: "Dashboard điều hành tài chính",
+    subtitle: "Theo dõi doanh thu, chi phí, lợi nhuận, dòng tiền và công nợ theo thời gian thực trên một màn hình.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-02-finance.png",
+    bullets: ["Doanh thu", "Chi phí", "Lợi nhuận", "Dòng tiền", "Công nợ", "So sánh kỳ"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f2",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Dòng tiền & Công nợ",
+    title: "Kiểm soát dòng tiền và thu hồi công nợ",
+    subtitle: "Nhìn rõ dòng tiền vào – ra, phải thu và cảnh báo quá hạn để chủ động thanh khoản.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-03-cashflow.png",
+    bullets: ["Dòng tiền vào", "Dòng tiền ra", "Phải thu", "Quá hạn", "Dự báo thanh khoản"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f3",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Kế toán & Chứng từ",
+    title: "Nghiệp vụ kế toán và chứng từ số hóa",
+    subtitle: "Số hóa hóa đơn, phiếu thu chi, bút toán với luồng phê duyệt và đối soát chặt chẽ.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-05-accounting.png",
+    bullets: ["Hóa đơn", "Phiếu thu", "Phiếu chi", "Bút toán", "Phê duyệt", "Đối soát"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f4",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Ngân sách",
+    title: "Ngân sách và thực tế",
+    subtitle: "So sánh ngân sách với thực chi theo phòng ban và dự án, phát hiện chênh lệch kịp thời.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-04-budget.png",
+    bullets: ["Ngân sách", "Thực tế", "Chênh lệch", "Theo phòng ban", "Theo dự án"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f5",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Mua hàng",
+    title: "Mua hàng và nhà cung cấp",
+    subtitle: "Chuẩn hóa quy trình từ yêu cầu mua, báo giá, đơn mua đến theo dõi giao hàng và nhà cung cấp.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-06-procurement.png",
+    bullets: ["Yêu cầu mua", "Báo giá", "Đơn mua", "Nhà cung cấp", "Giao hàng"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f6",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Kho & Tài sản",
+    title: "Quản lý kho và tài sản",
+    subtitle: "Kiểm soát nhập – xuất – tồn và vòng đời máy móc, phương tiện, thiết bị.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-07-warehouse.png",
+    bullets: ["Nhập kho", "Tồn kho", "Xuất kho", "Máy móc", "Phương tiện", "Thiết bị"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-f7",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Chi phí dự án",
+    title: "Chi phí và hiệu quả dự án",
+    subtitle: "Theo dõi ngân sách, chi phí thực tế, cam kết chi và hiệu quả theo tiến độ từng dự án.",
+    layout: "illustration",
+    image: "/products/finerp/ferp-08-project.png",
+    bullets: ["Ngân sách", "Chi phí thực tế", "Cam kết chi", "Hiệu quả", "Tiến độ"],
+    items: [],
+  },
+  {
+    sectionId: "c03-finerp-ext",
+    routes: ["/san-pham/finerp"],
+    eyebrow: "Phân hệ mở rộng",
+    title: "Vận hành doanh nghiệp toàn diện",
+    highlight: ["toàn diện"],
+    subtitle: "Ngoài lõi tài chính, FinERP mở rộng sang nhân sự, phê duyệt, hợp đồng, tài liệu và AI điều hành.",
+    layout: "showcase",
+    items: [
+      { id: "hrm", title: "HRM & Nhân sự", description: "Hồ sơ nhân sự, tổ chức, phòng ban và vị trí.", icon: "customer" },
+      { id: "payroll", title: "Chấm công & Lương", description: "Ca làm, bảng công, phụ cấp và bảng lương.", icon: "payment" },
+      { id: "approval", title: "Approval Workflow", description: "Luồng phê duyệt đa cấp kèm ký số.", icon: "contract" },
+      { id: "contract", title: "Hợp đồng", description: "Tạo, phê duyệt, ký số, hiệu lực và gia hạn.", icon: "contract" },
+      { id: "docs", title: "Văn bản & Tài liệu", description: "Danh mục, tìm kiếm, phân quyền và phiên bản.", icon: "operations" },
+      { id: "report-ai", title: "Report AI", description: "Tóm tắt, phân tích, xu hướng và hỏi đáp dữ liệu.", icon: "ai" },
+      { id: "alert", title: "Cảnh báo điều hành", description: "Vượt ngân sách, đến hạn, quá hạn và rủi ro.", icon: "risk" },
+      { id: "deploy", title: "Triển khai & Tích hợp", description: "On-premise, private cloud, API, ngân hàng, CRM, BI.", icon: "cloud" },
     ],
     cta: { label: "Đặt lịch demo FinERP", href: "/dat-lich-demo" },
   },

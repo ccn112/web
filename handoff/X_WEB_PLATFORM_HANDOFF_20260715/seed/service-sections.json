@@ -2723,5 +2723,340 @@
     },
     "locale": "vi",
     "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-vx-gioi-thieu-1",
+    "visualType": "hub-spoke",
+    "eyebrow": "Hệ sinh thái X",
+    "title": "Một hệ sinh thái, nhiều bài toán được giải",
+    "subtitle": "Các sản phẩm và nền tảng của X liên thông quanh một lõi dữ liệu chung, phục vụ trọn vòng đời vận hành của doanh nghiệp và bất động sản.",
+    "routes": [
+      "/ve-x/gioi-thieu"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "xbooking",
+        "title": "XBooking",
+        "description": "Bán hàng, CRM, bảng hàng và booking bất động sản.",
+        "order": 1,
+        "icon": "megaphone",
+        "side": "left"
+      },
+      {
+        "itemId": "finerp",
+        "title": "FinERP",
+        "description": "Tài chính, kế toán, công nợ và vận hành doanh nghiệp.",
+        "order": 2,
+        "icon": "calculator",
+        "side": "right"
+      },
+      {
+        "itemId": "xbuilding",
+        "title": "XBuilding",
+        "description": "Vận hành tòa nhà, cư dân, dịch vụ và thiết bị.",
+        "order": 3,
+        "icon": "building-2",
+        "side": "left"
+      },
+      {
+        "itemId": "xai",
+        "title": "X.AI",
+        "description": "Trợ lý AI, tri thức và tự động hóa theo vai trò.",
+        "order": 4,
+        "icon": "brain",
+        "side": "right"
+      },
+      {
+        "itemId": "xspace",
+        "title": "X.Space",
+        "description": "Không gian làm việc số, công việc và cộng tác.",
+        "order": 5,
+        "icon": "layout-grid",
+        "side": "left"
+      },
+      {
+        "itemId": "nen-tang",
+        "title": "Nền tảng dùng chung",
+        "description": "Dữ liệu, định danh, workflow, API và bảo mật xuyên suốt.",
+        "order": 6,
+        "icon": "boxes",
+        "side": "right"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "du-lieu",
+        "title": "Dữ liệu hợp nhất",
+        "description": "Một nguồn dữ liệu chung cho toàn hệ sinh thái.",
+        "order": 1,
+        "icon": "database"
+      },
+      {
+        "itemId": "lien-thong",
+        "title": "Liên thông sản phẩm",
+        "description": "Các sản phẩm chia sẻ dữ liệu và quy trình.",
+        "order": 2,
+        "icon": "share-2"
+      },
+      {
+        "itemId": "ai",
+        "title": "AI xuyên suốt",
+        "description": "Năng lực AI dùng chung trên mọi nghiệp vụ.",
+        "order": 3,
+        "icon": "sparkles"
+      },
+      {
+        "itemId": "mo-rong",
+        "title": "Mở rộng linh hoạt",
+        "description": "Bắt đầu từ một sản phẩm, mở rộng khi cần.",
+        "order": 4,
+        "icon": "trending-up"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "tron-vong-doi",
+        "title": "Phủ trọn vòng đời",
+        "description": "Từ bán hàng đến tài chính, vận hành và AI trên một nền tảng.",
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "nhat-quan",
+        "title": "Dữ liệu nhất quán",
+        "description": "Không còn ốc đảo giữa các hệ thống rời rạc.",
+        "icon": "folder-check"
+      },
+      {
+        "itemId": "dong-hanh",
+        "title": "Đồng hành dài hạn",
+        "description": "Một đối tác công nghệ duy nhất cho nhiều bài toán.",
+        "icon": "handshake"
+      }
+    ],
+    "cta": {
+      "label": "Khám phá hệ sinh thái X",
+      "href": "/san-pham"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-vx-doi-tac-1",
+    "visualType": "integration-hub",
+    "eyebrow": "Mạng lưới đối tác",
+    "title": "Cùng đối tác mang lại giải pháp trọn vẹn",
+    "subtitle": "X kết nối với mạng lưới đối tác công nghệ, triển khai và tư vấn để mở rộng giá trị và phục vụ khách hàng tốt hơn.",
+    "routes": [
+      "/ve-x/doi-tac"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "cong-nghe",
+        "title": "Đối tác công nghệ",
+        "description": "Hạ tầng đám mây, dữ liệu, AI và nền tảng lõi.",
+        "order": 1,
+        "icon": "cpu"
+      },
+      {
+        "itemId": "trien-khai",
+        "title": "Đối tác triển khai",
+        "description": "Đồng hành đưa giải pháp vào vận hành thực tế.",
+        "order": 2,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "tu-van",
+        "title": "Đối tác tư vấn",
+        "description": "Tư vấn chiến lược và nghiệp vụ chuyên sâu.",
+        "order": 3,
+        "icon": "briefcase"
+      },
+      {
+        "itemId": "kinh-doanh",
+        "title": "Đối tác kinh doanh",
+        "description": "Mở rộng thị trường và kênh phân phối.",
+        "order": 4,
+        "icon": "handshake"
+      },
+      {
+        "itemId": "tich-hop",
+        "title": "Đối tác tích hợp",
+        "description": "Kết nối sản phẩm bên thứ ba qua API mở.",
+        "order": 5,
+        "icon": "plug"
+      },
+      {
+        "itemId": "khach-hang",
+        "title": "Khách hàng chiến lược",
+        "description": "Đồng phát triển giải pháp theo nhu cầu thực tế.",
+        "order": 6,
+        "icon": "users"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "ket-noi",
+        "title": "Kết nối",
+        "description": "Trao đổi năng lực và xác định điểm hợp tác.",
+        "order": 1,
+        "icon": "share-2"
+      },
+      {
+        "itemId": "chuan-hoa",
+        "title": "Chuẩn hóa hợp tác",
+        "description": "Thống nhất mô hình, cam kết và quyền lợi.",
+        "order": 2,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "trien-khai-chung",
+        "title": "Triển khai chung",
+        "description": "Cùng đưa giải pháp tới khách hàng.",
+        "order": 3,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "phat-trien",
+        "title": "Phát triển dài hạn",
+        "description": "Cùng mở rộng thị trường và giá trị.",
+        "order": 4,
+        "icon": "trending-up"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "tron-ven",
+        "title": "Giải pháp trọn vẹn",
+        "description": "Kết hợp thế mạnh các bên cho khách hàng.",
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "cung-thang",
+        "title": "Cùng phát triển",
+        "description": "Quan hệ đối tác bền vững, đôi bên cùng lợi.",
+        "icon": "handshake"
+      },
+      {
+        "itemId": "mo-rong",
+        "title": "Mở rộng nhanh",
+        "description": "Tiếp cận thị trường và năng lực mới.",
+        "icon": "trending-up"
+      }
+    ],
+    "cta": {
+      "label": "Trở thành đối tác của X",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-vx-tuyen-dung-1",
+    "visualType": "process-evolution",
+    "eyebrow": "Lộ trình tại X",
+    "title": "Phát triển sự nghiệp cùng X",
+    "subtitle": "Từ ứng viên đến chuyên gia dẫn dắt: X đầu tư vào lộ trình học hỏi, cố vấn và thăng tiến rõ ràng cho mỗi thành viên.",
+    "routes": [
+      "/ve-x/tuyen-dung"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "fresher",
+        "title": "Fresher / Junior",
+        "description": "Được đào tạo bài bản và cố vấn sát sao từ ngày đầu.",
+        "order": 1,
+        "icon": "graduation-cap"
+      },
+      {
+        "itemId": "senior",
+        "title": "Senior",
+        "description": "Làm chủ chuyên môn và dẫn dắt hạng mục cụ thể.",
+        "order": 2,
+        "icon": "user-check"
+      },
+      {
+        "itemId": "lead",
+        "title": "Lead / Chuyên gia",
+        "description": "Định hình giải pháp và dẫn dắt đội nhóm.",
+        "order": 3,
+        "icon": "users"
+      },
+      {
+        "itemId": "quan-ly",
+        "title": "Quản lý / Kiến trúc",
+        "description": "Chịu trách nhiệm sản phẩm, kiến trúc và con người.",
+        "order": 4,
+        "icon": "briefcase"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "ung-tuyen",
+        "title": "Ứng tuyển",
+        "description": "Gửi hồ sơ và trao đổi về nguyện vọng, thế mạnh.",
+        "order": 1,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "phong-van",
+        "title": "Phỏng vấn",
+        "description": "Trao đổi chuyên môn và văn hóa hai chiều, minh bạch.",
+        "order": 2,
+        "icon": "messages-square"
+      },
+      {
+        "itemId": "onboard",
+        "title": "Onboarding",
+        "description": "Hòa nhập với người đồng hành và lộ trình rõ ràng.",
+        "order": 3,
+        "icon": "rocket"
+      },
+      {
+        "itemId": "phat-trien",
+        "title": "Phát triển",
+        "description": "Học liên tục, làm dự án thật và nhận phản hồi.",
+        "order": 4,
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "thang-tien",
+        "title": "Thăng tiến",
+        "description": "Cơ hội thăng tiến theo năng lực và đóng góp.",
+        "order": 5,
+        "icon": "award"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "hoc-hoi",
+        "title": "Học hỏi liên tục",
+        "description": "Môi trường công nghệ hiện đại, bài toán thực tế.",
+        "icon": "lightbulb"
+      },
+      {
+        "itemId": "ghi-nhan",
+        "title": "Ghi nhận công bằng",
+        "description": "Đánh giá và thăng tiến dựa trên đóng góp.",
+        "icon": "award"
+      },
+      {
+        "itemId": "tac-dong",
+        "title": "Tạo tác động thật",
+        "description": "Sản phẩm phục vụ khách hàng và quy mô thật.",
+        "icon": "target"
+      }
+    ],
+    "cta": {
+      "label": "Xem cơ hội và ứng tuyển",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
   }
 ]

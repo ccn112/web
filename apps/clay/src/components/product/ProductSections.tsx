@@ -7,7 +7,8 @@
  * Zig-zag SplitLayout + mobile image-first, compact sections, gold accents.
  */
 
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { SectionHead, HomeIcon, IconTile, SplitLayout } from "@/components/home/kit";
 import { OrbitDiagram, type OrbitNode } from "@/components/home/visuals";
@@ -207,9 +208,46 @@ function JourneyLayout({ s }: { s: ProductSection }) {
   );
 }
 
-function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
+/* ---- illustration: real screenshot/dashboard + bullet highlights (zig-zag) ---- */
+function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
+  const visual = s.image ? (
+    <Reveal>
+      <div className="relative overflow-hidden rounded-2xl border border-blue/15 bg-card/70 shadow-[0_28px_70px_-40px_var(--accent-blue)]">
+        <Image
+          src={s.image}
+          alt={s.title}
+          width={1200}
+          height={800}
+          sizes="(min-width: 1024px) 46vw, 100vw"
+          className="h-auto w-full object-cover"
+        />
+      </div>
+    </Reveal>
+  ) : null;
   return (
-    <AmbientSection id={s.sectionId} soft={i % 2 === 1} city={s.layout === "stack"} compact>
+    <div className="mt-8">
+      <SplitLayout visual={visual} imageSide={i % 2 === 0 ? "right" : "left"}>
+        {s.bullets?.length ? (
+          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+            {s.bullets.map((b) => (
+              <li key={b} className="flex items-center gap-2.5 text-sm text-foreground/85">
+                <span className="icon-gold inline-flex size-6 shrink-0 items-center justify-center rounded-full">
+                  <Check className="size-3.5" />
+                </span>
+                {b}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <GoldCTA cta={s.cta} />
+      </SplitLayout>
+    </div>
+  );
+}
+
+function SectionBody({ s, i }: { s: ProductSection; i: number }) {
+  return (
+    <>
       <SectionHead title={head(s)} />
       {s.layout === "orbit" ? <OrbitLayout s={s} i={i} /> : null}
       {s.layout === "hub-spoke" ? <OrbitLayout s={s} i={i} numbered /> : null}
@@ -218,6 +256,39 @@ function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
       {s.layout === "showcase" ? <ShowcaseLayout s={s} /> : null}
       {s.layout === "stack" ? <StackLayout s={s} /> : null}
       {s.layout === "journey" ? <JourneyLayout s={s} /> : null}
+      {s.layout === "illustration" ? <IllustrationLayout s={s} i={i} /> : null}
+    </>
+  );
+}
+
+/** First product section renders as a DARK hero (matches the /dich-vu standard:
+ * a dark first-fold keeps the white logo/menu legible and gives every product
+ * page a consistent premium opening). `theme-dark` flips design tokens so the
+ * inner cards adopt dark surfaces automatically. */
+function ProductHero({ s, i }: { s: ProductSection; i: number }) {
+  return (
+    <section
+      id={s.sectionId}
+      className="theme-dark relative isolate overflow-hidden bg-[oklch(0.15_0.02_275)] text-white"
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-40 -top-40 size-[36rem] rounded-full bg-blue opacity-25 blur-[120px] animate-aurora" />
+        <div className="absolute -right-40 top-10 size-[34rem] rounded-full bg-cyan opacity-20 blur-[120px] animate-aurora [animation-delay:3s]" />
+        <div className="absolute bottom-[-12rem] left-1/3 size-[30rem] rounded-full bg-violet opacity-20 blur-[120px] animate-aurora [animation-delay:6s]" />
+      </div>
+      <div aria-hidden className="absolute inset-0 bg-grid opacity-[0.12] mask-fade-b" />
+      <div className="relative mx-auto w-full max-w-[1200px] px-4 pt-32 pb-20 md:px-6 md:pt-40 md:pb-24">
+        <SectionBody s={s} i={i} />
+      </div>
+    </section>
+  );
+}
+
+function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
+  if (i === 0) return <ProductHero s={s} i={i} />;
+  return (
+    <AmbientSection id={s.sectionId} soft={i % 2 === 1} city={s.layout === "stack"} compact>
+      <SectionBody s={s} i={i} />
     </AmbientSection>
   );
 }

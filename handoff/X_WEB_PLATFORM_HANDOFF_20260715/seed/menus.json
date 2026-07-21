@@ -1,332 +1,376 @@
 {
-  "corporate": [
+ "corporate": [
+  {
+   "label": "Giải pháp",
+   "href": "/giai-phap",
+   "children": [
     {
-      "label": "Giải pháp",
-      "href": "/giai-phap",
-      "children": [
-        {
-          "label": "Theo chuỗi nghiệp vụ",
-          "href": "/giai-phap/chuoi-nghiep-vu"
-        },
-        {
-          "label": "Theo đối tượng",
-          "href": "/giai-phap/doi-tuong"
-        },
-        {
-          "label": "Theo mục tiêu",
-          "href": "/giai-phap/muc-tieu"
-        },
-        {
-          "label": "Bộ giải pháp X",
-          "href": "/bo-giai-phap-x"
-        }
-      ]
+     "label": "Doanh nghiệp kết nối",
+     "href": "/giai-phap/doanh-nghiep-ket-noi"
     },
     {
-      "label": "Sản phẩm",
-      "href": "/san-pham",
-      "children": [
-        {
-          "label": "XBooking",
-          "href": "/san-pham/xbooking"
-        },
-        {
-          "label": "FinERP",
-          "href": "/san-pham/finerp"
-        },
-        {
-          "label": "XBuilding",
-          "href": "/san-pham/xbuilding"
-        },
-        {
-          "label": "X.AI",
-          "href": "/san-pham/x-ai"
-        },
-        {
-          "label": "X.Space",
-          "href": "/san-pham/x-space"
-        }
-      ]
+     "label": "Dữ liệu & AI",
+     "href": "/giai-phap/du-lieu-va-ai"
     },
     {
-      "label": "Dịch vụ",
-      "href": "/dich-vu"
+     "label": "Tự động hóa",
+     "href": "/giai-phap/tu-dong-hoa"
     },
     {
-      "label": "Triển khai",
-      "href": "/trien-khai"
+     "label": "Tích hợp hệ thống",
+     "href": "/giai-phap/tich-hop-he-thong"
     },
     {
-      "label": "Trung tâm tri thức",
-      "href": "/insights",
-      "children": [
-        {
-          "label": "Tin tức",
-          "href": "/tin-tuc"
-        },
-        {
-          "label": "Insights",
-          "href": "/insights"
-        },
-        {
-          "label": "Kinh nghiệm",
-          "href": "/khach-hang"
-        }
-      ]
-    },
-    {
-      "label": "Về X",
-      "href": "/ve-x"
+     "label": "Bộ giải pháp X",
+     "href": "/bo-giai-phap-x"
     }
-  ],
-  "xbooking": [
+   ]
+  },
+  {
+   "label": "Sản phẩm",
+   "href": "/san-pham",
+   "children": [
     {
-      "label": "Tổng quan",
-      "href": "/"
+     "label": "XBooking",
+     "href": "/san-pham/xbooking"
     },
     {
-      "label": "Giải pháp",
-      "href": "/giai-phap",
-      "children": [
-        {
-          "label": "Marketing Automation",
-          "href": "/giai-phap/marketing-automation"
-        },
-        {
-          "label": "CRM & Lead",
-          "href": "/giai-phap/crm-lead"
-        },
-        {
-          "label": "Bảng hàng & Booking",
-          "href": "/giai-phap/bang-hang-booking"
-        },
-        {
-          "label": "Đại lý & Sale",
-          "href": "/giai-phap/dai-ly-sale"
-        },
-        {
-          "label": "Hợp đồng & Công nợ",
-          "href": "/giai-phap/hop-dong-cong-no"
-        },
-        {
-          "label": "Customer Care",
-          "href": "/giai-phap/customer-care"
-        }
-      ]
+     "label": "FinERP",
+     "href": "/san-pham/finerp"
     },
     {
-      "label": "Tính năng",
-      "href": "/tinh-nang"
+     "label": "XBuilding",
+     "href": "/san-pham/xbuilding"
     },
     {
-      "label": "Case Study",
-      "href": "/case-study"
+     "label": "X.AI",
+     "href": "/san-pham/x-ai"
     },
     {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo"
+     "label": "X.Space",
+     "href": "/san-pham/x-space"
     }
-  ],
-  "finerp": [
+   ]
+  },
+  {
+   "label": "Dịch vụ",
+   "href": "/dich-vu",
+   "children": [
     {
-      "label": "Tổng quan",
-      "href": "/"
+     "label": "Tư vấn chiến lược",
+     "href": "/dich-vu/tu-van-chien-luoc"
     },
     {
-      "label": "Phân hệ",
-      "href": "/phan-he",
-      "children": [
-        {
-          "label": "Tài chính kế toán",
-          "href": "/phan-he/tai-chinh-ke-toan"
-        },
-        {
-          "label": "Nhân sự",
-          "href": "/phan-he/nhan-su"
-        },
-        {
-          "label": "Mua hàng & Nhà cung cấp",
-          "href": "/phan-he/mua-hang"
-        },
-        {
-          "label": "Kho & Tài sản",
-          "href": "/phan-he/kho-tai-san"
-        },
-        {
-          "label": "Dự án & Chi phí",
-          "href": "/phan-he/du-an-chi-phi"
-        }
-      ]
+     "label": "Phát triển phần mềm",
+     "href": "/dich-vu/phat-trien-phan-mem"
     },
     {
-      "label": "Triển khai",
-      "href": "/trien-khai"
+     "label": "Dữ liệu & AI",
+     "href": "/dich-vu/du-lieu-va-ai"
     },
     {
-      "label": "Tích hợp",
-      "href": "/tich-hop"
-    },
-    {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo"
+     "label": "Vận hành & Hỗ trợ",
+     "href": "/dich-vu/van-hanh-va-ho-tro"
     }
-  ],
-  "xbuilding": [
+   ]
+  },
+  {
+   "label": "Triển khai",
+   "href": "/trien-khai"
+  },
+  {
+   "label": "Trung tâm tri thức",
+   "href": "/insights",
+   "children": [
     {
-      "label": "Tổng quan",
-      "href": "/"
+     "label": "Tin tức",
+     "href": "/tin-tuc"
     },
     {
-      "label": "Loại hình",
-      "href": "/loai-hinh",
-      "children": [
-        {
-          "label": "Chung cư",
-          "href": "/loai-hinh/chung-cu"
-        },
-        {
-          "label": "Văn phòng",
-          "href": "/loai-hinh/van-phong"
-        },
-        {
-          "label": "Khu đô thị",
-          "href": "/loai-hinh/khu-do-thi"
-        }
-      ]
+     "label": "Insights",
+     "href": "/insights"
     },
     {
-      "label": "Nghiệp vụ",
-      "href": "/nghiep-vu"
-    },
-    {
-      "label": "App cư dân",
-      "href": "/app-cu-dan"
-    },
-    {
-      "label": "Smart Building",
-      "href": "/smart-building"
-    },
-    {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo"
+     "label": "Kinh nghiệm",
+     "href": "/khach-hang"
     }
-  ],
-  "xai": [
+   ]
+  },
+  {
+   "label": "Về X",
+   "href": "/ve-x",
+   "children": [
     {
-      "label": "Tổng quan",
-      "href": "/"
+     "label": "Giới thiệu",
+     "href": "/ve-x/gioi-thieu"
     },
     {
-      "label": "Giải pháp AI",
-      "href": "/giai-phap",
-      "children": [
-        {
-          "label": "Document AI",
-          "href": "/giai-phap/document-ai"
-        },
-        {
-          "label": "Report AI",
-          "href": "/giai-phap/report-ai"
-        },
-        {
-          "label": "Advisory AI",
-          "href": "/giai-phap/advisory-ai"
-        },
-        {
-          "label": "Knowledge AI",
-          "href": "/giai-phap/knowledge-ai"
-        }
-      ]
+     "label": "Tầm nhìn & sứ mệnh",
+     "href": "/ve-x/tam-nhin-su-menh"
     },
     {
-      "label": "AI Agent",
-      "href": "/ai-agent",
-      "children": [
-        {
-          "label": "Tổng quan Agent",
-          "href": "/ai-agent"
-        },
-        {
-          "label": "Agent Builder",
-          "href": "/agent-builder"
-        }
-      ]
+     "label": "Đội ngũ",
+     "href": "/ve-x/doi-ngu"
     },
     {
-      "label": "An toàn AI",
-      "href": "/ai-governance",
-      "children": [
-        {
-          "label": "Quản trị AI",
-          "href": "/ai-governance"
-        },
-        {
-          "label": "Giám sát & Vận hành",
-          "href": "/giam-sat-ai"
-        }
-      ]
+     "label": "Đối tác",
+     "href": "/ve-x/doi-tac"
     },
     {
-      "label": "Giải pháp ngành",
-      "href": "/giai-phap-nganh"
-    },
-    {
-      "label": "Theo phòng ban",
-      "href": "/hanh-trinh-ai"
-    },
-    {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo"
+     "label": "Tuyển dụng",
+     "href": "/ve-x/tuyen-dung"
     }
-  ],
-  "xspace": [
+   ]
+  }
+ ],
+ "xbooking": [
+  {
+   "label": "Tổng quan",
+   "href": "/"
+  },
+  {
+   "label": "Giải pháp",
+   "href": "/giai-phap",
+   "children": [
     {
-      "label": "Tổng quan",
-      "href": "/"
+     "label": "Marketing Automation",
+     "href": "/giai-phap/marketing-automation"
     },
     {
-      "label": "Workspace",
-      "href": "/workspace"
+     "label": "CRM & Lead",
+     "href": "/giai-phap/crm-lead"
     },
     {
-      "label": "Cộng tác",
-      "href": "/cong-tac"
+     "label": "Bảng hàng & Booking",
+     "href": "/giai-phap/bang-hang-booking"
     },
     {
-      "label": "Workflow & Bot",
-      "href": "/workflow-bot"
+     "label": "Đại lý & Sale",
+     "href": "/giai-phap/dai-ly-sale"
     },
     {
-      "label": "AI Assistant",
-      "href": "/ai-assistant"
+     "label": "Hợp đồng & Công nợ",
+     "href": "/giai-phap/hop-dong-cong-no"
     },
     {
-      "label": "Tích hợp",
-      "href": "/tich-hop"
-    },
-    {
-      "label": "Insights",
-      "href": "/insights"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo"
+     "label": "Customer Care",
+     "href": "/giai-phap/customer-care"
     }
-  ]
+   ]
+  },
+  {
+   "label": "Tính năng",
+   "href": "/tinh-nang"
+  },
+  {
+   "label": "Case Study",
+   "href": "/case-study"
+  },
+  {
+   "label": "Insights",
+   "href": "/insights"
+  },
+  {
+   "label": "Demo",
+   "href": "/demo"
+  }
+ ],
+ "finerp": [
+  {
+   "label": "Tổng quan",
+   "href": "/"
+  },
+  {
+   "label": "Phân hệ",
+   "href": "/phan-he",
+   "children": [
+    {
+     "label": "Tài chính kế toán",
+     "href": "/phan-he/tai-chinh-ke-toan"
+    },
+    {
+     "label": "Nhân sự",
+     "href": "/phan-he/nhan-su"
+    },
+    {
+     "label": "Mua hàng & Nhà cung cấp",
+     "href": "/phan-he/mua-hang"
+    },
+    {
+     "label": "Kho & Tài sản",
+     "href": "/phan-he/kho-tai-san"
+    },
+    {
+     "label": "Dự án & Chi phí",
+     "href": "/phan-he/du-an-chi-phi"
+    }
+   ]
+  },
+  {
+   "label": "Triển khai",
+   "href": "/trien-khai"
+  },
+  {
+   "label": "Tích hợp",
+   "href": "/tich-hop"
+  },
+  {
+   "label": "Insights",
+   "href": "/insights"
+  },
+  {
+   "label": "Demo",
+   "href": "/demo"
+  }
+ ],
+ "xbuilding": [
+  {
+   "label": "Tổng quan",
+   "href": "/"
+  },
+  {
+   "label": "Loại hình",
+   "href": "/loai-hinh",
+   "children": [
+    {
+     "label": "Chung cư",
+     "href": "/loai-hinh/chung-cu"
+    },
+    {
+     "label": "Văn phòng",
+     "href": "/loai-hinh/van-phong"
+    },
+    {
+     "label": "Khu đô thị",
+     "href": "/loai-hinh/khu-do-thi"
+    }
+   ]
+  },
+  {
+   "label": "Nghiệp vụ",
+   "href": "/nghiep-vu"
+  },
+  {
+   "label": "App cư dân",
+   "href": "/app-cu-dan"
+  },
+  {
+   "label": "Smart Building",
+   "href": "/smart-building"
+  },
+  {
+   "label": "Insights",
+   "href": "/insights"
+  },
+  {
+   "label": "Demo",
+   "href": "/demo"
+  }
+ ],
+ "xai": [
+  {
+   "label": "Tổng quan",
+   "href": "/"
+  },
+  {
+   "label": "Giải pháp AI",
+   "href": "/giai-phap",
+   "children": [
+    {
+     "label": "Document AI",
+     "href": "/giai-phap/document-ai"
+    },
+    {
+     "label": "Report AI",
+     "href": "/giai-phap/report-ai"
+    },
+    {
+     "label": "Advisory AI",
+     "href": "/giai-phap/advisory-ai"
+    },
+    {
+     "label": "Knowledge AI",
+     "href": "/giai-phap/knowledge-ai"
+    }
+   ]
+  },
+  {
+   "label": "AI Agent",
+   "href": "/ai-agent",
+   "children": [
+    {
+     "label": "Tổng quan Agent",
+     "href": "/ai-agent"
+    },
+    {
+     "label": "Agent Builder",
+     "href": "/agent-builder"
+    }
+   ]
+  },
+  {
+   "label": "An toàn AI",
+   "href": "/ai-governance",
+   "children": [
+    {
+     "label": "Quản trị AI",
+     "href": "/ai-governance"
+    },
+    {
+     "label": "Giám sát & Vận hành",
+     "href": "/giam-sat-ai"
+    }
+   ]
+  },
+  {
+   "label": "Giải pháp ngành",
+   "href": "/giai-phap-nganh"
+  },
+  {
+   "label": "Theo phòng ban",
+   "href": "/hanh-trinh-ai"
+  },
+  {
+   "label": "Insights",
+   "href": "/insights"
+  },
+  {
+   "label": "Demo",
+   "href": "/demo"
+  }
+ ],
+ "xspace": [
+  {
+   "label": "Tổng quan",
+   "href": "/"
+  },
+  {
+   "label": "Workspace",
+   "href": "/workspace"
+  },
+  {
+   "label": "Cộng tác",
+   "href": "/cong-tac"
+  },
+  {
+   "label": "Workflow & Bot",
+   "href": "/workflow-bot"
+  },
+  {
+   "label": "AI Assistant",
+   "href": "/ai-assistant"
+  },
+  {
+   "label": "Tích hợp",
+   "href": "/tich-hop"
+  },
+  {
+   "label": "Insights",
+   "href": "/insights"
+  },
+  {
+   "label": "Demo",
+   "href": "/demo"
+  }
+ ]
 }
