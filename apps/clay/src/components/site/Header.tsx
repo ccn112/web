@@ -41,6 +41,16 @@ export function Header({
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      {/* Default dark scrim behind the header so the white logo + menu stay
+          legible on ANY page — including pages whose first fold is light
+          (e.g. C02-only service pages). Fades out once the solid pill appears. */}
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-black/60 via-black/30 to-transparent transition-opacity duration-300",
+          scrolled ? "opacity-0" : "opacity-100",
+        )}
+      />
       <div
         className={cn(
           "mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 transition-all duration-300 md:px-6",

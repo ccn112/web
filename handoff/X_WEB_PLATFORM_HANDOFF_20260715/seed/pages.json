@@ -6174,5 +6174,1080 @@
     ],
     "suggestedPrompts": [],
     "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/giai-phap/doanh-nghiep-ket-noi",
+    "title": "Doanh nghiệp kết nối",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Liên thông dữ liệu, quy trình và hệ thống giữa các phòng ban trên một nền tảng thống nhất.",
+    "seo": {
+      "metaTitle": "Doanh nghiệp kết nối | X",
+      "metaDescription": "Liên thông dữ liệu, quy trình và hệ thống giữa các phòng ban trên một nền tảng thống nhất.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "GIẢI PHÁP",
+        "title": "Doanh nghiệp kết nối",
+        "description": "Xóa ốc đảo dữ liệu giữa các phòng ban. Kết nối marketing, bán hàng, tài chính và vận hành trên một nền tảng để dữ liệu chảy xuyên suốt và quyết định nhanh hơn.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SOLUTIONS"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Liên thông phòng ban",
+            "description": "Dữ liệu và quy trình thông suốt giữa các bộ phận.",
+            "icon": "network"
+          },
+          {
+            "title": "Một nguồn dữ liệu",
+            "description": "Nguồn sự thật chung cho toàn doanh nghiệp.",
+            "icon": "database"
+          },
+          {
+            "title": "Quy trình xuyên suốt",
+            "description": "Số hóa hành trình nghiệp vụ đầu-cuối.",
+            "icon": "workflow"
+          },
+          {
+            "title": "Cộng tác thời gian thực",
+            "description": "Chia sẻ thông tin và phối hợp tức thời.",
+            "icon": "users"
+          }
+        ],
+        "illustrationAsset": "COR-04"
+      },
+      {
+        "blockType": "comparisonTable",
+        "title": "Rời rạc và liên thông",
+        "columns": [
+          "Khía cạnh",
+          "Khi rời rạc",
+          "Khi liên thông"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Dữ liệu",
+              "Mỗi phòng một file, lệch nhau",
+              "Một nguồn sự thật chung"
+            ]
+          },
+          {
+            "cells": [
+              "Quy trình",
+              "Gõ lại nhiều nơi, đứt gãy",
+              "Chạy xuyên suốt các phòng ban"
+            ]
+          },
+          {
+            "cells": [
+              "Báo cáo",
+              "Đối chiếu thủ công cuối kỳ",
+              "Tổng hợp tự động, thời gian thực"
+            ]
+          },
+          {
+            "cells": [
+              "Ra quyết định",
+              "Chờ số liệu, dễ sai lệch",
+              "Nhìn toàn cảnh, quyết nhanh"
+            ]
+          }
+        ]
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/giai-phap/tich-hop-he-thong",
+      "/san-pham"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/giai-phap/du-lieu-va-ai",
+    "title": "Dữ liệu và AI",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Hợp nhất dữ liệu, khai thác bằng phân tích và AI để ra quyết định nhanh và chính xác.",
+    "seo": {
+      "metaTitle": "Dữ liệu và AI | X",
+      "metaDescription": "Hợp nhất dữ liệu, khai thác bằng phân tích và AI để ra quyết định nhanh và chính xác.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "GIẢI PHÁP",
+        "title": "Dữ liệu và AI",
+        "description": "Hợp nhất dữ liệu từ mọi hệ thống, chuẩn hóa và kích hoạt bằng phân tích, báo cáo và trợ lý AI — biến dữ liệu thành lợi thế điều hành.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SOLUTIONS"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Hợp nhất dữ liệu",
+            "description": "Kết nối đa nguồn về một nền tảng dữ liệu.",
+            "icon": "database"
+          },
+          {
+            "title": "Phân tích & báo cáo",
+            "description": "Dashboard và KPI phục vụ điều hành.",
+            "icon": "bar-chart-3"
+          },
+          {
+            "title": "Trợ lý AI",
+            "description": "Hỏi đáp và tổng hợp theo ngữ cảnh doanh nghiệp.",
+            "icon": "brain"
+          },
+          {
+            "title": "Dự báo & cảnh báo",
+            "description": "Phát hiện bất thường và dự báo xu hướng.",
+            "icon": "trending-up"
+          }
+        ],
+        "illustrationAsset": "COR-04"
+      },
+      {
+        "blockType": "comparisonTable",
+        "title": "Dữ liệu phân mảnh và nền tảng hợp nhất",
+        "columns": [
+          "Khía cạnh",
+          "Phân mảnh",
+          "Hợp nhất"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Số liệu",
+              "Mỗi báo cáo một con số",
+              "Nhất quán từ một nguồn"
+            ]
+          },
+          {
+            "cells": [
+              "Tốc độ",
+              "Tổng hợp mất nhiều ngày",
+              "Insight theo thời gian thực"
+            ]
+          },
+          {
+            "cells": [
+              "AI",
+              "Thiếu dữ liệu sạch để dùng",
+              "Sẵn sàng cho phân tích và AI"
+            ]
+          },
+          {
+            "cells": [
+              "Quyết định",
+              "Dựa cảm tính, kinh nghiệm cũ",
+              "Dựa dữ liệu và dự báo"
+            ]
+          }
+        ]
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/dich-vu/du-lieu-va-ai",
+      "/san-pham/x-ai"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/giai-phap/tu-dong-hoa",
+    "title": "Tự động hóa",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Số hóa và tự động hóa quy trình nghiệp vụ, giảm thao tác thủ công, tăng tốc phê duyệt.",
+    "seo": {
+      "metaTitle": "Tự động hóa | X",
+      "metaDescription": "Số hóa và tự động hóa quy trình nghiệp vụ, giảm thao tác thủ công, tăng tốc phê duyệt.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "GIẢI PHÁP",
+        "title": "Tự động hóa quy trình",
+        "description": "Chuyển quy trình thủ công thành luồng số hóa với workflow, phê duyệt điện tử và AI Agent — giảm sai sót, rút ngắn thời gian xử lý.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SOLUTIONS"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "Workflow & phê duyệt",
+            "description": "Luồng phê duyệt điện tử theo vai trò.",
+            "icon": "workflow"
+          },
+          {
+            "title": "Tự động hóa tác vụ lặp",
+            "description": "Giảm thao tác thủ công, tăng độ chính xác.",
+            "icon": "repeat"
+          },
+          {
+            "title": "Tự động hóa tài liệu",
+            "description": "Trích xuất và xử lý tài liệu bằng AI.",
+            "icon": "file-text"
+          },
+          {
+            "title": "AI Agent theo vai trò",
+            "description": "Trợ lý tự động hỗ trợ từng nghiệp vụ.",
+            "icon": "bot"
+          }
+        ],
+        "illustrationAsset": "COR-04"
+      },
+      {
+        "blockType": "comparisonTable",
+        "title": "Trước và sau khi tự động hóa",
+        "columns": [
+          "Khía cạnh",
+          "Trước",
+          "Với X"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Thời gian xử lý",
+              "Nhiều giờ đến nhiều ngày, chờ thủ công",
+              "Tức thì, chạy tự động theo luồng"
+            ]
+          },
+          {
+            "cells": [
+              "Sai sót",
+              "Cao do nhập tay, khó truy vết",
+              "Thấp, có kiểm soát và ghi vết"
+            ]
+          },
+          {
+            "cells": [
+              "Phê duyệt",
+              "Email/giấy rời rạc, dễ nghẽn",
+              "Điện tử theo vai trò, đúng SLA"
+            ]
+          },
+          {
+            "cells": [
+              "Nhân sự",
+              "Tốn người cho việc lặp lại",
+              "Tập trung vào việc giá trị cao"
+            ]
+          },
+          {
+            "cells": [
+              "Mở rộng",
+              "Thêm việc là thêm người",
+              "Thêm việc là thêm luồng/bot"
+            ]
+          }
+        ]
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/giai-phap/du-lieu-va-ai",
+      "/san-pham/x-ai"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/giai-phap/tich-hop-he-thong",
+    "title": "Tích hợp hệ thống",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Kết nối hệ thống hiện hữu qua API và integration hub, xóa ốc đảo dữ liệu.",
+    "seo": {
+      "metaTitle": "Tích hợp hệ thống | X",
+      "metaDescription": "Kết nối hệ thống hiện hữu qua API và integration hub, xóa ốc đảo dữ liệu.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "GIẢI PHÁP",
+        "title": "Tích hợp hệ thống",
+        "description": "Kết nối các hệ thống hiện hữu (ERP, CRM, HRM, IoT…) qua API và integration hub, đồng bộ dữ liệu an toàn và có kiểm soát.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SOLUTIONS"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Năng lực nổi bật",
+        "intro": "",
+        "items": [
+          {
+            "title": "API-first",
+            "description": "Chuẩn hóa kết nối qua API mở.",
+            "icon": "plug"
+          },
+          {
+            "title": "Integration Hub",
+            "description": "Điều phối luồng dữ liệu tập trung.",
+            "icon": "share-2"
+          },
+          {
+            "title": "Đồng bộ dữ liệu",
+            "description": "Nhất quán dữ liệu giữa các hệ thống.",
+            "icon": "refresh-cw"
+          },
+          {
+            "title": "Bảo mật & kiểm soát",
+            "description": "Phân quyền, mã hóa và nhật ký audit.",
+            "icon": "shield-check"
+          }
+        ],
+        "illustrationAsset": "COR-04"
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/giai-phap/doanh-nghiep-ket-noi",
+      "/dich-vu/phat-trien-phan-mem"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/dich-vu/tu-van-chien-luoc",
+    "title": "Tư vấn chiến lược số",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đánh giá hiện trạng, xây dựng lộ trình và kiến trúc chuyển đổi số theo mục tiêu kinh doanh.",
+    "seo": {
+      "metaTitle": "Tư vấn chiến lược số | X",
+      "metaDescription": "Đánh giá hiện trạng, xây dựng lộ trình và kiến trúc chuyển đổi số theo mục tiêu kinh doanh.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "DỊCH VỤ",
+        "title": "Tư vấn chiến lược số",
+        "description": "Đồng hành cùng ban lãnh đạo đánh giá mức độ trưởng thành số, xác định ưu tiên và xây dựng lộ trình chuyển đổi gắn với mục tiêu kinh doanh.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SERVICES"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phạm vi dịch vụ",
+        "intro": "",
+        "items": [
+          {
+            "title": "Đánh giá trưởng thành số",
+            "description": "Chấm điểm hiện trạng theo khung năng lực.",
+            "icon": "radar"
+          },
+          {
+            "title": "Lộ trình chuyển đổi",
+            "description": "Kế hoạch theo giai đoạn, đo lường được.",
+            "icon": "map"
+          },
+          {
+            "title": "Kiến trúc doanh nghiệp",
+            "description": "Chuẩn hóa kiến trúc nghiệp vụ và công nghệ.",
+            "icon": "layout-grid"
+          },
+          {
+            "title": "Business case & ROI",
+            "description": "Định lượng giá trị và ưu tiên đầu tư.",
+            "icon": "calculator"
+          }
+        ],
+        "illustrationAsset": "COR-05"
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/dich-vu/phat-trien-phan-mem",
+      "/trien-khai"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/dich-vu/phat-trien-phan-mem",
+    "title": "Phát triển phần mềm",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Thiết kế, phát triển và hiện đại hóa ứng dụng theo chuẩn kỹ thuật và bảo mật.",
+    "seo": {
+      "metaTitle": "Phát triển phần mềm | X",
+      "metaDescription": "Thiết kế, phát triển và hiện đại hóa ứng dụng theo chuẩn kỹ thuật và bảo mật.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "DỊCH VỤ",
+        "title": "Phát triển phần mềm",
+        "description": "Thiết kế và phát triển sản phẩm phần mềm theo yêu cầu, hiện đại hóa ứng dụng cũ theo kiến trúc chuẩn, quy trình DevOps và bảo mật.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SERVICES"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phạm vi dịch vụ",
+        "intro": "",
+        "items": [
+          {
+            "title": "Sản phẩm theo yêu cầu",
+            "description": "Xây dựng ứng dụng theo bài toán riêng.",
+            "icon": "code"
+          },
+          {
+            "title": "Hiện đại hóa ứng dụng",
+            "description": "Tái kiến trúc hệ thống legacy.",
+            "icon": "refresh-cw"
+          },
+          {
+            "title": "Kiến trúc & DevOps",
+            "description": "CI/CD, hạ tầng và tự động hóa vận hành.",
+            "icon": "layers"
+          },
+          {
+            "title": "Kiểm thử & chất lượng",
+            "description": "Đảm bảo chất lượng và an toàn.",
+            "icon": "check-circle"
+          }
+        ],
+        "illustrationAsset": "COR-05"
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/dich-vu/tu-van-chien-luoc",
+      "/giai-phap/tich-hop-he-thong"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/dich-vu/du-lieu-va-ai",
+    "title": "Dịch vụ Dữ liệu và AI",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Triển khai nền tảng dữ liệu, phân tích và ứng dụng AI từ pilot đến vận hành thực tế.",
+    "seo": {
+      "metaTitle": "Dịch vụ Dữ liệu và AI | X",
+      "metaDescription": "Triển khai nền tảng dữ liệu, phân tích và ứng dụng AI từ pilot đến vận hành thực tế.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "DỊCH VỤ",
+        "title": "Dịch vụ Dữ liệu và AI",
+        "description": "Đồng hành triển khai nền tảng dữ liệu, phân tích và ứng dụng AI/LLM — từ pilot đến vận hành thực tế, có quản trị và đo lường hiệu quả.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SERVICES"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phạm vi dịch vụ",
+        "intro": "",
+        "items": [
+          {
+            "title": "Nền tảng dữ liệu",
+            "description": "Xây dựng data platform và pipeline.",
+            "icon": "database"
+          },
+          {
+            "title": "Phân tích & BI",
+            "description": "Dashboard, báo cáo và tự phục vụ.",
+            "icon": "bar-chart-3"
+          },
+          {
+            "title": "Ứng dụng AI/LLM",
+            "description": "Trợ lý, RAG và tự động hóa tri thức.",
+            "icon": "brain"
+          },
+          {
+            "title": "MLOps & vận hành",
+            "description": "Triển khai, giám sát và tối ưu mô hình.",
+            "icon": "settings"
+          }
+        ],
+        "illustrationAsset": "COR-05"
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/giai-phap/du-lieu-va-ai",
+      "/san-pham/x-ai"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/dich-vu/van-hanh-va-ho-tro",
+    "title": "Vận hành và hỗ trợ",
+    "pageType": "solution",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Dịch vụ quản trị, giám sát và hỗ trợ theo SLA để hệ thống vận hành ổn định.",
+    "seo": {
+      "metaTitle": "Vận hành và hỗ trợ | X",
+      "metaDescription": "Dịch vụ quản trị, giám sát và hỗ trợ theo SLA để hệ thống vận hành ổn định.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "DỊCH VỤ",
+        "title": "Vận hành và hỗ trợ",
+        "description": "Dịch vụ quản trị và vận hành hệ thống (managed services): giám sát chủ động, hỗ trợ theo SLA và tối ưu liên tục để hệ thống luôn ổn định.",
+        "primaryCTA": {
+          "label": "Đặt lịch tư vấn",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-SERVICES"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Phạm vi dịch vụ",
+        "intro": "",
+        "items": [
+          {
+            "title": "Managed Services",
+            "description": "Quản trị hệ thống và hạ tầng theo gói.",
+            "icon": "server"
+          },
+          {
+            "title": "Giám sát & cảnh báo",
+            "description": "Theo dõi chủ động, phát hiện sớm sự cố.",
+            "icon": "activity"
+          },
+          {
+            "title": "Hỗ trợ theo SLA",
+            "description": "Cam kết thời gian phản hồi và xử lý.",
+            "icon": "life-buoy"
+          },
+          {
+            "title": "Tối ưu liên tục",
+            "description": "Cải tiến hiệu năng và chi phí định kỳ.",
+            "icon": "trending-up"
+          }
+        ],
+        "illustrationAsset": "COR-05"
+      },
+      {
+        "blockType": "comparisonTable",
+        "title": "Vận hành bị động và chủ động",
+        "columns": [
+          "Khía cạnh",
+          "Bị động",
+          "Với dịch vụ X"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Sự cố",
+              "Biết khi người dùng phàn nàn",
+              "Phát hiện và xử lý trước khi ảnh hưởng"
+            ]
+          },
+          {
+            "cells": [
+              "Downtime",
+              "Kéo dài, khó lường",
+              "Giảm tối đa, có cam kết SLA"
+            ]
+          },
+          {
+            "cells": [
+              "Hỗ trợ",
+              "Rời rạc, không cam kết",
+              "Theo SLA, một đầu mối rõ ràng"
+            ]
+          },
+          {
+            "cells": [
+              "Chi phí",
+              "Sự cố tốn kém, khó dự toán",
+              "Tối ưu và minh bạch"
+            ]
+          }
+        ]
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": [
+      "/dich-vu/phat-trien-phan-mem",
+      "/trien-khai"
+    ]
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x/gioi-thieu",
+    "title": "Giới thiệu về X",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "X là hệ sinh thái sản phẩm và dịch vụ công nghệ cho bất động sản và doanh nghiệp.",
+    "seo": {
+      "metaTitle": "Giới thiệu về X | X",
+      "metaDescription": "X là hệ sinh thái sản phẩm và dịch vụ công nghệ cho bất động sản và doanh nghiệp.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "VỀ X",
+        "title": "Giới thiệu về X",
+        "description": "X xây dựng hệ sinh thái sản phẩm và dịch vụ công nghệ — kết hợp nền tảng dữ liệu, AI và chuyên môn ngành để đồng hành cùng doanh nghiệp bất động sản và doanh nghiệp trên hành trình chuyển đổi số.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-ABOUT"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "X là ai",
+        "intro": "",
+        "items": [
+          {
+            "title": "Hệ sinh thái sản phẩm",
+            "description": "Bộ sản phẩm liên thông cho bán hàng, tài chính, vận hành và AI.",
+            "icon": "boxes"
+          },
+          {
+            "title": "Chuyên môn ngành",
+            "description": "Am hiểu sâu bất động sản và vận hành doanh nghiệp.",
+            "icon": "building-2"
+          },
+          {
+            "title": "Công nghệ dữ liệu & AI",
+            "description": "Nền tảng dữ liệu và AI làm lõi cho mọi giải pháp.",
+            "icon": "brain"
+          },
+          {
+            "title": "Đồng hành dài hạn",
+            "description": "Tư vấn, triển khai và vận hành theo suốt vòng đời.",
+            "icon": "handshake"
+          }
+        ],
+        "illustrationAsset": "COR-01"
+      },
+      {
+        "blockType": "cta",
+        "title": "Tìm hiểu cách X đồng hành cùng bạn",
+        "description": "Liên hệ để trao đổi về nhu cầu chuyển đổi số của doanh nghiệp.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá sản phẩm",
+          "href": "/san-pham"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x/tam-nhin-su-menh",
+    "title": "Tầm nhìn & sứ mệnh",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Tầm nhìn, sứ mệnh và giá trị cốt lõi định hướng mọi hoạt động của X.",
+    "seo": {
+      "metaTitle": "Tầm nhìn & sứ mệnh | X",
+      "metaDescription": "Tầm nhìn, sứ mệnh và giá trị cốt lõi định hướng mọi hoạt động của X.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "VỀ X",
+        "title": "Tầm nhìn & sứ mệnh",
+        "description": "Định hướng dài hạn và những giá trị cốt lõi dẫn dắt cách X xây dựng sản phẩm và phục vụ khách hàng.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-ABOUT"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Định hướng",
+        "intro": "",
+        "items": [
+          {
+            "title": "Tầm nhìn",
+            "description": "Trở thành hệ sinh thái công nghệ tin cậy cho bất động sản và doanh nghiệp số tại Việt Nam.",
+            "icon": "eye"
+          },
+          {
+            "title": "Sứ mệnh",
+            "description": "Giúp doanh nghiệp khai thác dữ liệu và AI để vận hành hiệu quả và tăng trưởng bền vững.",
+            "icon": "target"
+          }
+        ],
+        "illustrationAsset": "COR-02"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giá trị cốt lõi",
+        "intro": "",
+        "items": [
+          {
+            "title": "Khách hàng làm trọng tâm",
+            "description": "Giải quyết bài toán thực tế, tạo giá trị đo lường được.",
+            "icon": "heart-handshake"
+          },
+          {
+            "title": "Đổi mới thực dụng",
+            "description": "Ứng dụng công nghệ mới một cách thiết thực.",
+            "icon": "lightbulb"
+          },
+          {
+            "title": "Chính trực & minh bạch",
+            "description": "Trung thực trong cam kết và dữ liệu.",
+            "icon": "shield-check"
+          },
+          {
+            "title": "Đồng đội & phát triển",
+            "description": "Học hỏi liên tục và cùng nhau đi xa.",
+            "icon": "users"
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Cùng X kiến tạo giá trị dài hạn",
+        "description": "Kết nối để hiểu cách chúng tôi biến định hướng thành kết quả cụ thể.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá sản phẩm",
+          "href": "/san-pham"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x/doi-ngu",
+    "title": "Đội ngũ",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Đội ngũ chuyên gia công nghệ và tư vấn ngành của X.",
+    "seo": {
+      "metaTitle": "Đội ngũ | X",
+      "metaDescription": "Đội ngũ chuyên gia công nghệ và tư vấn ngành của X.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "VỀ X",
+        "title": "Đội ngũ của X",
+        "description": "Đội ngũ kết hợp chuyên gia công nghệ, dữ liệu, AI và tư vấn ngành — cùng chung mục tiêu tạo ra sản phẩm hữu ích và triển khai thành công cho khách hàng.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-ABOUT"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Văn hóa đội ngũ",
+        "intro": "",
+        "items": [
+          {
+            "title": "Chuyên môn đa lĩnh vực",
+            "description": "Kỹ sư phần mềm, dữ liệu, AI và chuyên gia nghiệp vụ.",
+            "icon": "users-round"
+          },
+          {
+            "title": "Lấy kết quả làm thước đo",
+            "description": "Tập trung vào giá trị thực tế cho khách hàng.",
+            "icon": "target"
+          },
+          {
+            "title": "Học hỏi liên tục",
+            "description": "Cập nhật công nghệ và phương pháp mới.",
+            "icon": "graduation-cap"
+          },
+          {
+            "title": "Cộng tác cởi mở",
+            "description": "Chia sẻ tri thức và phối hợp xuyên nhóm.",
+            "icon": "messages-square"
+          }
+        ],
+        "illustrationAsset": "COR-03"
+      },
+      {
+        "blockType": "cta",
+        "title": "Gia nhập đội ngũ X",
+        "description": "Xem các vị trí đang tuyển và cùng chúng tôi xây dựng sản phẩm.",
+        "primaryCTA": {
+          "label": "Xem tuyển dụng",
+          "href": "/ve-x/tuyen-dung"
+        },
+        "secondaryCTA": {
+          "label": "Liên hệ",
+          "href": "/lien-he"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x/doi-tac",
+    "title": "Đối tác",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Mạng lưới đối tác công nghệ, triển khai và tư vấn của X.",
+    "seo": {
+      "metaTitle": "Đối tác | X",
+      "metaDescription": "Mạng lưới đối tác công nghệ, triển khai và tư vấn của X.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "VỀ X",
+        "title": "Đối tác của X",
+        "description": "X hợp tác cùng mạng lưới đối tác công nghệ, triển khai và tư vấn để mang lại giải pháp toàn diện và mở rộng giá trị cho khách hàng.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-ABOUT"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Các loại hình hợp tác",
+        "intro": "",
+        "items": [
+          {
+            "title": "Đối tác công nghệ",
+            "description": "Nền tảng hạ tầng, dữ liệu và AI.",
+            "icon": "cpu"
+          },
+          {
+            "title": "Đối tác triển khai",
+            "description": "Đồng hành đưa giải pháp vào vận hành.",
+            "icon": "wrench"
+          },
+          {
+            "title": "Đối tác tư vấn",
+            "description": "Tư vấn chiến lược và nghiệp vụ chuyên sâu.",
+            "icon": "briefcase"
+          },
+          {
+            "title": "Đối tác kinh doanh",
+            "description": "Mở rộng thị trường và kênh phân phối.",
+            "icon": "handshake"
+          }
+        ],
+        "illustrationAsset": "COR-01"
+      },
+      {
+        "blockType": "cta",
+        "title": "Trở thành đối tác của X",
+        "description": "Liên hệ để trao đổi về cơ hội hợp tác cùng phát triển.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá sản phẩm",
+          "href": "/san-pham"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
+  },
+  {
+    "site": "corporate",
+    "slug": "/ve-x/tuyen-dung",
+    "title": "Tuyển dụng",
+    "pageType": "landing",
+    "locale": "vi",
+    "status": "published",
+    "pageSummary": "Cơ hội nghề nghiệp và môi trường làm việc tại X.",
+    "seo": {
+      "metaTitle": "Tuyển dụng | X",
+      "metaDescription": "Cơ hội nghề nghiệp và môi trường làm việc tại X.",
+      "index": true,
+      "follow": true
+    },
+    "blocks": [
+      {
+        "blockType": "hero",
+        "eyebrow": "VỀ X",
+        "title": "Cơ hội nghề nghiệp tại X",
+        "description": "Gia nhập X để cùng xây dựng sản phẩm công nghệ tạo tác động thật, trong môi trường học hỏi liên tục và cộng tác cởi mở.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu thêm",
+          "href": "#overview"
+        },
+        "backgroundAsset": "BG-ABOUT"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Vì sao chọn X",
+        "intro": "",
+        "items": [
+          {
+            "title": "Bài toán thực tế",
+            "description": "Làm sản phẩm phục vụ khách hàng thật, quy mô thật.",
+            "icon": "target"
+          },
+          {
+            "title": "Công nghệ hiện đại",
+            "description": "Làm việc với dữ liệu lớn, AI và kiến trúc hiện đại.",
+            "icon": "cpu"
+          },
+          {
+            "title": "Lộ trình phát triển",
+            "description": "Cơ hội học hỏi và thăng tiến rõ ràng.",
+            "icon": "trending-up"
+          },
+          {
+            "title": "Văn hóa cởi mở",
+            "description": "Tôn trọng, minh bạch và hỗ trợ lẫn nhau.",
+            "icon": "heart-handshake"
+          }
+        ],
+        "illustrationAsset": "COR-02"
+      },
+      {
+        "blockType": "cta",
+        "title": "Ứng tuyển cùng X",
+        "description": "Gửi hồ sơ hoặc liên hệ để tìm hiểu vị trí phù hợp với bạn.",
+        "primaryCTA": {
+          "label": "Liên hệ với chúng tôi",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Khám phá sản phẩm",
+          "href": "/san-pham"
+        }
+      }
+    ],
+    "suggestedPrompts": [],
+    "relatedPages": []
   }
 ]

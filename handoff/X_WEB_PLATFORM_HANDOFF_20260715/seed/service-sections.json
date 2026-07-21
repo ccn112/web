@@ -744,5 +744,1984 @@
       }
     ],
     "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-tudonghoa",
+    "visualType": "process-evolution",
+    "eyebrow": "Sơ đồ tự động hóa",
+    "title": "Từ thủ công đến vận hành tự động",
+    "subtitle": "Số hóa, tự động hóa và tối ưu quy trình nghiệp vụ bằng workflow và AI Agent",
+    "routes": [
+      "/giai-phap/tu-dong-hoa"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "manual",
+        "title": "Thủ công",
+        "description": "Giấy tờ, email và bảng tính rời rạc; khó kiểm soát và dễ sai sót.",
+        "order": 1,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "digital",
+        "title": "Số hóa",
+        "description": "Biểu mẫu điện tử, dữ liệu tập trung, minh bạch và truy vết được.",
+        "order": 2,
+        "icon": "monitor"
+      },
+      {
+        "itemId": "automated",
+        "title": "Tự động hóa",
+        "description": "Workflow, phê duyệt điện tử và RPA thay thế thao tác lặp.",
+        "order": 3,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "intelligent",
+        "title": "Thông minh",
+        "description": "AI Agent xử lý ngoại lệ và tối ưu quy trình liên tục.",
+        "order": 4,
+        "icon": "brain"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "map",
+        "title": "Khảo sát & bản đồ quy trình",
+        "description": "Phân tích hiện trạng, xác định điểm nghẽn và cơ hội tự động hóa.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "bpmn",
+        "title": "Thiết kế workflow (BPMN)",
+        "description": "Chuẩn hóa luồng nghiệp vụ để dễ hiểu và tối ưu.",
+        "order": 2,
+        "icon": "git-branch"
+      },
+      {
+        "itemId": "form-approval",
+        "title": "Biểu mẫu & phê duyệt",
+        "description": "Số hóa biểu mẫu và phê duyệt điện tử theo vai trò.",
+        "order": 3,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "rpa",
+        "title": "RPA tác vụ lặp",
+        "description": "Bot tự động nhập liệu, đối soát và đồng bộ giữa hệ thống.",
+        "order": 4,
+        "icon": "bot"
+      },
+      {
+        "itemId": "ai-agent",
+        "title": "AI Agent xử lý ngoại lệ",
+        "description": "AI hiểu ngữ cảnh, gợi ý và tự động xử lý trường hợp phức tạp.",
+        "order": 5,
+        "icon": "sparkles"
+      },
+      {
+        "itemId": "monitor",
+        "title": "Giám sát & tối ưu (SLA)",
+        "description": "Theo dõi hiệu suất, cảnh báo và cải tiến liên tục.",
+        "order": 6,
+        "icon": "activity"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "faster",
+        "title": "Rút ngắn thời gian xử lý",
+        "description": "Giảm chờ đợi và thao tác thủ công giữa các bước.",
+        "icon": "timer"
+      },
+      {
+        "itemId": "accurate",
+        "title": "Giảm sai sót",
+        "description": "Chuẩn hóa quy trình và kiểm soát dữ liệu đầu vào.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "transparent",
+        "title": "Minh bạch & truy vết",
+        "description": "Toàn bộ luồng công việc được ghi nhận và theo dõi.",
+        "icon": "eye"
+      }
+    ],
+    "cta": {
+      "label": "Đặt lịch tư vấn tự động hóa",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-tich-hop-he-thong-1",
+    "visualType": "integration-hub",
+    "eyebrow": "Integration Hub",
+    "title": "Kết nối mọi hệ thống về một trục chung",
+    "subtitle": "Một integration hub trung tâm giúp ERP, CRM, HRM, IoT trao đổi dữ liệu qua API chuẩn hóa mà bạn vẫn kiểm soát toàn bộ luồng.",
+    "routes": [
+      "/giai-phap/tich-hop-he-thong"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "erp",
+        "title": "ERP",
+        "description": "Đồng bộ đơn hàng, tồn kho, công nợ và sổ cái từ hệ thống ERP hiện hữu theo thời gian thực.",
+        "order": 1,
+        "icon": "boxes"
+      },
+      {
+        "itemId": "crm",
+        "title": "CRM",
+        "description": "Liên thông khách hàng, cơ hội và lịch sử tương tác để đội kinh doanh làm việc trên dữ liệu thống nhất.",
+        "order": 2,
+        "icon": "users"
+      },
+      {
+        "itemId": "hrm",
+        "title": "HRM",
+        "description": "Kết nối nhân sự, chấm công và phân quyền để tài khoản và vai trò luôn nhất quán giữa các ứng dụng.",
+        "order": 3,
+        "icon": "user-check"
+      },
+      {
+        "itemId": "iot",
+        "title": "IoT & thiết bị",
+        "description": "Thu nhận tín hiệu từ cảm biến, đồng hồ và thiết bị vận hành qua giao thức chuẩn để giám sát tức thời.",
+        "order": 4,
+        "icon": "radio"
+      },
+      {
+        "itemId": "he-thong-tai-chinh",
+        "title": "Tài chính & kế toán",
+        "description": "Ghép nối hệ thống hóa đơn, thanh toán và ngân hàng để đối soát dòng tiền không cần nhập tay.",
+        "order": 5,
+        "icon": "calculator"
+      },
+      {
+        "itemId": "ung-dung-noi-bo",
+        "title": "Ứng dụng nội bộ & bên thứ ba",
+        "description": "Tích hợp phần mềm chuyên ngành, email và dịch vụ SaaS bên ngoài qua connector dùng lại được.",
+        "order": 6,
+        "icon": "plug"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "api-gateway",
+        "title": "API Gateway",
+        "description": "Cổng API tập trung chuẩn hóa xác thực, giới hạn truy cập và định tuyến mọi yêu cầu ra vào.",
+        "order": 1,
+        "icon": "network"
+      },
+      {
+        "itemId": "connector",
+        "title": "Connector dựng sẵn",
+        "description": "Bộ đầu nối cho các hệ thống phổ biến giúp kết nối nhanh mà không phải viết lại từ đầu.",
+        "order": 2,
+        "icon": "plug"
+      },
+      {
+        "itemId": "dong-bo-hai-chieu",
+        "title": "Đồng bộ hai chiều",
+        "description": "Dữ liệu cập nhật qua lại giữa các hệ thống theo sự kiện, tránh trùng lặp và lệch số liệu.",
+        "order": 3,
+        "icon": "refresh-cw"
+      },
+      {
+        "itemId": "chuyen-doi-du-lieu",
+        "title": "Chuẩn hóa & ánh xạ",
+        "description": "Chuyển đổi định dạng và ánh xạ trường dữ liệu để mỗi hệ thống hiểu đúng thông tin nhận về.",
+        "order": 4,
+        "icon": "git-merge"
+      },
+      {
+        "itemId": "bao-mat",
+        "title": "Bảo mật & phân quyền",
+        "description": "Mã hóa đường truyền, quản lý khóa và phân quyền chi tiết theo từng ứng dụng và người dùng.",
+        "order": 5,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "giam-sat-audit",
+        "title": "Giám sát & audit log",
+        "description": "Theo dõi từng giao dịch tích hợp và lưu vết đầy đủ để truy soát khi cần.",
+        "order": 6,
+        "icon": "activity"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "xoa-oc-dao",
+        "title": "Xóa ốc đảo dữ liệu",
+        "description": "Mọi hệ thống nói chuyện với nhau qua một trục chung, không còn dữ liệu rời rạc mỗi nơi một kiểu.",
+        "icon": "share-2"
+      },
+      {
+        "itemId": "realtime",
+        "title": "Đồng bộ thời gian thực",
+        "description": "Thông tin cập nhật tức thì giữa các ứng dụng, quyết định dựa trên số liệu mới nhất.",
+        "icon": "zap"
+      },
+      {
+        "itemId": "kiem-soat",
+        "title": "Kiểm soát toàn diện",
+        "description": "Bạn nắm rõ ai truy cập gì, dữ liệu đi đâu và mọi giao dịch đều có vết.",
+        "icon": "eye"
+      }
+    ],
+    "cta": {
+      "label": "Khảo sát hệ thống hiện hữu",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-tich-hop-he-thong-2",
+    "visualType": "architecture-stack",
+    "eyebrow": "Kiến trúc tích hợp",
+    "title": "Kiến trúc tích hợp nhiều tầng, an toàn từ nền tảng",
+    "subtitle": "Từ hạ tầng kết nối đến trải nghiệm người dùng, mỗi tầng có vai trò rõ ràng để dữ liệu chảy thông suốt mà vẫn được bảo vệ.",
+    "routes": [
+      "/giai-phap/tich-hop-he-thong"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "tang-nguon",
+        "title": "Tầng hệ thống nguồn",
+        "description": "ERP, CRM, HRM, IoT và các ứng dụng hiện hữu đóng vai trò nguồn và đích của dữ liệu.",
+        "order": 1,
+        "icon": "server"
+      },
+      {
+        "itemId": "tang-ket-noi",
+        "title": "Tầng kết nối",
+        "description": "Connector và adapter chuẩn hóa cách truy xuất từng hệ thống theo giao thức riêng của nó.",
+        "order": 2,
+        "icon": "plug"
+      },
+      {
+        "itemId": "tang-tich-hop",
+        "title": "Tầng integration hub",
+        "description": "Trục trung tâm điều phối luồng dữ liệu, chuyển đổi định dạng và xử lý theo sự kiện.",
+        "order": 3,
+        "icon": "git-merge"
+      },
+      {
+        "itemId": "tang-api",
+        "title": "Tầng API & dịch vụ",
+        "description": "API chuẩn hóa mở dữ liệu ra cho ứng dụng nội bộ và đối tác một cách an toàn.",
+        "order": 4,
+        "icon": "network"
+      },
+      {
+        "itemId": "tang-bao-mat",
+        "title": "Tầng bảo mật & quản trị",
+        "description": "Xác thực, phân quyền, mã hóa và giám sát bao phủ xuyên suốt toàn bộ kiến trúc.",
+        "order": 5,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "tang-trai-nghiem",
+        "title": "Tầng trải nghiệm & báo cáo",
+        "description": "Dashboard hợp nhất và báo cáo cho người dùng khai thác dữ liệu liên thông theo thời gian thực.",
+        "order": 6,
+        "icon": "layout-grid"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "danh-gia-hien-trang",
+        "title": "Đánh giá hiện trạng",
+        "description": "Rà soát các hệ thống, luồng dữ liệu và điểm nghẽn để xác định phạm vi tích hợp.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "thiet-ke-kien-truc",
+        "title": "Thiết kế kiến trúc",
+        "description": "Định hình các tầng, chọn mô hình tích hợp và chuẩn dữ liệu phù hợp với doanh nghiệp.",
+        "order": 2,
+        "icon": "layers"
+      },
+      {
+        "itemId": "trien-khai-connector",
+        "title": "Triển khai connector",
+        "description": "Cấu hình và kiểm thử đầu nối cho từng hệ thống theo thứ tự ưu tiên.",
+        "order": 3,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "kiem-thu-tich-hop",
+        "title": "Kiểm thử tích hợp",
+        "description": "Chạy thử luồng đồng bộ đầu cuối, đối chiếu số liệu và xử lý ngoại lệ trước khi go-live.",
+        "order": 4,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "van-hanh-giam-sat",
+        "title": "Vận hành & giám sát",
+        "description": "Theo dõi sức khỏe kết nối, cảnh báo sự cố và tối ưu hiệu năng liên tục.",
+        "order": 5,
+        "icon": "gauge"
+      },
+      {
+        "itemId": "mo-rong",
+        "title": "Mở rộng linh hoạt",
+        "description": "Bổ sung hệ thống và luồng mới trên nền kiến trúc sẵn có mà không phá vỡ hiện trạng.",
+        "order": 6,
+        "icon": "trending-up"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "on-dinh",
+        "title": "Nền tảng ổn định",
+        "description": "Kiến trúc phân tầng rõ ràng giúp hệ thống bền vững và dễ bảo trì lâu dài.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "de-mo-rong",
+        "title": "Dễ mở rộng",
+        "description": "Thêm hệ thống hay nghiệp vụ mới chỉ cần cắm thêm connector, không đập đi làm lại.",
+        "icon": "layers"
+      },
+      {
+        "itemId": "an-toan-du-lieu",
+        "title": "An toàn dữ liệu",
+        "description": "Bảo mật xuyên suốt mọi tầng giúp dữ liệu luôn được kiểm soát và bảo vệ.",
+        "icon": "shield-check"
+      }
+    ],
+    "cta": {
+      "label": "Nhận tư vấn kiến trúc tích hợp",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-tu-van-chien-luoc-1",
+    "visualType": "maturity-radar",
+    "eyebrow": "Đánh giá trưởng thành số",
+    "title": "Đo mức độ sẵn sàng chuyển đổi số của doanh nghiệp",
+    "subtitle": "Bức tranh khách quan về vị trí hiện tại theo từng trục năng lực, làm nền tảng cho mọi quyết định đầu tư số.",
+    "routes": [
+      "/dich-vu/tu-van-chien-luoc"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "chien-luoc-lanh-dao",
+        "title": "Chiến lược & cam kết lãnh đạo",
+        "description": "Mức độ rõ ràng của tầm nhìn số và sự đồng thuận từ ban điều hành.",
+        "order": 1,
+        "icon": "target"
+      },
+      {
+        "itemId": "du-lieu-phan-tich",
+        "title": "Dữ liệu & phân tích",
+        "description": "Khả năng thu thập, quản trị và khai thác dữ liệu để ra quyết định.",
+        "order": 2,
+        "icon": "database"
+      },
+      {
+        "itemId": "quy-trinh-van-hanh",
+        "title": "Quy trình & vận hành",
+        "description": "Mức độ chuẩn hóa, số hóa và tự động hóa các quy trình cốt lõi.",
+        "order": 3,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "cong-nghe-ha-tang",
+        "title": "Công nghệ & hạ tầng",
+        "description": "Độ hiện đại, tích hợp và khả năng mở rộng của nền tảng công nghệ.",
+        "order": 4,
+        "icon": "server"
+      },
+      {
+        "itemId": "con-nguoi-ky-nang",
+        "title": "Con người & kỹ năng số",
+        "description": "Năng lực số của đội ngũ và văn hóa đổi mới trong tổ chức.",
+        "order": 5,
+        "icon": "users"
+      },
+      {
+        "itemId": "trai-nghiem-khach-hang",
+        "title": "Trải nghiệm khách hàng",
+        "description": "Mức độ số hóa các điểm chạm và cá nhân hóa hành trình khách hàng.",
+        "order": 6,
+        "icon": "heart-handshake"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "khao-sat-hien-trang",
+        "title": "Khảo sát hiện trạng",
+        "description": "Phỏng vấn lãnh đạo và rà soát hệ thống, quy trình đang vận hành.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "thu-thap-du-lieu",
+        "title": "Thu thập dữ liệu đánh giá",
+        "description": "Dùng bộ tiêu chí chuẩn để chấm điểm từng trục năng lực số.",
+        "order": 2,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "cham-diem-truc",
+        "title": "Chấm điểm & lập bản đồ",
+        "description": "Định lượng mức trưởng thành hiện tại trên biểu đồ radar trực quan.",
+        "order": 3,
+        "icon": "radar"
+      },
+      {
+        "itemId": "so-sanh-nganh",
+        "title": "So sánh với ngành",
+        "description": "Đối chiếu điểm số với chuẩn ngành và đối thủ cùng phân khúc.",
+        "order": 4,
+        "icon": "bar-chart-3"
+      },
+      {
+        "itemId": "xac-dinh-khoang-cach",
+        "title": "Xác định khoảng cách",
+        "description": "Chỉ ra chênh lệch giữa hiện trạng và mục tiêu chuyển đổi số.",
+        "order": 5,
+        "icon": "gauge"
+      },
+      {
+        "itemId": "uu-tien-hanh-dong",
+        "title": "Ưu tiên hành động",
+        "description": "Xếp thứ tự các lĩnh vực cần đầu tư theo tác động và tính khả thi.",
+        "order": 6,
+        "icon": "trending-up"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "buc-tranh-khach-quan",
+        "title": "Bức tranh khách quan",
+        "description": "Lãnh đạo nắm rõ điểm mạnh, điểm yếu số của doanh nghiệp bằng số liệu.",
+        "icon": "eye"
+      },
+      {
+        "itemId": "dong-thuan-noi-bo",
+        "title": "Đồng thuận nội bộ",
+        "description": "Cơ sở chung để ban điều hành thống nhất ưu tiên chuyển đổi.",
+        "icon": "handshake"
+      },
+      {
+        "itemId": "nen-tang-lo-trinh",
+        "title": "Nền tảng cho lộ trình",
+        "description": "Đầu vào tin cậy để thiết kế lộ trình và kiến trúc chuyển đổi số.",
+        "icon": "map"
+      }
+    ],
+    "cta": {
+      "label": "Đặt lịch đánh giá mức độ trưởng thành số",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-tu-van-chien-luoc-2",
+    "visualType": "adoption-journey",
+    "eyebrow": "Lộ trình chuyển đổi",
+    "title": "Lộ trình & đồng hành chuyển đổi cho từng bên tham gia",
+    "subtitle": "Tư vấn chiến lược không dừng ở bản kế hoạch: chúng tôi đồng hành đưa từng phòng ban vào cuộc, đi từ khởi động đến nhân rộng và vận hành bền vững.",
+    "routes": [
+      "/dich-vu/tu-van-chien-luoc"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "ban-lanh-dao",
+        "title": "Ban lãnh đạo",
+        "description": "Xác lập tầm nhìn, phê duyệt lộ trình & phân bổ nguồn lực, giữ vai trò bảo trợ cho chuyển đổi.",
+        "order": 1,
+        "icon": "briefcase"
+      },
+      {
+        "itemId": "phong-ban-nghiep-vu",
+        "title": "Phòng ban nghiệp vụ",
+        "description": "Chủ sở hữu quy trình, cung cấp bài toán thực tế và nghiệm thu giá trị theo từng nghiệp vụ.",
+        "order": 2,
+        "icon": "users"
+      },
+      {
+        "itemId": "doi-ngu-it",
+        "title": "Đội ngũ IT",
+        "description": "Đảm bảo hạ tầng, tích hợp hệ thống và an toàn dữ liệu trong suốt quá trình triển khai.",
+        "order": 3,
+        "icon": "server"
+      },
+      {
+        "itemId": "nhan-vien-van-hanh",
+        "title": "Nhân viên vận hành",
+        "description": "Người trực tiếp sử dụng công cụ mới mỗi ngày, được đào tạo và lắng nghe phản hồi để tối ưu.",
+        "order": 4,
+        "icon": "user-round"
+      },
+      {
+        "itemId": "doi-tac-tu-van-x",
+        "title": "Đội tư vấn X",
+        "description": "Dẫn dắt phương pháp, chuyển giao tri thức và đồng hành cùng đội ngũ nội bộ đến khi tự chủ.",
+        "order": 5,
+        "icon": "handshake"
+      },
+      {
+        "itemId": "quan-ly-du-an",
+        "title": "Ban quản lý dự án",
+        "description": "Điều phối tiến độ, quản trị rủi ro và giữ nhịp phối hợp giữa các bên tham gia.",
+        "order": 6,
+        "icon": "clipboard-check"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "khoi-dong",
+        "title": "Khởi động",
+        "description": "Thống nhất mục tiêu, phạm vi và các bên liên quan; thiết lập cơ chế bảo trợ từ lãnh đạo.",
+        "order": 1,
+        "icon": "target"
+      },
+      {
+        "itemId": "danh-gia",
+        "title": "Đánh giá hiện trạng",
+        "description": "Khảo sát quy trình, dữ liệu và mức độ sẵn sàng để xác định khoảng cách cần thu hẹp.",
+        "order": 2,
+        "icon": "search"
+      },
+      {
+        "itemId": "thiet-ke-lo-trinh",
+        "title": "Thiết kế lộ trình",
+        "description": "Xây dựng roadmap ưu tiên theo giá trị, chia giai đoạn rõ ràng và gắn KPI đo lường.",
+        "order": 3,
+        "icon": "map"
+      },
+      {
+        "itemId": "trien-khai-thi-diem",
+        "title": "Triển khai thí điểm",
+        "description": "Chạy pilot trên một phạm vi nhỏ để kiểm chứng giả định và hoàn thiện cách làm.",
+        "order": 4,
+        "icon": "lightbulb"
+      },
+      {
+        "itemId": "nhan-rong",
+        "title": "Nhân rộng",
+        "description": "Mở rộng ra toàn tổ chức kèm đào tạo, tài liệu chuẩn hóa và quản trị thay đổi.",
+        "order": 5,
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "dong-hanh",
+        "title": "Đồng hành",
+        "description": "Theo sát vận hành, tối ưu liên tục và chuyển giao năng lực để đội ngũ nội bộ tự chủ.",
+        "order": 6,
+        "icon": "life-buoy"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "chuyen-doi-khong-gian-doan",
+        "title": "Chuyển đổi không gián đoạn",
+        "description": "Từng bên vào cuộc đúng thời điểm, giảm kháng cự và giữ vận hành ổn định suốt lộ trình.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "nang-luc-noi-bo",
+        "title": "Năng lực nội bộ vững",
+        "description": "Tri thức và phương pháp được chuyển giao, đội ngũ tự vận hành và mở rộng sau dự án.",
+        "icon": "user-check"
+      },
+      {
+        "itemId": "gia-tri-do-luong-duoc",
+        "title": "Giá trị đo lường được",
+        "description": "Mỗi giai đoạn gắn KPI cụ thể, chứng minh hiệu quả chuyển đổi bằng số liệu thực tế.",
+        "icon": "gauge"
+      }
+    ],
+    "cta": {
+      "label": "Nhận lộ trình chuyển đổi cho doanh nghiệp",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-phat-trien-phan-mem-1",
+    "visualType": "architecture-stack",
+    "eyebrow": "Kiến trúc & DevOps",
+    "title": "Kiến trúc phần mềm vững chắc, sẵn sàng mở rộng",
+    "subtitle": "Chúng tôi dựng phần mềm theo tầng rõ ràng - từ hạ tầng cloud, dữ liệu, API đến giao diện - kết hợp DevOps để triển khai nhanh và vận hành ổn định.",
+    "routes": [
+      "/dich-vu/phat-trien-phan-mem"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "ha-tang-cloud",
+        "title": "Hạ tầng & Cloud",
+        "description": "Nền tảng cloud co giãn, hạ tầng khai báo bằng mã (IaC) giúp dựng lại môi trường nhất quán trong vài phút.",
+        "order": 1,
+        "icon": "server"
+      },
+      {
+        "itemId": "nen-tang-du-lieu",
+        "title": "Nền tảng dữ liệu",
+        "description": "Thiết kế cơ sở dữ liệu, cache và luồng dữ liệu tối ưu cho hiệu năng và tính toàn vẹn.",
+        "order": 2,
+        "icon": "database"
+      },
+      {
+        "itemId": "dich-vu-api",
+        "title": "Dịch vụ & API",
+        "description": "Backend theo module hoặc microservices với API chuẩn hóa, dễ tích hợp và tái sử dụng.",
+        "order": 3,
+        "icon": "network"
+      },
+      {
+        "itemId": "giao-dien-trai-nghiem",
+        "title": "Giao diện & Trải nghiệm",
+        "description": "Frontend web và mobile responsive, tối ưu tốc độ tải và trải nghiệm người dùng cuối.",
+        "order": 4,
+        "icon": "monitor"
+      },
+      {
+        "itemId": "bao-mat-quan-sat",
+        "title": "Bảo mật & Quan sát",
+        "description": "Phân quyền, mã hóa và giám sát log - metrics - tracing để phát hiện sự cố trước khi ảnh hưởng người dùng.",
+        "order": 5,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "tu-dong-hoa-cicd",
+        "title": "Tự động hóa CI/CD",
+        "description": "Đường ống build - test - deploy tự động giúp phát hành an toàn, thường xuyên và có thể rollback.",
+        "order": 6,
+        "icon": "workflow"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "khao-sat-thiet-ke",
+        "title": "Khảo sát & thiết kế kiến trúc",
+        "description": "Phân tích bài toán, chọn mô hình kiến trúc và công nghệ phù hợp quy mô doanh nghiệp.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "dung-ha-tang",
+        "title": "Dựng hạ tầng bằng mã",
+        "description": "Thiết lập môi trường dev - staging - production tự động, tái lập được và kiểm soát chi phí.",
+        "order": 2,
+        "icon": "layers"
+      },
+      {
+        "itemId": "phat-trien-module",
+        "title": "Phát triển theo module",
+        "description": "Xây dựng từng thành phần độc lập, dễ kiểm thử và bàn giao theo từng giai đoạn.",
+        "order": 3,
+        "icon": "boxes"
+      },
+      {
+        "itemId": "tich-hop-cicd",
+        "title": "Tích hợp CI/CD",
+        "description": "Kết nối kho mã với đường ống tự động để mọi thay đổi đều được kiểm tra và triển khai nhất quán.",
+        "order": 4,
+        "icon": "git-branch"
+      },
+      {
+        "itemId": "kiem-thu-tu-dong",
+        "title": "Kiểm thử tự động",
+        "description": "Bộ test đơn vị, tích hợp và hồi quy chạy tự động trước mỗi lần phát hành.",
+        "order": 5,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "van-hanh-giam-sat",
+        "title": "Vận hành & giám sát",
+        "description": "Theo dõi sức khỏe hệ thống theo thời gian thực và cảnh báo sớm khi có bất thường.",
+        "order": 6,
+        "icon": "activity"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "mo-rong-linh-hoat",
+        "title": "Mở rộng linh hoạt",
+        "description": "Kiến trúc phân tầng cho phép tăng tải và bổ sung tính năng mà không đập đi làm lại.",
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "trien-khai-nhanh",
+        "title": "Triển khai nhanh & an toàn",
+        "description": "DevOps tự động rút ngắn chu kỳ phát hành và giảm rủi ro mỗi lần cập nhật.",
+        "icon": "zap"
+      },
+      {
+        "itemId": "van-hanh-tin-cay",
+        "title": "Vận hành tin cậy",
+        "description": "Giám sát và bảo mật chủ động giúp hệ thống ổn định, tối ưu chi phí lâu dài.",
+        "icon": "gauge"
+      }
+    ],
+    "cta": {
+      "label": "Tư vấn kiến trúc phần mềm",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-phat-trien-phan-mem-2",
+    "visualType": "process-evolution",
+    "eyebrow": "Quy trình phát triển",
+    "title": "Từ ý tưởng đến sản phẩm giao hàng liên tục",
+    "subtitle": "Quy trình phát triển phần mềm rõ ràng, có kiểm thử và chất lượng ở từng bước - phù hợp cả làm mới sản phẩm lẫn hiện đại hóa hệ thống legacy.",
+    "routes": [
+      "/dich-vu/phat-trien-phan-mem"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "roi-rac",
+        "title": "Rời rạc & thủ công",
+        "description": "Phát triển ad-hoc, phát hành thủ công, khó kiểm soát chất lượng và tiến độ.",
+        "order": 1,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "chuan-hoa",
+        "title": "Chuẩn hóa quy trình",
+        "description": "Áp dụng quản lý mã nguồn, quy trình review và môi trường tách bạch.",
+        "order": 2,
+        "icon": "git-merge"
+      },
+      {
+        "itemId": "tu-dong-hoa",
+        "title": "Tự động hóa giao hàng",
+        "description": "CI/CD và kiểm thử tự động giúp phát hành thường xuyên, ít lỗi.",
+        "order": 3,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "cai-tien-lien-tuc",
+        "title": "Cải tiến liên tục",
+        "description": "Đo lường thực tế và phản hồi người dùng để tối ưu sản phẩm không ngừng.",
+        "order": 4,
+        "icon": "sparkles"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "kham-pha-phan-tich",
+        "title": "Khám phá & phân tích",
+        "description": "Làm rõ mục tiêu kinh doanh, phạm vi và tiêu chí thành công trước khi viết dòng mã đầu tiên.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "thiet-ke-prototype",
+        "title": "Thiết kế UX & prototype",
+        "description": "Dựng nguyên mẫu để hình dung sản phẩm và thống nhất với các bên trước khi phát triển.",
+        "order": 2,
+        "icon": "layout-grid"
+      },
+      {
+        "itemId": "phat-trien-sprint",
+        "title": "Phát triển theo sprint",
+        "description": "Giao từng phần chạy được sau mỗi chu kỳ ngắn, minh bạch tiến độ và dễ điều chỉnh.",
+        "order": 3,
+        "icon": "boxes"
+      },
+      {
+        "itemId": "kiem-thu-qa",
+        "title": "Kiểm thử & QA",
+        "description": "Kết hợp kiểm thử tự động và thủ công để đảm bảo chất lượng trước khi phát hành.",
+        "order": 4,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "phat-hanh-cicd",
+        "title": "Phát hành qua CI/CD",
+        "description": "Triển khai tự động, an toàn và có thể rollback nhanh khi cần.",
+        "order": 5,
+        "icon": "git-branch"
+      },
+      {
+        "itemId": "bao-tri-cai-tien",
+        "title": "Bảo trì & cải tiến",
+        "description": "Theo dõi vận hành, xử lý phản hồi và nâng cấp sản phẩm theo dữ liệu thực tế.",
+        "order": 6,
+        "icon": "refresh-cw"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "giao-hang-dung-hen",
+        "title": "Giao hàng đúng hẹn",
+        "description": "Sprint ngắn và tiến độ minh bạch giúp sản phẩm ra mắt đúng cam kết.",
+        "icon": "timer"
+      },
+      {
+        "itemId": "chat-luong-on-dinh",
+        "title": "Chất lượng ổn định",
+        "description": "Kiểm thử ở mọi bước giảm lỗi và tăng độ tin cậy khi lên production.",
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "de-nang-cap",
+        "title": "Dễ nâng cấp & bảo trì",
+        "description": "Mã sạch và tài liệu rõ ràng giúp hệ thống bền vững, dễ phát triển tiếp.",
+        "icon": "wrench"
+      }
+    ],
+    "cta": {
+      "label": "Bắt đầu dự án phần mềm",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-du-lieu-va-ai-1",
+    "visualType": "adoption-journey",
+    "eyebrow": "Hành trình triển khai",
+    "title": "Từ pilot đến production — AI đi vào vận hành thật",
+    "subtitle": "X đồng hành cùng doanh nghiệp qua từng chặng: chứng minh giá trị bằng pilot có kiểm chứng, rồi đưa mô hình dữ liệu và AI vào vận hành ổn định, không để dự án dừng ở thử nghiệm.",
+    "routes": [
+      "/dich-vu/du-lieu-va-ai"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "ban-lanh-dao",
+        "title": "Ban lãnh đạo",
+        "description": "Đặt mục tiêu kinh doanh, phê duyệt ngân sách và quyết định go/no-go dựa trên ROI thực tế.",
+        "order": 1,
+        "icon": "briefcase"
+      },
+      {
+        "itemId": "chu-so-huu-nghiep-vu",
+        "title": "Chủ sở hữu nghiệp vụ",
+        "description": "Xác định bài toán ưu tiên và nghiệm thu kết quả AI trên chính quy trình của mình.",
+        "order": 2,
+        "icon": "target"
+      },
+      {
+        "itemId": "doi-du-lieu-it",
+        "title": "Đội dữ liệu & IT",
+        "description": "Chuẩn bị dữ liệu, hạ tầng và tích hợp mô hình vào hệ thống đang chạy.",
+        "order": 3,
+        "icon": "database"
+      },
+      {
+        "itemId": "doi-mlops",
+        "title": "Đội MLOps & vận hành",
+        "description": "Giám sát mô hình, theo dõi độ trôi dữ liệu và giữ dịch vụ AI ổn định 24/7.",
+        "order": 4,
+        "icon": "settings"
+      },
+      {
+        "itemId": "nguoi-dung-cuoi",
+        "title": "Người dùng cuối",
+        "description": "Sử dụng công cụ AI trong công việc hằng ngày và phản hồi để mô hình tốt lên.",
+        "order": 5,
+        "icon": "users"
+      },
+      {
+        "itemId": "chuyen-gia-x",
+        "title": "Chuyên gia X",
+        "description": "Dẫn dắt kiến trúc, chuyển giao năng lực và đồng hành từ pilot đến production.",
+        "order": 6,
+        "icon": "handshake"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "kham-pha-bai-toan",
+        "title": "Khám phá & đánh giá khả thi",
+        "description": "Chọn use case có giá trị cao, kiểm tra sẵn sàng dữ liệu và xác định tiêu chí thành công.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "pilot-kiem-chung",
+        "title": "Pilot có kiểm chứng",
+        "description": "Xây bản chạy thử trên dữ liệu thật, đo lường độ chính xác và tác động nghiệp vụ trong phạm vi hẹp.",
+        "order": 2,
+        "icon": "lightbulb"
+      },
+      {
+        "itemId": "danh-gia-roi",
+        "title": "Đánh giá ROI & go/no-go",
+        "description": "So sánh kết quả với mục tiêu, tính lợi ích và ra quyết định nhân rộng hay dừng.",
+        "order": 3,
+        "icon": "calculator"
+      },
+      {
+        "itemId": "dua-vao-production",
+        "title": "Đưa vào production",
+        "description": "Tích hợp vào hệ thống, thiết lập bảo mật, phân quyền và quy trình phát hành mô hình.",
+        "order": 4,
+        "icon": "server"
+      },
+      {
+        "itemId": "van-hanh-giam-sat",
+        "title": "Vận hành & giám sát",
+        "description": "Theo dõi hiệu năng, cảnh báo suy giảm chất lượng và huấn luyện lại mô hình định kỳ.",
+        "order": 5,
+        "icon": "activity"
+      },
+      {
+        "itemId": "mo-rong-toi-uu",
+        "title": "Mở rộng & tối ưu",
+        "description": "Nhân bản sang phòng ban, use case mới và liên tục nâng cấp dựa trên dữ liệu vận hành.",
+        "order": 6,
+        "icon": "trending-up"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "khong-bo-pilot",
+        "title": "Không bỏ dở pilot",
+        "description": "Mỗi thử nghiệm đều có lộ trình rõ ràng để lên production hoặc dừng đúng lúc.",
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "gia-tri-do-duoc",
+        "title": "Giá trị đo được",
+        "description": "ROI và tác động nghiệp vụ được lượng hóa trước khi mở rộng đầu tư.",
+        "icon": "gauge"
+      },
+      {
+        "itemId": "nang-luc-noi-bo",
+        "title": "Năng lực nội bộ",
+        "description": "Đội ngũ doanh nghiệp làm chủ mô hình sau khi X chuyển giao.",
+        "icon": "user-check"
+      }
+    ],
+    "cta": {
+      "label": "Đặt lịch tư vấn lộ trình AI",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-du-lieu-va-ai-2",
+    "visualType": "data-platform",
+    "eyebrow": "Nền tảng dữ liệu",
+    "title": "Chúng tôi dựng nền tảng dữ liệu & MLOps sẵn sàng production",
+    "subtitle": "Đội ngũ X gom mọi nguồn dữ liệu rời rạc về một lakehouse, dựng pipeline chuẩn hóa và đưa mô hình AI/LLM ra vận hành thật, giám sát liên tục.",
+    "routes": [
+      "/dich-vu/du-lieu-va-ai"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "he-thong-nghiep-vu",
+        "title": "Hệ thống nghiệp vụ",
+        "description": "Dữ liệu giao dịch từ ERP, CRM, HRM và các ứng dụng lõi của doanh nghiệp.",
+        "order": 1,
+        "icon": "database"
+      },
+      {
+        "itemId": "file-tai-lieu",
+        "title": "File & tài liệu",
+        "description": "Hợp đồng, hóa đơn, báo cáo PDF/Excel và kho tài liệu nội bộ chưa cấu trúc.",
+        "order": 2,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "web-app-su-kien",
+        "title": "Web, app & sự kiện",
+        "description": "Hành vi người dùng, log ứng dụng và luồng sự kiện realtime từ website, mobile.",
+        "order": 3,
+        "icon": "activity"
+      },
+      {
+        "itemId": "iot-cam-bien",
+        "title": "IoT & cảm biến",
+        "description": "Tín hiệu thiết bị, cảm biến vận hành và dữ liệu đo lường theo thời gian.",
+        "order": 4,
+        "icon": "radio"
+      },
+      {
+        "itemId": "api-doi-tac",
+        "title": "API & đối tác",
+        "description": "Dữ liệu từ cổng thanh toán, nhà cung cấp và dịch vụ bên thứ ba qua API.",
+        "order": 5,
+        "icon": "plug"
+      },
+      {
+        "itemId": "bang-tinh-thu-cong",
+        "title": "Bảng tính thủ công",
+        "description": "Các file Google Sheets, Excel rời rạc còn nằm ngoài hệ thống trung tâm.",
+        "order": 6,
+        "icon": "clipboard-check"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "thu-thap-ingest",
+        "title": "Thu thập & ingest",
+        "description": "Kết nối connector và pipeline ELT/streaming để nạp dữ liệu từ mọi nguồn một cách tự động.",
+        "order": 1,
+        "icon": "share-2"
+      },
+      {
+        "itemId": "lakehouse-luu-tru",
+        "title": "Lakehouse tập trung",
+        "description": "Lưu trữ theo kiến trúc lakehouse phân tầng bronze-silver-gold, tách compute khỏi storage.",
+        "order": 2,
+        "icon": "layers"
+      },
+      {
+        "itemId": "xu-ly-chat-luong",
+        "title": "Xử lý & chất lượng",
+        "description": "Chuẩn hóa, khử trùng lặp và kiểm định chất lượng dữ liệu theo hợp đồng data contract.",
+        "order": 3,
+        "icon": "folder-check"
+      },
+      {
+        "itemId": "phan-tich-bi",
+        "title": "Phân tích & BI",
+        "description": "Dựng data mart, semantic layer và dashboard giúp lãnh đạo ra quyết định dựa trên số liệu.",
+        "order": 4,
+        "icon": "bar-chart-3"
+      },
+      {
+        "itemId": "ai-llm",
+        "title": "AI & LLM",
+        "description": "Huấn luyện mô hình dự báo và triển khai RAG/LLM khai thác tri thức nội bộ an toàn.",
+        "order": 5,
+        "icon": "brain"
+      },
+      {
+        "itemId": "mlops-van-hanh",
+        "title": "MLOps vận hành",
+        "description": "Đóng gói, CI/CD mô hình, giám sát drift và tự động huấn luyện lại khi dữ liệu thay đổi.",
+        "order": 6,
+        "icon": "refresh-cw"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "nguon-su-that-duy-nhat",
+        "title": "Một nguồn sự thật",
+        "description": "Toàn doanh nghiệp dùng chung dữ liệu đã kiểm định, hết cảnh mỗi phòng một con số.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "ai-ra-production",
+        "title": "AI ra production",
+        "description": "Mô hình không dừng ở thử nghiệm mà được đưa vào vận hành thật, đo được giá trị.",
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "van-hanh-tin-cay",
+        "title": "Vận hành tin cậy",
+        "description": "Pipeline và mô hình được giám sát liên tục, tự phục hồi và mở rộng theo nhu cầu.",
+        "icon": "gauge"
+      }
+    ],
+    "cta": {
+      "label": "Khởi động dự án nền tảng dữ liệu",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-van-hanh-va-ho-tro-1",
+    "visualType": "control-tower",
+    "eyebrow": "Trung tâm vận hành",
+    "title": "Giám sát 24/7, xử lý trước khi thành sự cố",
+    "subtitle": "Một trung tâm điều hành duy nhất theo dõi toàn bộ hệ thống của bạn theo thời gian thực, phát hiện & cảnh báo sớm để dịch vụ luôn ổn định, không lo downtime.",
+    "routes": [
+      "/dich-vu/van-hanh-va-ho-tro"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "uptime-tinh-trang",
+        "title": "Uptime & tình trạng dịch vụ",
+        "description": "Theo dõi trạng thái sống của từng dịch vụ, endpoint và tác vụ nền theo thời gian thực.",
+        "order": 1,
+        "icon": "activity"
+      },
+      {
+        "itemId": "hieu-nang-tai-nguyen",
+        "title": "Hiệu năng & tài nguyên",
+        "description": "Giám sát CPU, bộ nhớ, độ trễ và thông lượng để phát hiện điểm nghẽn trước khi ảnh hưởng người dùng.",
+        "order": 2,
+        "icon": "gauge"
+      },
+      {
+        "itemId": "canh-bao-nguong",
+        "title": "Cảnh báo & ngưỡng thông minh",
+        "description": "Đặt ngưỡng động cho từng chỉ số và gửi cảnh báo phân tầng đến đúng người, đúng lúc.",
+        "order": 3,
+        "icon": "radar"
+      },
+      {
+        "itemId": "log-truy-vet",
+        "title": "Log & truy vết tập trung",
+        "description": "Gom log toàn hệ thống về một nơi, truy vết nhanh nguyên nhân gốc của mọi sự cố.",
+        "order": 4,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "bao-mat-ban-va",
+        "title": "Bảo mật & bản vá",
+        "description": "Rà soát lỗ hổng, cập nhật bản vá và theo dõi các sự kiện an ninh liên tục.",
+        "order": 5,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "sao-luu-phuc-hoi",
+        "title": "Sao lưu & phục hồi",
+        "description": "Sao lưu định kỳ và diễn tập phục hồi để dữ liệu luôn an toàn, khôi phục trong tầm kiểm soát.",
+        "order": 6,
+        "icon": "database"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "thu-thap-chi-so",
+        "title": "Thu thập chỉ số",
+        "description": "Gom số liệu vận hành, log và sự kiện từ mọi thành phần về trung tâm giám sát.",
+        "order": 1,
+        "icon": "bar-chart-3"
+      },
+      {
+        "itemId": "phat-hien-bat-thuong",
+        "title": "Phát hiện bất thường",
+        "description": "Đối chiếu ngưỡng và mẫu hành vi để nhận diện dấu hiệu lỗi ngay khi vừa xuất hiện.",
+        "order": 2,
+        "icon": "search"
+      },
+      {
+        "itemId": "canh-bao-phan-tang",
+        "title": "Cảnh báo phân tầng",
+        "description": "Chuyển cảnh báo đến kỹ sư trực theo mức độ nghiêm trọng và cam kết SLA.",
+        "order": 3,
+        "icon": "radio"
+      },
+      {
+        "itemId": "xu-ly-runbook",
+        "title": "Xử lý theo runbook",
+        "description": "Áp dụng quy trình khắc phục chuẩn hóa để rút ngắn thời gian phản ứng và tránh sai sót.",
+        "order": 4,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "khac-phuc-xac-nhan",
+        "title": "Khắc phục & xác nhận",
+        "description": "Xử lý dứt điểm sự cố và xác nhận dịch vụ đã trở lại trạng thái bình thường.",
+        "order": 5,
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "hau-kiem-tinh-chinh",
+        "title": "Hậu kiểm & tinh chỉnh",
+        "description": "Phân tích nguyên nhân gốc và điều chỉnh ngưỡng, cấu hình để sự cố không lặp lại.",
+        "order": 6,
+        "icon": "settings"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "khong-lo-downtime",
+        "title": "Không lo downtime",
+        "description": "Sự cố được phát hiện và xử lý sớm, giữ dịch vụ chạy liên tục quanh năm.",
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "phan-hoi-trong-sla",
+        "title": "Phản hồi trong SLA",
+        "description": "Mọi cảnh báo đều có người xử lý trong khung thời gian cam kết.",
+        "icon": "timer"
+      },
+      {
+        "itemId": "minh-bach-so-lieu",
+        "title": "Minh bạch số liệu",
+        "description": "Báo cáo tình trạng và hiệu năng rõ ràng, ra quyết định dựa trên dữ liệu thật.",
+        "icon": "eye"
+      }
+    ],
+    "cta": {
+      "label": "Đăng ký giám sát vận hành",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-dv-van-hanh-va-ho-tro-2",
+    "visualType": "maturity-radar",
+    "eyebrow": "Radar trưởng thành",
+    "title": "Đánh giá & nâng mức trưởng thành vận hành",
+    "subtitle": "Chấm điểm 6 trục vận hành để biết bạn đang ở đâu và cần nâng cấp gì tiếp theo, thay vì chữa cháy bị động.",
+    "routes": [
+      "/dich-vu/van-hanh-va-ho-tro"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "giam-sat",
+        "title": "Giám sát",
+        "description": "Mức độ quan sát hệ thống theo thời gian thực: từ chưa có gì đến dashboard đầy đủ metric, log & cảnh báo chủ động.",
+        "order": 1,
+        "icon": "activity"
+      },
+      {
+        "itemId": "tu-dong-hoa-van-hanh",
+        "title": "Tự động hóa vận hành",
+        "description": "Khả năng tự phục hồi, tự mở rộng và chạy tác vụ định kỳ không cần thao tác tay của đội vận hành.",
+        "order": 2,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "sla-va-ho-tro",
+        "title": "SLA & hỗ trợ",
+        "description": "Cam kết thời gian phản hồi, quy trình phân tầng sự cố và kênh hỗ trợ rõ ràng theo mức độ ưu tiên.",
+        "order": 3,
+        "icon": "life-buoy"
+      },
+      {
+        "itemId": "bao-mat-va-ban-va",
+        "title": "Bảo mật & bản vá",
+        "description": "Tần suất vá lỗ hổng, kiểm soát truy cập và tuân thủ quy trình bảo mật trên toàn hệ thống.",
+        "order": 4,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "sao-luu-va-phuc-hoi",
+        "title": "Sao lưu & phục hồi",
+        "description": "Chu kỳ sao lưu, thời gian phục hồi mục tiêu (RTO/RPO) và mức độ diễn tập khôi phục thực tế.",
+        "order": 5,
+        "icon": "refresh-cw"
+      },
+      {
+        "itemId": "toi-uu-chi-phi",
+        "title": "Tối ưu chi phí",
+        "description": "Khả năng nhìn rõ chi phí hạ tầng, loại bỏ lãng phí và tinh chỉnh tài nguyên theo nhu cầu thật.",
+        "order": 6,
+        "icon": "gauge"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "khao-sat-hien-trang",
+        "title": "Khảo sát hiện trạng",
+        "description": "Thu thập kiến trúc, công cụ, quy trình và sự cố gần đây để dựng bức tranh vận hành thực tế.",
+        "order": 1,
+        "icon": "search"
+      },
+      {
+        "itemId": "cham-diem-6-truc",
+        "title": "Chấm điểm 6 trục",
+        "description": "Đánh giá từng trục trưởng thành trên thang điểm và vẽ radar hiện trạng so với mục tiêu mong muốn.",
+        "order": 2,
+        "icon": "radar"
+      },
+      {
+        "itemId": "xac-dinh-khoang-cach",
+        "title": "Xác định khoảng cách",
+        "description": "Chỉ ra các trục yếu nhất và rủi ro ưu tiên cần đóng trước theo mức độ ảnh hưởng tới kinh doanh.",
+        "order": 3,
+        "icon": "target"
+      },
+      {
+        "itemId": "lo-trinh-nang-cap",
+        "title": "Lộ trình nâng cấp",
+        "description": "Thiết kế roadmap từng bước với hạng mục, nguồn lực và mốc thời gian cho từng mức trưởng thành.",
+        "order": 4,
+        "icon": "map"
+      },
+      {
+        "itemId": "trien-khai-cai-tien",
+        "title": "Triển khai cải tiến",
+        "description": "Thực thi các hạng mục nâng cấp: dựng giám sát, tự động hóa, siết bảo mật và kiện toàn sao lưu.",
+        "order": 5,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "danh-gia-lai-dinh-ky",
+        "title": "Đánh giá lại định kỳ",
+        "description": "Chấm điểm lại theo chu kỳ để xác nhận mức trưởng thành đã tăng và đặt mục tiêu vòng tiếp theo.",
+        "order": 6,
+        "icon": "refresh-cw"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "buc-tranh-ro-rang",
+        "title": "Bức tranh vận hành rõ ràng",
+        "description": "Biết chính xác đang ở mức trưởng thành nào trên từng trục thay vì cảm tính.",
+        "icon": "eye"
+      },
+      {
+        "itemId": "uu-tien-dung-cho",
+        "title": "Ưu tiên đầu tư đúng chỗ",
+        "description": "Tập trung ngân sách vào các trục yếu nhất, tránh dàn trải và lãng phí.",
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "nang-muc-ben-vung",
+        "title": "Nâng mức bền vững",
+        "description": "Cải thiện đo được qua từng kỳ đánh giá, tiến tới vận hành chủ động và ổn định.",
+        "icon": "check-circle"
+      }
+    ],
+    "cta": {
+      "label": "Đặt lịch chấm điểm trưởng thành vận hành",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-doanh-nghiep-ket-noi-1",
+    "visualType": "hub-spoke",
+    "eyebrow": "Doanh nghiệp kết nối",
+    "title": "Một nền tảng, mọi phòng ban nói chung một ngôn ngữ dữ liệu",
+    "subtitle": "Liên thông dữ liệu, quy trình và hệ thống giữa các phòng ban để lãnh đạo có một bức tranh duy nhất, thay vì ghép nối những mảnh rời rạc.",
+    "routes": [
+      "/giai-phap/doanh-nghiep-ket-noi"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "kinh-doanh",
+        "title": "Kinh doanh & CRM",
+        "description": "Khách hàng, cơ hội và hợp đồng cập nhật real-time, không còn mỗi người một file Excel.",
+        "order": 1,
+        "icon": "handshake",
+        "side": "left"
+      },
+      {
+        "itemId": "tai-chinh-ke-toan",
+        "title": "Tài chính - Kế toán",
+        "description": "Doanh thu, chi phí và công nợ tự động khớp với dữ liệu bán hàng và vận hành.",
+        "order": 2,
+        "icon": "calculator",
+        "side": "right"
+      },
+      {
+        "itemId": "van-hanh",
+        "title": "Vận hành & Dự án",
+        "description": "Tiến độ, nguồn lực và công việc liên phòng ban hiển thị trên cùng một dòng thời gian.",
+        "order": 3,
+        "icon": "workflow",
+        "side": "left"
+      },
+      {
+        "itemId": "nhan-su",
+        "title": "Nhân sự - HRM",
+        "description": "Hồ sơ, phân quyền và cơ cấu tổ chức đồng bộ với mọi hệ thống nghiệp vụ.",
+        "order": 4,
+        "icon": "users",
+        "side": "right"
+      },
+      {
+        "itemId": "kho-mua-hang",
+        "title": "Kho & Mua hàng",
+        "description": "Tồn kho và đơn mua liên thông với kinh doanh và kế toán, cân đối cung cầu tức thì.",
+        "order": 5,
+        "icon": "boxes",
+        "side": "left"
+      },
+      {
+        "itemId": "lanh-dao",
+        "title": "Ban lãnh đạo",
+        "description": "Dashboard hợp nhất từ tất cả phòng ban, ra quyết định trên số liệu thống nhất một nguồn.",
+        "order": 6,
+        "icon": "gauge",
+        "side": "right"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "nguon-du-lieu-chung",
+        "title": "Nguồn dữ liệu chung",
+        "description": "Mọi phòng ban ghi và đọc trên cùng một danh mục khách hàng, sản phẩm, đối tác.",
+        "order": 1,
+        "icon": "database"
+      },
+      {
+        "itemId": "phan-quyen-theo-vai-tro",
+        "title": "Phân quyền theo vai trò",
+        "description": "Mỗi người thấy đúng phần dữ liệu mình cần, an toàn mà vẫn liên thông.",
+        "order": 2,
+        "icon": "shield-check"
+      },
+      {
+        "itemId": "quy-trinh-lien-phong-ban",
+        "title": "Quy trình liên phòng ban",
+        "description": "Một yêu cầu chạy xuyên suốt kinh doanh, kế toán, vận hành mà không cần gõ lại.",
+        "order": 3,
+        "icon": "git-merge"
+      },
+      {
+        "itemId": "bao-cao-hop-nhat",
+        "title": "Báo cáo hợp nhất",
+        "description": "Số liệu tổng hợp tự động từ mọi bộ phận, không còn đối chiếu thủ công cuối tháng.",
+        "order": 4,
+        "icon": "bar-chart-3"
+      },
+      {
+        "itemId": "canh-bao-chu-dong",
+        "title": "Cảnh báo chủ động",
+        "description": "Hệ thống thông báo khi dữ liệu lệch nhau giữa các phòng ban để xử lý sớm.",
+        "order": 5,
+        "icon": "activity"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "het-du-lieu-roi-rac",
+        "title": "Hết dữ liệu rời rạc",
+        "description": "Một nguồn sự thật duy nhất thay cho hàng chục file và phần mềm không kết nối.",
+        "icon": "folder-check"
+      },
+      {
+        "itemId": "phong-ban-noi-chuyen",
+        "title": "Phòng ban nói chuyện với nhau",
+        "description": "Thông tin chảy liền mạch, giảm họp hành và email đối chiếu qua lại.",
+        "icon": "heart-handshake"
+      },
+      {
+        "itemId": "quyet-dinh-nhanh-hon",
+        "title": "Quyết định nhanh & chắc",
+        "description": "Lãnh đạo nhìn toàn cảnh doanh nghiệp real-time để ra quyết định kịp thời.",
+        "icon": "trending-up"
+      }
+    ],
+    "cta": {
+      "label": "Đặt lịch tư vấn liên thông doanh nghiệp",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-doanh-nghiep-ket-noi-2",
+    "visualType": "integration-hub",
+    "eyebrow": "Kết nối hệ thống",
+    "title": "Kết nối những hệ thống bạn đang dùng thành một khối thống nhất",
+    "subtitle": "Không cần thay mới toàn bộ: chúng tôi tích hợp ERP, CRM, kế toán và các công cụ sẵn có để dữ liệu chảy hai chiều, tự động và có kiểm soát.",
+    "routes": [
+      "/giai-phap/doanh-nghiep-ket-noi"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "erp",
+        "title": "ERP quản trị tổng thể",
+        "description": "Trục xương sống về tài chính, kho và mua hàng được đồng bộ với mọi hệ thống khác.",
+        "order": 1,
+        "icon": "server"
+      },
+      {
+        "itemId": "crm",
+        "title": "CRM bán hàng",
+        "description": "Dữ liệu khách hàng và cơ hội liên thông trực tiếp với kế toán và vận hành.",
+        "order": 2,
+        "icon": "handshake"
+      },
+      {
+        "itemId": "ke-toan",
+        "title": "Phần mềm kế toán",
+        "description": "Hóa đơn, công nợ và bút toán khớp tự động với dữ liệu bán hàng, không nhập tay.",
+        "order": 3,
+        "icon": "calculator"
+      },
+      {
+        "itemId": "hrm",
+        "title": "HRM & Chấm công",
+        "description": "Nhân sự, lương và phân quyền đồng bộ sang các hệ thống nghiệp vụ liên quan.",
+        "order": 4,
+        "icon": "users"
+      },
+      {
+        "itemId": "email-lich",
+        "title": "Email & Lịch làm việc",
+        "description": "Trao đổi và lịch hẹn gắn liền với hồ sơ khách hàng và tiến độ công việc.",
+        "order": 5,
+        "icon": "mail"
+      },
+      {
+        "itemId": "cong-cu-cu",
+        "title": "Excel & công cụ cũ",
+        "description": "Kết nối cả những file và ứng dụng đang dùng để không bỏ sót dữ liệu di sản.",
+        "order": 6,
+        "icon": "file-text"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "api-connector",
+        "title": "API Connector",
+        "description": "Bộ kết nối sẵn sàng ghép nối các hệ thống phổ biến chỉ trong vài ngày.",
+        "order": 1,
+        "icon": "plug"
+      },
+      {
+        "itemId": "dong-bo-hai-chieu",
+        "title": "Đồng bộ hai chiều",
+        "description": "Dữ liệu cập nhật ở một nơi tự động phản ánh sang mọi hệ thống liên quan.",
+        "order": 2,
+        "icon": "refresh-cw"
+      },
+      {
+        "itemId": "ban-do-du-lieu",
+        "title": "Bản đồ dữ liệu",
+        "description": "Chuẩn hóa và ánh xạ trường dữ liệu giữa các hệ thống để không lệch định dạng.",
+        "order": 3,
+        "icon": "network"
+      },
+      {
+        "itemId": "trigger-tu-dong",
+        "title": "Trigger tự động",
+        "description": "Sự kiện ở hệ thống này kích hoạt hành động ở hệ thống kia mà không cần thao tác.",
+        "order": 4,
+        "icon": "zap"
+      },
+      {
+        "itemId": "giam-sat-audit",
+        "title": "Giám sát & Audit",
+        "description": "Mọi luồng dữ liệu được ghi vết đầy đủ, dễ truy vết và kiểm soát rủi ro.",
+        "order": 5,
+        "icon": "eye"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "xoa-oc-dao-du-lieu",
+        "title": "Xóa ốc đảo dữ liệu",
+        "description": "Các hệ thống rời rạc trở thành một mạng lưới liên thông duy nhất.",
+        "icon": "unplug"
+      },
+      {
+        "itemId": "tu-dong-realtime",
+        "title": "Tự động & real-time",
+        "description": "Giảm nhập liệu trùng lặp, dữ liệu luôn mới và nhất quán giữa các bộ phận.",
+        "icon": "refresh-cw"
+      },
+      {
+        "itemId": "kiem-soat-toan-dien",
+        "title": "Kiểm soát toàn diện",
+        "description": "Mọi kết nối minh bạch, có nhật ký và phân quyền chặt chẽ.",
+        "icon": "shield-check"
+      }
+    ],
+    "cta": {
+      "label": "Nhận khảo sát tích hợp hệ thống miễn phí",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-du-lieu-va-ai-1",
+    "visualType": "data-platform",
+    "eyebrow": "Nền tảng dữ liệu",
+    "title": "Hợp nhất dữ liệu rải rác thành một nguồn sự thật duy nhất",
+    "subtitle": "Kết nối mọi nguồn dữ liệu đang phân mảnh trong doanh nghiệp, chuẩn hóa và đưa vào một nền tảng để sẵn sàng phân tích và ứng dụng AI.",
+    "routes": [
+      "/giai-phap/du-lieu-va-ai"
+    ],
+    "order": 40,
+    "items": [
+      {
+        "itemId": "he-thong-erp-crm",
+        "title": "ERP & CRM",
+        "description": "Dữ liệu bán hàng, khách hàng, đơn hàng và công nợ đang nằm trong các hệ thống lõi.",
+        "order": 1,
+        "icon": "database"
+      },
+      {
+        "itemId": "van-hanh-iot",
+        "title": "Vận hành & IoT",
+        "description": "Số liệu từ nhà máy, dự án, thiết bị đo và cảm biến ghi nhận theo thời gian thực.",
+        "order": 2,
+        "icon": "activity"
+      },
+      {
+        "itemId": "tai-chinh-ke-toan",
+        "title": "Tài chính & kế toán",
+        "description": "Sổ sách, dòng tiền và báo cáo tài chính từ phần mềm kế toán và ngân hàng.",
+        "order": 3,
+        "icon": "calculator"
+      },
+      {
+        "itemId": "kenh-so-marketing",
+        "title": "Kênh số & marketing",
+        "description": "Website, mạng xã hội, quảng cáo và biểu mẫu thu thập lead trên môi trường số.",
+        "order": 4,
+        "icon": "globe"
+      },
+      {
+        "itemId": "file-tai-lieu",
+        "title": "File & tài liệu",
+        "description": "Bảng tính, hợp đồng, email và tài liệu phi cấu trúc rải rác trên máy nhân viên.",
+        "order": 5,
+        "icon": "file-text"
+      },
+      {
+        "itemId": "he-thong-ben-thu-ba",
+        "title": "Hệ thống bên thứ ba",
+        "description": "Dữ liệu từ đối tác, sàn thương mại và dịch vụ SaaS kết nối qua API.",
+        "order": 6,
+        "icon": "plug"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "thu-thap",
+        "title": "Thu thập & kết nối",
+        "description": "Kết nối tự động tới mọi nguồn qua connector và API, thu dữ liệu theo lô hoặc thời gian thực.",
+        "order": 1,
+        "icon": "share-2"
+      },
+      {
+        "itemId": "chuan-hoa",
+        "title": "Chuẩn hóa & làm sạch",
+        "description": "Loại trùng, hợp nhất định danh và chuẩn hóa định dạng để dữ liệu nhất quán, đáng tin.",
+        "order": 2,
+        "icon": "refresh-cw"
+      },
+      {
+        "itemId": "luu-tru",
+        "title": "Lưu trữ tập trung",
+        "description": "Đưa toàn bộ dữ liệu vào kho dữ liệu (data warehouse/lakehouse) an toàn, mở rộng linh hoạt.",
+        "order": 3,
+        "icon": "server"
+      },
+      {
+        "itemId": "phan-tich",
+        "title": "Phân tích & mô hình",
+        "description": "Xây dựng chỉ số, dashboard và mô hình dự báo để bóc tách insight từ dữ liệu.",
+        "order": 4,
+        "icon": "bar-chart-3"
+      },
+      {
+        "itemId": "kich-hoat",
+        "title": "Kích hoạt & tự động hóa",
+        "description": "Đẩy insight ngược trở lại quy trình vận hành và cảnh báo tự động cho đúng người.",
+        "order": 5,
+        "icon": "zap"
+      },
+      {
+        "itemId": "quan-tri",
+        "title": "Quản trị & bảo mật",
+        "description": "Phân quyền, kiểm soát truy cập và truy vết dữ liệu theo chuẩn tuân thủ.",
+        "order": 6,
+        "icon": "shield-check"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "mot-nguon-su-that",
+        "title": "Một nguồn sự thật duy nhất",
+        "description": "Lãnh đạo và các phòng ban nhìn cùng một bộ số liệu, hết cảnh mỗi báo cáo một con số.",
+        "icon": "folder-check"
+      },
+      {
+        "itemId": "ra-quyet-dinh-nhanh",
+        "title": "Ra quyết định nhanh hơn",
+        "description": "Insight sẵn sàng theo thời gian thực giúp rút ngắn thời gian từ dữ liệu đến hành động.",
+        "icon": "trending-up"
+      },
+      {
+        "itemId": "san-sang-cho-ai",
+        "title": "Sẵn sàng cho AI",
+        "description": "Dữ liệu sạch và tập trung là nền móng để triển khai các năng lực AI đáng tin cậy.",
+        "icon": "sparkles"
+      }
+    ],
+    "cta": {
+      "label": "Khảo sát dữ liệu doanh nghiệp",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-du-lieu-va-ai-2",
+    "visualType": "hub-spoke",
+    "eyebrow": "Năng lực AI",
+    "title": "Biến dữ liệu thành lợi thế ra quyết định bằng AI",
+    "subtitle": "Từ nền tảng dữ liệu hợp nhất, khai mở các năng lực AI giúp doanh nghiệp dự báo, tự động hóa và ra quyết định chính xác hơn.",
+    "routes": [
+      "/giai-phap/du-lieu-va-ai"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "phan-tich-du-bao",
+        "title": "Phân tích & dự báo",
+        "description": "Mô hình dự báo doanh thu, nhu cầu và rủi ro dựa trên dữ liệu lịch sử và xu hướng.",
+        "order": 1,
+        "icon": "trending-up",
+        "side": "left"
+      },
+      {
+        "itemId": "tro-ly-ai",
+        "title": "Trợ lý AI hỏi đáp",
+        "description": "Hỏi dữ liệu bằng ngôn ngữ tự nhiên và nhận báo cáo, câu trả lời tức thì cho lãnh đạo.",
+        "order": 2,
+        "icon": "bot",
+        "side": "right"
+      },
+      {
+        "itemId": "canh-bao-thong-minh",
+        "title": "Cảnh báo thông minh",
+        "description": "Tự động phát hiện bất thường về doanh số, tồn kho hay dòng tiền và cảnh báo kịp thời.",
+        "order": 3,
+        "icon": "radar",
+        "side": "left"
+      },
+      {
+        "itemId": "ca-nhan-hoa",
+        "title": "Cá nhân hóa khách hàng",
+        "description": "Gợi ý sản phẩm và phân khúc khách hàng dựa trên hành vi để tăng chuyển đổi.",
+        "order": 4,
+        "icon": "user-check",
+        "side": "right"
+      },
+      {
+        "itemId": "tu-dong-hoa-quy-trinh",
+        "title": "Tự động hóa quy trình",
+        "description": "AI Agent xử lý tác vụ lặp lại như phân loại, tổng hợp và điền dữ liệu, giải phóng nhân sự.",
+        "order": 5,
+        "icon": "workflow",
+        "side": "left"
+      },
+      {
+        "itemId": "ho-tro-ra-quyet-dinh",
+        "title": "Hỗ trợ ra quyết định",
+        "description": "Kịch bản mô phỏng và đề xuất phương án giúp lãnh đạo cân nhắc lựa chọn tối ưu.",
+        "order": 6,
+        "icon": "lightbulb",
+        "side": "right"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "xac-dinh-bai-toan",
+        "title": "Xác định bài toán",
+        "description": "Chọn những bài toán kinh doanh có giá trị cao và khả thi để AI tạo tác động rõ rệt.",
+        "order": 1,
+        "icon": "target"
+      },
+      {
+        "itemId": "chuan-bi-du-lieu",
+        "title": "Chuẩn bị dữ liệu",
+        "description": "Gắn nhãn, làm giàu và kiểm định chất lượng dữ liệu để mô hình học chính xác.",
+        "order": 2,
+        "icon": "database"
+      },
+      {
+        "itemId": "huan-luyen-mo-hinh",
+        "title": "Huấn luyện mô hình",
+        "description": "Xây dựng và tinh chỉnh mô hình AI phù hợp với đặc thù ngành và dữ liệu doanh nghiệp.",
+        "order": 3,
+        "icon": "brain"
+      },
+      {
+        "itemId": "tich-hop-van-hanh",
+        "title": "Tích hợp vận hành",
+        "description": "Nhúng AI vào quy trình và hệ thống hiện có để nhân viên dùng ngay trong công việc.",
+        "order": 4,
+        "icon": "git-merge"
+      },
+      {
+        "itemId": "giam-sat-toi-uu",
+        "title": "Giám sát & tối ưu",
+        "description": "Theo dõi độ chính xác, thu phản hồi và cải tiến mô hình liên tục theo thời gian.",
+        "order": 5,
+        "icon": "gauge"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "quyet-dinh-chinh-xac",
+        "title": "Quyết định chính xác hơn",
+        "description": "Lãnh đạo dựa trên dự báo và bằng chứng dữ liệu thay vì cảm tính hay kinh nghiệm cũ.",
+        "icon": "check-circle"
+      },
+      {
+        "itemId": "toi-uu-chi-phi",
+        "title": "Tối ưu chi phí & nguồn lực",
+        "description": "Tự động hóa tác vụ và dự báo nhu cầu giúp cắt lãng phí và phân bổ nguồn lực hợp lý.",
+        "icon": "target"
+      },
+      {
+        "itemId": "loi-the-canh-tranh",
+        "title": "Lợi thế cạnh tranh",
+        "description": "Phản ứng nhanh với thị trường và phục vụ khách hàng tốt hơn nhờ khai thác dữ liệu bằng AI.",
+        "icon": "sparkles"
+      }
+    ],
+    "cta": {
+      "label": "Tư vấn lộ trình AI cho doanh nghiệp",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "sectionId": "c02-gp-tu-dong-hoa-2",
+    "visualType": "control-tower",
+    "eyebrow": "Trung tâm giám sát",
+    "title": "Giám sát & kiểm soát tự động hóa theo thời gian thực",
+    "subtitle": "Một control tower duy nhất cho toàn bộ quy trình tự động: theo dõi sức khỏe vận hành, xử lý ngoại lệ và liên tục tối ưu để tự động hóa ngày càng thông minh hơn.",
+    "routes": [
+      "/giai-phap/tu-dong-hoa"
+    ],
+    "order": 50,
+    "items": [
+      {
+        "itemId": "quy-trinh-dang-chay",
+        "title": "Quy trình đang chạy",
+        "description": "Số luồng tự động hóa đang hoạt động và tiến độ từng phiên chạy được cập nhật trực tiếp.",
+        "order": 1,
+        "icon": "workflow"
+      },
+      {
+        "itemId": "ti-le-tu-dong",
+        "title": "Tỉ lệ tự động hóa",
+        "description": "Phần trăm tác vụ được máy xử lý so với thủ công, giúp đo mức độ tự động hóa thực tế.",
+        "order": 2,
+        "icon": "gauge"
+      },
+      {
+        "itemId": "tac-vu-cho-phe-duyet",
+        "title": "Tác vụ chờ phê duyệt",
+        "description": "Hàng đợi các bước cần con người quyết định, kèm thời gian chờ để không bị nghẽn.",
+        "order": 3,
+        "icon": "clipboard-check"
+      },
+      {
+        "itemId": "canh-bao-loi",
+        "title": "Cảnh báo lỗi & ngoại lệ",
+        "description": "Phát hiện tức thì các phiên chạy thất bại hay ngoại lệ và định tuyến đến người xử lý.",
+        "order": 4,
+        "icon": "activity"
+      },
+      {
+        "itemId": "thoi-gian-xu-ly",
+        "title": "Thời gian xử lý",
+        "description": "Đo thời gian trung bình mỗi quy trình để nhận diện điểm nghẽn và cơ hội rút ngắn.",
+        "order": 5,
+        "icon": "timer"
+      },
+      {
+        "itemId": "sla-cam-ket",
+        "title": "SLA & cam kết",
+        "description": "Theo dõi mức tuân thủ SLA theo từng quy trình, cảnh báo sớm khi có nguy cơ trễ hạn.",
+        "order": 6,
+        "icon": "shield-check"
+      }
+    ],
+    "process": [
+      {
+        "itemId": "giam-sat",
+        "title": "Giám sát",
+        "description": "Thu thập chỉ số vận hành từ mọi quy trình tự động về một bảng điều khiển tập trung.",
+        "order": 1,
+        "icon": "eye"
+      },
+      {
+        "itemId": "phat-hien",
+        "title": "Phát hiện",
+        "description": "Tự động nhận diện lỗi, ngoại lệ và điểm nghẽn ngay khi chúng vừa xuất hiện.",
+        "order": 2,
+        "icon": "radar"
+      },
+      {
+        "itemId": "canh-bao",
+        "title": "Cảnh báo & định tuyến",
+        "description": "Gửi thông báo đúng người, đúng lúc và mở tác vụ xử lý theo mức độ ưu tiên.",
+        "order": 3,
+        "icon": "megaphone"
+      },
+      {
+        "itemId": "xu-ly",
+        "title": "Xử lý",
+        "description": "Khắc phục sự cố, chạy lại phiên lỗi hoặc chuyển sang xử lý thủ công có kiểm soát.",
+        "order": 4,
+        "icon": "wrench"
+      },
+      {
+        "itemId": "phan-tich",
+        "title": "Phân tích nguyên nhân",
+        "description": "Truy vết toàn bộ hành trình quy trình để tìm gốc rễ và các điểm cần cải thiện.",
+        "order": 5,
+        "icon": "search"
+      },
+      {
+        "itemId": "toi-uu",
+        "title": "Tối ưu liên tục",
+        "description": "Điều chỉnh luật, ngưỡng và kịch bản để vòng lặp sau vận hành nhanh và chính xác hơn.",
+        "order": 6,
+        "icon": "refresh-cw"
+      }
+    ],
+    "outcomes": [
+      {
+        "itemId": "vanh-hanh-minh-bach",
+        "title": "Vận hành minh bạch",
+        "description": "Mọi quy trình tự động đều nhìn thấy được, đo được và truy vết được trên một màn hình.",
+        "icon": "eye"
+      },
+      {
+        "itemId": "phan-ung-nhanh",
+        "title": "Phản ứng sự cố nhanh",
+        "description": "Lỗi được phát hiện và xử lý trong vài phút thay vì để trôi và gây gián đoạn.",
+        "icon": "zap"
+      },
+      {
+        "itemId": "cai-tien-lien-tuc",
+        "title": "Cải tiến liên tục",
+        "description": "Dữ liệu giám sát nuôi vòng lặp tối ưu, giúp tự động hóa ngày càng thông minh và ổn định.",
+        "icon": "trending-up"
+      }
+    ],
+    "cta": {
+      "label": "Xem demo control tower tự động hóa",
+      "href": "/lien-he"
+    },
+    "locale": "vi",
+    "status": "published"
   }
 ]
