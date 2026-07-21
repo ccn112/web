@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
 import { cms, currentSiteCode } from "@/lib/cms";
 import { SiteShell } from "@/components/site/SiteShell";
@@ -68,9 +69,9 @@ export default async function SearchPage({
             <p className="text-base font-semibold text-blue">Không tìm thấy kết quả cho “{query}”.</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Thử từ khóa khác, hoặc xem{" "}
-              <a href="/san-pham" className="font-semibold text-blue hover:text-gold">sản phẩm</a>,{" "}
-              <a href="/giai-phap" className="font-semibold text-blue hover:text-gold">giải pháp</a> và{" "}
-              <a href="/insights" className="font-semibold text-blue hover:text-gold">Insights</a>.
+              <Link href="/san-pham" className="font-semibold text-blue hover:text-gold">sản phẩm</Link>,{" "}
+              <Link href="/giai-phap" className="font-semibold text-blue hover:text-gold">giải pháp</Link> và{" "}
+              <Link href="/insights" className="font-semibold text-blue hover:text-gold">Insights</Link>.
             </p>
           </div>
         ) : (

@@ -112,6 +112,7 @@ export function CapabilityCard({
     <GlassCard className="p-5 transition duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[0_20px_50px_-24px_var(--accent-gold)]">
       <div className={cn("flex items-start gap-4", rev && "flex-row-reverse text-right")}>
         <span className="relative mt-0.5 inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue to-cyan text-white">
+          {/* eslint-disable-next-line react-hooks/static-components */}
           <Icon className="size-5" />
           {number ? (
             <span className="absolute -right-1.5 -top-1.5 flex size-5 items-center justify-center rounded-full bg-gold text-[11px] font-bold text-ink shadow ring-1 ring-gold/50">

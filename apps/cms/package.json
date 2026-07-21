@@ -13,7 +13,7 @@
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "eslint",
     "test": "echo \"(access-control + seed tests land in Phase 6)\""
   },
   "dependencies": {
@@ -38,6 +38,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
     "typescript": "5.9.3"
   }
 }

@@ -7,6 +7,7 @@
  */
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { RotateCcw, Home } from "lucide-react";
 
 export default function Error({
@@ -45,13 +46,13 @@ export default function Error({
             <RotateCcw className="size-4" />
             Thử lại
           </button>
-          <a
+          <Link
             href="/"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 text-sm font-semibold text-white/90 backdrop-blur transition hover:border-gold/50"
           >
             <Home className="size-4" />
             Về trang chủ
-          </a>
+          </Link>
         </div>
       </div>
     </section>

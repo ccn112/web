@@ -10,6 +10,7 @@
  */
 
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { AmbientSection } from "@/components/corporate/about-kit";
 import { IconTile } from "@/components/home/kit";
 import {
@@ -70,9 +71,9 @@ function InsightsHome() {
             <p className="mt-5 max-w-lg text-base leading-relaxed text-white/70">
               Chiến lược, kiến trúc và câu chuyện thực tiễn về chuyển đổi số, AI, dữ liệu và PropTech — chắt lọc từ đội ngũ XTECH.
             </p>
-            <a href="/insights/danh-sach" className="btn-gold mt-7 inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
+            <Link href="/insights/danh-sach" className="btn-gold mt-7 inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
               Xem tất cả bài viết <ArrowRight className="size-4" />
-            </a>
+            </Link>
           </div>
           {featured ? <FeaturedCard item={featured} /> : null}
         </div>
@@ -82,7 +83,7 @@ function InsightsHome() {
         <h2 className="text-lg font-semibold tracking-tight text-blue">Theo chủ đề</h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {insightCategories.map((c) => (
-            <a
+            <Link
               key={c.slug}
               href="/insights/danh-sach"
               className="group flex flex-col rounded-2xl border border-blue/12 bg-card/80 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_24px_60px_-30px_var(--accent-blue)]"
@@ -90,7 +91,7 @@ function InsightsHome() {
               <IconTile name={c.icon} />
               <h3 className="mt-4 text-base font-semibold tracking-tight text-blue transition group-hover:text-gold">{c.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </AmbientSection>
@@ -98,9 +99,9 @@ function InsightsHome() {
       <AmbientSection id="moi-nhat" soft city={false} compact>
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-lg font-semibold tracking-tight text-blue">Mới nhất</h2>
-          <a href="/insights/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
+          <Link href="/insights/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
             Xem tất cả bài viết <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </div>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {latest.map((it, i) => (
@@ -122,7 +123,7 @@ function InsightsListing() {
       <EditorialHeroShell bg={EDITORIAL_BG.insights}>
         <div className="pt-28 pb-12 md:pt-36 md:pb-16">
           <nav className="text-xs text-white/60">
-            <a href="/insights" className="hover:text-white">Insights</a> <span className="text-white/35">/</span> Tất cả bài viết
+            <Link href="/insights" className="hover:text-white">Insights</Link> <span className="text-white/35">/</span> Tất cả bài viết
           </nav>
           <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
             Tất cả <span className="brand-gradient-text">bài viết</span>

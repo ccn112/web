@@ -8,6 +8,7 @@
  */
 
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import type { ServiceSectionItem } from "@x/shared-types";
 import { Container } from "@/components/primitives";
 import { AmbientSection, Reveal } from "@/components/corporate/about-kit";
@@ -129,12 +130,12 @@ function LandingHero() {
           XTECH đồng hành end-to-end: khảo sát, kiến trúc, tích hợp hệ thống, chuyển đổi dữ liệu, go-live, hypercare và tối ưu liên tục.
         </p>
         <div className="mt-7 flex flex-wrap gap-3">
-          <a href="/lien-he" className="btn-gold inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
+          <Link href="/lien-he" className="btn-gold inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
             Trao đổi kế hoạch triển khai <ArrowRight className="size-4" />
-          </a>
-          <a href="/dat-lich-demo" className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 text-sm font-semibold text-white/90 backdrop-blur transition hover:border-gold/50">
+          </Link>
+          <Link href="/dat-lich-demo" className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 text-sm font-semibold text-white/90 backdrop-blur transition hover:border-gold/50">
             Đặt lịch demo
-          </a>
+          </Link>
         </div>
       </div>
     </EditorialHeroShell>
@@ -147,7 +148,7 @@ function DetailHero({ route }: { route: string }) {
     <EditorialHeroShell bg={EDITORIAL_BG.trienKhai}>
       <div className="pt-28 pb-12 md:pt-36 md:pb-14">
         <nav className="text-xs text-white/60">
-          <a href="/trien-khai" className="hover:text-white">Triển khai</a> <span className="text-white/35">/</span> {label}
+          <Link href="/trien-khai" className="hover:text-white">Triển khai</Link> <span className="text-white/35">/</span> {label}
         </nav>
         <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">{label}</h1>
       </div>
@@ -166,9 +167,9 @@ export function ImplPages({ route }: { route: string }) {
       ))}
       {!isLanding ? (
         <Container className="pb-16">
-          <a href="/trien-khai" className="inline-flex items-center gap-2 text-sm font-semibold text-blue transition hover:text-gold">
+          <Link href="/trien-khai" className="inline-flex items-center gap-2 text-sm font-semibold text-blue transition hover:text-gold">
             <ArrowRight className="size-4 rotate-180" /> Quay lại Triển khai
-          </a>
+          </Link>
         </Container>
       ) : null}
     </>

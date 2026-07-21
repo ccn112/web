@@ -50,6 +50,7 @@ export function HeroBackdrop({
     reduce.current =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     if (reduce.current) return;
     const desktop = window.matchMedia("(min-width: 1024px)");

@@ -9,6 +9,7 @@
  */
 
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { AmbientSection } from "@/components/corporate/about-kit";
 import {
   ArticleCard,
@@ -69,9 +70,9 @@ function NewsHome() {
             <p className="mt-5 max-w-lg text-base leading-relaxed text-white/70">
               Cập nhật xu hướng, kiến thức và câu chuyện thực tiễn về chuyển đổi số, AI, dữ liệu, vận hành và bất động sản — từ đội ngũ XTECH.
             </p>
-            <a href="/tin-tuc/danh-sach" className="btn-gold mt-7 inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
+            <Link href="/tin-tuc/danh-sach" className="btn-gold mt-7 inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-semibold transition hover:brightness-105">
               Xem tất cả bài viết <ArrowRight className="size-4" />
-            </a>
+            </Link>
           </div>
           {featured ? <FeaturedCard item={featured} /> : null}
         </div>
@@ -81,24 +82,24 @@ function NewsHome() {
         {/* Topic chips */}
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-lg font-semibold tracking-tight text-blue">Theo chủ đề</h2>
-          <a href="/tin-tuc/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
+          <Link href="/tin-tuc/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
             Xem tất cả <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {newsCategories.map((c) => (
-            <a key={c.slug} href="/tin-tuc/danh-sach" className="rounded-full border border-blue/15 bg-card px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition hover:border-gold/45 hover:text-blue">
+            <Link key={c.slug} href="/tin-tuc/danh-sach" className="rounded-full border border-blue/15 bg-card px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition hover:border-gold/45 hover:text-blue">
               {c.title}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Latest grid */}
         <div className="mt-10 flex items-center justify-between gap-4">
           <h2 className="text-lg font-semibold tracking-tight text-blue">Mới nhất</h2>
-          <a href="/tin-tuc/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
+          <Link href="/tin-tuc/danh-sach" className="inline-flex items-center gap-1 text-sm font-semibold text-blue transition hover:text-gold">
             Xem tất cả bài viết <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </div>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {latest.map((it, i) => (
@@ -123,7 +124,7 @@ function NewsListing() {
       <EditorialHeroShell bg={EDITORIAL_BG.news}>
         <div className="pt-28 pb-12 md:pt-36 md:pb-16">
           <nav className="text-xs text-white/60">
-            <a href="/tin-tuc" className="hover:text-white">Tin tức</a> <span className="text-white/35">/</span> Tất cả bài viết
+            <Link href="/tin-tuc" className="hover:text-white">Tin tức</Link> <span className="text-white/35">/</span> Tất cả bài viết
           </nav>
           <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
             Tất cả bài viết <span className="brand-gradient-text">XTECH</span>
