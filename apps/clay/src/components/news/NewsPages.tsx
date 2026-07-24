@@ -44,6 +44,7 @@ function toItem(a: NewsArticle): EditorialItem {
     readTime: a.readTime,
     featured: a.featured,
     pinned: a.pinned,
+    cover: a.cover,
   };
 }
 

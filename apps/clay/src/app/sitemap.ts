@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { cms } from "@/lib/cms";
 import { insightArticles } from "@/data/insights-content";
+import { newsArticles } from "@/data/news-content";
 
 /**
  * Sitemap for the corporate site (primary domain). Enumerates all published
@@ -37,6 +38,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   push("/insights");
   push("/insights/danh-sach");
   for (const a of insightArticles) push(`/insights/${a.slug}`, a.publishedAt);
+
+  // News hub + curated (static) articles.
+  push("/tin-tuc");
+  push("/tin-tuc/danh-sach");
+  for (const a of newsArticles) push(`/tin-tuc/${a.slug}`, a.publishedAt);
 
   // CMS posts fallback (legacy slugs not already covered).
   for (const post of posts) {

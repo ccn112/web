@@ -20,7 +20,7 @@ import { hasCaseRoute } from "@/data/case-content";
 import { InsightsPages } from "@/components/insights/InsightsPages";
 import { hasInsightRoute, insightBySlug } from "@/data/insights-content";
 import { NewsPages } from "@/components/news/NewsPages";
-import { hasNewsRoute } from "@/data/news-content";
+import { hasNewsRoute, newsBySlug } from "@/data/news-content";
 import { LeadPages } from "@/components/lead/LeadPages";
 import { hasLeadRoute } from "@/data/lead-content";
 import { LegalPages } from "@/components/legal/LegalPages";
@@ -71,6 +71,16 @@ export async function generateMetadata({
 
   let ogImage: string | undefined;
 
+  // News article (/tin-tuc/<slug>): static curated article.
+  if (!page && segs[0] === "tin-tuc" && segs.length >= 2) {
+    const news = newsBySlug(segs[segs.length - 1]!);
+    if (news) {
+      title = news.title;
+      description = news.excerpt;
+      ogImage = news.cover;
+    }
+  }
+
   // Insights article (/insights/<slug>): static curated article first, then CMS.
   if (!page && segs[0] === "insights" && segs[1] !== "tag" && segs.length >= 2) {
     const article = insightBySlug(segs[segs.length - 1]!);
@@ -98,7 +108,7 @@ export async function generateMetadata({
     alternates: { canonical: canon },
   };
   if (title || description) {
-    const isArticle = segs[0] === "insights" && segs.length >= 2;
+    const isArticle = (segs[0] === "insights" || segs[0] === "tin-tuc") && segs.length >= 2;
     const images = ogImage ? [{ url: ogImage, alt: title ?? undefined }] : undefined;
     meta.openGraph = {
       title: title ?? undefined,
