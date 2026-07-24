@@ -8,13 +8,69 @@
  */
 
 import Image from "next/image";
-import { ArrowRight, Check } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import {
+  ArrowRight,
+  Check,
+  TrendingUp,
+  Wallet,
+  Banknote,
+  ArrowRightLeft,
+  ReceiptText,
+  GitCompare,
+  PiggyBank,
+  Bell,
+  LineChart,
+  FileText,
+  Stamp,
+  Scale,
+  Target,
+  ShoppingCart,
+  FileCheck,
+  Truck,
+  Package,
+  Boxes,
+  Warehouse,
+  Wrench,
+  FolderKanban,
+  ClipboardList,
+  AlertTriangle,
+  Layers,
+  Building2,
+  Users,
+  Megaphone,
+  Filter,
+  UserSearch,
+  Gauge,
+  Share2,
+  KanbanSquare,
+  Grid3x3,
+  KeyRound,
+  ClipboardCheck,
+  Headset,
+  Smartphone,
+  Bot,
+  BrainCircuit,
+  Workflow,
+  ShieldCheck,
+  ScanLine,
+  FileSearch,
+  MessagesSquare,
+  Radar as RadarIcon,
+  Network,
+  Cpu,
+  Zap,
+  Car,
+  Bike,
+  BellRing,
+  type LucideIcon,
+} from "lucide-react";
 import type { ServiceSectionItem } from "@x/shared-types";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { SectionHead, HomeIcon, IconTile, SplitLayout } from "@/components/home/kit";
 import { OrbitDiagram, type OrbitNode } from "@/components/home/visuals";
 import { C02Timeline, C02OutcomeStrip } from "@/components/services/c02/kit";
-import { EvolutionFlow, Cycle, LayerStack } from "@/components/services/c02/visuals";
+import { EvolutionFlow, Cycle } from "@/components/services/c02/visuals";
 import type { SectionTitle } from "@/data/home-content";
 import {
   productSectionsForRoute,
@@ -24,6 +80,29 @@ import {
 
 function head(s: ProductSection): SectionTitle {
   return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
+}
+
+/** Feature-row icons (lucide) keyed by a short name set in product-content.
+ * Falls back to a check when unknown/absent so nothing ever breaks. */
+const FEATURE_ICONS: Record<string, LucideIcon> = {
+  revenue: TrendingUp, wallet: Wallet, cash: Banknote, flow: ArrowRightLeft,
+  receipt: ReceiptText, compare: GitCompare, profit: PiggyBank, bell: Bell,
+  chart: LineChart, doc: FileText, stamp: Stamp, scale: Scale, target: Target,
+  cart: ShoppingCart, filecheck: FileCheck, truck: Truck, package: Package,
+  boxes: Boxes, warehouse: Warehouse, wrench: Wrench, project: FolderKanban,
+  clipboard: ClipboardList, alert: AlertTriangle, layers: Layers,
+  building: Building2, users: Users, megaphone: Megaphone, funnel: Filter,
+  leadsearch: UserSearch, gauge: Gauge, distribute: Share2, pipeline: KanbanSquare,
+  matrix: Grid3x3, key: KeyRound, approve: ClipboardCheck, care: Headset,
+  mobile: Smartphone, bot: Bot, brain: BrainCircuit, workflow: Workflow,
+  shield: ShieldCheck, scan: ScanLine, search: FileSearch, chat: MessagesSquare,
+  radar: RadarIcon, network: Network, cpu: Cpu, energy: Zap, car: Car,
+  bike: Bike, ring: BellRing,
+};
+
+function FeatureIcon({ name }: { name?: string }) {
+  const Icon = name ? FEATURE_ICONS[name] : undefined;
+  return Icon ? <Icon className="size-4" strokeWidth={1.9} /> : <Check className="size-4" />;
 }
 
 /** Map product items → the ServiceSectionItem shape the C02 visuals expect. */
@@ -114,6 +193,66 @@ function OrbitLayout({ s, i, numbered, side }: { s: ProductSection; i: number; n
         </div>
       </SplitLayout>
       <ChipRow chips={s.platformChips} label="Nền tảng dùng chung" />
+      <GoldCTA cta={s.cta} />
+    </>
+  );
+}
+
+/* ---- layerstack: 3D perspective stack (adapted from /ve-x EnterprisePlatform):
+   each product item is a lit layer with a sweeping data light + hover lift.
+   Best for architecture / multi-layer platform content. ---- */
+function ProductLayerStack({ s }: { s: ProductSection }) {
+  const reduce = useReducedMotion();
+  const layers = s.items;
+  return (
+    <>
+      {/* desktop perspective stack */}
+      <div className="mt-14 hidden [perspective:1600px] lg:block">
+        <div className="mx-auto flex max-w-4xl flex-col gap-3 [transform-style:preserve-3d] [transform:rotateX(24deg)]">
+          {layers.map((l, i) => (
+            <motion.div
+              key={l.id}
+              initial={reduce ? undefined : { opacity: 0, y: 40, rotateX: -8 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+              transition={{ duration: 0.6, delay: (layers.length - 1 - i) * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={reduce ? undefined : { translateY: -6, translateZ: 40 }}
+              className="group relative grid grid-cols-[minmax(0,3rem)_auto_1fr] items-center gap-4 overflow-hidden rounded-2xl border border-blue/14 bg-card/85 p-5 shadow-[0_24px_50px_-30px_oklch(0.6_0.19_255)] backdrop-blur transition-colors duration-300 hover:border-cyan/45"
+            >
+              <span aria-hidden className="pointer-events-none absolute inset-y-4 left-0 w-1 rounded-full bg-gradient-to-b from-blue to-cyan opacity-55 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="text-3xl font-semibold text-blue/35 transition-colors duration-300 group-hover:text-blue/70">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <IconTile name={l.icon} className="size-11" />
+              <div className="min-w-0">
+                <h3 className="text-sm font-semibold tracking-tight text-blue">{l.title}</h3>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{l.description}</p>
+              </div>
+              <span aria-hidden className="pointer-events-none absolute inset-x-5 bottom-[7px] h-px bg-gradient-to-r from-transparent via-cyan/70 to-transparent" />
+              <span aria-hidden className="pointer-events-none absolute inset-x-8 bottom-0 h-2.5 rounded-full bg-cyan/40 opacity-50 blur-md transition-opacity duration-300 group-hover:opacity-90" />
+              {reduce ? null : (
+                <span aria-hidden className="pointer-events-none absolute inset-x-5 bottom-[7px] h-px overflow-hidden">
+                  <span className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-white to-transparent animate-sweep" style={{ animationDelay: `${i * 0.6}s` }} />
+                </span>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      {/* mobile simple stack */}
+      <div className="mt-10 flex flex-col gap-3 lg:hidden">
+        {layers.map((l, i) => (
+          <Reveal key={l.id} delay={i * 0.05}>
+            <div className="flex items-start gap-3 rounded-2xl border border-blue/12 bg-card/80 p-4">
+              <IconTile name={l.icon} className="size-10" />
+              <div>
+                <h3 className="text-sm font-semibold text-blue">{String(i + 1).padStart(2, "0")} · {l.title}</h3>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{l.description}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
       <GoldCTA cta={s.cta} />
     </>
   );
@@ -271,8 +410,8 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
                 <ul className="mt-4 flex flex-col divide-y divide-blue/10">
                   {s.features.map((f, k) => (
                     <li key={f.label} className="group flex items-start gap-3.5 py-3.5">
-                      <span className="icon-gold mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105">
-                        <Check className="size-4" />
+                      <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-blue/15 bg-gradient-to-br from-blue/12 to-cyan/8 text-blue transition duration-300 group-hover:border-gold/45 group-hover:from-gold/15 group-hover:to-gold/5 group-hover:text-gold">
+                        <FeatureIcon name={f.icon} />
                       </span>
                       <div className="min-w-0">
                         <p className="text-sm font-semibold tracking-tight text-blue">{f.label}</p>
@@ -342,9 +481,7 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
       {s.layout === "cycle" ? (
         <div className="mt-8"><Cycle steps={toServiceItems(s.items)} centerLabel={s.centerLabel ?? s.eyebrow} /><GoldCTA cta={s.cta} /></div>
       ) : null}
-      {s.layout === "layerstack" ? (
-        <div className="mt-8"><LayerStack layers={toServiceItems(s.items)} northStar={s.northStar ?? s.eyebrow} /><GoldCTA cta={s.cta} /></div>
-      ) : null}
+      {s.layout === "layerstack" ? <ProductLayerStack s={s} /> : null}
       {s.layout === "outcomes" && s.outcomes?.length ? (
         <div className="mt-8"><C02OutcomeStrip outcomes={s.outcomes.map((o, k) => ({ itemId: String(k), title: o.title, description: o.description, icon: o.icon }))} /><GoldCTA cta={s.cta} /></div>
       ) : null}

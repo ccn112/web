@@ -33,8 +33,10 @@ export type ProductItem = {
 export type ProductOutcome = { title: string; description: string; icon: string };
 
 /** A capability highlight beside an illustration: a short label + a one-line
- * benefit (the outcome the reader gets), so each feature answers "so what?". */
-export type ProductFeature = { label: string; benefit: string };
+ * benefit (the outcome the reader gets), so each feature answers "so what?".
+ * `icon` is a lucide icon name (see FEATURE_ICONS in ProductSections) so each
+ * row gets a meaningful glyph instead of a uniform checkmark. */
+export type ProductFeature = { label: string; benefit: string; icon?: string };
 
 export type ProductSection = {
   sectionId: string;
@@ -119,6 +121,24 @@ const c03Sections: ProductSection[] = [
       { id: "rag", title: "Knowledge & RAG", description: "Kết nối tri thức nội bộ và trả lời theo ngữ cảnh doanh nghiệp.", icon: "data" },
       { id: "automation", title: "Automation", description: "Kích hoạt workflow và hành động tự động từ AI.", icon: "automation" },
       { id: "governance", title: "Governance", description: "Phân quyền, guardrails, log và kiểm soát chất lượng AI.", icon: "security" },
+    ],
+    cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
+  },
+  {
+    sectionId: "c03-xai-arch",
+    routes: ["/san-pham/x-ai"],
+    eyebrow: "Kiến trúc X.AI",
+    title: "Năm lớp từ trải nghiệm người dùng xuống dữ liệu và guardrails",
+    highlight: ["Năm lớp"],
+    subtitle: "AI doanh nghiệp không chỉ là một chatbot — mà là kiến trúc nhiều tầng có kiểm soát, từ nơi người dùng tương tác xuống tận dữ liệu gốc.",
+    layout: "layerstack",
+    northStar: "Kết quả kinh doanh",
+    items: [
+      { id: "experience", title: "Trải nghiệm & Trợ lý", description: "Nơi người dùng hỏi đáp và ra lệnh: chat, copilot, nhúng trong ứng dụng.", icon: "customer" },
+      { id: "agents", title: "Enterprise Agents", description: "Các agent theo vai trò: Sales, Finance, Operations, CSKH, Executive.", icon: "ai" },
+      { id: "orchestration", title: "Điều phối & Tự động hóa", description: "Multi-agent orchestration, workflow và hành động tự động có kiểm soát.", icon: "automation" },
+      { id: "knowledge", title: "Tri thức & RAG", description: "Kết nối tài liệu, dữ liệu nội bộ để trả lời đúng ngữ cảnh doanh nghiệp.", icon: "data" },
+      { id: "governance", title: "Dữ liệu, Bảo mật & Guardrails", description: "Phân quyền, guardrails, log và kiểm soát chất lượng, sẵn sàng kiểm toán.", icon: "security" },
     ],
     cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
   },
@@ -408,11 +428,11 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-02-finance.png",
     panelNote: "Một màn hình điều hành thay cho hàng chục báo cáo rời rạc — lãnh đạo nắm sức khỏe tài chính trong 30 giây.",
     features: [
-      { label: "Doanh thu & chi phí", benefit: "Bức tranh thu – chi toàn công ty theo kỳ, không chờ tổng hợp thủ công." },
-      { label: "Lợi nhuận theo chiều", benefit: "Biết lãi/lỗ theo phòng ban, dự án để quyết định đúng chỗ." },
-      { label: "Dòng tiền", benefit: "Thấy rõ tiền đang ở đâu để chủ động cân đối thanh khoản." },
-      { label: "Công nợ", benefit: "Cảnh báo phải thu/phải trả, giảm nợ xấu và sót hạn." },
-      { label: "So sánh kỳ", benefit: "Đối chiếu kỳ trước để phát hiện xu hướng bất thường sớm." },
+      { label: "Doanh thu & chi phí", benefit: "Bức tranh thu – chi toàn công ty theo kỳ, không chờ tổng hợp thủ công.", icon: "revenue" },
+      { label: "Lợi nhuận theo chiều", benefit: "Biết lãi/lỗ theo phòng ban, dự án để quyết định đúng chỗ.", icon: "profit" },
+      { label: "Dòng tiền", benefit: "Thấy rõ tiền đang ở đâu để chủ động cân đối thanh khoản.", icon: "flow" },
+      { label: "Công nợ", benefit: "Cảnh báo phải thu/phải trả, giảm nợ xấu và sót hạn.", icon: "receipt" },
+      { label: "So sánh kỳ", benefit: "Đối chiếu kỳ trước để phát hiện xu hướng bất thường sớm.", icon: "compare" },
     ],
     items: [],
   },
@@ -426,10 +446,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-03-cashflow.png",
     panelNote: "Chủ động dòng tiền thay vì bị động chạy theo — biết trước khi nào thiếu hụt để xoay xở kịp.",
     features: [
-      { label: "Dòng tiền vào – ra", benefit: "Theo dõi thu chi theo ngày/tuần, không còn 'mù' dòng tiền." },
-      { label: "Phải thu", benefit: "Danh sách công nợ theo khách và tuổi nợ, ưu tiên thu đúng chỗ." },
-      { label: "Cảnh báo quá hạn", benefit: "Nhắc tự động khoản đến hạn/quá hạn, giảm thất thoát." },
-      { label: "Dự báo thanh khoản", benefit: "Ước lượng số dư sắp tới để lên kế hoạch vay/đầu tư sớm." },
+      { label: "Dòng tiền vào – ra", benefit: "Theo dõi thu chi theo ngày/tuần, không còn 'mù' dòng tiền.", icon: "flow" },
+      { label: "Phải thu", benefit: "Danh sách công nợ theo khách và tuổi nợ, ưu tiên thu đúng chỗ.", icon: "receipt" },
+      { label: "Cảnh báo quá hạn", benefit: "Nhắc tự động khoản đến hạn/quá hạn, giảm thất thoát.", icon: "alert" },
+      { label: "Dự báo thanh khoản", benefit: "Ước lượng số dư sắp tới để lên kế hoạch vay/đầu tư sớm.", icon: "chart" },
     ],
     items: [],
   },
@@ -443,10 +463,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-05-accounting.png",
     panelNote: "Chứng từ số hóa và luồng duyệt rõ ràng — kế toán nhanh hơn, sạch hơn, sẵn sàng cho kiểm toán.",
     features: [
-      { label: "Hóa đơn & phiếu thu/chi", benefit: "Lập, lưu và tra cứu chứng từ tập trung, hết cảnh tìm giấy tờ." },
-      { label: "Bút toán tự động", benefit: "Sinh bút toán từ nghiệp vụ, giảm sai sót nhập tay." },
-      { label: "Phê duyệt đa cấp", benefit: "Luồng trình ký minh bạch, biết chứng từ đang ở đâu." },
-      { label: "Đối soát", benefit: "So khớp ngân hàng và công nợ nhanh, chốt sổ đúng hạn." },
+      { label: "Hóa đơn & phiếu thu/chi", benefit: "Lập, lưu và tra cứu chứng từ tập trung, hết cảnh tìm giấy tờ.", icon: "receipt" },
+      { label: "Bút toán tự động", benefit: "Sinh bút toán từ nghiệp vụ, giảm sai sót nhập tay.", icon: "doc" },
+      { label: "Phê duyệt đa cấp", benefit: "Luồng trình ký minh bạch, biết chứng từ đang ở đâu.", icon: "stamp" },
+      { label: "Đối soát", benefit: "So khớp ngân hàng và công nợ nhanh, chốt sổ đúng hạn.", icon: "scale" },
     ],
     items: [],
   },
@@ -460,10 +480,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-04-budget.png",
     panelNote: "Kiểm soát chi tiêu ngay khi phát sinh — chặn vượt ngân sách trước khi tiền ra khỏi túi.",
     features: [
-      { label: "Ngân sách vs thực tế", benefit: "Đối chiếu tức thời, thấy ngay khoản nào đang 'ăn' vào ngân sách." },
-      { label: "Chênh lệch", benefit: "Highlight khoản vượt/hụt để can thiệp kịp thời." },
-      { label: "Theo phòng ban", benefit: "Gắn trách nhiệm ngân sách tới từng bộ phận." },
-      { label: "Theo dự án", benefit: "Biết dự án nào tiêu đúng kế hoạch, dự án nào rủi ro." },
+      { label: "Ngân sách vs thực tế", benefit: "Đối chiếu tức thời, thấy ngay khoản nào đang 'ăn' vào ngân sách.", icon: "wallet" },
+      { label: "Chênh lệch", benefit: "Highlight khoản vượt/hụt để can thiệp kịp thời.", icon: "compare" },
+      { label: "Theo phòng ban", benefit: "Gắn trách nhiệm ngân sách tới từng bộ phận.", icon: "building" },
+      { label: "Theo dự án", benefit: "Biết dự án nào tiêu đúng kế hoạch, dự án nào rủi ro.", icon: "project" },
     ],
     items: [],
   },
@@ -477,10 +497,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-06-procurement.png",
     panelNote: "Mua hàng minh bạch từ đề xuất tới nhận hàng — kiểm soát chi phí và chống thất thoát.",
     features: [
-      { label: "Yêu cầu mua", benefit: "Chuẩn hóa đề xuất, duyệt đúng thẩm quyền trước khi mua." },
-      { label: "Báo giá & so sánh", benefit: "Đối chiếu nhiều nhà cung cấp để chọn giá tốt nhất." },
-      { label: "Đơn mua", benefit: "Theo dõi tiến độ đơn hàng, không sót cam kết chi." },
-      { label: "Nhà cung cấp & giao hàng", benefit: "Đánh giá NCC và kiểm soát nhận hàng đúng – đủ – đúng hẹn." },
+      { label: "Yêu cầu mua", benefit: "Chuẩn hóa đề xuất, duyệt đúng thẩm quyền trước khi mua.", icon: "clipboard" },
+      { label: "Báo giá & so sánh", benefit: "Đối chiếu nhiều nhà cung cấp để chọn giá tốt nhất.", icon: "compare" },
+      { label: "Đơn mua", benefit: "Theo dõi tiến độ đơn hàng, không sót cam kết chi.", icon: "cart" },
+      { label: "Nhà cung cấp & giao hàng", benefit: "Đánh giá NCC và kiểm soát nhận hàng đúng – đủ – đúng hẹn.", icon: "truck" },
     ],
     items: [],
   },
@@ -494,10 +514,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-07-warehouse.png",
     panelNote: "Nhìn rõ hàng tồn và tài sản thật – ảo khớp nhau, giảm ứ đọng vốn và thất thoát.",
     features: [
-      { label: "Nhập – xuất – tồn", benefit: "Tồn kho thời gian thực, hết cảnh lệch sổ với thực tế." },
-      { label: "Cảnh báo tồn", benefit: "Nhắc tồn tối thiểu/quá hạn để không đứt hàng hay ứ vốn." },
-      { label: "Máy móc & phương tiện", benefit: "Theo dõi tài sản theo vị trí và tình trạng sử dụng." },
-      { label: "Thiết bị", benefit: "Gắn tài sản với bộ phận, phục vụ khấu hao và bảo trì." },
+      { label: "Nhập – xuất – tồn", benefit: "Tồn kho thời gian thực, hết cảnh lệch sổ với thực tế.", icon: "boxes" },
+      { label: "Cảnh báo tồn", benefit: "Nhắc tồn tối thiểu/quá hạn để không đứt hàng hay ứ vốn.", icon: "alert" },
+      { label: "Máy móc & phương tiện", benefit: "Theo dõi tài sản theo vị trí và tình trạng sử dụng.", icon: "truck" },
+      { label: "Thiết bị", benefit: "Gắn tài sản với bộ phận, phục vụ khấu hao và bảo trì.", icon: "package" },
     ],
     items: [],
   },
@@ -511,10 +531,10 @@ const c03Sections: ProductSection[] = [
     image: "/products/finerp/ferp-08-project.png",
     panelNote: "Biết dự án thật sự lãi hay lỗ ngay trong khi chạy — không đợi quyết toán mới ngã ngửa.",
     features: [
-      { label: "Ngân sách dự án", benefit: "Đặt hạn mức chi cho từng dự án và bám sát theo giai đoạn." },
-      { label: "Chi phí thực tế", benefit: "Gom mọi chi phí về đúng dự án, thấy giá thành thật." },
-      { label: "Cam kết chi", benefit: "Tính cả khoản đã ký chưa xuất tiền để không vỡ kế hoạch." },
-      { label: "Hiệu quả & tiến độ", benefit: "Đối chiếu chi phí với tiến độ để cảnh báo dự án rủi ro sớm." },
+      { label: "Ngân sách dự án", benefit: "Đặt hạn mức chi cho từng dự án và bám sát theo giai đoạn.", icon: "wallet" },
+      { label: "Chi phí thực tế", benefit: "Gom mọi chi phí về đúng dự án, thấy giá thành thật.", icon: "cash" },
+      { label: "Cam kết chi", benefit: "Tính cả khoản đã ký chưa xuất tiền để không vỡ kế hoạch.", icon: "filecheck" },
+      { label: "Hiệu quả & tiến độ", benefit: "Đối chiếu chi phí với tiến độ để cảnh báo dự án rủi ro sớm.", icon: "gauge" },
     ],
     items: [],
   },
