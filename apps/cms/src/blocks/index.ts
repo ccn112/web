@@ -63,6 +63,7 @@ export const featureGrid: Block = {
       ],
     },
     illustrationField,
+    { name: 'imageSrc', type: 'text', admin: { description: 'Đường dẫn ảnh minh họa (public path, vd /products/xai/xai-04-...png) hiển thị cạnh lưới.' } },
     ...blockBaseFields(),
   ],
 }

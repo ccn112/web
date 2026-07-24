@@ -67,6 +67,9 @@ export interface FeatureGridBlock extends BaseBlock {
   intro?: string
   items: Array<{ title: string; description?: string; icon?: string }>
   illustration?: MediaRef
+  /** Public path to an illustrative image (screenshot), rendered beside the grid
+   * when no Media `illustration` is set. */
+  imageSrc?: string
 }
 
 /** 4. productCards */

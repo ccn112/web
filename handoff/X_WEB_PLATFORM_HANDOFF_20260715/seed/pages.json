@@ -200,7 +200,8 @@
             "icon": "brain"
           }
         ],
-        "illustrationAsset": "COR-04"
+        "illustrationAsset": "COR-04",
+        "imageSrc": "/products/finerp/ferp-02-finance.png"
       },
       {
         "blockType": "cta",
@@ -6231,7 +6232,8 @@
             "icon": "users"
           }
         ],
-        "illustrationAsset": "COR-04"
+        "illustrationAsset": "COR-04",
+        "imageSrc": "/products/xai/xai-20-tool-api-connector-center.png"
       },
       {
         "blockType": "comparisonTable",
@@ -6335,7 +6337,8 @@
             "icon": "trending-up"
           }
         ],
-        "illustrationAsset": "COR-04"
+        "illustrationAsset": "COR-04",
+        "imageSrc": "/products/xai/xai-04-executive-reporting-ai.png"
       },
       {
         "blockType": "comparisonTable",
@@ -6439,7 +6442,8 @@
             "icon": "bot"
           }
         ],
-        "illustrationAsset": "COR-04"
+        "illustrationAsset": "COR-04",
+        "imageSrc": "/products/xai/xai-19-workflow-automation-studio.png"
       },
       {
         "blockType": "comparisonTable",
@@ -6550,7 +6554,8 @@
             "icon": "shield-check"
           }
         ],
-        "illustrationAsset": "COR-04"
+        "illustrationAsset": "COR-04",
+        "imageSrc": "/images/backgrounds/home/hero-ecosystem.webp"
       }
     ],
     "suggestedPrompts": [],
@@ -6615,7 +6620,8 @@
             "icon": "calculator"
           }
         ],
-        "illustrationAsset": "COR-05"
+        "illustrationAsset": "COR-05",
+        "imageSrc": "/images/editorial/trien-khai.png"
       }
     ],
     "suggestedPrompts": [],
@@ -6680,7 +6686,8 @@
             "icon": "check-circle"
           }
         ],
-        "illustrationAsset": "COR-05"
+        "illustrationAsset": "COR-05",
+        "imageSrc": "/products/xai/xai-17-visual-agent-builder.png"
       }
     ],
     "suggestedPrompts": [],
@@ -6745,7 +6752,8 @@
             "icon": "settings"
           }
         ],
-        "illustrationAsset": "COR-05"
+        "illustrationAsset": "COR-05",
+        "imageSrc": "/products/xai/xai-04-executive-reporting-ai.png"
       }
     ],
     "suggestedPrompts": [],
@@ -6810,7 +6818,8 @@
             "icon": "trending-up"
           }
         ],
-        "illustrationAsset": "COR-05"
+        "illustrationAsset": "COR-05",
+        "imageSrc": "/products/xbuilding/xbl-10-smart-building-command-center.png"
       },
       {
         "blockType": "comparisonTable",
@@ -6966,7 +6975,8 @@
             "icon": "rocket"
           }
         ],
-        "illustrationAsset": "COR-01"
+        "illustrationAsset": "COR-01",
+        "imageSrc": "/images/editorial/insights.png"
       },
       {
         "blockType": "featureGrid",
@@ -7095,7 +7105,8 @@
             "icon": "headset"
           }
         ],
-        "illustrationAsset": "COR-03"
+        "illustrationAsset": "COR-03",
+        "imageSrc": "/images/editorial/kinh-nghiem.png"
       },
       {
         "blockType": "featureGrid",
@@ -7209,7 +7220,8 @@
             "icon": "network"
           }
         ],
-        "illustrationAsset": "COR-05"
+        "illustrationAsset": "COR-05",
+        "imageSrc": "/images/editorial/news.png"
       },
       {
         "blockType": "featureGrid",
@@ -7312,7 +7324,8 @@
             "icon": "gift"
           }
         ],
-        "illustrationAsset": "COR-03"
+        "illustrationAsset": "COR-03",
+        "imageSrc": "/images/editorial/trien-khai.png"
       },
       {
         "blockType": "featureGrid",

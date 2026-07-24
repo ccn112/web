@@ -27,6 +27,7 @@ import { Reveal } from "@/components/reveal";
 import { FaqAccordion } from "./FaqAccordion";
 import { LeadFormBlock } from "./LeadFormBlock";
 import { HeroBackdrop } from "./HeroBackdrop";
+import { ImageZoom } from "@/components/ImageZoom";
 import { cn } from "@/lib/utils";
 
 export type RenderContext = { siteCode?: string; pageId?: string };
@@ -162,20 +163,22 @@ function IllustrationImage({
         className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-blue/15 via-violet/10 to-cyan/15 blur-3xl"
       />
       <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_40px_90px_-50px_rgba(30,40,120,0.45)]">
-        {width && height ? (
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            sizes="(max-width: 1024px) 92vw, 620px"
-            className="h-auto w-full"
-          />
-        ) : (
-          // No intrinsic dimensions from the CMS — fall back to a plain img.
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={src} alt={alt} className="h-auto w-full" loading="lazy" />
-        )}
+        {/* Click to view full-screen (default for content illustrations). */}
+        <ImageZoom src={src} alt={alt} caption={alt}>
+          {width && height ? (
+            <Image
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              sizes="(max-width: 1024px) 92vw, 620px"
+              className="h-auto w-full"
+            />
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={src} alt={alt} className="h-auto w-full" loading="lazy" />
+          )}
+        </ImageZoom>
       </div>
     </Reveal>
   );
@@ -331,11 +334,21 @@ function FeatureGridView({
     </div>
   );
 
-  if (illo) {
+  if (illo || b.imageSrc) {
+    const visual = illo ? (
+      <IllustrationImage {...illo} className={flip ? "lg:order-2" : ""} />
+    ) : (
+      <Reveal className={cn("relative", flip ? "lg:order-2" : "")}>
+        <div aria-hidden className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-blue/15 via-violet/10 to-cyan/15 blur-3xl" />
+        <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_40px_90px_-50px_rgba(30,40,120,0.45)]">
+          <ImageZoom src={b.imageSrc!} alt={b.title ?? ""} caption={b.title} />
+        </div>
+      </Reveal>
+    );
     return (
       <Section id={b.anchorId}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <IllustrationImage {...illo} className={flip ? "lg:order-2" : ""} />
+          {visual}
           <div className={flip ? "lg:order-1" : ""}>
             {(b.title || b.intro) && (
               <SectionHeading title={b.title ?? ""} description={b.intro} align="left" />
