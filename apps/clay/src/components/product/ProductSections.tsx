@@ -8,7 +8,7 @@
  */
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, createContext, useContext } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
@@ -86,6 +86,11 @@ import {
 function head(s: ProductSection): SectionTitle {
   return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
 }
+
+/** Page-level lightbox: every illustration screenshot on the page joins one
+ * gallery so clicking any feature image opens full-screen and slides through
+ * all of them. Provided by ProductSections, consumed by IllustrationLayout. */
+const PageLightbox = createContext<{ shots: { image: string; title: string; caption: string }[]; openImage: (image: string) => void } | null>(null);
 
 /** Feature-row icons (lucide) keyed by a short name set in product-content.
  * Falls back to a check when unknown/absent so nothing ever breaks. */
@@ -505,9 +510,15 @@ function JourneyLayout({ s }: { s: ProductSection }) {
    rows + a decorative tech accent, so it no longer floats unbalanced beside the
    tall dashboard image. ---- */
 function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
+  const lb = useContext(PageLightbox);
   const visual = s.image ? (
     <Reveal>
-      <div className="group relative">
+      <button
+        type="button"
+        onClick={() => s.image && lb?.openImage(s.image)}
+        className="group relative block w-full text-left"
+        aria-label={`Xem ảnh lớn: ${s.title}`}
+      >
         {/* soft brand glow behind the frame for a premium, tech feel */}
         <div
           aria-hidden
@@ -520,12 +531,15 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
             width={1200}
             height={800}
             sizes="(min-width: 1024px) 46vw, 100vw"
-            className="h-auto w-full object-cover"
+            className="h-auto w-full object-cover transition duration-500 group-hover:scale-[1.02]"
           />
           {/* sheen sweep */}
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
+          <span aria-hidden className="absolute bottom-3 right-3 inline-flex size-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+            <Maximize2 className="size-4" />
+          </span>
         </div>
-      </div>
+      </button>
     </Reveal>
   ) : null;
   return (
@@ -684,12 +698,31 @@ function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
 
 export function ProductSections({ route }: { route: string }) {
   const sections = productSectionsForRoute(route);
+
+  // Collect every illustration screenshot on the page into one gallery so
+  // clicking any feature image opens full-screen and slides through them all.
+  const shots = useMemo(
+    () =>
+      sections
+        .filter((s) => s.layout === "illustration" && s.image)
+        .map((s) => ({ image: s.image as string, title: s.title, caption: s.subtitle ?? "" })),
+    [sections],
+  );
+  const [active, setActive] = useState<number | null>(null);
+  const openImage = (image: string) => {
+    const idx = shots.findIndex((sh) => sh.image === image);
+    if (idx >= 0) setActive(idx);
+  };
+
   if (!sections.length) return null;
   return (
-    <>
+    <PageLightbox.Provider value={{ shots, openImage }}>
       {sections.map((s, i) => (
         <SectionRenderer key={s.sectionId} s={s} i={i} />
       ))}
-    </>
+      {active !== null ? (
+        <Lightbox shots={shots} index={active} onClose={() => setActive(null)} onNav={setActive} />
+      ) : null}
+    </PageLightbox.Provider>
   );
 }
