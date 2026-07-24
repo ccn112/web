@@ -8,8 +8,8 @@
  */
 
 import { useState } from "react";
-import Image from "next/image";
 import { ArrowLeft, ArrowRight, Bookmark, Calendar, Clock, Link2, Quote, Tag } from "lucide-react";
+import { ImageZoom } from "@/components/ImageZoom";
 import { Reveal } from "@/components/corporate/about-kit";
 import { PRODUCT_META } from "@/data/suite-content";
 import {
@@ -53,7 +53,7 @@ function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
         if (b.type === "image")
           return (
             <figure key={i} className="my-2 overflow-hidden rounded-2xl border border-blue/12 bg-card/70">
-              <Image src={b.src} alt={b.alt ?? ""} width={1200} height={800} sizes="(min-width:1024px) 720px, 100vw" className="h-auto w-full object-cover" />
+              <ImageZoom src={b.src} alt={b.alt ?? ""} caption={b.caption} />
               {b.caption ? <figcaption className="px-4 py-2.5 text-center text-sm text-muted-foreground">{b.caption}</figcaption> : null}
             </figure>
           );
