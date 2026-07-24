@@ -5,6 +5,8 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/primitives";
 import { cn } from "@/lib/utils";
+import { SplitText } from "@/components/reactbits/SplitText";
+import { ShinyText } from "@/components/reactbits/ShinyText";
 
 /* ---------- reveal (reduced-motion aware) ---------- */
 export function Reveal({
@@ -186,11 +188,14 @@ export function Head({
   title,
   subtitle,
   align = "center",
+  animate = true,
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   align?: "center" | "left";
+  /** ReactBits: shimmer eyebrow + word-by-word title reveal on scroll-in. */
+  animate?: boolean;
 }) {
   return (
     <div className={cn("flex max-w-3xl flex-col", align === "center" ? "mx-auto items-center text-center" : "items-start text-left")}>
@@ -198,13 +203,13 @@ export function Head({
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/45 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue">
             <span className="size-1.5 rounded-full bg-gold" />
-            {eyebrow}
+            {animate ? <ShinyText text={eyebrow} /> : eyebrow}
           </span>
         </Reveal>
       ) : null}
       <Reveal delay={0.08}>
         <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight text-blue sm:text-4xl md:text-[2.75rem] md:leading-[1.1]">
-          {title}
+          {animate ? <SplitText text={title} /> : title}
         </h2>
         <span
           aria-hidden
