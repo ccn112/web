@@ -393,6 +393,10 @@ export interface FeatureGridBlock {
     | null;
   illustration?: (string | null) | Media;
   /**
+   * Đường dẫn ảnh minh họa (public path, vd /products/xai/xai-04-...png) hiển thị cạnh lưới.
+   */
+  imageSrc?: string | null;
+  /**
    * Stable anchor so the chatbot can deep-link to this section.
    */
   anchorId?: string | null;
@@ -766,8 +770,33 @@ export interface Post {
   siteCode?: string | null;
   slug: string;
   title: string;
+  /**
+   * Bài thuộc mục Insights (/insights) hay Tin tức (/tin-tuc).
+   */
+  section?: ('insight' | 'news' | 'archive') | null;
   excerpt?: string | null;
   category?: string | null;
+  /**
+   * Ảnh bìa / thumbnail (tải lên). Nếu để trống sẽ dùng Cover URL.
+   */
+  cover?: (string | null) | Media;
+  /**
+   * Đường dẫn ảnh bìa mặc định (khi chưa tải ảnh lên).
+   */
+  coverUrl?: string | null;
+  /**
+   * Vd: "6 phút đọc".
+   */
+  readTime?: string | null;
+  /**
+   * Ngày hiển thị, vd: "24/07/2026".
+   */
+  date?: string | null;
+  featured?: boolean | null;
+  /**
+   * Slug/tên sản phẩm liên quan để gợi ý cuối bài.
+   */
+  relatedProducts?: string[] | null;
   /**
    * Chủ đề để lọc/liệt kê bài viết. Mỗi tag là một mục; click tag trên site sẽ mở /insights/tag/<tag>. Vd: AI, Dữ liệu, Cloud, Security, PropTech.
    */
@@ -921,8 +950,45 @@ export interface Solution {
   siteCode?: string | null;
   title: string;
   slug: string;
-  category?: ('chuoi-nghiep-vu' | 'doi-tuong' | 'muc-tieu') | null;
+  /**
+   * Đường dẫn trang, vd /giai-phap/du-lieu-va-ai hoặc /bo-giai-phap-x
+   */
+  route?: string | null;
+  eyebrow?: string | null;
   summary?: string | null;
+  /**
+   * Ảnh nền hero (tùy chọn; để trống dùng nền mặc định).
+   */
+  heroImage?: (string | null) | Media;
+  category?: ('chuoi-nghiep-vu' | 'doi-tuong' | 'muc-tieu') | null;
+  /**
+   * Slug sản phẩm liên quan: x-ai, xbooking, finerp, xbuilding, x-space.
+   */
+  relatedProducts?: string[] | null;
+  /**
+   * Các section của trang giải pháp (theo thứ tự hiển thị).
+   */
+  sections?:
+    | {
+        sectionId?: string | null;
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        layout?: ('grid' | 'visual-right' | 'visual-left' | 'chips' | 'steps') | null;
+        image?: (string | null) | Media;
+        items?:
+          | {
+              title: string;
+              description?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaDescription?: string | null;
+  ctaImage?: (string | null) | Media;
   /**
    * draft → review → approved → published → archived
    */
@@ -1493,6 +1559,7 @@ export interface FeatureGridBlockSelect<T extends boolean = true> {
         id?: T;
       };
   illustration?: T;
+  imageSrc?: T;
   anchorId?: T;
   theme?: T;
   padding?: T;
@@ -1797,8 +1864,15 @@ export interface PostsSelect<T extends boolean = true> {
   siteCode?: T;
   slug?: T;
   title?: T;
+  section?: T;
   excerpt?: T;
   category?: T;
+  cover?: T;
+  coverUrl?: T;
+  readTime?: T;
+  date?: T;
+  featured?: T;
+  relatedProducts?: T;
   tags?: T;
   locale?: T;
   body?: T;
@@ -1898,8 +1972,33 @@ export interface SolutionsSelect<T extends boolean = true> {
   siteCode?: T;
   title?: T;
   slug?: T;
-  category?: T;
+  route?: T;
+  eyebrow?: T;
   summary?: T;
+  heroImage?: T;
+  category?: T;
+  relatedProducts?: T;
+  sections?:
+    | T
+    | {
+        sectionId?: T;
+        eyebrow?: T;
+        title?: T;
+        description?: T;
+        layout?: T;
+        image?: T;
+        items?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaDescription?: T;
+  ctaImage?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;

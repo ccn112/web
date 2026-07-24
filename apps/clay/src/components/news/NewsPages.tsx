@@ -48,13 +48,11 @@ function toItem(a: NewsArticle): EditorialItem {
   };
 }
 
-const ALL_ITEMS = newsArticles.map(toItem);
-const TOPICS = Array.from(new Set(newsArticles.flatMap((a) => a.tags))).slice(0, 10);
-
 /* ---------- home ---------- */
-function NewsHome() {
-  const featured = ALL_ITEMS.find((i) => i.pinned) ?? ALL_ITEMS.find((i) => i.featured) ?? ALL_ITEMS[0];
-  const latest = [...newsArticles]
+function NewsHome({ articles }: { articles: NewsArticle[] }) {
+  const allItems = articles.map(toItem);
+  const featured = allItems.find((i) => i.pinned) ?? allItems.find((i) => i.featured) ?? allItems[0];
+  const latest = [...articles]
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
     .slice(0, 6)
     .map(toItem);
@@ -119,7 +117,9 @@ function NewsHome() {
 }
 
 /* ---------- listing ---------- */
-function NewsListing() {
+function NewsListing({ articles }: { articles: NewsArticle[] }) {
+  const allItems = articles.map(toItem);
+  const topics = Array.from(new Set(articles.flatMap((a) => a.tags))).slice(0, 10);
   return (
     <>
       <EditorialHeroShell bg={EDITORIAL_BG.news}>
@@ -135,17 +135,17 @@ function NewsListing() {
           </p>
         </div>
       </EditorialHeroShell>
-      <EditorialListing items={ALL_ITEMS} categories={newsCategories} topics={TOPICS} />
+      <EditorialListing items={allItems} categories={newsCategories} topics={topics} />
     </>
   );
 }
 
 /* ---------- detail ---------- */
-function NewsDetail({ a }: { a: NewsArticle }) {
+function NewsDetail({ a, articles }: { a: NewsArticle; articles: NewsArticle[] }) {
   const item = toItem(a);
-  const related = newsArticles
+  const related = articles
     .filter((x) => x.slug !== a.slug && x.categorySlug === a.categorySlug)
-    .concat(newsArticles.filter((x) => x.slug !== a.slug && x.categorySlug !== a.categorySlug))
+    .concat(articles.filter((x) => x.slug !== a.slug && x.categorySlug !== a.categorySlug))
     .slice(0, 3)
     .map(toItem);
   return (
@@ -162,11 +162,17 @@ function NewsDetail({ a }: { a: NewsArticle }) {
   );
 }
 
-export function NewsPages({ route }: { route: string }) {
-  if (route === "/tin-tuc") return <NewsHome />;
-  if (route === "/tin-tuc/danh-sach") return <NewsListing />;
+export function NewsPages({
+  route,
+  articles = newsArticles,
+}: {
+  route: string;
+  articles?: NewsArticle[];
+}) {
+  if (route === "/tin-tuc") return <NewsHome articles={articles} />;
+  if (route === "/tin-tuc/danh-sach") return <NewsListing articles={articles} />;
   const slug = route.startsWith("/tin-tuc/") ? route.slice("/tin-tuc/".length) : "";
-  const a = newsBySlug(slug);
-  if (a) return <NewsDetail a={a} />;
+  const a = articles.find((x) => x.slug === slug) ?? newsBySlug(slug);
+  if (a) return <NewsDetail a={a} articles={articles} />;
   return null;
 }

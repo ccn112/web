@@ -1,0 +1,354 @@
+[
+  {
+    "page": "doanh-nghiep-ket-noi",
+    "asset": "assets/doanh-nghiep-ket-noi/hero-connected-enterprise.png",
+    "webp": "assets/doanh-nghiep-ket-noi/hero-connected-enterprise.webp",
+    "cropBox": [
+      450,
+      60,
+      930,
+      390
+    ],
+    "size": [
+      480,
+      330
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "doanh-nghiep-ket-noi",
+    "asset": "assets/doanh-nghiep-ket-noi/model-connected-enterprise.png",
+    "webp": "assets/doanh-nghiep-ket-noi/model-connected-enterprise.webp",
+    "cropBox": [
+      365,
+      630,
+      920,
+      1010
+    ],
+    "size": [
+      555,
+      380
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "doanh-nghiep-ket-noi",
+    "asset": "assets/doanh-nghiep-ket-noi/cta-connected-enterprise.png",
+    "webp": "assets/doanh-nghiep-ket-noi/cta-connected-enterprise.webp",
+    "cropBox": [
+      470,
+      1450,
+      900,
+      1660
+    ],
+    "size": [
+      430,
+      210
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "du-lieu-ai",
+    "asset": "assets/du-lieu-ai/hero-data-ai-wave.png",
+    "webp": "assets/du-lieu-ai/hero-data-ai-wave.webp",
+    "cropBox": [
+      455,
+      55,
+      934,
+      365
+    ],
+    "size": [
+      479,
+      310
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "du-lieu-ai",
+    "asset": "assets/du-lieu-ai/data-core-3d.png",
+    "webp": "assets/du-lieu-ai/data-core-3d.webp",
+    "cropBox": [
+      610,
+      365,
+      934,
+      650
+    ],
+    "size": [
+      324,
+      285
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "du-lieu-ai",
+    "asset": "assets/du-lieu-ai/data-hub-architecture.png",
+    "webp": "assets/du-lieu-ai/data-hub-architecture.webp",
+    "cropBox": [
+      40,
+      640,
+      520,
+      970
+    ],
+    "size": [
+      480,
+      330
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "du-lieu-ai",
+    "asset": "assets/du-lieu-ai/bi-dashboard-visual.png",
+    "webp": "assets/du-lieu-ai/bi-dashboard-visual.webp",
+    "cropBox": [
+      590,
+      1090,
+      934,
+      1380
+    ],
+    "size": [
+      344,
+      290
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "du-lieu-ai",
+    "asset": "assets/du-lieu-ai/cta-data-ai.png",
+    "webp": "assets/du-lieu-ai/cta-data-ai.webp",
+    "cropBox": [
+      55,
+      1490,
+      900,
+      1665
+    ],
+    "size": [
+      845,
+      175
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tu-dong-hoa",
+    "asset": "assets/tu-dong-hoa/hero-workflow-automation.png",
+    "webp": "assets/tu-dong-hoa/hero-workflow-automation.webp",
+    "cropBox": [
+      460,
+      55,
+      934,
+      390
+    ],
+    "size": [
+      474,
+      335
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tu-dong-hoa",
+    "asset": "assets/tu-dong-hoa/workflow-problem-visual.png",
+    "webp": "assets/tu-dong-hoa/workflow-problem-visual.webp",
+    "cropBox": [
+      0,
+      390,
+      360,
+      700
+    ],
+    "size": [
+      360,
+      310
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tu-dong-hoa",
+    "asset": "assets/tu-dong-hoa/automation-capability-core.png",
+    "webp": "assets/tu-dong-hoa/automation-capability-core.webp",
+    "cropBox": [
+      0,
+      830,
+      270,
+      1120
+    ],
+    "size": [
+      270,
+      290
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tu-dong-hoa",
+    "asset": "assets/tu-dong-hoa/automation-usecase-core.png",
+    "webp": "assets/tu-dong-hoa/automation-usecase-core.webp",
+    "cropBox": [
+      0,
+      1090,
+      270,
+      1370
+    ],
+    "size": [
+      270,
+      280
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tu-dong-hoa",
+    "asset": "assets/tu-dong-hoa/cta-automation.png",
+    "webp": "assets/tu-dong-hoa/cta-automation.webp",
+    "cropBox": [
+      390,
+      1450,
+      920,
+      1665
+    ],
+    "size": [
+      530,
+      215
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tich-hop-he-thong",
+    "asset": "assets/tich-hop-he-thong/hero-integration-hub.png",
+    "webp": "assets/tich-hop-he-thong/hero-integration-hub.webp",
+    "cropBox": [
+      450,
+      55,
+      935,
+      390
+    ],
+    "size": [
+      485,
+      335
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tich-hop-he-thong",
+    "asset": "assets/tich-hop-he-thong/integration-architecture.png",
+    "webp": "assets/tich-hop-he-thong/integration-architecture.webp",
+    "cropBox": [
+      460,
+      560,
+      920,
+      900
+    ],
+    "size": [
+      460,
+      340
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tich-hop-he-thong",
+    "asset": "assets/tich-hop-he-thong/deployment-models.png",
+    "webp": "assets/tich-hop-he-thong/deployment-models.webp",
+    "cropBox": [
+      420,
+      1080,
+      930,
+      1330
+    ],
+    "size": [
+      510,
+      250
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "tich-hop-he-thong",
+    "asset": "assets/tich-hop-he-thong/cta-integration.png",
+    "webp": "assets/tich-hop-he-thong/cta-integration.webp",
+    "cropBox": [
+      430,
+      1460,
+      920,
+      1665
+    ],
+    "size": [
+      490,
+      205
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "bo-giai-phap-x",
+    "asset": "assets/bo-giai-phap-x/hero-solution-suite-hub.png",
+    "webp": "assets/bo-giai-phap-x/hero-solution-suite-hub.webp",
+    "cropBox": [
+      440,
+      50,
+      940,
+      390
+    ],
+    "size": [
+      500,
+      340
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "bo-giai-phap-x",
+    "asset": "assets/bo-giai-phap-x/suite-selector-blueprint.png",
+    "webp": "assets/bo-giai-phap-x/suite-selector-blueprint.webp",
+    "cropBox": [
+      45,
+      535,
+      470,
+      740
+    ],
+    "size": [
+      425,
+      205
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "bo-giai-phap-x",
+    "asset": "assets/bo-giai-phap-x/real-estate-suite-journey.png",
+    "webp": "assets/bo-giai-phap-x/real-estate-suite-journey.webp",
+    "cropBox": [
+      500,
+      735,
+      930,
+      1060
+    ],
+    "size": [
+      430,
+      325
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "bo-giai-phap-x",
+    "asset": "assets/bo-giai-phap-x/suite-platform-visual.png",
+    "webp": "assets/bo-giai-phap-x/suite-platform-visual.webp",
+    "cropBox": [
+      560,
+      1060,
+      910,
+      1260
+    ],
+    "size": [
+      350,
+      200
+    ],
+    "usage": "section_visual"
+  },
+  {
+    "page": "bo-giai-phap-x",
+    "asset": "assets/bo-giai-phap-x/deployment-suite-visual.png",
+    "webp": "assets/bo-giai-phap-x/deployment-suite-visual.webp",
+    "cropBox": [
+      560,
+      1260,
+      910,
+      1440
+    ],
+    "size": [
+      350,
+      180
+    ],
+    "usage": "section_visual"
+  }
+]

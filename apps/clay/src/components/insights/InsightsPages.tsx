@@ -49,13 +49,11 @@ function toItem(a: InsightArticle): EditorialItem {
   };
 }
 
-const ALL_ITEMS = insightArticles.map(toItem);
-const TOPICS = Array.from(new Set(insightArticles.flatMap((a) => a.tags))).slice(0, 10);
-
 /* ---------- home ---------- */
-function InsightsHome() {
-  const featured = ALL_ITEMS.find((i) => i.featured) ?? ALL_ITEMS[0];
-  const latest = [...insightArticles]
+function InsightsHome({ articles }: { articles: InsightArticle[] }) {
+  const allItems = articles.map(toItem);
+  const featured = allItems.find((i) => i.featured) ?? allItems[0];
+  const latest = [...articles]
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
     .slice(0, 6)
     .map(toItem);
@@ -118,7 +116,9 @@ function InsightsHome() {
 }
 
 /* ---------- listing ---------- */
-function InsightsListing() {
+function InsightsListing({ articles }: { articles: InsightArticle[] }) {
+  const allItems = articles.map(toItem);
+  const topics = Array.from(new Set(articles.flatMap((a) => a.tags))).slice(0, 10);
   return (
     <>
       <EditorialHeroShell bg={EDITORIAL_BG.insights}>
@@ -134,17 +134,17 @@ function InsightsListing() {
           </p>
         </div>
       </EditorialHeroShell>
-      <EditorialListing items={ALL_ITEMS} categories={insightCategories} topics={TOPICS} />
+      <EditorialListing items={allItems} categories={insightCategories} topics={topics} />
     </>
   );
 }
 
 /* ---------- detail ---------- */
-function InsightDetail({ a }: { a: InsightArticle }) {
+function InsightDetail({ a, articles }: { a: InsightArticle; articles: InsightArticle[] }) {
   const item = toItem(a);
-  const related = insightArticles
+  const related = articles
     .filter((x) => x.slug !== a.slug && x.categorySlug === a.categorySlug)
-    .concat(insightArticles.filter((x) => x.slug !== a.slug && x.categorySlug !== a.categorySlug))
+    .concat(articles.filter((x) => x.slug !== a.slug && x.categorySlug !== a.categorySlug))
     .slice(0, 3)
     .map(toItem);
   return (
@@ -161,11 +161,17 @@ function InsightDetail({ a }: { a: InsightArticle }) {
   );
 }
 
-export function InsightsPages({ route }: { route: string }) {
-  if (route === "/insights") return <InsightsHome />;
-  if (route === "/insights/danh-sach") return <InsightsListing />;
+export function InsightsPages({
+  route,
+  articles = insightArticles,
+}: {
+  route: string;
+  articles?: InsightArticle[];
+}) {
+  if (route === "/insights") return <InsightsHome articles={articles} />;
+  if (route === "/insights/danh-sach") return <InsightsListing articles={articles} />;
   const slug = route.startsWith("/insights/") ? route.slice("/insights/".length) : "";
-  const a = insightBySlug(slug);
-  if (a) return <InsightDetail a={a} />;
+  const a = articles.find((x) => x.slug === slug) ?? insightBySlug(slug);
+  if (a) return <InsightDetail a={a} articles={articles} />;
   return null;
 }

@@ -20,9 +20,9 @@ import { hasSuiteRoute } from "@/data/suite-content";
 import { CasePages } from "@/components/cases/CasePages";
 import { hasCaseRoute } from "@/data/case-content";
 import { InsightsPages } from "@/components/insights/InsightsPages";
-import { hasInsightRoute, insightBySlug } from "@/data/insights-content";
+import { insightBySlug, resolveInsights } from "@/data/insights-content";
 import { NewsPages } from "@/components/news/NewsPages";
-import { hasNewsRoute, newsBySlug } from "@/data/news-content";
+import { newsBySlug, resolveNews } from "@/data/news-content";
 import { LeadPages } from "@/components/lead/LeadPages";
 import { hasLeadRoute } from "@/data/lead-content";
 import { LegalPages } from "@/components/legal/LegalPages";
@@ -201,22 +201,42 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     );
   }
 
-  // Bespoke corporate Insights (SET C07) — /insights + curated article pages.
-  if (siteCode === "corporate" && hasInsightRoute(path)) {
-    return (
-      <SiteShell site={site} menu={menu?.items ?? []}>
-        <InsightsPages route={path} />
-      </SiteShell>
-    );
+  // Bespoke corporate Insights (SET C07) — /insights + article pages.
+  // Content editable in CMS (Posts, section=insight); merges over designed
+  // static articles by slug, falls back to static when the CMS row is unset.
+  if (
+    siteCode === "corporate" &&
+    (path === "/insights" ||
+      (path.startsWith("/insights/") && !path.startsWith("/insights/tag/")))
+  ) {
+    const cmsPosts = await cms.getEditorialPosts(siteCode, "insight").catch(() => []);
+    const articles = resolveInsights(cmsPosts, CMS_BASE);
+    const slug = path.startsWith("/insights/") ? path.slice("/insights/".length) : "";
+    const ok =
+      path === "/insights" || path === "/insights/danh-sach" || articles.some((a) => a.slug === slug);
+    if (ok) {
+      return (
+        <SiteShell site={site} menu={menu?.items ?? []}>
+          <InsightsPages route={path} articles={articles} />
+        </SiteShell>
+      );
+    }
   }
 
-  // Bespoke corporate News (/tin-tuc) — news landing + article pages.
-  if (siteCode === "corporate" && hasNewsRoute(path)) {
-    return (
-      <SiteShell site={site} menu={menu?.items ?? []}>
-        <NewsPages route={path} />
-      </SiteShell>
-    );
+  // Bespoke corporate News (/tin-tuc) — news landing + article pages (CMS-editable).
+  if (siteCode === "corporate" && path.startsWith("/tin-tuc")) {
+    const cmsPosts = await cms.getEditorialPosts(siteCode, "news").catch(() => []);
+    const articles = resolveNews(cmsPosts, CMS_BASE);
+    const slug = path.startsWith("/tin-tuc/") ? path.slice("/tin-tuc/".length) : "";
+    const ok =
+      path === "/tin-tuc" || path === "/tin-tuc/danh-sach" || articles.some((a) => a.slug === slug);
+    if (ok) {
+      return (
+        <SiteShell site={site} menu={menu?.items ?? []}>
+          <NewsPages route={path} articles={articles} />
+        </SiteShell>
+      );
+    }
   }
 
   // Bespoke corporate lead pages (/lien-he, /dat-lich-demo, /yeu-cau-tu-van).

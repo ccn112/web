@@ -1,0 +1,904 @@
+[
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "xay-dung-lo-trinh-chuyen-doi-so-theo-giai-doan",
+    "title": "Xây dựng lộ trình chuyển đổi số theo từng giai đoạn",
+    "excerpt": "Vì sao nhiều dự án chuyển đổi số 'chết yểu', và cách một lộ trình theo giai đoạn giúp doanh nghiệp tạo giá trị sớm mà không vỡ trận khi mở rộng.",
+    "category": "chuyen-doi-so",
+    "tags": [
+      "chiến lược",
+      "roadmap",
+      "kiến trúc"
+    ],
+    "coverUrl": "/images/editorial/trien-khai.png",
+    "readTime": "8 phút",
+    "date": "2026-07-14",
+    "featured": true,
+    "relatedProducts": [
+      "finerp",
+      "x-space",
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Một giám đốc điều hành từng nói với chúng tôi: 'Chúng tôi đã chi cả tỷ đồng cho phần mềm, nhưng nhân viên vẫn xuất báo cáo bằng Excel.' Câu chuyện đó không hiếm. Phần lớn dự án chuyển đổi số không thất bại vì chọn sai công nghệ, mà vì làm dàn trải, thiếu ưu tiên và không có nền tảng chung để mọi thứ kết nối với nhau."
+      },
+      {
+        "type": "p",
+        "text": "Chuyển đổi số hiệu quả bắt đầu từ bài toán kinh doanh, không phải từ danh sách tính năng. Và cách an toàn nhất để đi là chia thành từng giai đoạn có mục tiêu rõ ràng — mỗi giai đoạn tạo ra giá trị đo được, đồng thời đặt nền cho giai đoạn kế tiếp."
+      },
+      {
+        "type": "h2",
+        "text": "Bắt đầu từ một bài toán, không phải mười"
+      },
+      {
+        "type": "p",
+        "text": "Sai lầm thường gặp là muốn số hóa mọi thứ cùng lúc. Kết quả là nguồn lực bị xé nhỏ, không dự án nào đủ sâu để tạo tác động, và tổ chức nhanh chóng mất niềm tin."
+      },
+      {
+        "type": "p",
+        "text": "Thay vào đó, hãy chọn một đến hai bài toán vừa có tác động lớn vừa khả thi: thường là những quy trình lặp lại nhiều, tốn nhân lực và đã có sẵn dữ liệu — ví dụ tổng hợp báo cáo tài chính, kiểm soát công nợ hay chăm sóc khách hàng. Một kết quả đo được ở giai đoạn đầu chính là 'vốn' để thuyết phục tổ chức đầu tư cho các bước sau."
+      },
+      {
+        "type": "image",
+        "src": "/products/finerp/ferp-02-finance.png",
+        "alt": "Dashboard điều hành tài chính hợp nhất",
+        "caption": "Bắt đầu từ bài toán có dữ liệu rõ ràng — ví dụ dashboard điều hành tài chính."
+      },
+      {
+        "type": "h2",
+        "text": "Đặt nền tảng chung ngay từ đầu"
+      },
+      {
+        "type": "p",
+        "text": "Đây là điểm nhiều doanh nghiệp bỏ qua và phải trả giá về sau. Nếu mỗi phòng ban tự mua một phần mềm rời rạc, bạn sẽ sớm có những 'ốc đảo' dữ liệu không nói chuyện được với nhau — và mỗi lần muốn kết nối lại là một dự án tốn kém."
+      },
+      {
+        "type": "p",
+        "text": "Ngược lại, nếu ngay từ giai đoạn một bạn đã thiết kế tầng dữ liệu, tích hợp (API) và định danh dùng chung, thì mỗi bước mở rộng sau chỉ là bổ sung — không phải làm lại. Nền tảng vững là thứ phân biệt một lộ trình đi được đường dài với một chuỗi dự án chắp vá."
+      },
+      {
+        "type": "h2",
+        "text": "Ba giai đoạn, mỗi giai đoạn một cột mốc"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Giai đoạn 1 — Số hóa & chuẩn hóa: đưa bài toán ưu tiên lên hệ thống, làm sạch và chuẩn hóa dữ liệu gốc. Cột mốc: một quy trình chạy hết trên nền tảng số.",
+          "Giai đoạn 2 — Tích hợp & liên thông: kết nối các hệ thống, để dữ liệu chảy end-to-end giữa các phòng ban. Cột mốc: một 'sự thật' dữ liệu duy nhất.",
+          "Giai đoạn 3 — Phân tích & AI: kích hoạt báo cáo điều hành, dự báo và AI Agent trên nền dữ liệu đã liên thông. Cột mốc: quyết định dựa trên dữ liệu thời gian thực."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Những cái bẫy cần tránh"
+      },
+      {
+        "type": "p",
+        "text": "Đừng để 'sự hoàn hảo' làm chậm giai đoạn đầu — ra mắt sớm, đo, rồi cải tiến. Đừng bỏ qua con người: đào tạo và đồng hành quan trọng ngang với phần mềm. Và đừng xem chuyển đổi số là một dự án có ngày kết thúc — nó là năng lực vận hành liên tục của doanh nghiệp."
+      },
+      {
+        "type": "p",
+        "text": "Đây cũng là cách XTECH đồng hành cùng khách hàng: bắt đầu gọn, chuẩn hóa nền tảng, rồi mở rộng theo mức độ sẵn sàng của tổ chức — để mỗi đồng đầu tư đều nhìn thấy kết quả."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "tu-pilot-ai-den-ai-van-hanh-thuc-te",
+    "title": "Từ pilot AI đến AI vận hành thực tế trong doanh nghiệp",
+    "excerpt": "Một bản demo AI ấn tượng trong phòng họp không đảm bảo AI sẽ tạo giá trị khi vào vận hành. Khoảng cách nằm ở dữ liệu, quy trình và quản trị.",
+    "category": "ai-doanh-nghiep",
+    "tags": [
+      "AI Agent",
+      "RAG",
+      "governance"
+    ],
+    "coverUrl": "/products/xai/xai-06-ai-workflow-assistant.png",
+    "readTime": "7 phút",
+    "date": "2026-07-11",
+    "featured": true,
+    "relatedProducts": [
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Vì sao rất nhiều dự án AI dừng lại ngay sau bản demo đầu tiên?"
+      },
+      {
+        "type": "p",
+        "text": "Gần như doanh nghiệp nào cũng đã thử AI: một chatbot chạy tốt trong buổi trình diễn, một bản POC gây ấn tượng với ban lãnh đạo. Nhưng phần lớn dừng lại ở đó. Khoảng cách giữa 'AI trình diễn' và 'AI vận hành' không nằm ở model — mà ở ba thứ ít hào nhoáng hơn: dữ liệu, quy trình và quản trị."
+      },
+      {
+        "type": "h2",
+        "text": "Vì sao pilot hay 'chết' khi lên thật"
+      },
+      {
+        "type": "p",
+        "text": "Pilot thường chạy trên dữ liệu đã chọn lọc, phạm vi hẹp và không có ràng buộc thật. Khi đưa vào vận hành, AI gặp dữ liệu bẩn, câu hỏi ngoài phạm vi, yêu cầu phân quyền và cả trách nhiệm giải trình khi trả lời sai. Thiếu nền tảng cho những điều đó, kết quả nhanh chóng mất tin cậy và bị bỏ."
+      },
+      {
+        "type": "image",
+        "src": "/products/xai/xai-05-knowledge-search-qa.png",
+        "alt": "Hỏi đáp tri thức nội bộ theo RAG có trích dẫn nguồn",
+        "caption": "RAG trả lời dựa trên tri thức nội bộ và kèm trích dẫn nguồn để kiểm chứng."
+      },
+      {
+        "type": "h2",
+        "text": "Bốn điều kiện để AI đi vào vận hành"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Dữ liệu được tổ chức, gắn ngữ cảnh và phân quyền rõ ràng — nền tảng cho RAG trả lời đúng.",
+          "Quy trình nghiệp vụ được chuẩn hóa để AI can thiệp đúng điểm, đúng lúc.",
+          "Cơ chế giám sát, kiểm toán và guardrails cho mọi đầu ra của AI.",
+          "Con người trong vòng lặp (human-in-the-loop) ở các quyết định quan trọng."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Mở rộng theo mức độ tin cậy, đừng trao toàn quyền ngay"
+      },
+      {
+        "type": "p",
+        "text": "Một nguyên tắc thực dụng: mức độ tự chủ của AI nên tỉ lệ thuận với dữ liệu vận hành và guardrails đã kiểm chứng. Bắt đầu ở chế độ 'gợi ý' để con người duyệt, đo độ chính xác trong vài tuần, rồi mới nâng dần lên 'tự động hóa' cho những tác vụ đã đủ tin cậy."
+      },
+      {
+        "type": "quote",
+        "text": "AI tạo giá trị bền vững khi được kết nối với dữ liệu đáng tin cậy, quy trình rõ ràng và trách nhiệm của con người."
+      },
+      {
+        "type": "p",
+        "text": "Đó chính là triết lý đằng sau X.AI: không chỉ cung cấp agent, mà cung cấp cả lớp tri thức, tự động hóa và quản trị để AI thực sự vận hành được — chứ không dừng ở một bản demo đẹp."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "nen-tang-du-lieu-thong-nhat-cho-doanh-nghiep",
+    "title": "Nền tảng dữ liệu thống nhất cho doanh nghiệp",
+    "excerpt": "Khi mỗi phòng ban có một 'sự thật' khác nhau, mọi cuộc họp đều tốn thời gian tranh cãi số liệu. Nền tảng dữ liệu thống nhất giải quyết gốc rễ vấn đề đó.",
+    "category": "du-lieu",
+    "tags": [
+      "data platform",
+      "integration",
+      "analytics"
+    ],
+    "coverUrl": "/products/xai/xai-04-executive-reporting-ai.png",
+    "readTime": "7 phút",
+    "date": "2026-07-08",
+    "featured": false,
+    "relatedProducts": [
+      "x-ai",
+      "finerp"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Hãy hình dung một cuộc họp giao ban: phòng kinh doanh báo doanh số một con số, phòng tài chính đưa ra con số khác, và nửa buổi họp trôi qua chỉ để thống nhất 'số nào đúng'. Đây là triệu chứng kinh điển của dữ liệu phân mảnh."
+      },
+      {
+        "type": "p",
+        "text": "Dữ liệu là nền móng của mọi sáng kiến số — nhưng ở nhiều doanh nghiệp, nó nằm rải rác trong hàng chục hệ thống, mỗi nơi một định dạng và một cách tính. Một nền tảng dữ liệu thống nhất giúp báo cáo nhất quán, quyết định nhanh và AI trả lời đáng tin."
+      },
+      {
+        "type": "h2",
+        "text": "Một nguồn sự thật duy nhất"
+      },
+      {
+        "type": "p",
+        "text": "Thay vì mỗi phòng ban tự tổng hợp theo cách riêng, dữ liệu được gom về một nền tảng chung và chuẩn hóa định nghĩa: một chỉ số chỉ có một cách tính, một khách hàng chỉ có một hồ sơ. Điều tưởng chừng đơn giản này chấm dứt phần lớn tranh cãi số liệu và giải phóng thời gian cho việc thực sự quan trọng — ra quyết định."
+      },
+      {
+        "type": "h2",
+        "text": "Bốn lớp của một nền tảng dữ liệu"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Thu thập & tích hợp: kết nối ERP, CRM, hệ thống vận hành qua API và event.",
+          "Chuẩn hóa & chất lượng: làm sạch, khử trùng lặp, gắn ngữ cảnh và metadata.",
+          "Phân quyền & bảo mật: kiểm soát ai xem được gì, bảo vệ dữ liệu nhạy cảm.",
+          "Khai thác: báo cáo điều hành, phân tích tự phục vụ và cấp dữ liệu cho AI/RAG."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/products/finerp/ferp-02-finance.png",
+        "alt": "Báo cáo điều hành trên nền dữ liệu hợp nhất",
+        "caption": "Dữ liệu liên thông cho báo cáo điều hành theo thời gian thực."
+      },
+      {
+        "type": "h2",
+        "text": "Dữ liệu tốt là điều kiện tiên quyết của AI"
+      },
+      {
+        "type": "p",
+        "text": "Không có dữ liệu sạch và có ngữ cảnh, AI chỉ tạo ra những câu trả lời nghe hợp lý nhưng sai — điều nguy hiểm hơn cả không có AI. Vì thế, đầu tư vào nền tảng dữ liệu không phải một hạng mục 'kỹ thuật phụ', mà là khoản đầu tư cho mọi sáng kiến phân tích và AI phía sau."
+      },
+      {
+        "type": "p",
+        "text": "Nói cách khác: chất lượng của AI không bao giờ vượt quá chất lượng của dữ liệu nuôi nó. Bắt đầu từ dữ liệu là bắt đầu từ gốc."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "hanh-trinh-so-cho-chu-dau-tu-bat-dong-san",
+    "title": "Hành trình số cho chủ đầu tư bất động sản",
+    "excerpt": "Theo chân một khách hàng từ lúc thấy quảng cáo đến khi trở thành cư dân — và những điểm dữ liệu dễ đứt gãy nếu mỗi giai đoạn dùng một phần mềm riêng.",
+    "category": "proptech",
+    "tags": [
+      "bất động sản",
+      "booking",
+      "customer journey"
+    ],
+    "coverUrl": "/products/xbooking/xbk-09-inventory-matrix.png",
+    "readTime": "9 phút",
+    "date": "2026-07-05",
+    "featured": true,
+    "relatedProducts": [
+      "xbooking",
+      "finerp",
+      "xbuilding"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Chị Lan thấy một quảng cáo dự án trên mạng xã hội, để lại số điện thoại. Ba tháng sau, chị nhận bàn giao căn hộ và trở thành cư dân. Giữa hai thời điểm đó là một hành trình dài — và với chủ đầu tư, mỗi bước trong hành trình ấy là một cơ hội để phục vụ tốt hơn, hoặc một điểm dễ đánh rơi khách hàng."
+      },
+      {
+        "type": "p",
+        "text": "Vấn đề là: khi mỗi giai đoạn dùng một phần mềm riêng, dữ liệu của chị Lan bị đứt gãy giữa các bộ phận, và trải nghiệm trở nên rời rạc. Số hóa toàn hành trình là cách giữ cho dòng chảy đó liền mạch."
+      },
+      {
+        "type": "h2",
+        "text": "Marketing và thu lead: đừng để khách rơi ngay từ đầu"
+      },
+      {
+        "type": "p",
+        "text": "Hành trình bắt đầu từ việc gom lead từ mọi kênh — website, mạng xã hội, hotline, sàn — về một đầu mối, chuẩn hóa và chống trùng ngay khi lead vào. Lead được chấm điểm và phân bổ tự động, để đội sales tập trung vào cơ hội tiềm năng nhất thay vì gọi ngẫu nhiên."
+      },
+      {
+        "type": "image",
+        "src": "/products/xbooking/xbk-07-sales-pipeline.png",
+        "alt": "Quản lý pipeline cơ hội bán hàng",
+        "caption": "Theo dõi cơ hội qua từng giai đoạn và dự báo doanh số sát thực tế."
+      },
+      {
+        "type": "h2",
+        "text": "Bảng hàng, booking và hợp đồng: minh bạch để không tranh chấp"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Bảng hàng thời gian thực: toàn cảnh quỹ hàng theo dự án, tòa, tầng và trạng thái căn.",
+          "Giữ chỗ & lock cọc: có thời hạn rõ ràng, tránh trùng bán và tranh chấp.",
+          "Hợp đồng & thanh toán: theo dõi tiến độ từng đợt, cảnh báo đến hạn và quá hạn."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Từ giao dịch đến vận hành và tái mua"
+      },
+      {
+        "type": "p",
+        "text": "Khi bàn giao, dữ liệu của chị Lan không dừng lại mà chuyển tiếp sang hệ thống vận hành tòa nhà: hồ sơ cư dân, phí dịch vụ, phản ánh, bảo trì. Một cư dân được chăm sóc tốt sẽ quay lại và giới thiệu người khác — tạo dòng lead mới, khép kín vòng đời."
+      },
+      {
+        "type": "quote",
+        "text": "Lợi thế cạnh tranh không đến từ một phần mềm đơn lẻ, mà từ sự liên thông của toàn bộ hành trình khách hàng."
+      },
+      {
+        "type": "p",
+        "text": "Đây là lý do hệ sinh thái XBooking, FinERP và XBuilding được thiết kế để liên thông trên nền tảng dùng chung — dữ liệu đi suốt từ lead đến cư dân, không đứt đoạn."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "integration-hub-ket-noi-he-thong-hien-huu",
+    "title": "Integration Hub cho hệ sinh thái hệ thống hiện hữu",
+    "excerpt": "Ít doanh nghiệp có thể vứt bỏ toàn bộ hệ thống cũ để làm lại. Bài toán thực tế là kết nối cái đang có với cái mới — an toàn và có kiểm soát.",
+    "category": "du-lieu",
+    "tags": [
+      "API",
+      "event bus",
+      "integration"
+    ],
+    "coverUrl": "/products/xai/xai-20-tool-api-connector-center.png",
+    "readTime": "6 phút",
+    "date": "2026-07-02",
+    "featured": false,
+    "relatedProducts": [
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Trong thực tế, hiếm doanh nghiệp nào có thể (hoặc nên) vứt bỏ toàn bộ hệ thống cũ để làm lại từ đầu. Phần mềm kế toán đã dùng mười năm, hệ thống chuyên ngành đặc thù, ERP vừa triển khai — tất cả đều mang giá trị và dữ liệu lịch sử. Bài toán không phải 'thay mới', mà là 'kết nối'."
+      },
+      {
+        "type": "h2",
+        "text": "Ba thành phần cốt lõi của Integration Hub"
+      },
+      {
+        "type": "list",
+        "items": [
+          "API Gateway: một cửa ngõ chuẩn hóa, bảo mật và giám sát mọi lời gọi giữa các hệ thống.",
+          "Event Bus: cho phép hệ thống 'phát' và 'lắng nghe' sự kiện, giảm phụ thuộc trực tiếp lẫn nhau.",
+          "Workflow Engine: điều phối quy trình đa hệ thống, xử lý ngoại lệ và các bước phê duyệt."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/images/backgrounds/home/hero-ecosystem.webp",
+        "alt": "Hệ sinh thái kết nối trên nền tảng dùng chung",
+        "caption": "Lớp tích hợp làm 'trục' kết nối dữ liệu, API và workflow xuyên hệ thống."
+      },
+      {
+        "type": "h2",
+        "text": "Vì sao nên tách riêng lớp tích hợp?"
+      },
+      {
+        "type": "p",
+        "text": "Khi các hệ thống gọi thẳng vào nhau theo kiểu 'point-to-point', mỗi thay đổi ở một nơi kéo theo rủi ro ở mọi nơi — và số kết nối tăng theo cấp số nhân khi thêm hệ thống mới. Một lớp tích hợp riêng biến mớ dây chằng chịt đó thành một trục rõ ràng: bạn có thể thay thế, nâng cấp từng hệ thống mà không phá vỡ phần còn lại, đồng thời có một điểm tập trung để giám sát, bảo mật và ghi log."
+      },
+      {
+        "type": "p",
+        "text": "Với lớp tích hợp vững, doanh nghiệp vừa bảo vệ được khoản đầu tư vào hệ thống cũ, vừa mở đường cho dữ liệu liên thông và AI khai thác về sau — thay vì phải chọn giữa 'giữ cũ' và 'làm mới'."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "quan-tri-ai-an-toan-trong-doanh-nghiep",
+    "title": "Quản trị AI an toàn trong doanh nghiệp",
+    "excerpt": "Càng trao cho AI nhiều quyền hành động, rủi ro càng lớn nếu thiếu kiểm soát. Quản trị AI không phải rào cản — mà là điều kiện để dám mở rộng.",
+    "category": "ai-doanh-nghiep",
+    "tags": [
+      "governance",
+      "security",
+      "AI Agent"
+    ],
+    "coverUrl": "/products/xai/xai-14-ai-governance-guardrails.png",
+    "readTime": "6 phút",
+    "date": "2026-06-28",
+    "featured": false,
+    "relatedProducts": [
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Nhiều lãnh đạo lo lắng khi nghĩ đến việc để AI tự hành động trong doanh nghiệp — và nỗi lo đó có cơ sở. Một AI thiếu kiểm soát có thể rò rỉ dữ liệu nhạy cảm, đưa ra câu trả lời sai lệch, hoặc hành động ngoài phạm vi cho phép. Nhưng nghịch lý là: chính vì có quản trị tốt, doanh nghiệp mới dám mở rộng AI."
+      },
+      {
+        "type": "h2",
+        "text": "Guardrails: vẽ ranh giới cho AI"
+      },
+      {
+        "type": "p",
+        "text": "Guardrails xác định rõ AI được làm gì, không được làm gì, và phải chuyển cho con người khi nào. Chúng bao gồm giới hạn phạm vi dữ liệu, quy tắc nội dung, và các bước phê duyệt bắt buộc trước những hành động có tác động lớn. Có ranh giới rõ, AI mới có thể mạnh dạn hỗ trợ mà không trở thành rủi ro."
+      },
+      {
+        "type": "h2",
+        "text": "Bốn trụ cột của quản trị AI"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Phân quyền dữ liệu: AI chỉ truy cập và trả lời trong phạm vi người dùng được phép.",
+          "Bảo vệ dữ liệu & PII: che và kiểm soát thông tin nhạy cảm trong mọi luồng xử lý.",
+          "Observability & audit: truy vết mọi bước để gỡ lỗi và giải trình khi cần.",
+          "Chống 'ảo giác': đo mức bám nguồn, phát hiện câu trả lời bịa và cảnh báo kịp thời."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/products/xai/xai-25-ai-security-operations-center.png",
+        "alt": "Trung tâm giám sát an ninh AI",
+        "caption": "Giám sát tập trung mọi hoạt động AI, phát hiện và xử lý rủi ro kịp thời."
+      },
+      {
+        "type": "quote",
+        "text": "AI đáng tin không phải AI mạnh nhất, mà là AI minh bạch, kiểm soát được và truy vết được."
+      },
+      {
+        "type": "p",
+        "text": "Lớp quản trị này được tích hợp sẵn trong X.AI, giúp doanh nghiệp triển khai AI Agent với sự tự tin về an toàn và tuân thủ — để câu hỏi không còn là 'có nên dùng AI không', mà là 'mở rộng AI tới đâu'."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "mo-hinh-saas-private-cloud-on-premise-hybrid",
+    "title": "Chọn SaaS, Private Cloud, On-premise hay Hybrid",
+    "excerpt": "Không có mô hình triển khai 'tốt nhất' cho mọi doanh nghiệp — chỉ có mô hình phù hợp nhất với yêu cầu về dữ liệu, tốc độ và nguồn lực của bạn.",
+    "category": "chuyen-doi-so",
+    "tags": [
+      "cloud",
+      "on-premise",
+      "hybrid"
+    ],
+    "coverUrl": "/images/backgrounds/home/hero-ecosystem.webp",
+    "readTime": "7 phút",
+    "date": "2026-06-24",
+    "featured": false,
+    "relatedProducts": [
+      "x-space",
+      "finerp"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Một trong những câu hỏi đầu tiên khi triển khai hệ thống mới là: đặt nó ở đâu? Câu trả lời không có 'đúng tuyệt đối' — mỗi mô hình là một sự đánh đổi giữa tốc độ, quyền kiểm soát và chi phí. Hiểu rõ đánh đổi đó giúp tránh những quyết định tốn kém và khó đảo ngược."
+      },
+      {
+        "type": "h2",
+        "text": "Bốn mô hình, bốn đánh đổi"
+      },
+      {
+        "type": "list",
+        "items": [
+          "SaaS: triển khai nhanh, chi phí ban đầu thấp, nhà cung cấp lo hạ tầng — phù hợp phần lớn nghiệp vụ chuẩn.",
+          "Private Cloud: kiểm soát dữ liệu cao hơn nhưng vẫn linh hoạt về hạ tầng — hợp với dữ liệu nhạy cảm.",
+          "On-premise: toàn quyền kiểm soát, đáp ứng yêu cầu tuân thủ chặt — đổi lại chi phí và vận hành cao.",
+          "Hybrid: kết hợp — đặt dữ liệu nhạy cảm on-premise và tận dụng cloud cho phần còn lại."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Bốn tiêu chí để quyết định"
+      },
+      {
+        "type": "p",
+        "text": "Khi phân vân, hãy cân nhắc theo bốn câu hỏi: (1) Yêu cầu pháp lý và độ nhạy cảm của dữ liệu tới đâu? (2) Bạn cần đưa vào sử dụng nhanh thế nào? (3) Mức độ tùy chỉnh nghiệp vụ ra sao? (4) Năng lực và chi phí vận hành nội bộ của bạn thế nào? Trọng số của bốn câu hỏi này — chứ không phải 'công nghệ nào mới nhất' — mới là thứ quyết định lựa chọn đúng."
+      },
+      {
+        "type": "p",
+        "text": "Một lời khuyên thực dụng: nhiều doanh nghiệp bắt đầu nhanh với SaaS để tạo giá trị sớm, rồi chuyển dịch sang hybrid hoặc private cloud khi nhu cầu về dữ liệu và tùy chỉnh tăng lên. Các sản phẩm của XTECH hỗ trợ nhiều mô hình, cho phép lộ trình chuyển dịch đó diễn ra mượt mà thay vì phải làm lại."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "insight",
+    "slug": "smart-building-tu-quan-ly-den-van-hanh-thong-minh",
+    "title": "Smart Building: từ quản lý đến vận hành thông minh",
+    "excerpt": "Quản lý tòa nhà truyền thống nặng về giấy tờ và phản ứng bị động. Smart Building chuyển vận hành sang chủ động, dựa trên dữ liệu và kết nối.",
+    "category": "proptech",
+    "tags": [
+      "smart building",
+      "IoT",
+      "vận hành"
+    ],
+    "coverUrl": "/products/xbuilding/xbl-10-smart-building-command-center.png",
+    "readTime": "7 phút",
+    "date": "2026-06-20",
+    "featured": false,
+    "relatedProducts": [
+      "xbuilding",
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Ở một tòa nhà vận hành theo cách truyền thống, ban quản lý thường chỉ biết đến sự cố khi cư dân gọi điện phàn nàn. Phí dịch vụ thu bằng sổ, phản ánh xử lý bằng giấy, và mọi thứ mang tính 'chữa cháy'. Smart Building lật ngược thế bị động đó: vận hành dựa trên dữ liệu, chủ động và kết nối."
+      },
+      {
+        "type": "h2",
+        "text": "Số hóa những việc hằng ngày"
+      },
+      {
+        "type": "p",
+        "text": "Trước khi nói đến IoT hay AI, giá trị lớn đầu tiên đến từ việc số hóa vận hành thường nhật: phí dịch vụ được tính và thu tự động đa kênh; phản ánh của cư dân đi qua quy trình có SLA rõ ràng; công việc của ban quản lý được giao và theo dõi minh bạch. Cư dân tự phục vụ ngay trên ứng dụng, giảm tải cho quầy lễ tân — và mọi tương tác đều để lại dữ liệu."
+      },
+      {
+        "type": "image",
+        "src": "/products/xbuilding/xbl-12-energy-utility-monitoring.png",
+        "alt": "Giám sát năng lượng và tiện ích bằng IoT",
+        "caption": "Giám sát tiêu thụ điện, nước theo dữ liệu thật để tối ưu chi phí vận hành."
+      },
+      {
+        "type": "h2",
+        "text": "IoT và AI cho vận hành chủ động"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Command center: giám sát tập trung toàn bộ hệ thống kỹ thuật theo thời gian thực.",
+          "IoT & năng lượng: phát hiện tiêu thụ bất thường, tối ưu chi phí vận hành.",
+          "Bảo trì phòng ngừa: lên lịch theo vòng đời tài sản, tránh sự cố gây gián đoạn.",
+          "An ninh thông minh: kiểm soát ra vào, nhận diện và bãi đỗ xe gắn với hồ sơ cư dân."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "Tòa nhà thông minh không phải tòa nhà gắn nhiều cảm biến, mà là tòa nhà ra quyết định tốt hơn nhờ dữ liệu."
+      },
+      {
+        "type": "p",
+        "text": "XBuilding kết hợp vận hành, IoT và AI copilot để ban quản lý thực sự làm chủ tòa nhà — chủ động phòng ngừa thay vì chạy theo sự cố, và nâng trải nghiệm cư dân lên một mức mới."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "xtech-ra-mat-he-sinh-thai-ai-cho-doanh-nghiep-va-bat-dong-san",
+    "title": "XTECH ra mắt hệ sinh thái AI cho doanh nghiệp và bất động sản",
+    "excerpt": "Hệ sinh thái sản phẩm XTECH kết nối dữ liệu, quy trình và AI trên một nền tảng dùng chung cho doanh nghiệp và chủ đầu tư bất động sản.",
+    "category": "tin-xtech",
+    "tags": [
+      "AI",
+      "Bất động sản",
+      "Insights"
+    ],
+    "coverUrl": "/images/backgrounds/home/hero-ecosystem.webp",
+    "readTime": "6 phút",
+    "date": "2026-07-15",
+    "featured": true,
+    "relatedProducts": [
+      "x-ai",
+      "xbooking"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "XTECH chính thức giới thiệu hệ sinh thái sản phẩm và dịch vụ hợp nhất, giúp doanh nghiệp và chủ đầu tư bất động sản kết nối dữ liệu, số hóa quy trình và ứng dụng trí tuệ nhân tạo trên cùng một nền tảng dùng chung."
+      },
+      {
+        "type": "p",
+        "text": "Khác với cách tiếp cận 'mỗi bài toán một phần mềm' vốn tạo ra các ốc đảo dữ liệu, hệ sinh thái của XTECH được thiết kế để mọi sản phẩm chia sẻ chung tầng dữ liệu, định danh, workflow và AI — cho phép doanh nghiệp bắt đầu từ một bài toán ưu tiên rồi mở rộng dần mà vẫn giữ được sự liên thông."
+      },
+      {
+        "type": "h2",
+        "text": "Một nền tảng, nhiều bài toán"
+      },
+      {
+        "type": "p",
+        "text": "Hệ sinh thái gồm năm sản phẩm chính — X.AI, XBooking, FinERP, XBuilding và X.Space — cùng lớp nền tảng dùng chung và các dịch vụ tư vấn, triển khai đi kèm."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Kết nối dữ liệu bán hàng, tài chính và vận hành thành một nguồn thống nhất.",
+          "Số hóa quy trình đầu–cuối, giảm thao tác thủ công và sai sót.",
+          "Kích hoạt AI Agent trên dữ liệu và nghiệp vụ thực tế của doanh nghiệp."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/images/backgrounds/home/hero-ecosystem.webp",
+        "alt": "Hệ sinh thái sản phẩm XTECH trên nền tảng dùng chung",
+        "caption": "Các sản phẩm liên thông trên nền tảng dữ liệu, API và AI dùng chung."
+      },
+      {
+        "type": "h2",
+        "text": "Hướng tới triển khai có kiểm soát"
+      },
+      {
+        "type": "p",
+        "text": "Đại diện XTECH cho biết định hướng của công ty là giúp khách hàng chuyển đổi số theo lộ trình có kiểm soát: tạo giá trị sớm ở từng giai đoạn thay vì chờ một dự án lớn hoàn tất, đồng thời kiểm soát rủi ro và chi phí. Trong thời gian tới, XTECH sẽ tiếp tục mở rộng năng lực AI và công bố thêm các câu chuyện triển khai thực tế cùng khách hàng."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "5-xu-huong-chuyen-doi-so-cho-chu-dau-tu-bat-dong-san",
+    "title": "5 xu hướng chuyển đổi số nổi bật cho chủ đầu tư bất động sản",
+    "excerpt": "Từ dữ liệu bán hàng hợp nhất đến AI hỗ trợ vận hành — những xu hướng đang định hình cách chủ đầu tư số hóa toàn bộ hành trình.",
+    "category": "bat-dong-san-so",
+    "tags": [
+      "Bất động sản",
+      "CRM"
+    ],
+    "coverUrl": "/products/xbooking/xbk-09-inventory-matrix.png",
+    "readTime": "7 phút",
+    "date": "2026-07-12",
+    "featured": true,
+    "relatedProducts": [
+      "xbooking",
+      "xbuilding"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Chuyển đổi số trong bất động sản không còn là một lựa chọn 'để sau' — nó đã trở thành yếu tố cạnh tranh trực tiếp giữa các chủ đầu tư. Dưới đây là năm xu hướng đang định hình cách các doanh nghiệp dẫn đầu số hóa toàn bộ hành trình, từ lúc thu hút khách đến khi vận hành tòa nhà."
+      },
+      {
+        "type": "h2",
+        "text": "1. Hợp nhất dữ liệu bán hàng"
+      },
+      {
+        "type": "p",
+        "text": "Lead, bảng hàng, giao dịch và hợp đồng được đưa về một nguồn duy nhất, thay cho những file rời rạc giữa các đội. Đây thường là bước tạo giá trị nhanh nhất và là nền cho mọi phân tích về sau."
+      },
+      {
+        "type": "h2",
+        "text": "2. Liên thông trước – sau bán"
+      },
+      {
+        "type": "p",
+        "text": "Dữ liệu không dừng ở lúc ký hợp đồng: nó nối tiếp sang tài chính, bàn giao và vận hành, tạo thành một hành trình khách hàng liền mạch thay vì đứt gãy giữa các phòng ban."
+      },
+      {
+        "type": "image",
+        "src": "/products/xbooking/xbk-07-sales-pipeline.png",
+        "alt": "Pipeline bán hàng bất động sản",
+        "caption": "Theo dõi cơ hội và dự báo doanh số trên dữ liệu bán hàng hợp nhất."
+      },
+      {
+        "type": "h2",
+        "text": "3. AI hỗ trợ vận hành"
+      },
+      {
+        "type": "p",
+        "text": "AI bắt đầu tham gia vào các tác vụ lặp lại: dự báo nhu cầu, cảnh báo công nợ, tổng hợp báo cáo và hỗ trợ chăm sóc khách hàng — giải phóng nhân sự cho phần việc cần phán đoán."
+      },
+      {
+        "type": "h2",
+        "text": "4. Trải nghiệm khách hàng số"
+      },
+      {
+        "type": "p",
+        "text": "App cư dân, thanh toán trực tuyến và kênh chăm sóc số đang trở thành tiêu chuẩn kỳ vọng — đặc biệt với thế hệ khách hàng trẻ."
+      },
+      {
+        "type": "h2",
+        "text": "5. Ra quyết định thời gian thực"
+      },
+      {
+        "type": "p",
+        "text": "Dashboard điều hành trên dữ liệu cập nhật cho phép ban lãnh đạo phản ứng nhanh với thị trường, thay vì chờ báo cáo cuối tháng. Chủ đầu tư nên ưu tiên xu hướng tạo giá trị nhanh nhất — thường là hợp nhất dữ liệu bán hàng — rồi mở rộng theo lộ trình có kiểm soát."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "du-lieu-hop-nhat-rut-ngan-thoi-gian-ra-quyet-dinh",
+    "title": "Dữ liệu hợp nhất giúp doanh nghiệp rút ngắn thời gian ra quyết định",
+    "excerpt": "Khi dữ liệu từ bán hàng, tài chính và vận hành được kết nối, lãnh đạo có bức tranh thời gian thực để quyết định nhanh và chính xác hơn.",
+    "category": "du-lieu-tich-hop",
+    "tags": [
+      "Dữ liệu",
+      "Vận hành"
+    ],
+    "coverUrl": "/products/xai/xai-04-executive-reporting-ai.png",
+    "readTime": "6 phút",
+    "date": "2026-07-09",
+    "featured": false,
+    "relatedProducts": [
+      "x-ai",
+      "finerp"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Trong nhiều doanh nghiệp, thời gian dài nhất của một quyết định không nằm ở lúc cân nhắc, mà ở lúc… chờ số liệu. Mỗi phòng ban giữ một 'ốc đảo' dữ liệu riêng, và việc tổng hợp thủ công từ nhiều nguồn vừa chậm vừa dễ sai."
+      },
+      {
+        "type": "h2",
+        "text": "Từ nhiều 'sự thật' về một sự thật"
+      },
+      {
+        "type": "p",
+        "text": "Khi dữ liệu bán hàng, tài chính và vận hành được kết nối về một nền tảng và chuẩn hóa cách tính, mọi báo cáo trở nên nhất quán. Lãnh đạo không còn mất thời gian đối chiếu 'số của ai đúng', mà tập trung vào việc quan trọng hơn: quyết định."
+      },
+      {
+        "type": "image",
+        "src": "/products/xai/xai-04-executive-reporting-ai.png",
+        "alt": "Báo cáo điều hành do AI tổng hợp",
+        "caption": "Báo cáo điều hành tổng hợp đa nguồn, cập nhật theo thời gian thực."
+      },
+      {
+        "type": "h2",
+        "text": "Ba lợi ích cụ thể"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Bức tranh điều hành thời gian thực, thay cho báo cáo tổng hợp cuối kỳ.",
+          "Cảnh báo sớm khi chỉ số vượt ngưỡng, để can thiệp kịp thời.",
+          "Nền tảng dữ liệu sạch làm bệ phóng cho phân tích và AI phía sau."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Trong một thị trường biến động nhanh, tốc độ ra quyết định trở thành lợi thế cạnh tranh — và nó bắt đầu từ dữ liệu liên thông, chứ không phải từ thêm một báo cáo."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "tu-dong-hoa-quy-trinh-noi-bo-voi-workflow-va-ai-agent",
+    "title": "Tự động hóa quy trình nội bộ với workflow và AI agent",
+    "excerpt": "Kết hợp workflow, RPA và AI agent giúp giảm thao tác thủ công, tăng tốc phê duyệt và nâng cao hiệu suất vận hành doanh nghiệp.",
+    "category": "tu-dong-hoa",
+    "tags": [
+      "Tự động hóa",
+      "AI"
+    ],
+    "coverUrl": "/products/xai/xai-19-workflow-automation-studio.png",
+    "readTime": "6 phút",
+    "date": "2026-07-06",
+    "featured": false,
+    "relatedProducts": [
+      "x-ai",
+      "x-space"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Bạn thử tính xem đội ngũ của mình mất bao nhiêu giờ mỗi tuần cho những việc lặp lại: nhập liệu, tổng hợp bảng biểu, chuyển hồ sơ đi trình ký. Với nhiều doanh nghiệp, con số đó đủ lớn để trở thành một 'phòng ban vô hình' chỉ làm việc thủ công."
+      },
+      {
+        "type": "p",
+        "text": "Tự động hóa hiện đại không phải một công nghệ đơn lẻ, mà là sự phối hợp của ba lớp bổ trợ nhau — và hiểu đúng vai trò từng lớp là chìa khóa để triển khai hiệu quả."
+      },
+      {
+        "type": "h2",
+        "text": "Ba lớp của tự động hóa"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Workflow: chuẩn hóa và điều phối quy trình, luồng phê duyệt đa cấp.",
+          "RPA: thay thao tác lặp lại trên các hệ thống không có API.",
+          "AI Agent: hiểu ngữ cảnh, soạn nội dung và ra quyết định trong phạm vi cho phép."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/products/xai/xai-19-workflow-automation-studio.png",
+        "alt": "Workflow Automation Studio",
+        "caption": "Thiết kế luồng tự động hóa nghiệp vụ trực quan, có kiểm soát."
+      },
+      {
+        "type": "h2",
+        "text": "Bắt đầu từ đâu để không thất bại"
+      },
+      {
+        "type": "p",
+        "text": "Kinh nghiệm cho thấy nên ưu tiên tự động hóa các quy trình có bước rõ ràng, khối lượng lớn và ít ngoại lệ — ví dụ phê duyệt chi, xử lý chứng từ, nhắc việc. Khi những quy trình này đã chạy ổn và tạo niềm tin, hãy mở rộng dần sang các quy trình phức tạp hơn, với con người giám sát ở điểm quan trọng."
+      },
+      {
+        "type": "quote",
+        "text": "Tự động hóa tốt không thay thế con người, mà trả lại cho con người thời gian cho việc quan trọng."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "xbooking-toi-uu-hanh-trinh-ban-hang-va-cham-soc-khach-hang",
+    "title": "XBooking tối ưu hành trình bán hàng và chăm sóc khách hàng",
+    "excerpt": "Từ marketing, lead, bảng hàng đến booking và chăm sóc — XBooking hợp nhất dữ liệu khách hàng trên một quy trình khép kín.",
+    "category": "bat-dong-san-so",
+    "tags": [
+      "XBooking",
+      "CRM",
+      "Khách hàng"
+    ],
+    "coverUrl": "/products/xbooking/xbk-07-sales-pipeline.png",
+    "readTime": "5 phút",
+    "date": "2026-07-03",
+    "featured": true,
+    "relatedProducts": [
+      "xbooking"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Bán hàng bất động sản là một hành trình dài với nhiều điểm chạm — và cũng nhiều điểm dễ đánh rơi khách. Khi mỗi giai đoạn dùng một công cụ riêng, dữ liệu đứt gãy, đội sales mất dấu khách, còn ban lãnh đạo thiếu bức tranh tổng thể. XBooking sinh ra để hợp nhất toàn bộ hành trình đó trên một quy trình khép kín."
+      },
+      {
+        "type": "h2",
+        "text": "Khép kín từ lead đến chăm sóc"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Thu lead đa nguồn, chấm điểm và phân bổ tự động cho đội sales.",
+          "Bảng hàng thời gian thực, giữ chỗ và lock cọc tránh trùng bán.",
+          "Hợp đồng, thanh toán theo tiến độ và chăm sóc sau bán trên một trục."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/products/xbooking/xbk-07-sales-pipeline.png",
+        "alt": "Sales pipeline của XBooking",
+        "caption": "Theo dõi cơ hội qua từng giai đoạn và dự báo doanh số."
+      },
+      {
+        "type": "p",
+        "text": "Nhờ dữ liệu liên thông, đội sales tư vấn nhanh và chính xác hơn, còn ban lãnh đạo nắm được bức tranh bán hàng theo thời gian thực để điều hành. Quan trọng hơn, mỗi khách hàng được chăm sóc tốt sẽ quay lại và giới thiệu — biến chi phí bán hàng hôm nay thành nguồn khách của ngày mai."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "site": "corporate",
+    "section": "news",
+    "slug": "finerp-kiem-soat-tai-chinh-va-van-hanh-theo-thoi-gian-thuc",
+    "title": "FinERP giúp doanh nghiệp kiểm soát tài chính và vận hành theo thời gian thực",
+    "excerpt": "Kế toán, dòng tiền, ngân sách và công nợ trên một nền tảng — cùng dashboard điều hành và AI hỗ trợ dự báo tài chính.",
+    "category": "chuyen-doi-so",
+    "tags": [
+      "FinERP",
+      "ERP",
+      "Dữ liệu"
+    ],
+    "coverUrl": "/products/finerp/ferp-03-cashflow.png",
+    "readTime": "6 phút",
+    "date": "2026-06-30",
+    "featured": false,
+    "relatedProducts": [
+      "finerp",
+      "x-ai"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Với nhiều doanh nghiệp, câu hỏi 'tháng này lãi hay lỗ' chỉ có câu trả lời chắc chắn vào… cuối quý, sau khi kế toán chốt sổ. Trong khi đó, các quyết định quan trọng lại phải đưa ra mỗi ngày. Khoảng trễ này là rủi ro — và là điều FinERP được thiết kế để xóa bỏ."
+      },
+      {
+        "type": "h2",
+        "text": "Hợp nhất tài chính – vận hành"
+      },
+      {
+        "type": "p",
+        "text": "FinERP đưa kế toán, dòng tiền, công nợ và ngân sách về một nền tảng, đồng thời gắn chúng với mua hàng, kho, tài sản và chi phí dự án. Khi mọi nghiệp vụ chảy về cùng một nguồn, bức tranh tài chính hiện lên theo thời gian thực thay vì sau khi tổng hợp thủ công."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Kế toán, dòng tiền, công nợ và ngân sách liên thông trên một nền tảng.",
+          "Mua hàng, kho, tài sản và chi phí dự án gắn với dữ liệu tài chính.",
+          "Dashboard điều hành và cảnh báo vượt ngân sách, đến hạn, quá hạn."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/products/finerp/ferp-03-cashflow.png",
+        "alt": "Kiểm soát dòng tiền và công nợ trên FinERP",
+        "caption": "Chủ động dòng tiền: biết trước khi nào thiếu hụt để xoay xở kịp."
+      },
+      {
+        "type": "h2",
+        "text": "AI hỗ trợ dự báo và điều hành"
+      },
+      {
+        "type": "p",
+        "text": "Trên nền dữ liệu tài chính liên thông, AI có thể tổng hợp báo cáo, dự báo dòng tiền và cảnh báo rủi ro trước khi chúng thành vấn đề — giúp lãnh đạo chuyển từ thế bị động sang chủ động. Kiểm soát tài chính theo thời gian thực, suy cho cùng, là nền tảng của mọi quyết định điều hành vững vàng."
+      }
+    ],
+    "status": "published"
+  }
+]

@@ -101,11 +101,22 @@ export interface PostDoc {
   siteCode: string
   slug: string
   title: string
+  /** Editorial section: insight (/insights) | news (/tin-tuc) | archive (hidden from listings). */
+  section?: 'insight' | 'news' | 'archive'
   excerpt?: string
   category?: string
   tags?: string[]
+  /** Cover image — uploaded Media (depth>=1) takes priority over `coverUrl`. */
+  cover?: import('./blocks').MediaRef
+  coverUrl?: string
+  readTime?: string
+  /** Display date string, e.g. "24/07/2026". */
+  date?: string
+  featured?: boolean
+  relatedProducts?: string[]
   locale: string
-  body: PostBodyNode[]
+  /** Structured body: legacy PostBodyNode[] or editorial ArticleBlock nodes (p/h2/list/quote/image). */
+  body: PostBodyNode[] | Array<Record<string, unknown>>
   seo: Seo
   status: ContentStatus
 }

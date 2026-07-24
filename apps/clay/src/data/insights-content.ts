@@ -261,6 +261,73 @@ export const insightArticles: InsightArticle[] = [
   },
 ];
 
+/** Resolve a populated Media upload ref to an absolute URL. */
+function mediaAbs(ref: unknown, cmsBase: string): string | undefined {
+  if (!ref || typeof ref !== "object") return undefined;
+  const url = (ref as { url?: string }).url;
+  if (!url) return undefined;
+  return /^https?:\/\//.test(url) ? url : `${cmsBase}${url}`;
+}
+
+type EditorialPost = {
+  slug: string;
+  title: string;
+  excerpt?: string;
+  category?: string;
+  tags?: string[];
+  cover?: unknown;
+  coverUrl?: string;
+  readTime?: string;
+  date?: string;
+  featured?: boolean;
+  relatedProducts?: string[];
+  body?: unknown[];
+};
+
+/**
+ * Merge CMS insight posts over the curated static articles by slug (CMS wins
+ * per-field, static fills the gaps). New CMS-only posts are appended so editors
+ * can publish fresh articles from the admin. Falls back to pure static when
+ * `cmsPosts` is empty.
+ */
+export function resolveInsights(cmsPosts: EditorialPost[], cmsBase: string): InsightArticle[] {
+  const bySlug = new Map(cmsPosts.map((p) => [p.slug, p]));
+  const merged: InsightArticle[] = insightArticles.map((a) => {
+    const c = bySlug.get(a.slug);
+    if (!c) return a;
+    bySlug.delete(a.slug);
+    return {
+      ...a,
+      title: c.title || a.title,
+      summary: c.excerpt || a.summary,
+      categorySlug: c.category || a.categorySlug,
+      tags: c.tags?.length ? c.tags : a.tags,
+      featured: c.featured ?? a.featured,
+      readTime: c.readTime || a.readTime,
+      publishedAt: c.date || a.publishedAt,
+      relatedProducts: c.relatedProducts?.length ? c.relatedProducts : a.relatedProducts,
+      cover: mediaAbs(c.cover, cmsBase) ?? c.coverUrl ?? a.cover,
+      body: (c.body?.length ? c.body : a.body) as InsightArticle["body"],
+    };
+  });
+  for (const c of bySlug.values()) {
+    merged.push({
+      slug: c.slug,
+      title: c.title,
+      summary: c.excerpt ?? "",
+      categorySlug: c.category ?? insightCategories[0]!.slug,
+      tags: c.tags ?? [],
+      featured: c.featured,
+      readTime: c.readTime,
+      publishedAt: c.date,
+      relatedProducts: c.relatedProducts,
+      cover: mediaAbs(c.cover, cmsBase) ?? c.coverUrl,
+      body: (c.body ?? []) as InsightArticle["body"],
+    });
+  }
+  return merged;
+}
+
 export function categoryBySlug(slug: string) {
   return insightCategories.find((c) => c.slug === slug);
 }

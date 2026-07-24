@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3001",
     "gen:profiles": "tsx scripts/gen-profiles.tsx",
+    "gen:editorial-seed": "tsx scripts/gen-editorial-seed.ts",
     "prebuild": "tsx scripts/gen-profiles.tsx",
     "build": "next build",
     "start": "next start",

@@ -161,6 +161,67 @@ export const newsArticles: NewsArticle[] = [
   },
 ];
 
+function mediaAbs(ref: unknown, cmsBase: string): string | undefined {
+  if (!ref || typeof ref !== "object") return undefined;
+  const url = (ref as { url?: string }).url;
+  if (!url) return undefined;
+  return /^https?:\/\//.test(url) ? url : `${cmsBase}${url}`;
+}
+
+type EditorialPost = {
+  slug: string;
+  title: string;
+  excerpt?: string;
+  category?: string;
+  tags?: string[];
+  cover?: unknown;
+  coverUrl?: string;
+  readTime?: string;
+  date?: string;
+  featured?: boolean;
+  relatedProducts?: string[];
+  body?: unknown[];
+};
+
+/** Merge CMS news posts over curated static articles by slug (see resolveInsights). */
+export function resolveNews(cmsPosts: EditorialPost[], cmsBase: string): NewsArticle[] {
+  const bySlug = new Map(cmsPosts.map((p) => [p.slug, p]));
+  const merged: NewsArticle[] = newsArticles.map((a) => {
+    const c = bySlug.get(a.slug);
+    if (!c) return a;
+    bySlug.delete(a.slug);
+    return {
+      ...a,
+      title: c.title || a.title,
+      excerpt: c.excerpt || a.excerpt,
+      categorySlug: c.category || a.categorySlug,
+      tags: c.tags?.length ? c.tags : a.tags,
+      featured: c.featured ?? a.featured,
+      readTime: c.readTime || a.readTime,
+      publishedAt: c.date || a.publishedAt,
+      relatedProducts: c.relatedProducts?.length ? c.relatedProducts : a.relatedProducts,
+      cover: mediaAbs(c.cover, cmsBase) ?? c.coverUrl ?? a.cover,
+      body: (c.body?.length ? c.body : a.body) as NewsArticle["body"],
+    };
+  });
+  for (const c of bySlug.values()) {
+    merged.push({
+      slug: c.slug,
+      title: c.title,
+      excerpt: c.excerpt ?? "",
+      categorySlug: c.category ?? newsCategories[0]!.slug,
+      tags: c.tags ?? [],
+      featured: c.featured,
+      publishedAt: c.date ?? "",
+      readTime: c.readTime ?? "",
+      relatedProducts: c.relatedProducts,
+      cover: mediaAbs(c.cover, cmsBase) ?? c.coverUrl,
+      body: (c.body ?? []) as NewsArticle["body"],
+    });
+  }
+  return merged;
+}
+
 export function newsCategoryBySlug(slug: string) {
   return newsCategories.find((c) => c.slug === slug);
 }

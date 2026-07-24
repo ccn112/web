@@ -16,7 +16,7 @@ export function PostArticle({ post }: { post: PostDoc }) {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
           ) : null}
           <div className="mt-10 flex flex-col gap-5">
-            {post.body?.map((node, i) =>
+            {(post.body as Array<{ type?: string; text?: string }> | undefined)?.map((node, i) =>
               node.type === "heading" ? (
                 <h2 key={i} className="text-2xl font-semibold tracking-tight">
                   {node.text}

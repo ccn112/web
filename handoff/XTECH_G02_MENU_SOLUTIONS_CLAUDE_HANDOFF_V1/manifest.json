@@ -1,0 +1,19 @@
+{
+  "package": "XTECH_G02_MENU_SOLUTIONS_CLAUDE_HANDOFF_V1",
+  "version": "1.0.0",
+  "routes": [
+    "/giai-phap/doanh-nghiep-ket-noi",
+    "/giai-phap/du-lieu-va-ai",
+    "/giai-phap/tu-dong-hoa",
+    "/giai-phap/tich-hop-he-thong",
+    "/bo-giai-phap-x"
+  ],
+  "fullPageReferences": 5,
+  "croppedAssets": 22,
+  "productionFormat": "webp",
+  "fallbackFormat": "png",
+  "cms": [
+    "solution-pages",
+    "solutions-menu-settings"
+  ]
+}

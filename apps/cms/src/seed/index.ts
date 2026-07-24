@@ -150,9 +150,15 @@ type PostJson = {
   site: string
   slug: string
   title: string
+  section?: string
   excerpt?: string
   category?: string
   tags?: string[]
+  coverUrl?: string
+  readTime?: string
+  date?: string
+  featured?: boolean
+  relatedProducts?: string[]
   status?: string
   body?: unknown[]
   seo?: Record<string, unknown>
@@ -330,9 +336,11 @@ export async function runSeed(payload: Payload): Promise<void> {
   }
   console.log(`  ${pages.length} pages`)
 
-  // 7. Posts
+  // 7. Posts (legacy posts.json → 'archive' by default + editorial-posts.json → insight/news)
   console.log('• Posts')
-  const posts = await readJson<PostJson[]>('posts.json')
+  const legacyPosts = await readJson<PostJson[]>('posts.json')
+  const editorialPosts = await readJsonOptional<PostJson[]>('editorial-posts.json', [])
+  const posts = [...legacyPosts, ...editorialPosts]
   for (const post of posts) {
     const r = await upsert(
       payload,
@@ -344,9 +352,15 @@ export async function runSeed(payload: Payload): Promise<void> {
         site: requireSite(post.site),
         slug: post.slug,
         title: post.title,
+        section: post.section ?? 'archive',
         excerpt: post.excerpt,
         category: post.category,
         tags: post.tags ?? [],
+        coverUrl: post.coverUrl,
+        readTime: post.readTime,
+        date: post.date,
+        featured: post.featured ?? false,
+        relatedProducts: post.relatedProducts ?? [],
         locale: 'vi',
         body: post.body ?? [],
         seo: post.seo ?? {},
@@ -355,7 +369,7 @@ export async function runSeed(payload: Payload): Promise<void> {
     )
     tally(r)
   }
-  console.log(`  ${posts.length} posts`)
+  console.log(`  ${posts.length} posts (${legacyPosts.length} legacy + ${editorialPosts.length} editorial)`)
 
   // 7.1 Products (optional file) — natural key: code.
   console.log('• Products')

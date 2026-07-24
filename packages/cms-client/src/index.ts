@@ -153,18 +153,35 @@ export class CmsClient {
    */
   async getPosts(
     siteCode: string,
-    opts: { tag?: string; category?: string; locale?: string; limit?: number } = {},
+    opts: {
+      tag?: string
+      category?: string
+      section?: string
+      locale?: string
+      limit?: number
+      depth?: number
+    } = {},
   ): Promise<PostDoc[]> {
     const params: Record<string, string | number> = {
       'where[siteCode][equals]': siteCode,
       'where[locale][equals]': opts.locale ?? 'vi',
       limit: opts.limit ?? 50,
-      depth: 0,
+      depth: opts.depth ?? 0,
     }
     if (opts.tag) params['where[tags][in]'] = opts.tag
     if (opts.category) params['where[category][equals]'] = opts.category
+    if (opts.section) params['where[section][equals]'] = opts.section
     const data = await this.get<PayloadListResponse<PostDoc>>('posts', params)
     return data.docs
+  }
+
+  /**
+   * Editorial posts for a section (insight | news), depth=1 so the `cover`
+   * upload is populated. Ordered newest-first isn't guaranteed by the API here;
+   * callers sort by date. Returns [] when none.
+   */
+  async getEditorialPosts(siteCode: string, section: 'insight' | 'news'): Promise<PostDoc[]> {
+    return this.getPosts(siteCode, { section, depth: 1, limit: 100 })
   }
 
   /**
