@@ -18,6 +18,7 @@ export type ProfileSection = {
   note?: string;
   features?: ProfileFeature[];
   bullets?: string[];
+  image?: string; // public path to an illustrative screenshot (embedded in PDF)
 };
 export type ProfileKind = "product" | "company" | "services";
 export type ProfileDoc = {
@@ -27,6 +28,7 @@ export type ProfileDoc = {
   kind: ProfileKind;
   tagline: string;
   intro: string;
+  coverImage?: string; // hero screenshot shown on the cover
   sections: ProfileSection[];
 };
 
@@ -47,6 +49,21 @@ const PRODUCTS: { key: string; name: string; route: string }[] = [
   { key: "xbuilding", name: "XBuilding", route: "/san-pham/xbuilding" },
   { key: "x-space", name: "X.Space", route: "/san-pham/x-space" },
 ];
+
+/** Standard closing section for a profile — contact + how to experience it. */
+function contactSection(what: string): ProfileSection {
+  return {
+    title: "Liên hệ & Trải nghiệm",
+    subtitle: `Đăng ký demo để trải nghiệm ${what} trực tiếp trên dữ liệu và quy trình của doanh nghiệp bạn. Đội ngũ X-TECH sẽ tư vấn lộ trình triển khai phù hợp.`,
+    bullets: [
+      COMPANY.name,
+      `Địa chỉ: ${COMPANY.address}`,
+      `Hotline: ${COMPANY.hotline}`,
+      `Email: ${COMPANY.email}`,
+      "Đặt lịch demo: x-tech.com.vn/dat-lich-demo",
+    ],
+  };
+}
 
 /** Turn one website section into a profile section (text-only; images dropped). */
 function sectionToProfile(s: ProductSection): ProfileSection | null {
@@ -69,7 +86,8 @@ function sectionToProfile(s: ProductSection): ProfileSection | null {
   }
 
   if (!features && !bullets && !s.subtitle) return null;
-  return { title: s.title, subtitle: s.subtitle, note: s.panelNote, features, bullets };
+  const image = s.layout === "illustration" ? s.image : undefined;
+  return { title: s.title, subtitle: s.subtitle, note: s.panelNote, features, bullets, image };
 }
 
 function productDoc(p: { key: string; name: string; route: string }): ProfileDoc {
@@ -89,6 +107,7 @@ function productDoc(p: { key: string; name: string; route: string }): ProfileDoc
     const ps = sectionToProfile(s);
     if (ps) sections.push(ps);
   }
+  sections.push(contactSection(p.name));
 
   return {
     key: p.key,
@@ -97,6 +116,7 @@ function productDoc(p: { key: string; name: string; route: string }): ProfileDoc
     kind: "product",
     tagline: hero?.title ?? p.name,
     intro: hero?.subtitle ?? "",
+    coverImage: sections.find((s) => s.image)?.image,
     sections,
   };
 }
@@ -179,6 +199,7 @@ function servicesDoc(): ProfileDoc {
         subtitle: "Đảm bảo hệ thống vận hành ổn định, an toàn và cải tiến liên tục.",
         bullets: ["Managed services", "Giám sát & bảo mật", "SLA hỗ trợ", "Tối ưu chi phí vận hành"],
       },
+      contactSection("các dịch vụ chuyển đổi số của X-TECH"),
     ],
   };
 }

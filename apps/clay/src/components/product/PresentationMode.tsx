@@ -14,7 +14,12 @@ import type { ProductSection } from "@/data/product-content";
 
 type Slide = { eyebrow: string; title: string; subtitle?: string; points: string[]; image?: string };
 
-const AUTO_MS = 7000;
+/** Per-slide dwell time proportional to how much there is to read, so viewers
+ * can finish before it advances. ~1s per 3 Vietnamese words + base, clamped. */
+function dwellMs(sl: Slide): number {
+  const words = `${sl.title} ${sl.subtitle ?? ""} ${sl.points.join(" ")}`.trim().split(/\s+/).length;
+  return Math.min(16000, Math.max(5000, 3200 + words * 340));
+}
 
 function toSlides(sections: ProductSection[]): Slide[] {
   return sections.map((s) => {
@@ -50,9 +55,9 @@ export function PresentationMode({ sections, onClose }: { sections: ProductSecti
 
   useEffect(() => {
     if (!playing) return;
-    const t = setTimeout(() => go(i + 1), AUTO_MS);
+    const t = setTimeout(() => go(i + 1), dwellMs(slides[i]));
     return () => clearTimeout(t);
-  }, [i, playing, go]);
+  }, [i, playing, go, slides]);
 
   if (!slides.length) return null;
   const cur = slides[i];

@@ -14,8 +14,9 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 import { Font, renderToBuffer } from "@react-pdf/renderer";
-import { allProfiles } from "../src/data/profile-content";
+import { allProfiles, type ProfileDoc } from "../src/data/profile-content";
 import { ProfileDocument } from "./profile-doc";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -30,18 +31,48 @@ const logoFile = path.join(clayRoot, "public", "brand", "xtech-logo-white-origin
 const logoData = "data:image/png;base64," + fs.readFileSync(logoFile).toString("base64");
 
 // Bump when the PDF TEMPLATE changes so PDFs regenerate even if content is same.
-const TEMPLATE_VERSION = "v2";
+const TEMPLATE_VERSION = "v3";
 
 Font.register({
-  family: "BeVietnamPro",
+  family: "Inter",
   fonts: [
-    { src: path.join(fontsDir, "BeVietnamPro_400Regular.ttf") },
-    { src: path.join(fontsDir, "BeVietnamPro_600SemiBold.ttf"), fontWeight: 600 },
-    { src: path.join(fontsDir, "BeVietnamPro_700Bold.ttf"), fontWeight: 700 },
+    { src: path.join(fontsDir, "Inter_400Regular.ttf") },
+    { src: path.join(fontsDir, "Inter_500Medium.ttf"), fontWeight: 500 },
+    { src: path.join(fontsDir, "Inter_600SemiBold.ttf"), fontWeight: 600 },
   ],
 });
-// Be Vietnam Pro has no italics registered → avoid react-pdf substituting.
+Font.register({
+  family: "Jakarta",
+  fonts: [
+    { src: path.join(fontsDir, "PlusJakartaSans_600SemiBold.ttf"), fontWeight: 600 },
+    { src: path.join(fontsDir, "PlusJakartaSans_700Bold.ttf"), fontWeight: 700 },
+    { src: path.join(fontsDir, "PlusJakartaSans_800ExtraBold.ttf"), fontWeight: 800 },
+  ],
+});
+// Avoid react-pdf splitting Vietnamese words across lines.
 Font.registerHyphenationCallback((w) => [w]);
+
+/** Embed a public image, downscaled to a modest JPEG, as a data URI. Keeps the
+ * PDF small and avoids react-pdf layout overflow with big source images. */
+const imgCache = new Map<string, string>();
+async function embedImage(publicPath: string, width: number): Promise<string | undefined> {
+  const cacheKey = `${publicPath}@${width}`;
+  if (imgCache.has(cacheKey)) return imgCache.get(cacheKey);
+  const file = path.join(clayRoot, "public", publicPath.replace(/^\//, ""));
+  if (!fs.existsSync(file)) return undefined;
+  const buf = await sharp(file).resize({ width, withoutEnlargement: true }).jpeg({ quality: 72, mozjpeg: true }).toBuffer();
+  const uri = "data:image/jpeg;base64," + buf.toString("base64");
+  imgCache.set(cacheKey, uri);
+  return uri;
+}
+/** Return a render-ready copy of a doc with image paths replaced by data URIs. */
+async function withEmbeddedImages(doc: ProfileDoc): Promise<ProfileDoc> {
+  const coverImage = doc.coverImage ? await embedImage(doc.coverImage, 1000) : undefined;
+  const sections = await Promise.all(
+    doc.sections.map(async (sec) => ({ ...sec, image: sec.image ? await embedImage(sec.image, 900) : undefined })),
+  );
+  return { ...doc, coverImage, sections };
+}
 
 type ManifestEntry = { name: string; file: string; hash: string; date: string };
 type Manifest = Record<string, ManifestEntry>;
@@ -81,8 +112,9 @@ async function main() {
     }
 
     const file = `[${day}]${doc.filenameBase}.pdf`;
+    const embedded = await withEmbeddedImages(doc);
     const buffer = await renderToBuffer(
-      <ProfileDocument doc={doc} logoPath={logoData} dateLabel={dateLabel(now)} />,
+      <ProfileDocument doc={embedded} logoPath={logoData} dateLabel={dateLabel(now)} />,
     );
     fs.writeFileSync(path.join(outDir, file), buffer);
 
