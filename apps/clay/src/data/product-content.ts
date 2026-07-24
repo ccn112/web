@@ -13,7 +13,13 @@ export type ProductLayout =
   | "showcase"
   | "visual-left"
   | "visual-right"
-  | "illustration";
+  | "illustration"
+  // Data-driven visuals borrowed from the C02 library — pick by content meaning:
+  | "timeline" //    quy trình các bước
+  | "evolution" //   tiến hóa cũ → mới
+  | "cycle" //       vòng lặp liên tục
+  | "layerstack" //  kiến trúc nhiều tầng
+  | "outcomes"; //   dải kết quả/lợi ích chốt
 
 export type ProductItem = {
   id: string;
@@ -52,6 +58,10 @@ export type ProductSection = {
   /** For layout "illustration": short reason a reader should care, shown as a
    * lead-in above the feature list ("what you get on this screen"). */
   panelNote?: string;
+  /** For layout "layerstack": the top "north-star" goal label. */
+  northStar?: string;
+  /** For layout "cycle": the center label of the loop. */
+  centerLabel?: string;
 };
 
 const c03Sections: ProductSection[] = [
@@ -350,6 +360,25 @@ const c03Sections: ProductSection[] = [
     image: "/products/xbooking/xbk-08-mobile-crm-for-sales.png",
     bullets: ["Nhận lead tức thì", "Tra bảng hàng", "Tạo booking", "Cập nhật cơ hội", "Thông báo đẩy"],
     items: [],
+  },
+  {
+    sectionId: "c03-xbooking-cycle",
+    routes: ["/san-pham/xbooking"],
+    eyebrow: "Vòng đời khách hàng",
+    title: "Một vòng khép kín — lead hôm nay, khách trung thành ngày mai",
+    highlight: ["khép kín"],
+    subtitle: "Mỗi giai đoạn nối tiếp và nuôi lại giai đoạn sau: khách được chăm sóc tốt sẽ quay lại và giới thiệu, tạo dòng lead mới.",
+    layout: "cycle",
+    centerLabel: "XBooking",
+    items: [
+      { id: "marketing", title: "Marketing", description: "Chiến dịch đa kênh tạo nhu cầu và thu lead.", icon: "marketing" },
+      { id: "lead", title: "Thu & chấm lead", description: "Gom lead đa nguồn, chấm điểm và phân bổ cho sale.", icon: "growth" },
+      { id: "tuvan", title: "Tư vấn & Pipeline", description: "Theo dõi cơ hội qua từng giai đoạn tới khi chốt.", icon: "crm" },
+      { id: "booking", title: "Booking & Hợp đồng", description: "Giữ chỗ, lock cọc, ký hợp đồng và thu theo đợt.", icon: "contract" },
+      { id: "care", title: "Chăm sóc sau bán", description: "Chăm sóc để tăng hài lòng và giữ chân khách.", icon: "care" },
+      { id: "referral", title: "Tái giới thiệu", description: "Khách hài lòng giới thiệu khách mới — quay lại đầu vòng.", icon: "customer" },
+    ],
+    cta: { label: "Đặt lịch demo XBooking", href: "/dat-lich-demo" },
   },
   {
     sectionId: "c03-finerp-hero",

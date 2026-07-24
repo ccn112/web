@@ -9,9 +9,12 @@
 
 import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
+import type { ServiceSectionItem } from "@x/shared-types";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { SectionHead, HomeIcon, IconTile, SplitLayout } from "@/components/home/kit";
 import { OrbitDiagram, type OrbitNode } from "@/components/home/visuals";
+import { C02Timeline, C02OutcomeStrip } from "@/components/services/c02/kit";
+import { EvolutionFlow, Cycle, LayerStack } from "@/components/services/c02/visuals";
 import type { SectionTitle } from "@/data/home-content";
 import {
   productSectionsForRoute,
@@ -21,6 +24,17 @@ import {
 
 function head(s: ProductSection): SectionTitle {
   return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
+}
+
+/** Map product items → the ServiceSectionItem shape the C02 visuals expect. */
+function toServiceItems(items: ProductItem[]): ServiceSectionItem[] {
+  return items.map((it, k) => ({
+    itemId: it.id,
+    order: k + 1,
+    title: it.title,
+    description: it.description,
+    icon: it.icon,
+  }));
 }
 
 function GoldCTA({ cta }: { cta?: { label: string; href: string } }) {
@@ -319,6 +333,21 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
       {s.layout === "stack" ? <StackLayout s={s} /> : null}
       {s.layout === "journey" ? <JourneyLayout s={s} /> : null}
       {s.layout === "illustration" ? <IllustrationLayout s={s} i={i} /> : null}
+      {s.layout === "timeline" ? (
+        <div className="mt-4"><C02Timeline steps={toServiceItems(s.items)} /><GoldCTA cta={s.cta} /></div>
+      ) : null}
+      {s.layout === "evolution" ? (
+        <div className="mt-8"><EvolutionFlow stages={toServiceItems(s.items)} /><GoldCTA cta={s.cta} /></div>
+      ) : null}
+      {s.layout === "cycle" ? (
+        <div className="mt-8"><Cycle steps={toServiceItems(s.items)} centerLabel={s.centerLabel ?? s.eyebrow} /><GoldCTA cta={s.cta} /></div>
+      ) : null}
+      {s.layout === "layerstack" ? (
+        <div className="mt-8"><LayerStack layers={toServiceItems(s.items)} northStar={s.northStar ?? s.eyebrow} /><GoldCTA cta={s.cta} /></div>
+      ) : null}
+      {s.layout === "outcomes" && s.outcomes?.length ? (
+        <div className="mt-8"><C02OutcomeStrip outcomes={s.outcomes.map((o, k) => ({ itemId: String(k), title: o.title, description: o.description, icon: o.icon }))} /><GoldCTA cta={s.cta} /></div>
+      ) : null}
     </>
   );
 }
