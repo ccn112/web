@@ -86,6 +86,7 @@ import {
 } from "@/data/product-content";
 import { profileForRoute } from "@/data/profile-content";
 import { PresentationMode } from "./PresentationMode";
+import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 
 function head(s: ProductSection): SectionTitle {
   return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
@@ -413,11 +414,13 @@ function ShowcaseLayout({ s, hideCta }: { s: ProductSection; hideCta?: boolean }
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {s.items.map((it, k) => (
           <Reveal key={it.id} delay={(k % 3) * 0.07}>
-            <GlassCard className="h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/45">
-              <IconTile name={it.icon} />
-              <h3 className="mt-4 text-lg font-semibold tracking-tight text-blue">{it.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.description}</p>
-            </GlassCard>
+            <SpotlightCard className="h-full rounded-2xl">
+              <GlassCard className="h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/45">
+                <IconTile name={it.icon} />
+                <h3 className="mt-4 text-lg font-semibold tracking-tight text-blue">{it.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.description}</p>
+              </GlassCard>
+            </SpotlightCard>
           </Reveal>
         ))}
       </div>
@@ -617,10 +620,10 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
   );
 }
 
-function SectionBody({ s, i, hideCta }: { s: ProductSection; i: number; hideCta?: boolean }) {
+function SectionBody({ s, i, hideCta, animateHead }: { s: ProductSection; i: number; hideCta?: boolean; animateHead?: boolean }) {
   return (
     <>
-      <SectionHead title={head(s)} />
+      <SectionHead title={head(s)} animate={animateHead} />
       {s.layout === "orbit" ? <OrbitLayout s={s} i={i} /> : null}
       {s.layout === "hub-spoke" ? <OrbitLayout s={s} i={i} numbered /> : null}
       {s.layout === "visual-right" ? <OrbitLayout s={s} i={i} side="right" /> : null}
@@ -709,7 +712,7 @@ function ProductHero({ s, i, route, onPresent }: { s: ProductSection; i: number;
       </div>
       <div aria-hidden className="absolute inset-0 bg-grid opacity-[0.14] mask-fade-b" />
       <div className="relative mx-auto w-full max-w-[1200px] px-4 pt-32 pb-20 md:px-6 md:pt-40 md:pb-24">
-        <SectionBody s={s} i={i} hideCta />
+        <SectionBody s={s} i={i} hideCta animateHead />
         <HeroActions cta={s.cta} route={route} onPresent={onPresent} />
       </div>
     </section>

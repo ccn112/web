@@ -11,6 +11,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/primitives";
+import { CountUp } from "@/components/reactbits/CountUp";
 import { cn } from "@/lib/utils";
 import {
   AmbientSection,
@@ -119,7 +120,9 @@ export function WhoWeAre() {
         <dl className="mx-auto mt-14 grid max-w-4xl gap-6 rounded-3xl border border-blue/12 bg-gradient-to-br from-blue/5 to-cyan/5 p-8 sm:grid-cols-2 lg:grid-cols-4">
           {C.STATS.map((s) => (
             <div key={s.label} className="flex flex-col items-center text-center">
-              <dt className="brand-gradient-text text-4xl font-semibold tracking-tight">{s.value}</dt>
+              <dt className="brand-gradient-text text-4xl font-semibold tracking-tight">
+                <CountUp to={parseInt(s.value, 10) || 0} suffix={s.value.replace(/[\d.,]/g, "")} />
+              </dt>
               <dd className="mt-1 text-sm text-muted-foreground">{s.label}</dd>
             </div>
           ))}

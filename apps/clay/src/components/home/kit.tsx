@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/corporate/about-kit";
+import { SplitText } from "@/components/reactbits/SplitText";
+import { ShinyText } from "@/components/reactbits/ShinyText";
 import type { SectionTitle } from "@/data/home-content";
 
 /** Intrinsic pixel sizes of the home diagrams (for CLS-free next/image sizing). */
@@ -88,23 +90,26 @@ export function IconTile({ name, className }: { name: string; className?: string
 export function SectionHead({
   title,
   align = "center",
+  animate = false,
 }: {
   title: SectionTitle;
   align?: "center" | "left";
+  /** Hero mode: shimmer eyebrow + word-by-word title reveal (ReactBits). */
+  animate?: boolean;
 }) {
   return (
     <div className={cn("flex max-w-3xl flex-col", align === "center" ? "mx-auto items-center text-center" : "items-start text-left")}>
       <Reveal>
         <span className="inline-flex items-center gap-2 rounded-full border border-gold/45 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue">
           <span className="size-1.5 rounded-full bg-gold" />
-          {title.eyebrow}
+          {animate ? <ShinyText text={title.eyebrow} /> : title.eyebrow}
         </span>
       </Reveal>
       <Reveal delay={0.08}>
         <h2 className="mt-4 text-balance text-2xl font-semibold leading-[1.1] tracking-tight text-blue sm:text-3xl md:text-[2.4rem]">
           {title.lines.map((line, i) => (
             <span key={i} className="block">
-              <KeywordLine text={line} highlight={title.highlight} />
+              {animate ? <SplitText text={line} delay={0.1 + i * 0.25} /> : <KeywordLine text={line} highlight={title.highlight} />}
             </span>
           ))}
         </h2>
