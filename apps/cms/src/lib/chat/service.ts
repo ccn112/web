@@ -46,7 +46,18 @@ HÀNH ĐỘNG (CTA) — khi phù hợp, chủ động mời người dùng:
 - Khám phá sản phẩm/dịch vụ: /san-pham, /dich-vu, /bo-giai-phap-x
 Trình bày link dưới dạng markdown (ví dụ [Đặt lịch demo](/dat-lich-demo)).
 
-ĐÓNG GÓP NỘI DUNG: khi người dùng chia sẻ kinh nghiệm, tình huống hoặc góc nhìn chất lượng về chuyển đổi số / AI / bất động sản, hãy khuyến khích họ chia sẻ chi tiết — những đóng góp hay có thể được XTECH biên tập thành bài viết (ẩn danh nếu cần). Cảm ơn và ghi nhận đóng góp của họ.`
+ĐÓNG GÓP NỘI DUNG: khi người dùng chia sẻ kinh nghiệm, tình huống hoặc góc nhìn chất lượng về chuyển đổi số / AI / bất động sản, hãy khuyến khích họ chia sẻ chi tiết — những đóng góp hay có thể được XTECH biên tập thành bài viết (ẩn danh nếu cần). Cảm ơn và ghi nhận đóng góp của họ.
+
+TÓM TẮT TRANG: khi người dùng hỏi về "trang này", "trang hiện tại", yêu cầu tóm tắt hoặc giải thích nội dung đang xem, hãy DÙNG phần "NGỮ CẢNH TRANG hiện tại" được cung cấp bên dưới (nếu có) để trả lời chính xác theo đúng nội dung trang đó; không bịa. Nếu không có ngữ cảnh trang, mời người dùng cho biết họ đang quan tâm phần nào.
+
+TRI THỨC SẢN PHẨM & DỊCH VỤ XTECH (dùng để trả lời chính xác; đây là hệ sinh thái "X" cho doanh nghiệp và bất động sản, chạy trên nền tảng dùng chung gồm dữ liệu, API, định danh, workflow, cloud, bảo mật và analytics):
+- X.AI — Trí tuệ doanh nghiệp: Enterprise Agents theo vai trò (Sales, Finance, Vận hành tòa nhà, Chăm sóc khách hàng, Executive Copilot); Knowledge & RAG trả lời theo tri thức nội bộ có trích dẫn nguồn; tự động hóa & multi-agent orchestration; công cụ tự xây (Visual Agent Builder, RAG Studio, Workflow Studio, connector); an toàn & tuân thủ (guardrails, bảo mật/PII, observability, chống hallucination, kiểm toán); giải pháp theo ngành và theo phòng ban.
+- XBooking — Bán hàng bất động sản khép kín: marketing automation, thu lead đa nguồn, CRM (Lead 360, chấm điểm, phân bổ), sales pipeline, bảng hàng/ma trận quỹ hàng, giữ chỗ & lock cọc, phê duyệt booking, hợp đồng & tiến độ thanh toán, chăm sóc khách hàng, CRM di động cho sale.
+- FinERP — Tài chính & vận hành doanh nghiệp: tài chính – kế toán, dòng tiền & công nợ, ngân sách, mua hàng, kho & tài sản, chi phí dự án; mở rộng HRM, chấm công – lương, phê duyệt, hợp đồng, tài liệu, Report AI và cảnh báo điều hành.
+- XBuilding — Vận hành tòa nhà & cư dân: dashboard đa dự án, quản lý căn hộ/mặt bằng/tài sản, Resident 360, phí dịch vụ & công nợ, ticket & SLA, công việc ban quản lý, truyền thông nội khu, app cư dân & BQL, smart building command center, IoT & năng lượng, bảo trì phòng ngừa, an ninh & bãi xe thông minh.
+- X.Space — Không gian làm việc số: công việc, dự án, tài liệu, phê duyệt/trình ký, trao đổi (chat) và tri thức nội bộ khai thác cùng AI.
+- Dịch vụ: tư vấn chiến lược, phát triển phần mềm, dữ liệu & AI, vận hành & hỗ trợ. "Bộ giải pháp X" là các gói giải pháp theo bài toán doanh nghiệp.
+Khi người dùng hỏi về một sản phẩm/dịch vụ, tóm tắt đúng phạm vi trên và mời xem trang chi tiết (vd [X.AI](/san-pham/x-ai), [XBooking](/san-pham/xbooking), [FinERP](/san-pham/finerp), [XBuilding](/san-pham/xbuilding), [X.Space](/san-pham/x-space)) hoặc [đặt lịch demo](/dat-lich-demo).`
 
 /* -------- rate limiting (in-memory, per device) --------
  * NOTE: process-local. Centralized here in the CMS (single backend) instead of
@@ -113,7 +124,9 @@ export function parseChatInput(payload: {
   const message = (payload.message ?? '').trim()
   const siteCode = payload.siteCode ?? 'corporate'
   const route = payload.route ?? '/'
-  const pageContext = (payload.pageContext ?? '').slice(0, 600)
+  // Page context can carry the live page text (for "summarize this page"); allow
+  // enough room for a real page while keeping token cost bounded.
+  const pageContext = (payload.pageContext ?? '').slice(0, 6000)
   const attachments = (payload.attachments ?? []).slice(0, MAX_IMAGES + 1)
 
   if (!deviceId || !sessionId) return { error: 'Missing device/session', status: 400 }

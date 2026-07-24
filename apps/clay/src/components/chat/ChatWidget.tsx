@@ -112,6 +112,16 @@ function Markdown({ text }: { text: string }) {
   return <div className="flex flex-col gap-1.5">{blocks}</div>;
 }
 
+/** Grab the current page's readable text (main content) so the assistant can
+ * answer "tóm tắt trang này". Collapses whitespace and caps length; the backend
+ * trims again. Falls back to empty string on the server. */
+function capturePageText(): string {
+  if (typeof document === "undefined") return "";
+  const root = document.querySelector("main") ?? document.body;
+  const raw = (root as HTMLElement)?.innerText ?? "";
+  return raw.replace(/\s+/g, " ").trim().slice(0, 6000);
+}
+
 export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -187,7 +197,9 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
           message: content,
           siteCode,
           route: window.location.pathname,
-          pageContext: ctx.summary,
+          // Live page text so the AI can summarize/answer about the current page;
+          // fall back to the static route summary if the DOM read is empty.
+          pageContext: capturePageText() || ctx.summary,
           attachments: atts.map((a) => ({ kind: a.kind, mediaType: a.mediaType, data: a.data })),
         }),
       });
