@@ -6,10 +6,18 @@
 #
 # Cách dùng:
 #   ./deploy.sh                         # Deploy thường: pull + install + MIGRATE + build + restart
+#   ./deploy.sh --fresh-seed            # WEB MỚI TINH: dựng schema + SEED toàn bộ nội dung từ đầu
+#   ./deploy.sh --fresh-seed --yes      # ... bỏ qua xác nhận (XOÁ & seed lại DB, dùng trong CI)
 #   ./deploy.sh --import-db             # Lần ĐẦU: import full DB từ dump mới nhất trong ./backups
 #   ./deploy.sh --import-db --dump backups/xweb_local_20260721.sql   # chỉ định file dump
 #   ./deploy.sh --import-db --yes       # bỏ qua xác nhận (dùng trong CI/tự động)
 #   ./deploy.sh --no-restart            # làm mọi thứ trừ khởi động lại PM2
+#
+# GHI CHÚ --fresh-seed:
+#   Dùng cho site hoàn toàn mới (DB trống). Script sẽ XOÁ SẠCH schema public của
+#   DATABASE_URL, dựng lại schema hiện tại (PAYLOAD_DB_PUSH=true) rồi chạy seed
+#   runner để nạp: site, menu, pages, posts (Insights/Tin tức), solutions, media,
+#   và tài khoản admin đầu tiên (SEED_ADMIN_EMAIL/PASSWORD trong .env).
 #
 # Biến môi trường có thể override:
 #   BRANCH=feat/xxx ./deploy.sh         # deploy nhánh khác (mặc định: main)
@@ -30,6 +38,7 @@ cd "$ROOT"
 
 BRANCH="${BRANCH:-main}"
 IMPORT_DB=0
+FRESH_SEED=0
 SKIP_RESTART=0
 ASSUME_YES=0
 DUMP_FILE=""
@@ -37,6 +46,7 @@ DUMP_FILE=""
 # ---- Parse tham số ----------------------------------------------------------
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    --fresh-seed) FRESH_SEED=1 ;;
     --import-db)  IMPORT_DB=1 ;;
     --dump)       DUMP_FILE="${2:-}"; shift ;;
     --dump=*)     DUMP_FILE="${1#*=}" ;;
@@ -47,6 +57,8 @@ while [[ $# -gt 0 ]]; do
   esac
   shift
 done
+
+[[ "$FRESH_SEED" -eq 1 && "$IMPORT_DB" -eq 1 ]] && { echo "Không dùng đồng thời --fresh-seed và --import-db" >&2; exit 1; }
 
 # ---- Helpers ----------------------------------------------------------------
 log()  { printf '\n\033[1;36m==>\033[0m %s\n' "$*"; }
@@ -102,7 +114,49 @@ pnpm install --frozen-lockfile
 ok "Dependencies xong"
 
 # ---- 4. Database ------------------------------------------------------------
-if [[ "$IMPORT_DB" -eq 1 ]]; then
+if [[ "$FRESH_SEED" -eq 1 ]]; then
+  # -- 4-FS. WEB MỚI TINH: dựng schema từ đầu + seed toàn bộ nội dung ----------
+  warn "SẮP XOÁ SẠCH schema 'public' của DB đích rồi seed lại từ đầu."
+  warn "DB: ${DATABASE_URL%%\?*}"
+  if [[ "$ASSUME_YES" -ne 1 ]]; then
+    read -r -p "  Tiếp tục và XÓA toàn bộ dữ liệu hiện có? [y/N] " ans
+    [[ "$ans" =~ ^[Yy]$ ]] || die "Đã hủy."
+  fi
+
+  log "Xoá & tạo lại schema public (DB trống hoàn toàn)"
+  psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -c 'DROP SCHEMA IF EXISTS public CASCADE; CREATE SCHEMA public;'
+  ok "Schema đã reset"
+
+  # Đồng bộ editorial seed (Insights + Tin tức) từ nội dung tĩnh trước khi seed DB.
+  log "Sinh lại editorial-posts.json từ nội dung tĩnh"
+  pnpm --filter @x/clay gen:editorial-seed
+  ok "Editorial seed cập nhật"
+
+  # PAYLOAD_DB_PUSH=true: Payload tự dựng schema hiện tại (mọi field mới nhất)
+  # trên DB trống, sau đó seed runner nạp dữ liệu. Idempotent (upsert natural key).
+  log "Dựng schema + seed nội dung (PAYLOAD_DB_PUSH=true)"
+  PAYLOAD_DB_PUSH=true pnpm --filter @x/cms exec payload run ./src/seed/index.ts
+  ok "Seed hoàn tất (site, menu, pages, posts, solutions, media, admin user)"
+
+  # Baseline: đánh dấu mọi migration đã đăng ký là "đã áp dụng" để LẦN SAU
+  # `./deploy.sh` (migrate) chỉ chạy migration MỚI, không dựng lại bảng đã có.
+  log "Ghi baseline migration (đánh dấu đã áp dụng)"
+  MIG_VALUES=""
+  while IFS= read -r name; do
+    [[ -n "$name" ]] && MIG_VALUES+="('${name}', 1),"
+  done < <(grep -oE "name: *'[^']+'" "$ROOT/apps/cms/src/migrations/index.ts" | sed -E "s/name: *'//; s/'//")
+  MIG_VALUES="${MIG_VALUES%,}"
+  if [[ -n "$MIG_VALUES" ]]; then
+    psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q <<SQL
+DELETE FROM payload_migrations;
+INSERT INTO payload_migrations (name, batch) VALUES ${MIG_VALUES};
+SQL
+    ok "Baseline: $(echo "$MIG_VALUES" | tr ',' '\n' | wc -l) migration đánh dấu đã chạy"
+  else
+    warn "Không thấy migration nào để baseline (bỏ qua)."
+  fi
+
+elif [[ "$IMPORT_DB" -eq 1 ]]; then
   # -- 4a. IMPORT LẦN ĐẦU: khôi phục toàn bộ DB từ dump (thay bản cũ) ----------
   if [[ -z "$DUMP_FILE" ]]; then
     DUMP_FILE="$(ls -1t "$ROOT"/backups/*.sql 2>/dev/null | head -n1 || true)"
