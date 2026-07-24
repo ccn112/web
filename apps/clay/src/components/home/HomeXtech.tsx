@@ -18,6 +18,7 @@ import type { PostDoc } from "@x/shared-types";
 import { Container } from "@/components/primitives";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
 import { ShinyText } from "@/components/reactbits/ShinyText";
+import { PartnerLogos } from "./PartnerLogos";
 import { C02Timeline } from "@/components/services/c02/kit";
 import Image from "next/image";
 import { SectionHead, HomeIcon, IconTile, KeywordLine, DiagramImage, SplitLayout } from "./kit";
@@ -151,25 +152,7 @@ function Hero() {
 /* H02 — Trust band                                                  */
 /* ================================================================ */
 function Trust() {
-  return (
-    <section className="relative border-y border-border/60 bg-card/40 py-10">
-      <Container className="relative flex flex-col items-center gap-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Được tin dùng bởi doanh nghiệp và chủ đầu tư bất động sản
-        </p>
-        <div className="grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="flex h-12 items-center justify-center rounded-lg border border-border/60 bg-background/60 text-xs font-semibold text-muted-foreground/50"
-            >
-              Logo
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
+  return <PartnerLogos />;
 }
 
 /* ================================================================ */
