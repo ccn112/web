@@ -8,10 +8,15 @@
  */
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   Check,
+  Maximize2,
+  X,
+  ChevronLeft,
+  ChevronRight,
   TrendingUp,
   Wallet,
   Banknote,
@@ -258,6 +263,123 @@ function ProductLayerStack({ s }: { s: ProductSection }) {
   );
 }
 
+/* ---- gallery: responsive grid of screenshots + captions, each opens a
+   full-screen lightbox slide (images are large, meant to be viewed big).
+   For topics with many product shots (agents, industries, departments). ---- */
+function ProductGallery({ s }: { s: ProductSection }) {
+  const shots = s.gallery ?? [];
+  const [active, setActive] = useState<number | null>(null);
+  const open = active !== null;
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+      else if (e.key === "ArrowRight") setActive((i) => (i === null ? i : (i + 1) % shots.length));
+      else if (e.key === "ArrowLeft") setActive((i) => (i === null ? i : (i - 1 + shots.length) % shots.length));
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open, shots.length]);
+
+  if (!shots.length) return null;
+  const cur = active !== null ? shots[active] : null;
+
+  return (
+    <>
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {shots.map((g, k) => (
+          <Reveal key={g.image} delay={(k % 3) * 0.06}>
+            <button
+              type="button"
+              onClick={() => setActive(k)}
+              className="group block h-full w-full overflow-hidden rounded-2xl border border-blue/12 bg-card/70 text-left shadow-[0_20px_50px_-38px_var(--accent-blue)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-gold/45"
+            >
+              <div className="relative overflow-hidden">
+                <Image
+                  src={g.image}
+                  alt={g.title}
+                  width={800}
+                  height={600}
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
+                  className="h-auto w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+                <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card/40 to-transparent opacity-0 transition group-hover:opacity-100" />
+                <span aria-hidden className="absolute bottom-2.5 right-2.5 inline-flex size-8 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+                  <Maximize2 className="size-4" />
+                </span>
+              </div>
+              <span className="block p-4">
+                <span className="block text-sm font-semibold tracking-tight text-blue">{g.title}</span>
+                <span className="mt-1 block text-[13px] leading-relaxed text-muted-foreground">{g.caption}</span>
+              </span>
+            </button>
+          </Reveal>
+        ))}
+      </div>
+      <GoldCTA cta={s.cta} />
+
+      {/* Lightbox */}
+      {open && cur ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={cur.title}
+          className="fixed inset-0 z-[100] flex flex-col bg-black/85 backdrop-blur-sm"
+          onClick={() => setActive(null)}
+        >
+          <div className="flex items-center justify-between px-4 py-3 text-white/90 sm:px-6">
+            <span className="text-sm font-medium">{active! + 1} / {shots.length}</span>
+            <button type="button" onClick={() => setActive(null)} aria-label="Đóng" className="inline-flex size-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20">
+              <X className="size-5" />
+            </button>
+          </div>
+
+          <div className="relative flex flex-1 items-center justify-center overflow-hidden px-4 pb-4 sm:px-16">
+            <button
+              type="button"
+              aria-label="Ảnh trước"
+              onClick={(e) => { e.stopPropagation(); setActive((i) => (i === null ? i : (i - 1 + shots.length) % shots.length)); }}
+              className="absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-4"
+            >
+              <ChevronLeft className="size-6" />
+            </button>
+
+            <figure className="flex max-h-full max-w-6xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={cur.image}
+                alt={cur.title}
+                width={1600}
+                height={1200}
+                sizes="90vw"
+                className="max-h-[78vh] w-auto rounded-xl object-contain shadow-2xl"
+              />
+              <figcaption className="mt-4 max-w-2xl text-center text-white/85">
+                <span className="block text-base font-semibold">{cur.title}</span>
+                <span className="mt-1 block text-sm text-white/70">{cur.caption}</span>
+              </figcaption>
+            </figure>
+
+            <button
+              type="button"
+              aria-label="Ảnh sau"
+              onClick={(e) => { e.stopPropagation(); setActive((i) => (i === null ? i : (i + 1) % shots.length)); }}
+              className="absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-4"
+            >
+              <ChevronRight className="size-6" />
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+}
+
 /* ---- showcase: capability card grid ---- */
 function ShowcaseLayout({ s }: { s: ProductSection }) {
   return (
@@ -482,6 +604,7 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
         <div className="mt-8"><Cycle steps={toServiceItems(s.items)} centerLabel={s.centerLabel ?? s.eyebrow} /><GoldCTA cta={s.cta} /></div>
       ) : null}
       {s.layout === "layerstack" ? <ProductLayerStack s={s} /> : null}
+      {s.layout === "gallery" ? <ProductGallery s={s} /> : null}
       {s.layout === "outcomes" && s.outcomes?.length ? (
         <div className="mt-8"><C02OutcomeStrip outcomes={s.outcomes.map((o, k) => ({ itemId: String(k), title: o.title, description: o.description, icon: o.icon }))} /><GoldCTA cta={s.cta} /></div>
       ) : null}
