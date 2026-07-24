@@ -17,6 +17,8 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Download,
+  PlayCircle,
   TrendingUp,
   Wallet,
   Banknote,
@@ -82,6 +84,8 @@ import {
   type ProductSection,
   type ProductItem,
 } from "@/data/product-content";
+import { profileForRoute } from "@/data/profile-content";
+import { PresentationMode } from "./PresentationMode";
 
 function head(s: ProductSection): SectionTitle {
   return { eyebrow: s.eyebrow, lines: [s.title], subtitle: s.subtitle, highlight: s.highlight };
@@ -403,7 +407,7 @@ function ProductLibrary({ s }: { s: ProductSection }) {
 }
 
 /* ---- showcase: capability card grid ---- */
-function ShowcaseLayout({ s }: { s: ProductSection }) {
+function ShowcaseLayout({ s, hideCta }: { s: ProductSection; hideCta?: boolean }) {
   return (
     <>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -417,7 +421,7 @@ function ShowcaseLayout({ s }: { s: ProductSection }) {
           </Reveal>
         ))}
       </div>
-      <GoldCTA cta={s.cta} />
+      {hideCta ? null : <GoldCTA cta={s.cta} />}
     </>
   );
 }
@@ -613,7 +617,7 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
   );
 }
 
-function SectionBody({ s, i }: { s: ProductSection; i: number }) {
+function SectionBody({ s, i, hideCta }: { s: ProductSection; i: number; hideCta?: boolean }) {
   return (
     <>
       <SectionHead title={head(s)} />
@@ -621,7 +625,7 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
       {s.layout === "hub-spoke" ? <OrbitLayout s={s} i={i} numbered /> : null}
       {s.layout === "visual-right" ? <OrbitLayout s={s} i={i} side="right" /> : null}
       {s.layout === "visual-left" ? <OrbitLayout s={s} i={i} side="left" numbered /> : null}
-      {s.layout === "showcase" ? <ShowcaseLayout s={s} /> : null}
+      {s.layout === "showcase" ? <ShowcaseLayout s={s} hideCta={hideCta} /> : null}
       {s.layout === "stack" ? <StackLayout s={s} /> : null}
       {s.layout === "journey" ? <JourneyLayout s={s} /> : null}
       {s.layout === "illustration" ? <IllustrationLayout s={s} i={i} /> : null}
@@ -648,7 +652,31 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
  * a dark first-fold keeps the white logo/menu legible and gives every product
  * page a consistent premium opening). `theme-dark` flips design tokens so the
  * inner cards adopt dark surfaces automatically. */
-function ProductHero({ s, i }: { s: ProductSection; i: number }) {
+function HeroActions({ cta, route, onPresent }: { cta?: { label: string; href: string }; route: string; onPresent: () => void }) {
+  const profile = profileForRoute(route);
+  return (
+    <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+      {cta ? (
+        <a href={cta.href} className="btn-gold group inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold shadow-[0_12px_30px_-12px_var(--accent-gold)] transition hover:brightness-105">
+          {cta.label}
+          <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+        </a>
+      ) : null}
+      {profile ? (
+        <a href={profile.href} download className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">
+          <Download className="size-4" />
+          Tải hồ sơ (PDF)
+        </a>
+      ) : null}
+      <button type="button" onClick={onPresent} className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">
+        <PlayCircle className="size-4" />
+        Trình bày
+      </button>
+    </div>
+  );
+}
+
+function ProductHero({ s, i, route, onPresent }: { s: ProductSection; i: number; route: string; onPresent: () => void }) {
   return (
     <section
       id={s.sectionId}
@@ -681,14 +709,15 @@ function ProductHero({ s, i }: { s: ProductSection; i: number }) {
       </div>
       <div aria-hidden className="absolute inset-0 bg-grid opacity-[0.14] mask-fade-b" />
       <div className="relative mx-auto w-full max-w-[1200px] px-4 pt-32 pb-20 md:px-6 md:pt-40 md:pb-24">
-        <SectionBody s={s} i={i} />
+        <SectionBody s={s} i={i} hideCta />
+        <HeroActions cta={s.cta} route={route} onPresent={onPresent} />
       </div>
     </section>
   );
 }
 
-function SectionRenderer({ s, i }: { s: ProductSection; i: number }) {
-  if (i === 0) return <ProductHero s={s} i={i} />;
+function SectionRenderer({ s, i, route, onPresent }: { s: ProductSection; i: number; route: string; onPresent: () => void }) {
+  if (i === 0) return <ProductHero s={s} i={i} route={route} onPresent={onPresent} />;
   return (
     <AmbientSection id={s.sectionId} soft={i % 2 === 1} city={s.layout === "stack"} compact>
       <SectionBody s={s} i={i} />
@@ -714,15 +743,18 @@ export function ProductSections({ route }: { route: string }) {
     if (idx >= 0) setActive(idx);
   };
 
+  const [presenting, setPresenting] = useState(false);
+
   if (!sections.length) return null;
   return (
     <PageLightbox.Provider value={{ shots, openImage }}>
       {sections.map((s, i) => (
-        <SectionRenderer key={s.sectionId} s={s} i={i} />
+        <SectionRenderer key={s.sectionId} s={s} i={i} route={route} onPresent={() => setPresenting(true)} />
       ))}
       {active !== null ? (
         <Lightbox shots={shots} index={active} onClose={() => setActive(null)} onNav={setActive} />
       ) : null}
+      {presenting ? <PresentationMode sections={sections} onClose={() => setPresenting(false)} /> : null}
     </PageLightbox.Provider>
   );
 }

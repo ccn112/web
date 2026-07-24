@@ -9,6 +9,7 @@
  */
 
 import { productSectionsForRoute, type ProductSection } from "./product-content";
+import generated from "./profiles.generated.json";
 
 export type ProfileFeature = { label: string; benefit: string };
 export type ProfileSection = {
@@ -195,3 +196,14 @@ export const PROFILE_ROUTE_MAP: Record<string, string> = {
   "/san-pham/xbuilding": "xbuilding",
   "/san-pham/x-space": "x-space",
 };
+
+export type ProfileLink = { name: string; file: string; date: string; href: string };
+const GENERATED = generated as Record<string, { name: string; file: string; date: string }>;
+
+/** Latest generated profile for a product route (for the hero download button). */
+export function profileForRoute(route: string): ProfileLink | null {
+  const key = PROFILE_ROUTE_MAP[route];
+  const g = key ? GENERATED[key] : undefined;
+  if (!g) return null;
+  return { ...g, href: `/profiles/${encodeURIComponent(g.file)}` };
+}
