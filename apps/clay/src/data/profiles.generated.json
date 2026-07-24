@@ -1,0 +1,37 @@
+{
+  "xtech": {
+    "name": "X-TECH",
+    "file": "[20260724]XTECH_Company_Profile.pdf",
+    "date": "20260724"
+  },
+  "services": {
+    "name": "Services",
+    "file": "[20260724]XTECH_Services_Profile.pdf",
+    "date": "20260724"
+  },
+  "x-ai": {
+    "name": "X.AI",
+    "file": "[20260724]X.AI_Profile.pdf",
+    "date": "20260724"
+  },
+  "xbooking": {
+    "name": "XBooking",
+    "file": "[20260724]XBooking_Profile.pdf",
+    "date": "20260724"
+  },
+  "finerp": {
+    "name": "FinERP",
+    "file": "[20260724]FinERP_Profile.pdf",
+    "date": "20260724"
+  },
+  "xbuilding": {
+    "name": "XBuilding",
+    "file": "[20260724]XBuilding_Profile.pdf",
+    "date": "20260724"
+  },
+  "x-space": {
+    "name": "X.Space",
+    "file": "[20260724]X.Space_Profile.pdf",
+    "date": "20260724"
+  }
+}
