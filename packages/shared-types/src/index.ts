@@ -110,6 +110,33 @@ export interface PostDoc {
   status: ContentStatus
 }
 
+/** SET G02 — Solution menu page (editable in CMS). Images are Media refs;
+ * app falls back to designed static assets when a Media image is unset. */
+export interface SolutionDoc {
+  id: string
+  siteCode: string
+  slug: string
+  route?: string
+  eyebrow?: string
+  title: string
+  summary?: string
+  heroImage?: import('./blocks').MediaRef
+  relatedProducts?: string[]
+  sections?: Array<{
+    sectionId?: string
+    eyebrow?: string
+    title: string
+    description?: string
+    layout?: string
+    image?: import('./blocks').MediaRef
+    items?: Array<{ title: string; description?: string }>
+  }>
+  ctaTitle?: string
+  ctaDescription?: string
+  ctaImage?: import('./blocks').MediaRef
+  status: ContentStatus
+}
+
 /**
  * Bespoke "service section" content (SET C02 Digital Transformation Services).
  * The visual composition is a coded React component chosen by `visualType`; all

@@ -8,6 +8,7 @@ import type {
   PostDoc,
   ServiceSectionDoc,
   SiteConfig,
+  SolutionDoc,
 } from '@x/shared-types'
 
 export * from './site-resolution'
@@ -131,6 +132,17 @@ export class CmsClient {
       'where[locale][equals]': locale,
       limit: 1,
       depth: 0,
+    })
+    return data.docs[0] ?? null
+  }
+
+  /** Solution menu page (SET G02) by exact route — depth=1 to populate images. */
+  async getSolutionByRoute(siteCode: string, route: string): Promise<SolutionDoc | null> {
+    const data = await this.get<PayloadListResponse<SolutionDoc>>('solutions', {
+      'where[siteCode][equals]': siteCode,
+      'where[route][equals]': route,
+      limit: 1,
+      depth: 1,
     })
     return data.docs[0] ?? null
   }

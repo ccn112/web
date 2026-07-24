@@ -15,7 +15,7 @@ import { ImplPages } from "@/components/impl/ImplPages";
 import { hasImplRoute } from "@/data/impl-content";
 import { SuitePages } from "@/components/suites/SuitePages";
 import { SolutionPages } from "@/components/solutions/SolutionPages";
-import { hasSolutionRoute } from "@/data/solution-content";
+import { hasSolutionRoute, resolveSolution } from "@/data/solution-content";
 import { hasSuiteRoute } from "@/data/suite-content";
 import { CasePages } from "@/components/cases/CasePages";
 import { hasCaseRoute } from "@/data/case-content";
@@ -168,12 +168,19 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   }
 
   // Bespoke corporate Solution menu (SET G02) — /giai-phap/* + /bo-giai-phap-x landing.
+  // Content editable in CMS (Solutions collection); falls back to designed static
+  // content + images when the CMS doc/image is unset.
   if (siteCode === "corporate" && hasSolutionRoute(path)) {
-    return (
-      <SiteShell site={site} menu={menu?.items ?? []}>
-        <SolutionPages route={path} />
-      </SiteShell>
-    );
+    const cmsBase = (process.env.NEXT_PUBLIC_CMS_URL ?? process.env.CMS_URL ?? "http://localhost:3000").replace(/\/$/, "");
+    const cmsSol = await cms.getSolutionByRoute(siteCode, path).catch(() => null);
+    const resolved = resolveSolution(path, cmsSol, cmsBase);
+    if (resolved) {
+      return (
+        <SiteShell site={site} menu={menu?.items ?? []}>
+          <SolutionPages page={resolved} />
+        </SiteShell>
+      );
+    }
   }
 
   // Bespoke corporate Solution Suites (SET C05) — /bo-giai-phap-x suite sub-pages.

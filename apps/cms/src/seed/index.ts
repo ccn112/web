@@ -185,8 +185,21 @@ type SolutionJson = {
   site: string
   slug: string
   title: string
+  route?: string
+  eyebrow?: string
   category?: string
   summary?: string
+  relatedProducts?: string[]
+  sections?: Array<{
+    sectionId?: string
+    eyebrow?: string
+    title: string
+    description?: string
+    layout?: string
+    items?: Array<{ title: string; description?: string }>
+  }>
+  ctaTitle?: string
+  ctaDescription?: string
   status?: string
 }
 type CaseStudyJson = {
@@ -379,8 +392,14 @@ export async function runSeed(payload: Payload): Promise<void> {
         site: requireSite(s.site),
         slug: s.slug,
         title: s.title,
+        route: s.route,
+        eyebrow: s.eyebrow,
         category: s.category,
         summary: s.summary,
+        relatedProducts: s.relatedProducts ?? [],
+        sections: s.sections ?? [],
+        ctaTitle: s.ctaTitle,
+        ctaDescription: s.ctaDescription,
         status: s.status ?? 'published',
       },
     )

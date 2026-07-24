@@ -378,3 +378,54 @@ export function solutionByRoute(route: string): SolutionPage | undefined {
 export function hasSolutionRoute(route: string): boolean {
   return solutionPages.some((p) => p.route === route);
 }
+
+/** A CMS solution doc (loose shape) — imported from @x/shared-types at call site. */
+type CmsMedia = { url?: string } | string | null | undefined;
+type CmsSolution = {
+  eyebrow?: string; title?: string; summary?: string; heroImage?: CmsMedia;
+  relatedProducts?: string[]; ctaTitle?: string; ctaDescription?: string; ctaImage?: CmsMedia;
+  sections?: Array<{ sectionId?: string; eyebrow?: string; title?: string; description?: string; layout?: string; image?: CmsMedia; items?: SolItem[] }>;
+} | null | undefined;
+
+function mediaUrl(ref: CmsMedia, base: string): string | undefined {
+  if (!ref || typeof ref === "string" || !ref.url) return undefined;
+  return /^https?:\/\//.test(ref.url) ? ref.url : `${base}${ref.url}`;
+}
+
+/**
+ * Merge CMS overrides onto the designed static page: CMS text/items win when set;
+ * images use CMS Media (uploaded in admin) else the static designed asset (matched
+ * by sectionId). Falls back entirely to static when there is no CMS doc.
+ */
+export function resolveSolution(route: string, cms: CmsSolution, cmsBase: string): SolutionPage | undefined {
+  const base = solutionByRoute(route);
+  if (!base) return undefined;
+  if (!cms) return base;
+  const baseSecById = new Map(base.sections.map((s) => [s.sectionId, s]));
+  const sections = cms.sections?.length
+    ? cms.sections.map((s): SolSection => {
+        const bs = s.sectionId ? baseSecById.get(s.sectionId) : undefined;
+        return {
+          sectionId: s.sectionId ?? bs?.sectionId ?? "",
+          eyebrow: s.eyebrow ?? bs?.eyebrow,
+          title: s.title ?? bs?.title ?? "",
+          description: s.description ?? bs?.description,
+          layout: ((s.layout as SolLayout) || bs?.layout || "grid"),
+          image: mediaUrl(s.image, cmsBase) ?? bs?.image,
+          items: s.items?.length ? s.items : bs?.items,
+        };
+      })
+    : base.sections;
+  return {
+    ...base,
+    eyebrow: cms.eyebrow || base.eyebrow,
+    title: cms.title || base.title,
+    summary: cms.summary || base.summary,
+    heroImage: mediaUrl(cms.heroImage, cmsBase) ?? base.heroImage,
+    ctaTitle: cms.ctaTitle || base.ctaTitle,
+    ctaDescription: cms.ctaDescription || base.ctaDescription,
+    ctaImage: mediaUrl(cms.ctaImage, cmsBase) ?? base.ctaImage,
+    relatedProducts: cms.relatedProducts?.length ? cms.relatedProducts : base.relatedProducts,
+    sections,
+  };
+}

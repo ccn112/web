@@ -19,7 +19,7 @@ import type { SectionTitle } from "@/data/home-content";
 import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 import { ImageZoom } from "@/components/ImageZoom";
 import { PRODUCT_META } from "@/data/suite-content";
-import { solutionByRoute, type SolutionPage, type SolSection } from "@/data/solution-content";
+import type { SolutionPage, SolSection } from "@/data/solution-content";
 import { cn } from "@/lib/utils";
 
 function head(eyebrow: string | undefined, title: string, subtitle?: string, highlight?: string[]): SectionTitle {
@@ -220,8 +220,7 @@ function SolutionCTA({ p }: { p: SolutionPage }) {
   );
 }
 
-export function SolutionPages({ route }: { route: string }) {
-  const p = solutionByRoute(route);
+export function SolutionPages({ page: p }: { page: SolutionPage }) {
   if (!p) return null;
   return (
     <>
