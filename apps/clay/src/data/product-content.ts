@@ -20,7 +20,8 @@ export type ProductLayout =
   | "cycle" //       vòng lặp liên tục
   | "layerstack" //  kiến trúc nhiều tầng
   | "outcomes" //    dải kết quả/lợi ích chốt
-  | "gallery"; //    lưới nhiều ảnh + caption (dùng khi có nhiều screenshot)
+  | "gallery" //     lưới nhiều ảnh + caption (dùng khi có nhiều screenshot)
+  | "library"; //    thư viện use-case có tab lọc + thumbnail gọn + lightbox
 
 export type ProductItem = {
   id: string;
@@ -68,6 +69,14 @@ export type ProductSection = {
   /** For layout "gallery": a grid of screenshots with captions — used when a
    * topic has many product shots that would be too long as full sections. */
   gallery?: { image: string; title: string; caption: string }[];
+  /** For layout "library": a use-case image library grouped into filter tabs;
+   * compact cropped thumbnails open a full-screen lightbox. Keeps many large
+   * infographics tidy instead of a wall of big images. */
+  galleryGroups?: {
+    key: string;
+    label: string;
+    shots: { image: string; title: string; caption: string }[];
+  }[];
 };
 
 const c03Sections: ProductSection[] = [
@@ -273,107 +282,85 @@ const c03Sections: ProductSection[] = [
     items: [],
   },
   {
-    sectionId: "c03-xai-agents",
+    sectionId: "c03-xai-usecases",
     routes: ["/san-pham/x-ai"],
-    eyebrow: "Enterprise Agents",
-    title: "Đội ngũ AI agent theo từng vai trò nghiệp vụ",
-    highlight: ["AI agent"],
-    subtitle: "Mỗi agent được huấn luyện cho một vai trò cụ thể, làm việc cùng nhân viên như một đồng nghiệp số chuyên trách.",
-    layout: "gallery",
+    eyebrow: "Thư viện use-case",
+    title: "Thư viện use-case X.AI theo agent, ngành và phòng ban",
+    highlight: ["use-case"],
+    subtitle: "Chọn nhóm bên dưới để xem các tình huống ứng dụng thực tế của X.AI. Ảnh là infographic chi tiết — bấm để xem toàn màn hình.",
+    layout: "library",
     items: [],
-    gallery: [
-      { image: "/products/xai/xai-09-sales-agent.png", title: "AI Sales Agent", caption: "Tư vấn, chấm lead và nhắc follow-up cho đội bán hàng." },
-      { image: "/products/xai/xai-10-finance-agent.png", title: "AI Finance Agent", caption: "Phân tích tài chính, công nợ và cảnh báo dòng tiền." },
-      { image: "/products/xai/xai-11-building-operations-agent.png", title: "AI Vận hành tòa nhà", caption: "Trợ lý ban quản lý cho ticket, bảo trì và thông báo." },
-      { image: "/products/xai/xai-12-customer-service-agent.png", title: "AI Chăm sóc khách hàng", caption: "Trả lời khách 24/7, chuyển tiếp đúng người khi cần." },
-      { image: "/products/xai/xai-13-executive-copilot.png", title: "Executive Copilot", caption: "Hỏi đáp số liệu, tóm tắt và hỗ trợ ra quyết định điều hành." },
-    ],
-    cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
-  },
-  {
-    sectionId: "c03-xai-build",
-    routes: ["/san-pham/x-ai"],
-    eyebrow: "Xây dựng & vận hành AI",
-    title: "Doanh nghiệp tự xây và vận hành AI của mình",
-    highlight: ["tự xây"],
-    subtitle: "Bộ công cụ trực quan để tạo agent, nạp tri thức, kết nối hệ thống và tự động hóa quy trình — không phụ thuộc đội kỹ thuật lớn.",
-    layout: "gallery",
-    items: [],
-    gallery: [
-      { image: "/products/xai/xai-17-visual-agent-builder.png", title: "Visual Agent Builder", caption: "Kéo–thả tạo agent riêng, không cần lập trình." },
-      { image: "/products/xai/xai-18-knowledge-hub-rag-studio.png", title: "Knowledge Hub & RAG Studio", caption: "Nạp tài liệu, quản lý tri thức cho AI trả lời đúng ngữ cảnh." },
-      { image: "/products/xai/xai-19-workflow-automation-studio.png", title: "Workflow Automation Studio", caption: "Thiết kế luồng tự động hóa nghiệp vụ trực quan." },
-      { image: "/products/xai/xai-20-tool-api-connector-center.png", title: "Tool & API Connector", caption: "Kết nối AI với hệ thống và API nội bộ." },
-      { image: "/products/xai/xai-21-multi-agent-orchestration.png", title: "Multi-Agent Orchestration", caption: "Điều phối nhiều agent phối hợp xử lý việc phức tạp." },
-      { image: "/products/xai/xai-22-human-approval-exception-handling.png", title: "Human Approval", caption: "Chèn bước con người duyệt ở điểm quan trọng." },
-      { image: "/products/xai/xai-23-agent-testing-simulation-lab.png", title: "Testing & Simulation Lab", caption: "Thử nghiệm agent trước khi đưa vào thực tế." },
-      { image: "/products/xai/xai-24-agent-marketplace-templates.png", title: "Marketplace & Templates", caption: "Kho mẫu agent sẵn dùng để triển khai nhanh." },
-      { image: "/products/xai/xai-16-enterprise-ai-deployment-integration.png", title: "Triển khai & Tích hợp", caption: "Đưa AI vào vận hành với tích hợp cấp doanh nghiệp." },
-    ],
-    cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
-  },
-  {
-    sectionId: "c03-xai-trust",
-    routes: ["/san-pham/x-ai"],
-    eyebrow: "An toàn, quan sát & tuân thủ",
-    title: "AI vận hành an toàn, đo được và sẵn sàng kiểm toán",
-    highlight: ["an toàn"],
-    subtitle: "Lớp quản trị giúp doanh nghiệp kiểm soát chất lượng, bảo mật dữ liệu, giám sát chi phí và chứng minh tuân thủ khi cần.",
-    layout: "gallery",
-    items: [],
-    gallery: [
-      { image: "/products/xai/xai-14-ai-governance-guardrails.png", title: "Governance & Guardrails", caption: "Đặt ràng buộc và quy tắc để AI hành xử an toàn." },
-      { image: "/products/xai/xai-15-model-prompt-evaluation-center.png", title: "Model & Prompt Evaluation", caption: "Đánh giá chất lượng model và prompt trước khi dùng." },
-      { image: "/products/xai/xai-25-ai-security-operations-center.png", title: "AI Security Operations", caption: "Trung tâm giám sát an ninh cho toàn bộ hoạt động AI." },
-      { image: "/products/xai/xai-26-prompt-injection-threat-detection.png", title: "Phát hiện tấn công prompt", caption: "Nhận diện và chặn prompt injection kịp thời." },
-      { image: "/products/xai/xai-27-data-privacy-pii-protection.png", title: "Bảo vệ dữ liệu & PII", caption: "Che và kiểm soát dữ liệu nhạy cảm khi AI xử lý." },
-      { image: "/products/xai/xai-28-observability-trace-explorer.png", title: "Observability & Trace", caption: "Truy vết từng bước AI để gỡ lỗi và giải trình."},
-      { image: "/products/xai/xai-29-quality-latency-cost-monitor.png", title: "Giám sát chất lượng & chi phí", caption: "Theo dõi độ trễ, chất lượng và chi phí token." },
-      { image: "/products/xai/xai-30-grounding-hallucination-monitor.png", title: "Grounding & Hallucination", caption: "Đo mức bám nguồn, phát hiện câu trả lời bịa." },
-      { image: "/products/xai/xai-31-incident-management-rollback-center.png", title: "Sự cố & Rollback", caption: "Quản lý sự cố và quay lui phiên bản an toàn." },
-      { image: "/products/xai/xai-32-compliance-reporting-audit-evidence.png", title: "Tuân thủ & Kiểm toán", caption: "Xuất bằng chứng tuân thủ và báo cáo kiểm toán." },
-    ],
-    cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
-  },
-  {
-    sectionId: "c03-xai-industries",
-    routes: ["/san-pham/x-ai"],
-    eyebrow: "Giải pháp theo ngành",
-    title: "X.AI giải bài toán cụ thể của từng ngành",
-    highlight: ["từng ngành"],
-    subtitle: "Bộ giải pháp AI được đóng gói theo đặc thù nghiệp vụ của mỗi ngành, rút ngắn thời gian đưa vào sử dụng.",
-    layout: "gallery",
-    items: [],
-    gallery: [
-      { image: "/products/xai/xai-33-real-estate-ai-solutions.png", title: "Bất động sản", caption: "Trợ lý bán hàng, chăm sóc khách và phân tích quỹ hàng." },
-      { image: "/products/xai/xai-34-manufacturing-ai-solutions.png", title: "Sản xuất", caption: "Tối ưu vận hành, chất lượng và bảo trì thiết bị." },
-      { image: "/products/xai/xai-35-retail-distribution-ai-solutions.png", title: "Bán lẻ & Phân phối", caption: "Dự báo nhu cầu, tối ưu tồn kho và chăm sóc khách." },
-      { image: "/products/xai/xai-36-construction-ai-solutions.png", title: "Xây dựng", caption: "Quản lý tiến độ, chi phí và rủi ro dự án." },
-      { image: "/products/xai/xai-37-finance-accounting-ai-solutions.png", title: "Tài chính – Kế toán", caption: "Tự động hóa chứng từ, phân tích và cảnh báo." },
-      { image: "/products/xai/xai-38-smart-building-ai-solutions.png", title: "Tòa nhà thông minh", caption: "Vận hành tòa nhà, IoT và tiết kiệm năng lượng." },
-      { image: "/products/xai/xai-39-customer-service-ai-solutions.png", title: "Dịch vụ khách hàng", caption: "Tổng đài AI đa kênh, giải đáp và điều phối." },
-      { image: "/products/xai/xai-40-enterprise-operations-ai-solutions.png", title: "Vận hành doanh nghiệp", caption: "Trợ lý cho quy trình nội bộ và phê duyệt." },
-    ],
-    cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
-  },
-  {
-    sectionId: "c03-xai-departments",
-    routes: ["/san-pham/x-ai"],
-    eyebrow: "Theo phòng ban",
-    title: "AI đồng hành cùng từng phòng ban",
-    highlight: ["từng phòng ban"],
-    subtitle: "Mỗi phòng ban có hành trình áp dụng AI riêng, gắn với công việc và chỉ số thực tế của họ.",
-    layout: "gallery",
-    items: [],
-    gallery: [
-      { image: "/products/xai/xai-41-sales-department-journey.png", title: "Kinh doanh", caption: "Tăng tốc tư vấn, chấm lead và chốt deal." },
-      { image: "/products/xai/xai-42-finance-department-journey.png", title: "Tài chính", caption: "Phân tích, cảnh báo và tự động hóa nghiệp vụ." },
-      { image: "/products/xai/xai-43-hr-department-journey.png", title: "Nhân sự", caption: "Tuyển dụng, hỏi đáp chính sách và onboarding." },
-      { image: "/products/xai/xai-44-operations-bql-journey.png", title: "Vận hành & BQL", caption: "Điều phối công việc và xử lý phản ánh nhanh." },
-      { image: "/products/xai/xai-45-customer-service-journey.png", title: "Chăm sóc khách hàng", caption: "Hỗ trợ khách 24/7 và nâng chất lượng dịch vụ." },
-      { image: "/products/xai/xai-46-executive-journey.png", title: "Ban điều hành", caption: "Copilot số liệu và hỗ trợ quyết định chiến lược." },
-      { image: "/products/xai/xai-47-knowledge-journey.png", title: "Tri thức", caption: "Xây và khai thác kho tri thức nội bộ cùng AI." },
-      { image: "/products/xai/xai-48-cross-functional-journey.png", title: "Liên phòng ban", caption: "Phối hợp AI xuyên suốt các quy trình chung." },
+    galleryGroups: [
+      {
+        key: "agents",
+        label: "Enterprise Agents",
+        shots: [
+          { image: "/products/xai/xai-09-sales-agent.png", title: "AI Sales Agent", caption: "Tư vấn, chấm lead và nhắc follow-up cho đội bán hàng." },
+          { image: "/products/xai/xai-10-finance-agent.png", title: "AI Finance Agent", caption: "Phân tích tài chính, công nợ và cảnh báo dòng tiền." },
+          { image: "/products/xai/xai-11-building-operations-agent.png", title: "AI Vận hành tòa nhà", caption: "Trợ lý ban quản lý cho ticket, bảo trì và thông báo." },
+          { image: "/products/xai/xai-12-customer-service-agent.png", title: "AI Chăm sóc khách hàng", caption: "Trả lời khách 24/7, chuyển tiếp đúng người khi cần." },
+          { image: "/products/xai/xai-13-executive-copilot.png", title: "Executive Copilot", caption: "Hỏi đáp số liệu, tóm tắt và hỗ trợ ra quyết định điều hành." },
+        ],
+      },
+      {
+        key: "build",
+        label: "Xây dựng & vận hành",
+        shots: [
+          { image: "/products/xai/xai-17-visual-agent-builder.png", title: "Visual Agent Builder", caption: "Kéo–thả tạo agent riêng, không cần lập trình." },
+          { image: "/products/xai/xai-18-knowledge-hub-rag-studio.png", title: "Knowledge Hub & RAG Studio", caption: "Nạp tài liệu, quản lý tri thức cho AI trả lời đúng ngữ cảnh." },
+          { image: "/products/xai/xai-19-workflow-automation-studio.png", title: "Workflow Automation Studio", caption: "Thiết kế luồng tự động hóa nghiệp vụ trực quan." },
+          { image: "/products/xai/xai-20-tool-api-connector-center.png", title: "Tool & API Connector", caption: "Kết nối AI với hệ thống và API nội bộ." },
+          { image: "/products/xai/xai-21-multi-agent-orchestration.png", title: "Multi-Agent Orchestration", caption: "Điều phối nhiều agent phối hợp xử lý việc phức tạp." },
+          { image: "/products/xai/xai-22-human-approval-exception-handling.png", title: "Human Approval", caption: "Chèn bước con người duyệt ở điểm quan trọng." },
+          { image: "/products/xai/xai-23-agent-testing-simulation-lab.png", title: "Testing & Simulation Lab", caption: "Thử nghiệm agent trước khi đưa vào thực tế." },
+          { image: "/products/xai/xai-24-agent-marketplace-templates.png", title: "Marketplace & Templates", caption: "Kho mẫu agent sẵn dùng để triển khai nhanh." },
+          { image: "/products/xai/xai-16-enterprise-ai-deployment-integration.png", title: "Triển khai & Tích hợp", caption: "Đưa AI vào vận hành với tích hợp cấp doanh nghiệp." },
+        ],
+      },
+      {
+        key: "trust",
+        label: "An toàn & tuân thủ",
+        shots: [
+          { image: "/products/xai/xai-14-ai-governance-guardrails.png", title: "Governance & Guardrails", caption: "Đặt ràng buộc và quy tắc để AI hành xử an toàn." },
+          { image: "/products/xai/xai-15-model-prompt-evaluation-center.png", title: "Model & Prompt Evaluation", caption: "Đánh giá chất lượng model và prompt trước khi dùng." },
+          { image: "/products/xai/xai-25-ai-security-operations-center.png", title: "AI Security Operations", caption: "Trung tâm giám sát an ninh cho toàn bộ hoạt động AI." },
+          { image: "/products/xai/xai-26-prompt-injection-threat-detection.png", title: "Phát hiện tấn công prompt", caption: "Nhận diện và chặn prompt injection kịp thời." },
+          { image: "/products/xai/xai-27-data-privacy-pii-protection.png", title: "Bảo vệ dữ liệu & PII", caption: "Che và kiểm soát dữ liệu nhạy cảm khi AI xử lý." },
+          { image: "/products/xai/xai-28-observability-trace-explorer.png", title: "Observability & Trace", caption: "Truy vết từng bước AI để gỡ lỗi và giải trình." },
+          { image: "/products/xai/xai-29-quality-latency-cost-monitor.png", title: "Giám sát chất lượng & chi phí", caption: "Theo dõi độ trễ, chất lượng và chi phí token." },
+          { image: "/products/xai/xai-30-grounding-hallucination-monitor.png", title: "Grounding & Hallucination", caption: "Đo mức bám nguồn, phát hiện câu trả lời bịa." },
+          { image: "/products/xai/xai-31-incident-management-rollback-center.png", title: "Sự cố & Rollback", caption: "Quản lý sự cố và quay lui phiên bản an toàn." },
+          { image: "/products/xai/xai-32-compliance-reporting-audit-evidence.png", title: "Tuân thủ & Kiểm toán", caption: "Xuất bằng chứng tuân thủ và báo cáo kiểm toán." },
+        ],
+      },
+      {
+        key: "industries",
+        label: "Theo ngành",
+        shots: [
+          { image: "/products/xai/xai-33-real-estate-ai-solutions.png", title: "Bất động sản", caption: "Trợ lý bán hàng, chăm sóc khách và phân tích quỹ hàng." },
+          { image: "/products/xai/xai-34-manufacturing-ai-solutions.png", title: "Sản xuất", caption: "Tối ưu vận hành, chất lượng và bảo trì thiết bị." },
+          { image: "/products/xai/xai-35-retail-distribution-ai-solutions.png", title: "Bán lẻ & Phân phối", caption: "Dự báo nhu cầu, tối ưu tồn kho và chăm sóc khách." },
+          { image: "/products/xai/xai-36-construction-ai-solutions.png", title: "Xây dựng", caption: "Quản lý tiến độ, chi phí và rủi ro dự án." },
+          { image: "/products/xai/xai-37-finance-accounting-ai-solutions.png", title: "Tài chính – Kế toán", caption: "Tự động hóa chứng từ, phân tích và cảnh báo." },
+          { image: "/products/xai/xai-38-smart-building-ai-solutions.png", title: "Tòa nhà thông minh", caption: "Vận hành tòa nhà, IoT và tiết kiệm năng lượng." },
+          { image: "/products/xai/xai-39-customer-service-ai-solutions.png", title: "Dịch vụ khách hàng", caption: "Tổng đài AI đa kênh, giải đáp và điều phối." },
+          { image: "/products/xai/xai-40-enterprise-operations-ai-solutions.png", title: "Vận hành doanh nghiệp", caption: "Trợ lý cho quy trình nội bộ và phê duyệt." },
+        ],
+      },
+      {
+        key: "departments",
+        label: "Theo phòng ban",
+        shots: [
+          { image: "/products/xai/xai-41-sales-department-journey.png", title: "Kinh doanh", caption: "Tăng tốc tư vấn, chấm lead và chốt deal." },
+          { image: "/products/xai/xai-42-finance-department-journey.png", title: "Tài chính", caption: "Phân tích, cảnh báo và tự động hóa nghiệp vụ." },
+          { image: "/products/xai/xai-43-hr-department-journey.png", title: "Nhân sự", caption: "Tuyển dụng, hỏi đáp chính sách và onboarding." },
+          { image: "/products/xai/xai-44-operations-bql-journey.png", title: "Vận hành & BQL", caption: "Điều phối công việc và xử lý phản ánh nhanh." },
+          { image: "/products/xai/xai-45-customer-service-journey.png", title: "Chăm sóc khách hàng", caption: "Hỗ trợ khách 24/7 và nâng chất lượng dịch vụ." },
+          { image: "/products/xai/xai-46-executive-journey.png", title: "Ban điều hành", caption: "Copilot số liệu và hỗ trợ quyết định chiến lược." },
+          { image: "/products/xai/xai-47-knowledge-journey.png", title: "Tri thức", caption: "Xây và khai thác kho tri thức nội bộ cùng AI." },
+          { image: "/products/xai/xai-48-cross-functional-journey.png", title: "Liên phòng ban", caption: "Phối hợp AI xuyên suốt các quy trình chung." },
+        ],
+      },
     ],
     cta: { label: "Đặt lịch demo X.AI", href: "/dat-lich-demo" },
   },

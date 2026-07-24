@@ -263,20 +263,15 @@ function ProductLayerStack({ s }: { s: ProductSection }) {
   );
 }
 
-/* ---- gallery: responsive grid of screenshots + captions, each opens a
-   full-screen lightbox slide (images are large, meant to be viewed big).
-   For topics with many product shots (agents, industries, departments). ---- */
-function ProductGallery({ s }: { s: ProductSection }) {
-  const shots = s.gallery ?? [];
-  const [active, setActive] = useState<number | null>(null);
-  const open = active !== null;
+type Shot = { image: string; title: string; caption: string };
 
+/* Shared full-screen lightbox with prev/next + keyboard nav. */
+function Lightbox({ shots, index, onClose, onNav }: { shots: Shot[]; index: number; onClose: () => void; onNav: (i: number) => void }) {
   useEffect(() => {
-    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(null);
-      else if (e.key === "ArrowRight") setActive((i) => (i === null ? i : (i + 1) % shots.length));
-      else if (e.key === "ArrowLeft") setActive((i) => (i === null ? i : (i - 1 + shots.length) % shots.length));
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowRight") onNav((index + 1) % shots.length);
+      else if (e.key === "ArrowLeft") onNav((index - 1 + shots.length) % shots.length);
     };
     window.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
@@ -285,31 +280,51 @@ function ProductGallery({ s }: { s: ProductSection }) {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
-  }, [open, shots.length]);
+  }, [index, shots.length, onClose, onNav]);
 
+  const cur = shots[index];
+  if (!cur) return null;
+  return (
+    <div role="dialog" aria-modal="true" aria-label={cur.title} className="fixed inset-0 z-[100] flex flex-col bg-black/85 backdrop-blur-sm" onClick={onClose}>
+      <div className="flex items-center justify-between px-4 py-3 text-white/90 sm:px-6">
+        <span className="text-sm font-medium">{index + 1} / {shots.length}</span>
+        <button type="button" onClick={onClose} aria-label="Đóng" className="inline-flex size-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20">
+          <X className="size-5" />
+        </button>
+      </div>
+      <div className="relative flex flex-1 items-center justify-center overflow-hidden px-4 pb-4 sm:px-16">
+        <button type="button" aria-label="Ảnh trước" onClick={(e) => { e.stopPropagation(); onNav((index - 1 + shots.length) % shots.length); }} className="absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-4">
+          <ChevronLeft className="size-6" />
+        </button>
+        <figure className="flex max-h-full max-w-6xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
+          <Image src={cur.image} alt={cur.title} width={1600} height={1200} sizes="90vw" className="max-h-[78vh] w-auto rounded-xl object-contain shadow-2xl" />
+          <figcaption className="mt-4 max-w-2xl text-center text-white/85">
+            <span className="block text-base font-semibold">{cur.title}</span>
+            <span className="mt-1 block text-sm text-white/70">{cur.caption}</span>
+          </figcaption>
+        </figure>
+        <button type="button" aria-label="Ảnh sau" onClick={(e) => { e.stopPropagation(); onNav((index + 1) % shots.length); }} className="absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-4">
+          <ChevronRight className="size-6" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ---- gallery: responsive grid of screenshots + captions, each opens the
+   lightbox. For a modest number of product shots. ---- */
+function ProductGallery({ s }: { s: ProductSection }) {
+  const shots = s.gallery ?? [];
+  const [active, setActive] = useState<number | null>(null);
   if (!shots.length) return null;
-  const cur = active !== null ? shots[active] : null;
-
   return (
     <>
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {shots.map((g, k) => (
           <Reveal key={g.image} delay={(k % 3) * 0.06}>
-            <button
-              type="button"
-              onClick={() => setActive(k)}
-              className="group block h-full w-full overflow-hidden rounded-2xl border border-blue/12 bg-card/70 text-left shadow-[0_20px_50px_-38px_var(--accent-blue)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-gold/45"
-            >
-              <div className="relative overflow-hidden">
-                <Image
-                  src={g.image}
-                  alt={g.title}
-                  width={800}
-                  height={600}
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
-                  className="h-auto w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                />
-                <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card/40 to-transparent opacity-0 transition group-hover:opacity-100" />
+            <button type="button" onClick={() => setActive(k)} className="group block h-full w-full overflow-hidden rounded-2xl border border-blue/12 bg-card/70 text-left shadow-[0_20px_50px_-38px_var(--accent-blue)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-gold/45">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={g.image} alt={g.title} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw" className="object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
                 <span aria-hidden className="absolute bottom-2.5 right-2.5 inline-flex size-8 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
                   <Maximize2 className="size-4" />
                 </span>
@@ -323,59 +338,61 @@ function ProductGallery({ s }: { s: ProductSection }) {
         ))}
       </div>
       <GoldCTA cta={s.cta} />
+      {active !== null ? <Lightbox shots={shots} index={active} onClose={() => setActive(null)} onNav={setActive} /> : null}
+    </>
+  );
+}
 
-      {/* Lightbox */}
-      {open && cur ? (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={cur.title}
-          className="fixed inset-0 z-[100] flex flex-col bg-black/85 backdrop-blur-sm"
-          onClick={() => setActive(null)}
-        >
-          <div className="flex items-center justify-between px-4 py-3 text-white/90 sm:px-6">
-            <span className="text-sm font-medium">{active! + 1} / {shots.length}</span>
-            <button type="button" onClick={() => setActive(null)} aria-label="Đóng" className="inline-flex size-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20">
-              <X className="size-5" />
+/* ---- library: use-case image library with filter tabs + compact cropped
+   thumbnails that open the lightbox. Keeps many large infographics tidy. ---- */
+function ProductLibrary({ s }: { s: ProductSection }) {
+  const groups = s.galleryGroups ?? [];
+  const [tab, setTab] = useState(0);
+  const [active, setActive] = useState<number | null>(null);
+  if (!groups.length) return null;
+  const shots = groups[tab]?.shots ?? [];
+  return (
+    <>
+      {/* filter tabs */}
+      <div className="mt-8 flex flex-wrap justify-center gap-2">
+        {groups.map((g, i) => (
+          <button
+            key={g.key}
+            type="button"
+            onClick={() => { setTab(i); setActive(null); }}
+            aria-pressed={tab === i}
+            className={
+              tab === i
+                ? "rounded-full border border-gold/50 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-blue transition"
+                : "rounded-full border border-blue/15 bg-card/70 px-4 py-1.5 text-sm font-medium text-muted-foreground transition hover:border-blue/35 hover:text-foreground"
+            }
+          >
+            {g.label}
+            <span className="ml-1.5 text-xs text-blue/50">{g.shots.length}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* compact cropped thumbnails */}
+      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {shots.map((g, k) => (
+          <Reveal key={g.image} delay={(k % 4) * 0.05}>
+            <button type="button" onClick={() => setActive(k)} className="group block w-full overflow-hidden rounded-xl border border-blue/12 bg-card/70 text-left shadow-[0_16px_40px_-34px_var(--accent-blue)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-gold/45">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={g.image} alt={g.title} fill sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 46vw" className="object-cover object-top transition duration-500 group-hover:scale-[1.04]" />
+                <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <span className="absolute inset-x-0 bottom-0 p-2.5 text-xs font-semibold text-white">{g.title}</span>
+                <span aria-hidden className="absolute right-2 top-2 inline-flex size-7 items-center justify-center rounded-full bg-black/40 text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+                  <Maximize2 className="size-3.5" />
+                </span>
+              </div>
             </button>
-          </div>
-
-          <div className="relative flex flex-1 items-center justify-center overflow-hidden px-4 pb-4 sm:px-16">
-            <button
-              type="button"
-              aria-label="Ảnh trước"
-              onClick={(e) => { e.stopPropagation(); setActive((i) => (i === null ? i : (i - 1 + shots.length) % shots.length)); }}
-              className="absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-4"
-            >
-              <ChevronLeft className="size-6" />
-            </button>
-
-            <figure className="flex max-h-full max-w-6xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
-              <Image
-                src={cur.image}
-                alt={cur.title}
-                width={1600}
-                height={1200}
-                sizes="90vw"
-                className="max-h-[78vh] w-auto rounded-xl object-contain shadow-2xl"
-              />
-              <figcaption className="mt-4 max-w-2xl text-center text-white/85">
-                <span className="block text-base font-semibold">{cur.title}</span>
-                <span className="mt-1 block text-sm text-white/70">{cur.caption}</span>
-              </figcaption>
-            </figure>
-
-            <button
-              type="button"
-              aria-label="Ảnh sau"
-              onClick={(e) => { e.stopPropagation(); setActive((i) => (i === null ? i : (i + 1) % shots.length)); }}
-              className="absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-4"
-            >
-              <ChevronRight className="size-6" />
-            </button>
-          </div>
-        </div>
-      ) : null}
+          </Reveal>
+        ))}
+      </div>
+      <p className="mt-4 text-center text-xs text-muted-foreground">Bấm vào ảnh để xem chi tiết use-case ở chế độ toàn màn hình.</p>
+      <GoldCTA cta={s.cta} />
+      {active !== null ? <Lightbox shots={shots} index={active} onClose={() => setActive(null)} onNav={setActive} /> : null}
     </>
   );
 }
@@ -605,6 +622,7 @@ function SectionBody({ s, i }: { s: ProductSection; i: number }) {
       ) : null}
       {s.layout === "layerstack" ? <ProductLayerStack s={s} /> : null}
       {s.layout === "gallery" ? <ProductGallery s={s} /> : null}
+      {s.layout === "library" ? <ProductLibrary s={s} /> : null}
       {s.layout === "outcomes" && s.outcomes?.length ? (
         <div className="mt-8"><C02OutcomeStrip outcomes={s.outcomes.map((o, k) => ({ itemId: String(k), title: o.title, description: o.description, icon: o.icon }))} /><GoldCTA cta={s.cta} /></div>
       ) : null}
