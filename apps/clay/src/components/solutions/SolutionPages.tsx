@@ -7,7 +7,12 @@
  */
 
 import Image from "next/image";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  ArrowRight, Sparkles, Database, BarChart3, Brain, Plug, RefreshCw, ShieldCheck,
+  Workflow, ClipboardCheck, Bell, Users, Cloud, Gauge, Headset, Wallet, Activity,
+  Smartphone, Layers, FileText, Building2, AlertTriangle, Network, Boxes,
+  type LucideIcon,
+} from "lucide-react";
 import { Reveal, AmbientSection } from "@/components/corporate/about-kit";
 import { SectionHead, SplitLayout } from "@/components/home/kit";
 import type { SectionTitle } from "@/data/home-content";
@@ -18,6 +23,36 @@ import { solutionByRoute, type SolutionPage, type SolSection } from "@/data/solu
 
 function head(eyebrow: string | undefined, title: string, subtitle?: string, highlight?: string[]): SectionTitle {
   return { eyebrow: eyebrow ?? "", lines: [title], subtitle, highlight };
+}
+
+/** Meaningful icon per item, matched by content keywords (bám nội dung mục). */
+const ICON_RULES: [RegExp, LucideIcon][] = [
+  [/dữ liệu|data hub|data\b/i, Database],
+  [/báo cáo|dashboard|bi\b|phân tích|insight|điều hành|tổng hợp/i, BarChart3],
+  [/ai|agent|rag|tri thức|knowledge|dự báo/i, Brain],
+  [/api|gateway|connector|tích hợp/i, Plug],
+  [/event|bus|đồng bộ|sync/i, RefreshCw],
+  [/bảo mật|security|phân quyền|governance|an toàn|ký số/i, ShieldCheck],
+  [/workflow|tự động|automation|quy trình|luồng|rule/i, Workflow],
+  [/phê duyệt|duyệt|approval/i, ClipboardCheck],
+  [/thông báo|nhắc|cảnh báo|sla/i, Bell],
+  [/cộng tác|phối hợp|giao việc|làm việc|người dùng|trải nghiệm/i, Users],
+  [/cloud|hạ tầng|on-?premise|saas|hybrid|triển khai/i, Cloud],
+  [/tài chính|dòng tiền|kế toán|chi phí|ngân sách|thanh toán|chi\b/i, Wallet],
+  [/giám sát|monitor|logging|theo dõi/i, Activity],
+  [/web|mobile|portal|kênh|onboarding/i, Smartphone],
+  [/mở rộng|linh hoạt|nền tảng|blueprint/i, Layers],
+  [/biểu mẫu|form|chứng từ|hồ sơ/i, FileText],
+  [/bất động sản|chủ đầu tư|tòa nhà|đô thị|cư dân/i, Building2],
+  [/rời rạc|phân tán|không đồng bộ|nhập liệu|chậm|khó/i, AlertTriangle],
+  [/kết nối|network|hệ thống/i, Network],
+  [/erp|sản xuất|kho|bộ giải pháp|đóng gói/i, Boxes],
+  [/chăm sóc|khách hàng|dịch vụ|hỗ trợ/i, Headset],
+  [/quyết định|hiệu suất|năng suất|kết quả|tốc độ/i, Gauge],
+];
+function iconForItem(title: string): LucideIcon {
+  for (const [re, ic] of ICON_RULES) if (re.test(title)) return ic;
+  return Sparkles;
 }
 
 function GoldCTA({ label, href }: { label: string; href: string }) {
@@ -45,19 +80,24 @@ function Framed({ src, alt }: { src: string; alt: string }) {
 function ItemCards({ items }: { items: { title: string; description?: string }[] }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {items.map((it, k) => (
-        <Reveal key={it.title} delay={(k % 2) * 0.06}>
-          <SpotlightCard className="h-full rounded-2xl">
-            <div className="flex h-full items-start gap-3 rounded-2xl border border-blue/12 bg-card/70 p-4 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-gold/45">
-              <span className="icon-gold mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-lg"><Check className="size-4" /></span>
-              <div className="min-w-0">
-                <p className="text-sm font-semibold tracking-tight text-blue">{it.title}</p>
-                {it.description ? <p className="mt-0.5 text-[13px] leading-relaxed text-muted-foreground">{it.description}</p> : null}
+      {items.map((it, k) => {
+        const Ico = iconForItem(it.title);
+        return (
+          <Reveal key={it.title} delay={(k % 2) * 0.06}>
+            <SpotlightCard className="h-full rounded-2xl">
+              <div className="flex h-full items-start gap-3.5 rounded-2xl border border-blue/12 bg-card/70 p-5 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-gold/45">
+                <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-blue/15 bg-gradient-to-br from-blue/12 to-cyan/8 text-blue transition group-hover:border-gold/45">
+                  <Ico className="size-5" strokeWidth={1.9} />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[15px] font-semibold tracking-tight text-blue">{it.title}</p>
+                  {it.description ? <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{it.description}</p> : null}
+                </div>
               </div>
-            </div>
-          </SpotlightCard>
-        </Reveal>
-      ))}
+            </SpotlightCard>
+          </Reveal>
+        );
+      })}
     </div>
   );
 }
@@ -122,9 +162,11 @@ function SectionView({ s, i }: { s: SolSection; i: number }) {
 function SolutionHero({ p }: { p: SolutionPage }) {
   return (
     <section className="product-hero theme-dark relative isolate overflow-hidden bg-[oklch(0.17_0.03_265)] text-white">
+      {/* High-res shared backdrop (crisp full-bleed); designed G02 assets are
+          low-res so they're used only as smaller in-section visuals. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <Image src={p.heroImage} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
-        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(180deg, rgba(10,14,30,0.72) 0%, rgba(10,14,30,0.58) 45%, rgba(10,14,30,0.9) 100%)" }} />
+        <Image src="/images/backgrounds/home/hero-ecosystem.webp" alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
+        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(180deg, rgba(10,14,30,0.78) 0%, rgba(10,14,30,0.6) 45%, rgba(10,14,30,0.9) 100%)" }} />
       </div>
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 -top-40 size-[34rem] rounded-full bg-blue opacity-25 blur-[120px] animate-aurora" />
