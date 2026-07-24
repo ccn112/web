@@ -48,8 +48,22 @@ export default buildConfig({
   // The admin panel is gated to authenticated staff via Users.access.admin (canAccessAdmin).
   admin: {
     user: 'users',
+    // XTECH admin theme (handoff/XTECH_PAYLOADCMS_THEME_HANDOFF_V1). Chỉ lớp hiển thị.
+    // CSS nạp qua src/app/(payload)/custom.scss (@import brand.css) — Payload 3 không có admin.css.
     meta: {
-      titleSuffix: '— X Web Platform',
+      titleSuffix: '— XTECH Admin',
+      icons: [
+        { rel: 'icon', type: 'image/png', url: '/brand/xtech-favicon-square.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', url: '/brand/xtech-favicon-square.png' },
+      ],
+    },
+    components: {
+      graphics: {
+        Logo: '@/admin/components/BrandLogo#BrandLogo',
+        Icon: '@/admin/components/BrandIcon#BrandIcon',
+      },
+      beforeLogin: ['@/admin/components/LoginHero#LoginHero'],
+      beforeDashboard: ['@/admin/components/DashboardWelcome#DashboardWelcome'],
     },
   },
   routes: {

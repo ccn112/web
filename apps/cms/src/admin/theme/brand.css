@@ -1,0 +1,244 @@
+/* =============================================================================
+   XTECH — Payload admin theme (light, enterprise, blue/cyan).
+   Spec: handoff/XTECH_PAYLOADCMS_THEME_HANDOFF_V1/THEME_SPEC.md + BRAND_ASSETS.md
+   Chỉ tác động lớp hiển thị — không đổi logic nghiệp vụ. Ưu tiên light UI.
+   ============================================================================= */
+
+:root {
+  /* --- Brand tokens (từ BRAND_ASSETS.md) --- */
+  --x-primary: #173bde;
+  --x-primary-2: #245bff;
+  --x-cyan: #16b7e9;
+  --x-navy: #0f172a;
+  --x-surface: #f6f8fc;
+  --x-elevated: #ffffff;
+  --x-border: #dce5f3;
+  --x-muted: #667085;
+  --x-success: #12b76a;
+  --x-warning: #f59e0b;
+  --x-danger: #ef4444;
+
+  --x-gradient: linear-gradient(135deg, #173bde 0%, #16b7e9 100%);
+  --x-radius-input: 12px;
+  --x-radius-card: 18px;
+  --x-shadow-card: 0 12px 40px rgba(15, 23, 42, 0.06);
+  --x-shadow-hover: 0 16px 48px rgba(23, 59, 222, 0.12);
+  --x-focus-ring: 0 0 0 4px rgba(36, 91, 255, 0.14);
+}
+
+/* Ép cảm giác light theme + map biến brand vào biến Payload (áp cho cả 2 mode) */
+html[data-theme='light'],
+html[data-theme='dark'],
+html {
+  --theme-success-500: var(--x-success);
+  --theme-warning-500: var(--x-warning);
+  --theme-error-500: var(--x-danger);
+}
+
+html {
+  --theme-bg: var(--x-surface);
+}
+
+body {
+  background: var(--x-surface);
+}
+
+/* --- Links & accent ------------------------------------------------------- */
+a,
+.nav__link:hover,
+.step-nav a {
+  color: var(--x-primary);
+}
+
+/* --- Buttons: primary dùng brand gradient --------------------------------- */
+.btn--style-primary:not(.btn--disabled) {
+  background: var(--x-gradient);
+  border-color: transparent;
+  color: #fff;
+  border-radius: var(--x-radius-input);
+  box-shadow: 0 6px 18px rgba(23, 59, 222, 0.22);
+  transition: box-shadow 0.15s ease, transform 0.05s ease;
+}
+.btn--style-primary:not(.btn--disabled):hover {
+  box-shadow: var(--x-shadow-hover);
+}
+.btn--style-primary:not(.btn--disabled):active {
+  transform: translateY(1px);
+}
+.btn {
+  border-radius: var(--x-radius-input);
+}
+
+/* --- Inputs / selects / textarea ------------------------------------------ */
+.field-type input,
+.field-type textarea,
+.field-type .rs__control,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  border-radius: var(--x-radius-input) !important;
+  border-color: var(--x-border);
+}
+.field-type input:focus,
+.field-type textarea:focus,
+.field-type .rs__control--is-focused,
+input:focus {
+  border-color: var(--x-primary-2) !important;
+  box-shadow: var(--x-focus-ring) !important;
+  outline: none;
+}
+
+/* --- Sidebar / nav -------------------------------------------------------- */
+.nav {
+  background: var(--x-elevated);
+  border-right: 1px solid var(--x-border);
+}
+.nav__link {
+  border-radius: 10px;
+}
+.nav__link.active,
+.nav__link[aria-current='page'] {
+  background: rgba(36, 91, 255, 0.08);
+  color: var(--x-primary);
+  font-weight: 600;
+}
+
+/* --- Cards / panels ------------------------------------------------------- */
+.card,
+.collection-list .table,
+.dashboard__card {
+  border-radius: var(--x-radius-card);
+  box-shadow: var(--x-shadow-card);
+  border: 1px solid var(--x-border);
+}
+
+/* --- Tables --------------------------------------------------------------- */
+.table table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table thead th {
+  background: var(--x-surface);
+  color: var(--x-navy);
+  font-weight: 600;
+}
+.table tbody tr:hover {
+  background: rgba(36, 91, 255, 0.04);
+}
+
+/* --- Pills / badges (status) ---------------------------------------------- */
+.pill,
+.status {
+  border-radius: 999px;
+}
+
+/* =============================================================================
+   Login screen — 2 cột, glow công nghệ nhẹ, card form rõ ràng
+   (LoginHero component chèn qua beforeLogin; phần còn lại style ở đây)
+   ============================================================================= */
+.template-minimal.template-minimal--width-normal:has(.x-login-hero),
+body:has(.x-login-hero) {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(36, 91, 255, 0.18), transparent 42%),
+    radial-gradient(circle at 82% 28%, rgba(22, 183, 233, 0.16), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
+}
+
+.x-login-hero {
+  text-align: center;
+  margin: 0 auto 1.5rem;
+  max-width: 460px;
+}
+.x-login-hero__logo {
+  height: 52px;
+  width: auto;
+  margin-bottom: 1.25rem;
+}
+.x-login-hero__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--x-navy);
+  margin: 0 0 0.5rem;
+}
+.x-login-hero__desc {
+  color: var(--x-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Card form login */
+.login__form,
+.login .form-wrap {
+  background: var(--x-elevated);
+  border: 1px solid var(--x-border);
+  border-radius: var(--x-radius-card);
+  box-shadow: var(--x-shadow-card);
+  padding: 2rem;
+  max-width: 460px;
+}
+
+/* =============================================================================
+   Dashboard welcome (DashboardWelcome component qua beforeDashboard)
+   ============================================================================= */
+.x-dash {
+  margin-bottom: 2rem;
+}
+.x-dash__welcome {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--x-radius-card);
+  background: var(--x-gradient);
+  color: #fff;
+  box-shadow: var(--x-shadow-hover);
+}
+.x-dash__welcome img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+.x-dash__welcome h2 {
+  margin: 0 0 0.15rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.x-dash__welcome p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+.x-dash__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.x-dash__card {
+  background: var(--x-elevated);
+  border: 1px solid var(--x-border);
+  border-radius: var(--x-radius-card);
+  box-shadow: var(--x-shadow-card);
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  color: var(--x-navy);
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+.x-dash__card:hover {
+  box-shadow: var(--x-shadow-hover);
+  transform: translateY(-2px);
+}
+.x-dash__card .x-dash__label {
+  color: var(--x-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.x-dash__card .x-dash__value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  color: var(--x-primary);
+}
