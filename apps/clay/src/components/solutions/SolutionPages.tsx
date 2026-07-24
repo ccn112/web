@@ -20,6 +20,7 @@ import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 import { ImageZoom } from "@/components/ImageZoom";
 import { PRODUCT_META } from "@/data/suite-content";
 import { solutionByRoute, type SolutionPage, type SolSection } from "@/data/solution-content";
+import { cn } from "@/lib/utils";
 
 function head(eyebrow: string | undefined, title: string, subtitle?: string, highlight?: string[]): SectionTitle {
   return { eyebrow: eyebrow ?? "", lines: [title], subtitle, highlight };
@@ -77,13 +78,16 @@ function Framed({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function ItemCards({ items }: { items: { title: string; description?: string }[] }) {
+/** Card grid — columns adapt to item count (1 col beside an image, else 2–3)
+ * so nothing looks force-fit into a rigid layout. */
+function ItemCards({ items, cols }: { items: { title: string; description?: string }[]; cols: 1 | 2 | 3 }) {
+  const colClass = cols === 1 ? "" : cols === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2";
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className={cn("grid gap-4", colClass)}>
       {items.map((it, k) => {
         const Ico = iconForItem(it.title);
         return (
-          <Reveal key={it.title} delay={(k % 2) * 0.06}>
+          <Reveal key={it.title} delay={(k % 3) * 0.05}>
             <SpotlightCard className="h-full rounded-2xl">
               <div className="flex h-full items-start gap-3.5 rounded-2xl border border-blue/12 bg-card/70 p-5 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-gold/45">
                 <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-blue/15 bg-gradient-to-br from-blue/12 to-cyan/8 text-blue transition group-hover:border-gold/45">
@@ -142,12 +146,12 @@ function SectionView({ s, i }: { s: SolSection; i: number }) {
         return (
           <div className="mt-8">
             <SplitLayout visual={s.image ? <Framed src={s.image} alt={s.title} /> : null} imageSide={s.layout === "visual-right" ? "right" : "left"}>
-              {s.items?.length ? <ItemCards items={s.items} /> : null}
+              {s.items?.length ? <ItemCards items={s.items} cols={1} /> : null}
             </SplitLayout>
           </div>
         );
       default: // grid
-        return <div className="mt-8">{s.items ? <ItemCards items={s.items} /> : null}</div>;
+        return <div className="mt-8">{s.items ? <ItemCards items={s.items} cols={s.items.length >= 5 ? 3 : 2} /> : null}</div>;
     }
   })();
 
