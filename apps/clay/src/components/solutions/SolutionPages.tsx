@@ -152,7 +152,7 @@ function SectionView({ s, i }: { s: SolSection; i: number }) {
   })();
 
   return (
-    <AmbientSection id={s.sectionId} soft={i % 2 === 1} compact>
+    <AmbientSection id={s.sectionId} soft={i % 2 === 1} city={false} compact className="[&_.bg-grid-tech]:opacity-40">
       <SectionHead title={head(s.eyebrow, s.title, s.description)} />
       {body}
     </AmbientSection>

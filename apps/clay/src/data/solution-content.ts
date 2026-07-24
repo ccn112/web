@@ -301,7 +301,13 @@ export const solutionPages: SolutionPage[] = [
       {
         sectionId: "blueprint", eyebrow: "BLUEPRINT", title: "Blueprint bộ giải pháp", layout: "visual-left",
         image: A("bo-giai-phap-x", "suite-selector-blueprint"),
-        description: "Mỗi bộ giải pháp được thiết kế theo lớp: sản phẩm lõi, tích hợp, dữ liệu và dịch vụ triển khai.",
+        description: "Mỗi bộ giải pháp được thiết kế theo lớp — từ sản phẩm lõi đến dịch vụ triển khai — để lắp ghép nhanh theo bài toán.",
+        items: [
+          { title: "Sản phẩm lõi", description: "Chọn các sản phẩm phù hợp bài toán chính." },
+          { title: "Tích hợp & dữ liệu", description: "Kết nối hệ thống hiện hữu, dữ liệu liên thông." },
+          { title: "Nền tảng dùng chung", description: "Định danh, workflow, cloud và bảo mật." },
+          { title: "Dịch vụ triển khai", description: "Tư vấn, cấu hình, đào tạo và đồng hành." },
+        ],
       },
       {
         sectionId: "real-estate-suite", eyebrow: "NỔI BẬT", title: "Bộ giải pháp cho chủ đầu tư bất động sản", layout: "visual-right",
