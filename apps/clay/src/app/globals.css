@@ -221,6 +221,23 @@
   --sidebar-ring: oklch(0.62 0.2 280);
 }
 
+/* Product page dark hero — force high-contrast text over the tech backdrop.
+   SectionHead defaults to mid-blue (text-blue) which is hard to read on the
+   near-black hero, so we lift the eyebrow, title and highlight gradient. */
+.product-hero h2,
+.product-hero h2.text-blue {
+  color: oklch(0.99 0 0);
+}
+.product-hero .brand-gradient-text {
+  background-image: linear-gradient(100deg, oklch(0.86 0.14 220) 0%, oklch(0.78 0.16 262) 55%, oklch(0.78 0.15 300) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.product-hero .text-blue {
+  color: oklch(0.84 0.11 245);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

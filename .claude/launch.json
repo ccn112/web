@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cms",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@x/cms", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "clay",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@x/clay", "dev"],
+      "port": 3001
+    }
+  ]
+}

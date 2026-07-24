@@ -208,19 +208,31 @@ function JourneyLayout({ s }: { s: ProductSection }) {
   );
 }
 
-/* ---- illustration: real screenshot/dashboard + bullet highlights (zig-zag) ---- */
+/* ---- illustration: real screenshot/dashboard + a balanced "highlights" panel
+   (zig-zag). The left panel is a full-height glass card with numbered feature
+   rows + a decorative tech accent, so it no longer floats unbalanced beside the
+   tall dashboard image. ---- */
 function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
   const visual = s.image ? (
     <Reveal>
-      <div className="relative overflow-hidden rounded-2xl border border-blue/15 bg-card/70 shadow-[0_28px_70px_-40px_var(--accent-blue)]">
-        <Image
-          src={s.image}
-          alt={s.title}
-          width={1200}
-          height={800}
-          sizes="(min-width: 1024px) 46vw, 100vw"
-          className="h-auto w-full object-cover"
+      <div className="group relative">
+        {/* soft brand glow behind the frame for a premium, tech feel */}
+        <div
+          aria-hidden
+          className="absolute -inset-4 -z-10 rounded-[28px] bg-gradient-to-tr from-blue/20 via-cyan/10 to-violet/20 opacity-60 blur-2xl transition duration-500 group-hover:opacity-90"
         />
+        <div className="relative overflow-hidden rounded-2xl border border-blue/15 bg-card/70 shadow-[0_28px_70px_-40px_var(--accent-blue)] transition duration-500 group-hover:-translate-y-1">
+          <Image
+            src={s.image}
+            alt={s.title}
+            width={1200}
+            height={800}
+            sizes="(min-width: 1024px) 46vw, 100vw"
+            className="h-auto w-full object-cover"
+          />
+          {/* sheen sweep */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
+        </div>
       </div>
     </Reveal>
   ) : null;
@@ -228,18 +240,44 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
     <div className="mt-8">
       <SplitLayout visual={visual} imageSide={i % 2 === 0 ? "right" : "left"}>
         {s.bullets?.length ? (
-          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-            {s.bullets.map((b) => (
-              <li key={b} className="flex items-center gap-2.5 text-sm text-foreground/85">
-                <span className="icon-gold inline-flex size-6 shrink-0 items-center justify-center rounded-full">
-                  <Check className="size-3.5" />
-                </span>
-                {b}
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        <GoldCTA cta={s.cta} />
+          <Reveal>
+            <div className="relative flex h-full flex-col justify-center overflow-hidden rounded-2xl border border-blue/12 bg-card/60 p-6 backdrop-blur md:p-8">
+              {/* left accent rail */}
+              <span aria-hidden className="absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-blue via-cyan to-transparent" />
+              <span aria-hidden className="absolute inset-0 -z-10 bg-grid-tech opacity-40 mask-fade-b" />
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue/70">
+                <span className="size-1.5 rounded-full bg-gold" />
+                Điểm nổi bật
+              </p>
+              <ul className="mt-4 flex flex-col divide-y divide-blue/10">
+                {s.bullets.map((b, k) => (
+                  <li key={b} className="group flex items-center gap-3.5 py-3">
+                    <span className="icon-gold inline-flex size-8 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105">
+                      <Check className="size-4" />
+                    </span>
+                    <span className="text-sm font-medium text-foreground/90">{b}</span>
+                    <span className="ml-auto text-xs font-bold tabular-nums text-blue/30">
+                      {String(k + 1).padStart(2, "0")}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {s.cta ? (
+                <div className="mt-6">
+                  <a
+                    href={s.cta.href}
+                    className="btn-gold group inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition hover:brightness-105"
+                  >
+                    {s.cta.label}
+                    <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+                  </a>
+                </div>
+              ) : null}
+            </div>
+          </Reveal>
+        ) : (
+          <GoldCTA cta={s.cta} />
+        )}
       </SplitLayout>
     </div>
   );
@@ -269,14 +307,34 @@ function ProductHero({ s, i }: { s: ProductSection; i: number }) {
   return (
     <section
       id={s.sectionId}
-      className="theme-dark relative isolate overflow-hidden bg-[oklch(0.15_0.02_275)] text-white"
+      className="product-hero theme-dark relative isolate overflow-hidden bg-[oklch(0.17_0.03_265)] text-white"
     >
+      {/* Semantic tech backdrop image (subtle, behind overlays) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <Image
+          src="/images/backgrounds/home/hero-ecosystem.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+        />
+        {/* readability gradient over the image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(10,14,30,0.78) 0%, rgba(10,14,30,0.62) 45%, rgba(10,14,30,0.9) 100%)",
+          }}
+        />
+      </div>
+      {/* Aurora glows */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 -top-40 size-[36rem] rounded-full bg-blue opacity-25 blur-[120px] animate-aurora" />
         <div className="absolute -right-40 top-10 size-[34rem] rounded-full bg-cyan opacity-20 blur-[120px] animate-aurora [animation-delay:3s]" />
         <div className="absolute bottom-[-12rem] left-1/3 size-[30rem] rounded-full bg-violet opacity-20 blur-[120px] animate-aurora [animation-delay:6s]" />
       </div>
-      <div aria-hidden className="absolute inset-0 bg-grid opacity-[0.12] mask-fade-b" />
+      <div aria-hidden className="absolute inset-0 bg-grid opacity-[0.14] mask-fade-b" />
       <div className="relative mx-auto w-full max-w-[1200px] px-4 pt-32 pb-20 md:px-6 md:pt-40 md:pb-24">
         <SectionBody s={s} i={i} />
       </div>
