@@ -9,6 +9,58 @@ const LEGAL_LINKS = [
   { label: "Chính sách cookie", href: "/chinh-sach-cookie" },
 ];
 
+/** Curated footer columns for the corporate site — richer than the header menu
+ * so the four columns balance against the tall company-info block. All hrefs are
+ * verified live routes. */
+const CORP_FOOTER_COLUMNS: { label: string; children: { label: string; href: string }[] }[] = [
+  {
+    label: "Giải pháp",
+    children: [
+      { label: "Tất cả giải pháp", href: "/giai-phap" },
+      { label: "Doanh nghiệp kết nối", href: "/giai-phap/doanh-nghiep-ket-noi" },
+      { label: "Dữ liệu & AI", href: "/giai-phap/du-lieu-va-ai" },
+      { label: "Tự động hóa", href: "/giai-phap/tu-dong-hoa" },
+      { label: "Tích hợp hệ thống", href: "/giai-phap/tich-hop-he-thong" },
+      { label: "Bộ giải pháp X", href: "/bo-giai-phap-x" },
+    ],
+  },
+  {
+    label: "Sản phẩm",
+    children: [
+      { label: "Tất cả sản phẩm", href: "/san-pham" },
+      { label: "X.AI", href: "/san-pham/x-ai" },
+      { label: "XBooking", href: "/san-pham/xbooking" },
+      { label: "FinERP", href: "/san-pham/finerp" },
+      { label: "XBuilding", href: "/san-pham/xbuilding" },
+      { label: "X.Space", href: "/san-pham/x-space" },
+      { label: "Nền tảng dùng chung", href: "/san-pham/nen-tang-dung-chung" },
+    ],
+  },
+  {
+    label: "Dịch vụ",
+    children: [
+      { label: "Tất cả dịch vụ", href: "/dich-vu" },
+      { label: "Tư vấn chiến lược", href: "/dich-vu/tu-van-chien-luoc" },
+      { label: "Phát triển phần mềm", href: "/dich-vu/phat-trien-phan-mem" },
+      { label: "Dữ liệu & AI", href: "/dich-vu/du-lieu-va-ai" },
+      { label: "Vận hành & Hỗ trợ", href: "/dich-vu/van-hanh-va-ho-tro" },
+      { label: "Mô hình triển khai", href: "/trien-khai" },
+    ],
+  },
+  {
+    label: "Công ty & Tri thức",
+    children: [
+      { label: "Về X", href: "/ve-x" },
+      { label: "Đội ngũ", href: "/ve-x/doi-ngu" },
+      { label: "Tuyển dụng", href: "/ve-x/tuyen-dung" },
+      { label: "Khách hàng", href: "/khach-hang" },
+      { label: "Tin tức", href: "/tin-tuc" },
+      { label: "Insights", href: "/insights" },
+      { label: "Liên hệ", href: "/lien-he" },
+    ],
+  },
+];
+
 /** Legal company identity — corporate site only. */
 const COMPANY = {
   name: "CÔNG TY CỔ PHẦN CÔNG NGHỆ X-TECH",
@@ -30,10 +82,12 @@ export function Footer({
   tagline?: string;
   siteCode?: string;
 }) {
-  // Only the primary sections that carry children, capped at 4 columns to keep
-  // the footer clean and balanced (was rendering every menu group → 6+ cols).
-  const columns = items.filter((i) => i.children && i.children.length > 0).slice(0, 4);
   const isCorporate = siteCode === "corporate";
+  // Corporate uses curated, fuller columns (balanced with the company block);
+  // other sites fall back to their menu groups (capped at 4).
+  const columns = isCorporate
+    ? CORP_FOOTER_COLUMNS
+    : items.filter((i) => i.children && i.children.length > 0).slice(0, 4);
   const year = 2026;
 
   return (

@@ -6938,8 +6938,8 @@
       {
         "blockType": "hero",
         "eyebrow": "VỀ X",
-        "title": "Tầm nhìn & sứ mệnh",
-        "description": "Định hướng dài hạn và những giá trị cốt lõi dẫn dắt cách X xây dựng sản phẩm và phục vụ khách hàng.",
+        "title": "Tầm nhìn & Sứ mệnh",
+        "description": "X hướng tới trở thành nền tảng công nghệ, dữ liệu và AI đáng tin cậy cho doanh nghiệp Việt — giúp mỗi tổ chức chuyển đổi số hiệu quả và bền vững.",
         "primaryCTA": {
           "label": "Liên hệ với chúng tôi",
           "href": "/lien-he"
@@ -6952,55 +6952,72 @@
       },
       {
         "blockType": "featureGrid",
-        "title": "Định hướng",
+        "title": "Tầm nhìn & Sứ mệnh",
         "intro": "",
         "items": [
           {
             "title": "Tầm nhìn",
-            "description": "Trở thành hệ sinh thái công nghệ tin cậy cho bất động sản và doanh nghiệp số tại Việt Nam.",
+            "description": "Trở thành nền tảng công nghệ – AI hàng đầu cho doanh nghiệp và ngành bất động sản, nơi dữ liệu và trí tuệ nhân tạo tạo ra giá trị thực.",
             "icon": "eye"
           },
           {
             "title": "Sứ mệnh",
-            "description": "Giúp doanh nghiệp khai thác dữ liệu và AI để vận hành hiệu quả và tăng trưởng bền vững.",
-            "icon": "target"
+            "description": "Giúp doanh nghiệp chuyển đổi số toàn diện: kết nối dữ liệu, tự động hóa quy trình và kích hoạt AI trên một nền tảng thống nhất.",
+            "icon": "rocket"
+          }
+        ],
+        "illustrationAsset": "COR-01"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giá trị cốt lõi",
+        "intro": "Những nguyên tắc định hướng mọi quyết định và sản phẩm của X.",
+        "items": [
+          {
+            "title": "Khách hàng là trung tâm",
+            "description": "Mọi sản phẩm bắt đầu từ bài toán và giá trị của khách hàng.",
+            "icon": "heart"
+          },
+          {
+            "title": "Hiệu quả thực tế",
+            "description": "Ưu tiên kết quả đo được thay vì công nghệ phô trương.",
+            "icon": "trending-up"
+          },
+          {
+            "title": "Đổi mới liên tục",
+            "description": "Không ngừng cải tiến sản phẩm và phương pháp.",
+            "icon": "lightbulb"
+          },
+          {
+            "title": "Chính trực",
+            "description": "Minh bạch, trung thực và giữ cam kết.",
+            "icon": "shield-check"
+          },
+          {
+            "title": "Đồng hành dài hạn",
+            "description": "Gắn bó cùng khách hàng qua từng giai đoạn phát triển.",
+            "icon": "handshake"
           }
         ],
         "illustrationAsset": "COR-02"
       },
       {
-        "blockType": "featureGrid",
-        "title": "Giá trị cốt lõi",
-        "intro": "",
-        "items": [
-          {
-            "title": "Khách hàng làm trọng tâm",
-            "description": "Giải quyết bài toán thực tế, tạo giá trị đo lường được.",
-            "icon": "heart-handshake"
-          },
-          {
-            "title": "Đổi mới thực dụng",
-            "description": "Ứng dụng công nghệ mới một cách thiết thực.",
-            "icon": "lightbulb"
-          },
-          {
-            "title": "Chính trực & minh bạch",
-            "description": "Trung thực trong cam kết và dữ liệu.",
-            "icon": "shield-check"
-          },
-          {
-            "title": "Đồng đội & phát triển",
-            "description": "Học hỏi liên tục và cùng nhau đi xa.",
-            "icon": "users"
-          }
+        "blockType": "processTimeline",
+        "title": "Hành trình chuyển đổi số cùng X",
+        "steps": [
+          "Chiến lược & lộ trình",
+          "Nền tảng dữ liệu",
+          "Số hóa quy trình",
+          "Kích hoạt AI",
+          "Tối ưu liên tục"
         ]
       },
       {
         "blockType": "cta",
-        "title": "Cùng X kiến tạo giá trị dài hạn",
-        "description": "Kết nối để hiểu cách chúng tôi biến định hướng thành kết quả cụ thể.",
+        "title": "Cùng X kiến tạo tương lai số",
+        "description": "Trao đổi với đội ngũ X để xây dựng lộ trình chuyển đổi số phù hợp với doanh nghiệp của bạn.",
         "primaryCTA": {
-          "label": "Liên hệ với chúng tôi",
+          "label": "Đặt lịch tư vấn",
           "href": "/lien-he"
         },
         "secondaryCTA": {
@@ -7031,7 +7048,7 @@
         "blockType": "hero",
         "eyebrow": "VỀ X",
         "title": "Đội ngũ của X",
-        "description": "Đội ngũ kết hợp chuyên gia công nghệ, dữ liệu, AI và tư vấn ngành — cùng chung mục tiêu tạo ra sản phẩm hữu ích và triển khai thành công cho khách hàng.",
+        "description": "Đội ngũ X hợp nhất chuyên gia công nghệ, dữ liệu, AI và tư vấn ngành — cùng chung mục tiêu tạo ra sản phẩm hữu ích và triển khai thành công cho khách hàng doanh nghiệp và bất động sản.",
         "primaryCTA": {
           "label": "Liên hệ với chúng tôi",
           "href": "/lien-he"
@@ -7044,36 +7061,85 @@
       },
       {
         "blockType": "featureGrid",
-        "title": "Văn hóa đội ngũ",
+        "title": "Chuyên môn đội ngũ",
+        "intro": "Năng lực trải rộng từ kỹ thuật lõi đến nghiệp vụ ngành, đủ để đồng hành trọn vòng đời dự án.",
+        "items": [
+          {
+            "title": "Kỹ thuật phần mềm",
+            "description": "Kiến trúc, phát triển web/mobile và tích hợp hệ thống quy mô lớn.",
+            "icon": "code"
+          },
+          {
+            "title": "Dữ liệu & AI",
+            "description": "Nền tảng dữ liệu, phân tích, AI Agent, RAG và tự động hóa.",
+            "icon": "brain"
+          },
+          {
+            "title": "Tư vấn ngành",
+            "description": "Chuyên gia bất động sản, tài chính và vận hành doanh nghiệp.",
+            "icon": "briefcase"
+          },
+          {
+            "title": "Thiết kế sản phẩm",
+            "description": "UX/UI và tư duy sản phẩm lấy người dùng làm trung tâm.",
+            "icon": "palette"
+          },
+          {
+            "title": "Bảo mật & hạ tầng",
+            "description": "Cloud, DevOps, an toàn thông tin và vận hành tin cậy.",
+            "icon": "shield-check"
+          },
+          {
+            "title": "Triển khai & hỗ trợ",
+            "description": "Quản trị dự án, đào tạo và đồng hành sau go-live.",
+            "icon": "headset"
+          }
+        ],
+        "illustrationAsset": "COR-03"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Giá trị & văn hóa",
         "intro": "",
         "items": [
           {
-            "title": "Chuyên môn đa lĩnh vực",
-            "description": "Kỹ sư phần mềm, dữ liệu, AI và chuyên gia nghiệp vụ.",
-            "icon": "users-round"
-          },
-          {
             "title": "Lấy kết quả làm thước đo",
-            "description": "Tập trung vào giá trị thực tế cho khách hàng.",
+            "description": "Tập trung vào giá trị thực tế, đo được cho khách hàng.",
             "icon": "target"
           },
           {
             "title": "Học hỏi liên tục",
-            "description": "Cập nhật công nghệ và phương pháp mới.",
+            "description": "Cập nhật công nghệ và phương pháp mới mỗi ngày.",
             "icon": "graduation-cap"
           },
           {
             "title": "Cộng tác cởi mở",
             "description": "Chia sẻ tri thức và phối hợp xuyên nhóm.",
             "icon": "messages-square"
+          },
+          {
+            "title": "Chính trực & tin cậy",
+            "description": "Minh bạch, cam kết và giữ lời với khách hàng.",
+            "icon": "handshake"
           }
         ],
-        "illustrationAsset": "COR-03"
+        "illustrationAsset": "COR-04"
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Cách đội ngũ đồng hành cùng khách hàng",
+        "steps": [
+          "Lắng nghe & khảo sát",
+          "Thiết kế giải pháp",
+          "Triển khai theo giai đoạn",
+          "Đào tạo & chuyển giao",
+          "Đồng hành & tối ưu"
+        ]
       },
       {
         "blockType": "cta",
         "title": "Gia nhập đội ngũ X",
-        "description": "Xem các vị trí đang tuyển và cùng chúng tôi xây dựng sản phẩm.",
+        "description": "Xem các vị trí đang tuyển và cùng chúng tôi xây dựng sản phẩm công nghệ hữu ích.",
         "primaryCTA": {
           "label": "Xem tuyển dụng",
           "href": "/ve-x/tuyen-dung"
@@ -7105,8 +7171,8 @@
       {
         "blockType": "hero",
         "eyebrow": "VỀ X",
-        "title": "Đối tác của X",
-        "description": "X hợp tác cùng mạng lưới đối tác công nghệ, triển khai và tư vấn để mang lại giải pháp toàn diện và mở rộng giá trị cho khách hàng.",
+        "title": "Hệ sinh thái đối tác",
+        "description": "X hợp tác cùng các đối tác công nghệ, triển khai và tư vấn để mang tới giải pháp trọn gói, tối ưu cho từng doanh nghiệp và dự án.",
         "primaryCTA": {
           "label": "Liên hệ với chúng tôi",
           "href": "/lien-he"
@@ -7119,31 +7185,72 @@
       },
       {
         "blockType": "featureGrid",
-        "title": "Các loại hình hợp tác",
-        "intro": "",
+        "title": "Các loại hình đối tác",
+        "intro": "Mạng lưới đối tác đa dạng giúp X phục vụ khách hàng nhanh và sâu hơn.",
         "items": [
           {
             "title": "Đối tác công nghệ",
-            "description": "Nền tảng hạ tầng, dữ liệu và AI.",
-            "icon": "cpu"
+            "description": "Nền tảng cloud, hạ tầng và công cụ tích hợp cùng hệ sinh thái X.",
+            "icon": "cloud"
           },
           {
             "title": "Đối tác triển khai",
-            "description": "Đồng hành đưa giải pháp vào vận hành.",
-            "icon": "wrench"
+            "description": "Đồng hành đưa giải pháp vào vận hành thực tế tại khách hàng.",
+            "icon": "settings"
           },
           {
             "title": "Đối tác tư vấn",
-            "description": "Tư vấn chiến lược và nghiệp vụ chuyên sâu.",
+            "description": "Chuyên gia ngành cùng thiết kế lộ trình chuyển đổi số.",
             "icon": "briefcase"
           },
           {
-            "title": "Đối tác kinh doanh",
-            "description": "Mở rộng thị trường và kênh phân phối.",
-            "icon": "handshake"
+            "title": "Đối tác kênh",
+            "description": "Mở rộng tiếp cận thị trường và chăm sóc khách hàng khu vực.",
+            "icon": "network"
           }
         ],
-        "illustrationAsset": "COR-01"
+        "illustrationAsset": "COR-05"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lợi ích khi hợp tác cùng X",
+        "intro": "",
+        "items": [
+          {
+            "title": "Nền tảng mở",
+            "description": "API và kiến trúc tích hợp linh hoạt, dễ mở rộng.",
+            "icon": "plug"
+          },
+          {
+            "title": "Hỗ trợ kỹ thuật",
+            "description": "Đội ngũ đồng hành, tài liệu và đào tạo bài bản.",
+            "icon": "headset"
+          },
+          {
+            "title": "Cùng phát triển",
+            "description": "Chia sẻ cơ hội kinh doanh và phát triển thị trường.",
+            "icon": "trending-up"
+          },
+          {
+            "title": "Uy tín thương hiệu",
+            "description": "Đồng hành cùng hệ sinh thái sản phẩm đã kiểm chứng.",
+            "icon": "badge-check"
+          }
+        ],
+        "illustrationAsset": "COR-06"
+      },
+      {
+        "blockType": "cta",
+        "title": "Trở thành đối tác của X",
+        "description": "Cùng xây dựng và mở rộng hệ sinh thái công nghệ cho doanh nghiệp và bất động sản.",
+        "primaryCTA": {
+          "label": "Liên hệ hợp tác",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu sản phẩm",
+          "href": "/san-pham"
+        }
       }
     ],
     "suggestedPrompts": [],
@@ -7167,8 +7274,8 @@
       {
         "blockType": "hero",
         "eyebrow": "VỀ X",
-        "title": "Cơ hội nghề nghiệp tại X",
-        "description": "Gia nhập X để cùng xây dựng sản phẩm công nghệ tạo tác động thật, trong môi trường học hỏi liên tục và cộng tác cởi mở.",
+        "title": "Tuyển dụng tại X",
+        "description": "Gia nhập đội ngũ X để cùng xây dựng những sản phẩm công nghệ, dữ liệu và AI tạo ra giá trị thực cho hàng nghìn doanh nghiệp.",
         "primaryCTA": {
           "label": "Liên hệ với chúng tôi",
           "href": "/lien-he"
@@ -7181,31 +7288,106 @@
       },
       {
         "blockType": "featureGrid",
-        "title": "Vì sao chọn X",
-        "intro": "",
+        "title": "Vì sao gia nhập X",
+        "intro": "Môi trường để bạn phát triển chuyên môn và tạo ra tác động thật.",
         "items": [
           {
-            "title": "Bài toán thực tế",
-            "description": "Làm sản phẩm phục vụ khách hàng thật, quy mô thật.",
-            "icon": "target"
+            "title": "Bài toán thách thức",
+            "description": "Làm việc với sản phẩm quy mô, dữ liệu lớn và AI ứng dụng thực tế.",
+            "icon": "rocket"
           },
           {
-            "title": "Công nghệ hiện đại",
-            "description": "Làm việc với dữ liệu lớn, AI và kiến trúc hiện đại.",
-            "icon": "cpu"
-          },
-          {
-            "title": "Lộ trình phát triển",
-            "description": "Cơ hội học hỏi và thăng tiến rõ ràng.",
-            "icon": "trending-up"
+            "title": "Học hỏi & phát triển",
+            "description": "Lộ trình phát triển rõ ràng, mentor và ngân sách đào tạo.",
+            "icon": "graduation-cap"
           },
           {
             "title": "Văn hóa cởi mở",
-            "description": "Tôn trọng, minh bạch và hỗ trợ lẫn nhau.",
-            "icon": "heart-handshake"
+            "description": "Tôn trọng, minh bạch và trao quyền cho từng cá nhân.",
+            "icon": "messages-square"
+          },
+          {
+            "title": "Chế độ cạnh tranh",
+            "description": "Thu nhập, phúc lợi và môi trường làm việc hấp dẫn.",
+            "icon": "gift"
           }
         ],
-        "illustrationAsset": "COR-02"
+        "illustrationAsset": "COR-03"
+      },
+      {
+        "blockType": "featureGrid",
+        "title": "Lĩnh vực tuyển dụng",
+        "intro": "Chúng tôi luôn tìm kiếm nhân tài ở nhiều lĩnh vực.",
+        "items": [
+          {
+            "title": "Kỹ thuật phần mềm",
+            "description": "Frontend, Backend, Mobile, DevOps.",
+            "icon": "code"
+          },
+          {
+            "title": "Dữ liệu & AI",
+            "description": "Data Engineer, AI/ML, Data Analyst.",
+            "icon": "brain"
+          },
+          {
+            "title": "Sản phẩm & Thiết kế",
+            "description": "Product Manager, UX/UI Designer.",
+            "icon": "palette"
+          },
+          {
+            "title": "Tư vấn & Triển khai",
+            "description": "Solution Consultant, Project Manager.",
+            "icon": "briefcase"
+          },
+          {
+            "title": "Kinh doanh & Marketing",
+            "description": "Sales, Marketing, Customer Success.",
+            "icon": "trending-up"
+          }
+        ],
+        "illustrationAsset": "COR-04"
+      },
+      {
+        "blockType": "processTimeline",
+        "title": "Quy trình ứng tuyển",
+        "steps": [
+          "Gửi hồ sơ (CV)",
+          "Sàng lọc hồ sơ",
+          "Phỏng vấn chuyên môn",
+          "Phỏng vấn văn hóa",
+          "Nhận offer & onboarding"
+        ]
+      },
+      {
+        "blockType": "faq",
+        "title": "Câu hỏi thường gặp",
+        "items": [
+          {
+            "question": "X có tuyển thực tập sinh không?",
+            "answer": "Có. X thường xuyên tuyển thực tập sinh ở các mảng kỹ thuật, dữ liệu và sản phẩm."
+          },
+          {
+            "question": "X có hỗ trợ làm việc từ xa không?",
+            "answer": "Tùy vị trí và giai đoạn dự án, X hỗ trợ mô hình làm việc linh hoạt/hybrid."
+          },
+          {
+            "question": "Gửi hồ sơ ứng tuyển bằng cách nào?",
+            "answer": "Bạn gửi CV qua email lienhe@x-tech.com.vn hoặc trang liên hệ; đội ngũ nhân sự sẽ phản hồi."
+          }
+        ]
+      },
+      {
+        "blockType": "cta",
+        "title": "Ứng tuyển ngay",
+        "description": "Gửi CV của bạn cho chúng tôi — X luôn chào đón những người muốn tạo ra tác động thật bằng công nghệ.",
+        "primaryCTA": {
+          "label": "Gửi hồ sơ ứng tuyển",
+          "href": "/lien-he"
+        },
+        "secondaryCTA": {
+          "label": "Tìm hiểu về đội ngũ",
+          "href": "/ve-x/doi-ngu"
+        }
       }
     ],
     "suggestedPrompts": [],
