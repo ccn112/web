@@ -98,12 +98,21 @@ export async function generateMetadata({
     alternates: { canonical: canon },
   };
   if (title || description) {
+    const isArticle = segs[0] === "insights" && segs.length >= 2;
+    const images = ogImage ? [{ url: ogImage, alt: title ?? undefined }] : undefined;
     meta.openGraph = {
       title: title ?? undefined,
       description: description ?? undefined,
       url: canon,
-      type: segs[0] === "insights" && segs.length >= 2 ? "article" : "website",
-      images: ogImage ? [{ url: ogImage }] : undefined,
+      type: isArticle ? "article" : "website",
+      images,
+    };
+    // Social thumbnail for Facebook / Zalo / Twitter previews.
+    meta.twitter = {
+      card: images ? "summary_large_image" : "summary",
+      title: title ?? undefined,
+      description: description ?? undefined,
+      images: ogImage ? [ogImage] : undefined,
     };
   }
   return meta;

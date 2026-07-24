@@ -102,8 +102,25 @@ export function ArticleDetail({
   relatedProducts?: string[];
   bg?: string;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.title,
+    description: summary,
+    image: item.cover ? [`https://x.vn${item.cover}`] : undefined,
+    datePublished: item.publishedAt,
+    author: { "@type": "Organization", name: item.author ?? "XTECH" },
+    publisher: {
+      "@type": "Organization",
+      name: "CÔNG TY CỔ PHẦN CÔNG NGHỆ X-TECH",
+      logo: { "@type": "ImageObject", url: "https://x.vn/brand/xtech-logo-color-original.png" },
+    },
+    articleSection: item.categoryLabel,
+    keywords: item.tags.join(", "),
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <EditorialHeroShell bg={bg}>
         <div className="grid gap-8 pt-28 pb-12 md:pt-36 md:pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -120,7 +137,7 @@ export function ArticleDetail({
               <MetaRow author={item.author ?? "Đội ngũ XTECH"} publishedAt={item.publishedAt} readTime={item.readTime} light />
             </div>
           </div>
-          <CoverOrThumb cover={item.cover} icon={item.categoryIcon} slug={item.categorySlug} className="hidden aspect-[4/3] w-full rounded-2xl lg:block" />
+          <CoverOrThumb cover={item.cover} alt={item.title} icon={item.categoryIcon} slug={item.categorySlug} className="hidden aspect-[4/3] w-full rounded-2xl lg:block" />
         </div>
       </EditorialHeroShell>
 
