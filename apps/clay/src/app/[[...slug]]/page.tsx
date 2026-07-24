@@ -14,6 +14,8 @@ import { productSectionsForRoute } from "@/data/product-content";
 import { ImplPages } from "@/components/impl/ImplPages";
 import { hasImplRoute } from "@/data/impl-content";
 import { SuitePages } from "@/components/suites/SuitePages";
+import { SolutionPages } from "@/components/solutions/SolutionPages";
+import { hasSolutionRoute } from "@/data/solution-content";
 import { hasSuiteRoute } from "@/data/suite-content";
 import { CasePages } from "@/components/cases/CasePages";
 import { hasCaseRoute } from "@/data/case-content";
@@ -165,7 +167,16 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     );
   }
 
-  // Bespoke corporate Solution Suites (SET C05) — /bo-giai-phap-x + suite pages.
+  // Bespoke corporate Solution menu (SET G02) — /giai-phap/* + /bo-giai-phap-x landing.
+  if (siteCode === "corporate" && hasSolutionRoute(path)) {
+    return (
+      <SiteShell site={site} menu={menu?.items ?? []}>
+        <SolutionPages route={path} />
+      </SiteShell>
+    );
+  }
+
+  // Bespoke corporate Solution Suites (SET C05) — /bo-giai-phap-x suite sub-pages.
   if (siteCode === "corporate" && hasSuiteRoute(path)) {
     return (
       <SiteShell site={site} menu={menu?.items ?? []}>
