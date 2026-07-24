@@ -17,6 +17,7 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import type { PostDoc } from "@x/shared-types";
 import { Container } from "@/components/primitives";
 import { Reveal, AmbientSection, GlassCard } from "@/components/corporate/about-kit";
+import { ShinyText } from "@/components/reactbits/ShinyText";
 import { C02Timeline } from "@/components/services/c02/kit";
 import Image from "next/image";
 import { SectionHead, HomeIcon, IconTile, KeywordLine, DiagramImage, SplitLayout } from "./kit";
@@ -96,7 +97,7 @@ function Hero() {
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/85 backdrop-blur">
               <span className="size-1.5 rounded-full bg-gold" />
-              {homeHero.eyebrow}
+              <ShinyText text={homeHero.eyebrow} />
             </span>
           </Reveal>
           <Reveal delay={0.08}>

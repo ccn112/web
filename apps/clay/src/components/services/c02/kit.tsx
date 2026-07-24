@@ -12,6 +12,7 @@ import type { ServiceSectionItem, ServiceSectionOutcome } from "@x/shared-types"
 import { Container } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import { Reveal, GlassCard } from "@/components/corporate/about-kit";
+import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 
 /* kebab-case ("bar-chart-3") -> PascalCase ("BarChart3") for lucide's `icons` record. */
 function pascal(name: string): string {
@@ -109,6 +110,7 @@ export function CapabilityCard({
   const Icon = iconFor(item, index);
   const rev = align === "right";
   return (
+    <SpotlightCard className="rounded-2xl">
     <GlassCard className="p-5 transition duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[0_20px_50px_-24px_var(--accent-gold)]">
       <div className={cn("flex items-start gap-4", rev && "flex-row-reverse text-right")}>
         <span className="relative mt-0.5 inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue to-cyan text-white">
@@ -126,6 +128,7 @@ export function CapabilityCard({
         </div>
       </div>
     </GlassCard>
+    </SpotlightCard>
   );
 }
 

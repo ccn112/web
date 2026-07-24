@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/primitives";
 import { Reveal } from "@/components/reveal";
+import { SplitText } from "@/components/reactbits/SplitText";
+import { ShinyText } from "@/components/reactbits/ShinyText";
 import { IconNode } from "./about-kit";
 import { PRODUCTS, PLATFORM } from "./about-content";
 import {
@@ -55,12 +57,12 @@ export function AboutXtech({ heroBackground }: { heroBackground?: string } = {})
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground backdrop-blur">
                 <span className="size-1.5 rounded-full bg-cyan" />
-                XTECH
+                <ShinyText text="XTECH" />
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-[4rem]">
-                Nền tảng công nghệ cho doanh nghiệp số
+                <SplitText text="Nền tảng công nghệ cho doanh nghiệp số" />
               </h1>
             </Reveal>
             <Reveal delay={160}>
