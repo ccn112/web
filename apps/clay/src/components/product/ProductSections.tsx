@@ -239,7 +239,7 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
   return (
     <div className="mt-8">
       <SplitLayout visual={visual} imageSide={i % 2 === 0 ? "right" : "left"}>
-        {s.bullets?.length ? (
+        {s.features?.length || s.bullets?.length ? (
           <Reveal>
             <div className="relative flex h-full flex-col justify-center overflow-hidden rounded-2xl border border-blue/12 bg-card/60 p-6 backdrop-blur md:p-8">
               {/* left accent rail */}
@@ -249,19 +249,43 @@ function IllustrationLayout({ s, i }: { s: ProductSection; i: number }) {
                 <span className="size-1.5 rounded-full bg-gold" />
                 Điểm nổi bật
               </p>
-              <ul className="mt-4 flex flex-col divide-y divide-blue/10">
-                {s.bullets.map((b, k) => (
-                  <li key={b} className="group flex items-center gap-3.5 py-3">
-                    <span className="icon-gold inline-flex size-8 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105">
-                      <Check className="size-4" />
-                    </span>
-                    <span className="text-sm font-medium text-foreground/90">{b}</span>
-                    <span className="ml-auto text-xs font-bold tabular-nums text-blue/30">
-                      {String(k + 1).padStart(2, "0")}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {s.panelNote ? (
+                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{s.panelNote}</p>
+              ) : null}
+
+              {s.features?.length ? (
+                <ul className="mt-4 flex flex-col divide-y divide-blue/10">
+                  {s.features.map((f, k) => (
+                    <li key={f.label} className="group flex items-start gap-3.5 py-3.5">
+                      <span className="icon-gold mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105">
+                        <Check className="size-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold tracking-tight text-blue">{f.label}</p>
+                        <p className="mt-0.5 text-[13px] leading-relaxed text-muted-foreground">{f.benefit}</p>
+                      </div>
+                      <span className="ml-auto pl-2 text-xs font-bold tabular-nums text-blue/25">
+                        {String(k + 1).padStart(2, "0")}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <ul className="mt-4 flex flex-col divide-y divide-blue/10">
+                  {s.bullets!.map((b, k) => (
+                    <li key={b} className="group flex items-center gap-3.5 py-3">
+                      <span className="icon-gold inline-flex size-8 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105">
+                        <Check className="size-4" />
+                      </span>
+                      <span className="text-sm font-medium text-foreground/90">{b}</span>
+                      <span className="ml-auto text-xs font-bold tabular-nums text-blue/30">
+                        {String(k + 1).padStart(2, "0")}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               {s.cta ? (
                 <div className="mt-6">
                   <a

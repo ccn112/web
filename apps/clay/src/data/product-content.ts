@@ -26,6 +26,10 @@ export type ProductItem = {
 
 export type ProductOutcome = { title: string; description: string; icon: string };
 
+/** A capability highlight beside an illustration: a short label + a one-line
+ * benefit (the outcome the reader gets), so each feature answers "so what?". */
+export type ProductFeature = { label: string; benefit: string };
+
 export type ProductSection = {
   sectionId: string;
   routes: string[];
@@ -42,6 +46,12 @@ export type ProductSection = {
   image?: string;
   /** For layout "illustration": bullet highlights shown beside the image. */
   bullets?: string[];
+  /** For layout "illustration": richer feature rows (label + benefit line).
+   * Preferred over `bullets` — each row states the outcome for the reader. */
+  features?: ProductFeature[];
+  /** For layout "illustration": short reason a reader should care, shown as a
+   * lead-in above the feature list ("what you get on this screen"). */
+  panelNote?: string;
 };
 
 const c03Sections: ProductSection[] = [
@@ -367,7 +377,14 @@ const c03Sections: ProductSection[] = [
     subtitle: "Theo dõi doanh thu, chi phí, lợi nhuận, dòng tiền và công nợ theo thời gian thực trên một màn hình.",
     layout: "illustration",
     image: "/products/finerp/ferp-02-finance.png",
-    bullets: ["Doanh thu", "Chi phí", "Lợi nhuận", "Dòng tiền", "Công nợ", "So sánh kỳ"],
+    panelNote: "Một màn hình điều hành thay cho hàng chục báo cáo rời rạc — lãnh đạo nắm sức khỏe tài chính trong 30 giây.",
+    features: [
+      { label: "Doanh thu & chi phí", benefit: "Bức tranh thu – chi toàn công ty theo kỳ, không chờ tổng hợp thủ công." },
+      { label: "Lợi nhuận theo chiều", benefit: "Biết lãi/lỗ theo phòng ban, dự án để quyết định đúng chỗ." },
+      { label: "Dòng tiền", benefit: "Thấy rõ tiền đang ở đâu để chủ động cân đối thanh khoản." },
+      { label: "Công nợ", benefit: "Cảnh báo phải thu/phải trả, giảm nợ xấu và sót hạn." },
+      { label: "So sánh kỳ", benefit: "Đối chiếu kỳ trước để phát hiện xu hướng bất thường sớm." },
+    ],
     items: [],
   },
   {
@@ -378,7 +395,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "Nhìn rõ dòng tiền vào – ra, phải thu và cảnh báo quá hạn để chủ động thanh khoản.",
     layout: "illustration",
     image: "/products/finerp/ferp-03-cashflow.png",
-    bullets: ["Dòng tiền vào", "Dòng tiền ra", "Phải thu", "Quá hạn", "Dự báo thanh khoản"],
+    panelNote: "Chủ động dòng tiền thay vì bị động chạy theo — biết trước khi nào thiếu hụt để xoay xở kịp.",
+    features: [
+      { label: "Dòng tiền vào – ra", benefit: "Theo dõi thu chi theo ngày/tuần, không còn 'mù' dòng tiền." },
+      { label: "Phải thu", benefit: "Danh sách công nợ theo khách và tuổi nợ, ưu tiên thu đúng chỗ." },
+      { label: "Cảnh báo quá hạn", benefit: "Nhắc tự động khoản đến hạn/quá hạn, giảm thất thoát." },
+      { label: "Dự báo thanh khoản", benefit: "Ước lượng số dư sắp tới để lên kế hoạch vay/đầu tư sớm." },
+    ],
     items: [],
   },
   {
@@ -389,7 +412,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "Số hóa hóa đơn, phiếu thu chi, bút toán với luồng phê duyệt và đối soát chặt chẽ.",
     layout: "illustration",
     image: "/products/finerp/ferp-05-accounting.png",
-    bullets: ["Hóa đơn", "Phiếu thu", "Phiếu chi", "Bút toán", "Phê duyệt", "Đối soát"],
+    panelNote: "Chứng từ số hóa và luồng duyệt rõ ràng — kế toán nhanh hơn, sạch hơn, sẵn sàng cho kiểm toán.",
+    features: [
+      { label: "Hóa đơn & phiếu thu/chi", benefit: "Lập, lưu và tra cứu chứng từ tập trung, hết cảnh tìm giấy tờ." },
+      { label: "Bút toán tự động", benefit: "Sinh bút toán từ nghiệp vụ, giảm sai sót nhập tay." },
+      { label: "Phê duyệt đa cấp", benefit: "Luồng trình ký minh bạch, biết chứng từ đang ở đâu." },
+      { label: "Đối soát", benefit: "So khớp ngân hàng và công nợ nhanh, chốt sổ đúng hạn." },
+    ],
     items: [],
   },
   {
@@ -400,7 +429,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "So sánh ngân sách với thực chi theo phòng ban và dự án, phát hiện chênh lệch kịp thời.",
     layout: "illustration",
     image: "/products/finerp/ferp-04-budget.png",
-    bullets: ["Ngân sách", "Thực tế", "Chênh lệch", "Theo phòng ban", "Theo dự án"],
+    panelNote: "Kiểm soát chi tiêu ngay khi phát sinh — chặn vượt ngân sách trước khi tiền ra khỏi túi.",
+    features: [
+      { label: "Ngân sách vs thực tế", benefit: "Đối chiếu tức thời, thấy ngay khoản nào đang 'ăn' vào ngân sách." },
+      { label: "Chênh lệch", benefit: "Highlight khoản vượt/hụt để can thiệp kịp thời." },
+      { label: "Theo phòng ban", benefit: "Gắn trách nhiệm ngân sách tới từng bộ phận." },
+      { label: "Theo dự án", benefit: "Biết dự án nào tiêu đúng kế hoạch, dự án nào rủi ro." },
+    ],
     items: [],
   },
   {
@@ -411,7 +446,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "Chuẩn hóa quy trình từ yêu cầu mua, báo giá, đơn mua đến theo dõi giao hàng và nhà cung cấp.",
     layout: "illustration",
     image: "/products/finerp/ferp-06-procurement.png",
-    bullets: ["Yêu cầu mua", "Báo giá", "Đơn mua", "Nhà cung cấp", "Giao hàng"],
+    panelNote: "Mua hàng minh bạch từ đề xuất tới nhận hàng — kiểm soát chi phí và chống thất thoát.",
+    features: [
+      { label: "Yêu cầu mua", benefit: "Chuẩn hóa đề xuất, duyệt đúng thẩm quyền trước khi mua." },
+      { label: "Báo giá & so sánh", benefit: "Đối chiếu nhiều nhà cung cấp để chọn giá tốt nhất." },
+      { label: "Đơn mua", benefit: "Theo dõi tiến độ đơn hàng, không sót cam kết chi." },
+      { label: "Nhà cung cấp & giao hàng", benefit: "Đánh giá NCC và kiểm soát nhận hàng đúng – đủ – đúng hẹn." },
+    ],
     items: [],
   },
   {
@@ -422,7 +463,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "Kiểm soát nhập – xuất – tồn và vòng đời máy móc, phương tiện, thiết bị.",
     layout: "illustration",
     image: "/products/finerp/ferp-07-warehouse.png",
-    bullets: ["Nhập kho", "Tồn kho", "Xuất kho", "Máy móc", "Phương tiện", "Thiết bị"],
+    panelNote: "Nhìn rõ hàng tồn và tài sản thật – ảo khớp nhau, giảm ứ đọng vốn và thất thoát.",
+    features: [
+      { label: "Nhập – xuất – tồn", benefit: "Tồn kho thời gian thực, hết cảnh lệch sổ với thực tế." },
+      { label: "Cảnh báo tồn", benefit: "Nhắc tồn tối thiểu/quá hạn để không đứt hàng hay ứ vốn." },
+      { label: "Máy móc & phương tiện", benefit: "Theo dõi tài sản theo vị trí và tình trạng sử dụng." },
+      { label: "Thiết bị", benefit: "Gắn tài sản với bộ phận, phục vụ khấu hao và bảo trì." },
+    ],
     items: [],
   },
   {
@@ -433,7 +480,13 @@ const c03Sections: ProductSection[] = [
     subtitle: "Theo dõi ngân sách, chi phí thực tế, cam kết chi và hiệu quả theo tiến độ từng dự án.",
     layout: "illustration",
     image: "/products/finerp/ferp-08-project.png",
-    bullets: ["Ngân sách", "Chi phí thực tế", "Cam kết chi", "Hiệu quả", "Tiến độ"],
+    panelNote: "Biết dự án thật sự lãi hay lỗ ngay trong khi chạy — không đợi quyết toán mới ngã ngửa.",
+    features: [
+      { label: "Ngân sách dự án", benefit: "Đặt hạn mức chi cho từng dự án và bám sát theo giai đoạn." },
+      { label: "Chi phí thực tế", benefit: "Gom mọi chi phí về đúng dự án, thấy giá thành thật." },
+      { label: "Cam kết chi", benefit: "Tính cả khoản đã ký chưa xuất tiền để không vỡ kế hoạch." },
+      { label: "Hiệu quả & tiến độ", benefit: "Đối chiếu chi phí với tiến độ để cảnh báo dự án rủi ro sớm." },
+    ],
     items: [],
   },
   {
