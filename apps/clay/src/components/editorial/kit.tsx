@@ -29,6 +29,7 @@ export type EditorialItem = {
   readTime?: string;
   featured?: boolean;
   pinned?: boolean;
+  cover?: string; // public path to a cover illustration (falls back to gradient thumb)
 };
 
 /** Structured article body block (rendered by ArticleDetail). */
@@ -36,7 +37,31 @@ export type ArticleBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "quote"; text: string; cite?: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "image"; src: string; alt?: string; caption?: string };
+
+/** Cover illustration for cards/hero — real image when provided, else the
+ * category gradient thumb so nothing looks empty. */
+export function CoverOrThumb({
+  cover,
+  icon,
+  slug,
+  className,
+}: {
+  cover?: string;
+  icon: string;
+  slug: string;
+  className?: string;
+}) {
+  if (cover) {
+    return (
+      <div className={cn("relative overflow-hidden bg-card", className)}>
+        <Image src={cover} alt="" fill sizes="(min-width:1024px) 40vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+      </div>
+    );
+  }
+  return <CategoryThumb icon={icon} slug={slug} className={className} />;
+}
 
 /* ---------- helpers ---------- */
 
@@ -132,7 +157,7 @@ export function ArticleCard({ item, delay = 0 }: { item: EditorialItem; delay?: 
         href={item.href}
         className="group flex h-full flex-col overflow-hidden rounded-2xl border border-blue/12 bg-card/80 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_24px_60px_-30px_var(--accent-blue)]"
       >
-        <CategoryThumb icon={item.categoryIcon} slug={item.categorySlug} className="aspect-[16/9] w-full" />
+        <CoverOrThumb cover={item.cover} icon={item.categoryIcon} slug={item.categorySlug} className="aspect-[16/9] w-full" />
         <div className="flex flex-1 flex-col p-5">
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-cyan">{item.categoryLabel}</span>
@@ -157,7 +182,7 @@ export function FeaturedCard({ item }: { item: EditorialItem }) {
       href={item.href}
       className="group grid overflow-hidden rounded-3xl border border-white/12 bg-white/5 backdrop-blur transition hover:border-gold/40 sm:grid-cols-2"
     >
-      <CategoryThumb icon={item.categoryIcon} slug={item.categorySlug} className="min-h-[220px] w-full" />
+      <CoverOrThumb cover={item.cover} icon={item.categoryIcon} slug={item.categorySlug} className="min-h-[220px] w-full" />
       <div className="flex flex-col justify-center p-6 md:p-8">
         <span className="w-fit rounded-full bg-blue/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-cyan">
           {item.categoryLabel}

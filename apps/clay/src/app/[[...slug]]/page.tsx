@@ -18,7 +18,7 @@ import { hasSuiteRoute } from "@/data/suite-content";
 import { CasePages } from "@/components/cases/CasePages";
 import { hasCaseRoute } from "@/data/case-content";
 import { InsightsPages } from "@/components/insights/InsightsPages";
-import { hasInsightRoute } from "@/data/insights-content";
+import { hasInsightRoute, insightBySlug } from "@/data/insights-content";
 import { NewsPages } from "@/components/news/NewsPages";
 import { hasNewsRoute } from "@/data/news-content";
 import { LeadPages } from "@/components/lead/LeadPages";
@@ -69,15 +69,24 @@ export async function generateMetadata({
   let index = page?.seo?.index ?? true;
   let follow = page?.seo?.follow ?? true;
 
-  // Insights article (/insights/<slug>) has no CMS page — pull its own SEO.
+  let ogImage: string | undefined;
+
+  // Insights article (/insights/<slug>): static curated article first, then CMS.
   if (!page && segs[0] === "insights" && segs[1] !== "tag" && segs.length >= 2) {
-    const post = await cms.getPost(siteCode, segs[segs.length - 1]!);
-    if (post) {
-      title = post.seo?.metaTitle ?? post.title;
-      description = post.seo?.metaDescription ?? post.excerpt;
-      canonical = post.seo?.canonical;
-      index = post.seo?.index ?? true;
-      follow = post.seo?.follow ?? true;
+    const article = insightBySlug(segs[segs.length - 1]!);
+    if (article) {
+      title = article.title;
+      description = article.summary;
+      ogImage = article.cover;
+    } else {
+      const post = await cms.getPost(siteCode, segs[segs.length - 1]!);
+      if (post) {
+        title = post.seo?.metaTitle ?? post.title;
+        description = post.seo?.metaDescription ?? post.excerpt;
+        canonical = post.seo?.canonical;
+        index = post.seo?.index ?? true;
+        follow = post.seo?.follow ?? true;
+      }
     }
   }
 
@@ -94,6 +103,7 @@ export async function generateMetadata({
       description: description ?? undefined,
       url: canon,
       type: segs[0] === "insights" && segs.length >= 2 ? "article" : "website",
+      images: ogImage ? [{ url: ogImage }] : undefined,
     };
   }
   return meta;

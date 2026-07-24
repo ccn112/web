@@ -45,6 +45,7 @@ function toItem(a: InsightArticle): EditorialItem {
     publishedAt: a.publishedAt,
     readTime: a.readTime,
     featured: a.featured,
+    cover: a.cover,
   };
 }
 

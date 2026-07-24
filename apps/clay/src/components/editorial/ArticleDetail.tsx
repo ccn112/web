@@ -8,13 +8,14 @@
  */
 
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Bookmark, Calendar, Clock, Link2, Quote, Tag } from "lucide-react";
 import { Reveal } from "@/components/corporate/about-kit";
 import { PRODUCT_META } from "@/data/suite-content";
 import {
   ArticleCard,
   Breadcrumbs,
-  CategoryThumb,
+  CoverOrThumb,
   EditorialHeroShell,
   MetaRow,
   NewsletterBox,
@@ -48,6 +49,13 @@ function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                 </li>
               ))}
             </ul>
+          );
+        if (b.type === "image")
+          return (
+            <figure key={i} className="my-2 overflow-hidden rounded-2xl border border-blue/12 bg-card/70">
+              <Image src={b.src} alt={b.alt ?? ""} width={1200} height={800} sizes="(min-width:1024px) 720px, 100vw" className="h-auto w-full object-cover" />
+              {b.caption ? <figcaption className="px-4 py-2.5 text-center text-sm text-muted-foreground">{b.caption}</figcaption> : null}
+            </figure>
           );
         return <p key={i} className="text-base leading-relaxed text-muted-foreground">{b.text}</p>;
       })}
@@ -112,7 +120,7 @@ export function ArticleDetail({
               <MetaRow author={item.author ?? "Đội ngũ XTECH"} publishedAt={item.publishedAt} readTime={item.readTime} light />
             </div>
           </div>
-          <CategoryThumb icon={item.categoryIcon} slug={item.categorySlug} className="hidden aspect-[4/3] w-full lg:block" />
+          <CoverOrThumb cover={item.cover} icon={item.categoryIcon} slug={item.categorySlug} className="hidden aspect-[4/3] w-full rounded-2xl lg:block" />
         </div>
       </EditorialHeroShell>
 
