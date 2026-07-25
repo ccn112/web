@@ -1,0 +1,29 @@
+{
+  "emailTemplates": [
+    {
+      "templateKey": "lead_received",
+      "audience": "customer",
+      "triggerStatus": "NEW",
+      "subject": "XTECH đã nhận được yêu cầu tư vấn của {{customer_name}}"
+    },
+    {
+      "templateKey": "qualification_question",
+      "audience": "customer",
+      "triggerStatus": "NEED_MORE_INFORMATION",
+      "subject": "XTECH cần thêm thông tin để đề xuất đúng giải pháp"
+    },
+    {
+      "templateKey": "ai_recommendation",
+      "audience": "customer",
+      "triggerStatus": "AI_RECOMMENDATION_SENT",
+      "subject": "Đề xuất sơ bộ từ XTECH cho {{company_name}}"
+    },
+    {
+      "templateKey": "human_ready_internal",
+      "audience": "consultant",
+      "triggerStatus": "HUMAN_READY",
+      "subject": "[LEAD ƯU TIÊN] {{company_name}} – {{primary_need}}"
+    }
+  ],
+  "resumeUrl": "https://x-tech.com.vn/tu-van/tiep-tuc?t={{signedResumeToken}}"
+}

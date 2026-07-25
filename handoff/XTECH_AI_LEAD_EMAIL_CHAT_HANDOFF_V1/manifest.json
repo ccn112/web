@@ -1,0 +1,15 @@
+{
+  "package": "XTECH_AI_LEAD_EMAIL_CHAT_HANDOFF_V1",
+  "channels": [
+    "web-chat",
+    "email",
+    "consultant"
+  ],
+  "identity": [
+    "deviceId",
+    "contactId",
+    "leadId",
+    "conversationId"
+  ],
+  "security": "signed token + email verification on new device"
+}
