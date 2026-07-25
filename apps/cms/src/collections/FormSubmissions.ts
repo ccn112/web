@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { deleteAdmins, submissionsCreate, submissionsRead } from '../access/index'
+import { notifyLeadSubmission } from '../hooks/notifyLeadSubmission'
 
 export const FormSubmissions: CollectionConfig = {
   slug: 'form-submissions',
@@ -14,6 +15,11 @@ export const FormSubmissions: CollectionConfig = {
     read: submissionsRead,
     update: deleteAdmins,
     delete: deleteAdmins,
+  },
+  hooks: {
+    // Notify staff by email on every new lead. Persistence already happened;
+    // email failures are swallowed inside the hook so they never fail the request.
+    afterChange: [notifyLeadSubmission],
   },
   fields: [
     { name: 'form', type: 'relationship', relationTo: 'forms', required: true },

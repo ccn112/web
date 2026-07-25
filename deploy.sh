@@ -101,6 +101,20 @@ ok "Tìm thấy cấu hình clay: ${CLAY_ENV#$ROOT/}"
 DATABASE_URL="$(grep -E '^DATABASE_URL=' "$ROOT/.env" | head -n1 | sed -E 's/^DATABASE_URL=//; s/^["'\'']//; s/["'\'']$//')"
 [[ -n "$DATABASE_URL" ]] || die "Không đọc được DATABASE_URL trong .env"
 
+# -- Kiểm tra cấu hình EMAIL (thông báo lead form contact/đặt lịch tư vấn) -----
+# CMS gửi mail khi có lead qua SMTP (MAIL_* trong .env). Thiếu MAIL_HOST -> CMS
+# tự fallback console adapter: LƯU CMS vẫn chạy nhưng KHÔNG có mail thông báo.
+if grep -qE '^MAIL_HOST=..*' "$ROOT/.env"; then
+  ok "SMTP đã cấu hình (MAIL_HOST=$(grep -E '^MAIL_HOST=' "$ROOT/.env" | head -n1 | sed -E 's/^MAIL_HOST=//; s/["'\'']//g'))"
+  if grep -qE '^LEAD_NOTIFY_TO=..*' "$ROOT/.env"; then
+    ok "Người nhận lead: $(grep -E '^LEAD_NOTIFY_TO=' "$ROOT/.env" | head -n1 | sed -E 's/^LEAD_NOTIFY_TO=//; s/["'\'']//g')"
+  else
+    warn "Chưa đặt LEAD_NOTIFY_TO trong .env — mail lead sẽ fallback về MAIL_TEST_TO_ADDRESS/SEED_ADMIN_EMAIL."
+  fi
+else
+  warn "Chưa cấu hình MAIL_HOST trong .env — form vẫn LƯU CMS nhưng KHÔNG gửi mail thông báo lead."
+fi
+
 # ---- 2. Đồng bộ code = đúng như local (origin/$BRANCH) ----------------------
 log "Đồng bộ code: origin/$BRANCH"
 git fetch origin --prune

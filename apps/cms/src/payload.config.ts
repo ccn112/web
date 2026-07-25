@@ -2,6 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { config as loadEnv } from 'dotenv'
@@ -44,6 +45,29 @@ const storagePlugins = useS3
     ]
   : []
 
+/**
+ * SMTP email transport (Elastic Email in prod). Only wired when MAIL_HOST is set,
+ * so local/dev without SMTP falls back to Payload's built-in console adapter.
+ */
+const email = process.env.MAIL_HOST
+  ? nodemailerAdapter({
+      defaultFromAddress: process.env.MAIL_FROM_ADDRESS ?? 'hello@xhub.com.vn',
+      defaultFromName: process.env.MAIL_FROM_NAME ?? 'XTECH',
+      // Don't block CMS boot if the SMTP verify handshake is slow/refused; the
+      // first real send surfaces any credential problem in the logs instead.
+      skipVerify: true,
+      transportOptions: {
+        host: process.env.MAIL_HOST,
+        port: Number(process.env.MAIL_PORT ?? 587),
+        // Elastic Email on 2525/587 uses STARTTLS (secure=false); 465 uses implicit TLS.
+        secure: Number(process.env.MAIL_PORT ?? 587) === 465,
+        auth: process.env.MAIL_USERNAME
+          ? { user: process.env.MAIL_USERNAME, pass: process.env.MAIL_PASSWORD }
+          : undefined,
+      },
+    })
+  : undefined
+
 export default buildConfig({
   // The admin panel is gated to authenticated staff via Users.access.admin (canAccessAdmin).
   admin: {
@@ -73,6 +97,7 @@ export default buildConfig({
   },
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections,
+  ...(email ? { email } : {}),
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? 'INSECURE_DEV_SECRET_CHANGE_ME',
   typescript: {
