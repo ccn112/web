@@ -85,6 +85,15 @@ export interface Config {
     'chat-sessions': ChatSession;
     'chat-users': ChatUser;
     'chat-usage': ChatUsage;
+    leads: Lead;
+    'lead-devices': LeadDevice;
+    'lead-conversations': LeadConversation;
+    'lead-messages': LeadMessage;
+    'resume-tokens': ResumeToken;
+    'email-templates': EmailTemplate;
+    consultants: Consultant;
+    'consultant-assignments': ConsultantAssignment;
+    'lead-activities': LeadActivity;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -110,6 +119,15 @@ export interface Config {
     'chat-sessions': ChatSessionsSelect<false> | ChatSessionsSelect<true>;
     'chat-users': ChatUsersSelect<false> | ChatUsersSelect<true>;
     'chat-usage': ChatUsageSelect<false> | ChatUsageSelect<true>;
+    leads: LeadsSelect<false> | LeadsSelect<true>;
+    'lead-devices': LeadDevicesSelect<false> | LeadDevicesSelect<true>;
+    'lead-conversations': LeadConversationsSelect<false> | LeadConversationsSelect<true>;
+    'lead-messages': LeadMessagesSelect<false> | LeadMessagesSelect<true>;
+    'resume-tokens': ResumeTokensSelect<false> | ResumeTokensSelect<true>;
+    'email-templates': EmailTemplatesSelect<false> | EmailTemplatesSelect<true>;
+    consultants: ConsultantsSelect<false> | ConsultantsSelect<true>;
+    'consultant-assignments': ConsultantAssignmentsSelect<false> | ConsultantAssignmentsSelect<true>;
+    'lead-activities': LeadActivitiesSelect<false> | LeadActivitiesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1240,6 +1258,371 @@ export interface ChatUsage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "leads".
+ */
+export interface Lead {
+  id: string;
+  fullName?: string | null;
+  email: string;
+  phone?: string | null;
+  company?: string | null;
+  jobTitle?: string | null;
+  source?: ('web-form' | 'ai-chat' | 'email' | 'consultant') | null;
+  siteCode?: string | null;
+  formCode?: string | null;
+  status:
+    | 'NEW'
+    | 'AI_QUALIFYING'
+    | 'NEED_MORE_INFORMATION'
+    | 'AI_RECOMMENDATION_SENT'
+    | 'WAITING_CUSTOMER'
+    | 'HUMAN_READY'
+    | 'ASSIGNED'
+    | 'CONTACTED'
+    | 'MEETING_BOOKED'
+    | 'PROPOSAL'
+    | 'NURTURE'
+    | 'UNSUBSCRIBED'
+    | 'CLOSED_LOST';
+  /**
+   * Độ hoàn chỉnh hồ sơ (0–100).
+   */
+  score?: number | null;
+  primaryNeed?: string | null;
+  businessModel?: string | null;
+  userScale?: string | null;
+  currentSystems?: string | null;
+  departments?: string | null;
+  urgency?: string | null;
+  targetTimeline?: string | null;
+  infrastructure?: string | null;
+  demoOrQuote?: string | null;
+  decisionMaker?: string | null;
+  assignedConsultant?: (string | null) | Consultant;
+  lastConversation?: (string | null) | LeadConversation;
+  consent?: boolean | null;
+  unsubscribed?: boolean | null;
+  emailVerifiedAt?: string | null;
+  notes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultants".
+ */
+export interface Consultant {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string | null;
+  active?: boolean | null;
+  specialties?: ('x-ai' | 'xbooking' | 'finerp' | 'xbuilding' | 'x-space' | 'consulting')[] | null;
+  /**
+   * Để trống = nhận lead của mọi site.
+   */
+  siteCodes?: string[] | null;
+  /**
+   * Nhận lead khi không tìm được chuyên gia phù hợp.
+   */
+  isDefault?: boolean | null;
+  /**
+   * Tài khoản admin tương ứng (nếu có).
+   */
+  user?: (string | null) | User;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-conversations".
+ */
+export interface LeadConversation {
+  id: string;
+  publicId: string;
+  lead: string | Lead;
+  status:
+    | 'NEW'
+    | 'AI_QUALIFYING'
+    | 'NEED_MORE_INFORMATION'
+    | 'AI_RECOMMENDATION_SENT'
+    | 'WAITING_CUSTOMER'
+    | 'HUMAN_READY'
+    | 'ASSIGNED'
+    | 'CONTACTED'
+    | 'MEETING_BOOKED'
+    | 'PROPOSAL'
+    | 'NURTURE'
+    | 'UNSUBSCRIBED'
+    | 'CLOSED_LOST';
+  score?: number | null;
+  /**
+   * Số lượt khách đã trao đổi (mọi kênh).
+   */
+  turnCount?: number | null;
+  channels?: ('web-chat' | 'email' | 'consultant')[] | null;
+  devices?: (string | LeadDevice)[] | null;
+  /**
+   * Thiết bị đã tạo hội thoại này — được tiếp tục mà không cần OTP (không có dữ liệu cũ nào bị phơi ra). Mọi thiết bị khác phải xác minh email.
+   */
+  originDeviceId?: string | null;
+  siteCode?: string | null;
+  /**
+   * AI cập nhật sau mỗi lượt — dùng làm brief cho chuyên gia.
+   */
+  qualificationSummary?: string | null;
+  /**
+   * Giá trị 10 slot khai thác nhu cầu (khóa theo SLOTS).
+   */
+  collected?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  missingFields?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  recommendation?: string | null;
+  handoffReason?:
+    | (
+        | 'requested_human'
+        | 'requested_call_demo_quote'
+        | 'complex_request'
+        | 'ai_uncertain'
+        | 'score_threshold'
+        | 'refused_ai'
+        | 'manual'
+      )
+    | null;
+  handoffAt?: string | null;
+  humanTakeoverAt?: string | null;
+  /**
+   * Khi bật, AI không tự trả lời hội thoại này nữa.
+   */
+  aiPaused?: boolean | null;
+  lastOutboundEmailAt?: string | null;
+  /**
+   * Chống vòng lặp: giới hạn số email tự động mỗi hội thoại.
+   */
+  outboundEmailCount?: number | null;
+  /**
+   * Message-ID email gần nhất — dùng để giữ threading (In-Reply-To).
+   */
+  lastEmailMessageId?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-devices".
+ */
+export interface LeadDevice {
+  id: string;
+  deviceId: string;
+  contact?: (string | null) | Lead;
+  firstSeenAt?: string | null;
+  lastSeenAt?: string | null;
+  consentStatus?: ('unknown' | 'granted' | 'denied') | null;
+  /**
+   * Đã xác minh email trên thiết bị này — được phép xem lịch sử hội thoại.
+   */
+  isTrusted?: boolean | null;
+  siteCode?: string | null;
+  trustedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-messages".
+ */
+export interface LeadMessage {
+  id: string;
+  conversation: string | LeadConversation;
+  channel: 'web-chat' | 'email' | 'consultant' | 'system';
+  direction: 'inbound' | 'outbound';
+  role: 'user' | 'assistant' | 'consultant' | 'system';
+  contentText: string;
+  /**
+   * Chỉ dùng cho email (bản HTML gốc).
+   */
+  contentHtml?: string | null;
+  emailMessageId?: string | null;
+  emailInReplyTo?: string | null;
+  emailSubject?: string | null;
+  emailFrom?: string | null;
+  templateKey?: string | null;
+  /**
+   * Thiết bị đã gửi (chỉ với web chat).
+   */
+  deviceId?: string | null;
+  meta?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resume-tokens".
+ */
+export interface ResumeToken {
+  id: string;
+  tokenHash: string;
+  purpose: 'resume' | 'verify';
+  expiresAt: string;
+  lead?: (string | null) | Lead;
+  conversation?: (string | null) | LeadConversation;
+  /**
+   * Thiết bị link được phát hành cho. Thiết bị khác phải xác minh email.
+   */
+  expectedDeviceId?: string | null;
+  otpHash?: string | null;
+  otpExpiresAt?: string | null;
+  otpAttempts?: number | null;
+  /**
+   * Thiết bị đang chờ xác minh.
+   */
+  pendingDeviceId?: string | null;
+  usedAt?: string | null;
+  revoked?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-templates".
+ */
+export interface EmailTemplate {
+  id: string;
+  templateKey: string;
+  name: string;
+  audience: 'customer' | 'consultant';
+  triggerStatus?:
+    | (
+        | 'NEW'
+        | 'AI_QUALIFYING'
+        | 'NEED_MORE_INFORMATION'
+        | 'AI_RECOMMENDATION_SENT'
+        | 'WAITING_CUSTOMER'
+        | 'HUMAN_READY'
+        | 'ASSIGNED'
+        | 'CONTACTED'
+        | 'MEETING_BOOKED'
+        | 'PROPOSAL'
+        | 'NURTURE'
+        | 'UNSUBSCRIBED'
+        | 'CLOSED_LOST'
+      )
+    | null;
+  active?: boolean | null;
+  /**
+   * Hỗ trợ biến {{customer_name}}, {{company_name}}, {{primary_need}}, {{lead_score}}…
+   */
+  subject: string;
+  /**
+   * Dòng xem trước trong inbox (ẩn trong nội dung email).
+   */
+  preheader?: string | null;
+  /**
+   * Tiêu đề lớn trong thân email.
+   */
+  heading?: string | null;
+  /**
+   * Chỉ phần nội dung (đoạn <p>, danh sách…). Khung email chuẩn (header/footer/responsive) do hệ thống bọc ngoài.
+   */
+  htmlBody: string;
+  /**
+   * Bản plain-text.
+   */
+  textBody: string;
+  ctaLabel?: string | null;
+  /**
+   * Tên biến chứa URL nút, ví dụ resume_url.
+   */
+  ctaUrlVar?: string | null;
+  version?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultant-assignments".
+ */
+export interface ConsultantAssignment {
+  id: string;
+  lead: string | Lead;
+  conversation: string | LeadConversation;
+  consultant?: (string | null) | Consultant;
+  assignedAt?: string | null;
+  slaDueAt?: string | null;
+  status?: ('pending' | 'accepted' | 'contacted' | 'closed') | null;
+  handoffReason?:
+    | (
+        | 'requested_human'
+        | 'requested_call_demo_quote'
+        | 'complex_request'
+        | 'ai_uncertain'
+        | 'score_threshold'
+        | 'refused_ai'
+        | 'manual'
+      )
+    | null;
+  scoreAtHandoff?: number | null;
+  aiSummary?: string | null;
+  notes?: string | null;
+  notifiedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-activities".
+ */
+export interface LeadActivity {
+  id: string;
+  /**
+   * vd: intake, ai_reply, email_sent, email_received, token_issued, device_verified, handoff
+   */
+  type: string;
+  lead?: (string | null) | Lead;
+  conversation?: (string | null) | LeadConversation;
+  channel?: ('web-chat' | 'email' | 'consultant' | 'system') | null;
+  /**
+   * ai | customer | consultant | system
+   */
+  actor?: string | null;
+  summary?: string | null;
+  detail?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -1333,6 +1716,42 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'chat-usage';
         value: string | ChatUsage;
+      } | null)
+    | ({
+        relationTo: 'leads';
+        value: string | Lead;
+      } | null)
+    | ({
+        relationTo: 'lead-devices';
+        value: string | LeadDevice;
+      } | null)
+    | ({
+        relationTo: 'lead-conversations';
+        value: string | LeadConversation;
+      } | null)
+    | ({
+        relationTo: 'lead-messages';
+        value: string | LeadMessage;
+      } | null)
+    | ({
+        relationTo: 'resume-tokens';
+        value: string | ResumeToken;
+      } | null)
+    | ({
+        relationTo: 'email-templates';
+        value: string | EmailTemplate;
+      } | null)
+    | ({
+        relationTo: 'consultants';
+        value: string | Consultant;
+      } | null)
+    | ({
+        relationTo: 'consultant-assignments';
+        value: string | ConsultantAssignment;
+      } | null)
+    | ({
+        relationTo: 'lead-activities';
+        value: string | LeadActivity;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -2164,6 +2583,196 @@ export interface ChatUsageSelect<T extends boolean = true> {
   tokensIn?: T;
   tokensOut?: T;
   estCostUsd?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "leads_select".
+ */
+export interface LeadsSelect<T extends boolean = true> {
+  fullName?: T;
+  email?: T;
+  phone?: T;
+  company?: T;
+  jobTitle?: T;
+  source?: T;
+  siteCode?: T;
+  formCode?: T;
+  status?: T;
+  score?: T;
+  primaryNeed?: T;
+  businessModel?: T;
+  userScale?: T;
+  currentSystems?: T;
+  departments?: T;
+  urgency?: T;
+  targetTimeline?: T;
+  infrastructure?: T;
+  demoOrQuote?: T;
+  decisionMaker?: T;
+  assignedConsultant?: T;
+  lastConversation?: T;
+  consent?: T;
+  unsubscribed?: T;
+  emailVerifiedAt?: T;
+  notes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-devices_select".
+ */
+export interface LeadDevicesSelect<T extends boolean = true> {
+  deviceId?: T;
+  contact?: T;
+  firstSeenAt?: T;
+  lastSeenAt?: T;
+  consentStatus?: T;
+  isTrusted?: T;
+  siteCode?: T;
+  trustedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-conversations_select".
+ */
+export interface LeadConversationsSelect<T extends boolean = true> {
+  publicId?: T;
+  lead?: T;
+  status?: T;
+  score?: T;
+  turnCount?: T;
+  channels?: T;
+  devices?: T;
+  originDeviceId?: T;
+  siteCode?: T;
+  qualificationSummary?: T;
+  collected?: T;
+  missingFields?: T;
+  recommendation?: T;
+  handoffReason?: T;
+  handoffAt?: T;
+  humanTakeoverAt?: T;
+  aiPaused?: T;
+  lastOutboundEmailAt?: T;
+  outboundEmailCount?: T;
+  lastEmailMessageId?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-messages_select".
+ */
+export interface LeadMessagesSelect<T extends boolean = true> {
+  conversation?: T;
+  channel?: T;
+  direction?: T;
+  role?: T;
+  contentText?: T;
+  contentHtml?: T;
+  emailMessageId?: T;
+  emailInReplyTo?: T;
+  emailSubject?: T;
+  emailFrom?: T;
+  templateKey?: T;
+  deviceId?: T;
+  meta?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resume-tokens_select".
+ */
+export interface ResumeTokensSelect<T extends boolean = true> {
+  tokenHash?: T;
+  purpose?: T;
+  expiresAt?: T;
+  lead?: T;
+  conversation?: T;
+  expectedDeviceId?: T;
+  otpHash?: T;
+  otpExpiresAt?: T;
+  otpAttempts?: T;
+  pendingDeviceId?: T;
+  usedAt?: T;
+  revoked?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-templates_select".
+ */
+export interface EmailTemplatesSelect<T extends boolean = true> {
+  templateKey?: T;
+  name?: T;
+  audience?: T;
+  triggerStatus?: T;
+  active?: T;
+  subject?: T;
+  preheader?: T;
+  heading?: T;
+  htmlBody?: T;
+  textBody?: T;
+  ctaLabel?: T;
+  ctaUrlVar?: T;
+  version?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultants_select".
+ */
+export interface ConsultantsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  active?: T;
+  specialties?: T;
+  siteCodes?: T;
+  isDefault?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultant-assignments_select".
+ */
+export interface ConsultantAssignmentsSelect<T extends boolean = true> {
+  lead?: T;
+  conversation?: T;
+  consultant?: T;
+  assignedAt?: T;
+  slaDueAt?: T;
+  status?: T;
+  handoffReason?: T;
+  scoreAtHandoff?: T;
+  aiSummary?: T;
+  notes?: T;
+  notifiedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-activities_select".
+ */
+export interface LeadActivitiesSelect<T extends boolean = true> {
+  type?: T;
+  lead?: T;
+  conversation?: T;
+  channel?: T;
+  actor?: T;
+  summary?: T;
+  detail?: T;
   updatedAt?: T;
   createdAt?: T;
 }

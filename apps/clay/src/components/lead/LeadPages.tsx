@@ -7,11 +7,13 @@
  */
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { ArrowRight, Check, ShieldCheck, Clock, Sparkles } from "lucide-react";
 import { Container } from "@/components/primitives";
 import { Reveal, AmbientSection } from "@/components/corporate/about-kit";
 import { KeywordLine } from "@/components/home/kit";
 import { cn } from "@/lib/utils";
+import { getDeviceId } from "@/lib/device";
 import { leadPageForRoute, type LeadField, type LeadPage } from "@/data/lead-content";
 
 const ASIDE_ICONS = [Clock, ShieldCheck, Sparkles];
@@ -45,6 +47,9 @@ function LeadForm({ page, siteCode }: { page: LeadPage; siteCode?: string }) {
         body: JSON.stringify({
           formCode: page.formCode,
           siteCode,
+          // Marks this browser as the conversation's origin device, so the visitor
+          // can continue the same thread in the web chat without an email OTP.
+          deviceId: getDeviceId(),
           payload,
           consent: data.get("consent") === "on",
         }),
@@ -67,8 +72,16 @@ function LeadForm({ page, siteCode }: { page: LeadPage; siteCode?: string }) {
         </span>
         <p className="mt-4 text-lg font-semibold text-blue">Cảm ơn bạn!</p>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Chúng tôi đã nhận thông tin và sẽ liên hệ trong thời gian sớm nhất.
+          Chúng tôi đã nhận thông tin và vừa gửi email xác nhận. Trợ lý XTECH sẽ trao đổi thêm để đề
+          xuất đúng giải pháp — bạn có thể trả lời email hoặc tiếp tục ngay trên web.
         </p>
+        <Link
+          href="/tu-van"
+          className="btn-gold mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold"
+        >
+          Tiếp tục trao đổi ngay
+          <ArrowRight className="size-4" />
+        </Link>
       </div>
     );
   }

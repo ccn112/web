@@ -1,5 +1,32 @@
 # Nhật ký chỉnh sửa — Website X (corporate)
 
+## Phiên 2026-07-25 — Tư vấn lead đa kênh (AI Chat + Email + Chuyên gia)
+
+Triển khai `handoff/XTECH_AI_LEAD_EMAIL_CHAT_HANDOFF_V1/`. **Nhật ký chi tiết + việc còn lại:
+`docs/LEAD_CONSULTATION_HANDOFF.md`** (đọc mục 8 trước khi tiếp tục).
+
+- **9 collection mới** (group admin “Lead & Tư vấn”): `leads`, `lead-devices`, `lead-conversations`,
+  `lead-messages`, `resume-tokens`, `email-templates`, `consultants`, `consultant-assignments`,
+  `lead-activities`. Migration additive `20260725_060131_add_lead_consultation`.
+- **Một hội thoại, hai kênh đồng thời**: web chat (`/tu-van`, SSE) và email inbound/outbound cùng ghi
+  vào `lead-messages`; AI luôn đọc history hợp nhất nên không hỏi lại thông tin khách đã trả lời ở
+  kênh kia. Chuyên gia gõ trong admin → khách nhận email + thấy ngay trên web chat.
+- **State machine khai thác nhu cầu**: 13 trạng thái, 10 slot có trọng số (tổng 100). Đạt
+  `LEAD_HANDOFF_SCORE` (62) hoặc khách xin gặp người/demo/báo giá → `HUMAN_READY` → **email nội bộ
+  cho chuyên gia** (brief + SLA + link vào hội thoại) và AI dừng khai thác.
+- **Bảo mật**: `deviceId` chỉ để continuity, không phải authentication; link email là signed token
+  HMAC có TTL + revoke (chỉ lưu hash, không PII trong URL); thiết bị mới phải xác minh OTP qua email
+  trước khi xem lịch sử; chống loop email (auto-reply/bounce, dedupe `Message-ID`, cắt quoted-reply,
+  ngân sách gửi); audit đầy đủ trong `lead-activities`; unsubscribe 1-click (RFC 8058).
+- **Template email**: khung transactional dựng theo Cerberus hybrid pattern + quy ước Postmark
+  (Outlook VML button, preheader, dark mode, plain-text twin). 7 template, sửa được trong admin.
+- Endpoint CMS `/api/lead/{intake,chat,session,resume,verify,email-reply,handoff,unsubscribe}`;
+  `clay` chỉ proxy. Form `/lien-he`, `/dat-lich-demo`, `/yeu-cau-tu-van` giờ khởi động luôn phiên tư vấn.
+- ⚠️ **Chưa smoke-test runtime** (typecheck + lint + migration đã sạch). Xem checklist ở mục 8 của
+  `docs/LEAD_CONSULTATION_HANDOFF.md`.
+
+---
+
 > Phiên làm việc 2026-07-21. Phạm vi: **site corporate (x.vn)**. Nội dung mới nạp vào DB dev qua `pnpm --filter @x/cms db:seed` (seed JSON là nguồn sự thật). Prod cần chạy `db:seed` khi go-live (deploy.sh chỉ `migrate`, không seed).
 
 ## 1. CI/CD & Deploy

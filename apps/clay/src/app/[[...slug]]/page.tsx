@@ -25,6 +25,8 @@ import { NewsPages } from "@/components/news/NewsPages";
 import { newsBySlug, resolveNews } from "@/data/news-content";
 import { LeadPages } from "@/components/lead/LeadPages";
 import { hasLeadRoute } from "@/data/lead-content";
+import { ConsultPages } from "@/components/tuvan/ConsultPages";
+import { consultModeForRoute, CONSULT_SEO } from "@/data/consult-content";
 import { LegalPages } from "@/components/legal/LegalPages";
 import { hasLegalRoute } from "@/data/legal-content";
 
@@ -100,6 +102,15 @@ export async function generateMetadata({
         follow = post.seo?.follow ?? true;
       }
     }
+  }
+
+  // Consultation surface: private, session-scoped pages — titled but never indexed.
+  const consultMeta = consultModeForRoute(path);
+  if (consultMeta) {
+    title = CONSULT_SEO[consultMeta].title;
+    description = CONSULT_SEO[consultMeta].description;
+    index = consultMeta === "start";
+    follow = consultMeta === "start";
   }
 
   const canon = canonical ?? (path === "/" ? "/" : path);
@@ -237,6 +248,17 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         </SiteShell>
       );
     }
+  }
+
+  // Multi-channel consultation (/tu-van, /tu-van/tiep-tuc, /tu-van/lich-su,
+  // /tu-van/huy-nhan-email) — the web-chat half of the AI lead qualification flow.
+  const consultMode = siteCode === "corporate" ? consultModeForRoute(path) : undefined;
+  if (consultMode) {
+    return (
+      <SiteShell site={site} menu={menu?.items ?? []}>
+        <ConsultPages mode={consultMode} siteCode={siteCode} />
+      </SiteShell>
+    );
   }
 
   // Bespoke corporate lead pages (/lien-he, /dat-lich-demo, /yeu-cau-tu-van).

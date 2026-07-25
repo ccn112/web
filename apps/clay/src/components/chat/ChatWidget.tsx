@@ -8,19 +8,24 @@
  * conversations persist to the CMS.
  */
 
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import {
   MessageCircle, X, Send, Paperclip, History, Maximize2, Minimize2, Plus, Trash2, ArrowLeft, Sparkles,
+  UserRound,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getDeviceId } from "@/lib/device";
+import { Markdown } from "@/components/chat/markdown";
 import { chatContextForRoute } from "@/data/chat-context";
+import { STATUS_LABEL } from "@/data/consult-content";
 
 type Msg = { role: "user" | "assistant"; content: string; images?: number };
 type SessionMeta = { sessionId: string; title: string; messageCount: number; updatedAt: string };
 type Attachment = { kind: "image" | "pdf"; mediaType: string; data: string; name: string };
+/** Live consultation thread (the /tu-van flow) belonging to this device, if any. */
+type ConsultMeta = { status: string; score: number; handoff: boolean };
 
-const DEVICE_KEY = "xtech_chat_device";
 const REG_KEY = "xtech_chat_registered";
 
 function uuid(): string {
@@ -29,87 +34,6 @@ function uuid(): string {
     const r = (Math.random() * 16) | 0;
     return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
   });
-}
-
-/** Inline markdown: **bold** and [text](url). */
-function inline(text: string): ReactNode[] {
-  const out: ReactNode[] = [];
-  // Split on links first, then handle bold within each chunk.
-  const linkRe = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let last = 0;
-  let k = 0;
-  let m: RegExpExecArray | null;
-  const pushBold = (s: string) => {
-    const parts = s.split(/(\*\*[^*]+\*\*)/g);
-    for (const p of parts) {
-      if (!p) continue;
-      if (p.startsWith("**") && p.endsWith("**")) out.push(<strong key={k++}>{p.slice(2, -2)}</strong>);
-      else out.push(<span key={k++}>{p}</span>);
-    }
-  };
-  while ((m = linkRe.exec(text))) {
-    if (m.index > last) pushBold(text.slice(last, m.index));
-    out.push(
-      <a key={`l${k++}`} href={m[2]} className="font-semibold text-blue underline underline-offset-2 hover:text-gold">
-        {m[1]}
-      </a>,
-    );
-    last = m.index + m[0].length;
-  }
-  if (last < text.length) pushBold(text.slice(last));
-  return out;
-}
-
-/** Lightweight markdown → styled blocks (headings, bold, bullet/numbered lists, links). */
-function Markdown({ text }: { text: string }) {
-  const lines = text.replace(/\r/g, "").split("\n");
-  const blocks: ReactNode[] = [];
-  let list: { ordered: boolean; items: string[] } | null = null;
-  let key = 0;
-  const flush = () => {
-    if (!list) return;
-    const items = list.items.map((it, i) => (
-      <li key={i} className="flex gap-2">
-        <span className="mt-1.5 size-1 shrink-0 rounded-full bg-blue/50" />
-        <span>{inline(it)}</span>
-      </li>
-    ));
-    blocks.push(
-      <ul key={`ul${key++}`} className="my-1.5 flex flex-col gap-1">
-        {items}
-      </ul>,
-    );
-    list = null;
-  };
-  for (const raw of lines) {
-    const line = raw.trimEnd();
-    if (!line.trim()) { flush(); continue; }
-    // skip markdown table separator rows and render table pipes as plain text
-    if (/^\|?\s*:?-{2,}/.test(line.replace(/\s/g, ""))) continue;
-    const li = line.match(/^\s*(?:[-*•]|\d+[.)])\s+(.*)$/);
-    if (li) {
-      if (!list) list = { ordered: false, items: [] };
-      list.items.push(li[1]!);
-      continue;
-    }
-    flush();
-    const h = line.match(/^(#{1,6})\s+(.*)$/);
-    if (h) {
-      blocks.push(
-        <p key={key++} className="mt-2 mb-1 text-sm font-bold text-blue first:mt-0">
-          {inline(h[2]!)}
-        </p>,
-      );
-      continue;
-    }
-    blocks.push(
-      <p key={key++} className="leading-relaxed">
-        {inline(line.replace(/^\|/, "").replace(/\|$/, "").replace(/\s*\|\s*/g, " · "))}
-      </p>,
-    );
-  }
-  flush();
-  return <div className="flex flex-col gap-1.5">{blocks}</div>;
 }
 
 /** Grab the current page's readable text (main content) so the assistant can
@@ -135,22 +59,41 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
   const [sending, setSending] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [sessions, setSessions] = useState<SessionMeta[]>([]);
+  const [consult, setConsult] = useState<ConsultMeta | null>(null);
   const [ctx, setCtx] = useState(() => chatContextForRoute(typeof window !== "undefined" ? window.location.pathname : "/"));
   const scrollRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   // init device id + registration + session
   useEffect(() => {
-    let id = localStorage.getItem(DEVICE_KEY);
-    if (!id) {
-      id = uuid();
-      localStorage.setItem(DEVICE_KEY, id);
-    }
+    const id = getDeviceId();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setDeviceId(id);
     setRegistered(localStorage.getItem(REG_KEY) === "1");
     setSessionId(uuid());
   }, []);
+
+  // Surface an open consultation thread (the /tu-van flow) so the visitor can
+  // jump back into the qualification conversation instead of starting over.
+  useEffect(() => {
+    if (!open || !deviceId) return;
+    let cancelled = false;
+    fetch(`/api/lead/session?deviceId=${encodeURIComponent(deviceId)}`)
+      .then((r) => r.json() as Promise<{ session: ConsultMeta | null }>)
+      .then((j) => {
+        if (!cancelled && j.session) {
+          setConsult({
+            status: j.session.status,
+            score: j.session.score ?? 0,
+            handoff: j.session.handoff ?? false,
+          });
+        }
+      })
+      .catch(() => null);
+    return () => {
+      cancelled = true;
+    };
+  }, [open, deviceId]);
 
   // keep context in sync with route changes (SPA nav)
   useEffect(() => {
@@ -428,6 +371,31 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
             </div>
           ) : (
             <>
+              {consult ? (
+                <Link
+                  href="/tu-van"
+                  className={cn(
+                    "flex items-start gap-2.5 border-b px-4 py-3 transition",
+                    consult.handoff
+                      ? "border-cyan/30 bg-cyan/8 hover:bg-cyan/12"
+                      : "border-gold/25 bg-gold/8 hover:bg-gold/12",
+                  )}
+                >
+                  <UserRound className="mt-0.5 size-4 shrink-0 text-blue" />
+                  <span className="min-w-0">
+                    <span className="block text-[13px] font-semibold text-blue">
+                      {consult.handoff
+                        ? "Đang chuyển tới chuyên gia XTECH"
+                        : "Bạn có một phiên tư vấn đang mở"}
+                    </span>
+                    <span className="block text-[11px] leading-relaxed text-muted-foreground">
+                      {STATUS_LABEL[consult.status] ?? consult.status} · hồ sơ {consult.score}% —
+                      nhấn để tiếp tục
+                    </span>
+                  </span>
+                </Link>
+              ) : null}
+
               <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-4">
                 {messages.length === 0 ? (
                   <div>
