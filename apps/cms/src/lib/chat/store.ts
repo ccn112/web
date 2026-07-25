@@ -243,3 +243,43 @@ export async function recordUsage(u: {
     /* best-effort */
   }
 }
+
+/**
+ * Adopt a "warm" lead-care chat session onto the visitor's real device. The
+ * session was pre-created at form-submit time keyed by a care token (sessionId
+ * `lead-<token>`, placeholder deviceId `lead:<token>`). When the visitor opens
+ * the magic link, we rebind it to their browser device id so it shows up in
+ * their history and they can continue the conversation. Returns the session
+ * (with the AI's seeded reply) or null if the token is unknown.
+ */
+export async function adoptCareSession(
+  token: string,
+  deviceId: string,
+): Promise<{ sessionId: string; title: string; messages: StoredMsg[] } | null> {
+  try {
+    const payload = await getPayloadClient()
+    const sessionId = `lead-${token}`
+    const res = await payload.find({
+      collection: 'chat-sessions',
+      where: { sessionId: { equals: sessionId } },
+      limit: 1,
+      depth: 0,
+    })
+    const doc = res.docs[0] as
+      | { id: string | number; title?: string; messages?: StoredMsg[]; deviceId?: string }
+      | undefined
+    if (!doc) return null
+    // Rebind to the real device (only if still on the placeholder, so a shared
+    // link can't hijack a session already claimed by another device).
+    if (typeof doc.deviceId === 'string' && doc.deviceId.startsWith('lead:')) {
+      await payload.update({ collection: 'chat-sessions', id: String(doc.id), data: { deviceId } })
+    }
+    return {
+      sessionId,
+      title: doc.title ?? 'Yêu cầu tư vấn',
+      messages: Array.isArray(doc.messages) ? doc.messages : [],
+    }
+  } catch {
+    return null
+  }
+}

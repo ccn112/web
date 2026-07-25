@@ -10,6 +10,7 @@ import { buildConfig } from 'payload'
 import sharp from 'sharp'
 
 import { collections } from './collections/index'
+import { leadCareFollowup } from './jobs/leadCareFollowup'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -119,6 +120,23 @@ export default buildConfig({
     },
   }),
   sharp,
+  // Background jobs (automated customer-care pipeline). An external cron pings
+  // POST /api/payload-jobs/run to process due jobs (e.g. the delayed lead
+  // follow-up). The run endpoint is gated by CRON_SECRET (or an admin session).
+  jobs: {
+    tasks: [leadCareFollowup],
+    access: {
+      run: ({ req }) => {
+        if (req.user) return true
+        const secret = process.env.CRON_SECRET
+        if (!secret) return false
+        const provided =
+          req.headers?.get?.('authorization')?.replace(/^Bearer\s+/i, '') ??
+          (typeof req.query?.secret === 'string' ? req.query.secret : undefined)
+        return provided === secret
+      },
+    },
+  },
   plugins: [...storagePlugins],
   graphQL: {
     disable: false,

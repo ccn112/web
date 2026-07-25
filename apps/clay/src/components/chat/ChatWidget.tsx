@@ -152,6 +152,42 @@ export function ChatWidget({ siteCode = "corporate" }: { siteCode?: string }) {
     setSessionId(uuid());
   }, []);
 
+  // Lead-care magic link: `/?care_chat=<token>` opens the warm AI chat session
+  // (seeded with the visitor's inquiry + the AI's follow-up reply) inline.
+  useEffect(() => {
+    if (!deviceId) return;
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("care_chat");
+    if (!token) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/chat/adopt", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ token, deviceId }),
+        });
+        const j = await res.json().catch(() => null);
+        if (!cancelled && res.ok && j?.sessionId) {
+          setSessionId(j.sessionId);
+          setMessages((j.messages ?? []).map((m: Msg) => ({ role: m.role, content: m.content, images: m.images })));
+          setView("chat");
+          setOpen(true);
+        }
+      } catch {
+        /* ignore — link stays a normal page visit */
+      } finally {
+        // Strip the token from the URL so a refresh/share doesn't re-trigger.
+        params.delete("care_chat");
+        const qs = params.toString();
+        window.history.replaceState({}, "", window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [deviceId]);
+
   // keep context in sync with route changes (SPA nav)
   useEffect(() => {
     const update = () => setCtx(chatContextForRoute(window.location.pathname));
