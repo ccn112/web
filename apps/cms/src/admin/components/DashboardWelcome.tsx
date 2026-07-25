@@ -47,9 +47,9 @@ export async function DashboardWelcome() {
   return (
     <div className="x-dash">
       <div className="x-dash__welcome">
-        <img src="/brand/xtech-favicon-square.png" alt="XTECH" />
+        <img src="/brand/x-cms-icon-square.svg" alt="X-CMS" />
         <div>
-          <h2>Chào mừng đến XTECH Admin</h2>
+          <h2>Chào mừng đến X-CMS Admin</h2>
           <p>Quản trị nội dung, dữ liệu và hệ sinh thái số trên một giao diện thống nhất.</p>
         </div>
       </div>

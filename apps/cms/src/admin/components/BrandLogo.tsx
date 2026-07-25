@@ -1,12 +1,12 @@
 /**
- * graphics.Logo — logo XTECH đầy đủ, dùng ở màn login & branding admin.
- * Asset gốc (không vẽ lại, không đổi màu): /brand/xtech-logo-full.png
+ * graphics.Logo — logo X-CMS đầy đủ, dùng ở màn login & branding admin.
+ * Asset vector: /brand/x-cms-logo-full.svg
  */
 export function BrandLogo() {
   return (
     <img
-      src="/brand/xtech-logo-full.png"
-      alt="XTECH"
+      src="/brand/x-cms-logo-full.svg"
+      alt="X-CMS"
       style={{ height: 40, width: 'auto', display: 'block' }}
     />
   )

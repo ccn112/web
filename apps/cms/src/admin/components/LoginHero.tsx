@@ -6,8 +6,8 @@
 export function LoginHero() {
   return (
     <div className="x-login-hero">
-      <img className="x-login-hero__logo" src="/brand/xtech-logo-full.png" alt="XTECH" />
-      <h1 className="x-login-hero__title">Đăng nhập quản trị XTECH</h1>
+      <img className="x-login-hero__logo" src="/brand/x-cms-logo-full.svg" alt="X-CMS" />
+      <h1 className="x-login-hero__title">Đăng nhập quản trị X-CMS</h1>
       <p className="x-login-hero__desc">
         Quản trị nội dung, dữ liệu và hệ sinh thái số trên một giao diện thống nhất.
       </p>

@@ -1,12 +1,12 @@
 /**
- * graphics.Icon — icon vuông XTECH, dùng ở sidebar thu gọn / ngữ cảnh nhỏ.
- * Asset gốc: /brand/xtech-favicon-square.png
+ * graphics.Icon — icon vuông X-CMS, dùng ở sidebar thu gọn / ngữ cảnh nhỏ.
+ * Asset vector: /brand/x-cms-icon-square.svg
  */
 export function BrandIcon() {
   return (
     <img
-      src="/brand/xtech-favicon-square.png"
-      alt="XTECH"
+      src="/brand/x-cms-icon-square.svg"
+      alt="X-CMS"
       style={{ height: 28, width: 28, borderRadius: 6, display: 'block' }}
     />
   )
