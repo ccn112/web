@@ -3,16 +3,35 @@ import { NextResponse } from "next/server";
 const CMS_URL =
   process.env.CMS_URL ?? process.env.NEXT_PUBLIC_CMS_URL ?? "http://localhost:3000";
 
+/** The CMS is unreachable or errored — our problem, not the visitor's. */
+class UpstreamError extends Error {}
+
+/**
+ * Look up a document id by a unique field.
+ *
+ * Returns null ONLY when the CMS answered and genuinely has no such document.
+ * A connection failure or a CMS 5xx throws instead: conflating the two used to
+ * report "CMS is down" to the visitor as a 400 Bad Request, which sent us
+ * hunting a malformed form payload while the real cause was the CMS process
+ * being dead behind nginx.
+ */
 async function findId(
   collection: string,
   field: string,
   value: string,
 ): Promise<string | null> {
-  const res = await fetch(
-    `${CMS_URL}/api/${collection}?where[${field}][equals]=${encodeURIComponent(value)}&limit=1&depth=0`,
-    { cache: "no-store" },
-  );
-  if (!res.ok) return null;
+  let res: Response;
+  try {
+    res = await fetch(
+      `${CMS_URL}/api/${collection}?where[${field}][equals]=${encodeURIComponent(value)}&limit=1&depth=0`,
+      { cache: "no-store" },
+    );
+  } catch (e) {
+    throw new UpstreamError(
+      `không kết nối được CMS tại ${CMS_URL} (${e instanceof Error ? e.message : "lỗi không rõ"})`,
+    );
+  }
+  if (!res.ok) throw new UpstreamError(`CMS trả ${res.status} khi tra ${collection}.${field}`);
   const data = (await res.json()) as { docs?: Array<{ id: string }> };
   return data.docs?.[0]?.id ?? null;
 }
@@ -78,19 +97,27 @@ export async function POST(req: Request) {
     if (!formId) return NextResponse.json({ error: "Unknown form" }, { status: 404 });
     const siteId = body.siteCode ? await findId("sites", "code", body.siteCode) : null;
 
-    const res = await fetch(`${CMS_URL}/api/form-submissions`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      cache: "no-store",
-      body: JSON.stringify({
-        form: formId,
-        site: siteId,
-        page: body.pageId ?? null,
-        payload: body.payload,
-        consent: body.consent ?? false,
-      }),
-    });
+    let res: Response;
+    try {
+      res = await fetch(`${CMS_URL}/api/form-submissions`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        cache: "no-store",
+        body: JSON.stringify({
+          form: formId,
+          site: siteId,
+          page: body.pageId ?? null,
+          payload: body.payload,
+          consent: body.consent ?? false,
+        }),
+      });
+    } catch (e) {
+      throw new UpstreamError(
+        `không lưu được form-submissions (${e instanceof Error ? e.message : "lỗi không rõ"})`,
+      );
+    }
     if (!res.ok) {
+      console.error(`[lead] CMS từ chối form-submissions: HTTP ${res.status}`);
       return NextResponse.json({ error: "CMS rejected submission" }, { status: 502 });
     }
 
@@ -127,7 +154,17 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ ok: true, ...consultation });
-  } catch {
+  } catch (e) {
+    // Phân biệt rõ: 502 = hệ thống của ta hỏng, 400 = request thật sự sai.
+    // Gộp cả hai vào 400 sẽ khiến một CMS chết trông y như một form gửi sai.
+    if (e instanceof UpstreamError) {
+      console.error(`[lead] upstream: ${e.message}`);
+      return NextResponse.json(
+        { error: "Hệ thống đang tạm thời không phản hồi. Vui lòng thử lại sau ít phút." },
+        { status: 502 },
+      );
+    }
+    console.error("[lead] bad request:", e);
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
 }
