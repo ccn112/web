@@ -32,6 +32,10 @@ export function SplitText({
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
+      // Reveal at once and stop — no stagger to run. It cannot be a lazy
+      // useState initialiser because matchMedia is unavailable during SSR of
+      // this client component.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShown(true);
       return;
     }

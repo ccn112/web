@@ -1,5 +1,28 @@
 # Nhật ký chỉnh sửa — Website X (corporate)
 
+## Phiên 2026-07-27b — CI xanh trở lại + cron vào deploy.sh
+
+CI đỏ liên tục từ trước (`pnpm -r typecheck` / `pnpm -r lint` fail), nên job `deploy`
+**chưa bao giờ chạy** dù 5 secret VPS đã cấu hình từ 21/07 và environment `production`
+**không có** protection rule. Nghĩa là ngay khi CI xanh, mọi push vào `main` sẽ deploy
+thẳng lên prod.
+
+- **`apps/web/src/components/PostArticle.tsx`** — `PostDoc['body']` là union
+  `PostBodyNode[] | Array<Record<string, unknown>>`, nên `node.type === 'heading'` không
+  discriminate được và `node.text` ra `unknown`. Thêm helper `nodeText()` narrow tử tế thay
+  vì ép kiểu. (Lỗi có từ trước, bị lỗi `apps/cms` che vì `pnpm -r` dừng ở package fail đầu.)
+- **`reactbits/CountUp.tsx`, `reactbits/SplitText.tsx`** — `setState` đồng bộ ở nhánh
+  `prefers-reduced-motion`. Không chuyển được sang lazy `useState` initialiser vì
+  `matchMedia` không tồn tại lúc SSR, nên dùng `eslint-disable-next-line` kèm lý do —
+  đúng pattern repo đã dùng ở `ChatWidget.tsx`.
+- **`solutions/SolutionPages.tsx`** — 2 chỗ `<a href="/lien-he">` đổi sang `<Link>`.
+- **`deploy.sh` nhận cron + kiểm tra env lead.** Cron gọi job runner là hạ tầng THƯỜNG
+  TRỰC của app, không phải bước one-off, nên phải nằm ở script deploy chung để **mọi** lần
+  deploy — kể cả CI tự deploy — đều đảm bảo có. Nếu chỉ để trong `deploy2707.sh` thì CI
+  auto-deploy sẽ migrate DB xong nhưng email chủ động chết âm thầm. Kèm health check job
+  runner hai chiều: không secret phải ra 401 (Payload mặc định **mở** endpoint này khi
+  thiếu `access.run`), có secret phải ra 200.
+
 ## Phiên 2026-07-27 — Gộp hai bản chăm sóc tự động + smoke-test runtime
 
 `origin/main` (`65d0541`) đã có một bản chăm sóc tự động **nhẹ** làm song song, không biết tới nhánh

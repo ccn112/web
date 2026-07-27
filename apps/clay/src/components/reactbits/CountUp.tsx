@@ -29,6 +29,10 @@ export function CountUp({
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
+      // One synchronous jump to the final value, then the effect returns — no
+      // animation to schedule. It cannot be a lazy useState initialiser because
+      // matchMedia is unavailable during SSR of this client component.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVal(to);
       return;
     }

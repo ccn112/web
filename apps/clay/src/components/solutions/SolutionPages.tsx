@@ -7,6 +7,7 @@
  */
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight, Sparkles, Database, BarChart3, Brain, Plug, RefreshCw, ShieldCheck,
   Workflow, ClipboardCheck, Bell, Users, Cloud, Gauge, Headset, Wallet, Activity,
@@ -181,9 +182,9 @@ function SolutionHero({ p }: { p: SolutionPage }) {
         <SectionHead title={head(p.eyebrow, p.title, p.summary, [p.title])} animate />
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <GoldCTA label="Đặt lịch demo" href="/dat-lich-demo" />
-          <a href="/lien-he" className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">
+          <Link href="/lien-he" className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">
             Trao đổi với chuyên gia
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -204,7 +205,7 @@ function SolutionCTA({ p }: { p: SolutionPage }) {
         <p className="text-pretty text-base leading-relaxed text-white/75">{p.ctaDescription}</p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <GoldCTA label="Đặt lịch demo" href="/dat-lich-demo" />
-          <a href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">Liên hệ tư vấn</a>
+          <Link href="/lien-he" className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15">Liên hệ tư vấn</Link>
         </div>
         {p.relatedProducts?.length ? (
           <div className="mt-4 flex flex-wrap justify-center gap-2">

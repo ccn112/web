@@ -115,6 +115,25 @@ else
   warn "Chưa cấu hình MAIL_HOST trong .env — form vẫn LƯU CMS nhưng KHÔNG gửi mail thông báo lead."
 fi
 
+# -- Env của luồng chăm sóc lead tự động --------------------------------------
+# Đặc thù nhóm này: thiếu thì app VẪN CHẠY, log VẪN SẠCH, chỉ là tính năng không
+# bao giờ xảy ra. Không soi ở đây thì không ai phát hiện ra.
+envval() {
+  grep -E "^$1=" "$ROOT/.env" 2>/dev/null | head -n1 \
+    | sed -E "s/^$1=//; s/^[\"']//; s/[\"']\$//" || true
+}
+CRON_SECRET_VAL="$(envval CRON_SECRET)"
+[[ -n "$CRON_SECRET_VAL" && "$CRON_SECRET_VAL" != "change-me-cron-secret" ]] \
+  && ok "CRON_SECRET đã đặt (job runner chạy được)" \
+  || warn "CRON_SECRET trống/còn giá trị mẫu — email chủ động cho lead im lặng sẽ KHÔNG BAO GIỜ gửi.
+       Sinh: openssl rand -hex 32   rồi thêm vào .env"
+[[ "$(envval LEAD_PUBLIC_SITE_URL)" == https://* ]] \
+  && ok "LEAD_PUBLIC_SITE_URL = $(envval LEAD_PUBLIC_SITE_URL)" \
+  || warn "LEAD_PUBLIC_SITE_URL chưa phải URL https công khai của SITE — link 'tiếp tục hội thoại' trong email sẽ sai."
+[[ -n "$(envval LEAD_INBOUND_SECRET)" ]] \
+  && ok "LEAD_INBOUND_SECRET đã đặt" \
+  || warn "LEAD_INBOUND_SECRET trống — webhook /api/lead/email-reply trả 401 ở production; email chỉ MỘT CHIỀU."
+
 # ---- 2. Đồng bộ code = đúng như local (origin/$BRANCH) ----------------------
 log "Đồng bộ code: origin/$BRANCH"
 git fetch origin --prune
@@ -271,6 +290,42 @@ EOF
   ok "Đã tạo ecosystem.config.cjs"
 fi
 
+# ---- 7b. Cron cho job runner (email chủ động cho lead im lặng) --------------
+# Luồng chăm sóc lead đẩy job có độ trễ vào bảng payload_jobs; phải có tiến trình
+# bên ngoài gọi job runner thì job mới chạy. Đây là hạ tầng THƯỜNG TRỰC của app,
+# không phải bước one-off — nên nó nằm ở đây để MỌI lần deploy (kể cả CI tự
+# deploy) đều đảm bảo có, thay vì chỉ có trong script phát hành 2707.
+# Idempotent: chạy lại nhiều lần vẫn chỉ một dòng crontab.
+CRON_SCRIPT="$ROOT/scripts/payload-jobs-cron.sh"
+if [[ -z "$CRON_SECRET_VAL" || "$CRON_SECRET_VAL" == "change-me-cron-secret" ]]; then
+  warn "Bỏ qua cài cron: chưa có CRON_SECRET trong .env (email chủ động sẽ không chạy)."
+elif ! have crontab; then
+  warn "Không thấy lệnh crontab — tự cài lịch gọi $CRON_SCRIPT mỗi 5 phút bằng cơ chế khác."
+else
+  log "Đảm bảo cron gọi job runner (mỗi 5 phút)"
+  mkdir -p "$ROOT/scripts" "$ROOT/logs"
+  # Secret KHÔNG nhét vào crontab (crontab -l ai đọc cũng thấy) — wrapper đọc .env.
+  cat > "$CRON_SCRIPT" <<'CRONEOF'
+#!/usr/bin/env bash
+# Gọi job runner của Payload để xử lý job đến hạn (email chủ động cho lead im lặng).
+# Do cron gọi — xem `crontab -l`. Secret đọc từ .env nên không lộ trong crontab.
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SECRET="$(grep -E '^CRON_SECRET=' "$ROOT/.env" | head -n1 | sed -E 's/^CRON_SECRET=//; s/^["'"'"']//; s/["'"'"']$//')"
+[[ -n "$SECRET" ]] || { echo "$(date -Is) CRON_SECRET trống trong .env"; exit 1; }
+# Endpoint của Payload là GET (không phải POST) để dùng được với cron.
+code="$(curl -sS -o /tmp/payload-jobs-out.json -w '%{http_code}' --max-time 120 \
+  -H "Authorization: Bearer $SECRET" \
+  "http://127.0.0.1:3000/api/payload-jobs/run" || echo 000)"
+echo "$(date -Is) HTTP $code $(head -c 200 /tmp/payload-jobs-out.json 2>/dev/null)"
+[[ "$code" == "200" ]]
+CRONEOF
+  chmod +x "$CRON_SCRIPT"
+  CRON_LINE="*/5 * * * * $CRON_SCRIPT >> $ROOT/logs/payload-jobs.log 2>&1"
+  { crontab -l 2>/dev/null | grep -v 'payload-jobs-cron.sh' || true; echo "$CRON_LINE"; } | crontab -
+  ok "Cron: $CRON_LINE"
+fi
+
 # ---- 8. Khởi động / reload PM2 ----------------------------------------------
 if [[ "$SKIP_RESTART" -eq 1 ]]; then
   warn "Bỏ qua khởi động lại (--no-restart)."
@@ -289,6 +344,17 @@ else
     code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$url" || echo 000)"
     if [[ "$code" == "200" ]]; then ok "$svc OK ($url -> 200)"; else warn "$svc chưa OK ($url -> $code). Xem log: pm2 logs"; fi
   done
+
+  # Job runner: kiểm tra CẢ HAI chiều. Nếu không-secret mà ra 200 nghĩa là
+  # endpoint đang hở cho cả internet (Payload mặc định mở khi thiếu access.run).
+  if [[ -n "$CRON_SECRET_VAL" ]]; then
+    c_no="$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "http://127.0.0.1:3000/api/payload-jobs/run" || echo 000)"
+    [[ "$c_no" == "401" ]] && ok "Job runner: không secret -> 401 (được bảo vệ)" \
+      || warn "Job runner: không secret -> $c_no (KHÔNG phải 401 — endpoint đang hở!)"
+    c_yes="$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 -H "Authorization: Bearer $CRON_SECRET_VAL" "http://127.0.0.1:3000/api/payload-jobs/run" || echo 000)"
+    [[ "$c_yes" == "200" ]] && ok "Job runner: có secret -> 200 (chạy được)" \
+      || warn "Job runner: có secret -> $c_yes (job chăm sóc lead sẽ không chạy)"
+  fi
 fi
 
 log "HOÀN TẤT."
