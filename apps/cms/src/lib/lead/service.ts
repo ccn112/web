@@ -20,6 +20,7 @@ import {
   complete,
   fallbackSummary,
   replySystemPrompt,
+  summarizeSession,
   toProviderMessages,
 } from './ai'
 import { sendLeadEmail } from './email/send'
@@ -62,6 +63,8 @@ import {
   aiMayDrive,
   type Collected,
   type HandoffReason,
+  handoffThreshold,
+  isFarewell,
   isHumanOwned,
   type HandoffSignals,
   keywordSignals,
@@ -110,6 +113,10 @@ export type TurnOutcome = {
   missing: string[]
   handoff: boolean
   handoffReason: HandoffReason | null
+  /** True when this turn fully closed the session (info sufficient → AI paused). */
+  ended?: boolean
+  /** True when a session-summary was emailed to the consultant this turn. */
+  summarized?: boolean
 }
 
 /**
@@ -686,6 +693,22 @@ export async function completeWebChatTurn(opts: {
       lead,
       reason: outcome.handoffReason ?? 'score_threshold',
     })
+    return outcome
+  }
+
+  // The customer signalled they're wrapping up ("cảm ơn nhé", "tạm biệt"…) and
+  // there has been a real exchange — close the session and summarise to the
+  // consultant. Idempotent, so a repeated farewell won't re-send.
+  if (isFarewell(userText) && (updated.turnCount ?? 0) >= 2) {
+    const res = await finalizeSession(payload, {
+      conversation: updated,
+      lead,
+      reason: 'ai_farewell',
+    }).catch((e: unknown) => {
+      payload.logger.error({ err: e, conversationId: updated.id }, 'completeWebChatTurn: finalizeSession failed')
+      return null
+    })
+    if (res) return { ...outcome, ended: res.closed, summarized: true }
   }
   return outcome
 }
@@ -974,6 +997,188 @@ export async function handoffByPublicId(
   return { ok: res.ok }
 }
 
+/* ------------------------------------------------------ end of session */
+
+/** Activity type marking a conversation as already summarised (idempotency key). */
+const SESSION_SUMMARY_ACTIVITY = 'session_summary_sent'
+
+export type EndSessionReason = 'customer' | 'ai_farewell' | 'manual'
+export type EndSessionOk = {
+  ok: true
+  alreadySent: boolean
+  notified: boolean
+  /** True when the hồ sơ was complete enough to fully close (AI paused). */
+  closed: boolean
+}
+export type EndSessionResult = EndSessionOk | LeadError
+
+/**
+ * Is the brief complete enough to *close* the consultation?
+ *
+ * A human already owns it, every slot is filled, or the score cleared the
+ * handoff threshold. Below that the customer may be wrapping up early, so we
+ * summarise but keep the AI free to re-engage (cold-lead nurture).
+ */
+function briefComplete(conversation: LeadConversation, collected: Collected): boolean {
+  const status = (conversation.status ?? 'NEW') as LeadState
+  return (
+    isHumanOwned(status) ||
+    missingSlots(collected).length === 0 ||
+    (conversation.score ?? 0) >= handoffThreshold()
+  )
+}
+
+/** Has the end-of-session summary already been sent for this conversation? */
+async function sessionSummarized(payload: Payload, conversationId: string): Promise<boolean> {
+  const found = await payload
+    .find({
+      collection: 'lead-activities',
+      where: {
+        and: [
+          { conversation: { equals: conversationId } },
+          { type: { equals: SESSION_SUMMARY_ACTIVITY } },
+        ],
+      },
+      limit: 1,
+      depth: 0,
+    })
+    .catch(() => null)
+  return !!found?.docs?.length
+}
+
+/**
+ * Close a consultation and email the assigned consultant (fallback: staff inbox)
+ * a Vietnamese HTML summary of the whole session — the first contact details the
+ * customer left, the closing confirmation, a summary of what was discussed, the
+ * confirmed contact method, and the suggested next step. Idempotent: one summary
+ * per conversation, ever.
+ */
+async function finalizeSession(
+  payload: Payload,
+  opts: { conversation: LeadConversation; lead: Lead; reason: EndSessionReason },
+): Promise<EndSessionOk> {
+  const { conversation, lead, reason } = opts
+
+  if (await sessionSummarized(payload, conversation.id)) {
+    return { ok: true, alreadySent: true, notified: false, closed: conversation.aiPaused === true }
+  }
+
+  const history = await listMessages(payload, conversation.id, 120)
+  const transcript = toProviderMessages(
+    history.map((m) => ({ role: m.role, channel: m.channel, contentText: m.contentText })),
+    40,
+  )
+  const collected = (conversation.collected ?? {}) as Collected
+
+  const session = await summarizeSession({
+    transcript,
+    collected,
+    customerName: lead.fullName ?? undefined,
+    companyName: lead.company ?? undefined,
+  })
+
+  // Fallbacks so the consultant mail is always useful even if the AI call failed.
+  const lastUser = [...history].reverse().find((m) => m.role === 'user')
+  const summary =
+    session.summary || conversation.qualificationSummary || fallbackSummary(collected, missingSlots(collected))
+  const closingConfirmation =
+    session.closingConfirmation || (lastUser ? lastUser.contentText.slice(0, 600) : '')
+  const contactPreference =
+    session.contactPreference ||
+    [lead.phone ? `Điện thoại: ${lead.phone}` : '', lead.email ? `Email: ${lead.email}` : '']
+      .filter(Boolean)
+      .join(' · ')
+
+  // Recipient: the consultant already assigned to this thread, else undefined so
+  // sendLeadEmail falls back to the shared staff inbox (staffInbox()).
+  const assignment = await existingAssignment(payload, conversation.id)
+  let to: string | undefined
+  let consultantName: string | undefined
+  if (assignment?.consultant) {
+    const c = await payload
+      .findByID({ collection: 'consultants', id: refId(assignment.consultant), depth: 0 })
+      .catch(() => null)
+    to = c?.email ?? undefined
+    consultantName = c?.name ?? undefined
+  }
+
+  const sent = await sendLeadEmail(payload, {
+    templateKey: 'session_summary_internal',
+    lead,
+    conversation,
+    to,
+    consultantName,
+    sessionSummary: summary,
+    closingConfirmation,
+    contactPreference,
+    nextSteps: session.nextSteps,
+  })
+
+  // Only fully close when the brief is complete: pause the AI so a later message
+  // is acknowledged, not qualified. If the customer wrapped up early, keep the AI
+  // free and drop the lead into the cold-lead nurture flow so it comes back once
+  // more to extract the biggest remaining gap.
+  const closed = briefComplete(conversation, collected)
+  if (closed) {
+    await updateConversation(payload, conversation.id, { aiPaused: true })
+  } else {
+    await updateConversation(payload, conversation.id, { status: 'WAITING_CUSTOMER' })
+    const delay = Math.max(followupDelayMinutes(), 1)
+    await payload.jobs
+      .queue({
+        task: 'leadFollowup',
+        input: { conversationId: conversation.id, expectedTurnCount: conversation.turnCount ?? 0 },
+        waitUntil: new Date(Date.now() + delay * 60_000),
+      })
+      .catch((e: unknown) => {
+        payload.logger.error({ err: e, conversationId: conversation.id }, 'finalizeSession: queue leadFollowup failed')
+      })
+  }
+
+  await logActivity(payload, {
+    type: SESSION_SUMMARY_ACTIVITY,
+    leadId: lead.id,
+    conversationId: conversation.id,
+    channel: 'consultant',
+    actor: reason === 'ai_farewell' ? 'ai' : 'customer',
+    summary: sent.sent
+      ? `Kết thúc phiên (${reason}, ${closed ? 'đủ hồ sơ → đóng' : 'chưa đủ → nuôi dưỡng tiếp'}) — gửi tổng kết tới ${to ?? 'hộp thư chung'}`
+      : `Kết thúc phiên (${reason}) — gửi tổng kết thất bại (${sent.reason})`,
+    detail: { reason, closed, contactPreference, notified: sent.sent, endedAt: new Date().toISOString() },
+  })
+
+  return { ok: true, alreadySent: false, notified: sent.sent, closed }
+}
+
+/**
+ * End-session entry point for the web-chat button. Authorises the device the
+ * same way a chat turn does, then summarises + notifies the consultant.
+ */
+export async function endSession(input: {
+  deviceId: string
+  conversationPublicId: string
+  reason?: EndSessionReason
+}): Promise<EndSessionResult> {
+  const payload = await getPayloadClient()
+  const deviceId = (input.deviceId ?? '').trim()
+  const publicId = (input.conversationPublicId ?? '').trim()
+  if (!publicId) return err('Thiếu hội thoại.', 400)
+  if (!deviceId) return err('Thiếu deviceId.', 400, 'no_device')
+
+  const conversation = await getConversationByPublicId(payload, publicId)
+  if (!conversation) return err('Không tìm thấy hội thoại.', 404, 'not_found')
+
+  const device = await getDevice(payload, deviceId)
+  if (!deviceMayAccess(conversation, device)) {
+    return err('Thiết bị này chưa được xác minh cho hội thoại tư vấn.', 403, 'verification_required')
+  }
+
+  const lead = await getLead(payload, refId(conversation.lead))
+  if (!lead) return err('Không tìm thấy hồ sơ lead.', 404)
+
+  return finalizeSession(payload, { conversation, lead, reason: input.reason ?? 'customer' })
+}
+
 /* ------------------------------------------------------- session & resume */
 
 export type SessionMessage = {
@@ -991,6 +1196,10 @@ export type SessionView = {
   summary: string
   handoff: boolean
   aiPaused: boolean
+  /** A session-summary was emailed to the consultant (may still be open for nurture). */
+  summarized: boolean
+  /** The session was fully closed (brief complete → AI paused). */
+  ended: boolean
   channels: string[]
   customerName?: string
   companyName?: string
@@ -1001,6 +1210,7 @@ function toSessionView(
   conversation: LeadConversation,
   lead: Lead,
   messages: LeadMessage[],
+  summarized = false,
 ): SessionView {
   return {
     conversationPublicId: conversation.publicId,
@@ -1010,6 +1220,8 @@ function toSessionView(
     summary: conversation.qualificationSummary ?? '',
     handoff: isHumanOwned((conversation.status ?? 'NEW') as LeadState),
     aiPaused: conversation.aiPaused === true,
+    summarized,
+    ended: summarized && conversation.aiPaused === true,
     channels: (conversation.channels ?? []) as string[],
     customerName: lead.fullName ?? undefined,
     companyName: lead.company ?? undefined,
@@ -1033,7 +1245,8 @@ export async function getSession(deviceId: string): Promise<SessionView | null> 
   if (!active) return null
   await touchDevice(payload, id)
   const messages = await listMessages(payload, active.conversation.id)
-  return toSessionView(active.conversation, active.lead, messages)
+  const summarized = await sessionSummarized(payload, active.conversation.id)
+  return toSessionView(active.conversation, active.lead, messages, summarized)
 }
 
 export type ResumeResult =
@@ -1113,7 +1326,8 @@ export async function resumeFromToken(input: {
   })
 
   const messages = await listMessages(payload, conversation.id)
-  return { ok: true, session: toSessionView(conversation, lead, messages) }
+  const summarized = await sessionSummarized(payload, conversation.id)
+  return { ok: true, session: toSessionView(conversation, lead, messages, summarized) }
 }
 
 /* ----------------------------------------------------- device verification */

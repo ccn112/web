@@ -17,6 +17,7 @@ export type TemplateKey =
   | 'human_ready_customer'
   | 'human_ready_internal'
   | 'consultant_message'
+  | 'session_summary_internal'
 
 export type EmailTemplateDef = {
   templateKey: TemplateKey
@@ -265,6 +266,63 @@ Mở hội thoại trên website: {{resume_url}}
 — {{consultant_name}} · XTECH`,
     ctaLabel: 'Mở hội thoại trên website',
     ctaUrlVar: 'resume_url',
+  },
+
+  /* ------------------------------------ 8. session summary → consultant */
+  {
+    templateKey: 'session_summary_internal',
+    name: 'Nội bộ — Tổng kết phiên tư vấn cho chuyên gia',
+    audience: 'consultant',
+    subject: '[TỔNG KẾT PHIÊN][{{lead_score}}] {{company_name}} – {{primary_need_short}}',
+    preheader: 'Khách vừa kết thúc phiên tư vấn — tóm tắt & thông tin liên hệ để chuyên gia tiếp nối.',
+    eyebrow: 'Tổng kết phiên tư vấn',
+    heading: '{{company_name}} — {{primary_need_short}}',
+    internal: true,
+    htmlBody: `
+{{p:Khách đã kết thúc phiên tư vấn tự động. Dưới đây là bàn giao đầy đủ để chuyên gia liên hệ tiếp — <strong>vui lòng không hỏi lại</strong> những thông tin khách đã cung cấp.}}
+{{label:Thông tin khách để lại}}
+{{contact_block}}
+{{label:Tóm tắt nội dung trao đổi}}
+{{session_summary_block}}
+{{label:Xác nhận trước khi kết thúc}}
+{{closing_confirmation_block}}
+{{label:Phương thức liên hệ khách mong muốn}}
+{{contact_preference_block}}
+{{label:Nhu cầu đã khai thác}}
+{{brief_block}}
+{{missing_block}}
+{{label:Bước tiếp theo}}
+{{next_steps_block}}
+{{cta}}
+{{links_block}}`,
+    textBody: `[TỔNG KẾT PHIÊN] điểm {{lead_score}} — {{company_name}}
+
+Khách đã kết thúc phiên tư vấn tự động. Bàn giao để chuyên gia liên hệ tiếp — không hỏi lại thông tin đã có.
+
+THÔNG TIN KHÁCH ĐỂ LẠI
+{{contact_text}}
+
+TÓM TẮT NỘI DUNG TRAO ĐỔI
+{{session_summary_text}}
+
+XÁC NHẬN TRƯỚC KHI KẾT THÚC
+{{closing_confirmation_text}}
+
+PHƯƠNG THỨC LIÊN HỆ KHÁCH MONG MUỐN
+{{contact_preference_text}}
+
+NHU CẦU ĐÃ KHAI THÁC
+{{brief_text}}
+
+CÒN THIẾU
+{{missing_text}}
+
+BƯỚC TIẾP THEO
+{{next_steps_text}}
+
+Hội thoại nội bộ: {{admin_conversation_url}}`,
+    ctaLabel: 'Mở hội thoại trong X-CMS',
+    ctaUrlVar: 'admin_conversation_url',
   },
 ]
 

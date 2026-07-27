@@ -158,6 +158,11 @@ export type SendContext = {
   otpCode?: string
   handoffReason?: string | null
   consultantName?: string
+  /** Session-summary mail (session_summary_internal). */
+  sessionSummary?: string
+  closingConfirmation?: string
+  contactPreference?: string
+  nextSteps?: string
   /** Reuse an already-minted resume link instead of issuing another. */
   resumeUrl?: string
   /**
@@ -171,6 +176,26 @@ export type SendContext = {
 const shortText = (s: string | null | undefined, n = 70): string => {
   const t = (s ?? '').replace(/\s+/g, ' ').trim()
   return t.length <= n ? t : `${t.slice(0, n - 1)}…`
+}
+
+/**
+ * The text we store in the *web-chat transcript* for an outbound email.
+ *
+ * The plain-text email body carries a raw resume-token URL and a "reply to this
+ * email / open on the website via link:" hint plus the signature footer. Inside
+ * the web thread the customer is already in the conversation, so those links are
+ * noise — and a 200-char token URL overflows the chat column (the bug in the
+ * screenshot). Strip URLs, the now-dangling "qua liên kết:" tail, and the "—
+ * XTECH/— Trợ lý XTECH" sign-off so the bubble reads like a chat message.
+ */
+export function chatTranscriptText(fullText: string): string {
+  return fullText
+    .split('\n')
+    .map((line) => line.replace(/https?:\/\/\S+/gi, '').replace(/\s*(qua liên kết|liên kết)\s*:\s*$/i, '').trimEnd())
+    .filter((line) => !/^—\s*(trợ lý xtech|xtech)\b/i.test(line.trim()))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
 }
 
 /** Turn `aiReply` (plain text with blank-line paragraphs) into email HTML. */
@@ -343,6 +368,38 @@ function buildVarsAndBlocks(
     actions.map((a) => `- ${a.replace(/<[^>]+>/g, '')}`).join('\n'),
   )
 
+  const sessionSummaryText = (ctx.sessionSummary ?? '').trim()
+  set(
+    'session_summary',
+    sessionSummaryText ? replyToHtml(sessionSummaryText) : p('(không có tóm tắt)'),
+    sessionSummaryText || '(không có)',
+  )
+
+  const closing = (ctx.closingConfirmation ?? '').trim()
+  set(
+    'closing_confirmation',
+    closing
+      ? callout(escapeHtml(closing).replace(/\n/g, '<br />'))
+      : note('Khách không để lại xác nhận cụ thể trước khi kết thúc.'),
+    closing || '(không có)',
+  )
+
+  const pref = (ctx.contactPreference ?? '').trim()
+  set(
+    'contact_preference',
+    pref
+      ? callout(`<strong>${escapeHtml(pref).replace(/\n/g, '<br />')}</strong>`)
+      : note('Chưa nêu rõ — ưu tiên gọi điện trong giờ hành chính, email nếu không liên lạc được.'),
+    pref || 'Chưa rõ',
+  )
+
+  const steps = (ctx.nextSteps ?? '').trim()
+  set(
+    'next_steps',
+    steps ? replyToHtml(steps) : ul(['Liên hệ khách theo phương thức đã nêu để tiếp nối tư vấn.']),
+    steps || '- Liên hệ khách theo phương thức đã nêu để tiếp nối tư vấn.',
+  )
+
   set(
     'links',
     `${'{{label:Liên kết}}'}${ul([
@@ -501,7 +558,7 @@ export async function sendLeadEmail(payload: Payload, ctx: SendContext): Promise
         channel: 'email',
         direction: 'outbound',
         role: 'assistant',
-        contentText: ctx.aiReply?.trim() || rendered.text,
+        contentText: ctx.aiReply?.trim() || chatTranscriptText(rendered.text),
         contentHtml: rendered.html,
         emailMessageId: messageId,
         emailSubject: rendered.subject,

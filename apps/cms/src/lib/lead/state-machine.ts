@@ -308,6 +308,37 @@ export function keywordSignals(text: string): HandoffSignals {
   }
 }
 
+/**
+ * Cheap net for a customer wrapping up the conversation, so we can close the
+ * session and send the consultant a summary. Kept conservative — only clear
+ * "we're done / goodbye" phrases, never a bare "cảm ơn" (said mid-turn all the
+ * time). The explicit end-session button is the primary path; this is the assist.
+ */
+export function isFarewell(text: string): boolean {
+  const t = ` ${text.toLowerCase().replace(/\s+/g, ' ')} `
+  const any = (...phrases: string[]) => phrases.some((p) => t.includes(p))
+  return any(
+    'tạm biệt',
+    'hẹn gặp lại',
+    'thế là đủ',
+    'vậy là đủ',
+    'vậy là được rồi',
+    'thế thôi',
+    'vậy thôi nhé',
+    'không cần thêm',
+    'không hỏi thêm',
+    'kết thúc tư vấn',
+    'kết thúc ở đây',
+    'dừng ở đây',
+    'cảm ơn nhé',
+    'cảm ơn bạn nhé',
+    'cảm ơn, mình liên hệ lại',
+    'mình sẽ liên hệ lại',
+    'goodbye',
+    ' bye ',
+  )
+}
+
 export type Advance = {
   status: LeadState
   score: number

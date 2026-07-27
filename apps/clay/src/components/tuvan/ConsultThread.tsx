@@ -14,7 +14,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Send, ShieldCheck, UserRound, Sparkles, Mail, MessageSquare } from "lucide-react";
+import { Send, ShieldCheck, UserRound, Sparkles, Mail, MailCheck, MessageSquare, CheckCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getDeviceId } from "@/lib/device";
 import { Markdown } from "@/components/chat/markdown";
@@ -35,6 +35,8 @@ export type SessionView = {
   summary: string;
   handoff: boolean;
   aiPaused: boolean;
+  summarized?: boolean;
+  ended?: boolean;
   channels: string[];
   customerName?: string;
   companyName?: string;
@@ -72,7 +74,7 @@ function Bubble({ m }: { m: SessionMessage }) {
       </div>
       <div
         className={cn(
-          "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
+          "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed [overflow-wrap:anywhere]",
           mine
             ? "whitespace-pre-wrap bg-blue text-white"
             : fromConsultant
@@ -172,6 +174,22 @@ function HandoffBanner() {
   );
 }
 
+function EndedBanner() {
+  return (
+    <div className="flex items-start gap-3 rounded-2xl border border-gold/40 bg-gold/8 p-4">
+      <MailCheck className="mt-0.5 size-4 shrink-0 text-gold" />
+      <div>
+        <p className="text-sm font-semibold text-blue">Đã kết thúc phiên & gửi tổng kết</p>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+          Chúng tôi đã gửi bản tóm tắt buổi trao đổi cùng thông tin liên hệ của bạn tới chuyên gia
+          XTECH phụ trách. Chuyên gia sẽ liên hệ lại theo phương thức bạn đã chọn. Bạn vẫn có thể gửi
+          thêm thông tin bên dưới nếu cần.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function ConsultThread({
   session: initial,
   siteCode,
@@ -184,8 +202,44 @@ export function ConsultThread({
   const [session, setSession] = useState<SessionView>(initial);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [ended, setEnded] = useState<boolean>(!!initial.ended);
+  const [summarized, setSummarized] = useState<boolean>(!!initial.summarized);
+  const [ending, setEnding] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  async function endSession() {
+    if (ending || ended) return;
+    setEnding(true);
+    setNotice(null);
+    try {
+      const res = await fetch("/api/lead/end", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          deviceId: getDeviceId(),
+          conversationPublicId: session.conversationPublicId,
+        }),
+      });
+      const j = (await res.json().catch(() => ({}))) as { error?: string; closed?: boolean };
+      if (!res.ok) {
+        setNotice(j.error ?? "Không kết thúc được phiên. Vui lòng thử lại.");
+      } else {
+        setSummarized(true);
+        if (j.closed) {
+          setEnded(true);
+        } else {
+          setNotice(
+            "Đã gửi bản tóm tắt tới chuyên gia. Hồ sơ chưa đủ thông tin nên trợ lý XTECH sẽ tiếp tục hỗ trợ để hoàn thiện nhu cầu của bạn.",
+          );
+        }
+      }
+    } catch {
+      setNotice("Không kết nối được. Vui lòng thử lại.");
+    } finally {
+      setEnding(false);
+    }
+  }
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -258,6 +312,8 @@ export function ConsultThread({
             score?: number;
             missing?: string[];
             handoff?: boolean;
+            ended?: boolean;
+            summarized?: boolean;
           };
           if (evt.type === "delta" && evt.text) {
             acc += evt.text;
@@ -272,6 +328,8 @@ export function ConsultThread({
               missing: evt.missing ?? s.missing,
               handoff: evt.handoff ?? s.handoff,
             }));
+            if (evt.summarized) setSummarized(true);
+            if (evt.ended) setEnded(true);
           }
         }
       }
@@ -285,7 +343,11 @@ export function ConsultThread({
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.55fr_0.85fr]">
       <div className="flex flex-col gap-4">
-        {session.handoff || session.aiPaused ? <HandoffBanner /> : null}
+        {ended ? (
+          <EndedBanner />
+        ) : session.handoff || session.aiPaused ? (
+          <HandoffBanner />
+        ) : null}
 
         <div
           ref={scrollRef}
@@ -340,10 +402,28 @@ export function ConsultThread({
                 <Send className="size-4" />
               </button>
             </div>
-            <p className="mt-2.5 text-[11px] leading-relaxed text-muted-foreground">
-              Bạn cũng có thể trả lời trực tiếp email của XTECH — nội dung sẽ xuất hiện ngay trong
-              hội thoại này.
-            </p>
+            <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <p className="text-[11px] leading-relaxed text-muted-foreground">
+                Bạn cũng có thể trả lời trực tiếp email của XTECH — nội dung sẽ xuất hiện ngay trong
+                hội thoại này.
+              </p>
+              {summarized ? (
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-gold">
+                  <CheckCheck className="size-3.5" />
+                  Đã gửi tổng kết cho chuyên gia
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => void endSession()}
+                  disabled={ending}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-blue/20 px-3 py-1.5 text-[11px] font-semibold text-blue transition hover:border-gold/50 disabled:opacity-50"
+                >
+                  <MailCheck className="size-3.5" />
+                  {ending ? "Đang gửi tổng kết…" : "Kết thúc & gửi tóm tắt cho chuyên gia"}
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>

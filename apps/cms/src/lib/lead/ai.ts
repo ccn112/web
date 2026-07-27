@@ -264,6 +264,88 @@ export async function analyzeTurn(opts: {
   }
 }
 
+/* ------------------------------------------------------- session summary */
+
+export type SessionSummary = {
+  /** 3–5 câu tóm tắt toàn bộ trao đổi cho chuyên gia. */
+  summary: string
+  /** Phương thức & thời điểm liên hệ khách mong muốn ("" nếu không rõ). */
+  contactPreference: string
+  /** Đoạn khách xác nhận ở cuối trước khi tạm biệt ("" nếu không có). */
+  closingConfirmation: string
+  /** 1–3 gạch đầu dòng bước tiếp theo cho chuyên gia. */
+  nextSteps: string
+}
+
+const SESSION_SUMMARY_SYSTEM = `Bạn là trợ lý tổng kết hội thoại tư vấn B2B của XTECH. Đọc toàn bộ hội thoại giữa KHÁCH và XTECH rồi tạo bản bàn giao cho chuyên gia tư vấn phụ trách. Chỉ trả về JSON hợp lệ, không giải thích, không markdown, không code fence. TIẾNG VIỆT.
+
+Schema:
+{
+  "summary": "…",              // 3-5 câu: khách là ai, cần gì, đã trao đổi những gì, mức độ sẵn sàng
+  "contactPreference": "…",    // phương thức & thời điểm liên hệ khách mong muốn (điện thoại/email/khung giờ…); "" nếu không rõ
+  "closingConfirmation": "…",  // tóm tắt/trích đoạn khách xác nhận ở cuối trước khi tạm biệt; "" nếu không có
+  "nextSteps": "…"             // 1-3 gạch đầu dòng "- " bước tiếp theo cho chuyên gia
+}
+
+QUY TẮC: chỉ dựa trên nội dung hội thoại, KHÔNG bịa. Giữ nguyên số liệu và tên hệ thống khách nêu.`
+
+/**
+ * One-shot bàn giao cuối phiên: đọc toàn bộ transcript, trả về tóm tắt +
+ * phương thức liên hệ + xác nhận cuối + bước tiếp theo. Không bao giờ throw —
+ * lỗi provider/parse trả về rỗng để caller dùng fallback.
+ */
+export async function summarizeSession(opts: {
+  transcript: ChatMsg[]
+  collected: Collected
+  customerName?: string
+  companyName?: string
+}): Promise<SessionSummary> {
+  const empty: SessionSummary = {
+    summary: '',
+    contactPreference: '',
+    closingConfirmation: '',
+    nextSteps: '',
+  }
+  try {
+    const known = briefLines(opts.collected)
+    const priming = known.length
+      ? `Thông tin đã khai thác:\n${known.map((l) => `- ${l.label}: ${l.value}`).join('\n')}`
+      : 'Chưa khai thác được nhiều thông tin có cấu trúc.'
+    const who = [
+      opts.customerName ? `Khách: ${opts.customerName}` : '',
+      opts.companyName ? `Doanh nghiệp: ${opts.companyName}` : '',
+    ]
+      .filter(Boolean)
+      .join(' · ')
+    const conversationText = opts.transcript
+      .slice(-40)
+      .map((m) => `${m.role === 'user' ? 'KHÁCH' : 'XTECH'}: ${m.content}`)
+      .join('\n\n')
+      .slice(0, 16_000)
+
+    const res = await complete({
+      system: SESSION_SUMMARY_SYSTEM,
+      model: analyzerModel(),
+      maxTokens: 900,
+      messages: [
+        { role: 'user', content: `${who ? who + '\n' : ''}${priming}\n\n--- HỘI THOẠI ---\n${conversationText}` },
+      ],
+    })
+
+    const parsed = parseJsonLoose(res.text)
+    if (!parsed || typeof parsed !== 'object') return empty
+    const o = parsed as Record<string, unknown>
+    return {
+      summary: str(o.summary).slice(0, 2000),
+      contactPreference: str(o.contactPreference).slice(0, 400),
+      closingConfirmation: str(o.closingConfirmation).slice(0, 1000),
+      nextSteps: str(o.nextSteps).slice(0, 1200),
+    }
+  } catch {
+    return empty
+  }
+}
+
 /* ------------------------------------------------------------- transcripts */
 
 export type TranscriptMessage = {
