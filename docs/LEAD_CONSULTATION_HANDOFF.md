@@ -1,8 +1,10 @@
 # Tư vấn lead đa kênh (AI Chat + Email + Chuyên gia) — Nhật ký phát triển & Handoff
 
-> Phiên làm việc **2026-07-25**. Nguồn yêu cầu: `handoff/XTECH_AI_LEAD_EMAIL_CHAT_HANDOFF_V1/`.
-> Trạng thái: **code hoàn chỉnh, typecheck + lint sạch, migration đã sinh — CHƯA smoke-test runtime**.
-> Đọc mục [8. Việc còn lại](#8-việc-còn-lại--làm-tiếp-ở-máy-mới) trước khi tiếp tục.
+> Phiên làm việc **2026-07-25**, cập nhật **2026-07-27**. Nguồn yêu cầu:
+> `handoff/XTECH_AI_LEAD_EMAIL_CHAT_HANDOFF_V1/`.
+> Trạng thái: **đã smoke-test runtime end-to-end trên Postgres local** (form → ACK → email chủ động có
+> độ trễ → khách trả lời bằng email → handoff chuyên gia). Còn lại chủ yếu là hạ tầng mail inbound và
+> kiểm tra giao diện — đọc mục [8. Việc còn lại](#8-việc-còn-lại--làm-tiếp-ở-máy-mới).
 
 ---
 
@@ -93,13 +95,59 @@ nhánh: WAITING_CUSTOMER → NURTURE | ANY → UNSUBSCRIBED | ANY → CLOSED_LOS
 
 `score = tổng trọng số slot đã có`. Đạt **`LEAD_HANDOFF_SCORE` (mặc định 62)** → `HUMAN_READY`.
 
-**Chuyển người thật NGAY** (bỏ qua điểm) khi có 1 trong các tín hiệu: `requested_human`,
-`refused_ai`, `requested_call_demo_quote`, `complex_request`, `ai_uncertain`.
-Tín hiệu lấy từ analyzer **hợp với** `keywordSignals()` — lưới an toàn để câu “cho tôi gặp nhân viên”
-không bao giờ bị AI bỏ sót.
+### 3.1 Thứ tự ưu tiên khi quyết định handoff (`advance()`)
+
+1. **Ý định rõ ràng của khách** → `HUMAN_READY` **ngay**, ở bất kỳ lượt nào:
+   `requested_human`, `refused_ai`, `requested_call_demo_quote`. Khách đã yêu cầu, không gì cao hơn.
+2. **Đạt ngưỡng điểm** → `score_threshold`.
+3. **AI tự đánh giá** (`complex_request`, `ai_uncertain`) → chỉ tính từ lượt
+   **`LEAD_SOFT_HANDOFF_MIN_TURNS` (mặc định 3)** trở đi.
+
+> Vì sao (3) phải chờ: `ai_uncertain` nghĩa là “dữ kiện không đủ để AI trả lời đúng” — ở lượt đầu của
+> một câu hỏi mơ hồ thì điều đó **luôn đúng**. Trước khi tách nhóm, lead “tôi muốn tìm hiểu thêm về
+> giải pháp” (0 điểm, mọi slot rỗng) escalate ngay lập tức và chuyên gia nhận một brief rỗng — đúng
+> loại lead mà máy khai thác 10 slot sinh ra để xử lý.
+
+### 3.2 Ai quyết định tín hiệu: analyzer AI, không phải keyword
+
+`resolveSignals()` trong `service.ts`: **analyzer là người quyết**. Nó đọc toàn bộ transcript hợp nhất
+nên phân biệt được “bên mình có 200 nhân viên” (khách đang **trả lời** câu hỏi `userScale` của chính
+ta) với “cho tôi gặp nhân viên” (yêu cầu thật).
+
+`keywordSignals()` chỉ là **lưới an toàn ở chế độ suy giảm** — chỉ dùng khi `analysis.ok === false`,
+tức provider lỗi hoặc JSON không parse được nên không có verdict nào. Không bao giờ `OR` lên trên một
+verdict tốt: nó chỉ là so khớp chuỗi con, một danh từ trần sẽ lặng lẽ ghi đè phán đoán của model và
+chặn đứng cả quy trình khai thác ngay từ lượt đầu.
+
+Vì vậy mọi entry trong `keywordSignals` phải mang **ý định** (động từ + tân ngữ), không bao giờ là
+danh từ trần. Bản đầu có `'sale'`, `'nhân viên'`, `'chuyên gia'`, `'chi phí'`, `'hợp đồng'`, `'bot'` —
+toàn những từ mà một lead B2B tốt nói khi đang trả lời câu hỏi khai thác, hoặc chính là tên tính năng
+trong catalogue XTECH (“chi phí dự án” của FinERP, “hợp đồng & tiến độ thanh toán” của XBooking), hoặc
+chính lời lẽ của ta bị khách quote lại (“chuyên gia XTECH”).
 
 Khi đã `HUMAN_READY`/human-owned: `aiPaused = true`, AI **chỉ ghi nhận** tin nhắn khách và nói chuyên
 gia sẽ phản hồi — không hỏi khai thác nữa, không tự đổi trạng thái.
+
+### 3.3 Email chủ động có độ trễ (lượt chạm thứ hai)
+
+`intake()` gửi ACK `lead_received` **ngay**, rồi đẩy job `leadFollowup` với
+`waitUntil = now + LEAD_FOLLOWUP_DELAY_MINUTES` (mặc định 30; đặt 0 để tắt hẳn). Job gọi
+`service.followUpOnSilence()`:
+
+| Tình huống lúc job chạy | Hành động |
+|---|---|
+| `turnCount` đã tăng (khách tự quay lại) | bỏ qua — luồng thường đã trả lời rồi |
+| `aiPaused` / chuyên gia đã tiếp nhận / hội thoại đã đóng | bỏ qua |
+| đã có activity `followup_sent` | bỏ qua (idempotent — mỗi hội thoại đúng **một** lần) |
+| khách im lặng, `score >= LEAD_FOLLOWUP_HANDOFF_SCORE` (40) | `triggerHandoff` — form đủ chi tiết mà im lặng thì đáng một cuộc gọi, không phải thêm email |
+| khách im lặng, điểm thấp | **một** email: đưa nhận định có giá trị trước, rồi hỏi đúng **một** câu vào slot trọng số cao nhất (`nextQuestion`) |
+
+Khác với một lượt bình thường, ở đây **không có input mới từ khách** nên job **không** chạy lại
+analyzer và **không** tăng `turnCount` — nó tái dùng kết quả khai thác từ `intake` và tốn đúng **một**
+lời gọi AI.
+
+> ⚠️ Job chỉ chạy khi có cron gọi **`GET /api/payload-jobs/run`** (xem mục 7). Không có cron thì
+> email chủ động không bao giờ được gửi.
 
 ---
 
@@ -173,6 +221,7 @@ nên bỏ footer marketing + unsubscribe.
 | POST | `/api/lead/email-reply` | — | webhook provider, auth `x-lead-webhook-secret` |
 | POST | `/api/lead/handoff` | — | escalate thủ công, auth `x-lead-admin-secret` |
 | GET/POST | `/api/lead/unsubscribe?t=` | `/api/lead/unsubscribe` | 1-click |
+| **GET** | `/api/payload-jobs/run` | — | cron chạy job đến hạn; auth `Authorization: Bearer <CRON_SECRET>` hoặc `?secret=`. Payload định nghĩa là **GET**, không phải POST |
 
 Route công khai: `/tu-van`, `/tu-van/tiep-tuc?t=`, `/tu-van/lich-su`, `/tu-van/huy-nhan-email?t=`.
 
@@ -193,8 +242,14 @@ LEAD_MAX_AUTO_EMAILS=10       # ngân sách email tự động / hội thoại
 LEAD_EMAIL_MIN_INTERVAL_MINUTES=3
 LEAD_INBOUND_LIMIT_PER_MINUTE=4
 
+# --- email chủ động có độ trễ (lượt chạm thứ hai) ---
+LEAD_FOLLOWUP_DELAY_MINUTES=30   # 0 = tắt hẳn
+LEAD_FOLLOWUP_HANDOFF_SCORE=40   # lead im lặng đạt điểm này → chuyển thẳng chuyên gia
+CRON_SECRET=                     # 🔒 cho GET /api/payload-jobs/run; KHÔNG có cron = không có email chủ động
+
 # --- handoff ---
 LEAD_HANDOFF_SCORE=62         # ngưỡng điểm → HUMAN_READY
+LEAD_SOFT_HANDOFF_MIN_TURNS=3 # từ lượt này trở đi mới tính complex_request / ai_uncertain
 LEAD_SLA_HOURS=2
 LEAD_CONSULTANT_TO=           # fallback khi chưa có record `consultants`; nếu trống dùng LEAD_NOTIFY_TO
 LEAD_ADMIN_SECRET=            # 🔒 cho /api/lead/handoff ở production
@@ -216,43 +271,43 @@ POST vào `https://<cms>/api/lead/email-reply?secret=…` (hoặc header).
 
 ### Đã xác minh
 - `pnpm --filter @x/cms typecheck` ✅ sạch · `pnpm --filter @x/clay typecheck` ✅ sạch
-- `eslint` trên toàn bộ file mới ✅ sạch (cả cms và clay)
-- `payload generate:types` ✅ đã chạy (9 collection có trong `payload-types.ts`)
-- Migration `20260725_060131_add_lead_consultation` ✅ đã sinh, kiểm tra bằng grep: `up()` chỉ
-  CREATE, mọi `DROP` nằm trong `down()`; `migrations/index.ts` đã tự cập nhật đúng thứ tự
-  (`seed_content` vẫn cuối).
+- `eslint`: cms ✅ 0 error. clay còn **4 error có sẵn từ trước** (`reactbits/CountUp.tsx`,
+  `reactbits/SplitText.tsx`, `solutions/SolutionPages.tsx`) — các file này giống hệt `origin/main`,
+  không liên quan luồng lead. Nhánh `copilot/fix-failing-github-actions-job` đang xử lý.
+- `payload generate:types` ✅ (9 collection + task `leadFollowup` + collection `payload-jobs`)
+- Migration ✅ `20260725_060131_add_lead_consultation` và `20260727_022037_add_payload_jobs`: `up()`
+  chỉ CREATE, mọi `DROP` nằm trong `down()`; `migrations/index.ts` đúng thứ tự (`seed_content` cuối).
+  DDL của `add_payload_jobs` đã đối chiếu khớp từng cột với bảng mà dev-push tạo ra.
+
+### Smoke-test runtime — ĐÃ CHẠY (2026-07-27, Postgres local, `MAIL_HOST=""`)
+
+Chạy CMS với mail tắt để **không gửi mail thật ra ngoài** (console adapter ghi hết vào log):
+
+```bash
+MAIL_HOST="" LEAD_FOLLOWUP_DELAY_MINUTES=1 CRON_SECRET=smoke-cron-secret \
+  pnpm --filter @x/cms dev        # dev push tự tạo 15 bảng (13 lead + 2 payload_jobs)
+```
+
+Gửi payload bằng **file UTF-8** (`--data-binary @file.json`), không dùng `-d 'chuỗi inline'`: shell
+trên Windows mã hoá hỏng tiếng Việt và làm kết quả trông như lỗi app.
+
+Đã chạy và đạt:
+
+| # | Bước | Kết quả |
+|---|---|---|
+| 1 | `POST /api/lead/intake` | tạo lead + conversation + ACK `lead_received`, đẩy job `leadFollowup` |
+| 2 | `GET /api/lead/session?deviceId=` | transcript hợp nhất, `channels=[web-chat,email]`, `missing[]` đúng |
+| 3 | `POST /api/lead/chat` | SSE `meta → delta* → state → done`, tiếng Việt đúng |
+| 4 | `GET /api/payload-jobs/run` | 401 khi thiếu/sai secret; 200 với secret. Lead im lặng nhận **một** email chủ động hỏi đúng slot `primaryNeed`; 3 lead đã `HUMAN_READY` bị bỏ qua đúng thiết kế |
+| 5 | `POST /api/lead/email-reply` | khách trả lời **bằng email** gộp vào **cùng** hội thoại, trích slot 0 → 76 điểm → `HUMAN_READY` (`score_threshold`) → brief nội bộ + email báo khách |
+| 6 | gửi lại cùng `MessageID` | `{"handled":false,"reason":"duplicate_message_id"}` — dedupe đúng |
+
+Ba lỗi được smoke-test phát hiện và đã sửa (chi tiết ở `docs/CHANGELOG.md` phiên 2026-07-27):
+keyword net ghi đè phán đoán của AI · `ai_uncertain` escalate lead mơ hồ ngay lượt đầu ·
+`human_ready_customer` bị throttle chặn im lặng.
 
 ### CHƯA làm — ưu tiên theo thứ tự
-1. **Smoke-test runtime** (chưa chạy — dev server vừa khởi động thì dừng phiên).
-   Chạy CMS với mail tắt để **không gửi mail thật ra ngoài**:
-   ```bash
-   cd apps/cms && MAIL_HOST="" pnpm dev      # push:true sẽ tự tạo 13 bảng mới
-   ```
-   Rồi lần lượt:
-   ```bash
-   # 1) intake
-   curl -s localhost:3000/api/lead/intake -H 'content-type: application/json' -d '{
-     "email":"test@example.com","fullName":"Nguyễn Test","company":"ACME",
-     "message":"Quản lý bán hàng dự án còn thủ công, dữ liệu rời rạc giữa sale và kế toán",
-     "deviceId":"dev-device-1","siteCode":"corporate","consent":true}'
-   # → {conversationPublicId, resumeUrl, status, score}
-
-   # 2) session
-   curl -s 'localhost:3000/api/lead/session?deviceId=dev-device-1'
-
-   # 3) web chat (SSE)
-   curl -N localhost:3000/api/lead/chat -H 'content-type: application/json' \
-     -d '{"deviceId":"dev-device-1","message":"Khoảng 200 sale, cần go-live trong Q4"}'
-
-   # 4) email reply (dev không cần secret) — publicId lấy từ bước 1
-   curl -s localhost:3000/api/lead/email-reply -H 'content-type: application/json' -d '{
-     "To":"lead+<publicId>@reply.x-tech.com.vn","From":"test@example.com",
-     "Subject":"Re: XTECH","TextBody":"Bên mình dùng Excel và MISA. Cho tôi gặp nhân viên tư vấn nhé.",
-     "MessageID":"<smoke-1@example.com>"}'
-   # → kỳ vọng: requested_human → HUMAN_READY → 2 email (nội bộ + khách)
-   ```
-   Đọc log `payload.sendEmail` (console adapter) để **soi HTML email** và trạng thái state machine.
-2. **Kiểm tra hiển thị email thật** — dán HTML từ log vào Litmus/Email-on-Acid hoặc gửi 1 mail tới
+1. **Kiểm tra hiển thị email thật** — dán HTML từ log vào Litmus/Email-on-Acid hoặc gửi 1 mail tới
    `MAIL_TEST_TO_ADDRESS` (`chtchinh@gmail.com`) để xem trên Gmail + Outlook + mobile dark mode.
 3. **Frontend chưa mở bằng browser**: `/tu-van`, `/tu-van/tiep-tuc?t=…` (kể cả nhánh OTP máy mới),
    `/tu-van/lich-su`. Cần xem lại badge kênh + banner handoff + thanh tiến độ trên mobile.
@@ -263,14 +318,17 @@ POST vào `https://<cms>/api/lead/email-reply?secret=…` (hoặc header).
 6. **Cấu hình inbound mail** (MX + webhook của Elastic Email / Postmark / Mailgun cho
    `reply.x-tech.com.vn`) — không có bước này thì luồng email chỉ một chiều (gửi được, khách trả lời
    không vào hệ thống).
-7. Chưa có **unit test** cho 3 module pure đáng test nhất: `state-machine.ts` (advance/score),
-   `tokens.ts` (sign/verify/expiry), `inbound.ts` (parse/isAutomated/stripQuotedReply),
-   `email/render.ts` (3 pass substitution). Repo hiện chưa có vitest ở `apps/cms` (`test` script là
-   placeholder) — thêm khi có thời gian.
+7. **Đặt cron gọi `GET /api/payload-jobs/run`** (kèm `CRON_SECRET`) mỗi vài phút trên prod. Không có
+   bước này thì job `leadFollowup` nằm mãi trong `payload_jobs` và **email chủ động không bao giờ gửi**.
+8. Chưa có **unit test** cho 3 module pure đáng test nhất: `state-machine.ts` (advance/score/
+   `keywordSignals` — chỗ này vừa có bug thật, rất đáng cắm test), `tokens.ts` (sign/verify/expiry),
+   `inbound.ts` (parse/isAutomated/stripQuotedReply), `email/render.ts` (3 pass substitution). Repo
+   hiện chưa có vitest ở `apps/cms` (`test` script là placeholder) — thêm khi có thời gian.
 
 ### Điểm cần lưu ý khi đọc code
 - **Chi phí AI**: mỗi lượt là **2 lời gọi** (reply + analyzer). Analyzer mặc định dùng chung model
   với chat (`claude-haiku-4-5`). Nếu muốn rẻ hơn nữa, đặt `LEAD_ANALYZER_MODEL`.
+  Riêng job `leadFollowup` chỉ tốn **1** lời gọi (không chạy lại analyzer — xem mục 3.3).
 - **Rate limit / daily cap đang in-memory** (giống module chat cũ) → chỉ đúng khi CMS chạy 1
   instance. Nhiều instance thì phải chuyển sang Redis.
 - `intake` **tái dùng** conversation đang mở của lead thay vì tạo mới, tránh vỡ mạch hội thoại.
@@ -278,3 +336,9 @@ POST vào `https://<cms>/api/lead/email-reply?secret=…` (hoặc header).
   lần (một lần kênh `consultant`, một lần kênh `email`).
 - DB dev đang ở chế độ **push** (`payload_migrations` chỉ có row `dev` batch `-1`), **không** chạy
   `payload migrate` trên DB dev này — sẽ fail vì migration initial tưởng DB trống.
+  `payload migrate:create` thì an toàn: nó diff với file snapshot `.json` cạnh mỗi migration, không
+  phụ thuộc trạng thái DB dev.
+- **Bật `jobs` trong `payload.config.ts` là thêm collection**: Payload tự sinh `payload-jobs` →
+  2 bảng `payload_jobs` + `payload_jobs_log`. Thêm/sửa task nào cũng phải chạy lại
+  `payload generate:types` (task slug nằm trong enum `enum_payload_jobs_task_slug`) và sinh migration,
+  nếu không prod sẽ thiếu bảng/enum value.

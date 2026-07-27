@@ -222,6 +222,15 @@ export function handoffThreshold(): number {
   return Number.isFinite(n) && n > 0 && n <= 100 ? n : 62
 }
 
+/**
+ * Customer turns that must have happened before the AI's *own* uncertainty is
+ * allowed to escalate. See the soft-signal note in `advance()`.
+ */
+export function softHandoffMinTurns(): number {
+  const n = Number(process.env.LEAD_SOFT_HANDOFF_MIN_TURNS ?? '3')
+  return Number.isFinite(n) && n >= 1 ? n : 3
+}
+
 /** Signals the analyzer (or a keyword fallback) can raise on the latest turn. */
 export type HandoffSignals = {
   requestedHuman?: boolean
@@ -231,24 +240,71 @@ export type HandoffSignals = {
   refusedAi?: boolean
 }
 
-/** Cheap keyword safety net so a direct ask never gets stuck behind the AI. */
+/**
+ * Cheap keyword safety net so a direct ask never gets stuck behind the AI.
+ *
+ * Every entry must carry the *intent* — a request verb plus its object — never a
+ * bare noun. In a B2B property/PropTech conversation the plain nouns are exactly
+ * what a qualified lead says while answering our own questions: "200 nhân viên"
+ * is the `userScale` slot, "nhân sự sale" is the department, "chi phí dự án" and
+ * "hợp đồng & tiến độ thanh toán" are FinERP/XBooking feature names, and
+ * "chuyên gia XTECH" is our own wording quoted back at us. Matching those short
+ * circuits the whole 10-slot qualification on turn one, which is worse than
+ * missing a signal — the analyzer catches the subtle cases anyway, this list only
+ * exists so an *explicit* ask can never be lost.
+ */
 export function keywordSignals(text: string): HandoffSignals {
-  const t = text.toLowerCase()
-  const any = (...words: string[]) => words.some((w) => t.includes(w))
+  // Collapse whitespace and pad, so phrases match across line breaks.
+  const t = ` ${text.toLowerCase().replace(/\s+/g, ' ')} `
+  const any = (...phrases: string[]) => phrases.some((p) => t.includes(p))
   return {
     requestedHuman: any(
       'gặp người thật',
+      'người thật',
       'nói chuyện với người',
+      'nói chuyện với nhân viên',
+      'nói chuyện với chuyên gia',
+      'nói chuyện với tư vấn viên',
+      'gặp nhân viên',
+      'gặp chuyên gia',
+      'gặp tư vấn viên',
+      'cho tôi gặp',
+      'cho mình gặp',
       'nhân viên tư vấn',
-      'chuyên gia',
+      'tư vấn viên',
       'gọi cho tôi',
-      'gọi lại',
+      'gọi cho mình',
+      'gọi lại cho',
+      'gọi lại giúp',
+      'gọi điện cho',
       'liên hệ trực tiếp',
-      'sale',
-      'nhân viên',
+      'trao đổi trực tiếp',
+      'hẹn gặp',
+      'đặt lịch gặp',
     ),
-    requestedCallDemoQuote: any('demo', 'báo giá', 'chi phí', 'giá bao nhiêu', 'quotation', 'hợp đồng', 'proposal'),
-    refusedAi: any('không muốn chat với ai', 'không cần ai', 'bot', 'trả lời máy móc'),
+    requestedCallDemoQuote: any(
+      'demo',
+      'dùng thử',
+      'báo giá',
+      'giá bao nhiêu',
+      'bao nhiêu tiền',
+      'chi phí bao nhiêu',
+      'quotation',
+      'proposal',
+      'gửi đề xuất',
+      'gửi phương án',
+      'ký hợp đồng',
+    ),
+    refusedAi: any(
+      'không muốn chat với ai',
+      'không muốn nói chuyện với ai',
+      'không cần ai',
+      'đừng dùng ai',
+      'trả lời máy móc',
+      'không muốn bot',
+      'chán bot',
+      'toàn bot',
+    ),
   }
 }
 
@@ -261,7 +317,10 @@ export type Advance = {
 
 /**
  * Decide the conversation's next state after a turn.
- * `signals` come from the AI analyzer merged with the keyword fallback.
+ *
+ * `signals` come from the AI analyzer, or from the keyword net when the analyzer
+ * gave no verdict at all (`resolveSignals` in service.ts). They are ranked:
+ * explicit customer intent > score threshold > the AI's own uncertainty.
  */
 export function advance(opts: {
   current: LeadState
@@ -279,21 +338,36 @@ export function advance(opts: {
     return { status: current, score, missing, handoffReason: null }
   }
 
-  const hard: HandoffReason | null = signals.requestedHuman
+  // Explicit customer intent — honoured immediately, at any point in the thread.
+  // The customer asked; nothing outranks that.
+  const explicit: HandoffReason | null = signals.requestedHuman
     ? 'requested_human'
     : signals.refusedAi
       ? 'refused_ai'
       : signals.requestedCallDemoQuote
         ? 'requested_call_demo_quote'
-        : signals.complexRequest
-          ? 'complex_request'
-          : signals.aiUncertain
-            ? 'ai_uncertain'
-            : null
+        : null
 
-  if (hard) return { status: 'HUMAN_READY', score, missing, handoffReason: hard }
+  if (explicit) return { status: 'HUMAN_READY', score, missing, handoffReason: explicit }
   if (score >= handoffThreshold()) {
     return { status: 'HUMAN_READY', score, missing, handoffReason: 'score_threshold' }
+  }
+
+  // Soft signals are the AI's self-assessment, not a request from the customer.
+  // "Not enough data to answer well" (`aiUncertain`) is the *normal* state of the
+  // first turn on a vague enquiry — "tôi muốn tìm hiểu thêm về giải pháp" scores
+  // 0 and every slot is empty. Escalating there hands the consultant an empty
+  // brief and skips the qualification this machine exists to do. So they only
+  // count once the AI has genuinely tried for a few turns and still cannot help.
+  const soft: HandoffReason | null = signals.complexRequest
+    ? 'complex_request'
+    : signals.aiUncertain
+      ? 'ai_uncertain'
+      : null
+
+  // `turnCount` excludes the turn being processed, hence +1 for the current one.
+  if (soft && turnCount + 1 >= softHandoffMinTurns()) {
+    return { status: 'HUMAN_READY', score, missing, handoffReason: soft }
   }
   if (missing.length === 0) {
     return { status: 'AI_RECOMMENDATION_SENT', score, missing, handoffReason: null }

@@ -1,5 +1,41 @@
 # Nhật ký chỉnh sửa — Website X (corporate)
 
+## Phiên 2026-07-27 — Gộp hai bản chăm sóc tự động + smoke-test runtime
+
+`origin/main` (`65d0541`) đã có một bản chăm sóc tự động **nhẹ** làm song song, không biết tới nhánh
+`feat/lead-consultation-email-chat`. Phiên này gộp lại thành **một pipeline duy nhất** và chạy
+smoke-test thật (Postgres local, `MAIL_HOST=""` nên không có mail nào ra ngoài).
+
+- **Giữ từ `65d0541`**: khối `jobs` trong `payload.config.ts` + cron `/api/payload-jobs/run`
+  (`CRON_SECRET`), helper `completeChat()`.
+  **Bỏ**: hook `autoReplyLeadSubmission` + `enqueueLeadCare`, group field `care` trên
+  `form-submissions`, job `leadCareFollowup`, chat bridge `care_chat` (`adoptCareSession` + 2 route
+  adopt). Để cả hai cùng chạy thì mỗi lead sẽ nhận **2 ACK + 2 luồng AI reply**.
+- **Mới — email chủ động có độ trễ** (`jobs/leadFollowup.ts` + `service.followUpOnSilence`): ACK vẫn
+  gửi ngay, nhưng sau `LEAD_FOLLOWUP_DELAY_MINUTES` (30) nếu khách im lặng thì AI mới quay lại **một
+  lần** với nội dung có giá trị + đúng một câu hỏi vào slot trọng số cao nhất. Lead im lặng mà đã đạt
+  `LEAD_FOLLOWUP_HANDOFF_SCORE` (40) thì chuyển thẳng chuyên gia thay vì gửi thêm email. Idempotent
+  qua activity `followup_sent`; bỏ qua khi khách đã trả lời hoặc chuyên gia đã tiếp nhận.
+- **Sửa: AI mới là người quyết định handoff.** `analyzeTurn` nuốt mọi lỗi rồi trả về rỗng, nên
+  "AI đánh giá là không có tín hiệu" lẫn với "AI không trả lời được"; `analyzeAndAdvance` lại `OR`
+  keyword lên trên vô điều kiện. Thêm cờ `Analysis.ok`; keyword giờ **chỉ** nói khi analyzer không
+  cho verdict nào (`resolveSignals`).
+- **Sửa: `keywordSignals` quá rộng.** Danh sách cũ có `'sale'`, `'nhân viên'`, `'chuyên gia'`,
+  `'chi phí'`, `'hợp đồng'`, `'bot'` — toàn danh từ mà lead B2B nói khi đang **trả lời** câu hỏi khai
+  thác ("200 nhân viên" chính là slot `userScale`). Mọi entry giờ mang ý định (động từ + tân ngữ).
+- **Sửa: `ai_uncertain` / `complex_request` không còn là hard signal.** Đó là AI tự đánh giá, không
+  phải yêu cầu của khách — và ở lượt đầu của câu hỏi mơ hồ thì "thiếu dữ kiện" luôn đúng, khiến lead
+  kiểu "tôi muốn tìm hiểu thêm" (0 điểm) escalate ngay với brief rỗng. Nay chỉ tính từ lượt
+  `LEAD_SOFT_HANDOFF_MIN_TURNS` (3) trở đi. Ý định rõ ràng của khách vẫn escalate tức thì.
+- **Sửa: khách không nhận được email "chuyên gia đang tiếp nhận".** `human_ready_customer` bị
+  `LEAD_EMAIL_MIN_INTERVAL_MINUTES` (3) chặn **im lặng** trên đúng luồng phổ biến nhất
+  (form → chat → handoff, tất cả trong 3 phút). Đưa vào `ALWAYS_SEND`; mọi lần chặn email giờ đều ghi
+  activity `email_suppressed`.
+- **Migration `20260727_022037_add_payload_jobs`**: bật `jobs` sinh ra 2 bảng `payload_jobs` +
+  `payload_jobs_log`. `65d0541` không có migration cho phần này (và cũng chưa regen `payload-types`),
+  prod sẽ thiếu bảng khi `deploy.sh` chạy `payload migrate`.
+- Endpoint job runner là **GET** `/api/payload-jobs/run`, không phải POST.
+
 ## Phiên 2026-07-25 — Tư vấn lead đa kênh (AI Chat + Email + Chuyên gia)
 
 Triển khai `handoff/XTECH_AI_LEAD_EMAIL_CHAT_HANDOFF_V1/`. **Nhật ký chi tiết + việc còn lại:

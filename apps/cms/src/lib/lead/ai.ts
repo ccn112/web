@@ -144,6 +144,13 @@ Luôn viết bằng tiếng Việt, gọi khách là "anh/chị", giọng chuyê
 /* ---------------------------------------------------------------- analyzer */
 
 export type Analysis = {
+  /**
+   * True when the model actually returned a verdict we could parse. False means
+   * the provider errored or the JSON was unusable — the difference matters,
+   * because "the AI judged there is no handoff signal" and "the AI never
+   * answered" must not be treated the same (see `resolveSignals` in service.ts).
+   */
+  ok: boolean
   collected: Collected
   signals: HandoffSignals
   summary: string
@@ -198,14 +205,14 @@ const bool = (v: unknown): boolean => v === true || v === 'true'
 
 /**
  * Extract slots + signals from the merged transcript. Never throws: on any
- * provider/parse failure it returns empty extraction so the turn still lands
- * (the keyword fallback in the state machine still guards direct asks).
+ * provider/parse failure it returns `ok: false` with an empty extraction so the
+ * turn still lands, and the caller knows to fall back to the keyword net.
  */
 export async function analyzeTurn(opts: {
   transcript: ChatMsg[]
   collected: Collected
 }): Promise<Analysis> {
-  const empty: Analysis = { collected: {}, signals: {}, summary: '', recommendation: '' }
+  const empty: Analysis = { ok: false, collected: {}, signals: {}, summary: '', recommendation: '' }
   try {
     const known = briefLines(opts.collected)
     const priming = known.length
@@ -246,6 +253,7 @@ export async function analyzeTurn(opts: {
     }
 
     return {
+      ok: true,
       collected,
       signals,
       summary: str(obj.summary).slice(0, 1500),

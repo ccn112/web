@@ -15,6 +15,7 @@ import type { Lead, LeadConversation, LeadMessage } from '../../payload-types'
 import type { ChatMsg } from '../chat/providers'
 import { getPayloadClient } from '../payload-client'
 import {
+  type Analysis,
   analyzeTurn,
   complete,
   fallbackSummary,
@@ -62,10 +63,12 @@ import {
   type Collected,
   type HandoffReason,
   isHumanOwned,
+  type HandoffSignals,
   keywordSignals,
   type LeadState,
   mergeCollected,
   missingSlots,
+  nextQuestion,
 } from './state-machine'
 import {
   generateOtp,
@@ -109,6 +112,23 @@ export type TurnOutcome = {
   handoffReason: HandoffReason | null
 }
 
+/**
+ * Decide the handoff signals for a turn.
+ *
+ * The analyzer is the judge: it reads the whole merged transcript and can tell
+ * "we have 200 nhân viên" (an answer to our own `userScale` question) apart from
+ * "cho tôi gặp nhân viên" (an actual request). `keywordSignals` cannot — it is a
+ * substring match, and OR-ing it onto a good verdict means a bare noun silently
+ * overrules the model and short circuits qualification on turn one.
+ *
+ * So the keyword net only speaks in degraded mode — when the provider errored or
+ * returned unparseable JSON and we have no verdict at all. There it is strictly
+ * better than nothing: an explicit ask still reaches a human.
+ */
+function resolveSignals(analysis: Analysis, userText: string): HandoffSignals {
+  return analysis.ok ? analysis.signals : keywordSignals(userText)
+}
+
 /** Build the provider message list for a conversation, ending with `userText`. */
 async function buildMessages(
   payload: Payload,
@@ -146,16 +166,7 @@ async function analyzeAndAdvance(
     collected: prevCollected,
   })
   const collected = mergeCollected(prevCollected, analysis.collected)
-
-  // Analyzer signals ∪ keyword safety net (a direct ask must never be missed).
-  const kw = keywordSignals(userText)
-  const signals = {
-    requestedHuman: analysis.signals.requestedHuman || kw.requestedHuman,
-    requestedCallDemoQuote: analysis.signals.requestedCallDemoQuote || kw.requestedCallDemoQuote,
-    complexRequest: analysis.signals.complexRequest,
-    aiUncertain: analysis.signals.aiUncertain,
-    refusedAi: analysis.signals.refusedAi || kw.refusedAi,
-  }
+  const signals = resolveSignals(analysis, userText)
 
   const next = advance({
     current: (conversation.status ?? 'NEW') as LeadState,
@@ -277,7 +288,12 @@ export async function intake(input: IntakeInput): Promise<IntakeResult | LeadErr
       collected,
     })
     collected = mergeCollected(collected, analysis.collected)
-    const next = advance({ current: status, collected, signals: analysis.signals, turnCount: 0 })
+    const next = advance({
+      current: status,
+      collected,
+      signals: resolveSignals(analysis, firstMessage),
+      turnCount: 0,
+    })
     status = next.status
     await saveQualification(payload, conversation, {
       collected,
@@ -313,6 +329,24 @@ export async function intake(input: IntakeInput): Promise<IntakeResult | LeadErr
     })
     await updateConversation(payload, fresh.id, { status: 'WAITING_CUSTOMER' })
     await noteChannel(payload, fresh, 'email')
+
+    // Second touch, on a delay: if the visitor stays quiet the AI comes back
+    // once with something useful (see `followUpOnSilence`). Queued rather than
+    // sent now so a consultant can get there first and so the follow-up does
+    // not land seconds after the acknowledgement. 0 minutes disables it.
+    const delay = followupDelayMinutes()
+    if (delay > 0) {
+      await payload.jobs
+        .queue({
+          task: 'leadFollowup',
+          input: { conversationId: fresh.id, expectedTurnCount: fresh.turnCount ?? 0 },
+          waitUntil: new Date(Date.now() + delay * 60_000),
+        })
+        .catch((e: unknown) => {
+          // The lead is already saved and acknowledged — never fail intake for this.
+          payload.logger.error({ err: e, conversationId: fresh.id }, 'intake: queue leadFollowup failed')
+        })
+    }
   }
 
   return {
@@ -320,6 +354,180 @@ export async function intake(input: IntakeInput): Promise<IntakeResult | LeadErr
     resumeUrl: issued.url,
     status,
     score: fresh.score ?? 0,
+  }
+}
+
+/* --------------------------------------------------- delayed follow-up */
+
+/** Minutes between the instant acknowledgement and the AI's first real nudge. */
+export function followupDelayMinutes(): number {
+  const n = Number(process.env.LEAD_FOLLOWUP_DELAY_MINUTES ?? '30')
+  return Number.isFinite(n) && n >= 0 ? n : 30
+}
+
+/**
+ * Score at/above which a *silent* lead is handed to a consultant instead of
+ * getting another AI email. Deliberately lower than `LEAD_HANDOFF_SCORE`: a form
+ * detailed enough to score this high but with nobody replying is worth a phone
+ * call, not more automated questions.
+ */
+function followupHandoffScore(): number {
+  const n = Number(process.env.LEAD_FOLLOWUP_HANDOFF_SCORE ?? '40')
+  return Number.isFinite(n) && n > 0 && n <= 100 ? n : 40
+}
+
+/** Activity type that marks a conversation as already nudged (idempotency key). */
+const FOLLOWUP_ACTIVITY = 'followup_sent'
+
+export type FollowupResult = {
+  action: 'skipped' | 'replied' | 'handoff' | 'error'
+  reason?: string
+  status?: LeadState
+  score?: number
+}
+
+/**
+ * The delayed second touch on a lead that has gone quiet since the form.
+ *
+ * `intake()` sends `lead_received` immediately and queues this (see
+ * `jobs/leadFollowup.ts`). By the time it runs, one of three things is true:
+ *
+ *  - the visitor already came back (web chat or email reply) → nothing to do,
+ *    the normal turn flow is driving the conversation;
+ *  - a consultant took over → the AI stays out of it;
+ *  - silence → we either escalate a valuable lead to a human, or send one
+ *    useful email that asks the single highest-weight missing slot.
+ *
+ * Unlike a normal turn there is no new customer message, so this does *not*
+ * re-run the analyzer or bump `turnCount` — it reuses the qualification already
+ * computed at intake and costs exactly one AI call.
+ */
+export async function followUpOnSilence(input: {
+  conversationId: string
+  /** Customer turns at queue time; a higher count now means they replied. */
+  expectedTurnCount?: number
+}): Promise<FollowupResult> {
+  const payload = await getPayloadClient()
+  const conversation = await getConversation(payload, input.conversationId)
+  if (!conversation) return { action: 'skipped', reason: 'not_found' }
+
+  const status = (conversation.status ?? 'NEW') as LeadState
+  if (conversation.aiPaused === true || !aiMayDrive(status)) {
+    return { action: 'skipped', reason: 'ai_not_driving', status }
+  }
+
+  // The visitor answered on their own — the live flow already replied to them.
+  const turnCount = conversation.turnCount ?? 0
+  if (input.expectedTurnCount !== undefined && turnCount > input.expectedTurnCount) {
+    return { action: 'skipped', reason: 'customer_replied', status }
+  }
+
+  // Idempotency: one automated nudge per conversation, ever.
+  const nudged = await payload
+    .find({
+      collection: 'lead-activities',
+      where: {
+        conversation: { equals: conversation.id },
+        type: { equals: FOLLOWUP_ACTIVITY },
+      },
+      limit: 1,
+      depth: 0,
+    })
+    .catch(() => null)
+  if (nudged?.docs?.length) return { action: 'skipped', reason: 'already_sent', status }
+
+  const lead = await getLead(payload, refId(conversation.lead))
+  if (!lead) return { action: 'skipped', reason: 'lead_missing' }
+  if (lead.unsubscribed) return { action: 'skipped', reason: 'unsubscribed' }
+
+  const collected = (conversation.collected ?? {}) as Collected
+  const score = conversation.score ?? 0
+
+  // A well-filled form that went silent is a call, not another email.
+  if (score >= followupHandoffScore()) {
+    await logActivity(payload, {
+      type: FOLLOWUP_ACTIVITY,
+      leadId: lead.id,
+      conversationId: conversation.id,
+      channel: 'system',
+      actor: 'system',
+      summary: `Lead im lặng ${followupDelayMinutes()} phút, điểm ${score} → chuyển chuyên gia`,
+      detail: { score, threshold: followupHandoffScore(), turnCount },
+    })
+    await triggerHandoff(payload, {
+      conversation,
+      lead,
+      reason: 'score_threshold',
+    })
+    return { action: 'handoff', reason: 'silent_high_score', status: 'HUMAN_READY', score }
+  }
+
+  // Otherwise: one email that gives something back and asks the biggest gap.
+  const gap = nextQuestion(collected)
+  const nudgeBrief = [
+    'BỐI CẢNH ĐẶC BIỆT CỦA LƯỢT NÀY:',
+    `- Khách đã để lại thông tin qua form khoảng ${followupDelayMinutes()} phút trước và CHƯA phản hồi lại.`,
+    '- Đây là email chủ động của XTECH, không phải trả lời một câu hỏi mới. Đừng nói "cảm ơn bạn đã phản hồi".',
+    '- Hãy mở đầu bằng một nhận định/gợi ý CÓ GIÁ TRỊ dựa trên đúng những gì đã biết, rồi mới hỏi.',
+    gap
+      ? `- Kết thúc bằng ĐÚNG MỘT câu hỏi về: ${gap.label}.`
+      : '- Hồ sơ đã khá đầy đủ: xác nhận lại hiểu biết và mời khách chốt bước tiếp theo (khảo sát / demo).',
+  ].join('\n')
+
+  const { messages } = await buildMessages(payload, conversation.id, nudgeBrief)
+  let reply: string
+  try {
+    const completion = await complete({
+      system: replySystemPrompt({
+        channel: 'email',
+        collected,
+        status,
+        customerName: lead.fullName ?? undefined,
+        companyName: lead.company ?? undefined,
+      }),
+      messages,
+      maxTokens: 1100,
+    })
+    reply = completion.text
+  } catch (e) {
+    payload.logger.error({ err: e, conversationId: conversation.id }, 'followUpOnSilence: AI failed')
+    return { action: 'error', reason: 'ai_failed', status }
+  }
+  if (!reply) return { action: 'error', reason: 'empty_reply', status }
+
+  // No new customer input, so the state machine only reflects what we now send.
+  const nextStatus: LeadState = gap ? 'NEED_MORE_INFORMATION' : 'AI_RECOMMENDATION_SENT'
+  await updateConversation(payload, conversation.id, { status: nextStatus })
+  const staged = (await getConversation(payload, conversation.id)) ?? conversation
+
+  const sent = await sendLeadEmail(payload, {
+    templateKey: gap ? 'qualification_question' : 'ai_recommendation',
+    lead,
+    conversation: staged,
+    aiReply: reply,
+  })
+  const skipReason = sent.sent ? undefined : sent.reason
+
+  await logActivity(payload, {
+    type: FOLLOWUP_ACTIVITY,
+    leadId: lead.id,
+    conversationId: conversation.id,
+    channel: 'email',
+    actor: 'ai',
+    summary: sent.sent
+      ? `Email chủ động sau ${followupDelayMinutes()} phút im lặng`
+      : `Email chủ động bị chặn (${skipReason})`,
+    detail: { score, askedSlot: gap?.key ?? null, sent: sent.sent, reason: skipReason ?? null },
+  })
+
+  // The ball is back with the customer.
+  await updateConversation(payload, conversation.id, { status: 'WAITING_CUSTOMER' })
+
+  return {
+    action: sent.sent ? 'replied' : 'skipped',
+    reason: skipReason,
+    status: nextStatus,
+    score,
   }
 }
 

@@ -215,3 +215,33 @@ export async function streamChat(opts: {
       return anthropicStream(model, system, messages, attachments, maxTokens)
   }
 }
+
+/**
+ * Non-streaming completion — collects the full text of a single-turn (or
+ * multi-turn) exchange. Used by background/automation flows (e.g. lead-care
+ * follow-up email drafting) that need the whole answer at once rather than an
+ * SSE stream. Returns the concatenated text plus token usage.
+ */
+export async function completeChat(opts: {
+  provider?: ChatProvider
+  model?: string
+  system: string
+  messages: ChatMsg[]
+  maxTokens?: number
+}): Promise<{ text: string; usage: ChatUsage }> {
+  const resolved = resolveProvider()
+  const provider = opts.provider ?? resolved.provider
+  const model = opts.model ?? resolved.model
+  const stream = await streamChat({
+    provider,
+    model,
+    system: opts.system,
+    messages: opts.messages,
+    attachments: [],
+    maxTokens: opts.maxTokens ?? 1024,
+  })
+  let text = ''
+  for await (const chunk of stream.text) text += chunk
+  const usage = await stream.usage
+  return { text, usage }
+}

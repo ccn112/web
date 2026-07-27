@@ -124,10 +124,20 @@ const minIntervalMs = (): number => {
   return (Number.isFinite(n) && n >= 0 ? n : 3) * 60_000
 }
 
-/** Templates that must always go out (security / escalation), budget or not. */
+/**
+ * Templates that must always go out (security / escalation), budget or not.
+ *
+ * `human_ready_customer` belongs here even though it is a customer mail: it fires
+ * at most once per conversation (`triggerHandoff` is idempotent) and it is the
+ * only thing that tells the customer a real person has taken over. Leaving it
+ * subject to the min-interval throttle silently dropped it on the *most common*
+ * path — form → chat → immediate handoff, all inside the throttle window — so the
+ * customer got an acknowledgement and then nothing.
+ */
 const ALWAYS_SEND: ReadonlySet<TemplateKey> = new Set([
   'device_verification',
   'human_ready_internal',
+  'human_ready_customer',
 ])
 
 export type SendSkip = { sent: false; reason: 'unsubscribed' | 'budget' | 'throttled' | 'no_recipient' | 'error' }
@@ -374,24 +384,36 @@ export async function sendLeadEmail(payload: Payload, ctx: SendContext): Promise
   if (!to) return { sent: false, reason: 'no_recipient' }
 
   // Consent / suppression + anti-loop budget (security rules: never keep mailing).
+  // Every suppression is logged: a mail the customer never got is exactly the
+  // thing you need to see in the audit trail when a lead goes cold.
   if (toCustomer) {
+    const suppress = async (reason: SendSkip['reason'], summary: string): Promise<SendSkip> => {
+      await logActivity(payload, {
+        type: 'email_suppressed',
+        leadId: refId(conversation.lead),
+        conversationId: conversation.id,
+        channel: 'email',
+        actor: 'system',
+        summary,
+        detail: { templateKey, reason },
+      })
+      return { sent: false, reason }
+    }
+
     if (lead.unsubscribed || conversation.status === 'UNSUBSCRIBED') {
-      return { sent: false, reason: 'unsubscribed' }
+      return suppress('unsubscribed', 'Khách đã hủy nhận email')
     }
     if (!ALWAYS_SEND.has(templateKey)) {
       if ((conversation.outboundEmailCount ?? 0) >= maxAutoEmails()) {
-        await logActivity(payload, {
-          type: 'email_suppressed',
-          leadId: refId(conversation.lead),
-          conversationId: conversation.id,
-          channel: 'email',
-          summary: `Vượt hạn mức ${maxAutoEmails()} email tự động`,
-          detail: { templateKey },
-        })
-        return { sent: false, reason: 'budget' }
+        return suppress('budget', `Vượt hạn mức ${maxAutoEmails()} email tự động`)
       }
       const last = conversation.lastOutboundEmailAt ? Date.parse(conversation.lastOutboundEmailAt) : 0
-      if (last && Date.now() - last < minIntervalMs()) return { sent: false, reason: 'throttled' }
+      if (last && Date.now() - last < minIntervalMs()) {
+        return suppress(
+          'throttled',
+          `Chưa đủ ${minIntervalMs() / 60_000} phút kể từ email trước`,
+        )
+      }
     }
   }
 

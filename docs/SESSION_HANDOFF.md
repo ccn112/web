@@ -4,9 +4,14 @@ Cập nhật: 2026-07-19. Branch `main` trên GitHub `github.com/ccn112/web`.
 
 Tài liệu này để bạn (hoặc Claude ở máy khác) tiếp tục nhanh. Bối cảnh chi tiết nằm ở: `docs/CHAT_MODULE_HANDOFF.md`, `docs/CHAT_PROVIDERS.md`, `docs/DEPLOY.md` (Railway/Render/Fly), `docs/DEPLOY_COOLIFY.md` (Coolify — server tự quản).
 
-> **Phiên gần nhất (2026-07-25)** — tư vấn lead đa kênh (AI Chat + Email + chuyên gia):
-> đọc **`docs/LEAD_CONSULTATION_HANDOFF.md`**, mục 7 (env mới) và mục 8 (việc còn lại — smoke-test
-> runtime chưa chạy). Tóm tắt ở `docs/CHANGELOG.md`.
+> **Phiên gần nhất (2026-07-27)** — chăm sóc lead tự động, đã gộp hai bản triển khai song song
+> (nhánh `feat/lead-consultation-email-chat` + `65d0541` trên `main`) thành **một pipeline duy nhất**,
+> thêm email chủ động có độ trễ, và **đã smoke-test runtime end-to-end**.
+> Đọc **`docs/LEAD_CONSULTATION_HANDOFF.md`** — mục 3.1–3.3 (luật handoff & email trễ), mục 7 (env),
+> mục 8 (kết quả smoke-test + việc còn lại). Tóm tắt ở `docs/CHANGELOG.md`.
+>
+> ⚠️ Prod bắt buộc có **cron gọi `GET /api/payload-jobs/run`** kèm `CRON_SECRET`, nếu không email
+> chủ động sau 30 phút sẽ không bao giờ được gửi.
 
 ---
 
