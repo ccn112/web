@@ -234,6 +234,24 @@ else
   log "Chạy migration (chỉ áp dụng thay đổi mới)"
   pnpm --filter @x/cms db:migrate
   ok "Migration xong"
+
+  # Đối chiếu chéo sau migrate: Payload khoá document qua
+  # payload_locked_documents_rels, bảng này phải có một cột `<collection>_id` cho
+  # MỖI collection. Nếu một migration bị baseline khống (--import-db với dump cũ
+  # đánh dấu mọi migration là applied) thì `migrate` bỏ qua nó vĩnh viễn, và admin
+  # chết ở mọi thao tác sửa document với Postgres 42703 — nhưng deploy vẫn báo
+  # xanh. Rẻ để kiểm, đắt để bỏ sót.
+  REL_COLS_N="$(psql "$DATABASE_URL" -tAc \
+    "select count(*) from information_schema.columns
+      where table_name='payload_locked_documents_rels'
+        and column_name in ('leads_id','lead_devices_id','lead_conversations_id','lead_messages_id',
+          'resume_tokens_id','email_templates_id','consultants_id','consultant_assignments_id',
+          'lead_activities_id')" 2>/dev/null || echo 0)"
+  [[ "$REL_COLS_N" == 9 ]] \
+    && ok "payload_locked_documents_rels đủ 9 cột lead" \
+    || die "payload_locked_documents_rels chỉ có $REL_COLS_N/9 cột lead — migration bị gắn cờ
+     khống, admin sẽ chết ở mọi thao tác sửa document (42703).
+     Vá:  ./scripts/fix-lead-schema.sh --check   rồi   ./scripts/fix-lead-schema.sh"
 fi
 
 # ---- 5. Thư mục media (khi USE_S3=false phải tồn tại & ghi được) ------------

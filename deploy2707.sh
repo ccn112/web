@@ -232,6 +232,31 @@ LEAD_TABLES="$(psql "$DATABASE_URL" -tAc \
       and table_name in ('leads','lead_conversations','lead_messages','payload_jobs')" 2>/dev/null || echo 0)"
 ok "Bảng luồng lead hiện có: $LEAD_TABLES/4 (0 = deploy lần đầu, 4 = đã có)"
 
+# Đối chiếu CHÉO: migration đánh dấu đã chạy >< bảng có thật.
+# `--import-db` và `--fresh-seed` đều DELETE rồi INSERT MỌI migration là applied.
+# Nếu dump import vào cũ hơn phần lead thì add_lead_consultation bị gắn cờ khống:
+# `payload migrate` bỏ qua vĩnh viễn, DB thiếu 13 bảng lead + 9 cột trong
+# payload_locked_documents_rels, và vì Payload khoá document qua bảng rels đó nên
+# MỌI thao tác sửa trong admin chết với lỗi 42703. Không đối chiếu ở đây thì deploy
+# vẫn báo xanh trong khi admin đã hỏng.
+MIG_LEAD_MARKED="$(psql "$DATABASE_URL" -tAc \
+  "select count(*) from payload_migrations where name='20260725_060131_add_lead_consultation'" 2>/dev/null || echo 0)"
+REL_COLS_N="$(psql "$DATABASE_URL" -tAc \
+  "select count(*) from information_schema.columns
+    where table_name='payload_locked_documents_rels'
+      and column_name in ('leads_id','lead_devices_id','lead_conversations_id','lead_messages_id',
+        'resume_tokens_id','email_templates_id','consultants_id','consultant_assignments_id',
+        'lead_activities_id')" 2>/dev/null || echo 0)"
+if [[ "$MIG_LEAD_MARKED" == 1 && "$REL_COLS_N" != 9 ]]; then
+  fail "add_lead_consultation ĐƯỢC ĐÁNH DẤU đã chạy nhưng payload_locked_documents_rels
+       chỉ có $REL_COLS_N/9 cột — migration bị gắn cờ khống (dấu vết của --import-db với
+       dump cũ). \`payload migrate\` sẽ BỎ QUA nó vĩnh viễn, và admin sẽ chết ở mọi
+       thao tác sửa document (Postgres 42703 'column leads_id does not exist').
+       Vá trước:  ./scripts/fix-lead-schema.sh --check   rồi   ./scripts/fix-lead-schema.sh"
+elif [[ "$REL_COLS_N" == 9 ]]; then
+  ok "payload_locked_documents_rels đủ 9 cột lead (khoá document hoạt động)"
+fi
+
 # ---- 4. Cron hiện tại -------------------------------------------------------
 CRON_SCRIPT="$ROOT/scripts/payload-jobs-cron.sh"
 if crontab -l 2>/dev/null | grep -q 'payload-jobs-cron.sh'; then
