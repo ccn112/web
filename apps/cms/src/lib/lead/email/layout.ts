@@ -101,6 +101,19 @@ export function factTable(rows: Array<{ label: string; value: string }>): string
           </table>`
 }
 
+/**
+ * Verbatim customer text — a neutral panel, kept visually distinct from
+ * `callout()` (which carries an accent and means "pay attention"). Newlines are
+ * the caller's job to convert; this only frames the block.
+ */
+export function quote(html: string): string {
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;">
+            <tr>
+              <td style="border:1px solid ${BRAND.border};background:#FBFCFE;padding:14px 16px;border-radius:10px;font-family:${FONT};font-size:15px;line-height:1.65;color:${BRAND.text};" class="x-panel">${html}</td>
+            </tr>
+          </table>`
+}
+
 /** Callout box — used for the SLA line and the "why you got this" notice. */
 export function callout(html: string, tone: 'info' | 'urgent' = 'info'): string {
   const accent = tone === 'urgent' ? '#B4232A' : BRAND.blue

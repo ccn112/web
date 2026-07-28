@@ -12,6 +12,7 @@
     "db:seed": "payload run ./src/seed/index.ts",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap",
+    "preview:lead-email": "payload run ./scripts/preview-lead-email.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint",
     "test": "echo \"(access-control + seed tests land in Phase 6)\""
