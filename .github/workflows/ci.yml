@@ -78,6 +78,13 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          # Key deploy CÓ passphrase -> phải truyền, không thì drone-ssh không mở được
+          # key và bỏ luôn publickey ra khỏi danh sách auth. Lỗi khi đó KHÔNG nói gì về
+          # passphrase, nó ra y hệt lỗi "key bị server từ chối":
+          #   ssh: handshake failed: ... attempted methods [none publickey]
+          # (x/crypto/ssh append method vào `tried` cả khi signer list rỗng.)
+          # Đừng tin dòng đó là bằng chứng key đã tới được server.
+          passphrase: ${{ secrets.VPS_SSH_PASSPHRASE }}
           port: ${{ secrets.VPS_PORT }} # để trống -> mặc định 22
           command_timeout: 30m # migrate + build 2 app có thể lâu
           script_stop: true # gặp lệnh lỗi là dừng & báo fail

@@ -17,30 +17,36 @@ ssh: handshake failed: ssh: unable to authenticate,
      attempted methods [none publickey], no supported methods remain
 ```
 
-Đã loại trừ:
+### Nguyên nhân đã xác định: key deploy có passphrase, workflow không truyền `passphrase`
+
+`ci.yml` chỉ truyền `key:` chứ không có `passphrase:` (log run xác nhận `INPUT_PASSPHRASE:` rỗng).
+Key có passphrase mà không cấp passphrase thì `drone-ssh` **không mở được key**, danh sách signer rỗng,
+và client chưa từng gửi gì lên server. Đã thêm `passphrase: ${{ secrets.VPS_SSH_PASSPHRASE }}`.
+
+**⚠️ Cái bẫy làm việc này mất 8 ngày để tìm ra — đừng để người sau rơi lại vào:**
+dòng lỗi trên **không nói gì về passphrase**, và nó **giống hệt** lỗi "server từ chối key". Trong Go
+`x/crypto/ssh`, method được append vào danh sách `tried` **cả khi thất bại**, kể cả khi signer list rỗng —
+nên `attempted methods [none publickey]` **KHÔNG** chứng minh key đã tới được server. (Chẩn đoán ban đầu
+của phiên này đã suy luận sai đúng chỗ đó và loại trừ oan giả thuyết passphrase.)
+
+Đã loại trừ chắc chắn:
 - ✅ 5 secret `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY` / `VPS_PORT` / `VPS_PATH` đều **có giá trị**
   (log Actions mask thành `***` → không rỗng).
+- ✅ `VPS_HOST` + `VPS_PORT` **đúng**, firewall mở, `sshd` sống — vì lỗi xảy ra ở **bước auth**;
+  sai host/port thì phải là `dial tcp: i/o timeout` hoặc `connection refused`.
 - ✅ Job **không** đứng chờ approve — lúc chẩn đoán `production` chưa có protection rule nào
   (đã bật Required reviewers sau đó, xem mục dưới).
-- ✅ Private key **parse được** và đã được gửi lên server (thông điệp là "publickey bị **từ chối**",
-  không phải "không đọc được key") → secret không bị dán hỏng, không phải key có passphrase.
 
-→ Nguyên nhân nằm **phía VPS**: public key tương ứng không được `sshd` chấp nhận cho `VPS_USER`.
-Xếp theo xác suất: (1) `~/.ssh/authorized_keys` của đúng user đó không chứa key — hoặc key đã sinh lại
-sau khi dán secret; (2) `VPS_USER` sai user (key nằm ở `root` nhưng deploy bằng user site CloudPanel,
-hoặc ngược lại); (3) quyền file — `~/.ssh` phải 700, `authorized_keys` 600, home **không** được
-group/other-writable, sai là `sshd` bỏ qua im lặng; (4) `sshd_config` chặn (`PubkeyAuthentication`,
-`AllowUsers`, hardening của CloudPanel).
+**Chưa loại trừ** (passphrase làm client dừng trước khi tới server, nên hai thứ này *chưa từng được thử*):
+`VPS_USER` có đúng user chứa key trong `authorized_keys` không, và quyền `~/.ssh` (700) /
+`authorized_keys` (600) / home không group-writable. Nếu sau khi thêm passphrase vẫn fail thì đọc
+`auth.log` — xem `docs/CI_CD.md` §7.
 
-Lệnh chẩn đoán, chạy **trên VPS** (xem thêm `docs/CI_CD.md` §1):
-```bash
-whoami; ls -ld ~ ~/.ssh; ls -l ~/.ssh/authorized_keys      # user + quyền
-ssh-keygen -lf ~/.ssh/gh_deploy.pub                        # fingerprint key CI
-grep -c 'gh-actions-deploy' ~/.ssh/authorized_keys         # key đã được nạp chưa
-sudo tail -50 /var/log/auth.log | grep -i sshd             # lý do sshd từ chối (dòng chính xác)
-```
-> Lưu ý: `VPS_SSH_KEY` đã được cập nhật lại lúc 2026-07-21T10:27Z mà **vẫn fail** → dán lại key
-> một lần nữa gần như chắc chắn không giải quyết được; phải xem log `auth.log` phía server.
+Việc còn phải làm tay: **thêm secret `VPS_SSH_PASSPHRASE`** (`gh secret set VPS_SSH_PASSPHRASE`).
+
+> Cân nhắc dài hạn: passphrase **không thêm bảo mật nào trong CI** — nó nằm trong GitHub Secrets ngay
+> cạnh private key, cùng vùng tin cậy, chỉ thêm một chỗ để hỏng. Key deploy chuyên dụng không passphrase
+> (đúng như `docs/CI_CD.md` §1 vốn đã hướng dẫn: `ssh-keygen … -N ""`) là hướng gọn hơn.
 
 ### ✅ Đã bật cổng duyệt tay cho prod (2026-07-29)
 Trước đó `production` có `protection_rules: []` — nghĩa là **đúng cái push làm SSH thông** sẽ là push đầu
