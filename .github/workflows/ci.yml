@@ -89,13 +89,27 @@ jobs:
           command_timeout: 30m # migrate + build 2 app có thể lâu
           script_stop: true # gặp lệnh lỗi là dừng & báo fail
           script: |
-            set -euo pipefail
-            # SSH không tương tác thường thiếu PATH của nvm/pnpm/pm2 -> nạp lại.
+            # ---- Khối nạp môi trường: TUYỆT ĐỐI không set -e / -u ở đây ----------
+            # Bản trước dùng `set -euo pipefail` rồi source ~/.profile. Dưới `set -u`,
+            # một biến chưa set trong .profile/.bashrc (kinh điển: `[ -z "$PS1" ]`)
+            # là lỗi FATAL -> bash thoát ngay status 1, và `|| true` KHÔNG cứu được
+            # vì đó là lỗi shell chứ không phải lệnh thất bại. Kết quả: job chết sau
+            # 3 giây, KHÔNG in một dòng nào, không cách nào biết chết ở đâu.
+            # Không source .profile nữa — đặt PATH tường minh là đủ và tất định.
+            echo "==> SSH OK: user=$(id -un) uid=$(id -u) host=$(hostname)"
             export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-            [ -s "$HOME/.profile" ] && . "$HOME/.profile" || true
-            export PATH="$HOME/.local/share/pnpm:$PATH"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then . "$NVM_DIR/nvm.sh"; fi
+            export PATH="$HOME/.local/share/pnpm:/usr/local/bin:$PATH"
 
+            # In toolchain TRƯỚC khi bật set -e: nếu thiếu thứ gì thì log đã có sẵn
+            # câu trả lời, không phải chạy lại một vòng CI 3 phút để đoán.
+            echo "==> node: $(command -v node || echo KHONG-CO) $(node -v 2>/dev/null)"
+            echo "==> pnpm: $(command -v pnpm || echo KHONG-CO) $(pnpm -v 2>/dev/null)"
+            echo "==> pm2:  $(command -v pm2 || echo KHONG-CO)"
+            echo "==> repo: ${{ secrets.VPS_PATH }}"
+
+            # ---- Từ đây mới là deploy thật: lỗi phải dừng ngay ------------------
+            set -eo pipefail
             cd "${{ secrets.VPS_PATH }}"
-            echo "==> Deploy commit ${{ github.sha }} trên $(hostname)"
+            echo "==> Deploy commit ${{ github.sha }}"
             BRANCH=main ./deploy.sh
