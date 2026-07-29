@@ -20,7 +20,8 @@ ssh: handshake failed: ssh: unable to authenticate,
 Đã loại trừ:
 - ✅ 5 secret `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY` / `VPS_PORT` / `VPS_PATH` đều **có giá trị**
   (log Actions mask thành `***` → không rỗng).
-- ✅ Environment `production` **không có** protection rule → job không đứng chờ approve.
+- ✅ Job **không** đứng chờ approve — lúc chẩn đoán `production` chưa có protection rule nào
+  (đã bật Required reviewers sau đó, xem mục dưới).
 - ✅ Private key **parse được** và đã được gửi lên server (thông điệp là "publickey bị **từ chối**",
   không phải "không đọc được key") → secret không bị dán hỏng, không phải key có passphrase.
 
@@ -41,10 +42,19 @@ sudo tail -50 /var/log/auth.log | grep -i sshd             # lý do sshd từ ch
 > Lưu ý: `VPS_SSH_KEY` đã được cập nhật lại lúc 2026-07-21T10:27Z mà **vẫn fail** → dán lại key
 > một lần nữa gần như chắc chắn không giải quyết được; phải xem log `auth.log` phía server.
 
-### ⚠️ Đi kèm: prod không có cổng duyệt tay
-`production` có `protection_rules: []`. **Ngay khi SSH thông**, mọi push vào `main` sẽ tự chạy
-`payload migrate` + build + `pm2 reload` lên prod, không ai duyệt. `docs/CI_CD.md` §3 đã khuyến nghị bật
-**Required reviewers** nhưng chưa bật. Nên bật *trước* khi vá SSH, không phải sau.
+### ✅ Đã bật cổng duyệt tay cho prod (2026-07-29)
+Trước đó `production` có `protection_rules: []` — nghĩa là **đúng cái push làm SSH thông** sẽ là push đầu
+tiên chạy `payload migrate` lên DB prod mà không ai duyệt. Đã bật **Required reviewers** = `ccn112`
+(`prevent_self_review: false` — một người vẫn tự duyệt được, không tự khoá mình ra ngoài;
+`can_admins_bypass: true` giữ nguyên mặc định).
+
+Từ giờ job `deploy` **dừng ở trạng thái `Waiting`** cho tới khi bấm *Review deployments → Approve*
+trong tab Actions. Đây là việc `docs/CI_CD.md` §3 đã khuyến nghị từ đầu nhưng chưa ai bật.
+
+Kiểm lại bất cứ lúc nào:
+```bash
+gh api repos/ccn112/web/environments/production --jq '.protection_rules'
+```
 
 ---
 
