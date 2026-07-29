@@ -1,0 +1,90 @@
+# =============================================================================
+# TẠM THỜI — probe môi trường SSH trên VPS. XOÁ file này khi deploy đã thông.
+# =============================================================================
+# Vì sao cần: job `deploy` chết với "Process exited with status 1" và KHÔNG có
+# một dòng output nào, nên không biết nó chết ở đâu. Workflow này:
+#   • KHÔNG chạy deploy.sh  -> không chạm prod, không migrate DB
+#   • KHÔNG gắn environment  -> không cần approve, chạy được ngay
+#   • KHÔNG dùng set -e, và `exec 2>&1` gộp stderr vào stdout
+#     -> không thể chết âm thầm như script deploy đang bị
+#   • script_stop: false     -> lệnh lỗi vẫn chạy tiếp để thu đủ thông tin
+name: SSH debug (tạm)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe VPS (không chạy deploy.sh)
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          command_timeout: 2m
+          script_stop: false
+          # Script dùng ASCII thuần (không dấu) để loại rủi ro encoding.
+          script: |
+            exec 2>&1
+            echo "=== 1. AI / O DAU ==="
+            echo "user=$(id -un 2>/dev/null) uid=$(id -u 2>/dev/null)"
+            echo "host=$(hostname 2>/dev/null)"
+            echo "SHELL=${SHELL:-<trong>}"
+            echo "HOME=${HOME:-<trong>}"
+            echo "pwd=$(pwd 2>/dev/null)"
+
+            echo "=== 2. SHELL THUC TE (set -o pipefail can bash) ==="
+            echo "/bin/sh -> $(readlink -f /bin/sh 2>/dev/null)"
+            echo "bash    -> $(command -v bash 2>/dev/null || echo KHONG-CO)"
+            if (set -o pipefail) 2>/dev/null; then
+              echo "pipefail: HO TRO"
+            else
+              echo "pipefail: KHONG HO TRO  <-- 'set -euo pipefail' se loi ngay dong dau"
+            fi
+
+            echo "=== 3. TOOLCHAIN (deploy.sh doi hoi) ==="
+            echo "node: $(command -v node 2>/dev/null || echo KHONG-CO) $(node -v 2>/dev/null)"
+            echo "pnpm: $(command -v pnpm 2>/dev/null || echo KHONG-CO) $(pnpm -v 2>/dev/null)"
+            echo "pm2:  $(command -v pm2 2>/dev/null || echo KHONG-CO)"
+            echo "psql: $(command -v psql 2>/dev/null || echo KHONG-CO)"
+            echo "git:  $(command -v git 2>/dev/null || echo KHONG-CO)"
+            echo "crontab: $(command -v crontab 2>/dev/null || echo KHONG-CO)"
+
+            echo "=== 4. NVM / PROFILE (2 dong dau script deploy) ==="
+            if [ -s "$HOME/.nvm/nvm.sh" ]; then
+              echo "nvm.sh: CO"
+            else
+              echo "nvm.sh: KHONG CO  <-- nghi van chinh"
+            fi
+            if [ -s "$HOME/.profile" ]; then
+              echo ".profile: CO"
+            else
+              echo ".profile: KHONG CO"
+            fi
+
+            echo "=== 5. VPS_PATH ==="
+            ls -ld "${{ secrets.VPS_PATH }}" 2>/dev/null || echo "KHONG TRUY CAP DUOC VPS_PATH"
+            for f in deploy.sh .env apps/clay/.env.production; do
+              p="${{ secrets.VPS_PATH }}/$f"
+              if [ -e "$p" ]; then echo "$f: CO"; else echo "$f: KHONG THAY"; fi
+            done
+            if [ -x "${{ secrets.VPS_PATH }}/deploy.sh" ]; then
+              echo "deploy.sh: CO QUYEN CHAY"
+            else
+              echo "deploy.sh: KHONG CO QUYEN CHAY (can chmod +x)"
+            fi
+            echo "git owner: $(stat -c '%U' "${{ secrets.VPS_PATH }}/.git" 2>/dev/null || echo '?')"
+
+            echo "=== 6. MIGRATION STATE (chi doc, quyet dinh co an toan de approve) ==="
+            DBURL="$(grep -E '^DATABASE_URL=' "${{ secrets.VPS_PATH }}/.env" 2>/dev/null | head -n1 | sed -E 's/^DATABASE_URL=//; s/^["'"'"']//; s/["'"'"']$//')"
+            if [ -n "$DBURL" ] && command -v psql >/dev/null 2>&1; then
+              psql "$DBURL" -tAc 'select name, batch from payload_migrations order by id' \
+                || echo "khong doc duoc payload_migrations"
+            else
+              echo "bo qua (khong co DATABASE_URL hoac psql)"
+            fi
+
+            echo "=== HET DIAG ==="
