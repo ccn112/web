@@ -1,13 +1,9 @@
 # =============================================================================
-# TẠM THỜI — probe môi trường SSH trên VPS. XOÁ file này khi deploy đã thông.
+# TẠM THỜI — probe trạng thái runtime trên VPS. XOÁ khi deploy đã ổn định.
 # =============================================================================
-# Vì sao cần: job `deploy` chết với "Process exited with status 1" và KHÔNG có
-# một dòng output nào, nên không biết nó chết ở đâu. Workflow này:
-#   • KHÔNG chạy deploy.sh  -> không chạm prod, không migrate DB
-#   • KHÔNG gắn environment  -> không cần approve, chạy được ngay
-#   • KHÔNG dùng set -e, và `exec 2>&1` gộp stderr vào stdout
-#     -> không thể chết âm thầm như script deploy đang bị
-#   • script_stop: false     -> lệnh lỗi vẫn chạy tiếp để thu đủ thông tin
+# CHỈ ĐỌC. Không chạy deploy.sh, không sửa gì, không cần approve
+# (không gắn environment: production).
+# Không set -e/-u và `exec 2>&1` -> không thể chết âm thầm.
 name: SSH debug (tạm)
 
 on:
@@ -17,74 +13,77 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe VPS (không chạy deploy.sh)
+      - name: Trạng thái runtime VPS (chỉ đọc)
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          command_timeout: 2m
+          command_timeout: 3m
           script_stop: false
-          # Script dùng ASCII thuần (không dấu) để loại rủi ro encoding.
+          # ASCII thuần để loại rủi ro encoding.
           script: |
             exec 2>&1
-            echo "=== 1. AI / O DAU ==="
-            echo "user=$(id -un 2>/dev/null) uid=$(id -u 2>/dev/null)"
-            echo "host=$(hostname 2>/dev/null)"
-            echo "SHELL=${SHELL:-<trong>}"
-            echo "HOME=${HOME:-<trong>}"
-            echo "pwd=$(pwd 2>/dev/null)"
+            R="${{ secrets.VPS_PATH }}"
 
-            echo "=== 2. SHELL THUC TE (set -o pipefail can bash) ==="
-            echo "/bin/sh -> $(readlink -f /bin/sh 2>/dev/null)"
-            echo "bash    -> $(command -v bash 2>/dev/null || echo KHONG-CO)"
-            if (set -o pipefail) 2>/dev/null; then
-              echo "pipefail: HO TRO"
+            echo "=== 1. AI / MOI TRUONG ==="
+            echo "user=$(id -un) uid=$(id -u) host=$(hostname)"
+            echo "uptime: $(uptime -p 2>/dev/null) | boot: $(who -b 2>/dev/null)"
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then . "$NVM_DIR/nvm.sh"; nvm use --silent default 2>/dev/null; echo "nvm: CO"; else echo "nvm: KHONG CO"; fi
+            export PATH="$HOME/.local/share/pnpm:/usr/local/bin:$PATH"
+            echo "node: $(command -v node || echo KHONG-CO) $(node -v 2>/dev/null)"
+            echo "pnpm: $(command -v pnpm || echo KHONG-CO) $(pnpm -v 2>/dev/null)"
+            echo "pm2:  $(command -v pm2 || echo KHONG-CO) $(pm2 -v 2>/dev/null | tail -1)"
+
+            echo "=== 2. QUYEN SO HUU REPO (chown xong chua) ==="
+            ls -ld "$R" "$R/.git" 2>/dev/null || echo "khong doc duoc $R"
+            echo "ghi duoc khong: $( [ -w "$R" ] && echo CO || echo KHONG )"
+
+            echo "=== 3. CODE DANG O COMMIT NAO ==="
+            git -C "$R" log -1 --oneline 2>/dev/null || echo "khong doc duoc git log"
+            git -C "$R" status --short 2>/dev/null | head -10
+
+            echo "=== 4. PM2 ==="
+            if command -v pm2 >/dev/null 2>&1; then
+              pm2 status 2>/dev/null || echo "pm2 status loi"
+              echo "--- pm2 jlist (ten|status|restart|user) ---"
+              pm2 jlist 2>/dev/null | tr ',' '\n' | grep -E '"name"|"status"|"restart_time"' | head -20
             else
-              echo "pipefail: KHONG HO TRO  <-- 'set -euo pipefail' se loi ngay dong dau"
+              echo "pm2 KHONG CO tren PATH cua $(id -un)"
             fi
+            ls -d "$HOME/.pm2" 2>/dev/null || echo "khong co $HOME/.pm2"
 
-            echo "=== 3. TOOLCHAIN (deploy.sh doi hoi) ==="
-            echo "node: $(command -v node 2>/dev/null || echo KHONG-CO) $(node -v 2>/dev/null)"
-            echo "pnpm: $(command -v pnpm 2>/dev/null || echo KHONG-CO) $(pnpm -v 2>/dev/null)"
-            echo "pm2:  $(command -v pm2 2>/dev/null || echo KHONG-CO)"
-            echo "psql: $(command -v psql 2>/dev/null || echo KHONG-CO)"
-            echo "git:  $(command -v git 2>/dev/null || echo KHONG-CO)"
-            echo "crontab: $(command -v crontab 2>/dev/null || echo KHONG-CO)"
+            echo "=== 5. AI GIU CONG 3000/3001 ==="
+            (ss -ltnp 2>/dev/null || netstat -ltnp 2>/dev/null) | grep -E ':300[01]' || echo "KHONG ai listen 3000/3001"
 
-            echo "=== 4. NVM / PROFILE (2 dong dau script deploy) ==="
-            if [ -s "$HOME/.nvm/nvm.sh" ]; then
-              echo "nvm.sh: CO"
-            else
-              echo "nvm.sh: KHONG CO  <-- nghi van chinh"
-            fi
-            if [ -s "$HOME/.profile" ]; then
-              echo ".profile: CO"
-            else
-              echo ".profile: KHONG CO"
-            fi
-
-            echo "=== 5. VPS_PATH ==="
-            ls -ld "${{ secrets.VPS_PATH }}" 2>/dev/null || echo "KHONG TRUY CAP DUOC VPS_PATH"
-            for f in deploy.sh .env apps/clay/.env.production; do
-              p="${{ secrets.VPS_PATH }}/$f"
-              if [ -e "$p" ]; then echo "$f: CO"; else echo "$f: KHONG THAY"; fi
+            echo "=== 6. HEALTH NOI BO ==="
+            for p in 3000 3001; do
+              echo "127.0.0.1:$p/api/health -> $(curl -s -o /dev/null -w '%{http_code}' --max-time 10 http://127.0.0.1:$p/api/health 2>/dev/null || echo 000)"
             done
-            if [ -x "${{ secrets.VPS_PATH }}/deploy.sh" ]; then
-              echo "deploy.sh: CO QUYEN CHAY"
-            else
-              echo "deploy.sh: KHONG CO QUYEN CHAY (can chmod +x)"
-            fi
-            echo "git owner: $(stat -c '%U' "${{ secrets.VPS_PATH }}/.git" 2>/dev/null || echo '?')"
 
-            echo "=== 6. MIGRATION STATE (chi doc, quyet dinh co an toan de approve) ==="
-            DBURL="$(grep -E '^DATABASE_URL=' "${{ secrets.VPS_PATH }}/.env" 2>/dev/null | head -n1 | sed -E 's/^DATABASE_URL=//; s/^["'"'"']//; s/["'"'"']$//')"
+            echo "=== 7. LOG LOI GAN NHAT (20 dong) ==="
+            if command -v pm2 >/dev/null 2>&1; then
+              pm2 logs --nostream --lines 20 --err 2>/dev/null | tail -30 || echo "khong doc duoc pm2 logs"
+            fi
+            ls -t "$HOME/.pm2/logs/" 2>/dev/null | head -6
+
+            echo "=== 8. BUILD DA CO CHUA ==="
+            for d in apps/cms/.next apps/clay/.next; do
+              if [ -d "$R/$d" ]; then echo "$d: CO ($(date -r "$R/$d" '+%F %H:%M' 2>/dev/null))"; else echo "$d: CHUA BUILD"; fi
+            done
+
+            echo "=== 9. CRON JOB RUNNER ==="
+            crontab -l 2>/dev/null | grep -c 'payload-jobs-cron.sh' || echo "khong co crontab cho user nay"
+
+            echo "=== 10. MIGRATION ==="
+            DBURL="$(grep -E '^DATABASE_URL=' "$R/.env" 2>/dev/null | head -n1 | sed -E 's/^DATABASE_URL=//; s/^["'"'"']//; s/["'"'"']$//')"
             if [ -n "$DBURL" ] && command -v psql >/dev/null 2>&1; then
-              psql "$DBURL" -tAc 'select name, batch from payload_migrations order by id' \
+              psql "$DBURL" -tAc 'select name from payload_migrations order by id' 2>/dev/null \
                 || echo "khong doc duoc payload_migrations"
             else
-              echo "bo qua (khong co DATABASE_URL hoac psql)"
+              echo "bo qua"
             fi
 
             echo "=== HET DIAG ==="
