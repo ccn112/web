@@ -229,7 +229,9 @@ elif [[ "$IMPORT_DB" -eq 1 ]]; then
   # chỉ chạy migration MỚI (không tạo lại bảng đã tồn tại).
   log "Ghi baseline migration (đánh dấu đã áp dụng)"
   # Chỉ baseline các migration ĐÃ ĐĂNG KÝ trong index.ts (đúng cái `payload migrate`
-  # sẽ xét). Bỏ qua các file dormant như 99999999_*_seed_content.ts (không nằm trong index).
+  # sẽ xét) — hiện là 5 cái, KỂ CẢ 99999999_*_seed_content (data migration nạp seed).
+  # Ở nhánh này seed đã có sẵn trong dump/vừa chạy trực tiếp, nên đánh dấu nó applied
+  # là đúng: lần deploy sau `payload migrate` không nạp seed lần hai.
   MIG_VALUES=""
   while IFS= read -r name; do
     [[ -n "$name" ]] && MIG_VALUES+="('${name}', 1),"
